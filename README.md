@@ -77,7 +77,7 @@ $ git branch
 Please add a message between the following lines:
 
 <hr>
-PERSONAL MESSAGE
+Ceci est mon message personnel
 <hr>
 
 then add and commit the file to your "edit_README" branch.
