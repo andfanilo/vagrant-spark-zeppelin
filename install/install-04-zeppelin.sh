@@ -1,4 +1,4 @@
-!/usr/bin/env bash
+#!/usr/bin/env bash
 
 # APACHE ZEPPELIN
 export MAVEN_VERSION=3.3.3
