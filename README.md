@@ -77,7 +77,7 @@ $ git branch
 Please add a message between the following lines:
 
 <hr>
-PERSONAL MESSAGE
+Salut Fanilo, ici Jean-Marc
 <hr>
 
 then add and commit the file to your "edit_README" branch.
