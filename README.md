@@ -80,6 +80,8 @@ Please add a message between the following lines:
 PERSONAL MESSAGE
 <hr>
 
+test
+
 then add and commit the file to your "edit_README" branch.
 
 _Done : you have a new commit in your branch_
