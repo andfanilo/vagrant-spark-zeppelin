@@ -1300,8 +1300,8 @@
     },
     {
       "title": "Calculate the number of unique words in the \"words\" RDD here.",
-      "text": "val words \u003d sc.parallelize(Array(\"hello\", \"world\", \"goodbye\", \"hello\", \"again\"))\n\nval expected \u003d 4",
-      "dateUpdated": "Jan 25, 2017 12:56:26 PM",
+      "text": "val words \u003d sc.parallelize(Array(\"hello\", \"world\", \"goodbye\", \"hello\", \"again\"))\nval output \u003d words.countApproxDistinct().toInt // toInt isn’t really necessary here\nval expected \u003d 4",
+      "dateUpdated": "Feb 1, 2017 5:49:46 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1326,18 +1326,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nexpected: Int \u003d 4\n"
+        "msg": "\nwords: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[6] at parallelize at \u003cconsole\u003e:32\n\noutput: Int \u003d 4\n\nexpected: Int \u003d 4\n"
       },
       "dateCreated": "Jan 25, 2017 9:34:16 AM",
-      "dateStarted": "Jan 25, 2017 9:35:05 AM",
-      "dateFinished": "Jan 25, 2017 9:35:06 AM",
+      "dateStarted": "Feb 1, 2017 5:49:10 PM",
+      "dateFinished": "Feb 1, 2017 5:49:11 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Create a random RDD of numbers, and find its mean.",
-      "text": "import util.Random.nextInt\nval input \u003d sc.parallelize(Seq.fill(10000)(nextInt))",
-      "dateUpdated": "Jan 25, 2017 1:41:43 AM",
+      "text": "import util.Random.nextInt\nval input \u003d sc.parallelize(Seq.fill(10000)(nextInt))\nval test \u003d sc.parallelize(List(1, 2, 3, 4, 5))\nval output \u003d input.sum / input.count\nval testOutput \u003d test.sum / test.count",
+      "dateUpdated": "Feb 1, 2017 5:53:58 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1359,8 +1359,15 @@
       },
       "jobName": "paragraph_1485336877601_1857515653",
       "id": "20170125-093437_413700163",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nimport util.Random.nextInt\n\ninput: org.apache.spark.rdd.RDD[Int] \u003d ParallelCollectionRDD[16] at parallelize at \u003cconsole\u003e:44\n\ntest: org.apache.spark.rdd.RDD[Int] \u003d ParallelCollectionRDD[17] at parallelize at \u003cconsole\u003e:44\n\noutput: Double \u003d 1494584.1853\n\ntestOutput: Double \u003d 3.0\n"
+      },
       "dateCreated": "Jan 25, 2017 9:34:37 AM",
-      "status": "READY",
+      "dateStarted": "Feb 1, 2017 5:53:58 PM",
+      "dateFinished": "Feb 1, 2017 5:54:00 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
