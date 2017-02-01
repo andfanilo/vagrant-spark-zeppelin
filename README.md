@@ -97,7 +97,7 @@ $ git branch
 Add a message between the following lines:
 
 <hr>
-PERSONAL MESSAGE
+This is the TD of Pierre Lejeail.
 <hr>
 
 With `$ git status` you can check the status of your Git repository.
@@ -198,6 +198,5 @@ If you want to check the data for the applicative project:
 
 If you want, you can put the dataset in the data folder, it will be copied to /opt/dataset in the virtual machine when building. **Don't push the data in the Git repo**, use the .gitignore file to ignore the data file and prevent it from being versioned.
 
-PERSONAL MESSAGE :
-This is the TD of Pierre Lejeail.
+
 
