@@ -1412,8 +1412,8 @@
     },
     {
       "title": "Easy wordcount",
-      "text": "val input \u003d sc.parallelize(Seq(\"hi\", \"my\", \"my\", \"name\", \"is\",\"hi\"))\nval output \u003d input.map(...).reduceByKey(...).collect()\n\nval expected \u003d Array((\"is\",1), (\"my,2\"), (\"name\",1), (\"hi\",2))",
-      "dateUpdated": "Jan 25, 2017 1:15:49 AM",
+      "text": "val input \u003d sc.parallelize(Seq(\"hi\", \"my\", \"my\", \"name\", \"is\",\"hi\"))\nval output \u003d input.map((_, 1)).reduceByKey((x, y) \u003d\u003e x + y).collect()\n\nval expected \u003d Array((\"is\",1), (\"my\",2), (\"name\",1), (\"hi\",2))",
+      "dateUpdated": "Feb 1, 2017 5:59:42 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1437,20 +1437,20 @@
       "jobName": "paragraph_1485338316737_924641072",
       "id": "20170125-095836_160099750",
       "result": {
-        "code": "ERROR",
+        "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ninput: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[7] at parallelize at \u003cconsole\u003e:30\n\n\n\n\n\u003cconsole\u003e:32: error: not enough arguments for method map: (f: String \u003d\u003e U)(implicit evidence$3: scala.reflect.ClassTag[U])org.apache.spark.rdd.RDD[U].\nUnspecified value parameter f.\n         val output \u003d input.map().reduceByKey().collect()\n                               ^\n"
+        "msg": "\ninput: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[23] at parallelize at \u003cconsole\u003e:44\n\noutput: Array[(String, Int)] \u003d Array((is,1), (my,2), (name,1), (hi,2))\n\nexpected: Array[(String, Int)] \u003d Array((is,1), (my,2), (name,1), (hi,2))\n"
       },
       "dateCreated": "Jan 25, 2017 9:58:36 AM",
-      "dateStarted": "Jan 25, 2017 12:53:51 PM",
-      "dateFinished": "Jan 25, 2017 12:53:52 PM",
-      "status": "ERROR",
+      "dateStarted": "Feb 1, 2017 5:59:43 PM",
+      "dateFinished": "Feb 1, 2017 5:59:44 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Sum ages per gender",
-      "text": "val rdd1 \u003d sc.parallelize(Seq((\"Patrick\", \"homme\"), (\"Sandra\", \"femme\"), (\"Faniki\", \"homme\"), (\"Noemie\", \"femme\"), (\"Francois\", \"homme\"), (\"Cassandre\", \"femme\")))\nval rdd2 \u003d sc.parallelize(Seq((\"Patrick\", 20), (\"Sandra\", 25), (\"Faniki\", 20), (\"Noemie\", 20), (\"Francois\", 30), (\"Cassandre\", 18)))\n\nval output \u003d rdd1.join(rdd2).map{case ... \u003d\u003e ...}....\n\nval expected \u003d Array((femme,63), (homme,70))",
-      "dateUpdated": "Jan 25, 2017 1:37:41 AM",
+      "text": "val rdd1 \u003d sc.parallelize(Seq((\"Patrick\", \"homme\"), (\"Sandra\", \"femme\"), (\"Faniki\", \"homme\"), (\"Noemie\", \"femme\"), (\"Francois\", \"homme\"), (\"Cassandre\", \"femme\")))\nval rdd2 \u003d sc.parallelize(Seq((\"Patrick\", 20), (\"Sandra\", 25), (\"Faniki\", 20), (\"Noemie\", 20), (\"Francois\", 30), (\"Cassandre\", 18)))\n\nval output \u003d rdd1.join(rdd2).map{case (name, (gender, age)) \u003d\u003e (gender, age)}.reduceByKey((x, y) \u003d\u003e x + y).collect()\n\nval expected \u003d Array((\"femme\",63), (\"homme\",70))",
+      "dateUpdated": "Feb 1, 2017 6:09:54 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1473,14 +1473,14 @@
       "jobName": "paragraph_1485349451411_-763547996",
       "id": "20170125-130411_450751393",
       "result": {
-        "code": "ERROR",
+        "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nrdd1: org.apache.spark.rdd.RDD[(String, String)] \u003d ParallelCollectionRDD[102] at parallelize at \u003cconsole\u003e:30\n\nrdd2: org.apache.spark.rdd.RDD[(String, Int)] \u003d ParallelCollectionRDD[103] at parallelize at \u003cconsole\u003e:30\n\n\n\n\u003cconsole\u003e:1: error: illegal start of simple pattern\n       val output \u003d rdd1.join(rdd2).map{case ... \u003d\u003e ...}....\n                                             ^\n\n\n\n\u003cconsole\u003e:1: error: \u0027\u003d\u003e\u0027 expected but \u0027}\u0027 found.\n       val output \u003d rdd1.join(rdd2).map{case ... \u003d\u003e ...}....\n                                                       ^\n\n\n\n\u003cconsole\u003e:1: error: identifier expected but \u0027.\u0027 found.\n       val output \u003d rdd1.join(rdd2).map{case ... \u003d\u003e ...}....\n                                                         ^\n\n\n\n\u003cconsole\u003e:1: error: identifier expected but \u0027.\u0027 found.\n       val output \u003d rdd1.join(rdd2).map{case ... \u003d\u003e ...}....\n                                                          ^\n\n\n\n\u003cconsole\u003e:1: error: identifier expected but \u0027.\u0027 found.\n       val output \u003d rdd1.join(rdd2).map{case ... \u003d\u003e ...}....\n                                                           ^\n"
+        "msg": "\nrdd1: org.apache.spark.rdd.RDD[(String, String)] \u003d ParallelCollectionRDD[83] at parallelize at \u003cconsole\u003e:44\n\nrdd2: org.apache.spark.rdd.RDD[(String, Int)] \u003d ParallelCollectionRDD[84] at parallelize at \u003cconsole\u003e:44\n\noutput: Array[(String, Int)] \u003d Array((femme,63), (homme,70))\n\nexpected: Array[(String, Int)] \u003d Array((femme,63), (homme,70))\n"
       },
       "dateCreated": "Jan 25, 2017 1:04:11 AM",
-      "dateStarted": "Jan 25, 2017 1:37:41 AM",
-      "dateFinished": "Jan 25, 2017 1:37:41 AM",
-      "status": "ERROR",
+      "dateStarted": "Feb 1, 2017 6:09:55 PM",
+      "dateFinished": "Feb 1, 2017 6:09:56 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
