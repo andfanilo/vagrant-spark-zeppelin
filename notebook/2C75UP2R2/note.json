@@ -1013,8 +1013,8 @@
     },
     {
       "title": "Return the list of squared numbers from 1 to 5",
-      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.map(x \u003d\u003e x*x)\n\nval expected \u003d List(1, 4, 9, 16, 25) ",
-      "dateUpdated": "Feb 1, 2017 8:19:08 PM",
+      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.map(x \u003d\u003e x * x)\n\nval expected \u003d List(1, 4, 9, 16, 25) ",
+      "dateUpdated": "Feb 1, 2017 8:31:00 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1121,8 +1121,8 @@
     },
     {
       "title": "Get highest number in a list with a reduce",
-      "text": "import util.Random.nextInt\nval input \u003d Seq.fill(10)(nextInt)\nval output \u003d input.reduce((x, y) \u003d\u003e x)\n\nval expected \u003d input.max",
-      "dateUpdated": "Jan 25, 2017 12:49:26 PM",
+      "text": "import util.Random.nextInt\nimport math.max\nval input \u003d Seq.fill(10)(nextInt)\nval output \u003d input.reduce((x, y) \u003d\u003e math.max(x,y))\n\nval expected \u003d input.max",
+      "dateUpdated": "Feb 1, 2017 8:37:31 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1149,11 +1149,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nimport util.Random.nextInt\n\ninput: Seq[Int] \u003d List(1368154480, 932727527, -956762629, -741728139, 1912445161, 1215347429, 1054732247, -811870848, 762475751, 1567410629)\n\noutput: Int \u003d 1368154480\n\nexpected: Int \u003d 1912445161\n"
+        "msg": "\nimport util.Random.nextInt\n\nimport math.max\n\ninput: Seq[Int] \u003d List(-1714846072, 811034686, -303392202, 1531233080, -1571002467, -1367840290, 1239581147, 1878641210, 2042420937, 1342570886)\n\noutput: Int \u003d 2042420937\n\nexpected: Int \u003d 2042420937\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:32 AM",
-      "dateStarted": "Jan 25, 2017 12:49:26 PM",
-      "dateFinished": "Jan 25, 2017 12:49:29 PM",
+      "dateStarted": "Feb 1, 2017 8:37:31 PM",
+      "dateFinished": "Feb 1, 2017 8:37:32 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
