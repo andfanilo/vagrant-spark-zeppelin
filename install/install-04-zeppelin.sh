@@ -4,10 +4,18 @@
 export MAVEN_VERSION=3.3.3
 export MAVEN_HOME=/usr/apache-maven-$MAVEN_VERSION
 
+<<<<<<< HEAD
 export ZEPPELIN_HOME=/usr/zeppelin-0.6.2-bin-all
 export ZEPPELIN_CONF_DIR=${ZEPPELIN_HOME}/conf
 export ZEPPELIN_NOTEBOOK_DIR=${ZEPPELIN_HOME}/notebook
 export ZEPPELIN_PORT=8080
+=======
+export ZEPPELIN_VERSION=0.6.2
+export ZEPPELIN_PACKAGE=$ZEPPELIN_VERSION-bin-all
+export ZEPPELIN_HOME=/usr/zeppelin-0.6.2-bin-all
+export ZEPPELIN_CONF_DIR=${ZEPPELIN_HOME}/conf
+export ZEPPELIN_NOTEBOOK_DIR=${ZEPPELIN_HOME}/notebook
+>>>>>>> upstream/master
 
 apt-get install -y git wget net-tools unzip python npm
 
@@ -18,8 +26,13 @@ wget -c "http://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/
 tar zxvf apache-maven-$MAVEN_VERSION-bin.tar.gz -C /usr/
 ln -s ${MAVEN_HOME} /usr/maven
 
+<<<<<<< HEAD
 wget -c "http://apache.mirrors.ovh.net/ftp.apache.org/dist/zeppelin/zeppelin-0.6.2/zeppelin-0.6.2-bin-all.tgz"
 tar zxvf zeppelin-0.6.2-bin-all.tgz -C /usr/
+=======
+wget -c "http://apache.mirrors.ovh.net/ftp.apache.org/dist/zeppelin/zeppelin-${ZEPPELIN_VERSION}/zeppelin-${ZEPPELIN_PACKAGE}.tgz"
+tar zxvf zeppelin-${ZEPPELIN_PACKAGE}.tgz -C /usr/
+>>>>>>> upstream/master
 ln -s ${ZEPPELIN_HOME} /usr/zeppelin
 
 cd ${ZEPPELIN_HOME}
@@ -28,6 +41,10 @@ cat > ${ZEPPELIN_HOME}/conf/zeppelin-env.sh <<CONF
 export ZEPPELIN_MEM="-Xmx1024m"
 export ZEPPELIN_JAVA_OPTS="-Dspark.home=/usr/spark"
 export ZEPPELIN_NOTEBOOK_DIR="/vagrant/notebook/"
+<<<<<<< HEAD
+=======
+export ZEPPELIN_PORT="8888"
+>>>>>>> upstream/master
 CONF
 
 ln -s ${ZEPPELIN_HOME}/bin/zeppelin-daemon.sh /etc/init.d/
@@ -39,4 +56,8 @@ echo "Starting Zeppelin..."
 sudo echo 'export SPARK_HOME=/usr/spark' >> /usr/zeppelin/conf/zeppelin-env.sh
 
 echo "Restarting Zeppelin..."
+<<<<<<< HEAD
 /etc/init.d/zeppelin-daemon.sh restart
+=======
+/etc/init.d/zeppelin-daemon.sh restart
+>>>>>>> upstream/master
