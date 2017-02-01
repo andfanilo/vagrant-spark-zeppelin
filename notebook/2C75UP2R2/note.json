@@ -838,7 +838,7 @@
     },
     {
       "text": "%md\nHere we have presented the first two higher order functions we are going to use in this course : `map` and `filter`. Those are called _element-wise_ transformations in that they take in a function and applies it to each element in the collection.\n\nWe can use them to do a number of things, from fetching the website associated with each URL in our collection to just squaring numbers. Imagine this scenario :\n\n```scala\n/*\n * Parses a file with URLs and puts them into a list of Strings, each being an URL to get\n */\ndef loadURLs(path: String): List[String] \u003d {\n    ...some code here to return list of urls...\n}\n\n/*\n * GET request on an URL and return the body\n */\ndef getBody(url: String): String \u003d {\n    ...some code here to return body...\n}\n\n/*\n * Detect if body consists of an image, we don\u0027t want those\n */\ndef filterImage(body: String): Boolean \u003d {\n    ...some code here to detect if it\u0027s an image...\n}\n\n// code to load a list of URLs and only return those who are not images\nval allURLsWithoutImages \u003d loadURLs(\"/data/list_of_urls.csv\").map(getBody).filter(filterImage)\n\n```",
-      "dateUpdated": "Jan 25, 2017 8:53:57 AM",
+      "dateUpdated": "Feb 1, 2017 8:05:08 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -852,7 +852,8 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "editorHide": true
+        "editorHide": true,
+        "tableHide": false
       },
       "settings": {
         "params": {},
@@ -866,8 +867,8 @@
         "msg": "\u003cp\u003eHere we have presented the first two higher order functions we are going to use in this course : \u003ccode\u003emap\u003c/code\u003e and \u003ccode\u003efilter\u003c/code\u003e. Those are called \u003cem\u003eelement-wise\u003c/em\u003e transformations in that they take in a function and applies it to each element in the collection.\u003c/p\u003e\n\u003cp\u003eWe can use them to do a number of things, from fetching the website associated with each URL in our collection to just squaring numbers. Imagine this scenario :\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"scala\"\u003e/*\n * Parses a file with URLs and puts them into a list of Strings, each being an URL to get\n */\ndef loadURLs(path: String): List[String] \u003d {\n    ...some code here to return list of urls...\n}\n\n/*\n * GET request on an URL and return the body\n */\ndef getBody(url: String): String \u003d {\n    ...some code here to return body...\n}\n\n/*\n * Detect if body consists of an image, we don\u0027t want those\n */\ndef filterImage(body: String): Boolean \u003d {\n    ...some code here to detect if it\u0027s an image...\n}\n\n// code to load a list of URLs and only return those who are not images\nval allURLsWithoutImages \u003d loadURLs(\"/data/list_of_urls.csv\").map(getBody).filter(filterImage)\n\u003c/code\u003e\u003c/pre\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 8:50:58 AM",
-      "dateStarted": "Jan 25, 2017 8:53:55 AM",
-      "dateFinished": "Jan 25, 2017 8:53:55 AM",
+      "dateStarted": "Feb 1, 2017 8:04:59 PM",
+      "dateFinished": "Feb 1, 2017 8:04:59 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1012,8 +1013,8 @@
     },
     {
       "title": "Return the list of squared numbers from 1 to 5",
-      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.map(x \u003d\u003e x)\n\nval expected \u003d List(1, 4, 9, 16, 25) ",
-      "dateUpdated": "Jan 25, 2017 9:03:16 AM",
+      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.map(x \u003d\u003e x*x)\n\nval expected \u003d List(1, 4, 9, 16, 25) ",
+      "dateUpdated": "Feb 1, 2017 8:19:08 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1038,18 +1039,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\nexpected: List[Int] \u003d List(1, 4, 9, 16, 25)\n"
+        "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: List[Int] \u003d List(1, 4, 9, 16, 25)\n\nexpected: List[Int] \u003d List(1, 4, 9, 16, 25)\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:13 AM",
-      "dateStarted": "Jan 25, 2017 9:03:16 AM",
-      "dateFinished": "Jan 25, 2017 9:03:17 AM",
+      "dateStarted": "Feb 1, 2017 8:19:08 PM",
+      "dateFinished": "Feb 1, 2017 8:19:09 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Return the sum of elements from 1 to 5",
-      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.reduce((x, y) \u003d\u003e x)\n\nval expected \u003d 15",
-      "dateUpdated": "Jan 25, 2017 9:23:28 AM",
+      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.reduce((x, y) \u003d\u003e x+y)\n\nval expected \u003d 15",
+      "dateUpdated": "Feb 1, 2017 8:19:35 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1074,18 +1075,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: Int \u003d 1\n\nexpected: Int \u003d 15\n"
+        "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: Int \u003d 15\n\nexpected: Int \u003d 15\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:20 AM",
-      "dateStarted": "Jan 25, 2017 9:23:28 AM",
-      "dateFinished": "Jan 25, 2017 9:23:29 AM",
+      "dateStarted": "Feb 1, 2017 8:19:35 PM",
+      "dateFinished": "Feb 1, 2017 8:19:36 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Return the sum of squared pair numbers between 1 and 100",
-      "text": "val input \u003d 1 to 100\nval output \u003d input.reduce((x, y) \u003d\u003e x)\n\nval expected \u003d 171700",
-      "dateUpdated": "Feb 1, 2017 9:13:45 AM",
+      "text": "val input \u003d 1 to 100\nval output \u003d input.map(x \u003d\u003e x*x).filter(x \u003d\u003e x % 2 \u003d\u003d 0).reduce((x, y) \u003d\u003e x+y)\nval expected \u003d 171700",
+      "dateUpdated": "Feb 1, 2017 8:26:33 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1110,11 +1111,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ninput: scala.collection.immutable.Range.Inclusive \u003d Range(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100)\n\noutput: Int \u003d 1\n\nexpected: Int \u003d 171700\n"
+        "msg": "\ninput: scala.collection.immutable.Range.Inclusive \u003d Range(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100)\n\noutput: Int \u003d 171700\n\nexpected: Int \u003d 171700\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:27 AM",
-      "dateStarted": "Feb 1, 2017 9:13:46 AM",
-      "dateFinished": "Feb 1, 2017 9:13:48 AM",
+      "dateStarted": "Feb 1, 2017 8:26:14 PM",
+      "dateFinished": "Feb 1, 2017 8:26:14 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
