@@ -1520,7 +1520,7 @@
     },
     {
       "text": "// load file into RDD and check 10 first lines\n\nval text \u003d sc.textFile(\"/opt/dataset/don-quijote.txt.gz\")\ntext.take(10)",
-      "dateUpdated": "Jan 25, 2017 1:54:29 AM",
+      "dateUpdated": "Feb 1, 2017 6:20:40 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1544,17 +1544,17 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ntext: org.apache.spark.rdd.RDD[String] \u003d /opt/dataset/don-quijote.txt.gz MapPartitionsRDD[118] at textFile at \u003cconsole\u003e:32\n\nres54: Array[String] \u003d Array(The Project Gutenberg EBook of Don Quijote, by Miguel de Cervantes Saavedra, \"\", This eBook is for the use of anyone anywhere at no cost and with, almost no restrictions whatsoever.  You may copy it, give it away or, re-use it under the terms of the Project Gutenberg License included, with this eBook or online at www.gutenberg.net, \"\", \"\", Title: Don Quijote, \"\")\n"
+        "msg": "\ntext: org.apache.spark.rdd.RDD[String] \u003d /opt/dataset/don-quijote.txt.gz MapPartitionsRDD[122] at textFile at \u003cconsole\u003e:46\n\nres80: Array[String] \u003d Array(The Project Gutenberg EBook of Don Quijote, by Miguel de Cervantes Saavedra, \"\", This eBook is for the use of anyone anywhere at no cost and with, almost no restrictions whatsoever.  You may copy it, give it away or, re-use it under the terms of the Project Gutenberg License included, with this eBook or online at www.gutenberg.net, \"\", \"\", Title: Don Quijote, \"\")\n"
       },
       "dateCreated": "Jan 25, 2017 1:49:31 AM",
-      "dateStarted": "Jan 25, 2017 1:54:29 AM",
-      "dateFinished": "Jan 25, 2017 1:54:30 AM",
+      "dateStarted": "Feb 1, 2017 6:20:40 PM",
+      "dateFinished": "Feb 1, 2017 6:20:41 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "text.doSomething",
-      "dateUpdated": "Jan 25, 2017 1:54:09 AM",
+      "text": "// text.doSomething\nval rdd \u003d sc.parallelize(text.take(10).flatMap(line \u003d\u003e line.split(\" \")).map(x \u003d\u003e (x, 1)))\nrdd.reduceByKey(_ + _).collect()",
+      "dateUpdated": "Feb 1, 2017 6:20:44 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1576,14 +1576,14 @@
       "jobName": "paragraph_1485352420257_-878908678",
       "id": "20170125-135340_1546349786",
       "result": {
-        "code": "ERROR",
+        "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\n\n\n\u003cconsole\u003e:33: error: value doSomething is not a member of org.apache.spark.rdd.RDD[String]\n              text.doSomething\n                   ^\n"
+        "msg": "\nrdd: org.apache.spark.rdd.RDD[(String, Int)] \u003d ParallelCollectionRDD[123] at parallelize at \u003cconsole\u003e:47\n\nres83: Array[(String, Int)] \u003d Array((under,1), (this,1), (is,1), (away,1), (anyone,1), (with,2), (whatsoever.,1), (\"\",5), (This,1), (EBook,1), (almost,1), (Title:,1), (eBook,2), (included,1), (it,,1), (re-use,1), (restrictions,1), (Quijote,1), (The,1), (it,2), (Miguel,1), (Saavedra,1), (de,1), (or,2), (You,1), (no,2), (License,1), (at,2), (online,1), (of,3), (copy,1), (by,1), (for,1), (Don,2), (Gutenberg,2), (cost,1), (Cervantes,1), (and,1), (anywhere,1), (Project,2), (terms,1), (give,1), (www.gutenberg.net,1), (use,1), (may,1), (the,3), (Quijote,,1))\n"
       },
       "dateCreated": "Jan 25, 2017 1:53:40 AM",
-      "dateStarted": "Jan 25, 2017 1:54:09 AM",
-      "dateFinished": "Jan 25, 2017 1:54:09 AM",
-      "status": "ERROR",
+      "dateStarted": "Feb 1, 2017 6:20:44 PM",
+      "dateFinished": "Feb 1, 2017 6:20:45 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
