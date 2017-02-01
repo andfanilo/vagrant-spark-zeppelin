@@ -20,11 +20,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # accessing "localhost:8080" will access port 80 on the guest machine.
   #
   # APACHE ZEPPELIN
-<<<<<<< HEAD
-  config.vm.network "forwarded_port", guest: 3535, host: 8080
-=======
   config.vm.network "forwarded_port", guest: 8888, host: 8888
->>>>>>> upstream/master
   #
   # APACHE SPARK UI
   config.vm.network "forwarded_port", guest: 4040, host: 4040
