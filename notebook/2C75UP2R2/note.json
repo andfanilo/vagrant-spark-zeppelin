@@ -1335,8 +1335,8 @@
     },
     {
       "title": "Create a random RDD of numbers, and find its mean.",
-      "text": "import util.Random.nextInt\nval input \u003d sc.parallelize(Seq.fill(10000)(nextInt))",
-      "dateUpdated": "Jan 25, 2017 1:41:43 AM",
+      "text": "import util.Random.nextInt\nval input \u003d sc.parallelize(Seq.fill(10000)(nextInt))\ninput.mean()",
+      "dateUpdated": "Feb 2, 2017 8:23:30 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1358,8 +1358,15 @@
       },
       "jobName": "paragraph_1485336877601_1857515653",
       "id": "20170125-093437_413700163",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nimport util.Random.nextInt\n\ninput: org.apache.spark.rdd.RDD[Int] \u003d ParallelCollectionRDD[11] at parallelize at \u003cconsole\u003e:32\n\nres8: Double \u003d 7754595.777299988\n"
+      },
       "dateCreated": "Jan 25, 2017 9:34:37 AM",
-      "status": "READY",
+      "dateStarted": "Feb 2, 2017 8:23:30 PM",
+      "dateFinished": "Feb 2, 2017 8:23:33 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -1404,8 +1411,8 @@
     },
     {
       "title": "Wordcount, easy mode",
-      "text": "val input \u003d sc.parallelize(Seq(\"hi\", \"my\", \"my\", \"name\", \"is\",\"hi\"))\nval output \u003d input\n\nval expected \u003d Array((\"is\",1), (\"my,2\"), (\"name\",1), (\"hi\",2))",
-      "dateUpdated": "Feb 1, 2017 10:36:22 AM",
+      "text": "val input \u003d sc.parallelize(Seq(\"hi\", \"my\", \"my\", \"name\", \"is\",\"hi\"))\nval output \u003d input.flatMap(ligne \u003d\u003e ligne.split(\" \")).map(a \u003d\u003e (a,1)).reduceByKey((a,b) \u003d\u003e a + b).collect()\n\nval expected \u003d Array((\"is\",1), (\"my,2\"), (\"name\",1), (\"hi\",2))",
+      "dateUpdated": "Feb 2, 2017 8:41:47 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1431,18 +1438,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ninput: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[152] at parallelize at \u003cconsole\u003e:41\n\noutput: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[152] at parallelize at \u003cconsole\u003e:41\n\nexpected: Array[java.io.Serializable] \u003d Array((is,1), my,2, (name,1), (hi,2))\n"
+        "msg": "\ninput: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[31] at parallelize at \u003cconsole\u003e:32\n\noutput: Array[(String, Int)] \u003d Array((is,1), (my,2), (name,1), (hi,2))\n\nexpected: Array[java.io.Serializable] \u003d Array((is,1), my,2, (name,1), (hi,2))\n"
       },
       "dateCreated": "Jan 25, 2017 9:58:36 AM",
-      "dateStarted": "Feb 1, 2017 10:36:20 AM",
-      "dateFinished": "Feb 1, 2017 10:36:21 AM",
+      "dateStarted": "Feb 2, 2017 8:41:47 PM",
+      "dateFinished": "Feb 2, 2017 8:41:49 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Sum ages per gender",
-      "text": "val rdd1 \u003d sc.parallelize(Seq((\"Patrick\", \"homme\"), (\"Sandra\", \"femme\"), (\"Faniki\", \"homme\"), (\"Noemie\", \"femme\"), (\"Francois\", \"homme\"), (\"Cassandre\", \"femme\")))\nval rdd2 \u003d sc.parallelize(Seq((\"Patrick\", 20), (\"Sandra\", 25), (\"Faniki\", 20), (\"Noemie\", 20), (\"Francois\", 30), (\"Cassandre\", 18)))\n\n// rdd1 and rdd2 are key-value rdds so you can join them and then continue the computation\nval output \u003d rdd1.join(rdd2)\n\nval expected \u003d Array((\"femme\", 63), (\"homme\", 70))",
-      "dateUpdated": "Feb 1, 2017 10:15:26 AM",
+      "text": "val rdd1 \u003d sc.parallelize(Seq((\"Patrick\", \"homme\"), (\"Sandra\", \"femme\"), (\"Faniki\", \"homme\"), (\"Noemie\", \"femme\"), (\"Francois\", \"homme\"), (\"Cassandre\", \"femme\")))\nval rdd2 \u003d sc.parallelize(Seq((\"Patrick\", 20), (\"Sandra\", 25), (\"Faniki\", 20), (\"Noemie\", 20), (\"Francois\", 30), (\"Cassandre\", 18)))\n\n// rdd1 and rdd2 are key-value rdds so you can join them and then continue the computation\nval output \u003d rdd1.join(rdd2).filter(a \u003d\u003e a !\u003d \u0027(\u0027 || a !\u003d \u0027)\u0027).collect()\n\nval expected \u003d Array((\"femme\", 63), (\"homme\", 70))",
+      "dateUpdated": "Feb 2, 2017 8:50:02 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1467,11 +1474,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nrdd1: org.apache.spark.rdd.RDD[(String, String)] \u003d ParallelCollectionRDD[131] at parallelize at \u003cconsole\u003e:41\n\nrdd2: org.apache.spark.rdd.RDD[(String, Int)] \u003d ParallelCollectionRDD[132] at parallelize at \u003cconsole\u003e:41\n\noutput: org.apache.spark.rdd.RDD[(String, (String, Int))] \u003d MapPartitionsRDD[135] at join at \u003cconsole\u003e:45\n\nexpected: Array[(String, Int)] \u003d Array((femme,63), (homme,70))\n"
+        "msg": "\nrdd1: org.apache.spark.rdd.RDD[(String, String)] \u003d ParallelCollectionRDD[48] at parallelize at \u003cconsole\u003e:32\n\nrdd2: org.apache.spark.rdd.RDD[(String, Int)] \u003d ParallelCollectionRDD[49] at parallelize at \u003cconsole\u003e:32\n\noutput: Array[(String, (String, Int))] \u003d Array((Cassandre,(femme,18)), (Patrick,(homme,20)), (Faniki,(homme,20)), (Francois,(homme,30)), (Sandra,(femme,25)), (Noemie,(femme,20)))\n\nexpected: Array[(String, Int)] \u003d Array((femme,63), (homme,70))\n"
       },
       "dateCreated": "Jan 25, 2017 1:04:11 AM",
-      "dateStarted": "Feb 1, 2017 10:15:26 AM",
-      "dateFinished": "Feb 1, 2017 10:15:29 AM",
+      "dateStarted": "Feb 2, 2017 8:50:02 PM",
+      "dateFinished": "Feb 2, 2017 8:50:05 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
