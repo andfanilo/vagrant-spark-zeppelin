@@ -1,8 +1,8 @@
 {
   "paragraphs": [
     {
-      "text": "%md\n\n# Introduction to Spark \u0026 Zeppelin\n#### An overview of the two Big Data tools.\n\nBefore pursuing, make sure you have saved the previous Interpreter binding window, otherwise you will get an error like `paragraph not found` when executing cells",
-      "dateUpdated": "Feb 1, 2017 10:32:11 AM",
+      "text": "%md\n\n# Introduction to Spark \u0026 Zeppelin\n#### An overview of the two Big Data tools.\n\nBefore pursuing, make sure you have saved the previous Interpreter binding window, otherwise you will get an error like `paragraph not found` when executing cells\n\n## TOUIJER \u0026 NESARATNAM",
+      "dateUpdated": "Feb 8, 2017 1:11:30 PM",
       "config": {
         "enabled": true,
         "tableHide": false,
@@ -21,7 +21,7 @@
           }
         },
         "editorMode": "ace/mode/markdown",
-        "editorHide": true,
+        "editorHide": false,
         "colWidth": 12.0
       },
       "settings": {
@@ -33,11 +33,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003ch1\u003eIntroduction to Spark \u0026amp; Zeppelin\u003c/h1\u003e\n\u003ch4\u003eAn overview of the two Big Data tools.\u003c/h4\u003e\n\u003cp\u003eBefore pursuing, make sure you have saved the previous Interpreter binding window, otherwise you will get an error like \u003ccode\u003eparagraph not found\u003c/code\u003e when executing cells\u003c/p\u003e\n"
+        "msg": "\u003ch1\u003eIntroduction to Spark \u0026amp; Zeppelin\u003c/h1\u003e\n\u003ch4\u003eAn overview of the two Big Data tools.\u003c/h4\u003e\n\u003cp\u003eBefore pursuing, make sure you have saved the previous Interpreter binding window, otherwise you will get an error like \u003ccode\u003eparagraph not found\u003c/code\u003e when executing cells\u003c/p\u003e\n\u003ch2\u003eTOUIJER \u0026amp; NESARATNAM\u003c/h2\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 1, 2017 10:32:09 AM",
-      "dateFinished": "Feb 1, 2017 10:32:09 AM",
+      "dateStarted": "Feb 8, 2017 1:11:30 PM",
+      "dateFinished": "Feb 8, 2017 1:11:30 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
