@@ -1742,7 +1742,7 @@
       "title": "Return the list of squared numbers from 1 to 5",
       "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.map(x \u003d\u003e x^2)\n\nval expected \u003d List(1, 4, 9, 16, 25) ",
       "user": "anonymous",
-      "dateUpdated": "Feb 8, 2017 3:14:57 PM",
+      "dateUpdated": "Feb 8, 2017 3:25:21 PM",
       "config": {
         "colWidth": 6.0,
         "enabled": true,
@@ -1770,7 +1770,7 @@
           "groups": [],
           "scatter": {}
         },
-        "editorHide": false,
+        "editorHide": true,
         "tableHide": false,
         "editorSetting": {
           "language": "scala"
@@ -1807,7 +1807,7 @@
       "title": "Return the sum of elements from 1 to 5",
       "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.reduce((x, y) \u003d\u003e x+y)\n\nval expected \u003d 15",
       "user": "anonymous",
-      "dateUpdated": "Feb 8, 2017 3:15:11 PM",
+      "dateUpdated": "Feb 8, 2017 3:25:22 PM",
       "config": {
         "colWidth": 6.0,
         "enabled": true,
@@ -1835,7 +1835,7 @@
           "groups": [],
           "scatter": {}
         },
-        "editorHide": false,
+        "editorHide": true,
         "tableHide": false,
         "editorSetting": {
           "language": "scala"
@@ -1872,7 +1872,7 @@
       "title": "Return the sum of squared pair numbers between 1 and 100",
       "text": "val input \u003d 1 to 100\nval output \u003d input.filter(_ % 2 \u003d\u003d 0).map(x \u003d\u003e x*x).reduce((x, y) \u003d\u003e x+y)\n\nval expected \u003d 171700",
       "user": "anonymous",
-      "dateUpdated": "Feb 8, 2017 3:22:25 PM",
+      "dateUpdated": "Feb 8, 2017 3:25:24 PM",
       "config": {
         "colWidth": 6.0,
         "enabled": true,
@@ -1900,7 +1900,7 @@
           "groups": [],
           "scatter": {}
         },
-        "editorHide": false,
+        "editorHide": true,
         "tableHide": false,
         "editorSetting": {
           "language": "scala"
@@ -1935,13 +1935,14 @@
     },
     {
       "title": "Get highest number in a list with a reduce",
-      "text": "import util.Random.nextInt\nval input \u003d Seq.fill(10)(nextInt)\nval output \u003d input.reduce((x, y) \u003d\u003e x)\n\nval expected \u003d input.max",
-      "dateUpdated": "Feb 8, 2017 3:22:32 PM",
+      "text": "import util.Random.nextInt\nval input \u003d Seq.fill(10)(nextInt)\ndef maxireduce (x: Int, y:Int): Int \u003d {\n    if (x \u003e y) {\n        return x\n    }\n    return y\n}\nval output \u003d input.reduce((x, y) \u003d\u003e maxireduce(x,y))\n\nval expected \u003d input.max",
+      "user": "anonymous",
+      "dateUpdated": "Feb 8, 2017 3:33:07 PM",
       "config": {
         "colWidth": 6.0,
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "editorHide": false,
+        "editorHide": true,
         "tableHide": false,
         "title": true,
         "results": [
@@ -1966,7 +1967,9 @@
           "groups": [],
           "scatter": {}
         },
-        "editorSetting": {}
+        "editorSetting": {
+          "language": "scala"
+        }
       },
       "settings": {
         "params": {},
@@ -1977,7 +1980,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "\nimport util.Random.nextInt\n\ninput: Seq[Int] \u003d List(1368154480, 932727527, -956762629, -741728139, 1912445161, 1215347429, 1054732247, -811870848, 762475751, 1567410629)\n\noutput: Int \u003d 1368154480\n\nexpected: Int \u003d 1912445161\n"
+            "data": "\nimport util.Random.nextInt\n\ninput: Seq[Int] \u003d List(-336091862, -1605666390, -2143005700, -1520468181, 58159624, -1012679986, -76790676, 495240535, -824595481, 2010689938)\n\nmaxireduce: (x: Int, y: Int)Int\n\noutput: Int \u003d 2010689938\n\nexpected: Int \u003d 2010689938\n"
           }
         ]
       },
@@ -1990,8 +1993,8 @@
       "jobName": "paragraph_1485334652733_875647972",
       "id": "20170125-085732_1286059698",
       "dateCreated": "Jan 25, 2017 8:57:32 AM",
-      "dateStarted": "Jan 25, 2017 12:49:26 PM",
-      "dateFinished": "Jan 25, 2017 12:49:29 PM",
+      "dateStarted": "Feb 8, 2017 3:33:00 PM",
+      "dateFinished": "Feb 8, 2017 3:33:01 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
