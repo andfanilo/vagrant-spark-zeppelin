@@ -203,8 +203,8 @@
     },
     {
       "title": "Shell cell",
-      "text": "%sh\necho \"Hello world\"",
-      "dateUpdated": "Feb 8, 2017 11:07:38 AM",
+      "text": "%sh\necho \"Hello world\"\necho \"I \u003c3 pancakes !\"",
+      "dateUpdated": "Feb 8, 2017 11:24:45 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -233,21 +233,20 @@
       "jobName": "paragraph_1485333124515_-33132219",
       "id": "20161205-135504_61539619",
       "result": {
-        "code": "ERROR",
+        "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "paragraph_1485333124515_-33132219\u0027s Interpreter sh not found"
+        "msg": "Hello world\nI \u003c3 pancakes !\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 1, 2017 6:51:19 AM",
-      "dateFinished": "Feb 1, 2017 6:51:20 AM",
-      "status": "ERROR",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 11:24:45 AM",
+      "dateFinished": "Feb 8, 2017 11:24:45 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Python cell",
-      "text": "%python\nprint(\"Hello world\")",
-      "dateUpdated": "Feb 8, 2017 11:07:39 AM",
+      "text": "%python\nprint(\"Hello world\")\n1+2",
+      "dateUpdated": "Feb 8, 2017 11:20:26 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -275,21 +274,20 @@
       "jobName": "paragraph_1485333124516_-35055964",
       "id": "20161205-140620_27821049",
       "result": {
-        "code": "ERROR",
+        "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "paragraph_1485333124516_-35055964\u0027s Interpreter python not found"
+        "msg": "Hello world\n3\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:33:22 AM",
-      "dateFinished": "Jan 25, 2017 8:33:23 AM",
-      "status": "ERROR",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 11:20:26 AM",
+      "dateFinished": "Feb 8, 2017 11:20:27 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Spark/Scala cell",
-      "text": "println(\"Hello world\")",
-      "dateUpdated": "Jan 25, 2017 8:33:26 AM",
+      "text": "println(\"Hello world\")\n1+2",
+      "dateUpdated": "Feb 8, 2017 11:21:13 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -319,11 +317,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "Hello world\n\nres1: Int \u003d 3\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:33:26 AM",
-      "dateFinished": "Jan 25, 2017 8:33:59 AM",
+      "dateStarted": "Feb 8, 2017 11:21:13 AM",
+      "dateFinished": "Feb 8, 2017 11:21:29 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
