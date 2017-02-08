@@ -70,7 +70,10 @@ _Done : `$ vagrant box list` should display debian/jessie64_
 
 #### 2. First steps with Git
 
-You are going to create your first branch, commit a personal message on this README, merge it back to your master branch and push your work back into your Github repo.
+You are going to create your first branch, commit a 
+
+
+l message on this README, merge it back to your master branch and push your work back into your Github repo.
 
 Don't forget to work in the project you just cloned: `$ cd vagrant-spark-zeppelin`.
 
@@ -97,7 +100,7 @@ $ git branch
 Add a message between the following lines:
 
 <hr>
-PERSONAL MESSAGE
+noureddine Boulanouar
 <hr>
 
 With `$ git status` you can check the status of your Git repository.
