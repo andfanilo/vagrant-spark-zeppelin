@@ -536,8 +536,8 @@
     },
     {
       "title": "Declaring variables",
-      "text": "val a \u003d 1 // val defines an immutable value\nvar b : Int \u003d 5 // var defines a mutable variable\nprintln(a + b)\n\nb \u003d 42\nprintln(a + b)\n\n// Note that the type of a variable or function is written after the variable or function. \n\n// Because Scala does type inference, it is also not necessary to declare type to variables when it looks obvious.",
-      "dateUpdated": "Feb 8, 2017 2:38:33 PM",
+      "text": "val a \u003d 1 // val defines an immutable value\nvar b : Int \u003d 1 // var defines a mutable variable\nprintln(a + b)\n\nb \u003d 42\nprintln(a + b)\n\n// Note that the type of a variable or function is written after the variable or function. \n\n// Because Scala does type inference, it is also not necessary to declare type to variables when it looks obvious.",
+      "dateUpdated": "Feb 8, 2017 2:52:46 PM",
       "config": {
         "enabled": true,
         "tableHide": false,
@@ -564,11 +564,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\na: Int \u003d 1\n\nb: Int \u003d 5\n6\n\nb: Int \u003d 42\n43\n"
+        "msg": "\na: Int \u003d 1\n\nb: Int \u003d 1\n2\n\nb: Int \u003d 42\n43\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 8, 2017 2:38:33 PM",
-      "dateFinished": "Feb 8, 2017 2:38:34 PM",
+      "dateStarted": "Feb 8, 2017 2:52:46 PM",
+      "dateFinished": "Feb 8, 2017 2:52:47 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -612,7 +612,7 @@
     },
     {
       "text": "%md\n\nIn Scala, you are encouraged to use a `val` whenever you can so to avoid mutable code. Scala prefers immutability by design and helps us reason through code only. \n\nIt also provides is with the necessary tooling to reason with immutability in mind. In the following row we study some basic collection methods which makes useless the need for mutable lists and for loops",
-      "dateUpdated": "Feb 8, 2017 2:21:31 PM",
+      "dateUpdated": "Feb 8, 2017 2:52:03 PM",
       "config": {
         "enabled": true,
         "graph": {
@@ -635,17 +635,21 @@
       },
       "jobName": "paragraph_1485333124524_-38133955",
       "id": "20161215-103526_1401793073",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eIn Scala, you are encouraged to use a \u003ccode\u003eval\u003c/code\u003e whenever you can so to avoid mutable code. Scala prefers immutability by design and helps us reason through code only.\u003c/p\u003e\n\u003cp\u003eIt also provides is with the necessary tooling to reason with immutability in mind. In the following row we study some basic collection methods which makes useless the need for mutable lists and for loops\u003c/p\u003e\n"
+      },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 9:37:06 AM",
-      "dateFinished": "Jan 25, 2017 9:37:06 AM",
+      "dateStarted": "Feb 8, 2017 2:52:03 PM",
+      "dateFinished": "Feb 8, 2017 2:52:03 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Create immutable sequence of numbers",
-      "text": "val sequenceNumbers \u003d 1 to 100",
-      "dateUpdated": "Feb 8, 2017 2:21:31 PM",
+      "text": "val sequenceNumbers \u003d 1 to 200",
+      "dateUpdated": "Feb 8, 2017 2:54:40 PM",
       "config": {
         "enabled": true,
         "tableHide": false,
@@ -669,17 +673,21 @@
       },
       "jobName": "paragraph_1485333124525_-38518704",
       "id": "20161215-104816_1792183840",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "sequenceNumbers: scala.collection.immutable.Range.Inclusive \u003d Range(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 16..."
+      },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:34:24 AM",
-      "dateFinished": "Jan 25, 2017 8:34:25 AM",
+      "dateStarted": "Feb 8, 2017 2:54:40 PM",
+      "dateFinished": "Feb 8, 2017 2:54:41 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "New list with all elements doubled",
       "text": "sequenceNumbers.map(x \u003d\u003e x * 2)\n\nsequenceNumbers.map(_ * 2)",
-      "dateUpdated": "Feb 8, 2017 2:21:31 PM",
+      "dateUpdated": "Feb 8, 2017 2:54:54 PM",
       "config": {
         "enabled": true,
         "tableHide": false,
@@ -703,15 +711,21 @@
       },
       "jobName": "paragraph_1485333124525_-38518704",
       "id": "20161215-104825_1497989654",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "res15: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100, 102, 104, 106, 108, 110, 112, 114, 116, 118, 120, 122, 124, 126, 128, 130, 132, 134, 136, 138, 140, 142, 144, 146, 148, 150, 152, 154, 156, 158, 160, 162, 164, 166, 168, 170, 172, 174, 176, 178, 180, 182, 184, 186, 188, 190, 192, 194, 196, 198, 200, 202, 204, 206, 208, 210, 212, 214, 216, 218, 220, 222, 224, 226, 228, 230, 232, 234, 236, 238, 240, 242, 244, 246, 248, 250, 252, 254, 256, 258, 260, 262, 264, 266, 268, 270, 272, 274, 276, 278, 280, 282, 284, 286, 288, 290, 292, 294, 296, 298, 300, 302, 304, 306, 308, 310, 312, 314, 316, 3...res16: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100, 102, 104, 106, 108, 110, 112, 114, 116, 118, 120, 122, 124, 126, 128, 130, 132, 134, 136, 138, 140, 142, 144, 146, 148, 150, 152, 154, 156, 158, 160, 162, 164, 166, 168, 170, 172, 174, 176, 178, 180, 182, 184, 186, 188, 190, 192, 194, 196, 198, 200, 202, 204, 206, 208, 210, 212, 214, 216, 218, 220, 222, 224, 226, 228, 230, 232, 234, 236, 238, 240, 242, 244, 246, 248, 250, 252, 254, 256, 258, 260, 262, 264, 266, 268, 270, 272, 274, 276, 278, 280, 282, 284, 286, 288, 290, 292, 294, 296, 298, 300, 302, 304, 306, 308, 310, 312, 314, 316, 3..."
+      },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 2:54:54 PM",
+      "dateFinished": "Feb 8, 2017 2:54:56 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "New list with pair numbers removed",
-      "text": "sequenceNumbers.filter(x \u003d\u003e x % 2 !\u003d 0)\n\nsequenceNumbers.filter(_ % 2 !\u003d 0)",
-      "dateUpdated": "Feb 8, 2017 2:21:31 PM",
+      "text": "sequenceNumbers.filter(x \u003d\u003e x % 4 !\u003d 0)\n\nsequenceNumbers.filter(_ % 4 !\u003d 0) // a pu de 4...!",
+      "dateUpdated": "Feb 8, 2017 3:03:03 PM",
       "config": {
         "enabled": true,
         "tableHide": false,
@@ -735,15 +749,21 @@
       },
       "jobName": "paragraph_1485333124531_-26976237",
       "id": "20161215-104829_934946861",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nres46: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(1, 2, 3, 5, 6, 7, 9, 10, 11, 13, 14, 15, 17, 18, 19, 21, 22, 23, 25, 26, 27, 29, 30, 31, 33, 34, 35, 37, 38, 39, 41, 42, 43, 45, 46, 47, 49, 50, 51, 53, 54, 55, 57, 58, 59, 61, 62, 63, 65, 66, 67, 69, 70, 71, 73, 74, 75, 77, 78, 79, 81, 82, 83, 85, 86, 87, 89, 90, 91, 93, 94, 95, 97, 98, 99, 101, 102, 103, 105, 106, 107, 109, 110, 111, 113, 114, 115, 117, 118, 119, 121, 122, 123, 125, 126, 127, 129, 130, 131, 133, 134, 135, 137, 138, 139, 141, 142, 143, 145, 146, 147, 149, 150, 151, 153, 154, 155, 157, 158, 159, 161, 162, 163, 165, 166, 167, 169, 170, 171, 173, 174, 175, 177, 178, 179, 181, 182, 183, 185, 186, 187, 189, 190, 191, 193, 194, 195, 197, 198, 199)\n\nres47: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(1, 2, 3, 5, 6, 7, 9, 10, 11, 13, 14, 15, 17, 18, 19, 21, 22, 23, 25, 26, 27, 29, 30, 31, 33, 34, 35, 37, 38, 39, 41, 42, 43, 45, 46, 47, 49, 50, 51, 53, 54, 55, 57, 58, 59, 61, 62, 63, 65, 66, 67, 69, 70, 71, 73, 74, 75, 77, 78, 79, 81, 82, 83, 85, 86, 87, 89, 90, 91, 93, 94, 95, 97, 98, 99, 101, 102, 103, 105, 106, 107, 109, 110, 111, 113, 114, 115, 117, 118, 119, 121, 122, 123, 125, 126, 127, 129, 130, 131, 133, 134, 135, 137, 138, 139, 141, 142, 143, 145, 146, 147, 149, 150, 151, 153, 154, 155, 157, 158, 159, 161, 162, 163, 165, 166, 167, 169, 170, 171, 173, 174, 175, 177, 178, 179, 181, 182, 183, 185, 186, 187, 189, 190, 191, 193, 194, 195, 197, 198, 199)\n"
+      },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 3:02:29 PM",
+      "dateFinished": "Feb 8, 2017 3:02:29 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Sum all elements",
       "text": "sequenceNumbers.reduce((x, y) \u003d\u003e x + y)\n\nsequenceNumbers.reduce(_ + _)",
-      "dateUpdated": "Feb 8, 2017 2:21:31 PM",
+      "dateUpdated": "Feb 8, 2017 3:00:40 PM",
       "config": {
         "enabled": true,
         "tableHide": false,
@@ -767,14 +787,20 @@
       },
       "jobName": "paragraph_1485333124532_-28899981",
       "id": "20161215-105147_1170476157",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nres26: Int \u003d 20100\n\nres27: Int \u003d 20100\n"
+      },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 3:00:40 PM",
+      "dateFinished": "Feb 8, 2017 3:00:41 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md \n###Primer on functional programming\nBefore going further, we need to go back to functional programming (sometimes abbreviated to FP in literature).\n\nIn functional programming, we construct our programs using _pure functions_, that is a function that takes an input and produces an output without any side-effects, thus forbidding mutation.\n\nAn essential and powerful concept of FP is the ability to pass functions as arguments. For example in the row below :",
-      "dateUpdated": "Feb 8, 2017 2:21:31 PM",
+      "dateUpdated": "Feb 8, 2017 3:01:08 PM",
       "config": {
         "enabled": true,
         "graph": {
@@ -797,16 +823,21 @@
       },
       "jobName": "paragraph_1485333124532_-28899981",
       "id": "20161215-105827_1534509278",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch3\u003ePrimer on functional programming\u003c/h3\u003e\n\u003cp\u003eBefore going further, we need to go back to functional programming (sometimes abbreviated to FP in literature).\u003c/p\u003e\n\u003cp\u003eIn functional programming, we construct our programs using \u003cem\u003epure functions\u003c/em\u003e, that is a function that takes an input and produces an output without any side-effects, thus forbidding mutation.\u003c/p\u003e\n\u003cp\u003eAn essential and powerful concept of FP is the ability to pass functions as arguments. For example in the row below :\u003c/p\u003e\n"
+      },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:37:56 AM",
-      "dateFinished": "Jan 25, 2017 8:37:57 AM",
+      "dateStarted": "Feb 8, 2017 3:01:08 PM",
+      "dateFinished": "Feb 8, 2017 3:01:08 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
+      "title": "étape 1",
       "text": "/*\n * The following function adds 2 to a number.\n */\ndef add2(x: Int): Int \u003d x + 2",
-      "dateUpdated": "Feb 8, 2017 2:21:31 PM",
+      "dateUpdated": "Feb 8, 2017 3:09:26 PM",
       "config": {
         "enabled": true,
         "graph": {
@@ -821,7 +852,8 @@
         "colWidth": 4.0,
         "editorMode": "ace/mode/scala",
         "tableHide": false,
-        "editorHide": false
+        "editorHide": false,
+        "title": true
       },
       "settings": {
         "params": {},
@@ -829,16 +861,21 @@
       },
       "jobName": "paragraph_1485333124532_-28899981",
       "id": "20161215-142142_191089995",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nadd2: (x: Int)Int\n"
+      },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 1:34:04 AM",
-      "dateFinished": "Jan 25, 2017 1:34:04 AM",
+      "dateStarted": "Feb 8, 2017 3:09:26 PM",
+      "dateFinished": "Feb 8, 2017 3:09:27 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
+      "title": "étape 2",
       "text": "/* now let\u0027s pass add2 function \n * to map,\n * a function that applies a function to each element of a  * list\n */\n\nList(1,2,3).map(add2)\n",
-      "dateUpdated": "Feb 8, 2017 2:21:31 PM",
+      "dateUpdated": "Feb 8, 2017 3:01:54 PM",
       "config": {
         "enabled": true,
         "graph": {
@@ -853,7 +890,8 @@
         "editorMode": "ace/mode/scala",
         "colWidth": 4.0,
         "tableHide": false,
-        "editorHide": false
+        "editorHide": false,
+        "title": true
       },
       "settings": {
         "params": {},
@@ -861,16 +899,21 @@
       },
       "jobName": "paragraph_1485333124533_-29284730",
       "id": "20161215-110440_1947087088",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nres34: List[Int] \u003d List(3, 4, 5)\n"
+      },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 1:34:26 AM",
-      "dateFinished": "Jan 25, 2017 1:34:27 AM",
+      "dateStarted": "Feb 8, 2017 3:01:24 PM",
+      "dateFinished": "Feb 8, 2017 3:01:24 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
+      "title": "étape 3",
       "text": "// in the following we pass an anonymous lambda function \n// in the filter function\nList(1,2,3,4).filter(x \u003d\u003e x \u003e 2)\nList(1,2,3,4).filter(_ \u003e 2)",
-      "dateUpdated": "Feb 8, 2017 2:21:31 PM",
+      "dateUpdated": "Feb 8, 2017 3:01:45 PM",
       "config": {
         "enabled": true,
         "graph": {
@@ -885,7 +928,8 @@
         "editorMode": "ace/mode/scala",
         "colWidth": 4.0,
         "tableHide": false,
-        "editorHide": false
+        "editorHide": false,
+        "title": true
       },
       "settings": {
         "params": {},
@@ -893,16 +937,20 @@
       },
       "jobName": "paragraph_1485333124533_-29284730",
       "id": "20161215-110528_1134018400",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nres37: List[Int] \u003d List(3, 4)\n\nres38: List[Int] \u003d List(3, 4)\n"
+      },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:50:39 AM",
-      "dateFinished": "Jan 25, 2017 8:50:40 AM",
+      "dateStarted": "Feb 8, 2017 3:01:27 PM",
+      "dateFinished": "Feb 8, 2017 3:01:27 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\nHere we have presented the first two higher order functions we are going to use in this course : `map` and `filter`. Those are called _element-wise_ transformations in that they take in a function and applies it to each element in the collection.\n\nWe can use them to do a number of things, from fetching the website associated with each URL in our collection to just squaring numbers. Imagine this scenario :\n\n```scala\n/*\n * Parses a file with URLs and puts them into a list of Strings, each being an URL to get\n */\ndef loadURLs(path: String): List[String] \u003d {\n    ...some code here to return list of urls...\n}\n\n/*\n * GET request on an URL and return the body\n */\ndef getBody(url: String): String \u003d {\n    ...some code here to return body...\n}\n\n/*\n * Detect if body consists of an image, we don\u0027t want those\n */\ndef filterImage(body: String): Boolean \u003d {\n    ...some code here to detect if it\u0027s an image...\n}\n\n// code to load a list of URLs and only return those who are not images\nval allURLsWithoutImages \u003d loadURLs(\"/data/list_of_urls.csv\").map(getBody).filter(filterImage)\n\n```",
-      "dateUpdated": "Feb 8, 2017 2:21:31 PM",
+      "dateUpdated": "Feb 8, 2017 3:09:47 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -925,16 +973,20 @@
       },
       "jobName": "paragraph_1485334258787_-305281031",
       "id": "20170125-085058_1374080418",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eHere we have presented the first two higher order functions we are going to use in this course : \u003ccode\u003emap\u003c/code\u003e and \u003ccode\u003efilter\u003c/code\u003e. Those are called \u003cem\u003eelement-wise\u003c/em\u003e transformations in that they take in a function and applies it to each element in the collection.\u003c/p\u003e\n\u003cp\u003eWe can use them to do a number of things, from fetching the website associated with each URL in our collection to just squaring numbers. Imagine this scenario :\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"scala\"\u003e/*\n * Parses a file with URLs and puts them into a list of Strings, each being an URL to get\n */\ndef loadURLs(path: String): List[String] \u003d {\n    ...some code here to return list of urls...\n}\n\n/*\n * GET request on an URL and return the body\n */\ndef getBody(url: String): String \u003d {\n    ...some code here to return body...\n}\n\n/*\n * Detect if body consists of an image, we don\u0027t want those\n */\ndef filterImage(body: String): Boolean \u003d {\n    ...some code here to detect if it\u0027s an image...\n}\n\n// code to load a list of URLs and only return those who are not images\nval allURLsWithoutImages \u003d loadURLs(\"/data/list_of_urls.csv\").map(getBody).filter(filterImage)\n\u003c/code\u003e\u003c/pre\u003e\n"
+      },
       "dateCreated": "Jan 25, 2017 8:50:58 AM",
-      "dateStarted": "Jan 25, 2017 8:53:55 AM",
-      "dateFinished": "Jan 25, 2017 8:53:55 AM",
+      "dateStarted": "Feb 8, 2017 3:09:47 PM",
+      "dateFinished": "Feb 8, 2017 3:09:47 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md \nThe other essential higher order function you need to learn is `reduce`, which walks a function through all the elements in a collection to produce an aggregated result. \n\nTo do that, the function operates on two elements in the sequence, and returns a new element of the same type, which is then passed to the same function with the next element in the list.\n\nA simple example of such a function is +, which we can use to sum all of the elements in our list.",
-      "dateUpdated": "Feb 8, 2017 2:21:31 PM",
+      "dateUpdated": "Feb 8, 2017 3:11:01 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -957,11 +1009,15 @@
       },
       "jobName": "paragraph_1485334533019_723135810",
       "id": "20170125-085533_1923530403",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eThe other essential higher order function you need to learn is \u003ccode\u003ereduce\u003c/code\u003e, which walks a function through all the elements in a collection to produce an aggregated result.\u003c/p\u003e\n\u003cp\u003eTo do that, the function operates on two elements in the sequence, and returns a new element of the same type, which is then passed to the same function with the next element in the list.\u003c/p\u003e\n\u003cp\u003eA simple example of such a function is +, which we can use to sum all of the elements in our list.\u003c/p\u003e\n"
+      },
       "dateCreated": "Jan 25, 2017 8:55:33 AM",
-      "dateStarted": "Jan 25, 2017 1:34:45 AM",
-      "dateFinished": "Jan 25, 2017 1:34:45 AM",
+      "dateStarted": "Feb 8, 2017 3:11:01 PM",
+      "dateFinished": "Feb 8, 2017 3:11:01 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -998,7 +1054,7 @@
     },
     {
       "text": "%md\nIn the previous row, imagine that the sum function operates on 1 and 2 and returns 3, \n\nthen that result is passed to the function along with the next element which is 3, and the result 6 is passed with the next element 4, and then the result 10 is passed with 5 etc...\n\n1 --|+\n2 --| 3 --|+\n3 --------| 6 --| +\n4 --------------| 10 --| +\n5 ---------------------| 15\n.etc...\n\nSimilar to `reduce` is `fold`, which takes a \"zero value\" in addition and passed in the initial call",
-      "dateUpdated": "Feb 8, 2017 2:21:32 PM",
+      "dateUpdated": "Feb 8, 2017 3:11:45 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1021,16 +1077,20 @@
       },
       "jobName": "paragraph_1485334558119_-356438955",
       "id": "20170125-085558_1894989290",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eIn the previous row, imagine that the sum function operates on 1 and 2 and returns 3,\u003c/p\u003e\n\u003cp\u003ethen that result is passed to the function along with the next element which is 3, and the result 6 is passed with the next element 4, and then the result 10 is passed with 5 etc\u0026hellip;\u003c/p\u003e\n\u003cp\u003e1 \u0026ndash;|+\n\u003cbr  /\u003e2 \u0026ndash;| 3 \u0026ndash;|+\n\u003cbr  /\u003e3 \u0026mdash;\u0026mdash;\u0026ndash;| 6 \u0026ndash;| +\n\u003cbr  /\u003e4 \u0026mdash;\u0026mdash;\u0026mdash;\u0026mdash;\u0026ndash;| 10 \u0026ndash;| +\n\u003cbr  /\u003e5 \u0026mdash;\u0026mdash;\u0026mdash;\u0026mdash;\u0026mdash;\u0026mdash;\u0026mdash;| 15\n\u003cbr  /\u003e.etc\u0026hellip;\u003c/p\u003e\n\u003cp\u003eSimilar to \u003ccode\u003ereduce\u003c/code\u003e is \u003ccode\u003efold\u003c/code\u003e, which takes a \u0026ldquo;zero value\u0026rdquo; in addition and passed in the initial call\u003c/p\u003e\n"
+      },
       "dateCreated": "Jan 25, 2017 8:55:58 AM",
-      "dateStarted": "Jan 25, 2017 9:42:13 AM",
-      "dateFinished": "Jan 25, 2017 9:42:13 AM",
+      "dateStarted": "Feb 8, 2017 3:11:45 PM",
+      "dateFinished": "Feb 8, 2017 3:11:45 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md \n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\nTry to solve the following rows. By editing the `val output \u003d ...` line, use `map`, `filter` and `reduce` with anonymous functions on the variable `input` to return a variable `output` that will be compared to the `expected`variable.\n\nRemember your session is interactive, it makes it easy to test intermediary values when chaining functions, example :\n```scala\ninput.map(...)                                  // 1st execution\ninput.map(...).filter(...)                      // 2nd execution\ninput.map(...).filter(...).reduce(...)          // 3rd execution\n```",
-      "dateUpdated": "Feb 8, 2017 2:21:32 PM",
+      "dateUpdated": "Feb 8, 2017 3:11:37 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1053,17 +1113,21 @@
       },
       "jobName": "paragraph_1485334565674_933254682",
       "id": "20170125-085605_508597900",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eTry to solve the following rows. By editing the \u003ccode\u003eval output \u003d ...\u003c/code\u003e line, use \u003ccode\u003emap\u003c/code\u003e, \u003ccode\u003efilter\u003c/code\u003e and \u003ccode\u003ereduce\u003c/code\u003e with anonymous functions on the variable \u003ccode\u003einput\u003c/code\u003e to return a variable \u003ccode\u003eoutput\u003c/code\u003e that will be compared to the \u003ccode\u003eexpected\u003c/code\u003evariable.\u003c/p\u003e\n\u003cp\u003eRemember your session is interactive, it makes it easy to test intermediary values when chaining functions, example :\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"scala\"\u003einput.map(...)                                  // 1st execution\ninput.map(...).filter(...)                      // 2nd execution\ninput.map(...).filter(...).reduce(...)          // 3rd execution\n\u003c/code\u003e\u003c/pre\u003e\n"
+      },
       "dateCreated": "Jan 25, 2017 8:56:05 AM",
-      "dateStarted": "Jan 25, 2017 9:26:55 AM",
-      "dateFinished": "Jan 25, 2017 9:26:55 AM",
+      "dateStarted": "Feb 8, 2017 3:11:37 PM",
+      "dateFinished": "Feb 8, 2017 3:11:37 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Return the list of squared numbers from 1 to 5",
-      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.map(x \u003d\u003e x)\n\nval expected \u003d List(1, 4, 9, 16, 25) ",
-      "dateUpdated": "Feb 8, 2017 2:21:32 PM",
+      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.map(x \u003d\u003e x*x)\n\nval expected \u003d List(1, 4, 9, 16, 25) ",
+      "dateUpdated": "Feb 8, 2017 3:12:32 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1087,17 +1151,21 @@
       },
       "jobName": "paragraph_1485334633765_969713882",
       "id": "20170125-085713_1325612841",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: List[Int] \u003d List(1, 4, 9, 16, 25)\n\nexpected: List[Int] \u003d List(1, 4, 9, 16, 25)\n"
+      },
       "dateCreated": "Jan 25, 2017 8:57:13 AM",
-      "dateStarted": "Jan 25, 2017 9:03:16 AM",
-      "dateFinished": "Jan 25, 2017 9:03:17 AM",
+      "dateStarted": "Feb 8, 2017 3:12:32 PM",
+      "dateFinished": "Feb 8, 2017 3:12:33 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Return the sum of elements from 1 to 5",
-      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.reduce((x, y) \u003d\u003e x)\n\nval expected \u003d 15",
-      "dateUpdated": "Feb 8, 2017 2:21:32 PM",
+      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.reduce((x, y) \u003d\u003e x+y)\n\nval expected \u003d 15",
+      "dateUpdated": "Feb 8, 2017 3:13:03 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1121,17 +1189,21 @@
       },
       "jobName": "paragraph_1485334640547_1179417357",
       "id": "20170125-085720_2133991651",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: Int \u003d 15\n\nexpected: Int \u003d 15\n"
+      },
       "dateCreated": "Jan 25, 2017 8:57:20 AM",
-      "dateStarted": "Jan 25, 2017 9:23:28 AM",
-      "dateFinished": "Jan 25, 2017 9:23:29 AM",
+      "dateStarted": "Feb 8, 2017 3:13:03 PM",
+      "dateFinished": "Feb 8, 2017 3:13:04 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Return the sum of squared pair numbers between 1 and 100",
-      "text": "val input \u003d 1 to 100\nval output \u003d input.reduce((x, y) \u003d\u003e x)\n\nval expected \u003d 171700",
-      "dateUpdated": "Feb 8, 2017 2:21:32 PM",
+      "text": "val input \u003d 1 to 100\nval output \u003d input.map(x \u003d\u003e x*x).filter(_ % 2 \u003d\u003d 0).reduce((x, y) \u003d\u003e (x+y))\n// moui pas evident \nval expected \u003d 171700",
+      "dateUpdated": "Feb 8, 2017 3:23:24 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1155,11 +1227,15 @@
       },
       "jobName": "paragraph_1485334647814_1417359099",
       "id": "20170125-085727_408760662",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\ninput: scala.collection.immutable.Range.Inclusive \u003d Range(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100)\n\noutput: Int \u003d 171700\n\nexpected: Int \u003d 171700\n"
+      },
       "dateCreated": "Jan 25, 2017 8:57:27 AM",
-      "dateStarted": "Feb 1, 2017 9:13:46 AM",
-      "dateFinished": "Feb 1, 2017 9:13:48 AM",
+      "dateStarted": "Feb 8, 2017 3:23:24 PM",
+      "dateFinished": "Feb 8, 2017 3:23:25 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -1497,7 +1573,7 @@
     },
     {
       "text": "%md \n\n#### To the real wordcount\n\nWe are missing an important operator before going to the normal wordcount as we know it : `flatten`, which flattens the lists held inside the outer list into one resulting list.\n\n```scala\nscala\u003e val lol \u003d List(List(1,2), List(3,4))\nlol: List[List[Int]] \u003d List(List(1, 2), List(3, 4))\n\nscala\u003e val result \u003d lol.flatten\nresult: List[Int] \u003d List(1, 2, 3, 4)\n```\n\nIn general, when reading a text, you get an array of lines like :\n\n```scala\nval text \u003d Seq(\n    \"coucou\",\n    \"ceci est le cours de mapreduce\",\n    \"ce n\u0027est pas difficile\",\n    \"n\u0027est ce pas ?\"\n)\n```\n\nif I want the list of all the words, first I need to split each line into words and then flatten the whole :\n\n```scala\nscala\u003e val split \u003d text.map(line \u003d\u003e line.split(\" \"))\nresult: List[Array(String)] \u003d List(Array(\"coucou\"), Array(\"ceci\", \"est\", \"le\" ...))\n\nscala\u003e val flat \u003d split.flatten\nresult: List[String] \u003d List(\"coucou\", \"ceci\", \"est\", \"le\" ...))\n```\n\nYou get the same result if you use `flatMap` :\n\n```scala\nscala\u003e val flat \u003d text.flatMap(line \u003d\u003e line.split(\" \"))\nresult: List[String] \u003d List(\"coucou\", \"ceci\", \"est\", \"le\" ...))\n```\n\n\u003chr/\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nTry the wordcount on a textfile `/opt/dataset/don-quijote.txt.gz` read with Spark into a RDD ! This is it, this is the classic Hello world, it uses `flatMap` as the Hadoop Map and `reduceByKey` as the Hadoop Reduce.",
-      "dateUpdated": "Feb 8, 2017 2:21:33 PM",
+      "dateUpdated": "Feb 8, 2017 2:59:38 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1520,11 +1596,15 @@
       },
       "jobName": "paragraph_1485349147677_33622721",
       "id": "20170125-125907_1086033982",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch4\u003eTo the real wordcount\u003c/h4\u003e\n\u003cp\u003eWe are missing an important operator before going to the normal wordcount as we know it : \u003ccode\u003eflatten\u003c/code\u003e, which flattens the lists held inside the outer list into one resulting list.\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"scala\"\u003escala\u0026gt; val lol \u003d List(List(1,2), List(3,4))\nlol: List[List[Int]] \u003d List(List(1, 2), List(3, 4))\n\nscala\u0026gt; val result \u003d lol.flatten\nresult: List[Int] \u003d List(1, 2, 3, 4)\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eIn general, when reading a text, you get an array of lines like :\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"scala\"\u003eval text \u003d Seq(\n    \"coucou\",\n    \"ceci est le cours de mapreduce\",\n    \"ce n\u0027est pas difficile\",\n    \"n\u0027est ce pas ?\"\n)\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eif I want the list of all the words, first I need to split each line into words and then flatten the whole :\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"scala\"\u003escala\u0026gt; val split \u003d text.map(line \u003d\u0026gt; line.split(\" \"))\nresult: List[Array(String)] \u003d List(Array(\"coucou\"), Array(\"ceci\", \"est\", \"le\" ...))\n\nscala\u0026gt; val flat \u003d split.flatten\nresult: List[String] \u003d List(\"coucou\", \"ceci\", \"est\", \"le\" ...))\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eYou get the same result if you use \u003ccode\u003eflatMap\u003c/code\u003e :\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"scala\"\u003escala\u0026gt; val flat \u003d text.flatMap(line \u003d\u0026gt; line.split(\" \"))\nresult: List[String] \u003d List(\"coucou\", \"ceci\", \"est\", \"le\" ...))\n\u003c/code\u003e\u003c/pre\u003e\n\u003chr/\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eTry the wordcount on a textfile \u003ccode\u003e/opt/dataset/don-quijote.txt.gz\u003c/code\u003e read with Spark into a RDD ! This is it, this is the classic Hello world, it uses \u003ccode\u003eflatMap\u003c/code\u003e as the Hadoop Map and \u003ccode\u003ereduceByKey\u003c/code\u003e as the Hadoop Reduce.\u003c/p\u003e\n"
+      },
       "dateCreated": "Jan 25, 2017 12:59:07 PM",
-      "dateStarted": "Jan 25, 2017 1:53:30 AM",
-      "dateFinished": "Jan 25, 2017 1:53:30 AM",
+      "dateStarted": "Feb 8, 2017 2:59:38 PM",
+      "dateFinished": "Feb 8, 2017 2:59:38 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -1593,7 +1673,7 @@
     },
     {
       "text": "%md\r\n### Working with **Spark SQL and DataFrames**\r\nThe variable **sqlContext** allows you to access a Spark SQL Context to work with Spark SQL and DataFrames.\r\n* Scala can be used to create Spark [DataFrames](http://spark.apache.org/docs/latest/sql-programming-guide.html) - a distributed collection of data organized into named columns.\r\n* DataFrames are created by appending ``.toDF()`` to the Scala RDD\r\n\r\nIn this tutorial, we will analyze the ipligence-lite csv file with SparkSQL. It is a Free IP location database solution to detect the country and continent of the visitor connection based on their IP address. [Download here if needed](http://www.ipligence.com/free-ip-database). You\u0027ll get the schema of the file there.\r\n\r\nBefore, we had to use [spark-csv](https://github.com/databricks/spark-csv) and use reflection to build Dataframes from csv files. Now spark-csv is directly integrated into Spark as a Data Source, so it is easy to parse csv files into Dataframes.\r\n\r\n**Important note:** Do not create the *sqlContext* variable - it is already initialized for you.",
-      "dateUpdated": "Feb 8, 2017 2:21:33 PM",
+      "dateUpdated": "Feb 8, 2017 2:59:34 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1616,16 +1696,20 @@
       },
       "jobName": "paragraph_1485348757555_-689252064",
       "id": "20170125-125237_922206168",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch3\u003eWorking with \u003cstrong\u003eSpark SQL and DataFrames\u003c/strong\u003e\u003c/h3\u003e\n\u003cp\u003eThe variable \u003cstrong\u003esqlContext\u003c/strong\u003e allows you to access a Spark SQL Context to work with Spark SQL and DataFrames.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eScala can be used to create Spark \u003ca href\u003d\"http://spark.apache.org/docs/latest/sql-programming-guide.html\"\u003eDataFrames\u003c/a\u003e - a distributed collection of data organized into named columns.\u003c/li\u003e\n\u003cli\u003eDataFrames are created by appending \u003ccode\u003e.toDF()\u003c/code\u003e to the Scala RDD\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eIn this tutorial, we will analyze the ipligence-lite csv file with SparkSQL. It is a Free IP location database solution to detect the country and continent of the visitor connection based on their IP address. \u003ca href\u003d\"http://www.ipligence.com/free-ip-database\"\u003eDownload here if needed\u003c/a\u003e. You\u0027ll get the schema of the file there.\u003c/p\u003e\n\u003cp\u003eBefore, we had to use \u003ca href\u003d\"https://github.com/databricks/spark-csv\"\u003espark-csv\u003c/a\u003e and use reflection to build Dataframes from csv files. Now spark-csv is directly integrated into Spark as a Data Source, so it is easy to parse csv files into Dataframes.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eImportant note:\u003c/strong\u003e Do not create the \u003cem\u003esqlContext\u003c/em\u003e variable - it is already initialized for you.\u003c/p\u003e\n"
+      },
       "dateCreated": "Jan 25, 2017 12:52:37 PM",
-      "dateStarted": "Feb 1, 2017 9:16:09 AM",
-      "dateFinished": "Feb 1, 2017 9:16:09 AM",
+      "dateStarted": "Feb 8, 2017 2:59:34 PM",
+      "dateFinished": "Feb 8, 2017 2:59:34 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "// let\u0027s check the file we are going to use\nval ipligence \u003d sc.textFile(\"/opt/dataset/ipligence-lite.csv\")\nipligence.take(1)",
-      "dateUpdated": "Feb 8, 2017 2:21:33 PM",
+      "dateUpdated": "Feb 8, 2017 2:59:20 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1649,15 +1733,14 @@
       "jobName": "paragraph_1485932362834_-790510610",
       "id": "20170201-065922_1040411609",
       "dateCreated": "Feb 1, 2017 6:59:22 AM",
-      "dateStarted": "Feb 1, 2017 9:17:21 AM",
-      "dateFinished": "Feb 1, 2017 9:17:22 AM",
-      "status": "FINISHED",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 2:59:20 PM",
+      "dateFinished": "Feb 8, 2017 2:59:30 PM",
+      "status": "ABORT",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "// create your dataframe by reading the csv file\nval columnNames \u003d Seq(\"IP_FROM\", \"IP_TO\", \"COUNTRY_CODE\", \"COUNTRY_NAME\", \"CONTINENT_CODE\", \"CONTINENT_NAME\")\nval df \u003d sqlContext.read.csv(\"/opt/dataset/ipligence-lite.csv\").toDF(columnNames: _*)\ndf.printSchema()\ndf.show()\n\n// if you want to use the dataframe in SQL, you must register it\ndf.registerTempTable(\"df\")",
-      "dateUpdated": "Feb 8, 2017 2:21:33 PM",
+      "dateUpdated": "Feb 8, 2017 2:59:17 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1680,16 +1763,20 @@
       },
       "jobName": "paragraph_1485933377297_-99994725",
       "id": "20170201-071617_1372276620",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\ncolumnNames: Seq[String] \u003d List(IP_FROM, IP_TO, COUNTRY_CODE, COUNTRY_NAME, CONTINENT_CODE, CONTINENT_NAME)\n\ndf: org.apache.spark.sql.DataFrame \u003d [IP_FROM: string, IP_TO: string ... 4 more fields]\nroot\n |-- IP_FROM: string (nullable \u003d true)\n |-- IP_TO: string (nullable \u003d true)\n |-- COUNTRY_CODE: string (nullable \u003d true)\n |-- COUNTRY_NAME: string (nullable \u003d true)\n |-- CONTINENT_CODE: string (nullable \u003d true)\n |-- CONTINENT_NAME: string (nullable \u003d true)\n\n+----------+----------+------------+------------+--------------+--------------+\n|   IP_FROM|     IP_TO|COUNTRY_CODE|COUNTRY_NAME|CONTINENT_CODE|CONTINENT_NAME|\n+----------+----------+------------+------------+--------------+--------------+\n|0000000000|0016777215|        null|        null|          null|          null|\n|0016777216|0016777471|          AU|   AUSTRALIA|            OC|       OCEANIA|\n|0016777472|0016778239|          CN|       CHINA|            AS|          ASIA|\n|0016778240|0016779263|          AU|   AUSTRALIA|            OC|       OCEANIA|\n|0016779264|0016781311|          CN|       CHINA|            AS|          ASIA|\n|0016781312|0016785407|          JP|       JAPAN|            AS|          ASIA|\n|0016785408|0016793599|          CN|       CHINA|            AS|          ASIA|\n|0016793600|0016809983|          JP|       JAPAN|            AS|          ASIA|\n|0016809984|0016842751|          TH|    THAILAND|            AS|          ASIA|\n|0016842752|0016843007|          CN|       CHINA|            AS|          ASIA|\n|0016843008|0016843263|          AU|   AUSTRALIA|            OC|       OCEANIA|\n|0016843264|0016859135|          CN|       CHINA|            AS|          ASIA|\n|0016859136|0016875519|          JP|       JAPAN|            AS|          ASIA|\n|0016875520|0016908287|          TH|    THAILAND|            AS|          ASIA|\n|0016908288|0016909055|          CN|       CHINA|            AS|          ASIA|\n|0016909056|0016909311|          AU|   AUSTRALIA|            OC|       OCEANIA|\n|0016909312|0016941055|          CN|       CHINA|            AS|          ASIA|\n|0016941056|0016973823|          TH|    THAILAND|            AS|          ASIA|\n|0016973824|0017039359|          CN|       CHINA|            AS|          ASIA|\n|0017039360|0017039615|          AU|   AUSTRALIA|            OC|       OCEANIA|\n+----------+----------+------------+------------+--------------+--------------+\nonly showing top 20 rows\n\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n"
+      },
       "dateCreated": "Feb 1, 2017 7:16:17 AM",
-      "dateStarted": "Feb 1, 2017 10:10:32 AM",
-      "dateFinished": "Feb 1, 2017 10:10:34 AM",
+      "dateStarted": "Feb 8, 2017 2:59:17 PM",
+      "dateFinished": "Feb 8, 2017 2:59:31 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\nYou have two ways to use the dataframe in SparkSQL.\n\n1. From the SQL API of sqlContext : `sqlContext.sql(\"SELECT IP_TO FROM df\")` see this\n2. FROM the functional API : `df.select(\"IP_TO\")`\n\nTo show the beginning of the actual dataframe, use the show() function, which is an action and so executes all of the computation.",
-      "dateUpdated": "Feb 8, 2017 2:21:33 PM",
+      "dateUpdated": "Feb 8, 2017 2:59:13 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1712,11 +1799,15 @@
       },
       "jobName": "paragraph_1485940909537_-1550931041",
       "id": "20170201-092149_1555341566",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eYou have two ways to use the dataframe in SparkSQL.\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003eFrom the SQL API of sqlContext : \u003ccode\u003esqlContext.sql(\"SELECT IP_TO FROM df\")\u003c/code\u003e see this\u003c/li\u003e\n\u003cli\u003eFROM the functional API : \u003ccode\u003edf.select(\"IP_TO\")\u003c/code\u003e\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003eTo show the beginning of the actual dataframe, use the show() function, which is an action and so executes all of the computation.\u003c/p\u003e\n"
+      },
       "dateCreated": "Feb 1, 2017 9:21:49 AM",
-      "dateStarted": "Feb 1, 2017 10:04:15 AM",
-      "dateFinished": "Feb 1, 2017 10:04:15 AM",
+      "dateStarted": "Feb 8, 2017 2:59:13 PM",
+      "dateFinished": "Feb 8, 2017 2:59:13 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -1785,7 +1876,7 @@
     },
     {
       "text": "%md\n\nBecause the result of those are Dataframes, you can store them in a new variable or register them for future usage.\n```scala\n// filter with functional api\nval ipDf \u003d sqlContext.sql(\"SELECT IP_FROM,IP_TO FROM df\")\nipDf.filter(\"IP_FROM \u003d \u00270016777216\u0027\").show()\n\n// register from inside SQL API\nsqlContext.sql(\"SELECT IP_FROM,IP_TO,CONTINENT_NAME FROM df WHERE CONTINENT_NAME\u003d\u0027ASIA\u0027\").registerTempTable(\"asiaOnlyDF\")\n```\n\n\u003chr\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nSolve the following queries, using one or both APIs.",
-      "dateUpdated": "Feb 8, 2017 2:21:33 PM",
+      "dateUpdated": "Feb 8, 2017 2:58:59 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1808,11 +1899,15 @@
       },
       "jobName": "paragraph_1485942187408_659198275",
       "id": "20170201-094307_1855187218",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eBecause the result of those are Dataframes, you can store them in a new variable or register them for future usage.\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"scala\"\u003e// filter with functional api\nval ipDf \u003d sqlContext.sql(\"SELECT IP_FROM,IP_TO FROM df\")\nipDf.filter(\"IP_FROM \u003d \u00270016777216\u0027\").show()\n\n// register from inside SQL API\nsqlContext.sql(\"SELECT IP_FROM,IP_TO,CONTINENT_NAME FROM df WHERE CONTINENT_NAME\u003d\u0027ASIA\u0027\").registerTempTable(\"asiaOnlyDF\")\n\u003c/code\u003e\u003c/pre\u003e\n\u003chr\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eSolve the following queries, using one or both APIs.\u003c/p\u003e\n"
+      },
       "dateCreated": "Feb 1, 2017 9:43:07 AM",
-      "dateStarted": "Feb 1, 2017 10:04:28 AM",
-      "dateFinished": "Feb 1, 2017 10:04:28 AM",
+      "dateStarted": "Feb 8, 2017 2:58:59 PM",
+      "dateFinished": "Feb 8, 2017 2:58:59 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -1953,7 +2048,7 @@
     },
     {
       "text": "%md\n\n#### Primer on Zeppelin visualization\n\nIf your dataframe is registered, you can use the %sql interpreter to directly study it. \n\nNormally the %sql interpreter is used to connect to a Hive metastore, the thing is a registered dataframe is actually present in the local Hive metastore so you can access it as a fake Hive table (you can see it for yourself with `sqlContext.sql(\"SHOW TABLES\").show()`)\n\nWith the %sql interpreter, you have access to basic visualization features of Zeppelin.",
-      "dateUpdated": "Feb 8, 2017 2:21:34 PM",
+      "dateUpdated": "Feb 8, 2017 2:59:07 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1976,11 +2071,15 @@
       },
       "jobName": "paragraph_1485352733614_-571683130",
       "id": "20170125-135853_1126980502",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch4\u003ePrimer on Zeppelin visualization\u003c/h4\u003e\n\u003cp\u003eIf your dataframe is registered, you can use the %sql interpreter to directly study it.\u003c/p\u003e\n\u003cp\u003eNormally the %sql interpreter is used to connect to a Hive metastore, the thing is a registered dataframe is actually present in the local Hive metastore so you can access it as a fake Hive table (you can see it for yourself with \u003ccode\u003esqlContext.sql(\"SHOW TABLES\").show()\u003c/code\u003e)\u003c/p\u003e\n\u003cp\u003eWith the %sql interpreter, you have access to basic visualization features of Zeppelin.\u003c/p\u003e\n"
+      },
       "dateCreated": "Jan 25, 2017 1:58:53 AM",
-      "dateStarted": "Feb 1, 2017 10:23:22 AM",
-      "dateFinished": "Feb 1, 2017 10:23:22 AM",
+      "dateStarted": "Feb 8, 2017 2:59:08 PM",
+      "dateFinished": "Feb 8, 2017 2:59:08 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
