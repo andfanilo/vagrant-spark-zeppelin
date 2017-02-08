@@ -203,8 +203,8 @@
     },
     {
       "title": "Shell cell",
-      "text": "%sh\necho \"Hello world\"",
-      "dateUpdated": "Feb 1, 2017 6:51:19 AM",
+      "text": "%sh\necho \"Hello worlds\"",
+      "dateUpdated": "Feb 8, 2017 2:52:57 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -235,24 +235,24 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "Hello worlds\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 1, 2017 6:51:19 AM",
-      "dateFinished": "Feb 1, 2017 6:51:20 AM",
+      "dateStarted": "Feb 8, 2017 2:52:57 PM",
+      "dateFinished": "Feb 8, 2017 2:52:57 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Python cell",
-      "text": "%python\nprint(\"Hello world\")",
-      "dateUpdated": "Jan 25, 2017 8:33:22 AM",
+      "text": "%python\nprint(\"Hello world\")\n1+2",
+      "dateUpdated": "Feb 8, 2017 2:52:19 PM",
       "config": {
         "enabled": true,
         "title": true,
         "graph": {
           "mode": "table",
-          "height": 300.0,
+          "height": 93.14999389648438,
           "optionOpen": false,
           "keys": [],
           "values": [],
@@ -264,7 +264,7 @@
             "pinCols": []
           }
         },
-        "editorMode": "ace/mode/python",
+        "editorMode": "ace/mode/scala",
         "colWidth": 4.0
       },
       "settings": {
@@ -276,18 +276,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "Hello world\n3\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:33:22 AM",
-      "dateFinished": "Jan 25, 2017 8:33:23 AM",
+      "dateStarted": "Feb 8, 2017 2:52:19 PM",
+      "dateFinished": "Feb 8, 2017 2:52:19 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Spark/Scala cell",
-      "text": "println(\"Hello world\")",
-      "dateUpdated": "Jan 25, 2017 8:33:26 AM",
+      "text": "println(\"Hello worlds\")",
+      "dateUpdated": "Feb 8, 2017 2:53:04 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -317,11 +317,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "Hello worlds\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:33:26 AM",
-      "dateFinished": "Jan 25, 2017 8:33:59 AM",
+      "dateStarted": "Feb 8, 2017 2:53:04 PM",
+      "dateFinished": "Feb 8, 2017 2:53:20 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -2141,24 +2141,24 @@
   "name": "Practice",
   "id": "2C75UP2R2",
   "angularObjects": {
-    "2C93MQCCX:shared_process": [],
-    "2CAFQY6K3:shared_process": [],
-    "2C71Z8V22:shared_process": [],
-    "2C74PSEZQ:shared_process": [],
-    "2C7936H5V:shared_process": [],
-    "2C6WY8JHA:shared_process": [],
-    "2C8CCCVZ2:shared_process": [],
-    "2C9JTS6JQ:shared_process": [],
-    "2C91JKV9H:shared_process": [],
-    "2C8N1PP7C:shared_process": [],
-    "2C7YTW7VT:shared_process": [],
-    "2C85G18U9:shared_process": [],
-    "2C9XYSTEH:shared_process": [],
-    "2CA474ZG3:shared_process": [],
-    "2C8JNXQ9U:shared_process": [],
-    "2C827138T:shared_process": [],
-    "2CAA7GXEJ:shared_process": [],
-    "2C8W1GCP8:shared_process": []
+    "2C859QUAJ:shared_process": [],
+    "2CAKGRZKA:shared_process": [],
+    "2C7VVMDV7:shared_process": [],
+    "2CB9JP2BT:shared_process": [],
+    "2CA3MTYDQ:shared_process": [],
+    "2C831H5Y1:shared_process": [],
+    "2CAWNC5QM:shared_process": [],
+    "2CAW4PG9Y:shared_process": [],
+    "2C91YMBFY:shared_process": [],
+    "2CBE6N7HE:shared_process": [],
+    "2C8585CR5:shared_process": [],
+    "2C9CTF3PS:shared_process": [],
+    "2CA4TR49M:shared_process": [],
+    "2C8P5KEB1:shared_process": [],
+    "2C95C9JAP:shared_process": [],
+    "2C9MPDS8M:shared_process": [],
+    "2C9BUEN25:shared_process": [],
+    "2CB5WTSVP:shared_process": []
   },
   "config": {
     "looknfeel": "default"
