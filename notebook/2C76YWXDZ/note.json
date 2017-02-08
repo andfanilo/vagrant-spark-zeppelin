@@ -108,7 +108,7 @@
     {
       "title": "Load data (run the cell)",
       "text": "import org.apache.spark.sql.types.{StringType, DoubleType, StructType, StructField}\n\nval schema \u003d StructType(Seq(\n    StructField(\"age\", DoubleType),\n    StructField(\"workclass\", StringType),\n    StructField(\"fnlwgt\", DoubleType),\n    StructField(\"education\", StringType),\n    StructField(\"education_num\", DoubleType),\n    StructField(\"marital_status\", StringType),\n    StructField(\"occupation\", StringType),\n    StructField(\"relationship\", StringType),\n    StructField(\"race\", StringType),\n    StructField(\"sex\", StringType),\n    StructField(\"capital_gain\", DoubleType),\n    StructField(\"capital_loss\", DoubleType),\n    StructField(\"hours_per_week\", DoubleType),\n    StructField(\"native_country\", StringType),\n    StructField(\"income\", StringType)\n    ))\n\ncase class Adult(\n    age: Double, \n    workclass: String, \n    fnlwgt: Double, \n    education: String, \n    education_num: Double, \n    marital_status: String, \n    occupation: String, \n    relationship: String, \n    race: String, \n    sex: String, \n    capital_gain: Double, \n    capital_loss: Double, \n    hours_per_week: Double, \n    native_country: String, \n    income: String\n    )\n    \nval dataset \u003d spark.read.schema(schema).csv(\"/opt/dataset/adult.data.csv\").as[Adult]\ndataset.registerTempTable(\"dataset\")  // register it so we can use it inside %sql interpreter",
-      "dateUpdated": "Feb 7, 2017 12:55:38 PM",
+      "dateUpdated": "Feb 8, 2017 6:20:20 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -123,7 +123,7 @@
         "enabled": true,
         "editorMode": "ace/mode/scala",
         "title": true,
-        "editorHide": true,
+        "editorHide": false,
         "tableHide": true
       },
       "settings": {
@@ -135,17 +135,17 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nimport org.apache.spark.sql.types.{StringType, DoubleType, StructType, StructField}\n\nschema: org.apache.spark.sql.types.StructType \u003d StructType(StructField(age,DoubleType,true), StructField(workclass,StringType,true), StructField(fnlwgt,DoubleType,true), StructField(education,StringType,true), StructField(education_num,DoubleType,true), StructField(marital_status,StringType,true), StructField(occupation,StringType,true), StructField(relationship,StringType,true), StructField(race,StringType,true), StructField(sex,StringType,true), StructField(capital_gain,DoubleType,true), StructField(capital_loss,DoubleType,true), StructField(hours_per_week,DoubleType,true), StructField(native_country,StringType,true), StructField(income,StringType,true))\n\ndefined class Adult\n\ndataset: org.apache.spark.sql.Dataset[Adult] \u003d [age: double, workclass: string ... 13 more fields]\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n"
+        "msg": "\nimport org.apache.spark.sql.types.{StringType, DoubleType, StructType, StructField}\n\nschema: org.apache.spark.sql.types.StructType \u003d StructType(StructField(age,DoubleType,true), StructField(workclass,StringType,true), StructField(fnlwgt,DoubleType,true), StructField(education,StringType,true), StructField(education_num,DoubleType,true), StructField(marital_status,StringType,true), StructField(occupation,StringType,true), StructField(relationship,StringType,true), StructField(race,StringType,true), StructField(sex,StringType,true), StructField(capital_gain,DoubleType,true), StructField(capital_loss,DoubleType,true), StructField(hours_per_week,DoubleType,true), StructField(native_country,StringType,true), StructField(income,StringType,true))\n\ndefined class Adult\n\ndataset: org.apache.spark.sql.Dataset[Adult] \u003d [age: double, workclass: string ... 13 more fields]\n\ndatalol: org.apache.spark.sql.DataFrame \u003d [age: double, workclass: string ... 13 more fields]\n\nres13: org.apache.spark.sql.DataFrame \u003d [age: double, workclass: string ... 13 more fields]\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n"
       },
       "dateCreated": "Feb 3, 2017 8:43:33 AM",
-      "dateStarted": "Feb 7, 2017 12:55:39 PM",
-      "dateFinished": "Feb 7, 2017 12:55:47 PM",
+      "dateStarted": "Feb 8, 2017 6:18:10 PM",
+      "dateFinished": "Feb 8, 2017 6:18:12 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "dataset.printSchema()",
-      "dateUpdated": "Feb 7, 2017 12:55:39 PM",
+      "text": "%md\nExplanation\n-----------\nThe above cell imports the dataset into our environment.\nFirst it will parse the csv inferring the csv schema using the specified structure and then convert the RDD to a dataset.\nThe dataset API brings the best of both worlds (RDD and dataframe).\nAs seen previously the variable will then be available throughout the notebook",
+      "dateUpdated": "Feb 8, 2017 6:20:44 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -158,28 +158,28 @@
           "scatter": {}
         },
         "enabled": true,
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/markdown"
       },
       "settings": {
         "params": {},
         "forms": {}
       },
-      "jobName": "paragraph_1486388735078_22636095",
-      "id": "20170206-134535_81642944",
+      "jobName": "paragraph_1486577194793_1370305975",
+      "id": "20170208-180634_1968090769",
       "result": {
         "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": "root\n |-- age: double (nullable \u003d true)\n |-- workclass: string (nullable \u003d true)\n |-- fnlwgt: double (nullable \u003d true)\n |-- education: string (nullable \u003d true)\n |-- education_num: double (nullable \u003d true)\n |-- marital_status: string (nullable \u003d true)\n |-- occupation: string (nullable \u003d true)\n |-- relationship: string (nullable \u003d true)\n |-- race: string (nullable \u003d true)\n |-- sex: string (nullable \u003d true)\n |-- capital_gain: double (nullable \u003d true)\n |-- capital_loss: double (nullable \u003d true)\n |-- hours_per_week: double (nullable \u003d true)\n |-- native_country: string (nullable \u003d true)\n |-- income: string (nullable \u003d true)\n\n"
+        "type": "HTML",
+        "msg": "\u003ch2\u003eExplanation\u003c/h2\u003e\n\u003cp\u003eThe above cell imports the dataset into our environment.\n\u003cbr  /\u003eFirst it will parse the csv inferring the csv schema using the specified structure and then convert the RDD to a dataset.\n\u003cbr  /\u003eThe dataset API brings the best of both worlds (RDD and dataframe).\n\u003cbr  /\u003eAs seen previously the variable will then be available throughout the notebook\u003c/p\u003e\n"
       },
-      "dateCreated": "Feb 6, 2017 1:45:35 AM",
-      "dateStarted": "Feb 7, 2017 12:55:39 PM",
-      "dateFinished": "Feb 7, 2017 12:55:48 PM",
+      "dateCreated": "Feb 8, 2017 6:06:34 PM",
+      "dateStarted": "Feb 8, 2017 6:20:45 PM",
+      "dateFinished": "Feb 8, 2017 6:20:45 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%sql SELECT * FROM dataset LIMIT 10",
-      "dateUpdated": "Feb 7, 2017 12:55:39 PM",
+      "text": "dataset.printSchema() // This statement shows information (attributes) about the dataframe\ndataset // This statement prints info about the variable + its value",
+      "dateUpdated": "Feb 8, 2017 6:21:53 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -190,6 +190,98 @@
           "values": [],
           "groups": [],
           "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1486388735078_22636095",
+      "id": "20170206-134535_81642944",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "root\n |-- age: double (nullable \u003d true)\n |-- workclass: string (nullable \u003d true)\n |-- fnlwgt: double (nullable \u003d true)\n |-- education: string (nullable \u003d true)\n |-- education_num: double (nullable \u003d true)\n |-- marital_status: string (nullable \u003d true)\n |-- occupation: string (nullable \u003d true)\n |-- relationship: string (nullable \u003d true)\n |-- race: string (nullable \u003d true)\n |-- sex: string (nullable \u003d true)\n |-- capital_gain: double (nullable \u003d true)\n |-- capital_loss: double (nullable \u003d true)\n |-- hours_per_week: double (nullable \u003d true)\n |-- native_country: string (nullable \u003d true)\n |-- income: string (nullable \u003d true)\n\n\nres20: org.apache.spark.sql.Dataset[Adult] \u003d [age: double, workclass: string ... 13 more fields]\n"
+      },
+      "dateCreated": "Feb 6, 2017 1:45:35 AM",
+      "dateStarted": "Feb 8, 2017 6:21:51 PM",
+      "dateFinished": "Feb 8, 2017 6:21:51 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nExplanation\n-----------\nAs we can see the dataset is indeed a dataset and we can see the structure of it using printSchema",
+      "dateUpdated": "Feb 8, 2017 6:22:58 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1486578125271_-1078506927",
+      "id": "20170208-182205_827478738",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003eExplanation\u003c/h2\u003e\n\u003cp\u003eAs we can see the dataset is indeed a dataset and we can see the structure of it using printSchema\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 8, 2017 6:22:05 PM",
+      "dateStarted": "Feb 8, 2017 6:22:58 PM",
+      "dateFinished": "Feb 8, 2017 6:22:58 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql \nSELECT * FROM dataset LIMIT 10",
+      "dateUpdated": "Feb 8, 2017 6:26:42 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "age",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "workclass",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "age",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "workclass",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
         },
         "enabled": true,
         "editorMode": "ace/mode/sql"
@@ -206,8 +298,191 @@
         "msg": "age\tworkclass\tfnlwgt\teducation\teducation_num\tmarital_status\toccupation\trelationship\trace\tsex\tcapital_gain\tcapital_loss\thours_per_week\tnative_country\tincome\n39.0\t State-gov\t77516.0\t Bachelors\t13.0\t Never-married\t Adm-clerical\t Not-in-family\t White\t Male\t2174.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n50.0\t Self-emp-not-inc\t83311.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t13.0\t United-States\t \u003c\u003d50K\n38.0\t Private\t215646.0\t HS-grad\t9.0\t Divorced\t Handlers-cleaners\t Not-in-family\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n53.0\t Private\t234721.0\t 11th\t7.0\t Married-civ-spouse\t Handlers-cleaners\t Husband\t Black\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n28.0\t Private\t338409.0\t Bachelors\t13.0\t Married-civ-spouse\t Prof-specialty\t Wife\t Black\t Female\t0.0\t0.0\t40.0\t Cuba\t \u003c\u003d50K\n37.0\t Private\t284582.0\t Masters\t14.0\t Married-civ-spouse\t Exec-managerial\t Wife\t White\t Female\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n49.0\t Private\t160187.0\t 9th\t5.0\t Married-spouse-absent\t Other-service\t Not-in-family\t Black\t Female\t0.0\t0.0\t16.0\t Jamaica\t \u003c\u003d50K\n52.0\t Self-emp-not-inc\t209642.0\t HS-grad\t9.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t45.0\t United-States\t \u003e50K\n31.0\t Private\t45781.0\t Masters\t14.0\t Never-married\t Prof-specialty\t Not-in-family\t White\t Female\t14084.0\t0.0\t50.0\t United-States\t \u003e50K\n42.0\t Private\t159449.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t5178.0\t0.0\t40.0\t United-States\t \u003e50K\n"
       },
       "dateCreated": "Feb 3, 2017 8:41:09 AM",
-      "dateStarted": "Feb 7, 2017 12:55:48 PM",
-      "dateFinished": "Feb 7, 2017 12:55:52 PM",
+      "dateStarted": "Feb 8, 2017 6:26:42 PM",
+      "dateFinished": "Feb 8, 2017 6:26:42 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nExplanation\n-----------\nThe above cell shows the first ten rows from the dataset. It proves that the dataset was successfully populated using the csv.\nI like to make sure that all the data was imported therefore let’s add another simple request to count the results.",
+      "dateUpdated": "Feb 8, 2017 6:27:48 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1486578234541_84943098",
+      "id": "20170208-182354_286011222",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003eExplanation\u003c/h2\u003e\n\u003cp\u003eThe above cell shows the first ten rows from the dataset. It proves that the dataset was successfully populated using the csv.\n\u003cbr  /\u003eI like to make sure that all the data was imported therefore let’s add another simple request to count the results.\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 8, 2017 6:23:54 PM",
+      "dateStarted": "Feb 8, 2017 6:27:48 PM",
+      "dateFinished": "Feb 8, 2017 6:27:48 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql SELECT count(*) FROM dataset",
+      "dateUpdated": "Feb 8, 2017 6:29:13 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "count(1)",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "count(1)",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sql",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1486578475395_-1047420532",
+      "id": "20170208-182755_1604584431",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "count(1)\n32561\n"
+      },
+      "dateCreated": "Feb 8, 2017 6:27:55 PM",
+      "dateStarted": "Feb 8, 2017 6:28:11 PM",
+      "dateFinished": "Feb 8, 2017 6:28:13 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nExplanation\n-----------\nHere we’re expecting 48842 lines and the output of the previous cell is 32 561.\nLet’s check the original file…\nAccording to the VagrantFile the synced folder on the VM should be located at /opt/dataset",
+      "dateUpdated": "Feb 8, 2017 6:33:14 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1486578566621_1553386799",
+      "id": "20170208-182926_1777531620",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003eExplanation\u003c/h2\u003e\n\u003cp\u003eHere we’re expecting 48842 lines and the output of the previous cell is 32 561.\n\u003cbr  /\u003eLet’s check the original file…\n\u003cbr  /\u003eAccording to the VagrantFile the synced folder on the VM should be located at /opt/dataset\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 8, 2017 6:29:26 PM",
+      "dateStarted": "Feb 8, 2017 6:33:14 PM",
+      "dateFinished": "Feb 8, 2017 6:33:14 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sh\nls /opt/dataset # lists the directory structure\nwc -l /opt/dataset/adult.data.csv # count lines of a file",
+      "dateUpdated": "Feb 8, 2017 6:34:09 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sh"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1486578665777_1315766865",
+      "id": "20170208-183105_1602327075",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "adult.data.csv\ndon-quijote.txt.gz\nhttp_access_200304.log.gz\nhttp_access_200305.log.gz\nhttp_access_200306.log.gz\nhttp_access_200307.log.gz\nhttp_access_200308.log.gz\nhttp_access_200309.log.gz\nhttp_access_200310.log.gz\nhttp_access_200311.log.gz\nipligence-lite.csv\nREADME.md\n32562 /opt/dataset/adult.data.csv\n"
+      },
+      "dateCreated": "Feb 8, 2017 6:31:05 PM",
+      "dateStarted": "Feb 8, 2017 6:34:09 PM",
+      "dateFinished": "Feb 8, 2017 6:34:09 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nExplanation\n-----------\nNow that everything looks normal we can now continue.",
+      "dateUpdated": "Feb 8, 2017 6:36:51 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1486578863953_-871947380",
+      "id": "20170208-183423_1396750355",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003eExplanation\u003c/h2\u003e\n\u003cp\u003eNow that everything looks normal we can now continue.\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 8, 2017 6:34:23 PM",
+      "dateStarted": "Feb 8, 2017 6:36:51 PM",
+      "dateFinished": "Feb 8, 2017 6:36:51 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -662,24 +937,24 @@
   "name": "BinaryClassification",
   "id": "2C76YWXDZ",
   "angularObjects": {
-    "2C93MQCCX:shared_process": [],
-    "2CAFQY6K3:shared_process": [],
-    "2C71Z8V22:shared_process": [],
-    "2C74PSEZQ:shared_process": [],
-    "2C7936H5V:shared_process": [],
-    "2C6WY8JHA:shared_process": [],
-    "2C8CCCVZ2:shared_process": [],
-    "2C9JTS6JQ:shared_process": [],
-    "2C91JKV9H:shared_process": [],
-    "2C8N1PP7C:shared_process": [],
-    "2C7YTW7VT:shared_process": [],
-    "2C85G18U9:shared_process": [],
-    "2C9XYSTEH:shared_process": [],
-    "2CA474ZG3:shared_process": [],
-    "2C8JNXQ9U:shared_process": [],
-    "2C827138T:shared_process": [],
-    "2CAA7GXEJ:shared_process": [],
-    "2C8W1GCP8:shared_process": []
+    "2C8BY6Q9K:shared_process": [],
+    "2C76YH1S1:shared_process": [],
+    "2C9Z2GMDM:shared_process": [],
+    "2C8BFKB31:shared_process": [],
+    "2C7JWPF8R:shared_process": [],
+    "2C9HYCD12:shared_process": [],
+    "2C875QNWF:shared_process": [],
+    "2C918EXTH:shared_process": [],
+    "2C98T9FSC:shared_process": [],
+    "2C78JCHV5:shared_process": [],
+    "2C79XUTYR:shared_process": [],
+    "2C9T4XQCR:shared_process": [],
+    "2C78SWJ7Q:shared_process": [],
+    "2C9EUPWDS:shared_process": [],
+    "2CAP5F25C:shared_process": [],
+    "2CA2674VK:shared_process": [],
+    "2CATBDKBB:shared_process": [],
+    "2C9ZF6Y6K:shared_process": []
   },
   "config": {},
   "info": {}
