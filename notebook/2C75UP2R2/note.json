@@ -1831,8 +1831,8 @@
     },
     {
       "title": "Display all continent names",
-      "text": "",
-      "dateUpdated": "Feb 1, 2017 9:50:17 AM",
+      "text": "//val ipdf\u003dsqlContext.sql(\"SELECT CONTINENT_NAME FROM df\").show()\ndf.select(\"CONTINENT_NAME\")",
+      "dateUpdated": "Feb 8, 2017 3:49:05 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1846,7 +1846,9 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "title": true
+        "title": true,
+        "editorHide": false,
+        "tableHide": false
       },
       "settings": {
         "params": {},
@@ -1855,14 +1857,14 @@
       "jobName": "paragraph_1485942495411_965115810",
       "id": "20170201-094815_410703547",
       "result": {
-        "code": "SUCCESS",
+        "code": "ERROR",
         "type": "TEXT",
-        "msg": ""
+        "msg": "\n\n\n\u003cconsole\u003e:28: error: not found: value df\n       df.select(\"CONTINENT_NAME\")\n       ^\n"
       },
       "dateCreated": "Feb 1, 2017 9:48:15 AM",
-      "dateStarted": "Feb 1, 2017 9:50:18 AM",
-      "dateFinished": "Feb 1, 2017 9:50:18 AM",
-      "status": "FINISHED",
+      "dateStarted": "Feb 8, 2017 3:49:01 PM",
+      "dateFinished": "Feb 8, 2017 3:49:01 PM",
+      "status": "ERROR",
       "progressUpdateIntervalMs": 500
     },
     {
