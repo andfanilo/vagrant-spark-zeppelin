@@ -203,8 +203,8 @@
     },
     {
       "title": "Shell cell",
-      "text": "%sh\necho \"Hello world\"",
-      "dateUpdated": "Feb 1, 2017 6:51:19 AM",
+      "text": "%sh\necho \"coucou\"",
+      "dateUpdated": "Feb 8, 2017 11:11:39 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -235,18 +235,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "coucou\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 1, 2017 6:51:19 AM",
-      "dateFinished": "Feb 1, 2017 6:51:20 AM",
+      "dateStarted": "Feb 8, 2017 11:11:39 AM",
+      "dateFinished": "Feb 8, 2017 11:11:40 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Python cell",
-      "text": "%python\nprint(\"Hello world\")",
-      "dateUpdated": "Jan 25, 2017 8:33:22 AM",
+      "text": "%python\nprint(\"coucou\")",
+      "dateUpdated": "Feb 8, 2017 11:11:48 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -276,18 +276,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "coucou\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:33:22 AM",
-      "dateFinished": "Jan 25, 2017 8:33:23 AM",
+      "dateStarted": "Feb 8, 2017 11:11:48 AM",
+      "dateFinished": "Feb 8, 2017 11:11:49 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Spark/Scala cell",
-      "text": "println(\"Hello world\")",
-      "dateUpdated": "Jan 25, 2017 8:33:26 AM",
+      "text": "println(\"coucou\")",
+      "dateUpdated": "Feb 8, 2017 11:11:58 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -317,11 +317,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "coucou\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:33:26 AM",
-      "dateFinished": "Jan 25, 2017 8:33:59 AM",
+      "dateStarted": "Feb 8, 2017 11:11:58 AM",
+      "dateFinished": "Feb 8, 2017 11:12:13 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -406,7 +406,7 @@
     {
       "title": "Some arithmetic",
       "text": "8 * 5 + 2",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "dateUpdated": "Feb 8, 2017 10:57:32 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -429,12 +429,12 @@
       "jobName": "paragraph_1485333124522_-35825462",
       "id": "20161215-101647_1780031444",
       "result": {
-        "code": "SUCCESS",
+        "code": "ERROR",
         "type": "TEXT",
-        "msg": "res2: Int \u003d 42\n"
+        "msg": "paragraph_1485333124522_-35825462\u0027s Interpreter null not found"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
+      "status": "ERROR",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
@@ -2141,24 +2141,24 @@
   "name": "Practice",
   "id": "2C75UP2R2",
   "angularObjects": {
-    "2C93MQCCX:shared_process": [],
-    "2CAFQY6K3:shared_process": [],
-    "2C71Z8V22:shared_process": [],
-    "2C74PSEZQ:shared_process": [],
-    "2C7936H5V:shared_process": [],
-    "2C6WY8JHA:shared_process": [],
-    "2C8CCCVZ2:shared_process": [],
-    "2C9JTS6JQ:shared_process": [],
-    "2C91JKV9H:shared_process": [],
-    "2C8N1PP7C:shared_process": [],
-    "2C7YTW7VT:shared_process": [],
-    "2C85G18U9:shared_process": [],
-    "2C9XYSTEH:shared_process": [],
-    "2CA474ZG3:shared_process": [],
-    "2C8JNXQ9U:shared_process": [],
-    "2C827138T:shared_process": [],
-    "2CAA7GXEJ:shared_process": [],
-    "2C8W1GCP8:shared_process": []
+    "2C81RDSJS:shared_process": [],
+    "2C87V2GHB:shared_process": [],
+    "2C8Q694WT:shared_process": [],
+    "2CAA931TF:shared_process": [],
+    "2C9N7UV8Q:shared_process": [],
+    "2C86DXG64:shared_process": [],
+    "2C7NUUJ1M:shared_process": [],
+    "2C827XGS7:shared_process": [],
+    "2CAQD7YZH:shared_process": [],
+    "2CAWR4SMH:shared_process": [],
+    "2C8U4C2T7:shared_process": [],
+    "2C9EKNY53:shared_process": [],
+    "2CBENFM5N:shared_process": [],
+    "2CA5S8492:shared_process": [],
+    "2C8TG7FS8:shared_process": [],
+    "2CB3EF7YK:shared_process": [],
+    "2C7HPMJ18:shared_process": [],
+    "2CA58GXKE:shared_process": []
   },
   "config": {
     "looknfeel": "default"
