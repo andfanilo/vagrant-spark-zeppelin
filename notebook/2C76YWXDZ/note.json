@@ -462,6 +462,100 @@
       "progressUpdateIntervalMs": 500
     },
     {
+      "text": "%sql SELECT occupation, count(*) FROM dataset WHERE marital_status LIKE \"%Divorced%\" OR marital_status LIKE \"%Separated%\" GROUP BY occupation",
+      "dateUpdated": "Feb 8, 2017 7:36:58 PM",
+      "config": {
+        "colWidth": 9.0,
+        "graph": {
+          "mode": "multiBarChart",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "occupation",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "count(1)",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "occupation",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "count(1)",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sql",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1486581501567_2020763941",
+      "id": "20170208-191821_1247910689",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "occupation\tcount(1)\n Farming-fishing\t82\n Handlers-cleaners\t166\n Prof-specialty\t638\n Adm-clerical\t966\n Exec-managerial\t698\n Craft-repair\t567\n Sales\t527\n ?\t251\n Tech-support\t168\n Transport-moving\t218\n Protective-serv\t95\n Machine-op-inspct\t361\n Other-service\t691\n Priv-house-serv\t40\n"
+      },
+      "dateCreated": "Feb 8, 2017 7:18:21 PM",
+      "dateStarted": "Feb 8, 2017 7:35:01 PM",
+      "dateFinished": "Feb 8, 2017 7:35:02 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n\n\n\nQuels-sont les métiers qui engendrent le plus de séparation ?\n\nLes employés de bureaux sont les plus concernés suivis.\nLes moins concernés sont les employés de maison et les pêcheurs à la ligne !",
+      "dateUpdated": "Feb 8, 2017 7:39:39 PM",
+      "config": {
+        "colWidth": 3.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1486582613114_588350364",
+      "id": "20170208-193653_633641955",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eQuels-sont les métiers qui engendrent le plus de séparation ?\u003c/p\u003e\n\u003cp\u003eLes employés de bureaux sont les plus concernés suivis.\n\u003cbr  /\u003eLes moins concernés sont les employés de maison et les pêcheurs à la ligne !\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 8, 2017 7:36:53 PM",
+      "dateStarted": "Feb 8, 2017 7:39:37 PM",
+      "dateFinished": "Feb 8, 2017 7:39:37 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
       "text": "%md \n\n## IV. Data preprocessing\n\nSince we are going to try algorithms like Logistic Regression, we will have to convert the categorical variables in the dataset into numeric variables. There are 2 ways we can do this.\n\n- Category Indexing. This is basically assigning a numeric value to each category from {0, 1, 2, ...numCategories-1}. This introduces an implicit ordering among your categories, and is more suitable for ordinal variables (eg: Poor: 0, Average: 1, Good: 2)\n- [One-Hot Encoding](http://spark.apache.org/docs/latest/ml-features.html#onehotencoder). This converts categories into binary vectors with at most one positive value (eg: (Blue: 1, 0, 0), (Green: 0, 1, 0), (Red: 0, 0, 1))",
       "dateUpdated": "Feb 7, 2017 12:55:41 PM",
       "config": {
