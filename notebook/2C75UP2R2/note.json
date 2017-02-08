@@ -1088,8 +1088,8 @@
     },
     {
       "title": "Return the sum of squared pair numbers between 1 and 100",
-      "text": "val input \u003d 1 to 100\nval input2\u003d input.map((x%2)\u003d0)\nval output \u003d input.reduce((x, y) \u003d\u003e x+y)\n\nval expected \u003d 171700",
-      "dateUpdated": "Feb 8, 2017 12:56:59 PM",
+      "text": "val input \u003d 1 to 100\n\nval input2\u003d input.filter(x\u003d\u003ex%2\u003d\u003d0).map(x\u003d\u003ex*x)\n\nval output \u003d input2.reduce((x, y) \u003d\u003e x+y)\n\nval expected \u003d 171700",
+      "dateUpdated": "Feb 8, 2017 1:10:27 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1112,14 +1112,14 @@
       "jobName": "paragraph_1485334647814_1417359099",
       "id": "20170125-085727_408760662",
       "result": {
-        "code": "ERROR",
+        "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ninput: scala.collection.immutable.Range.Inclusive \u003d Range(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100)\n\n\n\n\u003cconsole\u003e:1: error: \u0027)\u0027 expected but \u0027\u003d\u0027 found.\nval input2\u003d input.map((x%2)\u003d0)\n                           ^\n"
+        "msg": "\ninput: scala.collection.immutable.Range.Inclusive \u003d Range(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100)\n\ninput2: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(4, 16, 36, 64, 100, 144, 196, 256, 324, 400, 484, 576, 676, 784, 900, 1024, 1156, 1296, 1444, 1600, 1764, 1936, 2116, 2304, 2500, 2704, 2916, 3136, 3364, 3600, 3844, 4096, 4356, 4624, 4900, 5184, 5476, 5776, 6084, 6400, 6724, 7056, 7396, 7744, 8100, 8464, 8836, 9216, 9604, 10000)\n\noutput: Int \u003d 171700\n\nexpected: Int \u003d 171700\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:27 AM",
-      "dateStarted": "Feb 8, 2017 12:56:59 PM",
-      "dateFinished": "Feb 8, 2017 12:57:00 PM",
-      "status": "ERROR",
+      "dateStarted": "Feb 8, 2017 1:10:27 PM",
+      "dateFinished": "Feb 8, 2017 1:10:29 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
