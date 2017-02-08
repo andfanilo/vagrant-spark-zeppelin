@@ -1451,8 +1451,8 @@
     },
     {
       "title": "Sum ages per gender",
-      "text": "val rdd1 \u003d sc.parallelize(Seq((\"Patrick\", \"homme\"), (\"Sandra\", \"femme\"), (\"Faniki\", \"homme\"), (\"Noemie\", \"femme\"), (\"Francois\", \"homme\"), (\"Cassandre\", \"femme\")))\nval rdd2 \u003d sc.parallelize(Seq((\"Patrick\", 20), (\"Sandra\", 25), (\"Faniki\", 20), (\"Noemie\", 20), (\"Francois\", 30), (\"Cassandre\", 18)))\n\n// rdd1 and rdd2 are key-value rdds so you can join them and then continue the computation\nval output \u003d rdd1.join(rdd2).map (x\u003d\u003e x._2_1, x._2_2)).reduceByKey((x,y)\u003d\u003e x+y).collect()\n\nval expected \u003d Array((\"femme\", 63), (\"homme\", 70))",
-      "dateUpdated": "Feb 8, 2017 3:57:51 PM",
+      "text": "val rdd1 \u003d sc.parallelize(Seq((\"Patrick\", \"homme\"), (\"Sandra\", \"femme\"), (\"Faniki\", \"homme\"), (\"Noemie\", \"femme\"), (\"Francois\", \"homme\"), (\"Cassandre\", \"femme\")))\nval rdd2 \u003d sc.parallelize(Seq((\"Patrick\", 20), (\"Sandra\", 25), (\"Faniki\", 20), (\"Noemie\", 20), (\"Francois\", 30), (\"Cassandre\", 18)))\n\n// rdd1 and rdd2 are key-value rdds so you can join them and then continue the computation\nval output \u003d rdd1.join(rdd2).map(x\u003d\u003e(x._2._1, x._2._2)).reduceByKey((x,y)\u003d\u003e x+y).collect()\n\nval expected \u003d Array((\"femme\", 63), (\"homme\", 70))",
+      "dateUpdated": "Feb 8, 2017 4:00:55 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1475,14 +1475,14 @@
       "jobName": "paragraph_1485349451411_-763547996",
       "id": "20170125-130411_450751393",
       "result": {
-        "code": "ERROR",
+        "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nrdd1: org.apache.spark.rdd.RDD[(String, String)] \u003d ParallelCollectionRDD[38] at parallelize at \u003cconsole\u003e:46\n\nrdd2: org.apache.spark.rdd.RDD[(String, Int)] \u003d ParallelCollectionRDD[39] at parallelize at \u003cconsole\u003e:46\n\n\n\n\u003cconsole\u003e:1: error: \u0027;\u0027 expected but \u0027)\u0027 found.\nval output \u003d rdd1.join(rdd2).map (x\u003d\u003e x._2_1, x._2_2)).reduceByKey((x,y)\u003d\u003e x+y).collect()\n                                                     ^\n"
+        "msg": "\nrdd1: org.apache.spark.rdd.RDD[(String, String)] \u003d ParallelCollectionRDD[46] at parallelize at \u003cconsole\u003e:46\n\nrdd2: org.apache.spark.rdd.RDD[(String, Int)] \u003d ParallelCollectionRDD[47] at parallelize at \u003cconsole\u003e:46\n\noutput: Array[(String, Int)] \u003d Array((femme,63), (homme,70))\n\nexpected: Array[(String, Int)] \u003d Array((femme,63), (homme,70))\n"
       },
       "dateCreated": "Jan 25, 2017 1:04:11 AM",
-      "dateStarted": "Feb 8, 2017 3:57:51 PM",
-      "dateFinished": "Feb 8, 2017 3:57:52 PM",
-      "status": "ERROR",
+      "dateStarted": "Feb 8, 2017 4:00:55 PM",
+      "dateFinished": "Feb 8, 2017 4:00:56 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
