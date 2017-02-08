@@ -204,8 +204,8 @@
     },
     {
       "title": "Shell cell",
-      "text": "%sh\necho \"Changement\"",
-      "dateUpdated": "Feb 8, 2017 11:08:24 AM",
+      "text": "%sh\necho 1+2",
+      "dateUpdated": "Feb 8, 2017 11:36:06 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -236,18 +236,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Changement\n"
+        "msg": "1+2\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 8, 2017 11:08:24 AM",
-      "dateFinished": "Feb 8, 2017 11:08:25 AM",
+      "dateStarted": "Feb 8, 2017 11:36:06 AM",
+      "dateFinished": "Feb 8, 2017 11:36:06 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Python cell",
-      "text": "%python\nprint(\"Help \")",
-      "dateUpdated": "Feb 8, 2017 11:11:23 AM",
+      "text": "%python\nprint(\"1+2\")",
+      "dateUpdated": "Feb 8, 2017 11:36:31 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -288,8 +288,8 @@
     },
     {
       "title": "Spark/Scala cell",
-      "text": "println(\"Changement\")",
-      "dateUpdated": "Feb 8, 2017 11:08:42 AM",
+      "text": "println(\"1+2\")",
+      "dateUpdated": "Feb 8, 2017 11:36:18 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -319,11 +319,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Changement\n"
+        "msg": "1+2\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 8, 2017 11:08:43 AM",
-      "dateFinished": "Feb 8, 2017 11:08:59 AM",
+      "dateStarted": "Feb 8, 2017 11:36:18 AM",
+      "dateFinished": "Feb 8, 2017 11:36:19 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
