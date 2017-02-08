@@ -245,8 +245,8 @@
     },
     {
       "title": "Python cell",
-      "text": "%python\nprint(\"Hello world\")",
-      "dateUpdated": "Jan 25, 2017 8:33:22 AM",
+      "text": "%python\nprint(1+23)",
+      "dateUpdated": "Feb 8, 2017 11:30:16 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -264,7 +264,7 @@
             "pinCols": []
           }
         },
-        "editorMode": "ace/mode/python",
+        "editorMode": "ace/mode/scala",
         "colWidth": 4.0
       },
       "settings": {
@@ -276,18 +276,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "24\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:33:22 AM",
-      "dateFinished": "Jan 25, 2017 8:33:23 AM",
+      "dateStarted": "Feb 8, 2017 11:30:16 AM",
+      "dateFinished": "Feb 8, 2017 11:30:16 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Spark/Scala cell",
-      "text": "println(\"Hello world\")",
-      "dateUpdated": "Jan 25, 2017 8:33:26 AM",
+      "text": "println(1+23)",
+      "dateUpdated": "Feb 8, 2017 11:30:24 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -317,11 +317,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "24\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:33:26 AM",
-      "dateFinished": "Jan 25, 2017 8:33:59 AM",
+      "dateStarted": "Feb 8, 2017 11:30:24 AM",
+      "dateFinished": "Feb 8, 2017 11:30:25 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -405,8 +405,8 @@
     },
     {
       "title": "Some arithmetic",
-      "text": "8 * 5 + 2",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "text": "8 * 10 + 2",
+      "dateUpdated": "Feb 8, 2017 11:35:10 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -431,11 +431,12 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "res2: Int \u003d 42\n"
+        "msg": "\nres4: Int \u003d 82\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 11:35:10 AM",
+      "dateFinished": "Feb 8, 2017 11:35:11 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -2141,24 +2142,24 @@
   "name": "Practice",
   "id": "2C75UP2R2",
   "angularObjects": {
-    "2C93MQCCX:shared_process": [],
-    "2CAFQY6K3:shared_process": [],
-    "2C71Z8V22:shared_process": [],
-    "2C74PSEZQ:shared_process": [],
-    "2C7936H5V:shared_process": [],
-    "2C6WY8JHA:shared_process": [],
-    "2C8CCCVZ2:shared_process": [],
-    "2C9JTS6JQ:shared_process": [],
-    "2C91JKV9H:shared_process": [],
-    "2C8N1PP7C:shared_process": [],
-    "2C7YTW7VT:shared_process": [],
-    "2C85G18U9:shared_process": [],
-    "2C9XYSTEH:shared_process": [],
-    "2CA474ZG3:shared_process": [],
-    "2C8JNXQ9U:shared_process": [],
-    "2C827138T:shared_process": [],
-    "2CAA7GXEJ:shared_process": [],
-    "2C8W1GCP8:shared_process": []
+    "2C7WP8PN3:shared_process": [],
+    "2C7MT7V8H:shared_process": [],
+    "2C7JAZ7MT:shared_process": [],
+    "2C9GH3ZSW:shared_process": [],
+    "2CAQWAHQK:shared_process": [],
+    "2CB2F6RSJ:shared_process": [],
+    "2C7UR53B7:shared_process": [],
+    "2CAB7M3M1:shared_process": [],
+    "2CAEZN38K:shared_process": [],
+    "2CAV2AEC7:shared_process": [],
+    "2CBC6B3CA:shared_process": [],
+    "2C8C45C8S:shared_process": [],
+    "2C7TS5VA4:shared_process": [],
+    "2C8A2HEGH:shared_process": [],
+    "2CBA5NXK5:shared_process": [],
+    "2C7Q2HP1M:shared_process": [],
+    "2C8RWSGS8:shared_process": [],
+    "2C9G64J9M:shared_process": []
   },
   "config": {
     "looknfeel": "default"
