@@ -287,7 +287,7 @@
     {
       "title": "Spark/Scala cell",
       "text": "println(\"Hello world !!\")",
-      "dateUpdated": "Feb 1, 2017 6:57:16 AM",
+      "dateUpdated": "Feb 8, 2017 7:47:33 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -306,7 +306,8 @@
           }
         },
         "editorMode": "ace/mode/scala",
-        "colWidth": 4.0
+        "colWidth": 4.0,
+        "editorHide": false
       },
       "settings": {
         "params": {},
