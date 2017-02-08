@@ -434,8 +434,8 @@
     },
     {
       "title": "Some arithmetic",
-      "text": "8 * 5 + 2",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "text": "8 * 5 + 2\nvar age \u003d 23\nvar a \u003d 365*23  ",
+      "dateUpdated": "Feb 8, 2017 1:02:00 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -460,11 +460,12 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "res2: Int \u003d 42\n"
+        "msg": "\nres6: Int \u003d 42\n\nage: Int \u003d 23\n\na: Int \u003d 8395\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 1:02:00 PM",
+      "dateFinished": "Feb 8, 2017 1:02:01 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
