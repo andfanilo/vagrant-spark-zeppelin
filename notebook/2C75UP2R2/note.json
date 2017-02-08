@@ -631,7 +631,7 @@
     {
       "title": "New list with pair numbers removed",
       "text": "/*sort les chiffres paires jusqu\u0027a 10*/\nsequenceNumbers.filter(x \u003d\u003e x % 2 \u003d\u003d 0)\n/*sort les chiffres impaires jusqu\u0027a 10*/\nsequenceNumbers.filter(_ % 2 !\u003d 0)",
-      "dateUpdated": "Feb 8, 2017 2:56:54 PM",
+      "dateUpdated": "Feb 8, 2017 3:09:16 PM",
       "config": {
         "enabled": true,
         "tableHide": false,
@@ -646,7 +646,7 @@
           "scatter": {}
         },
         "editorMode": "ace/mode/scala",
-        "editorHide": true,
+        "editorHide": false,
         "colWidth": 4.0
       },
       "settings": {
@@ -669,7 +669,7 @@
     {
       "title": "Sum all elements",
       "text": "sequenceNumbers.reduce((x, y) \u003d\u003e x + y)\n\nsequenceNumbers.reduce(_ + _)",
-      "dateUpdated": "Feb 8, 2017 2:56:57 PM",
+      "dateUpdated": "Feb 8, 2017 3:09:08 PM",
       "config": {
         "enabled": true,
         "tableHide": false,
@@ -684,7 +684,7 @@
           "scatter": {}
         },
         "editorMode": "ace/mode/scala",
-        "editorHide": true,
+        "editorHide": false,
         "colWidth": 4.0
       },
       "settings": {
@@ -741,7 +741,7 @@
     },
     {
       "text": "/*\n * The following function adds 2 to a number.\n */\ndef add2(x: Int): Int \u003d x + 2",
-      "dateUpdated": "Feb 8, 2017 2:56:47 PM",
+      "dateUpdated": "Feb 8, 2017 3:09:03 PM",
       "config": {
         "enabled": true,
         "graph": {
@@ -756,7 +756,7 @@
         "colWidth": 4.0,
         "editorMode": "ace/mode/scala",
         "tableHide": false,
-        "editorHide": true
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -777,7 +777,7 @@
     },
     {
       "text": "/* now let\u0027s pass add2 function \n * to map,\n * a function that applies a function to each element of a  * list\n */\n\nList(1,2,3).map(add2)\n",
-      "dateUpdated": "Feb 8, 2017 2:56:45 PM",
+      "dateUpdated": "Feb 8, 2017 3:08:42 PM",
       "config": {
         "enabled": true,
         "graph": {
@@ -791,7 +791,7 @@
         },
         "editorMode": "ace/mode/scala",
         "colWidth": 4.0,
-        "editorHide": true
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -812,7 +812,7 @@
     },
     {
       "text": "// in the following we pass an anonymous lambda function \n// in the filter function\nList(1,2,3,40).filter(x \u003d\u003e x \u003c 10)\n// _ sert éviter de respécifier le x \u003d\u003e \nList(1,2,3,4).filter(_ \u003e 2)",
-      "dateUpdated": "Feb 8, 2017 2:56:44 PM",
+      "dateUpdated": "Feb 8, 2017 3:08:44 PM",
       "config": {
         "enabled": true,
         "graph": {
@@ -827,7 +827,7 @@
         "editorMode": "ace/mode/scala",
         "colWidth": 4.0,
         "tableHide": false,
-        "editorHide": true
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -1023,8 +1023,8 @@
     },
     {
       "title": "Return the list of squared numbers from 1 to 5",
-      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.map(x \u003d\u003e x)\n\nval expected \u003d List(1, 4, 9, 16, 25) ",
-      "dateUpdated": "Jan 25, 2017 9:03:16 AM",
+      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.map(x \u003d\u003e x*x)\n\nval expected \u003d List(1, 4, 9, 16, 25) ",
+      "dateUpdated": "Feb 8, 2017 3:06:30 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1049,18 +1049,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\nexpected: List[Int] \u003d List(1, 4, 9, 16, 25)\n"
+        "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: List[Int] \u003d List(1, 4, 9, 16, 25)\n\nexpected: List[Int] \u003d List(1, 4, 9, 16, 25)\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:13 AM",
-      "dateStarted": "Jan 25, 2017 9:03:16 AM",
-      "dateFinished": "Jan 25, 2017 9:03:17 AM",
+      "dateStarted": "Feb 8, 2017 3:06:31 PM",
+      "dateFinished": "Feb 8, 2017 3:06:31 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Return the sum of elements from 1 to 5",
-      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.reduce((x, y) \u003d\u003e x)\n\nval expected \u003d 15",
-      "dateUpdated": "Jan 25, 2017 9:23:28 AM",
+      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.reduce((x, y) \u003d\u003e x+y)\n\nval expected \u003d 15",
+      "dateUpdated": "Feb 8, 2017 3:07:21 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1085,18 +1085,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: Int \u003d 1\n\nexpected: Int \u003d 15\n"
+        "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: Int \u003d 15\n\nexpected: Int \u003d 15\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:20 AM",
-      "dateStarted": "Jan 25, 2017 9:23:28 AM",
-      "dateFinished": "Jan 25, 2017 9:23:29 AM",
+      "dateStarted": "Feb 8, 2017 3:07:21 PM",
+      "dateFinished": "Feb 8, 2017 3:07:22 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Return the sum of squared pair numbers between 1 and 100",
-      "text": "val input \u003d 1 to 100\nval output \u003d input.reduce((x, y) \u003d\u003e x)\n\nval expected \u003d 171700",
-      "dateUpdated": "Feb 1, 2017 9:13:45 AM",
+      "text": "val input \u003d 1 to 100\nval test\u003dinput.filter(_%2\u003d\u003d0).map(x\u003d\u003ex*x).reduce((x,y)\u003d\u003ex+y)\n\n//val output \u003d test.reduce((x, y) \u003d\u003e(x+y)*(x*x))\n\nval expected \u003d 171700\n",
+      "dateUpdated": "Feb 8, 2017 3:27:32 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1121,18 +1121,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ninput: scala.collection.immutable.Range.Inclusive \u003d Range(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100)\n\noutput: Int \u003d 1\n\nexpected: Int \u003d 171700\n"
+        "msg": "\ninput: scala.collection.immutable.Range.Inclusive \u003d Range(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100)\n\ntest: Int \u003d 171700\n\nexpected: Int \u003d 171700\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:27 AM",
-      "dateStarted": "Feb 1, 2017 9:13:46 AM",
-      "dateFinished": "Feb 1, 2017 9:13:48 AM",
+      "dateStarted": "Feb 8, 2017 3:27:32 PM",
+      "dateFinished": "Feb 8, 2017 3:27:33 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Get highest number in a list with a reduce",
       "text": "import util.Random.nextInt\nval input \u003d Seq.fill(10)(nextInt)\nval output \u003d input.reduce((x, y) \u003d\u003e x)\n\nval expected \u003d input.max",
-      "dateUpdated": "Jan 25, 2017 12:49:26 PM",
+      "dateUpdated": "Feb 8, 2017 3:27:46 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1159,11 +1159,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nimport util.Random.nextInt\n\ninput: Seq[Int] \u003d List(1368154480, 932727527, -956762629, -741728139, 1912445161, 1215347429, 1054732247, -811870848, 762475751, 1567410629)\n\noutput: Int \u003d 1368154480\n\nexpected: Int \u003d 1912445161\n"
+        "msg": "\nimport util.Random.nextInt\n\ninput: Seq[Int] \u003d List(-569559117, 634700543, -450527516, 1934855482, -2060331941, -687076310, 709026933, 1390339604, -858358517, -1018317572)\n\noutput: Int \u003d -569559117\n\nexpected: Int \u003d 1934855482\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:32 AM",
-      "dateStarted": "Jan 25, 2017 12:49:26 PM",
-      "dateFinished": "Jan 25, 2017 12:49:29 PM",
+      "dateStarted": "Feb 8, 2017 3:27:46 PM",
+      "dateFinished": "Feb 8, 2017 3:27:48 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
