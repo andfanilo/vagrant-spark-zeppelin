@@ -1937,12 +1937,12 @@
       "title": "Get highest number in a list with a reduce",
       "text": "import util.Random.nextInt\nval input \u003d Seq.fill(10)(nextInt)\ndef maxireduce (x: Int, y:Int): Int \u003d {\n    if (x \u003e y) {\n        return x\n    }\n    return y\n}\nval output \u003d input.reduce((x, y) \u003d\u003e maxireduce(x,y))\n\nval expected \u003d input.max",
       "user": "anonymous",
-      "dateUpdated": "Feb 8, 2017 3:33:07 PM",
+      "dateUpdated": "Feb 8, 2017 4:17:50 PM",
       "config": {
         "colWidth": 6.0,
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "editorHide": true,
+        "editorHide": false,
         "tableHide": false,
         "title": true,
         "results": [
@@ -2236,9 +2236,9 @@
     },
     {
       "title": "Calculate the number of unique words in the \"words\" RDD here.",
-      "text": "val words \u003d sc.parallelize(Array(\"hello\", \"world\", \"goodbye\", \"hello\", \"again\"))\nval output : Int \u003d words.distinct.count()\nval expected \u003d 4",
+      "text": "val words \u003d sc.parallelize(Array(\"hello\", \"world\", \"goodbye\", \"hello\", \"again\"))\nval output \u003d words.distinct.count()\nval expected \u003d 4",
       "user": "anonymous",
-      "dateUpdated": "Feb 8, 2017 3:58:50 PM",
+      "dateUpdated": "Feb 8, 2017 4:00:43 PM",
       "config": {
         "colWidth": 6.0,
         "enabled": true,
@@ -2266,7 +2266,7 @@
           "groups": [],
           "scatter": {}
         },
-        "editorHide": false,
+        "editorHide": true,
         "tableHide": false,
         "editorSetting": {
           "language": "scala"
@@ -2277,11 +2277,11 @@
         "forms": {}
       },
       "results": {
-        "code": "ERROR",
+        "code": "SUCCESS",
         "msg": [
           {
             "type": "TEXT",
-            "data": "\nwords: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[45] at parallelize at \u003cconsole\u003e:46\n\n\n\n\n\n\u003cconsole\u003e:48: error: type mismatch;\n found   : Long\n required: Int\n       val output : Int \u003d words.distinct.count()\n                                              ^\n"
+            "data": "\nwords: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[46] at parallelize at \u003cconsole\u003e:46\n\noutput: Long \u003d 4\n\nexpected: Int \u003d 4\n"
           }
         ]
       },
@@ -2294,16 +2294,16 @@
       "jobName": "paragraph_1485336856216_-2011750793",
       "id": "20170125-093416_1662109555",
       "dateCreated": "Jan 25, 2017 9:34:16 AM",
-      "dateStarted": "Feb 8, 2017 3:58:50 PM",
-      "dateFinished": "Feb 8, 2017 3:58:50 PM",
-      "status": "ERROR",
+      "dateStarted": "Feb 8, 2017 4:00:40 PM",
+      "dateFinished": "Feb 8, 2017 4:00:40 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Create a random RDD of numbers, and find its mean.",
       "text": "import util.Random.nextInt\nval input \u003d sc.parallelize(Seq.fill(10000)(nextInt))\nval mean \u003d input.reduce((x,y) \u003d\u003e x+y) / input.count()",
       "user": "anonymous",
-      "dateUpdated": "Feb 8, 2017 3:57:50 PM",
+      "dateUpdated": "Feb 8, 2017 4:00:47 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -2318,7 +2318,7 @@
         "enabled": true,
         "editorMode": "ace/mode/scala",
         "title": true,
-        "editorHide": false,
+        "editorHide": true,
         "tableHide": false,
         "results": {},
         "editorSetting": {
@@ -2413,8 +2413,9 @@
     },
     {
       "title": "Wordcount, easy mode",
-      "text": "val input \u003d sc.parallelize(Seq(\"hi\", \"my\", \"my\", \"name\", \"is\",\"hi\"))\nval output \u003d input\n\nval expected \u003d Array((\"is\",1), (\"my,2\"), (\"name\",1), (\"hi\",2))",
-      "dateUpdated": "Feb 8, 2017 2:34:35 PM",
+      "text": "val input \u003d sc.parallelize(Seq(\"hi\", \"my\", \"my\", \"name\", \"is\",\"hi\"))\nval output \u003d input.map(x \u003d\u003e (x, 1)).reduceByKey((a, b) \u003d\u003e a + b).collect\n\nval expected \u003d Array((\"is\",1), (\"my,2\"), (\"name\",1), (\"hi\",2))",
+      "user": "anonymous",
+      "dateUpdated": "Feb 8, 2017 4:12:20 PM",
       "config": {
         "colWidth": 12.0,
         "enabled": true,
@@ -2443,7 +2444,10 @@
           "groups": [],
           "scatter": {}
         },
-        "editorHide": true
+        "editorHide": true,
+        "editorSetting": {
+          "language": "scala"
+        }
       },
       "settings": {
         "params": {},
@@ -2454,7 +2458,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "\ninput: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[152] at parallelize at \u003cconsole\u003e:41\n\noutput: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[152] at parallelize at \u003cconsole\u003e:41\n\nexpected: Array[java.io.Serializable] \u003d Array((is,1), my,2, (name,1), (hi,2))\n"
+            "data": "\ninput: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[64] at parallelize at \u003cconsole\u003e:46\n\noutput: Array[(String, Int)] \u003d Array((is,1), (my,2), (name,1), (hi,2))\n\nexpected: Array[java.io.Serializable] \u003d Array((is,1), my,2, (name,1), (hi,2))\n"
           }
         ]
       },
@@ -2467,15 +2471,16 @@
       "jobName": "paragraph_1485338316737_924641072",
       "id": "20170125-095836_160099750",
       "dateCreated": "Jan 25, 2017 9:58:36 AM",
-      "dateStarted": "Feb 1, 2017 10:36:20 AM",
-      "dateFinished": "Feb 1, 2017 10:36:21 AM",
+      "dateStarted": "Feb 8, 2017 4:07:54 PM",
+      "dateFinished": "Feb 8, 2017 4:07:55 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Sum ages per gender",
-      "text": "val rdd1 \u003d sc.parallelize(Seq((\"Patrick\", \"homme\"), (\"Sandra\", \"femme\"), (\"Faniki\", \"homme\"), (\"Noemie\", \"femme\"), (\"Francois\", \"homme\"), (\"Cassandre\", \"femme\")))\nval rdd2 \u003d sc.parallelize(Seq((\"Patrick\", 20), (\"Sandra\", 25), (\"Faniki\", 20), (\"Noemie\", 20), (\"Francois\", 30), (\"Cassandre\", 18)))\n\n// rdd1 and rdd2 are key-value rdds so you can join them and then continue the computation\nval output \u003d rdd1.join(rdd2)\n\nval expected \u003d Array((\"femme\", 63), (\"homme\", 70))",
-      "dateUpdated": "Feb 8, 2017 2:34:36 PM",
+      "text": "val rdd1 \u003d sc.parallelize(Seq((\"Patrick\", \"homme\"), (\"Sandra\", \"femme\"), (\"Faniki\", \"homme\"), (\"Noemie\", \"femme\"), (\"Francois\", \"homme\"), (\"Cassandre\", \"femme\")))\nval rdd2 \u003d sc.parallelize(Seq((\"Patrick\", 20), (\"Sandra\", 25), (\"Faniki\", 20), (\"Noemie\", 20), (\"Francois\", 30), (\"Cassandre\", 18)))\n\n// rdd1 and rdd2 are key-value rdds so you can join them and then continue the computation\nval output \u003d rdd1.join(rdd2).map(x \u003d\u003e (x._2._1,x._2._2)).reduceByKey((a, b) \u003d\u003e a + b).collect\n\nval expected \u003d Array((\"femme\", 63), (\"homme\", 70))",
+      "user": "anonymous",
+      "dateUpdated": "Feb 8, 2017 4:12:45 PM",
       "config": {
         "colWidth": 12.0,
         "enabled": true,
@@ -2504,7 +2509,10 @@
           "scatter": {}
         },
         "editorHide": true,
-        "tableHide": false
+        "tableHide": false,
+        "editorSetting": {
+          "language": "scala"
+        }
       },
       "settings": {
         "params": {},
@@ -2515,7 +2523,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "\nrdd1: org.apache.spark.rdd.RDD[(String, String)] \u003d ParallelCollectionRDD[131] at parallelize at \u003cconsole\u003e:41\n\nrdd2: org.apache.spark.rdd.RDD[(String, Int)] \u003d ParallelCollectionRDD[132] at parallelize at \u003cconsole\u003e:41\n\noutput: org.apache.spark.rdd.RDD[(String, (String, Int))] \u003d MapPartitionsRDD[135] at join at \u003cconsole\u003e:45\n\nexpected: Array[(String, Int)] \u003d Array((femme,63), (homme,70))\n"
+            "data": "\nrdd1: org.apache.spark.rdd.RDD[(String, String)] \u003d ParallelCollectionRDD[90] at parallelize at \u003cconsole\u003e:46\n\nrdd2: org.apache.spark.rdd.RDD[(String, Int)] \u003d ParallelCollectionRDD[91] at parallelize at \u003cconsole\u003e:46\n\noutput: Array[(String, Int)] \u003d Array((femme,63), (homme,70))\n\nexpected: Array[(String, Int)] \u003d Array((femme,63), (homme,70))\n"
           }
         ]
       },
@@ -2528,8 +2536,8 @@
       "jobName": "paragraph_1485349451411_-763547996",
       "id": "20170125-130411_450751393",
       "dateCreated": "Jan 25, 2017 1:04:11 AM",
-      "dateStarted": "Feb 1, 2017 10:15:26 AM",
-      "dateFinished": "Feb 1, 2017 10:15:29 AM",
+      "dateStarted": "Feb 8, 2017 4:12:37 PM",
+      "dateFinished": "Feb 8, 2017 4:12:38 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -2594,7 +2602,8 @@
     },
     {
       "text": "// load file into RDD and check 10 first lines\n\nval text \u003d sc.textFile(\"/opt/dataset/don-quijote.txt.gz\")\ntext.take(3)",
-      "dateUpdated": "Feb 8, 2017 2:34:36 PM",
+      "user": "anonymous",
+      "dateUpdated": "Feb 8, 2017 4:18:33 PM",
       "config": {
         "colWidth": 12.0,
         "enabled": true,
@@ -2622,7 +2631,10 @@
           "scatter": {}
         },
         "editorHide": true,
-        "tableHide": false
+        "tableHide": false,
+        "editorSetting": {
+          "language": "scala"
+        }
       },
       "settings": {
         "params": {},
@@ -2633,7 +2645,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "\ntext: org.apache.spark.rdd.RDD[String] \u003d /opt/dataset/don-quijote.txt.gz MapPartitionsRDD[1] at textFile at \u003cconsole\u003e:31\n\nres4: Array[String] \u003d Array(The Project Gutenberg EBook of Don Quijote, by Miguel de Cervantes Saavedra, \"\", This eBook is for the use of anyone anywhere at no cost and with)\n"
+            "data": "\ntext: org.apache.spark.rdd.RDD[String] \u003d /opt/dataset/don-quijote.txt.gz MapPartitionsRDD[100] at textFile at \u003cconsole\u003e:48\n\nres94: Array[String] \u003d Array(The Project Gutenberg EBook of Don Quijote, by Miguel de Cervantes Saavedra, \"\", This eBook is for the use of anyone anywhere at no cost and with)\n"
           }
         ]
       },
@@ -2646,14 +2658,15 @@
       "jobName": "paragraph_1485352171034_-904654561",
       "id": "20170125-134931_765137162",
       "dateCreated": "Jan 25, 2017 1:49:31 AM",
-      "dateStarted": "Feb 1, 2017 6:57:16 AM",
-      "dateFinished": "Feb 1, 2017 6:57:18 AM",
+      "dateStarted": "Feb 8, 2017 4:14:57 PM",
+      "dateFinished": "Feb 8, 2017 4:14:57 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "// write your Spark map-reduce code here\n\ntext.doSomething",
-      "dateUpdated": "Feb 8, 2017 2:34:36 PM",
+      "text": "// write your Spark map-reduce code here\n\ntext.flatMap(line \u003d\u003e line.split(\" \")).map(x \u003d\u003e (x, 1)).reduceByKey((a,b) \u003d\u003e a + b).collect",
+      "user": "anonymous",
+      "dateUpdated": "Feb 8, 2017 4:18:32 PM",
       "config": {
         "colWidth": 12.0,
         "enabled": true,
@@ -2681,18 +2694,21 @@
           "scatter": {}
         },
         "editorHide": true,
-        "tableHide": false
+        "tableHide": false,
+        "editorSetting": {
+          "language": "scala"
+        }
       },
       "settings": {
         "params": {},
         "forms": {}
       },
       "results": {
-        "code": "ERROR",
+        "code": "SUCCESS",
         "msg": [
           {
             "type": "TEXT",
-            "data": "\n\n\n\u003cconsole\u003e:33: error: value doSomething is not a member of org.apache.spark.rdd.RDD[String]\n              text.doSomething\n                   ^\n"
+            "data": "res100: Array[(String, Int)] \u003d Array((agradable,,1), (derecho.,1), (vecindad,1), (invierno,6), (deshonrar,3), (-...yo,1), (imperiosos,1), (Púsole,1), (redondez,5), (amigos:,1), (alcanzado;,1), (duque-;,1), (admitiere;,1), (escuchaban,1), (vistosa,3), (averiguación,,1), (amasa,,1), (implicaría,1), (averiguarse,1), (tormento,2), (soltarlos,1), (reía,,1), (enfado,2), (enarcando,1), (negro.,2), (todo?,2), (pobres:,1), (aconsejóle,1), (amén.,3), (catedrático;,1), (trocada,2), (acíbar;,1), (Regostóse,1), (busque,3), (relieves,2), (cuecen,1), (Reiteráronse,1), (descubriera,1), (olvido;,2), (podrida,,1), (librea?,1), (careciere,1), (ricos,,3), (dispusición,1), (peleado.,1), (llamáis,,1), (combatir,1), (different,1), (daré\"?,1), (hablan,,1), (estremecido,,1), (Hiciéronse,2), (través,8), (pidiere..."
           }
         ]
       },
@@ -2705,9 +2721,9 @@
       "jobName": "paragraph_1485352420257_-878908678",
       "id": "20170125-135340_1546349786",
       "dateCreated": "Jan 25, 2017 1:53:40 AM",
-      "dateStarted": "Jan 25, 2017 1:54:09 AM",
-      "dateFinished": "Jan 25, 2017 1:54:09 AM",
-      "status": "ERROR",
+      "dateStarted": "Feb 8, 2017 4:16:42 PM",
+      "dateFinished": "Feb 8, 2017 4:16:44 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -2771,7 +2787,8 @@
     },
     {
       "text": "// let\u0027s check the file we are going to use\nval ipligence \u003d sc.textFile(\"/opt/dataset/ipligence-lite.csv\")\nipligence.take(1)",
-      "dateUpdated": "Feb 8, 2017 2:34:36 PM",
+      "user": "anonymous",
+      "dateUpdated": "Feb 8, 2017 4:21:49 PM",
       "config": {
         "colWidth": 12.0,
         "enabled": true,
@@ -2799,7 +2816,10 @@
           "scatter": {}
         },
         "editorHide": true,
-        "tableHide": false
+        "tableHide": false,
+        "editorSetting": {
+          "language": "scala"
+        }
       },
       "settings": {
         "params": {},
@@ -2810,7 +2830,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "\nipligence: org.apache.spark.rdd.RDD[String] \u003d /opt/dataset/ipligence-lite.csv MapPartitionsRDD[19] at textFile at \u003cconsole\u003e:28\n\nres14: Array[String] \u003d Array(\"0000000000\",\"0016777215\",\"\",\"\",\"\",\"\")\n"
+            "data": "\nipligence: org.apache.spark.rdd.RDD[String] \u003d /opt/dataset/ipligence-lite.csv MapPartitionsRDD[118] at textFile at \u003cconsole\u003e:47\n\nres107: Array[String] \u003d Array(\"0000000000\",\"0016777215\",\"\",\"\",\"\",\"\")\n"
           }
         ]
       },
@@ -2823,14 +2843,15 @@
       "jobName": "paragraph_1485932362834_-790510610",
       "id": "20170201-065922_1040411609",
       "dateCreated": "Feb 1, 2017 6:59:22 AM",
-      "dateStarted": "Feb 1, 2017 9:17:21 AM",
-      "dateFinished": "Feb 1, 2017 9:17:22 AM",
+      "dateStarted": "Feb 8, 2017 4:21:49 PM",
+      "dateFinished": "Feb 8, 2017 4:21:56 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "// create your dataframe by reading the csv file\nval columnNames \u003d Seq(\"IP_FROM\", \"IP_TO\", \"COUNTRY_CODE\", \"COUNTRY_NAME\", \"CONTINENT_CODE\", \"CONTINENT_NAME\")\nval df \u003d sqlContext.read.csv(\"/opt/dataset/ipligence-lite.csv\").toDF(columnNames: _*)\ndf.printSchema()\ndf.show()\n\n// if you want to use the dataframe in SQL, you must register it\ndf.registerTempTable(\"df\")",
-      "dateUpdated": "Feb 8, 2017 2:34:36 PM",
+      "user": "anonymous",
+      "dateUpdated": "Feb 8, 2017 4:21:58 PM",
       "config": {
         "colWidth": 12.0,
         "enabled": true,
@@ -2858,7 +2879,10 @@
           "scatter": {}
         },
         "editorHide": true,
-        "tableHide": false
+        "tableHide": false,
+        "editorSetting": {
+          "language": "scala"
+        }
       },
       "settings": {
         "params": {},
@@ -2882,8 +2906,8 @@
       "jobName": "paragraph_1485933377297_-99994725",
       "id": "20170201-071617_1372276620",
       "dateCreated": "Feb 1, 2017 7:16:17 AM",
-      "dateStarted": "Feb 1, 2017 10:10:32 AM",
-      "dateFinished": "Feb 1, 2017 10:10:34 AM",
+      "dateStarted": "Feb 8, 2017 4:21:58 PM",
+      "dateFinished": "Feb 8, 2017 4:21:59 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -2948,7 +2972,7 @@
     },
     {
       "text": "sqlContext.sql(\"SELECT IP_TO FROM df\").show(5)",
-      "dateUpdated": "Feb 8, 2017 2:34:36 PM",
+      "dateUpdated": "Feb 8, 2017 4:20:37 PM",
       "config": {
         "colWidth": 6.0,
         "enabled": true,
@@ -2975,8 +2999,11 @@
           "groups": [],
           "scatter": {}
         },
-        "editorHide": true,
-        "tableHide": false
+        "editorHide": false,
+        "tableHide": false,
+        "editorSetting": {
+          "language": "scala"
+        }
       },
       "settings": {
         "params": {},
@@ -3007,7 +3034,7 @@
     },
     {
       "text": "df.select(\"IP_TO\").show(5)",
-      "dateUpdated": "Feb 8, 2017 2:34:36 PM",
+      "dateUpdated": "Feb 8, 2017 4:21:27 PM",
       "config": {
         "colWidth": 6.0,
         "enabled": true,
@@ -3034,8 +3061,11 @@
           "groups": [],
           "scatter": {}
         },
-        "editorHide": true,
-        "tableHide": false
+        "editorHide": false,
+        "tableHide": false,
+        "editorSetting": {
+          "language": "scala"
+        }
       },
       "settings": {
         "params": {},
@@ -3125,8 +3155,9 @@
     },
     {
       "title": "Display all continent names",
-      "text": "",
-      "dateUpdated": "Feb 8, 2017 2:34:36 PM",
+      "text": "df.select(\"CONTINENT_NAME\").distinct.show(5)\nsqlContext.sql(\"SELECT DISTINCT CONTINENT_NAME FROM df\").show(5)",
+      "user": "anonymous",
+      "dateUpdated": "Feb 8, 2017 4:25:17 PM",
       "config": {
         "colWidth": 6.0,
         "enabled": true,
@@ -3143,7 +3174,10 @@
           "scatter": {}
         },
         "tableHide": false,
-        "editorHide": true
+        "editorHide": true,
+        "editorSetting": {
+          "language": "scala"
+        }
       },
       "settings": {
         "params": {},
@@ -3151,7 +3185,12 @@
       },
       "results": {
         "code": "SUCCESS",
-        "msg": []
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------------+\n|CONTINENT_NAME|\n+--------------+\n|     CARIBBEAN|\n|          ASIA|\n|          null|\n|       OCEANIA|\n| NORTH AMERICA|\n+--------------+\nonly showing top 5 rows\n\n+--------------+\n|CONTINENT_NAME|\n+--------------+\n|     CARIBBEAN|\n|          ASIA|\n|          null|\n|       OCEANIA|\n| NORTH AMERICA|\n+--------------+\nonly showing top 5 rows\n\n"
+          }
+        ]
       },
       "result": {
         "code": "SUCCESS",
@@ -3162,15 +3201,15 @@
       "jobName": "paragraph_1485942495411_965115810",
       "id": "20170201-094815_410703547",
       "dateCreated": "Feb 1, 2017 9:48:15 AM",
-      "dateStarted": "Feb 1, 2017 9:50:18 AM",
-      "dateFinished": "Feb 1, 2017 9:50:18 AM",
+      "dateStarted": "Feb 8, 2017 4:23:44 PM",
+      "dateFinished": "Feb 8, 2017 4:23:48 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Count number of rows with a null value in country code",
       "text": "// Don\u0027t forget you have the count function on a Dataframe after you have filtered it",
-      "dateUpdated": "Feb 8, 2017 2:34:36 PM",
+      "dateUpdated": "Feb 8, 2017 4:25:19 PM",
       "config": {
         "colWidth": 6.0,
         "enabled": true,
@@ -3187,7 +3226,8 @@
           "scatter": {}
         },
         "tableHide": false,
-        "editorHide": true
+        "editorHide": false,
+        "editorSetting": {}
       },
       "settings": {
         "params": {},
