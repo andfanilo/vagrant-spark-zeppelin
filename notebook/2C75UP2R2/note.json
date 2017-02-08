@@ -1412,8 +1412,8 @@
     },
     {
       "title": "Wordcount, easy mode",
-      "text": "val input \u003d sc.parallelize(Seq(\"hi\", \"my\", \"my\", \"name\", \"is\",\"hi\"))\nval output \u003d input.map(x \u003d\u003e (x, 1)).reduceByKey((a,b) \u003d\u003e a+b)\n\noutp\n\n\nval expected \u003d Array((\"is\",1), (\"my,2\"), (\"name\",1), (\"hi\",2))",
-      "dateUpdated": "Feb 8, 2017 1:00:35 PM",
+      "text": "val input \u003d sc.parallelize(Seq(\"hi\", \"my\", \"my\", \"name\", \"is\",\"hi\"))\nval output \u003d input.map(x \u003d\u003e (x, 1)).reduceByKey((a,b) \u003d\u003e a+b).collect()\n\n\n\n\nval expected \u003d Array((\"is\",1), (\"my,2\"), (\"name\",1), (\"hi\",2))",
+      "dateUpdated": "Feb 8, 2017 1:03:26 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1437,14 +1437,14 @@
       "jobName": "paragraph_1485338316737_924641072",
       "id": "20170125-095836_160099750",
       "result": {
-        "code": "ERROR",
+        "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ninput: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[54] at parallelize at \u003cconsole\u003e:47\n\noutput: org.apache.spark.rdd.RDD[(String, Int)] \u003d ShuffledRDD[56] at reduceByKey at \u003cconsole\u003e:53\n\n\n\n\u003cconsole\u003e:56: error: org.apache.spark.rdd.RDD[(String, Int)] does not take parameters\n       output(1)\n             ^\n"
+        "msg": "\ninput: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[58] at parallelize at \u003cconsole\u003e:47\n\noutput: Array[(String, Int)] \u003d Array((is,1), (my,2), (name,1), (hi,2))\n\nexpected: Array[java.io.Serializable] \u003d Array((is,1), my,2, (name,1), (hi,2))\n"
       },
       "dateCreated": "Jan 25, 2017 9:58:36 AM",
-      "dateStarted": "Feb 8, 2017 12:58:19 PM",
-      "dateFinished": "Feb 8, 2017 12:58:20 PM",
-      "status": "ERROR",
+      "dateStarted": "Feb 8, 2017 1:03:26 PM",
+      "dateFinished": "Feb 8, 2017 1:03:28 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
