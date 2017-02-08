@@ -1350,7 +1350,7 @@
     },
     {
       "text": "// A SparkContext is already created for you by Zeppelin.\r\n// Do not create another or unspecified behavior may occur.\r\nsc.version\r\n\r\n// create an RDD from a local collection with parallelize and then sum all numbers in rdd.\r\nsc.parallelize(1 to 100000000).map(x \u003d\u003e x^2).reduce((x,y) \u003d\u003e x + y)",
-      "dateUpdated": "Feb 8, 2017 2:21:32 PM",
+      "dateUpdated": "Feb 8, 2017 3:40:09 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1373,16 +1373,20 @@
       },
       "jobName": "paragraph_1485336727219_-267066129",
       "id": "20170125-093207_1644704199",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nres80: String \u003d 2.0.2\n\nres81: Int \u003d 987459712\n"
+      },
       "dateCreated": "Jan 25, 2017 9:32:07 AM",
-      "dateStarted": "Feb 1, 2017 10:35:07 AM",
-      "dateFinished": "Feb 1, 2017 10:35:17 AM",
+      "dateStarted": "Feb 8, 2017 3:40:09 PM",
+      "dateFinished": "Feb 8, 2017 3:40:13 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\nAs you can see, the RDD API is very similar to the functions we have previously used for processing entire collections. \n\nIf you already are a Scala developer, or are used to functional programming on collections, then RDDs act like a collection that Spark parallelizes on the cluster under the hood.\n\nSpark also provides us with more generic functions.\n\u003chr/\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\nTry to solve the following row. Browse the Spark API documentation to find the corresponding function.",
-      "dateUpdated": "Feb 8, 2017 2:21:32 PM",
+      "dateUpdated": "Feb 8, 2017 3:40:41 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1405,17 +1409,21 @@
       },
       "jobName": "paragraph_1485337796815_-2093861834",
       "id": "20170125-094956_997092478",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eAs you can see, the RDD API is very similar to the functions we have previously used for processing entire collections.\u003c/p\u003e\n\u003cp\u003eIf you already are a Scala developer, or are used to functional programming on collections, then RDDs act like a collection that Spark parallelizes on the cluster under the hood.\u003c/p\u003e\n\u003cp\u003eSpark also provides us with more generic functions.\u003c/p\u003e\n\u003chr/\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eTry to solve the following row. Browse the Spark API documentation to find the corresponding function.\u003c/p\u003e\n"
+      },
       "dateCreated": "Jan 25, 2017 9:49:56 AM",
-      "dateStarted": "Feb 1, 2017 10:35:38 AM",
-      "dateFinished": "Feb 1, 2017 10:35:38 AM",
+      "dateStarted": "Feb 8, 2017 3:40:41 PM",
+      "dateFinished": "Feb 8, 2017 3:40:41 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Calculate the number of unique words in the \"words\" RDD here.",
-      "text": "val words \u003d sc.parallelize(Array(\"hello\", \"world\", \"goodbye\", \"hello\", \"again\"))\n\nval expected \u003d 4",
-      "dateUpdated": "Feb 8, 2017 2:21:32 PM",
+      "text": "val words \u003d sc.parallelize(Array(\"hello\", \"world\", \"goodbye\", \"hello\", \"again\"))\nwords.distinct.collect size // fait !\nval expected \u003d 4",
+      "dateUpdated": "Feb 8, 2017 3:57:54 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1439,17 +1447,21 @@
       },
       "jobName": "paragraph_1485336856216_-2011750793",
       "id": "20170125-093416_1662109555",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nwords: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[24] at parallelize at \u003cconsole\u003e:48\n\nwarning: there was one feature warning; re-run with -feature for details\n\nres91: Int \u003d 4\n\nexpected: Int \u003d 4\n"
+      },
       "dateCreated": "Jan 25, 2017 9:34:16 AM",
-      "dateStarted": "Feb 1, 2017 9:14:16 AM",
-      "dateFinished": "Feb 1, 2017 9:14:17 AM",
+      "dateStarted": "Feb 8, 2017 3:57:54 PM",
+      "dateFinished": "Feb 8, 2017 3:57:55 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Create a random RDD of numbers, and find its mean.",
-      "text": "import util.Random.nextInt\nval input \u003d sc.parallelize(Seq.fill(10000)(nextInt))",
-      "dateUpdated": "Feb 8, 2017 2:21:32 PM",
+      "text": "import util.Random.nextInt\nval input \u003d sc.parallelize(Seq.fill(10000)(nextInt))\ninput.mean // pas sûr...",
+      "dateUpdated": "Feb 8, 2017 3:53:33 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1473,14 +1485,20 @@
       },
       "jobName": "paragraph_1485336877601_1857515653",
       "id": "20170125-093437_413700163",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nimport util.Random.nextInt\n\ninput: org.apache.spark.rdd.RDD[Int] \u003d ParallelCollectionRDD[19] at parallelize at \u003cconsole\u003e:48\n\nres87: Double \u003d -5168934.735700006\n"
+      },
       "dateCreated": "Jan 25, 2017 9:34:37 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 3:53:05 PM",
+      "dateFinished": "Feb 8, 2017 3:53:06 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n#### Key value pairs\n\nWhen doing Hadoop MapReduce, you are used to working with key-value pairs. \n\nIn Scala, we use tuples to manage multiple data altogether.\n\n```scala\nval t \u003d (1, \"hello\", Console)\n```\n\nIt is possible to access elements in a tuple :\n\n```scala\nval t \u003d (4,3,2,1)\nval sum \u003d t._1 + t._2 + t._3 + t._4\n```\n\nNow remember the reduce example, which takes 2 elements organized as tuples :\n\n```scala\n(1 to 1000).reduce((x,y) \u003d\u003e x+y)\n```\n\nYou can deconstruct the tuple inside the anonymous function, it makes it easier to reason around them. This can make for some convoluted one liners.\n\n```scala\n(1 to 1000)\n    .map(x \u003d\u003e (x, 2*x, 3*x))\n    .reduce{case ((x1, doubleX1, tripleX1), (x2, doubleX2, tripleX2)) \u003d\u003e (x1 + x2, doubleX1 * doubleX2, tripleX1 - tripleX2)}\n```\n\n\u003chr/\u003e\n\nIn Spark, a RDD of tuples of 2 elements is considered a key-value RDD. This gives us access to [a new class of functions](https://spark.apache.org/docs/latest/programming-guide.html#working-with-key-value-pairs).\n\nFor example, the following code uses the reduceByKey operation on key-value pairs to count how many times each line of text occurs in a file. It acts like executing reduce on the array of values under the same key.\n\n```scala\nval lines \u003d sc.textFile(\"data.txt\")\nval pairs \u003d lines.map(s \u003d\u003e (s, 1))\nval counts \u003d pairs.reduceByKey((a, b) \u003d\u003e a + b)\n```\n\n\u003chr/\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nTry to solve the following cells.",
-      "dateUpdated": "Feb 8, 2017 2:21:32 PM",
+      "dateUpdated": "Feb 8, 2017 3:53:30 PM",
       "config": {
         "enabled": true,
         "graph": {
@@ -1508,17 +1526,21 @@
       },
       "jobName": "paragraph_1485333124534_-28130484",
       "id": "20161205-143100_327623105",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch4\u003eKey value pairs\u003c/h4\u003e\n\u003cp\u003eWhen doing Hadoop MapReduce, you are used to working with key-value pairs.\u003c/p\u003e\n\u003cp\u003eIn Scala, we use tuples to manage multiple data altogether.\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"scala\"\u003eval t \u003d (1, \"hello\", Console)\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eIt is possible to access elements in a tuple :\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"scala\"\u003eval t \u003d (4,3,2,1)\nval sum \u003d t._1 + t._2 + t._3 + t._4\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eNow remember the reduce example, which takes 2 elements organized as tuples :\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"scala\"\u003e(1 to 1000).reduce((x,y) \u003d\u0026gt; x+y)\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eYou can deconstruct the tuple inside the anonymous function, it makes it easier to reason around them. This can make for some convoluted one liners.\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"scala\"\u003e(1 to 1000)\n    .map(x \u003d\u0026gt; (x, 2*x, 3*x))\n    .reduce{case ((x1, doubleX1, tripleX1), (x2, doubleX2, tripleX2)) \u003d\u0026gt; (x1 + x2, doubleX1 * doubleX2, tripleX1 - tripleX2)}\n\u003c/code\u003e\u003c/pre\u003e\n\u003chr/\u003e\n\u003cp\u003eIn Spark, a RDD of tuples of 2 elements is considered a key-value RDD. This gives us access to \u003ca href\u003d\"https://spark.apache.org/docs/latest/programming-guide.html#working-with-key-value-pairs\"\u003ea new class of functions\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eFor example, the following code uses the reduceByKey operation on key-value pairs to count how many times each line of text occurs in a file. It acts like executing reduce on the array of values under the same key.\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"scala\"\u003eval lines \u003d sc.textFile(\"data.txt\")\nval pairs \u003d lines.map(s \u003d\u0026gt; (s, 1))\nval counts \u003d pairs.reduceByKey((a, b) \u003d\u0026gt; a + b)\n\u003c/code\u003e\u003c/pre\u003e\n\u003chr/\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eTry to solve the following cells.\u003c/p\u003e\n"
+      },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 1:43:21 AM",
-      "dateFinished": "Jan 25, 2017 1:43:21 AM",
+      "dateStarted": "Feb 8, 2017 3:53:30 PM",
+      "dateFinished": "Feb 8, 2017 3:53:30 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Wordcount, easy mode",
-      "text": "val input \u003d sc.parallelize(Seq(\"hi\", \"my\", \"my\", \"name\", \"is\",\"hi\"))\nval output \u003d input\n\nval expected \u003d Array((\"is\",1), (\"my,2\"), (\"name\",1), (\"hi\",2))",
-      "dateUpdated": "Feb 8, 2017 2:21:32 PM",
+      "text": "val input \u003d sc.parallelize(Seq(\"hi\", \"my\", \"my\", \"name\", \"is\",\"hi\"))\nval output \u003d input.distinct.count\n\nval expected \u003d Array((\"is\",1), (\"my,2\"), (\"name\",1), (\"hi\",2))",
+      "dateUpdated": "Feb 8, 2017 3:58:18 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1542,11 +1564,15 @@
       },
       "jobName": "paragraph_1485338316737_924641072",
       "id": "20170125-095836_160099750",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\ninput: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[30] at parallelize at \u003cconsole\u003e:48\n\noutput: Long \u003d 4\n\nexpected: Array[java.io.Serializable] \u003d Array((is,1), my,2, (name,1), (hi,2))\n"
+      },
       "dateCreated": "Jan 25, 2017 9:58:36 AM",
-      "dateStarted": "Feb 1, 2017 10:36:20 AM",
-      "dateFinished": "Feb 1, 2017 10:36:21 AM",
+      "dateStarted": "Feb 8, 2017 3:58:18 PM",
+      "dateFinished": "Feb 8, 2017 3:58:19 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
