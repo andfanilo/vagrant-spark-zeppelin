@@ -1057,8 +1057,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "",
-      "dateUpdated": "Feb 8, 2017 8:49:04 PM",
+      "text": "val transformedDataset \u003d pipelineModel.transform(dataset)\nval split \u003d transformedDataset.randomSplit(Array(0.7, 0.3))\nval training \u003d split(0)\nval test \u003d split(1)",
+      "dateUpdated": "Feb 8, 2017 8:58:15 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1079,8 +1079,15 @@
       },
       "jobName": "paragraph_1486586934289_1248321657",
       "id": "20170208-204854_1940935237",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\ntransformedDataset: org.apache.spark.sql.DataFrame \u003d [age: double, workclass: string ... 31 more fields]\n\nsplit: Array[org.apache.spark.sql.Dataset[org.apache.spark.sql.Row]] \u003d Array([age: double, workclass: string ... 31 more fields], [age: double, workclass: string ... 31 more fields])\n\ntraining: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [age: double, workclass: string ... 31 more fields]\n\ntest: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [age: double, workclass: string ... 31 more fields]\n"
+      },
       "dateCreated": "Feb 8, 2017 8:48:54 PM",
-      "status": "READY",
+      "dateStarted": "Feb 8, 2017 8:58:15 PM",
+      "dateFinished": "Feb 8, 2017 8:58:16 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
