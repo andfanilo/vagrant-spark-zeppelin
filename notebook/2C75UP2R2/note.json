@@ -1,9 +1,8 @@
 {
-	
   "paragraphs": [
     {
-      "text": "%md\n\n# TP  : Ahmed Lattali & Ismail Ammor \n Introduction to spark \u0026 Zeppelin\n#### An overview of the two Big Data tools.\n\nBefore pursuing, make sure you have saved the previous Interpreter binding window, otherwise you will get an error like `paragraph not found` when executing cells",
-      "dateUpdated": "Feb 1, 2017 10:32:11 AM",
+      "text": "%md\n\n# TP  : Ahmed Lattali \u0026 Ismail Ammor \n Introduction to spark \u0026 Zeppelin\n#### An overview of the two Big Data tools.\n\nBefore pursuing, make sure you have saved the previous Interpreter binding window, otherwise you will get an error like `paragraph not found` when executing cells",
+      "dateUpdated": "Feb 8, 2017 1:19:00 PM",
       "config": {
         "enabled": true,
         "tableHide": false,
@@ -34,11 +33,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003ch1\u003eIntroduction to Spark \u0026amp; Zeppelin\u003c/h1\u003e\n\u003ch4\u003eAn overview of the two Big Data tools.\u003c/h4\u003e\n\u003cp\u003eBefore pursuing, make sure you have saved the previous Interpreter binding window, otherwise you will get an error like \u003ccode\u003eparagraph not found\u003c/code\u003e when executing cells\u003c/p\u003e\n"
+        "msg": "\u003ch1\u003eTP  : Ahmed Lattali \u0026amp; Ismail Ammor\u003c/h1\u003e\n\u003cp\u003eIntroduction to spark \u0026amp; Zeppelin\u003c/p\u003e\n\u003ch4\u003eAn overview of the two Big Data tools.\u003c/h4\u003e\n\u003cp\u003eBefore pursuing, make sure you have saved the previous Interpreter binding window, otherwise you will get an error like \u003ccode\u003eparagraph not found\u003c/code\u003e when executing cells\u003c/p\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 1, 2017 10:32:09 AM",
-      "dateFinished": "Feb 1, 2017 10:32:09 AM",
+      "dateStarted": "Feb 8, 2017 1:18:56 PM",
+      "dateFinished": "Feb 8, 2017 1:18:57 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1123,7 +1122,7 @@
     {
       "title": "Get highest number in a list with a reduce",
       "text": "import util.Random.nextInt\nval input \u003d Seq.fill(10)(nextInt)\nval output \u003d input.reduce((x, y) \u003d\u003e Math.max(x,y))\n\nval expected \u003d input.max",
-      "dateUpdated": "Feb 8, 2017 1:02:40 PM",
+      "dateUpdated": "Feb 8, 2017 1:02:40 AM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1153,8 +1152,8 @@
         "msg": "\nimport util.Random.nextInt\n\ninput: Seq[Int] \u003d List(1512722210, 2036585128, 1414736492, -2079752108, 1098846508, -1737344422, 2082389080, -135451045, 1898898470, 1533792401)\n\noutput: Int \u003d 2082389080\n\nexpected: Int \u003d 2082389080\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:32 AM",
-      "dateStarted": "Feb 8, 2017 1:00:12 PM",
-      "dateFinished": "Feb 8, 2017 1:00:13 PM",
+      "dateStarted": "Feb 8, 2017 1:00:12 AM",
+      "dateFinished": "Feb 8, 2017 1:00:13 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
