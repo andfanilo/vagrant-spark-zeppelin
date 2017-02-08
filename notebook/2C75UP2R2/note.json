@@ -738,7 +738,7 @@
     },
     {
       "text": "/*\n * The following function adds 2 to a number.\n */\ndef add2(x: Int): Int \u003d x + 2",
-      "dateUpdated": "Feb 8, 2017 3:22:24 PM",
+      "dateUpdated": "Feb 8, 2017 4:31:31 PM",
       "config": {
         "enabled": true,
         "graph": {
@@ -1123,8 +1123,8 @@
     },
     {
       "title": "Get highest number in a list with a reduce",
-      "text": "import util.Random.nextInt\nval input \u003d Seq.fill(10)(nextInt)\n//initial val output \u003d input.reduce((x, y) \u003d\u003e x)\ndef maximum(x: Int, y:Int): Int \u003d \nval output \u003d input.reduce((x, y) \u003d\u003e x\n\nval expected \u003d input.max",
-      "dateUpdated": "Feb 8, 2017 4:25:51 PM",
+      "text": "import util.Random.nextInt\nval input \u003d Seq.fill(10)(nextInt)\n//initial val output \u003d input.reduce((x, y) \u003d\u003e x)\ndef maximum(x: Int, y:Int): Int \u003d if (x\u003ey) x else y\nval output \u003d input.reduce((x, y) \u003d\u003e maximum(x,y))\n\nval expected \u003d input.max",
+      "dateUpdated": "Feb 8, 2017 4:36:27 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1149,14 +1149,14 @@
       "jobName": "paragraph_1485334652733_875647972",
       "id": "20170125-085732_1286059698",
       "result": {
-        "code": "ERROR",
+        "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nimport util.Random.nextInt\n\ninput: Seq[Int] \u003d List(795860122, 542490084, 1081887501, -932481130, 101495259, 177085533, -278923988, 928081781, -352282514, 1981692250)\n\n\n\n\u003cconsole\u003e:3: error: \u0027)\u0027 expected but \u0027val\u0027 found.\nval expected \u003d input.max\n^\n"
+        "msg": "\nimport util.Random.nextInt\n\ninput: Seq[Int] \u003d List(1411622175, -775961979, -839358081, -1549225868, 1487929733, -1486399577, -22993972, 629766862, 590824060, 1190557175)\n\nmaximum: (x: Int, y: Int)Int\n\noutput: Int \u003d 1487929733\n\nexpected: Int \u003d 1487929733\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:32 AM",
-      "dateStarted": "Feb 8, 2017 4:20:16 PM",
-      "dateFinished": "Feb 8, 2017 4:20:17 PM",
-      "status": "ERROR",
+      "dateStarted": "Feb 8, 2017 4:36:27 PM",
+      "dateFinished": "Feb 8, 2017 4:36:29 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
