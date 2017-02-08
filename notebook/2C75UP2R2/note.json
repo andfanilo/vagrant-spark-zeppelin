@@ -2,7 +2,7 @@
   "paragraphs": [
     {
       "text": "%md\n\n# Introduction to Spark \u0026 Zeppelin\n#### An overview of the two Big Data tools.\n\nBefore pursuing, make sure you have saved the previous Interpreter binding window, otherwise you will get an error like `paragraph not found` when executing cells",
-      "dateUpdated": "Feb 1, 2017 10:32:11 AM",
+      "dateUpdated": "Feb 8, 2017 2:35:47 PM",
       "config": {
         "enabled": true,
         "tableHide": false,
@@ -36,14 +36,14 @@
         "msg": "\u003ch1\u003eIntroduction to Spark \u0026amp; Zeppelin\u003c/h1\u003e\n\u003ch4\u003eAn overview of the two Big Data tools.\u003c/h4\u003e\n\u003cp\u003eBefore pursuing, make sure you have saved the previous Interpreter binding window, otherwise you will get an error like \u003ccode\u003eparagraph not found\u003c/code\u003e when executing cells\u003c/p\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 1, 2017 10:32:09 AM",
-      "dateFinished": "Feb 1, 2017 10:32:09 AM",
+      "dateStarted": "Feb 8, 2017 2:35:48 PM",
+      "dateFinished": "Feb 8, 2017 2:35:50 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n![Spark logo](http://spark.apache.org/images/spark-logo-trademark.png)\n#\n[Apache Spark](http://spark.apache.org/) is a cluster computing engine designed to be __fast__ and __general-purpose__, making it the ideal choice for processing of large datasets. It answers those two points with __efficient data sharing__ accross computations.\n\u003chr/\u003e\nThe past years have seen a major changes in computing systems, as growing data volumes required more and more applications to scale out to large clusters. To solve this problem, a wide range of new programming models have been designed to manage multiple types of computations in a distributed fashion, without having people learn too much about distributed systems. Those programming models would need to deal with _parallelism, fault-tolerance and resource sharing_ for us.\n\n[Google\u0027s MapReduce](https://en.wikipedia.org/wiki/MapReduce) presented a simple and general model for batch processing, which handles faults and parallelism easily. Unfortunately the programming model is not adapted for other types of workloads, and multiple specialized systems were born to answer a specific need in a distributed way. \n* Iterative : Giraph\n* Interactive : Impala, Piccolo, Greenplum\n* Streaming : Storm, Millwheel\n\n#\nThe initial goal of Apache Spark is to try and unify all of the workloads for generality purposes. [Matei Zaharia](https://cs.stanford.edu/~matei/) in his [PhD dissertation](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2014/EECS-2014-12.pdf) suggests that most of the data flow models that required a specialized system needed _efficient data sharing_ accross computations:\n* Iterative algorithms like PageRank or K-Means need to make multiple passes over the same dataset\n* Interactive data mining often requires running multiple ad-hoc queries on the same subset of data\n* Streaming applications need to maintain and share state over time.\n\nHe then proposes to create a new abstraction that gives its users direct control over data sharing, something that other specialized systems would have built-in for their specific needs. The abstraction is implemented inside a new engine that is today called Apache Spark. The engine makes it possible to support more types of computations than with the original MapReduce in a more efficient way, including interactive queries and stream processing. ",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "dateUpdated": "Feb 8, 2017 2:48:02 PM",
       "config": {
         "enabled": true,
         "tableHide": false,
@@ -77,13 +77,14 @@
         "msg": "\u003cp\u003e\u003cimg src\u003d\"http://spark.apache.org/images/spark-logo-trademark.png\" alt\u003d\"Spark logo\" /\u003e\u003c/p\u003e\n\u003ch1\u003e\u003c/h1\u003e\n\u003cp\u003e\u003ca href\u003d\"http://spark.apache.org/\"\u003eApache Spark\u003c/a\u003e is a cluster computing engine designed to be \u003cstrong\u003efast\u003c/strong\u003e and \u003cstrong\u003egeneral-purpose\u003c/strong\u003e, making it the ideal choice for processing of large datasets. It answers those two points with \u003cstrong\u003eefficient data sharing\u003c/strong\u003e accross computations.\u003c/p\u003e\n\u003chr/\u003e\n\u003cp\u003eThe past years have seen a major changes in computing systems, as growing data volumes required more and more applications to scale out to large clusters. To solve this problem, a wide range of new programming models have been designed to manage multiple types of computations in a distributed fashion, without having people learn too much about distributed systems. Those programming models would need to deal with \u003cem\u003eparallelism, fault-tolerance and resource sharing\u003c/em\u003e for us.\u003c/p\u003e\n\u003cp\u003e\u003ca href\u003d\"https://en.wikipedia.org/wiki/MapReduce\"\u003eGoogle\u0027s MapReduce\u003c/a\u003e presented a simple and general model for batch processing, which handles faults and parallelism easily. Unfortunately the programming model is not adapted for other types of workloads, and multiple specialized systems were born to answer a specific need in a distributed way.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eIterative : Giraph\u003c/li\u003e\n\u003cli\u003eInteractive : Impala, Piccolo, Greenplum\u003c/li\u003e\n\u003cli\u003eStreaming : Storm, Millwheel\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003e\u003c/h1\u003e\n\u003cp\u003eThe initial goal of Apache Spark is to try and unify all of the workloads for generality purposes. \u003ca href\u003d\"https://cs.stanford.edu/~matei/\"\u003eMatei Zaharia\u003c/a\u003e in his \u003ca href\u003d\"https://www2.eecs.berkeley.edu/Pubs/TechRpts/2014/EECS-2014-12.pdf\"\u003ePhD dissertation\u003c/a\u003e suggests that most of the data flow models that required a specialized system needed \u003cem\u003eefficient data sharing\u003c/em\u003e accross computations:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eIterative algorithms like PageRank or K-Means need to make multiple passes over the same dataset\u003c/li\u003e\n\u003cli\u003eInteractive data mining often requires running multiple ad-hoc queries on the same subset of data\u003c/li\u003e\n\u003cli\u003eStreaming applications need to maintain and share state over time.\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eHe then proposes to create a new abstraction that gives its users direct control over data sharing, something that other specialized systems would have built-in for their specific needs. The abstraction is implemented inside a new engine that is today called Apache Spark. The engine makes it possible to support more types of computations than with the original MapReduce in a more efficient way, including interactive queries and stream processing.\u003c/p\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 2:48:03 PM",
+      "dateFinished": "Feb 8, 2017 2:48:03 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n![](https://zeppelin.apache.org/assets/themes/zeppelin/img/zeppelin_classic_logo.png)\n#\n[Apache Zeppelin](https://zeppelin.apache.org/) is a web-based notebook that enables interactive data analytics. It is  famous for its very strong Apache Spark integration.\n\u003chr/\u003e\n\nApache Zeppelin\u0027s purpose is to provide engineers and scientists with an interface for all Big Data needs, which comes bundled with the means for analyzing, collaborating and sharing data on top of common Big Data frameworks.\n\nThe Apache Zeppelin interpreter concept allows the plugin of a language or data-processing backend into Zeppelin _(think of it like a kernel for Jupyter notebook)_. Currently it supports [many interpreters](https://zeppelin.apache.org/docs/0.6.2/manual/interpreterinstallation.html) like Apache Spark, Python, JDBC, Markdown and shell. Creation of a custom interpreter is also possible by extending the necessary abstract class.\n\nYou can view examples of Zeppelin notebooks [here](https://www.zeppelinhub.com/viewer).\n\nToday, Apache Zeppelin comes bundled with most Big Data distributions _(Cloudera, Hortonworks...)_ as the main tool for interactive Big Data analytics, which makes for a good reason to have you try Apache Spark interactively in a Zeppelin notebook.",
-      "dateUpdated": "Jan 25, 2017 8:54:41 AM",
+      "dateUpdated": "Feb 8, 2017 2:48:11 PM",
       "config": {
         "enabled": true,
         "tableHide": false,
@@ -116,14 +117,14 @@
         "msg": "\u003cp\u003e\u003cimg src\u003d\"https://zeppelin.apache.org/assets/themes/zeppelin/img/zeppelin_classic_logo.png\" alt\u003d\"\" /\u003e\u003c/p\u003e\n\u003ch1\u003e\u003c/h1\u003e\n\u003cp\u003e\u003ca href\u003d\"https://zeppelin.apache.org/\"\u003eApache Zeppelin\u003c/a\u003e is a web-based notebook that enables interactive data analytics. It is  famous for its very strong Apache Spark integration.\u003c/p\u003e\n\u003chr/\u003e\n\u003cp\u003eApache Zeppelin\u0027s purpose is to provide engineers and scientists with an interface for all Big Data needs, which comes bundled with the means for analyzing, collaborating and sharing data on top of common Big Data frameworks.\u003c/p\u003e\n\u003cp\u003eThe Apache Zeppelin interpreter concept allows the plugin of a language or data-processing backend into Zeppelin \u003cem\u003e(think of it like a kernel for Jupyter notebook)\u003c/em\u003e. Currently it supports \u003ca href\u003d\"https://zeppelin.apache.org/docs/0.6.2/manual/interpreterinstallation.html\"\u003emany interpreters\u003c/a\u003e like Apache Spark, Python, JDBC, Markdown and shell. Creation of a custom interpreter is also possible by extending the necessary abstract class.\u003c/p\u003e\n\u003cp\u003eYou can view examples of Zeppelin notebooks \u003ca href\u003d\"https://www.zeppelinhub.com/viewer\"\u003ehere\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eToday, Apache Zeppelin comes bundled with most Big Data distributions \u003cem\u003e(Cloudera, Hortonworks\u0026hellip;)\u003c/em\u003e as the main tool for interactive Big Data analytics, which makes for a good reason to have you try Apache Spark interactively in a Zeppelin notebook.\u003c/p\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:54:39 AM",
-      "dateFinished": "Jan 25, 2017 8:54:39 AM",
+      "dateStarted": "Feb 8, 2017 2:48:11 PM",
+      "dateFinished": "Feb 8, 2017 2:48:11 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n###Interpreter\n\nApache Zeppelin is primarily a notebook. A Zeppelin notebook consists of a set of cells with an interpreter _(or language backend)_ attached.\n\nFor example, this cell is linked to the Markdown interpreter, so when you run the cell it parses the code as Markdown and then displays the result.\n\nYou will find the most useful markdown components [on this cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).\n\nIn each cell, there is a toolbar with four items: \n* The `Play` button (blue triangle) lets you run the paragraph. You can also press `Shift + Enter` to run the cell when selected\n* The `Show/Hide editor` if you want to see the source code for the cell\n* The `Show/Hide output` if you want to see the output for the cell\n* The `Settings` item, for more advanced options like adding/managing cells.\n\n\u003chr/\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\nNow you can press `Show editor` to see the source code of the cell. You will see that it starts with `%md`, which specifies to the cell that it should use the Markdown interpreter. You can edit the text and then run the cell to see the editing in the output.",
-      "dateUpdated": "Feb 1, 2017 6:53:21 AM",
+      "dateUpdated": "Feb 8, 2017 2:50:44 PM",
       "config": {
         "enabled": true,
         "graph": {
@@ -142,7 +143,8 @@
         },
         "editorMode": "ace/mode/markdown",
         "editorHide": true,
-        "colWidth": 12.0
+        "colWidth": 12.0,
+        "tableHide": false
       },
       "settings": {
         "params": {},
@@ -156,14 +158,14 @@
         "msg": "\u003ch3\u003eInterpreter\u003c/h3\u003e\n\u003cp\u003eApache Zeppelin is primarily a notebook. A Zeppelin notebook consists of a set of cells with an interpreter \u003cem\u003e(or language backend)\u003c/em\u003e attached.\u003c/p\u003e\n\u003cp\u003eFor example, this cell is linked to the Markdown interpreter, so when you run the cell it parses the code as Markdown and then displays the result.\u003c/p\u003e\n\u003cp\u003eYou will find the most useful markdown components \u003ca href\u003d\"https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet\"\u003eon this cheatsheet\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eIn each cell, there is a toolbar with four items:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eThe \u003ccode\u003ePlay\u003c/code\u003e button (blue triangle) lets you run the paragraph. You can also press \u003ccode\u003eShift + Enter\u003c/code\u003e to run the cell when selected\u003c/li\u003e\n\u003cli\u003eThe \u003ccode\u003eShow/Hide editor\u003c/code\u003e if you want to see the source code for the cell\u003c/li\u003e\n\u003cli\u003eThe \u003ccode\u003eShow/Hide output\u003c/code\u003e if you want to see the output for the cell\u003c/li\u003e\n\u003cli\u003eThe \u003ccode\u003eSettings\u003c/code\u003e item, for more advanced options like adding/managing cells.\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr/\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eNow you can press \u003ccode\u003eShow editor\u003c/code\u003e to see the source code of the cell. You will see that it starts with \u003ccode\u003e%md\u003c/code\u003e, which specifies to the cell that it should use the Markdown interpreter. You can edit the text and then run the cell to see the editing in the output.\u003c/p\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 1, 2017 6:53:18 AM",
-      "dateFinished": "Feb 1, 2017 6:53:18 AM",
+      "dateStarted": "Feb 8, 2017 2:50:14 PM",
+      "dateFinished": "Feb 8, 2017 2:50:14 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\nApache Zeppelin follows the responsive 12-column grid system. In the following row we show 3 different interpreters in action. \n\nYou will find the width of the cell inside the settings button.\n\u003chr/\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\nYou can go on and try to modify the source code in the three following cells and re-execute the code. For example, try to type `1+2` in the Python cell.",
-      "dateUpdated": "Feb 1, 2017 6:53:54 AM",
+      "dateUpdated": "Feb 8, 2017 3:06:00 PM",
       "config": {
         "enabled": true,
         "graph": {
@@ -196,15 +198,15 @@
         "msg": "\u003cp\u003eApache Zeppelin follows the responsive 12-column grid system. In the following row we show 3 different interpreters in action.\u003c/p\u003e\n\u003cp\u003eYou will find the width of the cell inside the settings button.\u003c/p\u003e\n\u003chr/\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eYou can go on and try to modify the source code in the three following cells and re-execute the code. For example, try to type \u003ccode\u003e1+2\u003c/code\u003e in the Python cell.\u003c/p\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 1, 2017 6:53:52 AM",
-      "dateFinished": "Feb 1, 2017 6:53:52 AM",
+      "dateStarted": "Feb 8, 2017 3:06:01 PM",
+      "dateFinished": "Feb 8, 2017 3:06:01 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Shell cell",
-      "text": "%sh\necho \"Hello world\"",
-      "dateUpdated": "Feb 1, 2017 6:51:19 AM",
+      "text": "%sh\necho \"Hello world !\"",
+      "dateUpdated": "Feb 8, 2017 3:06:32 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -235,18 +237,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "Hello world !\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 1, 2017 6:51:19 AM",
-      "dateFinished": "Feb 1, 2017 6:51:20 AM",
+      "dateStarted": "Feb 8, 2017 3:06:32 PM",
+      "dateFinished": "Feb 8, 2017 3:06:32 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Python cell",
-      "text": "%python\nprint(\"Hello world\")",
-      "dateUpdated": "Jan 25, 2017 8:33:22 AM",
+      "text": "%python\nprint(\"Hello world\")\n1+2",
+      "dateUpdated": "Feb 8, 2017 3:06:49 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -276,18 +278,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "Hello world\n3\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:33:22 AM",
-      "dateFinished": "Jan 25, 2017 8:33:23 AM",
+      "dateStarted": "Feb 8, 2017 3:06:49 PM",
+      "dateFinished": "Feb 8, 2017 3:06:50 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Spark/Scala cell",
-      "text": "println(\"Hello world\")",
-      "dateUpdated": "Jan 25, 2017 8:33:26 AM",
+      "text": "println(\"Hello world !\")",
+      "dateUpdated": "Feb 8, 2017 3:07:01 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -317,11 +319,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "Hello world !\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:33:26 AM",
-      "dateFinished": "Jan 25, 2017 8:33:59 AM",
+      "dateStarted": "Feb 8, 2017 3:07:01 PM",
+      "dateFinished": "Feb 8, 2017 3:07:32 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -405,8 +407,8 @@
     },
     {
       "title": "Some arithmetic",
-      "text": "8 * 5 + 2",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "text": "8 * 5 + 2\n8 + 2 * 5",
+      "dateUpdated": "Feb 8, 2017 3:09:43 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -431,20 +433,21 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "res2: Int \u003d 42\n"
+        "msg": "\nres4: Int \u003d 42\n\nres5: Int \u003d 18\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 3:09:43 PM",
+      "dateFinished": "Feb 8, 2017 3:09:44 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Declaring variables",
-      "text": "val a \u003d 3 // val defines an immutable value\nvar b : Int \u003d 5 // var defines a mutable variable\nprintln(a + b)\n\nb \u003d 42\nprintln(a + b)\n\n// Note that the type of a variable or function is written after the variable or function. \n\n// Because Scala does type inference, it is also not necessary to declare type to variables when it looks obvious.",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "text": "val a \u003d 3 // val defines an immutable value\nvar b : Int \u003d 5 // var defines a mutable variable\nprintln(a + b)\n\nb \u003d 40\nprintln(a + b)\n\n// Note that the type of a variable or function is written after the variable or function. \n\n// Because Scala does type inference, it is also not necessary to declare type to variables when it looks obvious.",
+      "dateUpdated": "Feb 8, 2017 3:15:21 PM",
       "config": {
         "enabled": true,
-        "tableHide": true,
+        "tableHide": false,
         "title": true,
         "graph": {
           "mode": "table",
@@ -468,17 +471,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "a: Int \u003d 3\nb: Int \u003d 5\n8\nb: Int \u003d 42\n45\n"
+        "msg": "\na: Int \u003d 3\n\nb: Int \u003d 5\n8\n\nb: Int \u003d 40\n43\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 3:15:21 PM",
+      "dateFinished": "Feb 8, 2017 3:15:22 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Reusing a variable",
-      "text": "// variables are accessible accross cells\n\na * b",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "text": "// variables are accessible accross cells\n\na * b - a",
+      "dateUpdated": "Feb 8, 2017 3:15:51 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -503,11 +507,12 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "res13: Int \u003d 15\n"
+        "msg": "\nres24: Int \u003d 117\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 3:15:51 PM",
+      "dateFinished": "Feb 8, 2017 3:15:51 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -2141,24 +2146,24 @@
   "name": "Practice",
   "id": "2C75UP2R2",
   "angularObjects": {
-    "2C93MQCCX:shared_process": [],
-    "2CAFQY6K3:shared_process": [],
-    "2C71Z8V22:shared_process": [],
-    "2C74PSEZQ:shared_process": [],
-    "2C7936H5V:shared_process": [],
-    "2C6WY8JHA:shared_process": [],
-    "2C8CCCVZ2:shared_process": [],
-    "2C9JTS6JQ:shared_process": [],
-    "2C91JKV9H:shared_process": [],
-    "2C8N1PP7C:shared_process": [],
-    "2C7YTW7VT:shared_process": [],
-    "2C85G18U9:shared_process": [],
-    "2C9XYSTEH:shared_process": [],
-    "2CA474ZG3:shared_process": [],
-    "2C8JNXQ9U:shared_process": [],
-    "2C827138T:shared_process": [],
-    "2CAA7GXEJ:shared_process": [],
-    "2C8W1GCP8:shared_process": []
+    "2C8KETW16:shared_process": [],
+    "2C8UMWA1C:shared_process": [],
+    "2C9VC93V7:shared_process": [],
+    "2CARR6D5A:shared_process": [],
+    "2CAV61GU9:shared_process": [],
+    "2C9DZYXZD:shared_process": [],
+    "2C8CQ1ZJ1:shared_process": [],
+    "2CAWJTPKW:shared_process": [],
+    "2C99DRD7Z:shared_process": [],
+    "2CBBM3RP9:shared_process": [],
+    "2C7Y5UJGS:shared_process": [],
+    "2C926NVDW:shared_process": [],
+    "2CA6AJM8K:shared_process": [],
+    "2C8KMG5FJ:shared_process": [],
+    "2C8JX1W1X:shared_process": [],
+    "2C7YDPDK5:shared_process": [],
+    "2C8JP68QX:shared_process": [],
+    "2C8ND2T6M:shared_process": []
   },
   "config": {
     "looknfeel": "default"
