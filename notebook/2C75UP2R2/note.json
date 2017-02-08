@@ -1162,7 +1162,7 @@
     },
     {
       "text": "%md\n### Programming with RDDs\nIn this chapter, we are going to introduce Spark\u0027s core abstraction for working with data in a distributed and resilient way : the \u003ctext style\u003d\"color:red;\"\u003eresilient distributed dataset\u003c/text\u003e, or \u003ctext style\u003d\"color:red;\"\u003eRDD\u003c/text\u003e. Under the hood, Spark automatically performs the distribution of RDDs and its processing around the cluster, so we can focus on our code and not on distributed processing problems, such as the handling of data locality or resiliency in case of node failure.\n\nA RDD consists of a collection of elements partitioned accross the nodes of a cluster of machines that can be operated on in parallel. In Spark, work is expressed by the creation and transformation of RDDs using Spark operators.\n\n\u003ctext style\u003d\"color:red;\"\u003eNote\u003c/text\u003e : RDD is the core data structure to Spark, but the style of programming we are studying in this lesson is considered the _lowest-level API_ for Spark. The Spark community is pushing the use of Structured programming with Dataframes/Datasets instead, an optimized interface for working with structured and semi-structured data, which we will learn later. Understanding RDDs is still important because it teaches you how Spark works under the hood and will serve you to understand and optimize your application when deployed into production.\n\nThis example displays the coarse-grained processing nature of Spark, that applies the same operation to many data items. This is a good fit for many parallel applications, as they _naturally apply the same operation to multiple data items_.",
-      "dateUpdated": "Jan 25, 2017 9:53:13 AM",
+      "dateUpdated": "Feb 8, 2017 3:23:32 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1190,8 +1190,8 @@
         "msg": "\u003ch3\u003eProgramming with RDDs\u003c/h3\u003e\n\u003cp\u003eIn this chapter, we are going to introduce Spark\u0027s core abstraction for working with data in a distributed and resilient way : the \u003ctext style\u003d\"color:red;\"\u003eresilient distributed dataset\u003c/text\u003e, or \u003ctext style\u003d\"color:red;\"\u003eRDD\u003c/text\u003e. Under the hood, Spark automatically performs the distribution of RDDs and its processing around the cluster, so we can focus on our code and not on distributed processing problems, such as the handling of data locality or resiliency in case of node failure.\u003c/p\u003e\n\u003cp\u003eA RDD consists of a collection of elements partitioned accross the nodes of a cluster of machines that can be operated on in parallel. In Spark, work is expressed by the creation and transformation of RDDs using Spark operators.\u003c/p\u003e\n\u003cp\u003e\u003ctext style\u003d\"color:red;\"\u003eNote\u003c/text\u003e : RDD is the core data structure to Spark, but the style of programming we are studying in this lesson is considered the \u003cem\u003elowest-level API\u003c/em\u003e for Spark. The Spark community is pushing the use of Structured programming with Dataframes/Datasets instead, an optimized interface for working with structured and semi-structured data, which we will learn later. Understanding RDDs is still important because it teaches you how Spark works under the hood and will serve you to understand and optimize your application when deployed into production.\u003c/p\u003e\n\u003cp\u003eThis example displays the coarse-grained processing nature of Spark, that applies the same operation to many data items. This is a good fit for many parallel applications, as they \u003cem\u003enaturally apply the same operation to multiple data items\u003c/em\u003e.\u003c/p\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 9:25:02 AM",
-      "dateStarted": "Jan 25, 2017 9:53:10 AM",
-      "dateFinished": "Jan 25, 2017 9:53:10 AM",
+      "dateStarted": "Feb 8, 2017 3:23:32 PM",
+      "dateFinished": "Feb 8, 2017 3:23:32 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1302,8 +1302,8 @@
     },
     {
       "title": "Calculate the number of unique words in the \"words\" RDD here.",
-      "text": "val words \u003d sc.parallelize(Array(\"hello\", \"world\", \"goodbye\", \"hello\", \"again\"))\n\nval expected \u003d 4",
-      "dateUpdated": "Feb 1, 2017 9:14:16 AM",
+      "text": "val words \u003d sc.parallelize(Array(\"hello\", \"world\", \"goodbye\", \"hello\", \"again\"))\nval output \u003d words.distinct().count()\nval expected \u003d 4",
+      "dateUpdated": "Feb 8, 2017 3:36:22 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1328,18 +1328,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nwords: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[8] at parallelize at \u003cconsole\u003e:27\n\nexpected: Int \u003d 4\n"
+        "msg": "\nwords: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[5] at parallelize at \u003cconsole\u003e:30\n\noutput: Long \u003d 4\n\nexpected: Int \u003d 4\n"
       },
       "dateCreated": "Jan 25, 2017 9:34:16 AM",
-      "dateStarted": "Feb 1, 2017 9:14:16 AM",
-      "dateFinished": "Feb 1, 2017 9:14:17 AM",
+      "dateStarted": "Feb 8, 2017 3:36:22 PM",
+      "dateFinished": "Feb 8, 2017 3:36:24 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Create a random RDD of numbers, and find its mean.",
-      "text": "import util.Random.nextInt\nval input \u003d sc.parallelize(Seq.fill(10000)(nextInt))",
-      "dateUpdated": "Jan 25, 2017 1:41:43 AM",
+      "text": "import util.Random.nextInt\nvar input \u003d sc.parallelize(Seq.fill(10000)(nextInt))\nval output \u003d input.reduce((x,y) \u003d\u003e x+y)/ input.count()\nval output2 \u003d input.mean\ninput.collect()",
+      "dateUpdated": "Feb 8, 2017 3:47:00 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1361,8 +1361,15 @@
       },
       "jobName": "paragraph_1485336877601_1857515653",
       "id": "20170125-093437_413700163",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nimport util.Random.nextInt\n\ninput: org.apache.spark.rdd.RDD[Int] \u003d ParallelCollectionRDD[22] at parallelize at \u003cconsole\u003e:46\n\noutput: Long \u003d -24684\n\noutput2: Double \u003d -8614618.867899988\nres102: Array[Int] \u003d Array(875951110, -745975543, -1904014467, 1825858035, -1522470476, -645744901, 1775651796, -1693731162, 1162291711, -1324178154, -512906017, 1742872352, 1413058307, -612580939, 1435049811, 1324864830, -130257125, 1756954822, 990629253, -1283412177, -1017187468, -893550387, -1506750947, 498200081, 976450524, 521843758, -238301687, -823405860, 1064874975, -1185260885, 2073421237, -1712513665, -747545324, -795472086, 2035682680, -258155960, 1367886516, 1589800379, 330818897, 2061050248, 1236630123, 1014502874, -509951022, -8409738, 1442887282, -1865151248, 1825456219, -858822061, 1287408861, -828553953, -422531957, 1569744079, -287086543, -1233826753, -1535692556, -1755202901, -2069045959, 2109105954, 1370390797, 1919119774, -1440972263, 453090591, 1040079468, 22520434..."
+      },
       "dateCreated": "Jan 25, 2017 9:34:37 AM",
-      "status": "READY",
+      "dateStarted": "Feb 8, 2017 3:47:00 PM",
+      "dateFinished": "Feb 8, 2017 3:47:02 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -1407,8 +1414,8 @@
     },
     {
       "title": "Wordcount, easy mode",
-      "text": "val input \u003d sc.parallelize(Seq(\"hi\", \"my\", \"my\", \"name\", \"is\",\"hi\"))\nval output \u003d input\n\nval expected \u003d Array((\"is\",1), (\"my,2\"), (\"name\",1), (\"hi\",2))",
-      "dateUpdated": "Feb 1, 2017 10:36:22 AM",
+      "text": "val input \u003d sc.parallelize(Seq(\"hi\", \"my\", \"my\", \"name\", \"is\",\"hi\"))\nval output \u003d input.map(x \u003d\u003e (x,1)).reduceByKey((x,y)\u003d\u003e x+y).collect()\n\nval expected \u003d Array((\"is\",1), (\"my,2\"), (\"name\",1), (\"hi\",2))",
+      "dateUpdated": "Feb 8, 2017 3:54:28 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1434,18 +1441,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ninput: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[152] at parallelize at \u003cconsole\u003e:41\n\noutput: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[152] at parallelize at \u003cconsole\u003e:41\n\nexpected: Array[java.io.Serializable] \u003d Array((is,1), my,2, (name,1), (hi,2))\n"
+        "msg": "\ninput: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[30] at parallelize at \u003cconsole\u003e:46\n\noutput: Array[(String, Int)] \u003d Array((is,1), (my,2), (name,1), (hi,2))\n\nexpected: Array[java.io.Serializable] \u003d Array((is,1), my,2, (name,1), (hi,2))\n"
       },
       "dateCreated": "Jan 25, 2017 9:58:36 AM",
-      "dateStarted": "Feb 1, 2017 10:36:20 AM",
-      "dateFinished": "Feb 1, 2017 10:36:21 AM",
+      "dateStarted": "Feb 8, 2017 3:54:28 PM",
+      "dateFinished": "Feb 8, 2017 3:54:30 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Sum ages per gender",
-      "text": "val rdd1 \u003d sc.parallelize(Seq((\"Patrick\", \"homme\"), (\"Sandra\", \"femme\"), (\"Faniki\", \"homme\"), (\"Noemie\", \"femme\"), (\"Francois\", \"homme\"), (\"Cassandre\", \"femme\")))\nval rdd2 \u003d sc.parallelize(Seq((\"Patrick\", 20), (\"Sandra\", 25), (\"Faniki\", 20), (\"Noemie\", 20), (\"Francois\", 30), (\"Cassandre\", 18)))\n\n// rdd1 and rdd2 are key-value rdds so you can join them and then continue the computation\nval output \u003d rdd1.join(rdd2)\n\nval expected \u003d Array((\"femme\", 63), (\"homme\", 70))",
-      "dateUpdated": "Feb 1, 2017 10:15:26 AM",
+      "text": "val rdd1 \u003d sc.parallelize(Seq((\"Patrick\", \"homme\"), (\"Sandra\", \"femme\"), (\"Faniki\", \"homme\"), (\"Noemie\", \"femme\"), (\"Francois\", \"homme\"), (\"Cassandre\", \"femme\")))\nval rdd2 \u003d sc.parallelize(Seq((\"Patrick\", 20), (\"Sandra\", 25), (\"Faniki\", 20), (\"Noemie\", 20), (\"Francois\", 30), (\"Cassandre\", 18)))\n\n// rdd1 and rdd2 are key-value rdds so you can join them and then continue the computation\nval output \u003d rdd1.join(rdd2).map (x\u003d\u003e x._2_1, x._2_2)).reduceByKey((x,y)\u003d\u003e x+y).collect()\n\nval expected \u003d Array((\"femme\", 63), (\"homme\", 70))",
+      "dateUpdated": "Feb 8, 2017 3:57:51 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1468,19 +1475,19 @@
       "jobName": "paragraph_1485349451411_-763547996",
       "id": "20170125-130411_450751393",
       "result": {
-        "code": "SUCCESS",
+        "code": "ERROR",
         "type": "TEXT",
-        "msg": "\nrdd1: org.apache.spark.rdd.RDD[(String, String)] \u003d ParallelCollectionRDD[131] at parallelize at \u003cconsole\u003e:41\n\nrdd2: org.apache.spark.rdd.RDD[(String, Int)] \u003d ParallelCollectionRDD[132] at parallelize at \u003cconsole\u003e:41\n\noutput: org.apache.spark.rdd.RDD[(String, (String, Int))] \u003d MapPartitionsRDD[135] at join at \u003cconsole\u003e:45\n\nexpected: Array[(String, Int)] \u003d Array((femme,63), (homme,70))\n"
+        "msg": "\nrdd1: org.apache.spark.rdd.RDD[(String, String)] \u003d ParallelCollectionRDD[38] at parallelize at \u003cconsole\u003e:46\n\nrdd2: org.apache.spark.rdd.RDD[(String, Int)] \u003d ParallelCollectionRDD[39] at parallelize at \u003cconsole\u003e:46\n\n\n\n\u003cconsole\u003e:1: error: \u0027;\u0027 expected but \u0027)\u0027 found.\nval output \u003d rdd1.join(rdd2).map (x\u003d\u003e x._2_1, x._2_2)).reduceByKey((x,y)\u003d\u003e x+y).collect()\n                                                     ^\n"
       },
       "dateCreated": "Jan 25, 2017 1:04:11 AM",
-      "dateStarted": "Feb 1, 2017 10:15:26 AM",
-      "dateFinished": "Feb 1, 2017 10:15:29 AM",
-      "status": "FINISHED",
+      "dateStarted": "Feb 8, 2017 3:57:51 PM",
+      "dateFinished": "Feb 8, 2017 3:57:52 PM",
+      "status": "ERROR",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md \n\n#### To the real wordcount\n\nWe are missing an important operator before going to the normal wordcount as we know it : `flatten`, which flattens the lists held inside the outer list into one resulting list.\n\n```scala\nscala\u003e val lol \u003d List(List(1,2), List(3,4))\nlol: List[List[Int]] \u003d List(List(1, 2), List(3, 4))\n\nscala\u003e val result \u003d lol.flatten\nresult: List[Int] \u003d List(1, 2, 3, 4)\n```\n\nIn general, when reading a text, you get an array of lines like :\n\n```scala\nval text \u003d Seq(\n    \"coucou\",\n    \"ceci est le cours de mapreduce\",\n    \"ce n\u0027est pas difficile\",\n    \"n\u0027est ce pas ?\"\n)\n```\n\nif I want the list of all the words, first I need to split each line into words and then flatten the whole :\n\n```scala\nscala\u003e val split \u003d text.map(line \u003d\u003e line.split(\" \"))\nresult: List[Array(String)] \u003d List(Array(\"coucou\"), Array(\"ceci\", \"est\", \"le\" ...))\n\nscala\u003e val flat \u003d split.flatten\nresult: List[String] \u003d List(\"coucou\", \"ceci\", \"est\", \"le\" ...))\n```\n\nYou get the same result if you use `flatMap` :\n\n```scala\nscala\u003e val flat \u003d text.flatMap(line \u003d\u003e line.split(\" \"))\nresult: List[String] \u003d List(\"coucou\", \"ceci\", \"est\", \"le\" ...))\n```\n\n\u003chr/\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nTry the wordcount on a textfile `/opt/dataset/don-quijote.txt.gz` read with Spark into a RDD ! This is it, this is the classic Hello world, it uses `flatMap` as the Hadoop Map and `reduceByKey` as the Hadoop Reduce.",
-      "dateUpdated": "Feb 1, 2017 9:43:33 AM",
+      "dateUpdated": "Feb 8, 2017 3:49:46 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1508,8 +1515,8 @@
         "msg": "\u003ch4\u003eTo the real wordcount\u003c/h4\u003e\n\u003cp\u003eWe are missing an important operator before going to the normal wordcount as we know it : \u003ccode\u003eflatten\u003c/code\u003e, which flattens the lists held inside the outer list into one resulting list.\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"scala\"\u003escala\u0026gt; val lol \u003d List(List(1,2), List(3,4))\nlol: List[List[Int]] \u003d List(List(1, 2), List(3, 4))\n\nscala\u0026gt; val result \u003d lol.flatten\nresult: List[Int] \u003d List(1, 2, 3, 4)\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eIn general, when reading a text, you get an array of lines like :\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"scala\"\u003eval text \u003d Seq(\n    \"coucou\",\n    \"ceci est le cours de mapreduce\",\n    \"ce n\u0027est pas difficile\",\n    \"n\u0027est ce pas ?\"\n)\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eif I want the list of all the words, first I need to split each line into words and then flatten the whole :\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"scala\"\u003escala\u0026gt; val split \u003d text.map(line \u003d\u0026gt; line.split(\" \"))\nresult: List[Array(String)] \u003d List(Array(\"coucou\"), Array(\"ceci\", \"est\", \"le\" ...))\n\nscala\u0026gt; val flat \u003d split.flatten\nresult: List[String] \u003d List(\"coucou\", \"ceci\", \"est\", \"le\" ...))\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eYou get the same result if you use \u003ccode\u003eflatMap\u003c/code\u003e :\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"scala\"\u003escala\u0026gt; val flat \u003d text.flatMap(line \u003d\u0026gt; line.split(\" \"))\nresult: List[String] \u003d List(\"coucou\", \"ceci\", \"est\", \"le\" ...))\n\u003c/code\u003e\u003c/pre\u003e\n\u003chr/\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eTry the wordcount on a textfile \u003ccode\u003e/opt/dataset/don-quijote.txt.gz\u003c/code\u003e read with Spark into a RDD ! This is it, this is the classic Hello world, it uses \u003ccode\u003eflatMap\u003c/code\u003e as the Hadoop Map and \u003ccode\u003ereduceByKey\u003c/code\u003e as the Hadoop Reduce.\u003c/p\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 12:59:07 PM",
-      "dateStarted": "Jan 25, 2017 1:53:30 AM",
-      "dateFinished": "Jan 25, 2017 1:53:30 AM",
+      "dateStarted": "Feb 8, 2017 3:49:46 PM",
+      "dateFinished": "Feb 8, 2017 3:49:46 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
