@@ -407,8 +407,8 @@
     },
     {
       "title": "Some arithmetic",
-      "text": "8 * 5 + 2",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "text": "8 * 5 + 12",
+      "dateUpdated": "Feb 8, 2017 11:27:33 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -433,17 +433,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "res2: Int \u003d 42\n"
+        "msg": "\nres2: Int \u003d 52\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 11:27:33 AM",
+      "dateFinished": "Feb 8, 2017 11:27:34 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Declaring variables",
-      "text": "val a \u003d 3 // val defines an immutable value\nvar b : Int \u003d 5 // var defines a mutable variable\nprintln(a + b)\n\nb \u003d 42\nprintln(a + b)\n\n// Note that the type of a variable or function is written after the variable or function. \n\n// Because Scala does type inference, it is also not necessary to declare type to variables when it looks obvious.",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "text": "val a \u003d 3 // val defines an immutable value\nvar b : Int \u003d 5 // var defines a mutable variable\nprintln(a * b)\n\nb \u003d 42\nprintln(a + b)\n\n// Note that the type of a variable or function is written after the variable or function. \n\n// Because Scala does type inference, it is also not necessary to declare type to variables when it looks obvious.",
+      "dateUpdated": "Feb 8, 2017 11:27:49 AM",
       "config": {
         "enabled": true,
         "tableHide": true,
@@ -470,17 +471,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "a: Int \u003d 3\nb: Int \u003d 5\n8\nb: Int \u003d 42\n45\n"
+        "msg": "\na: Int \u003d 3\n\nb: Int \u003d 5\n15\n\nb: Int \u003d 42\n45\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 11:27:49 AM",
+      "dateFinished": "Feb 8, 2017 11:27:51 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Reusing a variable",
-      "text": "// variables are accessible accross cells\n\na * b",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "text": "// variables are accessible accross cells\n\na * b +a",
+      "dateUpdated": "Feb 8, 2017 11:28:09 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -505,11 +507,12 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "res13: Int \u003d 15\n"
+        "msg": "\nres8: Int \u003d 129\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 11:28:09 AM",
+      "dateFinished": "Feb 8, 2017 11:28:10 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -586,9 +589,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "title": "New list with all elements doubled",
-      "text": "sequenceNumbers.map(x \u003d\u003e x * 2)\n\nsequenceNumbers.map(_ * 2)",
-      "dateUpdated": "Jan 25, 2017 8:34:39 AM",
+      "title": "New list with all elements doubled perso",
+      "text": "sequenceNumbers.map(x \u003d\u003e x * 1)\n\nsequenceNumbers.map(_ * 2)",
+      "dateUpdated": "Feb 8, 2017 11:30:31 AM",
       "config": {
         "enabled": true,
         "tableHide": true,
@@ -613,13 +616,14 @@
       "jobName": "paragraph_1485333124525_-38518704",
       "id": "20161215-104825_1497989654",
       "result": {
-        "code": "SUCCESS",
+        "code": "ERROR",
         "type": "TEXT",
-        "msg": "res40: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100, 102, 104, 106, 108, 110, 112, 114, 116, 118, 120, 122, 124, 126, 128, 130, 132, 134, 136, 138, 140, 142, 144, 146, 148, 150, 152, 154, 156, 158, 160, 162, 164, 166, 168, 170, 172, 174, 176, 178, 180, 182, 184, 186, 188, 190, 192, 194, 196, 198, 200)\nres41: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100, 102, 104, 106, 108, 110, 112, 114, 116, 118, 120, 122, 124, 126, 128, 130, 132, 134, 136, 138, 140, 142, 144, 146, 148, 150, 152, 154, 156, 158, 160, 162, 164, 166, 168, 170, 172, 174, 176, 178, 180, 182, 184, 186, 188, 190, 192, 194, 196, 198, 200)\n"
+        "msg": "\n\n\n\u003cconsole\u003e:26: error: not found: value sequenceNumbers\n       sequenceNumbers.map(x \u003d\u003e x * 1)\n       ^\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 11:30:31 AM",
+      "dateFinished": "Feb 8, 2017 11:30:31 AM",
+      "status": "ERROR",
       "progressUpdateIntervalMs": 500
     },
     {
