@@ -203,8 +203,8 @@
     },
     {
       "title": "Shell cell",
-      "text": "%sh\necho \"Cc tu veux voir ma baguette\"\n",
-      "dateUpdated": "Feb 8, 2017 1:42:47 PM",
+      "text": "%sh\necho \"CC mon nom borat\"\n",
+      "dateUpdated": "Feb 8, 2017 2:07:26 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -235,11 +235,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Cc tu veux voir ma baguette\n"
+        "msg": "CC mon nom borat\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 8, 2017 1:42:47 PM",
-      "dateFinished": "Feb 8, 2017 1:42:47 PM",
+      "dateStarted": "Feb 8, 2017 2:07:26 PM",
+      "dateFinished": "Feb 8, 2017 2:07:26 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -405,8 +405,8 @@
     },
     {
       "title": "Some arithmetic",
-      "text": "8 * 5 + 2",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "text": "8 * 10 + 2",
+      "dateUpdated": "Feb 8, 2017 2:09:42 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -420,7 +420,8 @@
           "scatter": {}
         },
         "editorMode": "ace/mode/scala",
-        "colWidth": 4.0
+        "colWidth": 4.0,
+        "tableHide": false
       },
       "settings": {
         "params": {},
@@ -431,20 +432,21 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "res2: Int \u003d 42\n"
+        "msg": "\nres8: Int \u003d 82\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 2:08:17 PM",
+      "dateFinished": "Feb 8, 2017 2:08:17 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Declaring variables",
-      "text": "val a \u003d 3 // val defines an immutable value\nvar b : Int \u003d 5 // var defines a mutable variable\nprintln(a + b)\n\nb \u003d 42\nprintln(a + b)\n\n// Note that the type of a variable or function is written after the variable or function. \n\n// Because Scala does type inference, it is also not necessary to declare type to variables when it looks obvious.",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "text": "val a \u003d 3 // val defines an immutable value\nvar b : Int \u003d 5 // var defines a mutable variable\nvar c : Int \u003d10\nvar d \u003d0\n\nd\u003d(a+b*c)\nprintln(d)\n\nb \u003d 42\nprintln(d + b)\n\n// Note that the type of a variable or function is written after the variable or function. \n\n// Because Scala does type inference, it is also not necessary to declare type to variables when it looks obvious.",
+      "dateUpdated": "Feb 8, 2017 2:09:37 PM",
       "config": {
         "enabled": true,
-        "tableHide": true,
+        "tableHide": false,
         "title": true,
         "graph": {
           "mode": "table",
@@ -468,23 +470,24 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "a: Int \u003d 3\nb: Int \u003d 5\n8\nb: Int \u003d 42\n45\n"
+        "msg": "\na: Int \u003d 3\n\nb: Int \u003d 5\n\nc: Int \u003d 10\n\nd: Int \u003d 0\n\nd: Int \u003d 53\n53\n\nb: Int \u003d 42\n95\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 2:09:20 PM",
+      "dateFinished": "Feb 8, 2017 2:09:21 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Reusing a variable",
       "text": "// variables are accessible accross cells\n\na * b",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "dateUpdated": "Feb 8, 2017 2:09:50 PM",
       "config": {
         "enabled": true,
         "title": true,
         "graph": {
           "mode": "table",
-          "height": 300.0,
+          "height": 93.0,
           "optionOpen": false,
           "keys": [],
           "values": [],
@@ -492,7 +495,8 @@
           "scatter": {}
         },
         "editorMode": "ace/mode/scala",
-        "colWidth": 4.0
+        "colWidth": 4.0,
+        "tableHide": false
       },
       "settings": {
         "params": {},
@@ -503,11 +507,12 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "res13: Int \u003d 15\n"
+        "msg": "\nres14: Int \u003d 126\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 2:08:31 PM",
+      "dateFinished": "Feb 8, 2017 2:08:31 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -548,7 +553,7 @@
     {
       "title": "Create immutable sequence of numbers",
       "text": "val sequenceNumbers \u003d 1 to 100",
-      "dateUpdated": "Jan 25, 2017 8:34:35 AM",
+      "dateUpdated": "Feb 8, 2017 2:18:40 PM",
       "config": {
         "enabled": true,
         "tableHide": true,
