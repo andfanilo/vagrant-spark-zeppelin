@@ -246,7 +246,7 @@
     {
       "title": "Python cell",
       "text": "%python\nprint(\"Petit calcul ! \")\na \u003d 1 + 2 \nprint(a)",
-      "dateUpdated": "Feb 8, 2017 1:55:38 PM",
+      "dateUpdated": "Feb 8, 2017 2:21:55 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -279,8 +279,8 @@
         "msg": "Petit calcul ! \n3\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 8, 2017 1:55:38 PM",
-      "dateFinished": "Feb 8, 2017 1:55:38 PM",
+      "dateStarted": "Feb 8, 2017 2:21:55 PM",
+      "dateFinished": "Feb 8, 2017 2:21:55 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -441,7 +441,7 @@
     {
       "title": "Declaring variables",
       "text": "val a \u003d 3 // val defines an immutable value\nvar b : Int \u003d 5 // var defines a mutable variable\nprintln(a + b)\n\nb \u003d 42\nprintln(a + b)\n\n// Note that the type of a variable or function is written after the variable or function. \n\n// Because Scala does type inference, it is also not necessary to declare type to variables when it looks obvious.",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "dateUpdated": "Feb 8, 2017 2:19:14 PM",
       "config": {
         "enabled": true,
         "tableHide": true,
@@ -468,17 +468,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "a: Int \u003d 3\nb: Int \u003d 5\n8\nb: Int \u003d 42\n45\n"
+        "msg": "\na: Int \u003d 3\n\nb: Int \u003d 5\n8\n\nb: Int \u003d 42\n45\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 2:19:14 PM",
+      "dateFinished": "Feb 8, 2017 2:19:32 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Reusing a variable",
-      "text": "// variables are accessible accross cells\n\na * b",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "text": "// variables are accessible accross cells\n\nprintln(a*b)",
+      "dateUpdated": "Feb 8, 2017 2:27:51 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -503,11 +504,12 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "res13: Int \u003d 15\n"
+        "msg": "126\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 2:27:51 PM",
+      "dateFinished": "Feb 8, 2017 2:27:52 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -730,8 +732,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "/*\n * The following function adds 2 to a number.\n */\ndef add2(x: Int): Int \u003d x + 2",
-      "dateUpdated": "Jan 25, 2017 1:34:04 AM",
+      "text": "/*\n * The following function adds 2 to a number.\n */\ndef add2(x: Int): Int \u003d x + 2\nadd2(4)",
+      "dateUpdated": "Feb 8, 2017 2:29:58 PM",
       "config": {
         "enabled": true,
         "graph": {
@@ -755,17 +757,17 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nadd2: (x: Int)Int\n"
+        "msg": "\nadd2: (x: Int)Int\n\nres20: Int \u003d 6\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 1:34:04 AM",
-      "dateFinished": "Jan 25, 2017 1:34:04 AM",
+      "dateStarted": "Feb 8, 2017 2:29:58 PM",
+      "dateFinished": "Feb 8, 2017 2:29:59 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "/* now let\u0027s pass add2 function \n * to map,\n * a function that applies a function to each element of a  * list\n */\n\nList(1,2,3).map(add2)\n",
-      "dateUpdated": "Jan 25, 2017 1:34:26 AM",
+      "dateUpdated": "Feb 8, 2017 2:55:21 PM",
       "config": {
         "enabled": true,
         "graph": {
@@ -778,7 +780,8 @@
           "scatter": {}
         },
         "editorMode": "ace/mode/scala",
-        "colWidth": 4.0
+        "colWidth": 4.0,
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -792,8 +795,8 @@
         "msg": "\nres38: List[Int] \u003d List(3, 4, 5)\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 1:34:26 AM",
-      "dateFinished": "Jan 25, 2017 1:34:27 AM",
+      "dateStarted": "Feb 8, 2017 2:55:21 PM",
+      "dateFinished": "Feb 8, 2017 2:55:22 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1008,7 +1011,7 @@
     {
       "title": "Return the list of squared numbers from 1 to 5",
       "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.map(x \u003d\u003e x)\n\nval expected \u003d List(1, 4, 9, 16, 25) ",
-      "dateUpdated": "Jan 25, 2017 9:03:16 AM",
+      "dateUpdated": "Feb 8, 2017 2:58:10 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1022,7 +1025,8 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "title": true
+        "title": true,
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -1036,8 +1040,8 @@
         "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\nexpected: List[Int] \u003d List(1, 4, 9, 16, 25)\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:13 AM",
-      "dateStarted": "Jan 25, 2017 9:03:16 AM",
-      "dateFinished": "Jan 25, 2017 9:03:17 AM",
+      "dateStarted": "Feb 8, 2017 2:58:10 PM",
+      "dateFinished": "Feb 8, 2017 2:58:11 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
