@@ -42,6 +42,33 @@
       "progressUpdateIntervalMs": 500
     },
     {
+      "text": "",
+      "dateUpdated": "Feb 8, 2017 12:38:38 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1486557497760_764529476",
+      "id": "20170208-123817_166239679",
+      "dateCreated": "Feb 8, 2017 12:38:17 PM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    },
+    {
       "text": "%md\n![Spark logo](http://spark.apache.org/images/spark-logo-trademark.png)\n#\n[Apache Spark](http://spark.apache.org/) is a cluster computing engine designed to be __fast__ and __general-purpose__, making it the ideal choice for processing of large datasets. It answers those two points with __efficient data sharing__ accross computations.\n\u003chr/\u003e\nThe past years have seen a major changes in computing systems, as growing data volumes required more and more applications to scale out to large clusters. To solve this problem, a wide range of new programming models have been designed to manage multiple types of computations in a distributed fashion, without having people learn too much about distributed systems. Those programming models would need to deal with _parallelism, fault-tolerance and resource sharing_ for us.\n\n[Google\u0027s MapReduce](https://en.wikipedia.org/wiki/MapReduce) presented a simple and general model for batch processing, which handles faults and parallelism easily. Unfortunately the programming model is not adapted for other types of workloads, and multiple specialized systems were born to answer a specific need in a distributed way. \n* Iterative : Giraph\n* Interactive : Impala, Piccolo, Greenplum\n* Streaming : Storm, Millwheel\n\n#\nThe initial goal of Apache Spark is to try and unify all of the workloads for generality purposes. [Matei Zaharia](https://cs.stanford.edu/~matei/) in his [PhD dissertation](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2014/EECS-2014-12.pdf) suggests that most of the data flow models that required a specialized system needed _efficient data sharing_ accross computations:\n* Iterative algorithms like PageRank or K-Means need to make multiple passes over the same dataset\n* Interactive data mining often requires running multiple ad-hoc queries on the same subset of data\n* Streaming applications need to maintain and share state over time.\n\nHe then proposes to create a new abstraction that gives its users direct control over data sharing, something that other specialized systems would have built-in for their specific needs. The abstraction is implemented inside a new engine that is today called Apache Spark. The engine makes it possible to support more types of computations than with the original MapReduce in a more efficient way, including interactive queries and stream processing. ",
       "dateUpdated": "Jan 25, 2017 8:32:04 AM",
       "config": {
@@ -203,8 +230,8 @@
     },
     {
       "title": "Shell cell",
-      "text": "%sh\necho \"Hello world\"",
-      "dateUpdated": "Feb 1, 2017 6:51:19 AM",
+      "text": "%sh\necho \"Hello Noureddine Boulanouar this is my first notification\"",
+      "dateUpdated": "Feb 8, 2017 12:55:48 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -235,18 +262,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "Hello Noureddine\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 1, 2017 6:51:19 AM",
-      "dateFinished": "Feb 1, 2017 6:51:20 AM",
+      "dateStarted": "Feb 8, 2017 12:53:26 PM",
+      "dateFinished": "Feb 8, 2017 12:53:27 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Python cell",
-      "text": "%python\nprint(\"Hello world\")",
-      "dateUpdated": "Jan 25, 2017 8:33:22 AM",
+      "text": "%python\na \u003d1+2;\n\nprint(\"Hello Noureddine Boulanouar this is my first notification\")",
+      "dateUpdated": "Feb 8, 2017 12:56:07 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -264,8 +291,10 @@
             "pinCols": []
           }
         },
-        "editorMode": "ace/mode/python",
-        "colWidth": 4.0
+        "editorMode": "ace/mode/scala",
+        "colWidth": 4.0,
+        "tableHide": false,
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -276,18 +305,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "Hello Noureddine Boulanouar this is my first notification\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:33:22 AM",
-      "dateFinished": "Jan 25, 2017 8:33:23 AM",
+      "dateStarted": "Feb 8, 2017 12:56:07 PM",
+      "dateFinished": "Feb 8, 2017 12:56:07 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Spark/Scala cell",
-      "text": "println(\"Hello world\")",
-      "dateUpdated": "Jan 25, 2017 8:33:26 AM",
+      "text": "println(\"Hello Noureddine Boulanouar this is my first notification\")",
+      "dateUpdated": "Feb 8, 2017 12:55:48 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -317,11 +346,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "Hello noureddine\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:33:26 AM",
-      "dateFinished": "Jan 25, 2017 8:33:59 AM",
+      "dateStarted": "Feb 8, 2017 12:53:43 PM",
+      "dateFinished": "Feb 8, 2017 12:53:59 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -2141,24 +2170,24 @@
   "name": "Practice",
   "id": "2C75UP2R2",
   "angularObjects": {
-    "2C93MQCCX:shared_process": [],
-    "2CAFQY6K3:shared_process": [],
-    "2C71Z8V22:shared_process": [],
-    "2C74PSEZQ:shared_process": [],
-    "2C7936H5V:shared_process": [],
-    "2C6WY8JHA:shared_process": [],
-    "2C8CCCVZ2:shared_process": [],
-    "2C9JTS6JQ:shared_process": [],
-    "2C91JKV9H:shared_process": [],
-    "2C8N1PP7C:shared_process": [],
-    "2C7YTW7VT:shared_process": [],
-    "2C85G18U9:shared_process": [],
-    "2C9XYSTEH:shared_process": [],
-    "2CA474ZG3:shared_process": [],
-    "2C8JNXQ9U:shared_process": [],
-    "2C827138T:shared_process": [],
-    "2CAA7GXEJ:shared_process": [],
-    "2C8W1GCP8:shared_process": []
+    "2CBDKEWW9:shared_process": [],
+    "2C8RKZH8W:shared_process": [],
+    "2CA1UNWPZ:shared_process": [],
+    "2CAMCMBUC:shared_process": [],
+    "2C7ZC86BC:shared_process": [],
+    "2C9BQJ6DH:shared_process": [],
+    "2CA4ND68T:shared_process": [],
+    "2C7WMQ5UR:shared_process": [],
+    "2C882XB6S:shared_process": [],
+    "2C8GTAXQB:shared_process": [],
+    "2C9CDSDTS:shared_process": [],
+    "2C9QNJ2TP:shared_process": [],
+    "2C8TYYHF7:shared_process": [],
+    "2CBE6Q9VQ:shared_process": [],
+    "2C8R3ZHFJ:shared_process": [],
+    "2C9MZK7UJ:shared_process": [],
+    "2CAX42UGE:shared_process": [],
+    "2C8DW8V4J:shared_process": []
   },
   "config": {
     "looknfeel": "default"
