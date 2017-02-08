@@ -1,7 +1,8 @@
 {
+	
   "paragraphs": [
     {
-      "text": "%md\n\n# Introduction to Spark \u0026 Zeppelin\n#### An overview of the two Big Data tools.\n\nBefore pursuing, make sure you have saved the previous Interpreter binding window, otherwise you will get an error like `paragraph not found` when executing cells",
+      "text": "%md\n\n# TP  : Ahmed Lattali & Ismail Ammor \n Introduction to spark \u0026 Zeppelin\n#### An overview of the two Big Data tools.\n\nBefore pursuing, make sure you have saved the previous Interpreter binding window, otherwise you will get an error like `paragraph not found` when executing cells",
       "dateUpdated": "Feb 1, 2017 10:32:11 AM",
       "config": {
         "enabled": true,
