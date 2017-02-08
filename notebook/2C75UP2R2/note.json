@@ -123,7 +123,7 @@
     },
     {
       "text": "%md\n\n###Interpreter\n\nApache Zeppelin is primarily a notebook. A Zeppelin notebook consists of a set of cells with an interpreter _(or language backend)_ attached.\n\nFor example, this cell is linked to the Markdown interpreter, so when you run the cell it parses the code as Markdown and then displays the result.\n\nYou will find the most useful markdown components [on this cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).\n\nIn each cell, there is a toolbar with four items: \n* The `Play` button (blue triangle) lets you run the paragraph. You can also press `Shift + Enter` to run the cell when selected\n* The `Show/Hide editor` if you want to see the source code for the cell\n* The `Show/Hide output` if you want to see the output for the cell\n* The `Settings` item, for more advanced options like adding/managing cells.\n\n\u003chr/\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\nNow you can press `Show editor` to see the source code of the cell. You will see that it starts with `%md`, which specifies to the cell that it should use the Markdown interpreter. You can edit the text and then run the cell to see the editing in the output.",
-      "dateUpdated": "Feb 3, 2017 9:03:48 AM",
+      "dateUpdated": "Feb 8, 2017 11:00:39 AM",
       "config": {
         "enabled": true,
         "graph": {
@@ -141,7 +141,7 @@
           }
         },
         "editorMode": "ace/mode/markdown",
-        "editorHide": true,
+        "editorHide": false,
         "colWidth": 12.0
       },
       "settings": {
@@ -151,14 +151,15 @@
       "jobName": "paragraph_1485333124514_-32747470",
       "id": "20161205-134434_158643588",
       "result": {
-        "code": "SUCCESS",
-        "type": "HTML",
-        "msg": "\u003ch3\u003eInterpreter\u003c/h3\u003e\n\u003cp\u003eApache Zeppelin is primarily a notebook. A Zeppelin notebook consists of a set of cells with an interpreter \u003cem\u003e(or language backend)\u003c/em\u003e attached.\u003c/p\u003e\n\u003cp\u003eFor example, this cell is linked to the Markdown interpreter, so when you run the cell it parses the code as Markdown and then displays the result.\u003c/p\u003e\n\u003cp\u003eYou will find the most useful markdown components \u003ca href\u003d\"https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet\"\u003eon this cheatsheet\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eIn each cell, there is a toolbar with four items:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eThe \u003ccode\u003ePlay\u003c/code\u003e button (blue triangle) lets you run the paragraph. You can also press \u003ccode\u003eShift + Enter\u003c/code\u003e to run the cell when selected\u003c/li\u003e\n\u003cli\u003eThe \u003ccode\u003eShow/Hide editor\u003c/code\u003e if you want to see the source code for the cell\u003c/li\u003e\n\u003cli\u003eThe \u003ccode\u003eShow/Hide output\u003c/code\u003e if you want to see the output for the cell\u003c/li\u003e\n\u003cli\u003eThe \u003ccode\u003eSettings\u003c/code\u003e item, for more advanced options like adding/managing cells.\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr/\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eNow you can press \u003ccode\u003eShow editor\u003c/code\u003e to see the source code of the cell. You will see that it starts with \u003ccode\u003e%md\u003c/code\u003e, which specifies to the cell that it should use the Markdown interpreter. You can edit the text and then run the cell to see the editing in the output.\u003c/p\u003e\n"
+        "code": "ERROR",
+        "type": "TEXT",
+        "msg": "paragraph_1485333124514_-32747470\u0027s Interpreter md not found"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
       "dateStarted": "Feb 1, 2017 6:53:18 AM",
       "dateFinished": "Feb 1, 2017 6:53:18 AM",
-      "status": "FINISHED",
+      "status": "ERROR",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -203,8 +204,8 @@
     },
     {
       "title": "Shell cell",
-      "text": "%sh\necho \"Hello world\"",
-      "dateUpdated": "Feb 1, 2017 6:51:19 AM",
+      "text": "%sh\necho \"Changement\"",
+      "dateUpdated": "Feb 8, 2017 11:08:24 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -235,18 +236,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "Changement\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 1, 2017 6:51:19 AM",
-      "dateFinished": "Feb 1, 2017 6:51:20 AM",
+      "dateStarted": "Feb 8, 2017 11:08:24 AM",
+      "dateFinished": "Feb 8, 2017 11:08:25 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Python cell",
-      "text": "%python\nprint(\"Hello world\")",
-      "dateUpdated": "Jan 25, 2017 8:33:22 AM",
+      "text": "%python\nprint(\"Help \")",
+      "dateUpdated": "Feb 8, 2017 11:11:23 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -264,8 +265,9 @@
             "pinCols": []
           }
         },
-        "editorMode": "ace/mode/python",
-        "colWidth": 4.0
+        "editorMode": "ace/mode/scala",
+        "colWidth": 4.0,
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -274,20 +276,20 @@
       "jobName": "paragraph_1485333124516_-35055964",
       "id": "20161205-140620_27821049",
       "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": "Hello world\n"
+        "code": "ERROR",
+        "type": "TEXT"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
       "dateStarted": "Jan 25, 2017 8:33:22 AM",
       "dateFinished": "Jan 25, 2017 8:33:23 AM",
-      "status": "FINISHED",
+      "status": "ERROR",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Spark/Scala cell",
-      "text": "println(\"Hello world\")",
-      "dateUpdated": "Jan 25, 2017 8:33:26 AM",
+      "text": "println(\"Changement\")",
+      "dateUpdated": "Feb 8, 2017 11:08:42 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -317,11 +319,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "Changement\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:33:26 AM",
-      "dateFinished": "Jan 25, 2017 8:33:59 AM",
+      "dateStarted": "Feb 8, 2017 11:08:43 AM",
+      "dateFinished": "Feb 8, 2017 11:08:59 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -2141,24 +2143,24 @@
   "name": "Practice",
   "id": "2C75UP2R2",
   "angularObjects": {
-    "2C93MQCCX:shared_process": [],
-    "2CAFQY6K3:shared_process": [],
-    "2C71Z8V22:shared_process": [],
-    "2C74PSEZQ:shared_process": [],
-    "2C7936H5V:shared_process": [],
-    "2C6WY8JHA:shared_process": [],
-    "2C8CCCVZ2:shared_process": [],
-    "2C9JTS6JQ:shared_process": [],
-    "2C91JKV9H:shared_process": [],
-    "2C8N1PP7C:shared_process": [],
-    "2C7YTW7VT:shared_process": [],
-    "2C85G18U9:shared_process": [],
-    "2C9XYSTEH:shared_process": [],
-    "2CA474ZG3:shared_process": [],
-    "2C8JNXQ9U:shared_process": [],
-    "2C827138T:shared_process": [],
-    "2CAA7GXEJ:shared_process": [],
-    "2C8W1GCP8:shared_process": []
+    "2CAZAJHUR:shared_process": [],
+    "2CAESJGPK:shared_process": [],
+    "2C895DY6B:shared_process": [],
+    "2C7V3YV9P:shared_process": [],
+    "2C9B2CFB5:shared_process": [],
+    "2C94GCUGN:shared_process": [],
+    "2C9KYNWP8:shared_process": [],
+    "2CA57PFGP:shared_process": [],
+    "2C8YJZ2H8:shared_process": [],
+    "2CB6BB49C:shared_process": [],
+    "2C9UGETY3:existing_process": [],
+    "2C8G4JN7E:shared_process": [],
+    "2CBCQBC76:shared_process": [],
+    "2C8UCR3FY:shared_process": [],
+    "2C7G1QZ2W:shared_process": [],
+    "2CA7WVJNN:shared_process": [],
+    "2C88NQX2Q:existing_process": [],
+    "2CAKJR5EH:shared_process": []
   },
   "config": {
     "looknfeel": "default"
