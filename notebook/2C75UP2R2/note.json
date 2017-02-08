@@ -3317,7 +3317,7 @@
       "title": "Show IP_FROM addresses which appear more than once in the file",
       "text": "// PS : if your query is correct, you should only find one\nsqlContext.sql(\"SELECT DISTINCT df.IP_FROM, IPCOUNT FROM df LEFT OUTER JOIN (SELECT IP_FROM, count(*) as IPCOUNT FROM df GROUP BY IP_FROM) t2 on df.IP_FROM \u003d t2.IP_FROM WHERE IPCOUNT \u003e 1\").show()",
       "user": "anonymous",
-      "dateUpdated": "Feb 8, 2017 4:57:32 PM",
+      "dateUpdated": "Feb 8, 2017 5:00:18 PM",
       "config": {
         "colWidth": 6.0,
         "enabled": true,
@@ -3361,8 +3361,8 @@
       "jobName": "paragraph_1485943568883_1038722678",
       "id": "20170201-100608_637001408",
       "dateCreated": "Feb 1, 2017 10:06:08 AM",
-      "dateStarted": "Feb 8, 2017 4:57:32 PM",
-      "dateFinished": "Feb 8, 2017 4:57:34 PM",
+      "dateStarted": "Feb 8, 2017 5:00:18 PM",
+      "dateFinished": "Feb 8, 2017 5:00:21 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -3428,7 +3428,7 @@
     {
       "title": "If your DataFrame is stored internally, you can do some viz",
       "text": "%sql\nSELECT * FROM df",
-      "dateUpdated": "Feb 8, 2017 4:35:53 PM",
+      "dateUpdated": "Feb 8, 2017 5:01:10 PM",
       "config": {
         "colWidth": 6.0,
         "enabled": true,
@@ -3437,7 +3437,7 @@
         "results": [
           {
             "graph": {
-              "mode": "table",
+              "mode": "scatterChart",
               "height": 300.0,
               "optionOpen": true,
               "keys": [
@@ -3467,7 +3467,8 @@
                   "aggr": "sum"
                 }
               }
-            }
+            },
+            "helium": {}
           }
         ],
         "graph": {
@@ -3480,7 +3481,7 @@
           "scatter": {}
         },
         "tableHide": false,
-        "editorHide": true,
+        "editorHide": false,
         "editorSetting": {
           "language": "sql"
         }
@@ -3515,7 +3516,7 @@
     {
       "title": "You can visualize the results of a query",
       "text": "%sql\nSELECT CONTINENT_NAME, COUNT(CONTINENT_NAME) as count FROM df GROUP BY CONTINENT_NAME",
-      "dateUpdated": "Feb 8, 2017 4:36:01 PM",
+      "dateUpdated": "Feb 8, 2017 5:01:20 PM",
       "config": {
         "colWidth": 6.0,
         "enabled": true,
@@ -3524,7 +3525,7 @@
         "results": [
           {
             "graph": {
-              "mode": "multiBarChart",
+              "mode": "scatterChart",
               "height": 300.0,
               "optionOpen": false,
               "keys": [
@@ -3568,7 +3569,7 @@
           "scatter": {}
         },
         "tableHide": false,
-        "editorHide": true,
+        "editorHide": false,
         "editorSetting": {
           "language": "sql"
         }
