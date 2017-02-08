@@ -1327,8 +1327,8 @@
     },
     {
       "title": "Calculate the number of unique words in the \"words\" RDD here.",
-      "text": "val words \u003d sc.parallelize(Array(\"hello\", \"world\", \"goodbye\", \"hello\", \"again\"))\n\nval output \u003d words.distinct(Array)\n// A FINIR\n\n\nval expected \u003d 4",
-      "dateUpdated": "Feb 8, 2017 7:51:06 PM",
+      "text": "val words \u003d sc.parallelize(Array(\"hello\", \"world\", \"goodbye\", \"hello\", \"again\"))\n\nval output \u003d words.distinct().count()\n\n\n\nval expected \u003d 4",
+      "dateUpdated": "Feb 8, 2017 8:11:38 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1351,14 +1351,14 @@
       "jobName": "paragraph_1485336856216_-2011750793",
       "id": "20170125-093416_1662109555",
       "result": {
-        "code": "ERROR",
+        "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nwords: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[90] at parallelize at \u003cconsole\u003e:67\n\n\n\n\n\n\u003cconsole\u003e:69: error: type mismatch;\n found   : Array.type\n required: Int\n       val output \u003d words.distinct(Array)\n                                   ^\n"
+        "msg": "\nwords: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[119] at parallelize at \u003cconsole\u003e:67\n\noutput: Long \u003d 4\n\nexpected: Int \u003d 4\n"
       },
       "dateCreated": "Jan 25, 2017 9:34:16 AM",
-      "dateStarted": "Feb 8, 2017 7:48:37 PM",
-      "dateFinished": "Feb 8, 2017 7:48:38 PM",
-      "status": "ERROR",
+      "dateStarted": "Feb 8, 2017 8:11:20 PM",
+      "dateFinished": "Feb 8, 2017 8:11:21 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -1439,8 +1439,8 @@
     },
     {
       "title": "Wordcount, easy mode",
-      "text": "val input \u003d sc.parallelize(Seq(\"hi\", \"my\", \"my\", \"name\", \"is\",\"hi\"))\nval output \u003d input\n\nval expected \u003d Array((\"is\",1), (\"my,2\"), (\"name\",1), (\"hi\",2))",
-      "dateUpdated": "Feb 8, 2017 7:09:28 PM",
+      "text": "val input \u003d sc.parallelize(Seq(\"hi\", \"my\", \"my\", \"name\", \"is\",\"hi\"))\nval output \u003d input.map(x\u003d\u003e(x,1)).reduceByKey((x,y)\u003d\u003e x+y).collect\n\n\nval expected \u003d Array((\"is\",1), (\"my,2\"), (\"name\",1), (\"hi\",2))",
+      "dateUpdated": "Feb 8, 2017 8:15:45 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1466,18 +1466,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ninput: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[21] at parallelize at \u003cconsole\u003e:54\n\noutput: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[21] at parallelize at \u003cconsole\u003e:54\n\nexpected: Array[java.io.Serializable] \u003d Array((is,1), my,2, (name,1), (hi,2))\n"
+        "msg": "\ninput: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[135] at parallelize at \u003cconsole\u003e:67\n\noutput: Array[(String, Int)] \u003d Array((is,1), (my,2), (name,1), (hi,2))\n\nexpected: Array[java.io.Serializable] \u003d Array((is,1), my,2, (name,1), (hi,2))\n"
       },
       "dateCreated": "Jan 25, 2017 9:58:36 AM",
-      "dateStarted": "Feb 8, 2017 7:09:28 PM",
-      "dateFinished": "Feb 8, 2017 7:09:29 PM",
+      "dateStarted": "Feb 8, 2017 8:15:45 PM",
+      "dateFinished": "Feb 8, 2017 8:15:47 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Sum ages per gender",
-      "text": "val rdd1 \u003d sc.parallelize(Seq((\"Patrick\", \"homme\"), (\"Sandra\", \"femme\"), (\"Faniki\", \"homme\"), (\"Noemie\", \"femme\"), (\"Francois\", \"homme\"), (\"Cassandre\", \"femme\")))\nval rdd2 \u003d sc.parallelize(Seq((\"Patrick\", 20), (\"Sandra\", 25), (\"Faniki\", 20), (\"Noemie\", 20), (\"Francois\", 30), (\"Cassandre\", 18)))\n\n// rdd1 and rdd2 are key-value rdds so you can join them and then continue the computation\nval output \u003d rdd1.join(rdd2)\n\nval expected \u003d Array((\"femme\", 63), (\"homme\", 70))",
-      "dateUpdated": "Feb 1, 2017 10:15:26 AM",
+      "text": "val rdd1 \u003d sc.parallelize(Seq((\"Patrick\", \"homme\"), (\"Sandra\", \"femme\"), (\"Faniki\", \"homme\"), (\"Noemie\", \"femme\"), (\"Francois\", \"homme\"), (\"Cassandre\", \"femme\")))\nval rdd2 \u003d sc.parallelize(Seq((\"Patrick\", 20), (\"Sandra\", 25), (\"Faniki\", 20), (\"Noemie\", 20), (\"Francois\", 30), (\"Cassandre\", 18)))\n\n// rdd1 and rdd2 are key-value rdds so you can join them and then continue the computation\nval output \u003d rdd1.join(rdd2).map().collect\n// .reduceByKey((x,y)\u003d\u003ex)\n// output: Array[(String, (String, Int))] \u003d Array((Cassandre,(femme,18)), (Patrick,(homme,20)), (Faniki,(homme,20)), (Francois,(homme,30)), (Sandra,(femme,25)), (Noemie,(femme,20)))\nval expected \u003d Array((\"femme\", 63), (\"homme\", 70))",
+      "dateUpdated": "Feb 8, 2017 8:25:26 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1502,11 +1502,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nrdd1: org.apache.spark.rdd.RDD[(String, String)] \u003d ParallelCollectionRDD[131] at parallelize at \u003cconsole\u003e:41\n\nrdd2: org.apache.spark.rdd.RDD[(String, Int)] \u003d ParallelCollectionRDD[132] at parallelize at \u003cconsole\u003e:41\n\noutput: org.apache.spark.rdd.RDD[(String, (String, Int))] \u003d MapPartitionsRDD[135] at join at \u003cconsole\u003e:45\n\nexpected: Array[(String, Int)] \u003d Array((femme,63), (homme,70))\n"
+        "msg": "\nrdd1: org.apache.spark.rdd.RDD[(String, String)] \u003d ParallelCollectionRDD[160] at parallelize at \u003cconsole\u003e:67\n\nrdd2: org.apache.spark.rdd.RDD[(String, Int)] \u003d ParallelCollectionRDD[161] at parallelize at \u003cconsole\u003e:67\n\noutput: Array[(String, (String, Int))] \u003d Array((Cassandre,(femme,18)), (Patrick,(homme,20)), (Faniki,(homme,20)), (Francois,(homme,30)), (Sandra,(femme,25)), (Noemie,(femme,20)))\n\nexpected: Array[(String, Int)] \u003d Array((femme,63), (homme,70))\n"
       },
       "dateCreated": "Jan 25, 2017 1:04:11 AM",
-      "dateStarted": "Feb 1, 2017 10:15:26 AM",
-      "dateFinished": "Feb 1, 2017 10:15:29 AM",
+      "dateStarted": "Feb 8, 2017 8:22:10 PM",
+      "dateFinished": "Feb 8, 2017 8:22:11 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
