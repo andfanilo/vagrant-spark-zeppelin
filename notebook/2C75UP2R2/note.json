@@ -122,13 +122,13 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\n\n###Interpreter\n\nApache Zeppelin is primarily a notebook. A Zeppelin notebook consists of a set of cells with an interpreter _(or language backend)_ attached.\n\nFor example, this cell is linked to the Markdown interpreter, so when you run the cell it parses the code as Markdown and then displays the result.\n\nYou will find the most useful markdown components [on this cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).\n\nIn each cell, there is a toolbar with four items: \n* The `Play` button (blue triangle) lets you run the paragraph. You can also press `Shift + Enter` to run the cell when selected\n* The `Show/Hide editor` if you want to see the source code for the cell\n* The `Show/Hide output` if you want to see the output for the cell\n* The `Settings` item, for more advanced options like adding/managing cells.\n\n\u003chr/\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\nNow you can press `Show editor` to see the source code of the cell. You will see that it starts with `%md`, which specifies to the cell that it should use the Markdown interpreter. You can edit the text and then run the cell to see the editing in the output.",
-      "dateUpdated": "Feb 1, 2017 6:53:21 AM",
+      "text": "%md\n\n###Interpreter\n\nApache Zeppelin is primarily a notebook. A Zeppelin notebook consists of a set of cells with an interpreter _(or language backend)_ attached.\n\nFor example, this cell is linked to the Markdown interpreter, so when you run the cell it parses the code as Markdown and then displays the result.\n\nYou will find the most useful markdown components [on this cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).\n\nIn each cell, there is a toolbar with four items: \n* The `Play` button (blue triangle) lets you run the paragraph. You can also press `Shift + Enter` to run the cell when selected\n* The `Show/Hide editor` if you want to see the source code for the cell\n* The `Show/Hide output` if you want to see the output for the cell\n* The `Settings` item, for more advanced options like adding/managing cells.\n\n\u003chr/\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\nNow you can press `Show editor` to see the source code of the cell. You will see that it starts with `%md`, which specifies to the cell that it should use the Markdown interpreter. You can edit the text and then run the cell to see the editing in the output.\n\nTest...",
+      "dateUpdated": "Feb 8, 2017 11:13:40 AM",
       "config": {
         "enabled": true,
         "graph": {
           "mode": "table",
-          "height": 300.0,
+          "height": 368.70001220703125,
           "optionOpen": false,
           "keys": [],
           "values": [],
@@ -141,7 +141,7 @@
           }
         },
         "editorMode": "ace/mode/markdown",
-        "editorHide": true,
+        "editorHide": false,
         "colWidth": 12.0
       },
       "settings": {
@@ -153,11 +153,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003ch3\u003eInterpreter\u003c/h3\u003e\n\u003cp\u003eApache Zeppelin is primarily a notebook. A Zeppelin notebook consists of a set of cells with an interpreter \u003cem\u003e(or language backend)\u003c/em\u003e attached.\u003c/p\u003e\n\u003cp\u003eFor example, this cell is linked to the Markdown interpreter, so when you run the cell it parses the code as Markdown and then displays the result.\u003c/p\u003e\n\u003cp\u003eYou will find the most useful markdown components \u003ca href\u003d\"https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet\"\u003eon this cheatsheet\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eIn each cell, there is a toolbar with four items:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eThe \u003ccode\u003ePlay\u003c/code\u003e button (blue triangle) lets you run the paragraph. You can also press \u003ccode\u003eShift + Enter\u003c/code\u003e to run the cell when selected\u003c/li\u003e\n\u003cli\u003eThe \u003ccode\u003eShow/Hide editor\u003c/code\u003e if you want to see the source code for the cell\u003c/li\u003e\n\u003cli\u003eThe \u003ccode\u003eShow/Hide output\u003c/code\u003e if you want to see the output for the cell\u003c/li\u003e\n\u003cli\u003eThe \u003ccode\u003eSettings\u003c/code\u003e item, for more advanced options like adding/managing cells.\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr/\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eNow you can press \u003ccode\u003eShow editor\u003c/code\u003e to see the source code of the cell. You will see that it starts with \u003ccode\u003e%md\u003c/code\u003e, which specifies to the cell that it should use the Markdown interpreter. You can edit the text and then run the cell to see the editing in the output.\u003c/p\u003e\n"
+        "msg": "\u003ch3\u003eInterpreter\u003c/h3\u003e\n\u003cp\u003eApache Zeppelin is primarily a notebook. A Zeppelin notebook consists of a set of cells with an interpreter \u003cem\u003e(or language backend)\u003c/em\u003e attached.\u003c/p\u003e\n\u003cp\u003eFor example, this cell is linked to the Markdown interpreter, so when you run the cell it parses the code as Markdown and then displays the result.\u003c/p\u003e\n\u003cp\u003eYou will find the most useful markdown components \u003ca href\u003d\"https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet\"\u003eon this cheatsheet\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eIn each cell, there is a toolbar with four items:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eThe \u003ccode\u003ePlay\u003c/code\u003e button (blue triangle) lets you run the paragraph. You can also press \u003ccode\u003eShift + Enter\u003c/code\u003e to run the cell when selected\u003c/li\u003e\n\u003cli\u003eThe \u003ccode\u003eShow/Hide editor\u003c/code\u003e if you want to see the source code for the cell\u003c/li\u003e\n\u003cli\u003eThe \u003ccode\u003eShow/Hide output\u003c/code\u003e if you want to see the output for the cell\u003c/li\u003e\n\u003cli\u003eThe \u003ccode\u003eSettings\u003c/code\u003e item, for more advanced options like adding/managing cells.\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr/\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eNow you can press \u003ccode\u003eShow editor\u003c/code\u003e to see the source code of the cell. You will see that it starts with \u003ccode\u003e%md\u003c/code\u003e, which specifies to the cell that it should use the Markdown interpreter. You can edit the text and then run the cell to see the editing in the output.\u003c/p\u003e\n\u003cp\u003eTest\u0026hellip;\u003c/p\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 1, 2017 6:53:18 AM",
-      "dateFinished": "Feb 1, 2017 6:53:18 AM",
+      "dateStarted": "Feb 8, 2017 11:13:40 AM",
+      "dateFinished": "Feb 8, 2017 11:13:40 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -204,7 +204,7 @@
     {
       "title": "Shell cell",
       "text": "%sh\necho \"Hello world\"",
-      "dateUpdated": "Feb 1, 2017 6:51:19 AM",
+      "dateUpdated": "Feb 8, 2017 11:07:38 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -233,20 +233,21 @@
       "jobName": "paragraph_1485333124515_-33132219",
       "id": "20161205-135504_61539619",
       "result": {
-        "code": "SUCCESS",
+        "code": "ERROR",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "paragraph_1485333124515_-33132219\u0027s Interpreter sh not found"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
       "dateStarted": "Feb 1, 2017 6:51:19 AM",
       "dateFinished": "Feb 1, 2017 6:51:20 AM",
-      "status": "FINISHED",
+      "status": "ERROR",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Python cell",
       "text": "%python\nprint(\"Hello world\")",
-      "dateUpdated": "Jan 25, 2017 8:33:22 AM",
+      "dateUpdated": "Feb 8, 2017 11:07:39 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -274,14 +275,15 @@
       "jobName": "paragraph_1485333124516_-35055964",
       "id": "20161205-140620_27821049",
       "result": {
-        "code": "SUCCESS",
+        "code": "ERROR",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "paragraph_1485333124516_-35055964\u0027s Interpreter python not found"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
       "dateStarted": "Jan 25, 2017 8:33:22 AM",
       "dateFinished": "Jan 25, 2017 8:33:23 AM",
-      "status": "FINISHED",
+      "status": "ERROR",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -2141,24 +2143,24 @@
   "name": "Practice",
   "id": "2C75UP2R2",
   "angularObjects": {
-    "2C93MQCCX:shared_process": [],
-    "2CAFQY6K3:shared_process": [],
-    "2C71Z8V22:shared_process": [],
-    "2C74PSEZQ:shared_process": [],
-    "2C7936H5V:shared_process": [],
-    "2C6WY8JHA:shared_process": [],
-    "2C8CCCVZ2:shared_process": [],
-    "2C9JTS6JQ:shared_process": [],
-    "2C91JKV9H:shared_process": [],
-    "2C8N1PP7C:shared_process": [],
-    "2C7YTW7VT:shared_process": [],
-    "2C85G18U9:shared_process": [],
-    "2C9XYSTEH:shared_process": [],
-    "2CA474ZG3:shared_process": [],
-    "2C8JNXQ9U:shared_process": [],
-    "2C827138T:shared_process": [],
-    "2CAA7GXEJ:shared_process": [],
-    "2C8W1GCP8:shared_process": []
+    "2C83R99EY:shared_process": [],
+    "2CAXHM3H7:shared_process": [],
+    "2C7YYFDUZ:shared_process": [],
+    "2C9FMYK2W:shared_process": [],
+    "2C7Z72JT5:shared_process": [],
+    "2CBFAZP85:shared_process": [],
+    "2C9A6BS3H:shared_process": [],
+    "2C9JCWBF4:shared_process": [],
+    "2C8DBBW5H:shared_process": [],
+    "2C9V1N5NJ:shared_process": [],
+    "2C93K46FJ:shared_process": [],
+    "2C9K4ZRBH:shared_process": [],
+    "2C7RSUMCA:shared_process": [],
+    "2C85XHK14:shared_process": [],
+    "2C8W2PB5Y:shared_process": [],
+    "2CB9A7AMG:shared_process": [],
+    "2C8AJ622J:shared_process": [],
+    "2CB18M4RP:shared_process": []
   },
   "config": {
     "looknfeel": "default"
