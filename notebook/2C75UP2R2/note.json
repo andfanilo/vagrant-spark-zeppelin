@@ -1057,13 +1057,13 @@
       "title": "New list with pair numbers removed",
       "text": "sequenceNumbers.filter(x \u003d\u003e x % 2 !\u003d 0)\n\nsequenceNumbers.filter(_ % 2 !\u003d 0)\n\nsequenceNumbers2.filter(_ % 2 \u003d\u003d 0)",
       "user": "anonymous",
-      "dateUpdated": "Feb 8, 2017 3:00:01 PM",
+      "dateUpdated": "Feb 8, 2017 3:18:37 PM",
       "config": {
         "enabled": true,
         "tableHide": false,
         "title": true,
         "editorMode": "ace/mode/scala",
-        "editorHide": true,
+        "editorHide": false,
         "colWidth": 4.0,
         "results": [
           {
@@ -1740,8 +1740,9 @@
     },
     {
       "title": "Return the list of squared numbers from 1 to 5",
-      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.map(x \u003d\u003e x)\n\nval expected \u003d List(1, 4, 9, 16, 25) ",
-      "dateUpdated": "Feb 8, 2017 2:34:35 PM",
+      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.map(x \u003d\u003e x^2)\n\nval expected \u003d List(1, 4, 9, 16, 25) ",
+      "user": "anonymous",
+      "dateUpdated": "Feb 8, 2017 3:14:57 PM",
       "config": {
         "colWidth": 6.0,
         "enabled": true,
@@ -1769,8 +1770,11 @@
           "groups": [],
           "scatter": {}
         },
-        "editorHide": true,
-        "tableHide": false
+        "editorHide": false,
+        "tableHide": false,
+        "editorSetting": {
+          "language": "scala"
+        }
       },
       "settings": {
         "params": {},
@@ -1781,7 +1785,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\nexpected: List[Int] \u003d List(1, 4, 9, 16, 25)\n"
+            "data": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: List[Int] \u003d List(3, 0, 1, 6, 7)\n\nexpected: List[Int] \u003d List(1, 4, 9, 16, 25)\n"
           }
         ]
       },
@@ -1794,15 +1798,16 @@
       "jobName": "paragraph_1485334633765_969713882",
       "id": "20170125-085713_1325612841",
       "dateCreated": "Jan 25, 2017 8:57:13 AM",
-      "dateStarted": "Jan 25, 2017 9:03:16 AM",
-      "dateFinished": "Jan 25, 2017 9:03:17 AM",
+      "dateStarted": "Feb 8, 2017 3:14:57 PM",
+      "dateFinished": "Feb 8, 2017 3:14:57 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Return the sum of elements from 1 to 5",
-      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.reduce((x, y) \u003d\u003e x)\n\nval expected \u003d 15",
-      "dateUpdated": "Feb 8, 2017 2:34:35 PM",
+      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.reduce((x, y) \u003d\u003e x+y)\n\nval expected \u003d 15",
+      "user": "anonymous",
+      "dateUpdated": "Feb 8, 2017 3:15:11 PM",
       "config": {
         "colWidth": 6.0,
         "enabled": true,
@@ -1830,8 +1835,11 @@
           "groups": [],
           "scatter": {}
         },
-        "editorHide": true,
-        "tableHide": false
+        "editorHide": false,
+        "tableHide": false,
+        "editorSetting": {
+          "language": "scala"
+        }
       },
       "settings": {
         "params": {},
@@ -1842,7 +1850,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: Int \u003d 1\n\nexpected: Int \u003d 15\n"
+            "data": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: Int \u003d 15\n\nexpected: Int \u003d 15\n"
           }
         ]
       },
@@ -1855,15 +1863,16 @@
       "jobName": "paragraph_1485334640547_1179417357",
       "id": "20170125-085720_2133991651",
       "dateCreated": "Jan 25, 2017 8:57:20 AM",
-      "dateStarted": "Jan 25, 2017 9:23:28 AM",
-      "dateFinished": "Jan 25, 2017 9:23:29 AM",
+      "dateStarted": "Feb 8, 2017 3:15:11 PM",
+      "dateFinished": "Feb 8, 2017 3:15:12 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Return the sum of squared pair numbers between 1 and 100",
-      "text": "val input \u003d 1 to 100\nval output \u003d input.reduce((x, y) \u003d\u003e x)\n\nval expected \u003d 171700",
-      "dateUpdated": "Feb 8, 2017 2:34:35 PM",
+      "text": "val input \u003d 1 to 100\nval output \u003d input.filter(_ % 2 \u003d\u003d 0).map(x \u003d\u003e x*x).reduce((x, y) \u003d\u003e x+y)\n\nval expected \u003d 171700",
+      "user": "anonymous",
+      "dateUpdated": "Feb 8, 2017 3:22:25 PM",
       "config": {
         "colWidth": 6.0,
         "enabled": true,
@@ -1891,8 +1900,11 @@
           "groups": [],
           "scatter": {}
         },
-        "editorHide": true,
-        "tableHide": false
+        "editorHide": false,
+        "tableHide": false,
+        "editorSetting": {
+          "language": "scala"
+        }
       },
       "settings": {
         "params": {},
@@ -1903,7 +1915,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "\ninput: scala.collection.immutable.Range.Inclusive \u003d Range(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100)\n\noutput: Int \u003d 1\n\nexpected: Int \u003d 171700\n"
+            "data": "\ninput: scala.collection.immutable.Range.Inclusive \u003d Range(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100)\n\noutput: Int \u003d 171700\n\nexpected: Int \u003d 171700\n"
           }
         ]
       },
@@ -1916,20 +1928,20 @@
       "jobName": "paragraph_1485334647814_1417359099",
       "id": "20170125-085727_408760662",
       "dateCreated": "Jan 25, 2017 8:57:27 AM",
-      "dateStarted": "Feb 1, 2017 9:13:46 AM",
-      "dateFinished": "Feb 1, 2017 9:13:48 AM",
+      "dateStarted": "Feb 8, 2017 3:22:25 PM",
+      "dateFinished": "Feb 8, 2017 3:22:25 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Get highest number in a list with a reduce",
       "text": "import util.Random.nextInt\nval input \u003d Seq.fill(10)(nextInt)\nval output \u003d input.reduce((x, y) \u003d\u003e x)\n\nval expected \u003d input.max",
-      "dateUpdated": "Feb 8, 2017 2:34:35 PM",
+      "dateUpdated": "Feb 8, 2017 3:22:32 PM",
       "config": {
         "colWidth": 6.0,
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "editorHide": true,
+        "editorHide": false,
         "tableHide": false,
         "title": true,
         "results": [
@@ -1953,7 +1965,8 @@
           "values": [],
           "groups": [],
           "scatter": {}
-        }
+        },
+        "editorSetting": {}
       },
       "settings": {
         "params": {},
