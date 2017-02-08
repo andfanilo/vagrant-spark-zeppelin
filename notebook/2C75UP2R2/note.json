@@ -2788,7 +2788,7 @@
     {
       "text": "// let\u0027s check the file we are going to use\nval ipligence \u003d sc.textFile(\"/opt/dataset/ipligence-lite.csv\")\nipligence.take(1)",
       "user": "anonymous",
-      "dateUpdated": "Feb 8, 2017 4:21:49 PM",
+      "dateUpdated": "Feb 8, 2017 4:39:29 PM",
       "config": {
         "colWidth": 12.0,
         "enabled": true,
@@ -2815,7 +2815,7 @@
           "groups": [],
           "scatter": {}
         },
-        "editorHide": true,
+        "editorHide": false,
         "tableHide": false,
         "editorSetting": {
           "language": "scala"
@@ -2851,7 +2851,7 @@
     {
       "text": "// create your dataframe by reading the csv file\nval columnNames \u003d Seq(\"IP_FROM\", \"IP_TO\", \"COUNTRY_CODE\", \"COUNTRY_NAME\", \"CONTINENT_CODE\", \"CONTINENT_NAME\")\nval df \u003d sqlContext.read.csv(\"/opt/dataset/ipligence-lite.csv\").toDF(columnNames: _*)\ndf.printSchema()\ndf.show()\n\n// if you want to use the dataframe in SQL, you must register it\ndf.registerTempTable(\"df\")",
       "user": "anonymous",
-      "dateUpdated": "Feb 8, 2017 4:21:58 PM",
+      "dateUpdated": "Feb 8, 2017 4:39:28 PM",
       "config": {
         "colWidth": 12.0,
         "enabled": true,
@@ -3034,7 +3034,7 @@
     },
     {
       "text": "df.select(\"IP_TO\").show(5)",
-      "dateUpdated": "Feb 8, 2017 4:21:27 PM",
+      "dateUpdated": "Feb 8, 2017 4:32:56 PM",
       "config": {
         "colWidth": 6.0,
         "enabled": true,
@@ -3096,7 +3096,7 @@
     },
     {
       "text": "%md\n\nBecause the result of those are Dataframes, you can store them in a new variable or register them for future usage.\n```scala\n// filter with functional api\nval ipDf \u003d sqlContext.sql(\"SELECT IP_FROM,IP_TO FROM df\")\nipDf.filter(\"IP_FROM \u003d \u00270016777216\u0027\").show()\n\n// register from inside SQL API\nsqlContext.sql(\"SELECT IP_FROM,IP_TO,CONTINENT_NAME FROM df WHERE CONTINENT_NAME\u003d\u0027ASIA\u0027\").registerTempTable(\"asiaOnlyDF\")\n```\n\n\u003chr\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nSolve the following queries, using one or both APIs.",
-      "dateUpdated": "Feb 8, 2017 2:34:36 PM",
+      "dateUpdated": "Feb 8, 2017 4:31:04 PM",
       "config": {
         "colWidth": 12.0,
         "enabled": true,
@@ -3106,7 +3106,7 @@
           {
             "graph": {
               "mode": "table",
-              "height": 300.0,
+              "height": 265.20001220703125,
               "optionOpen": false,
               "keys": [],
               "values": [],
@@ -3124,7 +3124,8 @@
           "groups": [],
           "scatter": {}
         },
-        "tableHide": false
+        "tableHide": false,
+        "editorSetting": {}
       },
       "settings": {
         "params": {},
@@ -3157,7 +3158,7 @@
       "title": "Display all continent names",
       "text": "df.select(\"CONTINENT_NAME\").distinct.show(5)\nsqlContext.sql(\"SELECT DISTINCT CONTINENT_NAME FROM df\").show(5)",
       "user": "anonymous",
-      "dateUpdated": "Feb 8, 2017 4:25:17 PM",
+      "dateUpdated": "Feb 8, 2017 4:27:51 PM",
       "config": {
         "colWidth": 6.0,
         "enabled": true,
@@ -3174,7 +3175,7 @@
           "scatter": {}
         },
         "tableHide": false,
-        "editorHide": true,
+        "editorHide": false,
         "editorSetting": {
           "language": "scala"
         }
@@ -3208,8 +3209,115 @@
     },
     {
       "title": "Count number of rows with a null value in country code",
-      "text": "// Don\u0027t forget you have the count function on a Dataframe after you have filtered it",
-      "dateUpdated": "Feb 8, 2017 4:25:19 PM",
+      "text": "// Don\u0027t forget you have the count function on a Dataframe after you have filtered it\ndf.select(\"COUNTRY_NAME\").filter(\"COUNTRY_NAME is null\").count()\nsqlContext.sql(\"SELECT count(*) FROM df WHERE COUNTRY_NAME IS NULL\").show()",
+      "user": "anonymous",
+      "dateUpdated": "Feb 8, 2017 4:40:47 PM",
+      "config": {
+        "colWidth": 6.0,
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true,
+        "results": [],
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "tableHide": false,
+        "editorHide": true,
+        "editorSetting": {
+          "language": "scala"
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\nres192: Long \u003d 4997\n+--------+\n|count(1)|\n+--------+\n|    4997|\n+--------+\n\n"
+          }
+        ]
+      },
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "apps": [],
+      "jobName": "paragraph_1485942503342_817387557",
+      "id": "20170201-094823_1804433902",
+      "dateCreated": "Feb 1, 2017 9:48:23 AM",
+      "dateStarted": "Feb 8, 2017 4:40:33 PM",
+      "dateFinished": "Feb 8, 2017 4:40:33 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Display number of connections per continent",
+      "text": "df.groupBy(\"CONTINENT_NAME\").count().show(5)\nsqlContext.sql(\"SELECT CONTINENT_NAME, count(*) FROM df GROUP BY CONTINENT_NAME\").show(5)",
+      "user": "anonymous",
+      "dateUpdated": "Feb 8, 2017 4:44:44 PM",
+      "config": {
+        "colWidth": 6.0,
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true,
+        "results": [],
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "tableHide": false,
+        "editorHide": true,
+        "editorSetting": {
+          "language": "scala"
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------------+-----+\n|CONTINENT_NAME|count|\n+--------------+-----+\n|     CARIBBEAN| 1296|\n|          ASIA|11606|\n|          null| 4997|\n|       OCEANIA| 3928|\n| NORTH AMERICA|15330|\n+--------------+-----+\nonly showing top 5 rows\n\n+--------------+--------+\n|CONTINENT_NAME|count(1)|\n+--------------+--------+\n|     CARIBBEAN|    1296|\n|          ASIA|   11606|\n|          null|    4997|\n|       OCEANIA|    3928|\n| NORTH AMERICA|   15330|\n+--------------+--------+\nonly showing top 5 rows\n\n"
+          }
+        ]
+      },
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "apps": [],
+      "jobName": "paragraph_1485943558988_-1137432425",
+      "id": "20170201-100558_849211484",
+      "dateCreated": "Feb 1, 2017 10:05:58 AM",
+      "dateStarted": "Feb 8, 2017 4:44:39 PM",
+      "dateFinished": "Feb 8, 2017 4:44:41 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Show IP_FROM addresses which appear more than once in the file",
+      "text": "// PS : if your query is correct, you should only find one\nsqlContext.sql(\"SELECT DISTINCT df.IP_FROM, IPCOUNT FROM df LEFT OUTER JOIN (SELECT IP_FROM, count(*) as IPCOUNT FROM df GROUP BY IP_FROM) t2 on df.IP_FROM \u003d t2.IP_FROM WHERE IPCOUNT \u003e 1\").show()",
+      "user": "anonymous",
+      "dateUpdated": "Feb 8, 2017 4:57:32 PM",
       "config": {
         "colWidth": 6.0,
         "enabled": true,
@@ -3227,7 +3335,9 @@
         },
         "tableHide": false,
         "editorHide": false,
-        "editorSetting": {}
+        "editorSetting": {
+          "language": "scala"
+        }
       },
       "settings": {
         "params": {},
@@ -3235,95 +3345,12 @@
       },
       "results": {
         "code": "SUCCESS",
-        "msg": []
-      },
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": ""
-      },
-      "apps": [],
-      "jobName": "paragraph_1485942503342_817387557",
-      "id": "20170201-094823_1804433902",
-      "dateCreated": "Feb 1, 2017 9:48:23 AM",
-      "dateStarted": "Feb 1, 2017 10:05:57 AM",
-      "dateFinished": "Feb 1, 2017 10:05:57 AM",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "title": "Display number of connections per continent",
-      "text": "",
-      "dateUpdated": "Feb 8, 2017 2:34:36 PM",
-      "config": {
-        "colWidth": 6.0,
-        "enabled": true,
-        "editorMode": "ace/mode/scala",
-        "title": true,
-        "results": [],
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
-        "tableHide": false,
-        "editorHide": true
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": []
-      },
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": ""
-      },
-      "apps": [],
-      "jobName": "paragraph_1485943558988_-1137432425",
-      "id": "20170201-100558_849211484",
-      "dateCreated": "Feb 1, 2017 10:05:58 AM",
-      "dateStarted": "Feb 1, 2017 10:09:38 AM",
-      "dateFinished": "Feb 1, 2017 10:09:38 AM",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "title": "Show IP_FROM addresses which appear more than once in the file",
-      "text": "// PS : if your query is correct, you should only find one",
-      "dateUpdated": "Feb 8, 2017 2:34:36 PM",
-      "config": {
-        "colWidth": 6.0,
-        "enabled": true,
-        "editorMode": "ace/mode/scala",
-        "title": true,
-        "results": [],
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
-        "tableHide": false,
-        "editorHide": true
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": []
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----------+-------+\n|   IP_FROM|IPCOUNT|\n+----------+-------+\n|3272226816|      2|\n+----------+-------+\n\n"
+          }
+        ]
       },
       "result": {
         "code": "SUCCESS",
@@ -3334,8 +3361,8 @@
       "jobName": "paragraph_1485943568883_1038722678",
       "id": "20170201-100608_637001408",
       "dateCreated": "Feb 1, 2017 10:06:08 AM",
-      "dateStarted": "Feb 1, 2017 10:11:17 AM",
-      "dateFinished": "Feb 1, 2017 10:11:18 AM",
+      "dateStarted": "Feb 8, 2017 4:57:32 PM",
+      "dateFinished": "Feb 8, 2017 4:57:34 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -3401,7 +3428,7 @@
     {
       "title": "If your DataFrame is stored internally, you can do some viz",
       "text": "%sql\nSELECT * FROM df",
-      "dateUpdated": "Feb 8, 2017 2:34:36 PM",
+      "dateUpdated": "Feb 8, 2017 4:35:53 PM",
       "config": {
         "colWidth": 6.0,
         "enabled": true,
@@ -3453,7 +3480,10 @@
           "scatter": {}
         },
         "tableHide": false,
-        "editorHide": true
+        "editorHide": true,
+        "editorSetting": {
+          "language": "sql"
+        }
       },
       "settings": {
         "params": {},
@@ -3485,7 +3515,7 @@
     {
       "title": "You can visualize the results of a query",
       "text": "%sql\nSELECT CONTINENT_NAME, COUNT(CONTINENT_NAME) as count FROM df GROUP BY CONTINENT_NAME",
-      "dateUpdated": "Feb 8, 2017 2:34:37 PM",
+      "dateUpdated": "Feb 8, 2017 4:36:01 PM",
       "config": {
         "colWidth": 6.0,
         "enabled": true,
@@ -3524,7 +3554,8 @@
                   "aggr": "sum"
                 }
               }
-            }
+            },
+            "helium": {}
           }
         ],
         "graph": {
@@ -3537,7 +3568,10 @@
           "scatter": {}
         },
         "tableHide": false,
-        "editorHide": true
+        "editorHide": true,
+        "editorSetting": {
+          "language": "sql"
+        }
       },
       "settings": {
         "params": {},
