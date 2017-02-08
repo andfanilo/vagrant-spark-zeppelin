@@ -203,8 +203,8 @@
     },
     {
       "title": "Shell cell",
-      "text": "%sh\necho \"Hello world\"",
-      "dateUpdated": "Feb 1, 2017 6:51:19 AM",
+      "text": "%sh\necho \"Hello BIBD\"",
+      "dateUpdated": "Feb 8, 2017 11:28:41 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -235,18 +235,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "Hello BIBD\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 1, 2017 6:51:19 AM",
-      "dateFinished": "Feb 1, 2017 6:51:20 AM",
+      "dateStarted": "Feb 8, 2017 11:28:41 AM",
+      "dateFinished": "Feb 8, 2017 11:28:42 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Python cell",
-      "text": "%python\nprint(\"Hello world\")",
-      "dateUpdated": "Jan 25, 2017 8:33:22 AM",
+      "text": "%python\nprint(\"Hello BIBD\")",
+      "dateUpdated": "Feb 8, 2017 11:28:43 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -276,18 +276,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "Hello BIBD\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:33:22 AM",
-      "dateFinished": "Jan 25, 2017 8:33:23 AM",
+      "dateStarted": "Feb 8, 2017 11:28:44 AM",
+      "dateFinished": "Feb 8, 2017 11:28:44 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Spark/Scala cell",
-      "text": "println(\"Hello world\")",
-      "dateUpdated": "Jan 25, 2017 8:33:26 AM",
+      "text": "println(\"Hello BIBD\")\n",
+      "dateUpdated": "Feb 8, 2017 11:26:43 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -317,11 +317,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "Hello BIBD\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:33:26 AM",
-      "dateFinished": "Jan 25, 2017 8:33:59 AM",
+      "dateStarted": "Feb 8, 2017 11:26:44 AM",
+      "dateFinished": "Feb 8, 2017 11:26:44 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -405,8 +405,8 @@
     },
     {
       "title": "Some arithmetic",
-      "text": "8 * 5 + 2",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "text": "8 * 5 + 6",
+      "dateUpdated": "Feb 8, 2017 11:29:37 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -431,17 +431,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "res2: Int \u003d 42\n"
+        "msg": "\nres38: Int \u003d 46\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 11:29:38 AM",
+      "dateFinished": "Feb 8, 2017 11:29:38 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Declaring variables",
-      "text": "val a \u003d 3 // val defines an immutable value\nvar b : Int \u003d 5 // var defines a mutable variable\nprintln(a + b)\n\nb \u003d 42\nprintln(a + b)\n\n// Note that the type of a variable or function is written after the variable or function. \n\n// Because Scala does type inference, it is also not necessary to declare type to variables when it looks obvious.",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "text": "val a \u003d 10 // val defines an immutable value\nvar b : Int \u003d 15 // var defines a mutable variable\nprintln(a - b)\n\nb \u003d 42\nprintln(a + b)\n\n// Note that the type of a variable or function is written after the variable or function. \n\n// Because Scala does type inference, it is also not necessary to declare type to variables when it looks obvious.",
+      "dateUpdated": "Feb 8, 2017 11:29:40 AM",
       "config": {
         "enabled": true,
         "tableHide": true,
@@ -468,17 +469,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "a: Int \u003d 3\nb: Int \u003d 5\n8\nb: Int \u003d 42\n45\n"
+        "msg": "\na: Int \u003d 10\n\nb: Int \u003d 15\n-5\n\nb: Int \u003d 42\n52\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 11:29:40 AM",
+      "dateFinished": "Feb 8, 2017 11:29:41 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Reusing a variable",
       "text": "// variables are accessible accross cells\n\na * b",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "dateUpdated": "Feb 8, 2017 11:29:43 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -503,11 +505,12 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "res13: Int \u003d 15\n"
+        "msg": "\nres44: Int \u003d 420\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 11:29:43 AM",
+      "dateFinished": "Feb 8, 2017 11:29:43 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -2141,24 +2144,24 @@
   "name": "Practice",
   "id": "2C75UP2R2",
   "angularObjects": {
-    "2C93MQCCX:shared_process": [],
-    "2CAFQY6K3:shared_process": [],
-    "2C71Z8V22:shared_process": [],
-    "2C74PSEZQ:shared_process": [],
-    "2C7936H5V:shared_process": [],
-    "2C6WY8JHA:shared_process": [],
-    "2C8CCCVZ2:shared_process": [],
-    "2C9JTS6JQ:shared_process": [],
-    "2C91JKV9H:shared_process": [],
-    "2C8N1PP7C:shared_process": [],
-    "2C7YTW7VT:shared_process": [],
-    "2C85G18U9:shared_process": [],
-    "2C9XYSTEH:shared_process": [],
-    "2CA474ZG3:shared_process": [],
-    "2C8JNXQ9U:shared_process": [],
-    "2C827138T:shared_process": [],
-    "2CAA7GXEJ:shared_process": [],
-    "2C8W1GCP8:shared_process": []
+    "2C9UWMSDQ:shared_process": [],
+    "2CA5E4D1M:shared_process": [],
+    "2C8X5UDAF:shared_process": [],
+    "2C8V6VA57:shared_process": [],
+    "2CAPK8AYC:shared_process": [],
+    "2C8DG5F5F:shared_process": [],
+    "2C9MQC9G5:shared_process": [],
+    "2CADDJG94:shared_process": [],
+    "2CAH5WMX8:shared_process": [],
+    "2CAW1YBPA:shared_process": [],
+    "2CAVX5C45:shared_process": [],
+    "2C8NZEMBQ:shared_process": [],
+    "2CB646MYF:shared_process": [],
+    "2C9ASJEM2:shared_process": [],
+    "2CA3FEZA2:shared_process": [],
+    "2CBA2YN2T:shared_process": [],
+    "2C9TSSFBF:shared_process": [],
+    "2CA5FT992:shared_process": []
   },
   "config": {
     "looknfeel": "default"
