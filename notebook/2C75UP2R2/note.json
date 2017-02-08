@@ -443,8 +443,8 @@
     },
     {
       "title": "Declaring variables",
-      "text": "val a \u003d 3 // val defines an immutable value\nvar b : Int \u003d 5 // var defines a mutable variable\nprintln(a + b)\n\nb \u003d 42\nprintln(a + b)\n\n// Note that the type of a variable or function is written after the variable or function. \n\n// Because Scala does type inference, it is also not necessary to declare type to variables when it looks obvious.",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "text": "val a \u003d 3 // val defines an immutable value\nvar b : Int \u003d 5 // var defines a mutable variable\nprintln(a + b)\n\nb \u003d 4\nprintln(a + b)\n\n// Note that the type of a variable or function is written after the variable or function. \n\n// Because Scala does type inference, it is also not necessary to declare type to variables when it looks obvious.",
+      "dateUpdated": "Feb 8, 2017 12:35:51 PM",
       "config": {
         "enabled": true,
         "tableHide": true,
@@ -471,17 +471,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "a: Int \u003d 3\nb: Int \u003d 5\n8\nb: Int \u003d 42\n45\n"
+        "msg": "\na: Int \u003d 3\n\nb: Int \u003d 5\n8\n\nb: Int \u003d 4\n7\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 12:35:52 PM",
+      "dateFinished": "Feb 8, 2017 12:35:54 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Reusing a variable",
       "text": "// variables are accessible accross cells\n\na * b",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "dateUpdated": "Feb 8, 2017 12:35:57 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -506,11 +507,12 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "res13: Int \u003d 15\n"
+        "msg": "\nres20: Int \u003d 12\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 12:35:57 PM",
+      "dateFinished": "Feb 8, 2017 12:35:58 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -551,7 +553,7 @@
     {
       "title": "Create immutable sequence of numbers",
       "text": "val sequenceNumbers \u003d 1 to 100",
-      "dateUpdated": "Jan 25, 2017 8:34:35 AM",
+      "dateUpdated": "Feb 8, 2017 12:25:45 PM",
       "config": {
         "enabled": true,
         "tableHide": true,
