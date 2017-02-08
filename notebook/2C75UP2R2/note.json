@@ -203,8 +203,8 @@
     },
     {
       "title": "Shell cell",
-      "text": "%sh\necho \"Hello world\"",
-      "dateUpdated": "Feb 1, 2017 6:51:19 AM",
+      "text": "%sh\necho \"Hello yazid from shell cell\"",
+      "dateUpdated": "Feb 8, 2017 11:12:24 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -235,18 +235,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "Hello yazid from shell cell\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 1, 2017 6:51:19 AM",
-      "dateFinished": "Feb 1, 2017 6:51:20 AM",
+      "dateStarted": "Feb 8, 2017 11:12:24 AM",
+      "dateFinished": "Feb 8, 2017 11:12:24 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Python cell",
-      "text": "%python\nprint(\"Hello world\")",
-      "dateUpdated": "Jan 25, 2017 8:33:22 AM",
+      "text": "%python\nprint(\"Hello yazid from python cell\")",
+      "dateUpdated": "Feb 8, 2017 11:13:07 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -265,7 +265,8 @@
           }
         },
         "editorMode": "ace/mode/python",
-        "colWidth": 4.0
+        "colWidth": 4.0,
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -276,18 +277,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "Hello yazid from python cell\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:33:22 AM",
-      "dateFinished": "Jan 25, 2017 8:33:23 AM",
+      "dateStarted": "Feb 8, 2017 11:12:45 AM",
+      "dateFinished": "Feb 8, 2017 11:12:45 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Spark/Scala cell",
-      "text": "println(\"Hello world\")",
-      "dateUpdated": "Jan 25, 2017 8:33:26 AM",
+      "text": "println(\"Hello yazid from spark scala cell\")",
+      "dateUpdated": "Feb 8, 2017 11:12:59 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -317,11 +318,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "Hello yazid from spark scala cell\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:33:26 AM",
-      "dateFinished": "Jan 25, 2017 8:33:59 AM",
+      "dateStarted": "Feb 8, 2017 11:12:59 AM",
+      "dateFinished": "Feb 8, 2017 11:13:15 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -405,8 +406,8 @@
     },
     {
       "title": "Some arithmetic",
-      "text": "8 * 5 + 2",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "text": "8 * 5 + 6",
+      "dateUpdated": "Feb 8, 2017 11:21:51 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -420,7 +421,8 @@
           "scatter": {}
         },
         "editorMode": "ace/mode/scala",
-        "colWidth": 4.0
+        "colWidth": 4.0,
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -431,11 +433,12 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "res2: Int \u003d 42\n"
+        "msg": "\nres4: Int \u003d 46\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 11:21:51 AM",
+      "dateFinished": "Feb 8, 2017 11:21:52 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -2141,24 +2144,24 @@
   "name": "Practice",
   "id": "2C75UP2R2",
   "angularObjects": {
-    "2C93MQCCX:shared_process": [],
-    "2CAFQY6K3:shared_process": [],
-    "2C71Z8V22:shared_process": [],
-    "2C74PSEZQ:shared_process": [],
-    "2C7936H5V:shared_process": [],
-    "2C6WY8JHA:shared_process": [],
-    "2C8CCCVZ2:shared_process": [],
-    "2C9JTS6JQ:shared_process": [],
-    "2C91JKV9H:shared_process": [],
-    "2C8N1PP7C:shared_process": [],
-    "2C7YTW7VT:shared_process": [],
-    "2C85G18U9:shared_process": [],
-    "2C9XYSTEH:shared_process": [],
-    "2CA474ZG3:shared_process": [],
-    "2C8JNXQ9U:shared_process": [],
-    "2C827138T:shared_process": [],
-    "2CAA7GXEJ:shared_process": [],
-    "2C8W1GCP8:shared_process": []
+    "2CB5HQARY:shared_process": [],
+    "2C8CWNWJY:shared_process": [],
+    "2C8XE15AG:shared_process": [],
+    "2CBET736N:shared_process": [],
+    "2C9AS98MR:shared_process": [],
+    "2C9G2YN6H:shared_process": [],
+    "2CBAUC6H6:shared_process": [],
+    "2C7MKWD6Z:shared_process": [],
+    "2CAPR4AQ9:shared_process": [],
+    "2C7XZH2NM:shared_process": [],
+    "2C8EAJM3P:shared_process": [],
+    "2C8Y1J3DQ:shared_process": [],
+    "2C93YACWA:shared_process": [],
+    "2CBAD1M2H:shared_process": [],
+    "2CAPW6MPD:shared_process": [],
+    "2CAX71EAT:shared_process": [],
+    "2C8JXMHTC:shared_process": [],
+    "2CAKTAPZQ:shared_process": []
   },
   "config": {
     "looknfeel": "default"
