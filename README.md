@@ -97,7 +97,7 @@ $ git branch
 Add a message between the following lines:
 
 <hr>
-PERSONAL MESSAGE
+Nous avons fait des mdofications wééé
 <hr>
 
 With `$ git status` you can check the status of your Git repository.
