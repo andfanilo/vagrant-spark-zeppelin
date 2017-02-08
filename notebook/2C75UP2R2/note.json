@@ -1123,8 +1123,8 @@
     },
     {
       "title": "Get highest number in a list with a reduce",
-      "text": "import util.Random.nextInt\nval input \u003d Seq.fill(10)(nextInt)\nval output \u003d input.reduce((x, y) \u003d\u003e x)\n\n// val output \u003d input.reduce((x, y) \u003d\u003e max)\n\nval expected \u003d input.max",
-      "dateUpdated": "Feb 8, 2017 4:15:05 PM",
+      "text": "import util.Random.nextInt\nval input \u003d Seq.fill(10)(nextInt)\n//val output \u003d input.reduce((x, y) \u003d\u003e x)\n\ndef max2(x: Int, y: Int): Int \u003d if (x \u003e y) x else y\nval output \u003d input.reduce(max2)\n\nval expected \u003d input.max",
+      "dateUpdated": "Feb 8, 2017 4:25:51 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1151,11 +1151,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nimport util.Random.nextInt\n\ninput: Seq[Int] \u003d List(1217175809, -2077942086, 1050186024, -211310030, 861792821, -379527820, -87360464, -1006747612, -252389991, -1114630494)\n\noutput: Int \u003d 1217175809\n\nexpected: Int \u003d 1217175809\n"
+        "msg": "\nimport util.Random.nextInt\n\ninput: Seq[Int] \u003d List(-1316923305, 1375273298, 1061397141, -1388698218, 1686362669, 760056544, 166269769, 10550818, 91729469, 2034614308)\n\nmax2: (x: Int, y: Int)Int\n\noutput: Int \u003d 2034614308\n\nexpected: Int \u003d 2034614308\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:32 AM",
-      "dateStarted": "Feb 8, 2017 4:15:06 PM",
-      "dateFinished": "Feb 8, 2017 4:15:09 PM",
+      "dateStarted": "Feb 8, 2017 4:25:51 PM",
+      "dateFinished": "Feb 8, 2017 4:25:55 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
