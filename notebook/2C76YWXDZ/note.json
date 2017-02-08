@@ -1,8 +1,8 @@
 {
   "paragraphs": [
     {
-      "text": "%md\n\n# Binary Classification Algorithms with Pipelines API\n\nName(s): _student\u0027s name_\nClass: _SISE or BIBD_\n\n\u003chr\u003e\n\nIn this notebook, we will test out the Binary Classification algorithms available in the ML Pipelines API using the Adult dataset. The Pipelines API provides higher-level API built on top of DataFrames for constructing ML pipelines. You can read more about the ML Pipelines API in the [programming guide](http://spark.apache.org/docs/2.0.1/ml-guide.html).\n\n**Binary Classification** is the task of predicting a binary 0 or 1 label.  E.g., is an email spam or not spam?  Should I show this ad to this user or not?  Will it rain tomorrow or not?  This notebook demonstrates several algorithms for making these types of predictions.\n\n\u003chr\u003e\n\nThis notebook will act as your written assignment. As such, it should contain your code and all necessary explanations, like why did you use that or why do you think this happens. When I read it at the end, I should understand all of your reasoning.\n\nDon\u0027t forget to __frequently__ commit your code and push it back to Github. A good advice would be that anytime your answer a question with code and explanation, you should commit a message referencing the question and push it to Github. By versioning frequently, you keep a good history of your work and can eventually return back. At the end of the assignment, you will notify me of your work via a pull request.\n\nYour mark will be based on:\n- your commit activity\n- completing the full analysis of the dataset, from describing it to predicting the income value and evaluating that\n\nThe questions I have put serve as a guideline, but you are totally free to change the text and put your own descriptions (which is absolutely appreciated because it shows you have fully comprehended the problem)\n\n\u003chr\u003e\n\n####Table of Contents\n\n* Dataset Review\n* Load Data\n* Descriptive analysis\n* Data Preprocessing\n* Creation of models\n* Conclusion",
-      "dateUpdated": "Feb 7, 2017 12:55:37 PM",
+      "text": "%md\n\n# Binary Classification Algorithms with Pipelines API\n\nName(s): Marouen REBANI, Mohammed Latreche\nClass: BIBD_G2\n\n\u003chr\u003e\n\nIn this notebook, we will test out the Binary Classification algorithms available in the ML Pipelines API using the Adult dataset. The Pipelines API provides higher-level API built on top of DataFrames for constructing ML pipelines. You can read more about the ML Pipelines API in the [programming guide](http://spark.apache.org/docs/2.0.1/ml-guide.html).\n\n**Binary Classification** is the task of predicting a binary 0 or 1 label.  E.g., is an email spam or not spam?  Should I show this ad to this user or not?  Will it rain tomorrow or not?  This notebook demonstrates several algorithms for making these types of predictions.\n\n\u003chr\u003e\n\nThis notebook will act as your written assignment. As such, it should contain your code and all necessary explanations, like why did you use that or why do you think this happens. When I read it at the end, I should understand all of your reasoning.\n\nDon\u0027t forget to __frequently__ commit your code and push it back to Github. A good advice would be that anytime your answer a question with code and explanation, you should commit a message referencing the question and push it to Github. By versioning frequently, you keep a good history of your work and can eventually return back. At the end of the assignment, you will notify me of your work via a pull request.\n\nYour mark will be based on:\n- your commit activity\n- completing the full analysis of the dataset, from describing it to predicting the income value and evaluating that\n\nThe questions I have put serve as a guideline, but you are totally free to change the text and put your own descriptions (which is absolutely appreciated because it shows you have fully comprehended the problem)\n\n\u003chr\u003e\n\n####Table of Contents\n\n* Dataset Review\n* Load Data\n* Descriptive analysis\n* Data Preprocessing\n* Creation of models\n* Conclusion",
+      "dateUpdated": "Feb 8, 2017 6:45:46 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -16,7 +16,8 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/markdown",
-        "editorHide": true
+        "editorHide": true,
+        "tableHide": false
       },
       "settings": {
         "params": {},
@@ -27,11 +28,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003ch1\u003eBinary Classification Algorithms with Pipelines API\u003c/h1\u003e\n\u003cp\u003eName(s): \u003cem\u003estudent\u0027s name\u003c/em\u003e\n\u003cbr  /\u003eClass: \u003cem\u003eSISE or BIBD\u003c/em\u003e\u003c/p\u003e\n\u003chr\u003e\n\u003cp\u003eIn this notebook, we will test out the Binary Classification algorithms available in the ML Pipelines API using the Adult dataset. The Pipelines API provides higher-level API built on top of DataFrames for constructing ML pipelines. You can read more about the ML Pipelines API in the \u003ca href\u003d\"http://spark.apache.org/docs/2.0.1/ml-guide.html\"\u003eprogramming guide\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eBinary Classification\u003c/strong\u003e is the task of predicting a binary 0 or 1 label.  E.g., is an email spam or not spam?  Should I show this ad to this user or not?  Will it rain tomorrow or not?  This notebook demonstrates several algorithms for making these types of predictions.\u003c/p\u003e\n\u003chr\u003e\n\u003cp\u003eThis notebook will act as your written assignment. As such, it should contain your code and all necessary explanations, like why did you use that or why do you think this happens. When I read it at the end, I should understand all of your reasoning.\u003c/p\u003e\n\u003cp\u003eDon\u0027t forget to \u003cstrong\u003efrequently\u003c/strong\u003e commit your code and push it back to Github. A good advice would be that anytime your answer a question with code and explanation, you should commit a message referencing the question and push it to Github. By versioning frequently, you keep a good history of your work and can eventually return back. At the end of the assignment, you will notify me of your work via a pull request.\u003c/p\u003e\n\u003cp\u003eYour mark will be based on:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eyour commit activity\u003c/li\u003e\n\u003cli\u003ecompleting the full analysis of the dataset, from describing it to predicting the income value and evaluating that\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eThe questions I have put serve as a guideline, but you are totally free to change the text and put your own descriptions (which is absolutely appreciated because it shows you have fully comprehended the problem)\u003c/p\u003e\n\u003chr\u003e\n\u003ch4\u003eTable of Contents\u003c/h4\u003e\n\u003cul\u003e\n\u003cli\u003eDataset Review\u003c/li\u003e\n\u003cli\u003eLoad Data\u003c/li\u003e\n\u003cli\u003eDescriptive analysis\u003c/li\u003e\n\u003cli\u003eData Preprocessing\u003c/li\u003e\n\u003cli\u003eCreation of models\u003c/li\u003e\n\u003cli\u003eConclusion\u003c/li\u003e\n\u003c/ul\u003e\n"
+        "msg": "\u003ch1\u003eBinary Classification Algorithms with Pipelines API\u003c/h1\u003e\n\u003cp\u003eName(s): Marouen REBANI, Mohammed Latreche\n\u003cbr  /\u003eClass: BIBD_G2\u003c/p\u003e\n\u003chr\u003e\n\u003cp\u003eIn this notebook, we will test out the Binary Classification algorithms available in the ML Pipelines API using the Adult dataset. The Pipelines API provides higher-level API built on top of DataFrames for constructing ML pipelines. You can read more about the ML Pipelines API in the \u003ca href\u003d\"http://spark.apache.org/docs/2.0.1/ml-guide.html\"\u003eprogramming guide\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eBinary Classification\u003c/strong\u003e is the task of predicting a binary 0 or 1 label.  E.g., is an email spam or not spam?  Should I show this ad to this user or not?  Will it rain tomorrow or not?  This notebook demonstrates several algorithms for making these types of predictions.\u003c/p\u003e\n\u003chr\u003e\n\u003cp\u003eThis notebook will act as your written assignment. As such, it should contain your code and all necessary explanations, like why did you use that or why do you think this happens. When I read it at the end, I should understand all of your reasoning.\u003c/p\u003e\n\u003cp\u003eDon\u0027t forget to \u003cstrong\u003efrequently\u003c/strong\u003e commit your code and push it back to Github. A good advice would be that anytime your answer a question with code and explanation, you should commit a message referencing the question and push it to Github. By versioning frequently, you keep a good history of your work and can eventually return back. At the end of the assignment, you will notify me of your work via a pull request.\u003c/p\u003e\n\u003cp\u003eYour mark will be based on:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eyour commit activity\u003c/li\u003e\n\u003cli\u003ecompleting the full analysis of the dataset, from describing it to predicting the income value and evaluating that\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eThe questions I have put serve as a guideline, but you are totally free to change the text and put your own descriptions (which is absolutely appreciated because it shows you have fully comprehended the problem)\u003c/p\u003e\n\u003chr\u003e\n\u003ch4\u003eTable of Contents\u003c/h4\u003e\n\u003cul\u003e\n\u003cli\u003eDataset Review\u003c/li\u003e\n\u003cli\u003eLoad Data\u003c/li\u003e\n\u003cli\u003eDescriptive analysis\u003c/li\u003e\n\u003cli\u003eData Preprocessing\u003c/li\u003e\n\u003cli\u003eCreation of models\u003c/li\u003e\n\u003cli\u003eConclusion\u003c/li\u003e\n\u003c/ul\u003e\n"
       },
       "dateCreated": "Feb 3, 2017 8:20:06 AM",
-      "dateStarted": "Feb 7, 2017 12:55:38 PM",
-      "dateFinished": "Feb 7, 2017 12:55:40 PM",
+      "dateStarted": "Feb 8, 2017 6:45:45 PM",
+      "dateFinished": "Feb 8, 2017 6:45:45 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -107,8 +108,8 @@
     },
     {
       "title": "Load data (run the cell)",
-      "text": "import org.apache.spark.sql.types.{StringType, DoubleType, StructType, StructField}\n\nval schema \u003d StructType(Seq(\n    StructField(\"age\", DoubleType),\n    StructField(\"workclass\", StringType),\n    StructField(\"fnlwgt\", DoubleType),\n    StructField(\"education\", StringType),\n    StructField(\"education_num\", DoubleType),\n    StructField(\"marital_status\", StringType),\n    StructField(\"occupation\", StringType),\n    StructField(\"relationship\", StringType),\n    StructField(\"race\", StringType),\n    StructField(\"sex\", StringType),\n    StructField(\"capital_gain\", DoubleType),\n    StructField(\"capital_loss\", DoubleType),\n    StructField(\"hours_per_week\", DoubleType),\n    StructField(\"native_country\", StringType),\n    StructField(\"income\", StringType)\n    ))\n\ncase class Adult(\n    age: Double, \n    workclass: String, \n    fnlwgt: Double, \n    education: String, \n    education_num: Double, \n    marital_status: String, \n    occupation: String, \n    relationship: String, \n    race: String, \n    sex: String, \n    capital_gain: Double, \n    capital_loss: Double, \n    hours_per_week: Double, \n    native_country: String, \n    income: String\n    )\n    \nval dataset \u003d spark.read.schema(schema).csv(\"/opt/dataset/adult.data.csv\").as[Adult]\ndataset.registerTempTable(\"dataset\")  // register it so we can use it inside %sql interpreter",
-      "dateUpdated": "Feb 7, 2017 12:55:38 PM",
+      "text": "\n//import new types from spark sql library\nimport org.apache.spark.sql.types.{StringType, DoubleType, StructType, StructField}\n\n//create the structure of our dataframe\nval schema \u003d StructType(Seq(\n    StructField(\"age\", DoubleType),\n    StructField(\"workclass\", StringType),\n    StructField(\"fnlwgt\", DoubleType),\n    StructField(\"education\", StringType),\n    StructField(\"education_num\", DoubleType),\n    StructField(\"marital_status\", StringType),\n    StructField(\"occupation\", StringType),\n    StructField(\"relationship\", StringType),\n    StructField(\"race\", StringType),\n    StructField(\"sex\", StringType),\n    StructField(\"capital_gain\", DoubleType),\n    StructField(\"capital_loss\", DoubleType),\n    StructField(\"hours_per_week\", DoubleType),\n    StructField(\"native_country\", StringType),\n    StructField(\"income\", StringType)\n    ))\n\n//create the Adult object\ncase class Adult(\n    age: Double, \n    workclass: String, \n    fnlwgt: Double, \n    education: String, \n    education_num: Double, \n    marital_status: String, \n    occupation: String, \n    relationship: String, \n    race: String, \n    sex: String, \n    capital_gain: Double, \n    capital_loss: Double, \n    hours_per_week: Double, \n    native_country: String, \n    income: String\n    )\n//define our dataset with our dataframe structure \"schema\" and put the data from the adult.data.csv file inside\nval dataset \u003d spark.read.schema(schema).csv(\"/opt/dataset/adult.data.csv\").as[Adult]\ndataset.registerTempTable(\"dataset\")  // register it so we can use it inside %sql interpreter",
+      "dateUpdated": "Feb 8, 2017 6:56:34 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -123,8 +124,8 @@
         "enabled": true,
         "editorMode": "ace/mode/scala",
         "title": true,
-        "editorHide": true,
-        "tableHide": true
+        "editorHide": false,
+        "tableHide": false
       },
       "settings": {
         "params": {},
@@ -138,14 +139,14 @@
         "msg": "\nimport org.apache.spark.sql.types.{StringType, DoubleType, StructType, StructField}\n\nschema: org.apache.spark.sql.types.StructType \u003d StructType(StructField(age,DoubleType,true), StructField(workclass,StringType,true), StructField(fnlwgt,DoubleType,true), StructField(education,StringType,true), StructField(education_num,DoubleType,true), StructField(marital_status,StringType,true), StructField(occupation,StringType,true), StructField(relationship,StringType,true), StructField(race,StringType,true), StructField(sex,StringType,true), StructField(capital_gain,DoubleType,true), StructField(capital_loss,DoubleType,true), StructField(hours_per_week,DoubleType,true), StructField(native_country,StringType,true), StructField(income,StringType,true))\n\ndefined class Adult\n\ndataset: org.apache.spark.sql.Dataset[Adult] \u003d [age: double, workclass: string ... 13 more fields]\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n"
       },
       "dateCreated": "Feb 3, 2017 8:43:33 AM",
-      "dateStarted": "Feb 7, 2017 12:55:39 PM",
-      "dateFinished": "Feb 7, 2017 12:55:47 PM",
+      "dateStarted": "Feb 8, 2017 6:56:20 PM",
+      "dateFinished": "Feb 8, 2017 6:56:21 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "dataset.printSchema()",
-      "dateUpdated": "Feb 7, 2017 12:55:39 PM",
+      "text": "dataset.printSchema() //describe the types of the columns of the dataset",
+      "dateUpdated": "Feb 8, 2017 6:57:34 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -158,7 +159,9 @@
           "scatter": {}
         },
         "enabled": true,
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/scala",
+        "editorHide": false,
+        "tableHide": false
       },
       "settings": {
         "params": {},
@@ -172,24 +175,47 @@
         "msg": "root\n |-- age: double (nullable \u003d true)\n |-- workclass: string (nullable \u003d true)\n |-- fnlwgt: double (nullable \u003d true)\n |-- education: string (nullable \u003d true)\n |-- education_num: double (nullable \u003d true)\n |-- marital_status: string (nullable \u003d true)\n |-- occupation: string (nullable \u003d true)\n |-- relationship: string (nullable \u003d true)\n |-- race: string (nullable \u003d true)\n |-- sex: string (nullable \u003d true)\n |-- capital_gain: double (nullable \u003d true)\n |-- capital_loss: double (nullable \u003d true)\n |-- hours_per_week: double (nullable \u003d true)\n |-- native_country: string (nullable \u003d true)\n |-- income: string (nullable \u003d true)\n\n"
       },
       "dateCreated": "Feb 6, 2017 1:45:35 AM",
-      "dateStarted": "Feb 7, 2017 12:55:39 PM",
-      "dateFinished": "Feb 7, 2017 12:55:48 PM",
+      "dateStarted": "Feb 8, 2017 6:57:34 PM",
+      "dateFinished": "Feb 8, 2017 6:57:34 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%sql SELECT * FROM dataset LIMIT 10",
-      "dateUpdated": "Feb 7, 2017 12:55:39 PM",
+      "dateUpdated": "Feb 8, 2017 7:00:01 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
           "mode": "table",
           "height": 300.0,
           "optionOpen": false,
-          "keys": [],
-          "values": [],
+          "keys": [
+            {
+              "name": "age",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "workclass",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
           "groups": [],
-          "scatter": {}
+          "scatter": {
+            "xAxis": {
+              "name": "age",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "workclass",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
         },
         "enabled": true,
         "editorMode": "ace/mode/sql"
@@ -206,8 +232,8 @@
         "msg": "age\tworkclass\tfnlwgt\teducation\teducation_num\tmarital_status\toccupation\trelationship\trace\tsex\tcapital_gain\tcapital_loss\thours_per_week\tnative_country\tincome\n39.0\t State-gov\t77516.0\t Bachelors\t13.0\t Never-married\t Adm-clerical\t Not-in-family\t White\t Male\t2174.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n50.0\t Self-emp-not-inc\t83311.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t13.0\t United-States\t \u003c\u003d50K\n38.0\t Private\t215646.0\t HS-grad\t9.0\t Divorced\t Handlers-cleaners\t Not-in-family\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n53.0\t Private\t234721.0\t 11th\t7.0\t Married-civ-spouse\t Handlers-cleaners\t Husband\t Black\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n28.0\t Private\t338409.0\t Bachelors\t13.0\t Married-civ-spouse\t Prof-specialty\t Wife\t Black\t Female\t0.0\t0.0\t40.0\t Cuba\t \u003c\u003d50K\n37.0\t Private\t284582.0\t Masters\t14.0\t Married-civ-spouse\t Exec-managerial\t Wife\t White\t Female\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n49.0\t Private\t160187.0\t 9th\t5.0\t Married-spouse-absent\t Other-service\t Not-in-family\t Black\t Female\t0.0\t0.0\t16.0\t Jamaica\t \u003c\u003d50K\n52.0\t Self-emp-not-inc\t209642.0\t HS-grad\t9.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t45.0\t United-States\t \u003e50K\n31.0\t Private\t45781.0\t Masters\t14.0\t Never-married\t Prof-specialty\t Not-in-family\t White\t Female\t14084.0\t0.0\t50.0\t United-States\t \u003e50K\n42.0\t Private\t159449.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t5178.0\t0.0\t40.0\t United-States\t \u003e50K\n"
       },
       "dateCreated": "Feb 3, 2017 8:41:09 AM",
-      "dateStarted": "Feb 7, 2017 12:55:48 PM",
-      "dateFinished": "Feb 7, 2017 12:55:52 PM",
+      "dateStarted": "Feb 8, 2017 7:00:01 PM",
+      "dateFinished": "Feb 8, 2017 7:00:01 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -272,12 +298,12 @@
     },
     {
       "text": "%md \n\n## III. Descriptive analysis\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nProvide a summary statistics graph for some columns you deem interesting. Summary statistics is comprised (but not limited) of:\n* mean, standard deviation and skewness for numeric columns.\n* counts and percentage of each value for categorical columns.\n\nIf you can, try to separate the two income groups and compare.\n\nTwo ways of doing this:\n* You should be able to it using standard SQL queries on the DataFrame and `show()` the result\n* You can use the %sql interpreter like in the previous cell and then use the settings tab of your graph to display the desired results.",
-      "dateUpdated": "Feb 7, 2017 12:55:40 PM",
+      "dateUpdated": "Feb 8, 2017 6:40:02 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
           "mode": "table",
-          "height": 300.0,
+          "height": 272.29998779296875,
           "optionOpen": false,
           "keys": [],
           "values": [],
@@ -303,6 +329,149 @@
       "dateCreated": "Feb 3, 2017 8:59:52 AM",
       "dateStarted": "Feb 7, 2017 12:55:41 PM",
       "dateFinished": "Feb 7, 2017 12:55:41 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql select education, avg(hours_per_week) as Average_hour_per_week from dataset group by education order by Average_hour_per_week",
+      "dateUpdated": "Feb 8, 2017 8:18:59 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": true,
+          "keys": [
+            {
+              "name": "education",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "average hour per week",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "education",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "average hour per week",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1486579229998_1625025365",
+      "id": "20170208-184029_1399459563",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "education\tAverage_hour_per_week\n 11th\t33.92595744680851\n 12th\t35.78060046189376\n Preschool\t36.64705882352941\n 10th\t37.052518756698824\n 9th\t38.04474708171206\n 1st-4th\t38.25595238095238\n Some-college\t38.85228363736113\n 5th-6th\t38.8978978978979\n 7th-8th\t39.36687306501548\n Assoc-acdm\t40.504217432052485\n HS-grad\t40.575373773926295\n Assoc-voc\t41.61070911722142\n Bachelors\t42.614005602240894\n Masters\t43.83633197910621\n Doctorate\t46.973365617433416\n Prof-school\t47.42534722222222\n"
+      },
+      "dateCreated": "Feb 8, 2017 6:40:29 PM",
+      "dateStarted": "Feb 8, 2017 8:19:00 PM",
+      "dateFinished": "Feb 8, 2017 8:19:00 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql select education, count(income) as count_income, \u0027\u003c\u003d50k\u0027 as income_group from dataset where income \u003d \" \u003c\u003d50K\" group by education select education, count(income) count_income, \u0027\u003c\u003d50k\u0027 as income_group from dataset \nwhere income \u003d \" \u003c\u003d50K\" union select education, count(income) as count_income, \u0027\u003e50k\u0027 as income_group from dataset where income \u003d \" \u003e50K\"",
+      "dateUpdated": "Feb 8, 2017 8:00:57 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 215.90000915527344,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "education",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "count_income",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "education",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1486581793534_-1231303973",
+      "id": "20170208-192313_569565757",
+      "result": {
+        "code": "ERROR",
+        "type": "TEXT",
+        "msg": "\nmismatched input \u0027select\u0027 expecting {\u003cEOF\u003e, \u0027,\u0027, \u0027.\u0027, \u0027[\u0027, \u0027GROUPING\u0027, \u0027ORDER\u0027, \u0027HAVING\u0027, \u0027LIMIT\u0027, \u0027OR\u0027, \u0027AND\u0027, \u0027IN\u0027, NOT, \u0027BETWEEN\u0027, \u0027LIKE\u0027, RLIKE, \u0027IS\u0027, \u0027WINDOW\u0027, \u0027WITH\u0027, \u0027UNION\u0027, \u0027EXCEPT\u0027, \u0027INTERSECT\u0027, EQ, \u0027\u003c\u003d\u003e\u0027, \u0027\u003c\u003e\u0027, \u0027!\u003d\u0027, \u0027\u003c\u0027, LTE, \u0027\u003e\u0027, GTE, \u0027+\u0027, \u0027-\u0027, \u0027*\u0027, \u0027/\u0027, \u0027%\u0027, \u0027DIV\u0027, \u0027\u0026\u0027, \u0027|\u0027, \u0027^\u0027, \u0027SORT\u0027, \u0027CLUSTER\u0027, \u0027DISTRIBUTE\u0027}(line 1, pos 129)\n\n\u003d\u003d SQL \u003d\u003d\nselect education, count(income) as count_income, \u0027\u003c\u003d50k\u0027 as income_group from dataset where income \u003d \" \u003c\u003d50K\" group by education select education, count(income) count_income, \u0027\u003c\u003d50k\u0027 as income_group from dataset \n---------------------------------------------------------------------------------------------------------------------------------^^^\nwhere income \u003d \" \u003c\u003d50K\" union select education, count(income) as count_income, \u0027\u003e50k\u0027 as income_group from dataset where income \u003d \" \u003e50K\"\n\nset zeppelin.spark.sql.stacktrace \u003d true to see full stacktrace"
+      },
+      "dateCreated": "Feb 8, 2017 7:23:13 PM",
+      "dateStarted": "Feb 8, 2017 8:00:57 PM",
+      "dateFinished": "Feb 8, 2017 8:00:57 PM",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "sqlContext.sql(\"select * from dataset\").select(\"income\").show",
+      "dateUpdated": "Feb 8, 2017 7:33:14 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1486582272065_-1384563730",
+      "id": "20170208-193112_586958118",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nres43: Array[org.apache.spark.sql.Row] \u003d Array([ \u003c\u003d50K])\n"
+      },
+      "dateCreated": "Feb 8, 2017 7:31:12 PM",
+      "dateStarted": "Feb 8, 2017 7:32:55 PM",
+      "dateFinished": "Feb 8, 2017 7:32:55 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -415,8 +584,8 @@
     },
     {
       "title": "Detail columns to deal with",
-      "text": "val categoricalCols \u003d Seq(\"workclass\", \"education\", \"marital_status\", \"occupation\", \"relationship\", \"race\", \"sex\", \"native_country\")\nval numericCols \u003d Seq(\"age\", \"fnlwgt\", \"education_num\", \"capital_gain\", \"capital_loss\", \"hours_per_week\")",
-      "dateUpdated": "Feb 7, 2017 12:55:42 PM",
+      "text": "import org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer}\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\nval categoricalCols \u003d Seq(\"workclass\", \"education\", \"marital_status\", \"occupation\", \"relationship\", \"race\", \"sex\", \"native_country\")\nval numericCols \u003d Seq(\"age\", \"fnlwgt\", \"education_num\", \"capital_gain\", \"capital_loss\", \"hours_per_week\")\n\n\nval stages  \u003d categoricalCols.flatMap{a \u003d\u003e\n    val stringIndexer \u003d new StringIndexer()\n    .setInputCol(a)\n    .setOutputCol(a + index)\n    val oneHotEncoder \u003d new OneHotEncoder()\n    .setInputCol(stringIndexer.getOutputCol)\n    .setOutputCol(stringIndexer.getInputCol + \"ClassVec\")\n}\n\nval label_stringIdx \u003d new StringIndexer()\n    .setInputCol(\"income\")\n    .setOutputCol(\"label\")\nval assemblerStage \u003d new VectorAssembler()\n    .setInputCol(categorialCols.map(w \u003d\u003e w + \"Classic\").toArray)\n    .setOutputCol(\"features\")\n\nval finalStages \u003d  Seq(label_stringIdx, assemblerStage) ++ Seq(label_stringIdx) // concatenate 2 sequences of stages\nval pipeline \u003d new Pipeline()\n  .setStages(stages.toArray)\n\nval pipelineModel \u003d pipeline.fit(dataset)\npipelineModel.transform(dataset).show()",
+      "dateUpdated": "Feb 8, 2017 8:31:20 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -439,19 +608,19 @@
       "jobName": "paragraph_1486391484536_-1333067431",
       "id": "20170206-143124_969747353",
       "result": {
-        "code": "SUCCESS",
+        "code": "ERROR",
         "type": "TEXT",
-        "msg": "\ncategoricalCols: Seq[String] \u003d List(workclass, education, marital_status, occupation, relationship, race, sex, native_country)\n\nnumericCols: Seq[String] \u003d List(age, fnlwgt, education_num, capital_gain, capital_loss, hours_per_week)\n"
+        "msg": "\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer}\n\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\ncategoricalCols: Seq[String] \u003d List(workclass, education, marital_status, occupation, relationship, race, sex, native_country)\n\nnumericCols: Seq[String] \u003d List(age, fnlwgt, education_num, capital_gain, capital_loss, hours_per_week)\n\n\n\n\u003cconsole\u003e:36: error: not found: value index\n           .setOutputCol(a + index)\n                             ^\n\n\n\n\n\n\u003cconsole\u003e:40: error: type mismatch;\n found   : Unit\n required: scala.collection.GenTraversableOnce[?]\n       }\n       ^\n"
       },
       "dateCreated": "Feb 6, 2017 2:31:24 AM",
-      "dateStarted": "Feb 7, 2017 12:55:53 PM",
-      "dateFinished": "Feb 7, 2017 12:55:56 PM",
-      "status": "FINISHED",
+      "dateStarted": "Feb 8, 2017 8:31:20 PM",
+      "dateFinished": "Feb 8, 2017 8:31:21 PM",
+      "status": "ERROR",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\nTo run machine learning on a dataset, you need a column which contains a vector of all the features, and a column with the label.\n\nWe use the [VectorAssembler](http://spark.apache.org/docs/latest/ml-features.html#vectorassembler) to assemble all of our numeric columns and one-hot encoded categorical columns into one.\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nAdd the `VectorAssembler` stage, which takes as input all numeric columns and one hot encoded categorical columns. The `features` column will then be created. You can comment on it.",
-      "dateUpdated": "Feb 7, 2017 12:55:43 PM",
+      "dateUpdated": "Feb 8, 2017 8:04:03 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -482,6 +651,33 @@
       "dateStarted": "Feb 7, 2017 12:55:43 PM",
       "dateFinished": "Feb 7, 2017 12:55:43 PM",
       "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "",
+      "dateUpdated": "Feb 8, 2017 8:04:18 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1486584248040_744303364",
+      "id": "20170208-200408_1406602379",
+      "dateCreated": "Feb 8, 2017 8:04:08 PM",
+      "status": "READY",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -662,24 +858,24 @@
   "name": "BinaryClassification",
   "id": "2C76YWXDZ",
   "angularObjects": {
-    "2C93MQCCX:shared_process": [],
-    "2CAFQY6K3:shared_process": [],
-    "2C71Z8V22:shared_process": [],
-    "2C74PSEZQ:shared_process": [],
-    "2C7936H5V:shared_process": [],
-    "2C6WY8JHA:shared_process": [],
-    "2C8CCCVZ2:shared_process": [],
-    "2C9JTS6JQ:shared_process": [],
-    "2C91JKV9H:shared_process": [],
-    "2C8N1PP7C:shared_process": [],
-    "2C7YTW7VT:shared_process": [],
-    "2C85G18U9:shared_process": [],
-    "2C9XYSTEH:shared_process": [],
-    "2CA474ZG3:shared_process": [],
-    "2C8JNXQ9U:shared_process": [],
-    "2C827138T:shared_process": [],
-    "2CAA7GXEJ:shared_process": [],
-    "2C8W1GCP8:shared_process": []
+    "2C87ND572:shared_process": [],
+    "2C8XAA2YX:shared_process": [],
+    "2CBCS2UVV:shared_process": [],
+    "2CAZ1U2SH:shared_process": [],
+    "2C9EPMQVP:shared_process": [],
+    "2CA25MTVQ:shared_process": [],
+    "2CB5VZMSH:shared_process": [],
+    "2C92TWT9X:shared_process": [],
+    "2C9N2EWFD:shared_process": [],
+    "2C7PNXZDD:shared_process": [],
+    "2CB3JKJ53:shared_process": [],
+    "2CAJGZZSQ:shared_process": [],
+    "2CA3GVKPQ:shared_process": [],
+    "2C873AAC3:shared_process": [],
+    "2C9Z2G4AF:shared_process": [],
+    "2CB77BETE:shared_process": [],
+    "2C87ZBMQ7:shared_process": [],
+    "2C9N7GRAK:shared_process": []
   },
   "config": {},
   "info": {}
