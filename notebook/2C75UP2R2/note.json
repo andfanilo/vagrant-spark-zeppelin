@@ -327,7 +327,7 @@
     },
     {
       "text": "%md\n\nAs you can see, we have not chosen an interpreter in the last column. \n\nA default interpreter is set at the beginning of the notebook, on the right-hand of the menu toolbar at the top in the menu `Interpreter binding` and represented by a gear. You can also select/deselect usable interpreters for the notebook.\n\nFor more information on how each interpreter is configured, you can check the interpreter menu, in the dropdown menu with your username _(anonymous for now. Do note that Apache Zeppelin also support user authentication for multitenancy but we are not going to delve into that)_.\n\nFor now, we assume that the default interpreter is the Apache Spark/Scala interpreter, so the default cell parses Spark/Scala code. The tutorial series will be mostly using this interpreter. No Scala knowledge is needed to pursue through the series, as we will only use basic functional programming concepts.\n\n_If you are wondering why Scala, Apache Spark is implemented in Scala, and so is its main API. Apache Spark draws from the functional paradigm for representing its computations the same way as MapReduce does. A common justification is Spark and MapReduce specialize in coarse-grained transformations that apply the same operation on many data items, which is a good fit for parallel applications, and the functional programming paradigm fits the idea._",
-      "dateUpdated": "Jan 25, 2017 9:37:19 AM",
+      "dateUpdated": "Feb 8, 2017 11:32:34 AM",
       "config": {
         "enabled": true,
         "graph": {
@@ -344,7 +344,7 @@
             "pinCols": []
           }
         },
-        "editorHide": true,
+        "editorHide": false,
         "colWidth": 12.0
       },
       "settings": {
@@ -405,8 +405,8 @@
     },
     {
       "title": "Some arithmetic",
-      "text": "8 * 5 + 2",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "text": "8 * 5 + 6",
+      "dateUpdated": "Feb 8, 2017 11:34:04 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -431,17 +431,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "res2: Int \u003d 42\n"
+        "msg": "\nres3: Int \u003d 46\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 11:34:04 AM",
+      "dateFinished": "Feb 8, 2017 11:34:05 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Declaring variables",
-      "text": "val a \u003d 3 // val defines an immutable value\nvar b : Int \u003d 5 // var defines a mutable variable\nprintln(a + b)\n\nb \u003d 42\nprintln(a + b)\n\n// Note that the type of a variable or function is written after the variable or function. \n\n// Because Scala does type inference, it is also not necessary to declare type to variables when it looks obvious.",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "text": "val a \u003d 4 // val defines an immutable value\nvar b : Int \u003d 5 // var defines a mutable variable\nprintln(a + b)\n\nb \u003d 44\nprintln(a + b)\n\n// Note that the type of a variable or function is written after the variable or function. \n\n// Because Scala does type inference, it is also not necessary to declare type to variables when it looks obvious.",
+      "dateUpdated": "Feb 8, 2017 11:34:47 AM",
       "config": {
         "enabled": true,
         "tableHide": true,
@@ -468,17 +469,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "a: Int \u003d 3\nb: Int \u003d 5\n8\nb: Int \u003d 42\n45\n"
+        "msg": "\na: Int \u003d 4\n\nb: Int \u003d 5\n9\n\nb: Int \u003d 44\n48\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 11:34:47 AM",
+      "dateFinished": "Feb 8, 2017 11:34:49 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Reusing a variable",
       "text": "// variables are accessible accross cells\n\na * b",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "dateUpdated": "Feb 8, 2017 11:35:07 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -503,11 +505,12 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "res13: Int \u003d 15\n"
+        "msg": "\nres12: Int \u003d 176\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 11:35:07 AM",
+      "dateFinished": "Feb 8, 2017 11:35:07 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
