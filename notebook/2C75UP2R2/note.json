@@ -1202,8 +1202,8 @@
     },
     {
       "title": "Return the sum of squared pair numbers between 1 and 100",
-      "text": "val input \u003d 1 to 100\nval output \u003d input.map(x \u003d\u003e x*x).filter(_ % 2 \u003d\u003d 0).reduce((x, y) \u003d\u003e (x+y))\n// moui pas evident \nval expected \u003d 171700",
-      "dateUpdated": "Feb 8, 2017 3:23:24 PM",
+      "text": "val input \u003d 1 to 100\nval output \u003d input.map(x \u003d\u003e x*x).filter(_ % 2 \u003d\u003d 0).reduce((x, y) \u003d\u003e (x+y))\n// moui pas si evident monsieur\nval expected \u003d 171700",
+      "dateUpdated": "Feb 8, 2017 3:23:51 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1240,8 +1240,8 @@
     },
     {
       "title": "Get highest number in a list with a reduce",
-      "text": "import util.Random.nextInt\nval input \u003d Seq.fill(10)(nextInt)\nval output \u003d input.reduce((x, y) \u003d\u003e x)\n\nval expected \u003d input.max",
-      "dateUpdated": "Feb 8, 2017 2:21:32 PM",
+      "text": "import util.Random.nextInt\nval input \u003d Seq.fill(10)(nextInt)\nval output \u003d input.reduce((x, y) \u003d\u003e if (x \u003e y) x else y) //ou Math.max(x,y)\n// piouf !\n\nval expected \u003d input.max",
+      "dateUpdated": "Feb 8, 2017 3:34:25 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1265,16 +1265,20 @@
       },
       "jobName": "paragraph_1485334652733_875647972",
       "id": "20170125-085732_1286059698",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nimport util.Random.nextInt\n\ninput: Seq[Int] \u003d List(646969774, 131501392, -1443113168, 1086555344, -1085673868, -2051660511, -2028825550, 802684428, -1995430850, -1395486236)\n\noutput: Int \u003d 1086555344\n\nexpected: Int \u003d 1086555344\n"
+      },
       "dateCreated": "Jan 25, 2017 8:57:32 AM",
-      "dateStarted": "Jan 25, 2017 12:49:26 PM",
-      "dateFinished": "Jan 25, 2017 12:49:29 PM",
+      "dateStarted": "Feb 8, 2017 3:33:49 PM",
+      "dateFinished": "Feb 8, 2017 3:33:50 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n### Programming with RDDs\nIn this chapter, we are going to introduce Spark\u0027s core abstraction for working with data in a distributed and resilient way : the \u003ctext style\u003d\"color:red;\"\u003eresilient distributed dataset\u003c/text\u003e, or \u003ctext style\u003d\"color:red;\"\u003eRDD\u003c/text\u003e. Under the hood, Spark automatically performs the distribution of RDDs and its processing around the cluster, so we can focus on our code and not on distributed processing problems, such as the handling of data locality or resiliency in case of node failure.\n\nA RDD consists of a collection of elements partitioned accross the nodes of a cluster of machines that can be operated on in parallel. In Spark, work is expressed by the creation and transformation of RDDs using Spark operators.\n\n\u003ctext style\u003d\"color:red;\"\u003eNote\u003c/text\u003e : RDD is the core data structure to Spark, but the style of programming we are studying in this lesson is considered the _lowest-level API_ for Spark. The Spark community is pushing the use of Structured programming with Dataframes/Datasets instead, an optimized interface for working with structured and semi-structured data, which we will learn later. Understanding RDDs is still important because it teaches you how Spark works under the hood and will serve you to understand and optimize your application when deployed into production.\n\nThis example displays the coarse-grained processing nature of Spark, that applies the same operation to many data items. This is a good fit for many parallel applications, as they _naturally apply the same operation to multiple data items_.",
-      "dateUpdated": "Feb 8, 2017 2:21:32 PM",
+      "dateUpdated": "Feb 8, 2017 3:34:58 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1297,16 +1301,20 @@
       },
       "jobName": "paragraph_1485336302530_-391954635",
       "id": "20170125-092502_905179202",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch3\u003eProgramming with RDDs\u003c/h3\u003e\n\u003cp\u003eIn this chapter, we are going to introduce Spark\u0027s core abstraction for working with data in a distributed and resilient way : the \u003ctext style\u003d\"color:red;\"\u003eresilient distributed dataset\u003c/text\u003e, or \u003ctext style\u003d\"color:red;\"\u003eRDD\u003c/text\u003e. Under the hood, Spark automatically performs the distribution of RDDs and its processing around the cluster, so we can focus on our code and not on distributed processing problems, such as the handling of data locality or resiliency in case of node failure.\u003c/p\u003e\n\u003cp\u003eA RDD consists of a collection of elements partitioned accross the nodes of a cluster of machines that can be operated on in parallel. In Spark, work is expressed by the creation and transformation of RDDs using Spark operators.\u003c/p\u003e\n\u003cp\u003e\u003ctext style\u003d\"color:red;\"\u003eNote\u003c/text\u003e : RDD is the core data structure to Spark, but the style of programming we are studying in this lesson is considered the \u003cem\u003elowest-level API\u003c/em\u003e for Spark. The Spark community is pushing the use of Structured programming with Dataframes/Datasets instead, an optimized interface for working with structured and semi-structured data, which we will learn later. Understanding RDDs is still important because it teaches you how Spark works under the hood and will serve you to understand and optimize your application when deployed into production.\u003c/p\u003e\n\u003cp\u003eThis example displays the coarse-grained processing nature of Spark, that applies the same operation to many data items. This is a good fit for many parallel applications, as they \u003cem\u003enaturally apply the same operation to multiple data items\u003c/em\u003e.\u003c/p\u003e\n"
+      },
       "dateCreated": "Jan 25, 2017 9:25:02 AM",
-      "dateStarted": "Jan 25, 2017 9:53:10 AM",
-      "dateFinished": "Jan 25, 2017 9:53:10 AM",
+      "dateStarted": "Feb 8, 2017 3:34:58 PM",
+      "dateFinished": "Feb 8, 2017 3:34:58 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\r\n### Running **Spark**\r\nThe variable **sc** allows you to access a Spark Context to run your Spark programs.\r\n* For more information about Spark, please refer to [Spark Overview](https://spark.apache.org/docs/latest/)\r\n\r\n**Important note:** Do not create the *sc* variable - it is already initialized for you.",
-      "dateUpdated": "Feb 8, 2017 2:21:32 PM",
+      "dateUpdated": "Feb 8, 2017 3:35:04 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1329,11 +1337,15 @@
       },
       "jobName": "paragraph_1485336678068_1462318881",
       "id": "20170125-093118_646587966",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch3\u003eRunning \u003cstrong\u003eSpark\u003c/strong\u003e\u003c/h3\u003e\n\u003cp\u003eThe variable \u003cstrong\u003esc\u003c/strong\u003e allows you to access a Spark Context to run your Spark programs.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eFor more information about Spark, please refer to \u003ca href\u003d\"https://spark.apache.org/docs/latest/\"\u003eSpark Overview\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003cstrong\u003eImportant note:\u003c/strong\u003e Do not create the \u003cem\u003esc\u003c/em\u003e variable - it is already initialized for you.\u003c/p\u003e\n"
+      },
       "dateCreated": "Jan 25, 2017 9:31:18 AM",
-      "dateStarted": "Jan 25, 2017 9:31:36 AM",
-      "dateFinished": "Jan 25, 2017 9:31:36 AM",
+      "dateStarted": "Feb 8, 2017 3:35:05 PM",
+      "dateFinished": "Feb 8, 2017 3:35:05 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
