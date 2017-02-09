@@ -1,0 +1,162 @@
+{
+  "paragraphs": [
+    {
+      "text": "%angular\n\n\u003c!DOCTYPE html\u003e\n\u003cmeta charset\u003d\"utf-8\"\u003e\n\u003cstyle\u003e\n\n.chart div {\n  font: 10px sans-serif;\n  background-color: steelblue;\n  text-align: right;\n  padding: 3px;\n  margin: 1px;\n  color: white;\n}\n\n\u003c/style\u003e\n\u003cdiv class\u003d\"chart\"\u003e\u003c/div\u003e\n\u003cscript src\u003d\"//d3js.org/d3.v4.min.js\"\u003e\u003c/script\u003e\n\u003cscript\u003e\n\nvar data \u003d [4, 8, 15, 16, 23, 42];\n\nvar x \u003d d3.scale.linear()\n    .domain([0, d3.max(data)])\n    .range([0, 420]);\n\nd3.select(\".chart\")\n  .selectAll(\"div\")\n    .data(data)\n  .enter().append(\"div\")\n    .style(\"width\", function(d) { return x(d) + \"px\"; })\n    .text(function(d) { return d; });\n\n\u003c/script\u003e",
+      "user": "anonymous",
+      "dateUpdated": "Feb 9, 2017 2:06:59 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/undefined",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "ANGULAR",
+            "data": "\u003c!DOCTYPE html\u003e\n\u003cmeta charset\u003d\"utf-8\"\u003e\n\u003cstyle\u003e\n\n.chart div {\n  font: 10px sans-serif;\n  background-color: steelblue;\n  text-align: right;\n  padding: 3px;\n  margin: 1px;\n  color: white;\n}\n\n\u003c/style\u003e\n\u003cdiv class\u003d\"chart\"\u003e\u003c/div\u003e\n\u003cscript src\u003d\"//d3js.org/d3.v4.min.js\"\u003e\u003c/script\u003e\n\u003cscript\u003e\n\nvar data \u003d [4, 8, 15, 16, 23, 42];\n\nvar x \u003d d3.scale.linear()\n    .domain([0, d3.max(data)])\n    .range([0, 420]);\n\nd3.select(\".chart\")\n  .selectAll(\"div\")\n    .data(data)\n  .enter().append(\"div\")\n    .style(\"width\", function(d) { return x(d) + \"px\"; })\n    .text(function(d) { return d; });\n\n\u003c/script\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1486648306706_1977587374",
+      "id": "20170209-135146_199666844",
+      "dateCreated": "Feb 9, 2017 1:51:46 PM",
+      "dateStarted": "Feb 9, 2017 2:06:59 PM",
+      "dateFinished": "Feb 9, 2017 2:06:59 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%angular\n\n\u003c!DOCTYPE html\u003e\n\u003cmeta charset\u003d\"utf-8\"\u003e\n\u003cstyle\u003e\n\n\u003c/style\u003e\n\u003cdiv id\u003d\"container\" style\u003d\"width:100%; height:400px;\"\u003e\u003c/div\u003e\n\u003cscript src\u003d\"http://code.highcharts.com/highcharts.js\"\u003e\u003c/script\u003e\n\u003cscript\u003e\n\n$(function () { \n    var myChart \u003d Highcharts.chart(\u0027container\u0027, {\n        chart: {\n            type: \u0027bar\u0027\n        },\n        title: {\n            text: \u0027Fruit Consumption\u0027\n        },\n        xAxis: {\n            categories: [\u0027Apples\u0027, \u0027Bananas\u0027, \u0027Oranges\u0027]\n        },\n        yAxis: {\n            title: {\n                text: \u0027Fruit eaten\u0027\n            }\n        },\n        series: [{\n            name: \u0027Jane\u0027,\n            data: [1, 0, 4]\n        }, {\n            name: \u0027John\u0027,\n            data: [5, 7, 3]\n        }]\n    });\n});\n\n\u003c/script\u003e",
+      "user": "anonymous",
+      "dateUpdated": "Feb 9, 2017 2:08:52 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/undefined",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "ANGULAR",
+            "data": "\u003c!DOCTYPE html\u003e\n\u003cmeta charset\u003d\"utf-8\"\u003e\n\u003cstyle\u003e\n\n\u003c/style\u003e\n\u003cdiv id\u003d\"container\" style\u003d\"width:100%; height:400px;\"\u003e\u003c/div\u003e\n\u003cscript src\u003d\"http://code.highcharts.com/highcharts.js\"\u003e\u003c/script\u003e\n\u003cscript\u003e\n\n$(function () { \n    var myChart \u003d Highcharts.chart(\u0027container\u0027, {\n        chart: {\n            type: \u0027bar\u0027\n        },\n        title: {\n            text: \u0027Fruit Consumption\u0027\n        },\n        xAxis: {\n            categories: [\u0027Apples\u0027, \u0027Bananas\u0027, \u0027Oranges\u0027]\n        },\n        yAxis: {\n            title: {\n                text: \u0027Fruit eaten\u0027\n            }\n        },\n        series: [{\n            name: \u0027Jane\u0027,\n            data: [1, 0, 4]\n        }, {\n            name: \u0027John\u0027,\n            data: [5, 7, 3]\n        }]\n    });\n});\n\n\u003c/script\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1486648760798_-817167340",
+      "id": "20170209-135920_622327249",
+      "dateCreated": "Feb 9, 2017 1:59:20 PM",
+      "dateStarted": "Feb 9, 2017 2:06:52 PM",
+      "dateFinished": "Feb 9, 2017 2:06:52 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%angular\n\n\u003ch2\u003eMy name is {{name}}\u003c/h2\u003e\n\u003cinput type\u003d\"text\" class\u003d\"form-control\" placeholder\u003d\"My name ...\" ng-model\u003d\"name\"\u003e\u003c/input\u003e",
+      "user": "anonymous",
+      "dateUpdated": "Feb 9, 2017 2:03:11 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/undefined",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "ANGULAR",
+            "data": "\u003ch2\u003eMy name is {{name}}\u003c/h2\u003e\n\u003cinput type\u003d\"text\" class\u003d\"form-control\" placeholder\u003d\"My name ...\" ng-model\u003d\"name\"\u003e\u003c/input\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1486648325879_-539608496",
+      "id": "20170209-135205_2006297150",
+      "dateCreated": "Feb 9, 2017 1:52:05 PM",
+      "dateStarted": "Feb 9, 2017 2:03:11 PM",
+      "dateFinished": "Feb 9, 2017 2:03:11 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%angular\n",
+      "user": "anonymous",
+      "dateUpdated": "Feb 9, 2017 2:06:11 PM",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1486649171302_577725856",
+      "id": "20170209-140611_1629996636",
+      "dateCreated": "Feb 9, 2017 2:06:11 PM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Visualization/TestLibs",
+  "id": "2C99N947R",
+  "angularObjects": {
+    "2C9CS31WQ:shared_process": [],
+    "2C9YMSED7:shared_process": [],
+    "2CBDQT3M1:shared_process": [],
+    "2C9818188:shared_process": [],
+    "2C9BCC7KD:shared_process": [],
+    "2CA5GNVXZ:shared_process": [],
+    "2C9ZPZFUG:shared_process": [],
+    "2CAW3KACH:shared_process": [],
+    "2CAVUXBH5:shared_process": [],
+    "2C9XPAB2V:shared_process": [],
+    "2C9N45WDH:shared_process": [],
+    "2CAJ8H5XJ:shared_process": [],
+    "2CABH8GB6:shared_process": [],
+    "2CAHHFV18:shared_process": [],
+    "2C7V384KJ:shared_process": [],
+    "2C9UP1H4Q:shared_process": [],
+    "2C8UJ81J9:shared_process": [],
+    "2C9VEUY2Y:shared_process": [],
+    "2CARQ4UJ8:shared_process": []
+  },
+  "config": {
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {}
+}
