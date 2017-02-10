@@ -1300,8 +1300,8 @@
     },
     {
       "title": "Calculate the number of unique words in the \"words\" RDD here.",
-      "text": "val words \u003d sc.parallelize(Array(\"hello\", \"world\", \"goodbye\", \"hello\", \"again\"))\nwords.distinct().count()\n\nval expected \u003d 4",
-      "dateUpdated": "Feb 10, 2017 6:12:42 AM",
+      "text": "val words \u003d sc.parallelize(Array(\"hello\", \"world\", \"goodbye\", \"hello\", \"again\"))\nwords.distinct().count()\nwords.count()\n\nval expected \u003d 4",
+      "dateUpdated": "Feb 10, 2017 6:44:06 AM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1326,12 +1326,12 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nwords: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[0] at parallelize at \u003cconsole\u003e:27\n\nres0: Long \u003d 4\n\nexpected: Int \u003d 4\n"
+        "msg": "\nwords: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[48] at parallelize at \u003cconsole\u003e:30\n\nres56: Long \u003d 4\n\nres57: Long \u003d 5\n\nexpected: Int \u003d 4\n"
       },
       "dateCreated": "Jan 25, 2017 9:34:16 AM",
-      "dateStarted": "Feb 10, 2017 6:12:43 AM",
-      "dateFinished": "Feb 10, 2017 6:13:16 AM",
-      "status": "ABORT",
+      "dateStarted": "Feb 10, 2017 6:44:07 AM",
+      "dateFinished": "Feb 10, 2017 6:44:08 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -1449,8 +1449,8 @@
     },
     {
       "title": "Sum ages per gender",
-      "text": "val rdd1 \u003d sc.parallelize(Seq((\"Patrick\", \"homme\"), (\"Sandra\", \"femme\"), (\"Faniki\", \"homme\"), (\"Noemie\", \"femme\"), (\"Francois\", \"homme\"), (\"Cassandre\", \"femme\")))\nval rdd2 \u003d sc.parallelize(Seq((\"Patrick\", 20), (\"Sandra\", 25), (\"Faniki\", 20), (\"Noemie\", 20), (\"Francois\", 30), (\"Cassandre\", 18)))\n\n// rdd1 and rdd2 are key-value rdds so you can join them and then continue the computation\nval output \u003d rdd1.join(rdd2)\n\nval expected \u003d Array((\"femme\", 63), (\"homme\", 70))",
-      "dateUpdated": "Feb 1, 2017 10:15:26 AM",
+      "text": "val rdd1 \u003d sc.parallelize(Seq((\"Patrick\", \"homme\"), (\"Sandra\", \"femme\"), (\"Faniki\", \"homme\"), (\"Noemie\", \"femme\"), (\"Francois\", \"homme\"), (\"Cassandre\", \"femme\")))\nval rdd2 \u003d sc.parallelize(Seq((\"Patrick\", 20), (\"Sandra\", 25), (\"Faniki\", 20), (\"Noemie\", 20), (\"Francois\", 30), (\"Cassandre\", 18)))\n\n// rdd1 and rdd2 are key-value rdds so you can join them and then continue the computation\nval output \u003d rdd1.join(rdd2).map(x \u003d\u003e x._2).reduceByKey((a,b) \u003d\u003e a+b).collect()\n\nval expected \u003d Array((\"femme\", 63), (\"homme\", 70))",
+      "dateUpdated": "Feb 10, 2017 6:27:40 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1475,11 +1475,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nrdd1: org.apache.spark.rdd.RDD[(String, String)] \u003d ParallelCollectionRDD[131] at parallelize at \u003cconsole\u003e:41\n\nrdd2: org.apache.spark.rdd.RDD[(String, Int)] \u003d ParallelCollectionRDD[132] at parallelize at \u003cconsole\u003e:41\n\noutput: org.apache.spark.rdd.RDD[(String, (String, Int))] \u003d MapPartitionsRDD[135] at join at \u003cconsole\u003e:45\n\nexpected: Array[(String, Int)] \u003d Array((femme,63), (homme,70))\n"
+        "msg": "\nrdd1: org.apache.spark.rdd.RDD[(String, String)] \u003d ParallelCollectionRDD[23] at parallelize at \u003cconsole\u003e:30\n\nrdd2: org.apache.spark.rdd.RDD[(String, Int)] \u003d ParallelCollectionRDD[24] at parallelize at \u003cconsole\u003e:30\n\noutput: Array[(String, Int)] \u003d Array((femme,63), (homme,70))\n\nexpected: Array[(String, Int)] \u003d Array((femme,63), (homme,70))\n"
       },
       "dateCreated": "Jan 25, 2017 1:04:11 AM",
-      "dateStarted": "Feb 1, 2017 10:15:26 AM",
-      "dateFinished": "Feb 1, 2017 10:15:29 AM",
+      "dateStarted": "Feb 10, 2017 6:27:41 AM",
+      "dateFinished": "Feb 10, 2017 6:27:44 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1519,8 +1519,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "// load file into RDD and check 10 first lines\n\nval text \u003d sc.textFile(\"/opt/dataset/don-quijote.txt.gz\")\ntext.take(3)",
-      "dateUpdated": "Feb 1, 2017 6:57:16 AM",
+      "text": "// load file into RDD and check 10 first lines\n\nval text \u003d sc.textFile(\"/opt/dataset/don-quijote.txt.gz\")\ntext.take(10)",
+      "dateUpdated": "Feb 10, 2017 6:41:47 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1544,17 +1544,17 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ntext: org.apache.spark.rdd.RDD[String] \u003d /opt/dataset/don-quijote.txt.gz MapPartitionsRDD[1] at textFile at \u003cconsole\u003e:31\n\nres4: Array[String] \u003d Array(The Project Gutenberg EBook of Don Quijote, by Miguel de Cervantes Saavedra, \"\", This eBook is for the use of anyone anywhere at no cost and with)\n"
+        "msg": "\ntext: org.apache.spark.rdd.RDD[String] \u003d /opt/dataset/don-quijote.txt.gz MapPartitionsRDD[47] at textFile at \u003cconsole\u003e:32\n\nres51: Array[String] \u003d Array(The Project Gutenberg EBook of Don Quijote, by Miguel de Cervantes Saavedra, \"\", This eBook is for the use of anyone anywhere at no cost and with, almost no restrictions whatsoever.  You may copy it, give it away or, re-use it under the terms of the Project Gutenberg License included, with this eBook or online at www.gutenberg.net, \"\", \"\", Title: Don Quijote, \"\")\n"
       },
       "dateCreated": "Jan 25, 2017 1:49:31 AM",
-      "dateStarted": "Feb 1, 2017 6:57:16 AM",
-      "dateFinished": "Feb 1, 2017 6:57:18 AM",
+      "dateStarted": "Feb 10, 2017 6:41:47 AM",
+      "dateFinished": "Feb 10, 2017 6:41:48 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "// write your Spark map-reduce code here\n\ntext.doSomething",
-      "dateUpdated": "Feb 1, 2017 6:57:25 AM",
+      "text": " // write your Spark map-reduce code here\n\ntext.take(10).flatMap(x \u003d\u003e x.split(\" \")).groupBy(identity).map(words \u003d\u003e words._1 -\u003e words._2.size)",
+      "dateUpdated": "Feb 10, 2017 6:55:15 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1576,14 +1576,14 @@
       "jobName": "paragraph_1485352420257_-878908678",
       "id": "20170125-135340_1546349786",
       "result": {
-        "code": "ERROR",
+        "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\n\n\n\u003cconsole\u003e:33: error: value doSomething is not a member of org.apache.spark.rdd.RDD[String]\n              text.doSomething\n                   ^\n"
+        "msg": "\nres98: scala.collection.immutable.Map[String,Int] \u003d Map(\"\" -\u003e 5, for -\u003e 1, Cervantes -\u003e 1, this -\u003e 1, whatsoever. -\u003e 1, is -\u003e 1, included -\u003e 1, Quijote, -\u003e 1, This -\u003e 1, online -\u003e 1, Don -\u003e 2, You -\u003e 1, License -\u003e 1, eBook -\u003e 2, it -\u003e 2, EBook -\u003e 1, Quijote -\u003e 1, restrictions -\u003e 1, or -\u003e 2, de -\u003e 1, Gutenberg -\u003e 2, Miguel -\u003e 1, it, -\u003e 1, re-use -\u003e 1, at -\u003e 2, The -\u003e 1, cost -\u003e 1, Project -\u003e 2, by -\u003e 1, with -\u003e 2, www.gutenberg.net -\u003e 1, give -\u003e 1, Saavedra -\u003e 1, copy -\u003e 1, use -\u003e 1, anyone -\u003e 1, under -\u003e 1, almost -\u003e 1, anywhere -\u003e 1, Title: -\u003e 1, terms -\u003e 1, no -\u003e 2, may -\u003e 1, of -\u003e 3, away -\u003e 1, and -\u003e 1, the -\u003e 3)\n"
       },
       "dateCreated": "Jan 25, 2017 1:53:40 AM",
-      "dateStarted": "Jan 25, 2017 1:54:09 AM",
-      "dateFinished": "Jan 25, 2017 1:54:09 AM",
-      "status": "ERROR",
+      "dateStarted": "Feb 10, 2017 6:55:15 AM",
+      "dateFinished": "Feb 10, 2017 6:55:16 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
