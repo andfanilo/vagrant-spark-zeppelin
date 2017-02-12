@@ -123,7 +123,7 @@
     },
     {
       "text": "%md\n\n###Interpreter\n\nApache Zeppelin is primarily a notebook. A Zeppelin notebook consists of a set of cells with an interpreter _(or language backend)_ attached.\n\nFor example, this cell is linked to the Markdown interpreter, so when you run the cell it parses the code as Markdown and then displays the result.\n\nYou will find the most useful markdown components [on this cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).\n\nIn each cell, there is a toolbar with four items: \n* The `Play` button (blue triangle) lets you run the paragraph. You can also press `Shift + Enter` to run the cell when selected\n* The `Show/Hide editor` if you want to see the source code for the cell\n* The `Show/Hide output` if you want to see the output for the cell\n* The `Settings` item, for more advanced options like adding/managing cells.\n\n\u003chr/\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\nNow you can press `Show editor` to see the source code of the cell. You will see that it starts with `%md`, which specifies to the cell that it should use the Markdown interpreter. You can edit the text and then run the cell to see the editing in the output.",
-      "dateUpdated": "Feb 8, 2017 3:54:44 PM",
+      "dateUpdated": "Feb 8, 2017 3:54:44 AM",
       "config": {
         "enabled": true,
         "graph": {
@@ -163,7 +163,7 @@
     },
     {
       "text": "%md\n\nApache Zeppelin follows the responsive 12-column grid system. In the following row we show 3 different interpreters in action. \n\nYou will find the width of the cell inside the settings button.\n\u003chr/\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\nYou can go on and try to modify the source code in the three following cells and re-execute the code. For example, try to type `1+2` in the Python cell.",
-      "dateUpdated": "Feb 8, 2017 3:28:07 PM",
+      "dateUpdated": "Feb 8, 2017 3:28:07 AM",
       "config": {
         "enabled": true,
         "graph": {
@@ -204,7 +204,7 @@
     {
       "title": "Shell cell",
       "text": "%sh\necho \"Hello Manel\"",
-      "dateUpdated": "Feb 8, 2017 4:04:25 PM",
+      "dateUpdated": "Feb 8, 2017 4:04:25 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -238,15 +238,15 @@
         "msg": "Hello Manel\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 8, 2017 4:04:25 PM",
-      "dateFinished": "Feb 8, 2017 4:04:25 PM",
+      "dateStarted": "Feb 8, 2017 4:04:25 AM",
+      "dateFinished": "Feb 8, 2017 4:04:25 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Python cell",
       "text": "%python\nprint(\"Hello manel\")",
-      "dateUpdated": "Feb 8, 2017 4:05:03 PM",
+      "dateUpdated": "Feb 8, 2017 4:05:03 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -279,15 +279,15 @@
         "msg": "Hello manel\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 8, 2017 4:05:04 PM",
-      "dateFinished": "Feb 8, 2017 4:05:04 PM",
+      "dateStarted": "Feb 8, 2017 4:05:04 AM",
+      "dateFinished": "Feb 8, 2017 4:05:04 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Spark/Scala cell",
       "text": "println(\"Hello Manel\")",
-      "dateUpdated": "Feb 8, 2017 4:06:39 PM",
+      "dateUpdated": "Feb 8, 2017 4:06:39 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -322,14 +322,14 @@
         "msg": "Hello Manel\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 8, 2017 4:06:35 PM",
-      "dateFinished": "Feb 8, 2017 4:06:36 PM",
+      "dateStarted": "Feb 8, 2017 4:06:35 AM",
+      "dateFinished": "Feb 8, 2017 4:06:36 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md \u003cp\u003e ici on fait des commentaires \u003cp\u003e",
-      "dateUpdated": "Feb 8, 2017 4:08:11 PM",
+      "dateUpdated": "Feb 8, 2017 4:08:11 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -355,15 +355,15 @@
         "type": "HTML",
         "msg": "\u003cp\u003e\u003cp\u003e ici on fait des commentaires \u003cp\u003e\u003c/p\u003e\n"
       },
-      "dateCreated": "Feb 8, 2017 4:06:56 PM",
-      "dateStarted": "Feb 8, 2017 4:08:11 PM",
-      "dateFinished": "Feb 8, 2017 4:08:12 PM",
+      "dateCreated": "Feb 8, 2017 4:06:56 AM",
+      "dateStarted": "Feb 8, 2017 4:08:11 AM",
+      "dateFinished": "Feb 8, 2017 4:08:12 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\nAs you can see, we have not chosen an interpreter in the last column. \n\nA default interpreter is set at the beginning of the notebook, on the right-hand of the menu toolbar at the top in the menu `Interpreter binding` and represented by a gear. You can also select/deselect usable interpreters for the notebook.\n\nFor more information on how each interpreter is configured, you can check the interpreter menu, in the dropdown menu with your username _(anonymous for now. Do note that Apache Zeppelin also support user authentication for multitenancy but we are not going to delve into that)_.\n\nFor now, we assume that the default interpreter is the Apache Spark/Scala interpreter, so the default cell parses Spark/Scala code. The tutorial series will be mostly using this interpreter. No Scala knowledge is needed to pursue through the series, as we will only use basic functional programming concepts.\n\n_If you are wondering why Scala, Apache Spark is implemented in Scala, and so is its main API. Apache Spark draws from the functional paradigm for representing its computations the same way as MapReduce does. A common justification is Spark and MapReduce specialize in coarse-grained transformations that apply the same operation on many data items, which is a good fit for parallel applications, and the functional programming paradigm fits the idea._",
-      "dateUpdated": "Feb 8, 2017 4:08:33 PM",
+      "dateUpdated": "Feb 8, 2017 4:08:33 AM",
       "config": {
         "enabled": true,
         "graph": {
@@ -442,7 +442,7 @@
     {
       "title": "Some arithmetic",
       "text": "8 * 5 + 2\n10+5*80",
-      "dateUpdated": "Feb 8, 2017 4:09:07 PM",
+      "dateUpdated": "Feb 8, 2017 4:09:07 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -470,15 +470,15 @@
         "msg": "\nres4: Int \u003d 42\n\nres5: Int \u003d 410\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 8, 2017 4:09:08 PM",
-      "dateFinished": "Feb 8, 2017 4:09:08 PM",
+      "dateStarted": "Feb 8, 2017 4:09:08 AM",
+      "dateFinished": "Feb 8, 2017 4:09:08 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Declaring variables",
       "text": "val a \u003d 3 // val defines an immutable value\nvar b : Int \u003d 5 // var defines a mutable variable\nprintln(a + b)\n\nb \u003d 42\nprintln(a + b)\n\n// Note that the type of a variable or function is written after the variable or function. \n\n// Because Scala does type inference, it is also not necessary to declare type to variables when it looks obvious.",
-      "dateUpdated": "Feb 8, 2017 4:11:10 PM",
+      "dateUpdated": "Feb 8, 2017 4:11:10 AM",
       "config": {
         "enabled": true,
         "tableHide": true,
@@ -508,15 +508,15 @@
         "msg": "\na: Int \u003d 3\n\nb: Int \u003d 5\n8\n\nb: Int \u003d 42\n45\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 8, 2017 4:11:10 PM",
-      "dateFinished": "Feb 8, 2017 4:11:12 PM",
+      "dateStarted": "Feb 8, 2017 4:11:10 AM",
+      "dateFinished": "Feb 8, 2017 4:11:12 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Reusing a variable",
       "text": "// variables are accessible accross cells\n\na * b\na+b\n",
-      "dateUpdated": "Feb 8, 2017 4:13:40 PM",
+      "dateUpdated": "Feb 8, 2017 4:13:40 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -544,8 +544,8 @@
         "msg": "\nres11: Int \u003d 126\n\nres12: Int \u003d 45\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 8, 2017 4:13:40 PM",
-      "dateFinished": "Feb 8, 2017 4:13:41 PM",
+      "dateStarted": "Feb 8, 2017 4:13:40 AM",
+      "dateFinished": "Feb 8, 2017 4:13:41 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1046,8 +1046,8 @@
     },
     {
       "title": "Return the list of squared numbers from 1 to 5",
-      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.map(x \u003d\u003e x)\n\nval expected \u003d List(1, 4, 9, 16, 25) ",
-      "dateUpdated": "Jan 25, 2017 9:03:16 AM",
+      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.map(x \u003d\u003e x*x)\n\nval expected \u003d List(1, 4, 9, 16, 25) ",
+      "dateUpdated": "Feb 12, 2017 4:33:05 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1072,18 +1072,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\nexpected: List[Int] \u003d List(1, 4, 9, 16, 25)\n"
+        "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: List[Int] \u003d List(1, 4, 9, 16, 25)\n\nexpected: List[Int] \u003d List(1, 4, 9, 16, 25)\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:13 AM",
-      "dateStarted": "Jan 25, 2017 9:03:16 AM",
-      "dateFinished": "Jan 25, 2017 9:03:17 AM",
+      "dateStarted": "Feb 12, 2017 4:33:07 PM",
+      "dateFinished": "Feb 12, 2017 4:33:50 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Return the sum of elements from 1 to 5",
-      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.reduce((x, y) \u003d\u003e x)\n\nval expected \u003d 15",
-      "dateUpdated": "Jan 25, 2017 9:23:28 AM",
+      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.reduce((x, y) \u003d\u003e x+y)\n\nval expected \u003d 15",
+      "dateUpdated": "Feb 12, 2017 4:35:02 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1108,18 +1108,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: Int \u003d 1\n\nexpected: Int \u003d 15\n"
+        "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: Int \u003d 15\n\nexpected: Int \u003d 15\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:20 AM",
-      "dateStarted": "Jan 25, 2017 9:23:28 AM",
-      "dateFinished": "Jan 25, 2017 9:23:29 AM",
+      "dateStarted": "Feb 12, 2017 4:35:03 PM",
+      "dateFinished": "Feb 12, 2017 4:35:06 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Return the sum of squared pair numbers between 1 and 100",
-      "text": "val input \u003d 1 to 100\nval output \u003d input.reduce((x, y) \u003d\u003e x)\n\nval expected \u003d 171700",
-      "dateUpdated": "Feb 1, 2017 9:13:45 AM",
+      "text": "val input \u003d 1 to 100\nval pairs \u003d input.filter(x \u003d\u003e x % 2 \u003d\u003d 0)\nval squared \u003d pairs.map(x\u003d\u003ex*x)\nval output \u003d squared.reduce((x, y) \u003d\u003e x+y)\n\nval expected \u003d 171700",
+      "dateUpdated": "Feb 12, 2017 4:41:57 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1144,18 +1144,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ninput: scala.collection.immutable.Range.Inclusive \u003d Range(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100)\n\noutput: Int \u003d 1\n\nexpected: Int \u003d 171700\n"
+        "msg": "\ninput: scala.collection.immutable.Range.Inclusive \u003d Range(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100)\n\npairs: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100)\n\nsquared: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(4, 16, 36, 64, 100, 144, 196, 256, 324, 400, 484, 576, 676, 784, 900, 1024, 1156, 1296, 1444, 1600, 1764, 1936, 2116, 2304, 2500, 2704, 2916, 3136, 3364, 3600, 3844, 4096, 4356, 4624, 4900, 5184, 5476, 5776, 6084, 6400, 6724, 7056, 7396, 7744, 8100, 8464, 8836, 9216, 9604, 10000)\n\noutput: Int \u003d 171700\n\nexpected: Int \u003d 171700\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:27 AM",
-      "dateStarted": "Feb 1, 2017 9:13:46 AM",
-      "dateFinished": "Feb 1, 2017 9:13:48 AM",
+      "dateStarted": "Feb 12, 2017 4:41:57 PM",
+      "dateFinished": "Feb 12, 2017 4:42:01 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Get highest number in a list with a reduce",
-      "text": "import util.Random.nextInt\nval input \u003d Seq.fill(10)(nextInt)\nval output \u003d input.reduce((x, y) \u003d\u003e x)\n\nval expected \u003d input.max",
-      "dateUpdated": "Jan 25, 2017 12:49:26 PM",
+      "text": "import util.Random.nextInt\n\ndef max(x: Int, y: Int): Int \u003d if (x \u003e y) x else y\nval input \u003d Seq.fill(10)(nextInt)\nval output \u003d input.reduce(max)\n\nval expected \u003d input.max",
+      "dateUpdated": "Feb 12, 2017 4:48:09 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1182,11 +1182,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nimport util.Random.nextInt\n\ninput: Seq[Int] \u003d List(1368154480, 932727527, -956762629, -741728139, 1912445161, 1215347429, 1054732247, -811870848, 762475751, 1567410629)\n\noutput: Int \u003d 1368154480\n\nexpected: Int \u003d 1912445161\n"
+        "msg": "\nimport util.Random.nextInt\n\nmax: (x: Int, y: Int)Int\n\ninput: Seq[Int] \u003d List(-758214325, -2127856267, 1811751551, 1945329324, -1721925596, -392653927, 1812583889, 1495419385, 1951701419, 1928371603)\n\noutput: Int \u003d 1951701419\n\nexpected: Int \u003d 1951701419\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:32 AM",
-      "dateStarted": "Jan 25, 2017 12:49:26 PM",
-      "dateFinished": "Jan 25, 2017 12:49:29 PM",
+      "dateStarted": "Feb 12, 2017 4:48:09 PM",
+      "dateFinished": "Feb 12, 2017 4:48:12 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -2180,24 +2180,24 @@
   "name": "Practice",
   "id": "2C75UP2R2",
   "angularObjects": {
-    "2CARVS7JP:shared_process": [],
-    "2CA5C7AXC:shared_process": [],
-    "2C8QVQ6CU:shared_process": [],
-    "2C8Q42P55:shared_process": [],
-    "2CB6MU6FM:shared_process": [],
-    "2CA5FRVT6:shared_process": [],
-    "2C9QUWCS9:shared_process": [],
-    "2C8JE78FE:shared_process": [],
-    "2C8MTS63Q:shared_process": [],
-    "2CAX3PNZD:shared_process": [],
-    "2C94YYYRA:shared_process": [],
-    "2C81BPD8H:shared_process": [],
-    "2C9AD281M:shared_process": [],
-    "2C96F1RJA:shared_process": [],
-    "2C89XV7HC:shared_process": [],
-    "2C868JCW4:shared_process": [],
-    "2C8DB8R7D:shared_process": [],
-    "2C7QT22XR:shared_process": []
+    "2CAD6Z2RD:shared_process": [],
+    "2CBJD64HG:shared_process": [],
+    "2C7VJK1AS:shared_process": [],
+    "2C83APECS:shared_process": [],
+    "2CBP4D1VC:shared_process": [],
+    "2C9BN7NM9:shared_process": [],
+    "2CAAQKA99:shared_process": [],
+    "2CAQUPR8Z:shared_process": [],
+    "2C8XXZSXK:shared_process": [],
+    "2C942EAXW:shared_process": [],
+    "2CBCPQR7T:shared_process": [],
+    "2C91Y2XB6:shared_process": [],
+    "2C953RBT9:shared_process": [],
+    "2C8EQWVPZ:shared_process": [],
+    "2C8JY7UR4:shared_process": [],
+    "2C9WGMS5M:shared_process": [],
+    "2CAK6VBZZ:shared_process": [],
+    "2C8VGZQ84:shared_process": []
   },
   "config": {
     "looknfeel": "default"
