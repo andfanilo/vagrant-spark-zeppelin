@@ -1332,8 +1332,8 @@
     },
     {
       "title": "Calculate the number of unique words in the \"words\" RDD here.",
-      "text": "val words \u003d sc.parallelize(Array(\"hello\", \"world\", \"goodbye\", \"hello\", \"again\"))\n\nval expected \u003d 4",
-      "dateUpdated": "Feb 1, 2017 9:14:16 AM",
+      "text": "val words \u003d sc.parallelize(Array(\"hello\", \"world\", \"goodbye\", \"hello\", \"again\"))\nval list \u003d words.collect().toList\nval unique \u003d list.distinct\nval output \u003d unique.size\n\nval expected \u003d 4",
+      "dateUpdated": "Feb 12, 2017 5:10:07 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1358,18 +1358,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nwords: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[8] at parallelize at \u003cconsole\u003e:27\n\nexpected: Int \u003d 4\n"
+        "msg": "\nwords: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[26] at parallelize at \u003cconsole\u003e:30\n\nlist: List[String] \u003d List(hello, world, goodbye, hello, again)\n\nunique: List[String] \u003d List(hello, world, goodbye, again)\n\noutput: Int \u003d 4\n\nexpected: Int \u003d 4\n"
       },
       "dateCreated": "Jan 25, 2017 9:34:16 AM",
-      "dateStarted": "Feb 1, 2017 9:14:16 AM",
-      "dateFinished": "Feb 1, 2017 9:14:17 AM",
+      "dateStarted": "Feb 12, 2017 5:10:07 PM",
+      "dateFinished": "Feb 12, 2017 5:10:09 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Create a random RDD of numbers, and find its mean.",
-      "text": "import util.Random.nextInt\nval input \u003d sc.parallelize(Seq.fill(10000)(nextInt))",
-      "dateUpdated": "Jan 25, 2017 1:41:43 AM",
+      "text": "import util.Random.nextInt\n\nval input \u003d sc.parallelize(Seq.fill(10000)(nextInt))\n\nval moyenne\u003dinput.collect().toList.sum / input.collect().toList.length",
+      "dateUpdated": "Feb 12, 2017 5:42:42 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1391,8 +1391,15 @@
       },
       "jobName": "paragraph_1485336877601_1857515653",
       "id": "20170125-093437_413700163",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nimport util.Random.nextInt\n\ninput: org.apache.spark.rdd.RDD[Int] \u003d ParallelCollectionRDD[35] at parallelize at \u003cconsole\u003e:48\n\nmoyenne: Int \u003d -206614\n"
+      },
       "dateCreated": "Jan 25, 2017 9:34:37 AM",
-      "status": "READY",
+      "dateStarted": "Feb 12, 2017 5:42:42 PM",
+      "dateFinished": "Feb 12, 2017 5:42:45 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -1437,8 +1444,8 @@
     },
     {
       "title": "Wordcount, easy mode",
-      "text": "val input \u003d sc.parallelize(Seq(\"hi\", \"my\", \"my\", \"name\", \"is\",\"hi\"))\nval output \u003d input\n\nval expected \u003d Array((\"is\",1), (\"my,2\"), (\"name\",1), (\"hi\",2))",
-      "dateUpdated": "Feb 1, 2017 10:36:22 AM",
+      "text": "val input \u003d sc.parallelize(Seq(\"hi\", \"my\", \"my\", \"name\", \"is\",\"hi\"))\nval expected \u003d Array((\"is\",1), (\"my,2\"), (\"name\",1), (\"hi\",2))\nval map\u003d input.map(x\u003d\u003e(x,1))\nval reduce \u003d map.reduceByKey((a, b) \u003d\u003e a + b).collect().toList",
+      "dateUpdated": "Feb 12, 2017 6:16:42 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1464,18 +1471,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ninput: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[152] at parallelize at \u003cconsole\u003e:41\n\noutput: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[152] at parallelize at \u003cconsole\u003e:41\n\nexpected: Array[java.io.Serializable] \u003d Array((is,1), my,2, (name,1), (hi,2))\n"
+        "msg": "\ninput: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[93] at parallelize at \u003cconsole\u003e:48\n\nexpected: Array[java.io.Serializable] \u003d Array((is,1), my,2, (name,1), (hi,2))\n\nmap: org.apache.spark.rdd.RDD[(String, Int)] \u003d MapPartitionsRDD[94] at map at \u003cconsole\u003e:50\n\nreduce: List[(String, Int)] \u003d List((is,1), (my,2), (name,1), (hi,2))\n"
       },
       "dateCreated": "Jan 25, 2017 9:58:36 AM",
-      "dateStarted": "Feb 1, 2017 10:36:20 AM",
-      "dateFinished": "Feb 1, 2017 10:36:21 AM",
+      "dateStarted": "Feb 12, 2017 6:16:42 PM",
+      "dateFinished": "Feb 12, 2017 6:16:45 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Sum ages per gender",
-      "text": "val rdd1 \u003d sc.parallelize(Seq((\"Patrick\", \"homme\"), (\"Sandra\", \"femme\"), (\"Faniki\", \"homme\"), (\"Noemie\", \"femme\"), (\"Francois\", \"homme\"), (\"Cassandre\", \"femme\")))\nval rdd2 \u003d sc.parallelize(Seq((\"Patrick\", 20), (\"Sandra\", 25), (\"Faniki\", 20), (\"Noemie\", 20), (\"Francois\", 30), (\"Cassandre\", 18)))\n\n// rdd1 and rdd2 are key-value rdds so you can join them and then continue the computation\nval output \u003d rdd1.join(rdd2)\n\nval expected \u003d Array((\"femme\", 63), (\"homme\", 70))",
-      "dateUpdated": "Feb 1, 2017 10:15:26 AM",
+      "text": "val rdd1 \u003d sc.parallelize(Seq((\"Patrick\", \"homme\"), (\"Sandra\", \"femme\"), (\"Faniki\", \"homme\"), (\"Noemie\", \"femme\"), (\"Francois\", \"homme\"), (\"Cassandre\", \"femme\")))\nval rdd2 \u003d sc.parallelize(Seq((\"Patrick\", 20), (\"Sandra\", 25), (\"Faniki\", 20), (\"Noemie\", 20), (\"Francois\", 30), (\"Cassandre\", 18)))\n\n// rdd1 and rdd2 are key-value rdds so you can join them and then continue the computation\nval rdd \u003d rdd1.join(rdd2)\n\nval map\u003drdd.map(x\u003d\u003e(x._2._1, x._2._2))\nval reduce \u003d map.reduceByKey((a, b) \u003d\u003e a + b).collect().toList\n\nval expected \u003d Array((\"femme\", 63), (\"homme\", 70))\n",
+      "dateUpdated": "Feb 12, 2017 6:04:45 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1500,11 +1507,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nrdd1: org.apache.spark.rdd.RDD[(String, String)] \u003d ParallelCollectionRDD[131] at parallelize at \u003cconsole\u003e:41\n\nrdd2: org.apache.spark.rdd.RDD[(String, Int)] \u003d ParallelCollectionRDD[132] at parallelize at \u003cconsole\u003e:41\n\noutput: org.apache.spark.rdd.RDD[(String, (String, Int))] \u003d MapPartitionsRDD[135] at join at \u003cconsole\u003e:45\n\nexpected: Array[(String, Int)] \u003d Array((femme,63), (homme,70))\n"
+        "msg": "\nrdd1: org.apache.spark.rdd.RDD[(String, String)] \u003d ParallelCollectionRDD[68] at parallelize at \u003cconsole\u003e:48\n\nrdd2: org.apache.spark.rdd.RDD[(String, Int)] \u003d ParallelCollectionRDD[69] at parallelize at \u003cconsole\u003e:48\n\nrdd: org.apache.spark.rdd.RDD[(String, (String, Int))] \u003d MapPartitionsRDD[72] at join at \u003cconsole\u003e:52\n\nmap: org.apache.spark.rdd.RDD[(String, Int)] \u003d MapPartitionsRDD[73] at map at \u003cconsole\u003e:54\n\nreduce: List[(String, Int)] \u003d List((femme,63), (homme,70))\n\nexpected: Array[(String, Int)] \u003d Array((femme,63), (homme,70))\n"
       },
       "dateCreated": "Jan 25, 2017 1:04:11 AM",
-      "dateStarted": "Feb 1, 2017 10:15:26 AM",
-      "dateFinished": "Feb 1, 2017 10:15:29 AM",
+      "dateStarted": "Feb 12, 2017 6:04:45 PM",
+      "dateFinished": "Feb 12, 2017 6:04:50 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1544,8 +1551,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "// load file into RDD and check 10 first lines\n\nval text \u003d sc.textFile(\"/opt/dataset/don-quijote.txt.gz\")\ntext.take(3)",
-      "dateUpdated": "Feb 1, 2017 6:57:16 AM",
+      "text": "// load file into RDD and check 10 first lines\n\nval text \u003d sc.textFile(\"/opt/dataset/don-quijote.txt.gz\")\nval newtext \u003d text.take(10)",
+      "dateUpdated": "Feb 12, 2017 6:20:36 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1569,17 +1576,17 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ntext: org.apache.spark.rdd.RDD[String] \u003d /opt/dataset/don-quijote.txt.gz MapPartitionsRDD[1] at textFile at \u003cconsole\u003e:31\n\nres4: Array[String] \u003d Array(The Project Gutenberg EBook of Don Quijote, by Miguel de Cervantes Saavedra, \"\", This eBook is for the use of anyone anywhere at no cost and with)\n"
+        "msg": "\ntext: org.apache.spark.rdd.RDD[String] \u003d /opt/dataset/don-quijote.txt.gz MapPartitionsRDD[97] at textFile at \u003cconsole\u003e:50\n\nnewtext: Array[String] \u003d Array(The Project Gutenberg EBook of Don Quijote, by Miguel de Cervantes Saavedra, \"\", This eBook is for the use of anyone anywhere at no cost and with, almost no restrictions whatsoever.  You may copy it, give it away or, re-use it under the terms of the Project Gutenberg License included, with this eBook or online at www.gutenberg.net, \"\", \"\", Title: Don Quijote, \"\")\n"
       },
       "dateCreated": "Jan 25, 2017 1:49:31 AM",
-      "dateStarted": "Feb 1, 2017 6:57:16 AM",
-      "dateFinished": "Feb 1, 2017 6:57:18 AM",
+      "dateStarted": "Feb 12, 2017 6:20:36 PM",
+      "dateFinished": "Feb 12, 2017 6:20:37 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "// write your Spark map-reduce code here\n\ntext.doSomething",
-      "dateUpdated": "Feb 1, 2017 6:57:25 AM",
+      "text": "// write your Spark map-reduce code here\n\nval flat \u003d  sc.parallelize(newtext.flatMap(line \u003d\u003e line.split(\" \")))\nval map \u003d flat.map(x\u003d\u003e(x,1))\nval reduce \u003d map.reduceByKey((a, b) \u003d\u003e a + b).collect().toList",
+      "dateUpdated": "Feb 12, 2017 6:22:50 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1601,14 +1608,14 @@
       "jobName": "paragraph_1485352420257_-878908678",
       "id": "20170125-135340_1546349786",
       "result": {
-        "code": "ERROR",
+        "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\n\n\n\u003cconsole\u003e:33: error: value doSomething is not a member of org.apache.spark.rdd.RDD[String]\n              text.doSomething\n                   ^\n"
+        "msg": "\nflat: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[103] at parallelize at \u003cconsole\u003e:54\n\nmap: org.apache.spark.rdd.RDD[(String, Int)] \u003d MapPartitionsRDD[104] at map at \u003cconsole\u003e:54\n\nreduce: List[(String, Int)] \u003d List((under,1), (this,1), (is,1), (away,1), (anyone,1), (with,2), (whatsoever.,1), (\"\",5), (This,1), (EBook,1), (almost,1), (Title:,1), (eBook,2), (included,1), (it,,1), (re-use,1), (restrictions,1), (Quijote,1), (The,1), (it,2), (Miguel,1), (Saavedra,1), (de,1), (or,2), (You,1), (no,2), (License,1), (at,2), (online,1), (of,3), (copy,1), (by,1), (for,1), (Don,2), (Gutenberg,2), (cost,1), (Cervantes,1), (and,1), (anywhere,1), (Project,2), (terms,1), (give,1), (www.gutenberg.net,1), (use,1), (may,1), (the,3), (Quijote,,1))\n"
       },
       "dateCreated": "Jan 25, 2017 1:53:40 AM",
-      "dateStarted": "Jan 25, 2017 1:54:09 AM",
-      "dateFinished": "Jan 25, 2017 1:54:09 AM",
-      "status": "ERROR",
+      "dateStarted": "Feb 12, 2017 6:22:50 PM",
+      "dateFinished": "Feb 12, 2017 6:22:52 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
