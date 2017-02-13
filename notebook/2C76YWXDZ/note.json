@@ -72,7 +72,7 @@
     },
     {
       "text": "%md\n\n## II. Load data\n\nI have downloaded adult.data from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Adult) and put it into the `data/` folder of your project.\n\nThe following cells will do the necessary to load the data into a DataFrame.",
-      "dateUpdated": "Feb 7, 2017 12:55:38 PM",
+      "dateUpdated": "Feb 13, 2017 9:36:23 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -108,7 +108,7 @@
     {
       "title": "Load data (run the cell)",
       "text": "import org.apache.spark.sql.types.{StringType, DoubleType, StructType, StructField}\n\nval schema \u003d StructType(Seq(\n    StructField(\"age\", DoubleType),\n    StructField(\"workclass\", StringType),\n    StructField(\"fnlwgt\", DoubleType),\n    StructField(\"education\", StringType),\n    StructField(\"education_num\", DoubleType),\n    StructField(\"marital_status\", StringType),\n    StructField(\"occupation\", StringType),\n    StructField(\"relationship\", StringType),\n    StructField(\"race\", StringType),\n    StructField(\"sex\", StringType),\n    StructField(\"capital_gain\", DoubleType),\n    StructField(\"capital_loss\", DoubleType),\n    StructField(\"hours_per_week\", DoubleType),\n    StructField(\"native_country\", StringType),\n    StructField(\"income\", StringType)\n    ))\n\ncase class Adult(\n    age: Double, \n    workclass: String, \n    fnlwgt: Double, \n    education: String, \n    education_num: Double, \n    marital_status: String, \n    occupation: String, \n    relationship: String, \n    race: String, \n    sex: String, \n    capital_gain: Double, \n    capital_loss: Double, \n    hours_per_week: Double, \n    native_country: String, \n    income: String\n    )\n    \nval dataset \u003d spark.read.schema(schema).csv(\"/opt/dataset/adult.data.csv\").as[Adult]\ndataset.registerTempTable(\"dataset\")  // register it so we can use it inside %sql interpreter\n\n// Le fichier CSV adult.data.csv contient les 48842 personnes à étudier.\n// Ce fichier est déjà stocké dans la VM, à l\u0027emplacement /opt/dataset/adult.data.csv\n// Dans notre dépot GIT, le fichier CSV est présent dans le répertoire data/ il a été ajouté lors du merge de master sur ma branch (et déposé sur la VM lors du vagrant up)",
-      "dateUpdated": "Feb 8, 2017 6:51:40 PM",
+      "dateUpdated": "Feb 13, 2017 9:52:22 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -123,7 +123,7 @@
         "enabled": true,
         "editorMode": "ace/mode/scala",
         "title": true,
-        "editorHide": true,
+        "editorHide": false,
         "tableHide": true
       },
       "settings": {
@@ -138,14 +138,14 @@
         "msg": "\nimport org.apache.spark.sql.types.{StringType, DoubleType, StructType, StructField}\n\nschema: org.apache.spark.sql.types.StructType \u003d StructType(StructField(age,DoubleType,true), StructField(workclass,StringType,true), StructField(fnlwgt,DoubleType,true), StructField(education,StringType,true), StructField(education_num,DoubleType,true), StructField(marital_status,StringType,true), StructField(occupation,StringType,true), StructField(relationship,StringType,true), StructField(race,StringType,true), StructField(sex,StringType,true), StructField(capital_gain,DoubleType,true), StructField(capital_loss,DoubleType,true), StructField(hours_per_week,DoubleType,true), StructField(native_country,StringType,true), StructField(income,StringType,true))\n\ndefined class Adult\n\ndataset: org.apache.spark.sql.Dataset[Adult] \u003d [age: double, workclass: string ... 13 more fields]\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n"
       },
       "dateCreated": "Feb 3, 2017 8:43:33 AM",
-      "dateStarted": "Feb 8, 2017 6:50:30 PM",
-      "dateFinished": "Feb 8, 2017 6:50:32 PM",
+      "dateStarted": "Feb 13, 2017 9:01:12 PM",
+      "dateFinished": "Feb 13, 2017 9:01:17 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "dataset.printSchema()",
-      "dateUpdated": "Feb 8, 2017 6:51:45 PM",
+      "dateUpdated": "Feb 8, 2017 6:51:45 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -173,14 +173,14 @@
         "msg": "root\n |-- age: double (nullable \u003d true)\n |-- workclass: string (nullable \u003d true)\n |-- fnlwgt: double (nullable \u003d true)\n |-- education: string (nullable \u003d true)\n |-- education_num: double (nullable \u003d true)\n |-- marital_status: string (nullable \u003d true)\n |-- occupation: string (nullable \u003d true)\n |-- relationship: string (nullable \u003d true)\n |-- race: string (nullable \u003d true)\n |-- sex: string (nullable \u003d true)\n |-- capital_gain: double (nullable \u003d true)\n |-- capital_loss: double (nullable \u003d true)\n |-- hours_per_week: double (nullable \u003d true)\n |-- native_country: string (nullable \u003d true)\n |-- income: string (nullable \u003d true)\n\n"
       },
       "dateCreated": "Feb 6, 2017 1:45:35 AM",
-      "dateStarted": "Feb 8, 2017 6:28:49 PM",
-      "dateFinished": "Feb 8, 2017 6:28:49 PM",
+      "dateStarted": "Feb 8, 2017 6:28:49 AM",
+      "dateFinished": "Feb 8, 2017 6:28:49 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%sql SELECT * FROM dataset LIMIT 10",
-      "dateUpdated": "Feb 8, 2017 6:29:05 PM",
+      "dateUpdated": "Feb 8, 2017 6:29:05 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -230,17 +230,17 @@
         "msg": "age\tworkclass\tfnlwgt\teducation\teducation_num\tmarital_status\toccupation\trelationship\trace\tsex\tcapital_gain\tcapital_loss\thours_per_week\tnative_country\tincome\n39.0\t State-gov\t77516.0\t Bachelors\t13.0\t Never-married\t Adm-clerical\t Not-in-family\t White\t Male\t2174.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n50.0\t Self-emp-not-inc\t83311.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t13.0\t United-States\t \u003c\u003d50K\n38.0\t Private\t215646.0\t HS-grad\t9.0\t Divorced\t Handlers-cleaners\t Not-in-family\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n53.0\t Private\t234721.0\t 11th\t7.0\t Married-civ-spouse\t Handlers-cleaners\t Husband\t Black\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n28.0\t Private\t338409.0\t Bachelors\t13.0\t Married-civ-spouse\t Prof-specialty\t Wife\t Black\t Female\t0.0\t0.0\t40.0\t Cuba\t \u003c\u003d50K\n37.0\t Private\t284582.0\t Masters\t14.0\t Married-civ-spouse\t Exec-managerial\t Wife\t White\t Female\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n49.0\t Private\t160187.0\t 9th\t5.0\t Married-spouse-absent\t Other-service\t Not-in-family\t Black\t Female\t0.0\t0.0\t16.0\t Jamaica\t \u003c\u003d50K\n52.0\t Self-emp-not-inc\t209642.0\t HS-grad\t9.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t45.0\t United-States\t \u003e50K\n31.0\t Private\t45781.0\t Masters\t14.0\t Never-married\t Prof-specialty\t Not-in-family\t White\t Female\t14084.0\t0.0\t50.0\t United-States\t \u003e50K\n42.0\t Private\t159449.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t5178.0\t0.0\t40.0\t United-States\t \u003e50K\n"
       },
       "dateCreated": "Feb 3, 2017 8:41:09 AM",
-      "dateStarted": "Feb 8, 2017 6:28:54 PM",
-      "dateFinished": "Feb 8, 2017 6:28:55 PM",
+      "dateStarted": "Feb 8, 2017 6:28:54 AM",
+      "dateFinished": "Feb 8, 2017 6:28:55 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Check settings of graph. See how we average age by income.",
       "text": "%sql SELECT income, avg(age) FROM dataset group by income\n-- La moyenne d\u0027age est de 36.78 ans pour les personnes qui gagnent \u003c\u003d 50K\n-- La moyenne d\u0027age est de 44.25 ans pour les personnes qui gagnent \u003e\u003d 50K",
-      "dateUpdated": "Feb 8, 2017 6:42:55 PM",
+      "dateUpdated": "Feb 13, 2017 9:58:27 PM",
       "config": {
-        "colWidth": 12.0,
+        "colWidth": 5.0,
         "graph": {
           "mode": "pieChart",
           "height": 300.0,
@@ -285,14 +285,14 @@
         "msg": "income\tavg(age)\n \u003e50K\t44.24984058155847\n \u003c\u003d50K\t36.78373786407767\n"
       },
       "dateCreated": "Feb 6, 2017 8:20:04 AM",
-      "dateStarted": "Feb 8, 2017 6:34:24 PM",
-      "dateFinished": "Feb 8, 2017 6:34:25 PM",
+      "dateStarted": "Feb 13, 2017 9:07:55 PM",
+      "dateFinished": "Feb 13, 2017 9:07:57 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md \n\n## III. Descriptive analysis\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nProvide a summary statistics graph for some columns you deem interesting. Summary statistics is comprised (but not limited) of:\n* mean, standard deviation and skewness for numeric columns.\n* counts and percentage of each value for categorical columns.\n\nIf you can, try to separate the two income groups and compare.\n\nTwo ways of doing this:\n* You should be able to it using standard SQL queries on the DataFrame and `show()` the result\n* You can use the %sql interpreter like in the previous cell and then use the settings tab of your graph to display the desired results.",
-      "dateUpdated": "Feb 8, 2017 6:53:38 PM",
+      "dateUpdated": "Feb 13, 2017 9:48:22 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -321,23 +321,58 @@
         "msg": "\u003ch2\u003eIII. Descriptive analysis\u003c/h2\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eProvide a summary statistics graph for some columns you deem interesting. Summary statistics is comprised (but not limited) of:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003emean, standard deviation and skewness for numeric columns.\u003c/li\u003e\n\u003cli\u003ecounts and percentage of each value for categorical columns.\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eIf you can, try to separate the two income groups and compare.\u003c/p\u003e\n\u003cp\u003eTwo ways of doing this:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eYou should be able to it using standard SQL queries on the DataFrame and \u003ccode\u003eshow()\u003c/code\u003e the result\u003c/li\u003e\n\u003cli\u003eYou can use the %sql interpreter like in the previous cell and then use the settings tab of your graph to display the desired results.\u003c/li\u003e\n\u003c/ul\u003e\n"
       },
       "dateCreated": "Feb 3, 2017 8:59:52 AM",
-      "dateStarted": "Feb 8, 2017 6:53:34 PM",
-      "dateFinished": "Feb 8, 2017 6:53:34 PM",
+      "dateStarted": "Feb 8, 2017 6:53:34 AM",
+      "dateFinished": "Feb 8, 2017 6:53:34 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "// Quel est l\u0027âge moyen des individus de notre jeu de données\n%sql SELECT avg(age) AS AgeMoyen FROM dataset",
-      "dateUpdated": "Feb 8, 2017 7:00:01 PM",
+      "text": "%sql \n\nSELECT avg(age) AS Age_Moyen FROM dataset\n\n-- Quel est l\u0027âge moyen des individus de notre jeu de données ?",
+      "dateUpdated": "Feb 13, 2017 9:14:02 PM",
       "config": {
-        "colWidth": 11.0,
+        "colWidth": 3.0,
         "graph": {
           "mode": "table",
           "height": 94.0,
           "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sql",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1486579937459_-683291247",
+      "id": "20170208-185217_1362656673",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "Age_Moyen\n38.58164675532078\n"
+      },
+      "dateCreated": "Feb 8, 2017 6:52:17 AM",
+      "dateStarted": "Feb 13, 2017 9:10:27 PM",
+      "dateFinished": "Feb 13, 2017 9:10:27 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\n\n SELECT std(hours_per_week) AS Ecart_Type_Heures_travaillees FROM dataset\n\n-- Quel est l\u0027écart type des heures travaillées par semaine ?",
+      "dateUpdated": "Feb 13, 2017 9:14:10 PM",
+      "config": {
+        "colWidth": 3.0,
+        "graph": {
+          "mode": "table",
+          "height": 102.0,
+          "optionOpen": false,
           "keys": [
             {
-              "name": "AgeMoyen",
+              "name": "Ecart_Type_Heures_travaillees",
               "index": 0.0,
               "aggr": "sum"
             }
@@ -346,7 +381,474 @@
           "groups": [],
           "scatter": {
             "xAxis": {
-              "name": "AgeMoyen",
+              "name": "Ecart_Type_Heures_travaillees",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sql",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487019764419_-845965147",
+      "id": "20170213-210244_1421315429",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "Ecart_Type_Heures_travaillees\n12.347428681731838\n"
+      },
+      "dateCreated": "Feb 13, 2017 9:02:44 PM",
+      "dateStarted": "Feb 13, 2017 9:10:39 PM",
+      "dateFinished": "Feb 13, 2017 9:10:39 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql \n\nselect workclass, CONCAT(ROUND(100. * count(*) / sum(count(*)) over (),2), \u0027%\u0027) as pourcentage\nfrom dataset\ngroup by workclass",
+      "dateUpdated": "Feb 13, 2017 9:28:04 PM",
+      "config": {
+        "colWidth": 3.0,
+        "graph": {
+          "mode": "table",
+          "height": 87.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "workclass",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "pourcentage",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "workclass",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sql",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487020447032_586280985",
+      "id": "20170213-211407_1205436429",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "workclass\tpourcentage\n State-gov\t3.99%\n Federal-gov\t2.95%\n Self-emp-not-inc\t7.80%\n Local-gov\t6.43%\n Private\t69.70%\n ?\t5.64%\n Self-emp-inc\t3.43%\n Without-pay\t0.04%\n Never-worked\t0.02%\n"
+      },
+      "dateCreated": "Feb 13, 2017 9:14:07 PM",
+      "dateStarted": "Feb 13, 2017 9:26:27 PM",
+      "dateFinished": "Feb 13, 2017 9:26:29 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql \n\nselect sex, CONCAT(ROUND(100. * count(*) / sum(count(*)) over (),2), \u0027%\u0027) as pourcentage\nfrom dataset\ngroup by sex",
+      "dateUpdated": "Feb 13, 2017 9:32:10 PM",
+      "config": {
+        "colWidth": 3.0,
+        "graph": {
+          "mode": "table",
+          "height": 89.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "sex",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "pourcentage",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "sex",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "pourcentage",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487021232620_-933943473",
+      "id": "20170213-212712_1708270409",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "sex\tpourcentage\n Male\t66.92%\n Female\t33.08%\n"
+      },
+      "dateCreated": "Feb 13, 2017 9:27:12 PM",
+      "dateStarted": "Feb 13, 2017 9:27:51 PM",
+      "dateFinished": "Feb 13, 2017 9:27:52 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql \n\n\nselect education, ROUND(100. * count(*) / sum(count(*)) over (),2) as pourcentage_DIVORCES_par_education \nfrom dataset\nwhere marital_status\u003d\u0027 Divorced\u0027\ngroup by education\norder by pourcentage_DIVORCES_par_education DESC",
+      "dateUpdated": "Feb 13, 2017 9:59:32 PM",
+      "config": {
+        "colWidth": 9.0,
+        "graph": {
+          "mode": "stackedAreaChart",
+          "height": 362.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "education",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "pourcentage_DIVORCES_par_education",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "education",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sql",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487021301115_-414870711",
+      "id": "20170213-212821_1200738567",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "education\tpourcentage_DIVORCES_par_education\n HS-grad\t36.30\n Some-college\t24.06\n Bachelors\t12.29\n Assoc-voc\t5.27\n Masters\t5.24\n Assoc-acdm\t4.57\n 11th\t2.93\n 10th\t2.70\n 7th-8th\t1.64\n 9th\t1.44\n Prof-school\t1.24\n 12th\t0.88\n Doctorate\t0.74\n 5th-6th\t0.45\n 1st-4th\t0.23\n Preschool\t0.02\n"
+      },
+      "dateCreated": "Feb 13, 2017 9:28:21 PM",
+      "dateStarted": "Feb 13, 2017 9:35:25 PM",
+      "dateFinished": "Feb 13, 2017 9:35:26 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n.\nPourcentage des personnes divorcées par type d\u0027éducation",
+      "dateUpdated": "Feb 13, 2017 9:59:46 PM",
+      "config": {
+        "colWidth": 3.0,
+        "graph": {
+          "mode": "table",
+          "height": 59.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487023124288_-1246680864",
+      "id": "20170213-215844_1050398938",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003e.\n\u003cbr  /\u003ePourcentage des personnes divorcées par type d\u0027éducation\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 13, 2017 9:58:44 PM",
+      "dateStarted": "Feb 13, 2017 9:59:07 PM",
+      "dateFinished": "Feb 13, 2017 9:59:07 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md Dataset avec uniquement les personnes gagnant plus de 50K. Ces valeurs sont stockées dans une variable datasetGreatherThan50K comme TABLE TEMPORAIRE : ",
+      "dateUpdated": "Feb 13, 2017 9:53:28 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487022566868_-451937945",
+      "id": "20170213-214926_1984338944",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eDataset avec uniquement les personnes gagnant plus de 50K. Ces valeurs sont stockées dans une variable datasetGreatherThan50K comme TABLE TEMPORAIRE :\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 13, 2017 9:49:26 PM",
+      "dateStarted": "Feb 13, 2017 9:53:27 PM",
+      "dateFinished": "Feb 13, 2017 9:53:27 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val datasetGreatherThan50K \u003d dataset.filter($\"income\"\u003d\u003d\u003d\" \u003e50K\")\ndatasetGreatherThan50K.registerTempTable(\"datasetGreatherThan50K\")\ndatasetGreatherThan50K.show()",
+      "dateUpdated": "Feb 13, 2017 9:54:16 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487021813840_-1891216826",
+      "id": "20170213-213653_1805502090",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\ndatasetGreatherThan50K: org.apache.spark.sql.Dataset[Adult] \u003d [age: double, workclass: string ... 13 more fields]\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n+----+-----------------+--------+-------------+-------------+-------------------+----------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+\n| age|        workclass|  fnlwgt|    education|education_num|     marital_status|      occupation|  relationship|               race|    sex|capital_gain|capital_loss|hours_per_week|native_country|income|\n+----+-----------------+--------+-------------+-------------+-------------------+----------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+\n|52.0| Self-emp-not-inc|209642.0|      HS-grad|          9.0| Married-civ-spouse| Exec-managerial|       Husband|              White|   Male|         0.0|         0.0|          45.0| United-States|  \u003e50K|\n|31.0|          Private| 45781.0|      Masters|         14.0|      Never-married|  Prof-specialty| Not-in-family|              White| Female|     14084.0|         0.0|          50.0| United-States|  \u003e50K|\n|42.0|          Private|159449.0|    Bachelors|         13.0| Married-civ-spouse| Exec-managerial|       Husband|              White|   Male|      5178.0|         0.0|          40.0| United-States|  \u003e50K|\n|37.0|          Private|280464.0| Some-college|         10.0| Married-civ-spouse| Exec-managerial|       Husband|              Black|   Male|         0.0|         0.0|          80.0| United-States|  \u003e50K|\n|30.0|        State-gov|141297.0|    Bachelors|         13.0| Married-civ-spouse|  Prof-specialty|       Husband| Asian-Pac-Islander|   Male|         0.0|         0.0|          40.0|         India|  \u003e50K|\n|40.0|          Private|121772.0|    Assoc-voc|         11.0| Married-civ-spouse|    Craft-repair|       Husband| Asian-Pac-Islander|   Male|         0.0|         0.0|          40.0|             ?|  \u003e50K|\n|43.0| Self-emp-not-inc|292175.0|      Masters|         14.0|           Divorced| Exec-managerial|     Unmarried|              White| Female|         0.0|         0.0|          45.0| United-States|  \u003e50K|\n|40.0|          Private|193524.0|    Doctorate|         16.0| Married-civ-spouse|  Prof-specialty|       Husband|              White|   Male|         0.0|         0.0|          60.0| United-States|  \u003e50K|\n|56.0|        Local-gov|216851.0|    Bachelors|         13.0| Married-civ-spouse|    Tech-support|       Husband|              White|   Male|         0.0|         0.0|          40.0| United-States|  \u003e50K|\n|54.0|                ?|180211.0| Some-college|         10.0| Married-civ-spouse|               ?|       Husband| Asian-Pac-Islander|   Male|         0.0|         0.0|          60.0|         South|  \u003e50K|\n|31.0|          Private| 84154.0| Some-college|         10.0| Married-civ-spouse|           Sales|       Husband|              White|   Male|         0.0|         0.0|          38.0|             ?|  \u003e50K|\n|57.0|      Federal-gov|337895.0|    Bachelors|         13.0| Married-civ-spouse|  Prof-specialty|       Husband|              Black|   Male|         0.0|         0.0|          40.0| United-States|  \u003e50K|\n|47.0|          Private| 51835.0|  Prof-school|         15.0| Married-civ-spouse|  Prof-specialty|          Wife|              White| Female|         0.0|      1902.0|          60.0|      Honduras|  \u003e50K|\n|50.0|      Federal-gov|251585.0|    Bachelors|         13.0|           Divorced| Exec-managerial| Not-in-family|              White|   Male|         0.0|         0.0|          55.0| United-States|  \u003e50K|\n|43.0|          Private|237993.0| Some-college|         10.0| Married-civ-spouse|    Tech-support|       Husband|              White|   Male|         0.0|         0.0|          40.0| United-States|  \u003e50K|\n|42.0|          Private|116632.0|    Doctorate|         16.0| Married-civ-spouse|  Prof-specialty|       Husband|              White|   Male|         0.0|         0.0|          45.0| United-States|  \u003e50K|\n|53.0|          Private|169846.0|      HS-grad|          9.0| Married-civ-spouse|    Adm-clerical|          Wife|              White| Female|         0.0|         0.0|          40.0| United-States|  \u003e50K|\n|49.0|     Self-emp-inc|191681.0| Some-college|         10.0| Married-civ-spouse| Exec-managerial|       Husband|              White|   Male|         0.0|         0.0|          50.0| United-States|  \u003e50K|\n|29.0| Self-emp-not-inc|162298.0|    Bachelors|         13.0| Married-civ-spouse|           Sales|       Husband|              White|   Male|         0.0|         0.0|          70.0| United-States|  \u003e50K|\n|44.0|          Private|343591.0|      HS-grad|          9.0|           Divorced|    Craft-repair| Not-in-family|              White| Female|     14344.0|         0.0|          40.0| United-States|  \u003e50K|\n+----+-----------------+--------+-------------+-------------+-------------------+----------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+\nonly showing top 20 rows\n\n"
+      },
+      "dateCreated": "Feb 13, 2017 9:36:53 PM",
+      "dateStarted": "Feb 13, 2017 9:53:48 PM",
+      "dateFinished": "Feb 13, 2017 9:53:49 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql select round(avg(age), 2) AS MOY_AGE_GT50K from datasetGreatherThan50K",
+      "dateUpdated": "Feb 13, 2017 9:55:41 PM",
+      "config": {
+        "colWidth": 9.0,
+        "graph": {
+          "mode": "table",
+          "height": 93.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "avg(age)",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "avg(age)",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487022706266_-619906293",
+      "id": "20170213-215146_2001641306",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "MOY_AGE_GT50K\n44.25\n"
+      },
+      "dateCreated": "Feb 13, 2017 9:51:46 PM",
+      "dateStarted": "Feb 13, 2017 9:55:41 PM",
+      "dateFinished": "Feb 13, 2017 9:55:42 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n.\n.\nNous obtenons bien la même valeur que lors de la question \"Check settings of graph. See how we average age by income.\" soit 44.25",
+      "dateUpdated": "Feb 13, 2017 9:56:25 PM",
+      "config": {
+        "colWidth": 3.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487022916201_-1377570467",
+      "id": "20170213-215516_375049382",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003e.\n\u003cbr  /\u003e.\n\u003cbr  /\u003eNous obtenons bien la même valeur que lors de la question \u0026ldquo;Check settings of graph. See how we average age by income.\u0026rdquo; soit 44.25\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 13, 2017 9:55:16 PM",
+      "dateStarted": "Feb 13, 2017 9:56:22 PM",
+      "dateFinished": "Feb 13, 2017 9:56:22 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md Dataset avec uniquement les personnes gagnant plus de 50K. Ces valeurs sont stockées dans une variable datasetLowerThan51K  comme TABLE TEMPORAIRE ",
+      "dateUpdated": "Feb 13, 2017 9:53:43 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487022589603_936433656",
+      "id": "20170213-214949_550643652",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eDataset avec uniquement les personnes gagnant plus de 50K. Ces valeurs sont stockées dans une variable datasetLowerThan51K  comme TABLE TEMPORAIRE\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 13, 2017 9:49:49 PM",
+      "dateStarted": "Feb 13, 2017 9:53:42 PM",
+      "dateFinished": "Feb 13, 2017 9:53:42 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val datasetLowerThan51K  \u003d dataset.filter($\"income\"\u003d\u003d\u003d\" \u003c\u003d50K\")\ndatasetLowerThan51K.registerTempTable(\"datasetLowerThan51K\")\ndatasetLowerThan51K.show()",
+      "dateUpdated": "Feb 13, 2017 9:54:28 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorHide": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487022388948_-303518459",
+      "id": "20170213-214628_1330487947",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\ndatasetLowerThan51K: org.apache.spark.sql.Dataset[Adult] \u003d [age: double, workclass: string ... 13 more fields]\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n+----+-----------------+--------+-----------+-------------+--------------------+------------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+\n| age|        workclass|  fnlwgt|  education|education_num|      marital_status|        occupation|  relationship|               race|    sex|capital_gain|capital_loss|hours_per_week|native_country|income|\n+----+-----------------+--------+-----------+-------------+--------------------+------------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+\n|39.0|        State-gov| 77516.0|  Bachelors|         13.0|       Never-married|      Adm-clerical| Not-in-family|              White|   Male|      2174.0|         0.0|          40.0| United-States| \u003c\u003d50K|\n|50.0| Self-emp-not-inc| 83311.0|  Bachelors|         13.0|  Married-civ-spouse|   Exec-managerial|       Husband|              White|   Male|         0.0|         0.0|          13.0| United-States| \u003c\u003d50K|\n|38.0|          Private|215646.0|    HS-grad|          9.0|            Divorced| Handlers-cleaners| Not-in-family|              White|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|\n|53.0|          Private|234721.0|       11th|          7.0|  Married-civ-spouse| Handlers-cleaners|       Husband|              Black|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|\n|28.0|          Private|338409.0|  Bachelors|         13.0|  Married-civ-spouse|    Prof-specialty|          Wife|              Black| Female|         0.0|         0.0|          40.0|          Cuba| \u003c\u003d50K|\n|37.0|          Private|284582.0|    Masters|         14.0|  Married-civ-spouse|   Exec-managerial|          Wife|              White| Female|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|\n|49.0|          Private|160187.0|        9th|          5.0| Married-spouse-a...|     Other-service| Not-in-family|              Black| Female|         0.0|         0.0|          16.0|       Jamaica| \u003c\u003d50K|\n|23.0|          Private|122272.0|  Bachelors|         13.0|       Never-married|      Adm-clerical|     Own-child|              White| Female|         0.0|         0.0|          30.0| United-States| \u003c\u003d50K|\n|32.0|          Private|205019.0| Assoc-acdm|         12.0|       Never-married|             Sales| Not-in-family|              Black|   Male|         0.0|         0.0|          50.0| United-States| \u003c\u003d50K|\n|34.0|          Private|245487.0|    7th-8th|          4.0|  Married-civ-spouse|  Transport-moving|       Husband| Amer-Indian-Eskimo|   Male|         0.0|         0.0|          45.0|        Mexico| \u003c\u003d50K|\n|25.0| Self-emp-not-inc|176756.0|    HS-grad|          9.0|       Never-married|   Farming-fishing|     Own-child|              White|   Male|         0.0|         0.0|          35.0| United-States| \u003c\u003d50K|\n|32.0|          Private|186824.0|    HS-grad|          9.0|       Never-married| Machine-op-inspct|     Unmarried|              White|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|\n|38.0|          Private| 28887.0|       11th|          7.0|  Married-civ-spouse|             Sales|       Husband|              White|   Male|         0.0|         0.0|          50.0| United-States| \u003c\u003d50K|\n|54.0|          Private|302146.0|    HS-grad|          9.0|           Separated|     Other-service|     Unmarried|              Black| Female|         0.0|         0.0|          20.0| United-States| \u003c\u003d50K|\n|35.0|      Federal-gov| 76845.0|        9th|          5.0|  Married-civ-spouse|   Farming-fishing|       Husband|              Black|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|\n|43.0|          Private|117037.0|       11th|          7.0|  Married-civ-spouse|  Transport-moving|       Husband|              White|   Male|         0.0|      2042.0|          40.0| United-States| \u003c\u003d50K|\n|59.0|          Private|109015.0|    HS-grad|          9.0|            Divorced|      Tech-support|     Unmarried|              White| Female|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|\n|19.0|          Private|168294.0|    HS-grad|          9.0|       Never-married|      Craft-repair|     Own-child|              White|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|\n|39.0|          Private|367260.0|    HS-grad|          9.0|            Divorced|   Exec-managerial| Not-in-family|              White|   Male|         0.0|         0.0|          80.0| United-States| \u003c\u003d50K|\n|49.0|          Private|193366.0|    HS-grad|          9.0|  Married-civ-spouse|      Craft-repair|       Husband|              White|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|\n+----+-----------------+--------+-----------+-------------+--------------------+------------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+\nonly showing top 20 rows\n\n"
+      },
+      "dateCreated": "Feb 13, 2017 9:46:28 PM",
+      "dateStarted": "Feb 13, 2017 9:54:26 PM",
+      "dateFinished": "Feb 13, 2017 9:54:27 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql select round(avg(age), 2) AS MOY_AGE_LT51K from datasetLowerThan51K",
+      "dateUpdated": "Feb 13, 2017 9:57:33 PM",
+      "config": {
+        "colWidth": 9.0,
+        "graph": {
+          "mode": "table",
+          "height": 84.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "MOY_AGE_LT51K",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "MOY_AGE_LT51K",
               "index": 0.0,
               "aggr": "sum"
             }
@@ -359,22 +861,57 @@
         "params": {},
         "forms": {}
       },
-      "jobName": "paragraph_1486579937459_-683291247",
-      "id": "20170208-185217_1362656673",
+      "jobName": "paragraph_1487023018265_259490131",
+      "id": "20170213-215658_127608318",
       "result": {
         "code": "SUCCESS",
         "type": "TABLE",
-        "msg": "AgeMoyen\n38.58164675532078\n"
+        "msg": "MOY_AGE_LT51K\n36.78\n"
       },
-      "dateCreated": "Feb 8, 2017 6:52:17 PM",
-      "dateStarted": "Feb 8, 2017 6:58:15 PM",
-      "dateFinished": "Feb 8, 2017 6:58:15 PM",
+      "dateCreated": "Feb 13, 2017 9:56:58 PM",
+      "dateStarted": "Feb 13, 2017 9:57:22 PM",
+      "dateFinished": "Feb 13, 2017 9:57:23 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n. \n. \nNous obtenons bien la même valeur que lors de la question “Check settings of graph. See how we average age by income.” soit 36.78\n\n",
+      "dateUpdated": "Feb 13, 2017 9:57:57 PM",
+      "config": {
+        "colWidth": 3.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487023060488_-124996614",
+      "id": "20170213-215740_333585468",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003e.\n\u003cbr  /\u003e.\n\u003cbr  /\u003eNous obtenons bien la même valeur que lors de la question “Check settings of graph. See how we average age by income.” soit 36.78\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 13, 2017 9:57:40 PM",
+      "dateStarted": "Feb 13, 2017 9:57:56 PM",
+      "dateFinished": "Feb 13, 2017 9:57:56 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%sql SELECT education, education_num, avg(capital_gain) AS avgGain FROM dataset GROUP BY education, education_num ORDER BY education_num DESC ",
-      "dateUpdated": "Feb 8, 2017 7:14:56 PM",
+      "dateUpdated": "Feb 13, 2017 10:00:03 PM",
       "config": {
         "colWidth": 9.0,
         "graph": {
@@ -406,7 +943,7 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/sql",
-        "editorHide": false
+        "editorHide": true
       },
       "settings": {
         "params": {},
@@ -419,15 +956,15 @@
         "type": "TABLE",
         "msg": "education\teducation_num\tavgGain\n Doctorate\t16.0\t4770.145278450364\n Prof-school\t15.0\t10414.416666666666\n Masters\t14.0\t2562.563551944283\n Bachelors\t13.0\t1756.299533146592\n Assoc-acdm\t12.0\t640.3992502343018\n Assoc-voc\t11.0\t715.0513748191028\n Some-college\t10.0\t598.8241667809629\n HS-grad\t9.0\t576.800114274831\n 12th\t8.0\t284.0877598152425\n 11th\t7.0\t215.09787234042554\n 10th\t6.0\t404.57449088960345\n 9th\t5.0\t342.08949416342415\n 7th-8th\t4.0\t233.93962848297213\n 5th-6th\t3.0\t176.02102102102103\n 1st-4th\t2.0\t125.875\n Preschool\t1.0\t898.3921568627451\n"
       },
-      "dateCreated": "Feb 8, 2017 6:59:38 PM",
-      "dateStarted": "Feb 8, 2017 7:14:35 PM",
-      "dateFinished": "Feb 8, 2017 7:14:36 PM",
+      "dateCreated": "Feb 8, 2017 6:59:38 AM",
+      "dateStarted": "Feb 13, 2017 10:00:03 PM",
+      "dateFinished": "Feb 13, 2017 10:00:06 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md \n\nVoyons désormais comment l\u0027épargne est répartie en fonction du cursus scolaire suivi par les individus. Nous notons que ce sont les professeurs d\u0027école qui épargnent le plus !",
-      "dateUpdated": "Feb 8, 2017 7:16:25 PM",
+      "text": "%md \n.\n.\nVoyons désormais comment l\u0027épargne est répartie en fonction du cursus scolaire suivi par les individus. Nous notons que ce sont les professeurs d\u0027école qui épargnent le plus !",
+      "dateUpdated": "Feb 13, 2017 10:00:13 PM",
       "config": {
         "colWidth": 3.0,
         "graph": {
@@ -453,17 +990,17 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003cp\u003eVoyons désormais comment l\u0027épargne est répartie en fonction du cursus scolaire suivi par les individus. Nous notons que ce sont les professeurs d\u0027école qui épargnent le plus !\u003c/p\u003e\n"
+        "msg": "\u003cp\u003e.\n\u003cbr  /\u003e.\n\u003cbr  /\u003eVoyons désormais comment l\u0027épargne est répartie en fonction du cursus scolaire suivi par les individus. Nous notons que ce sont les professeurs d\u0027école qui épargnent le plus !\u003c/p\u003e\n"
       },
-      "dateCreated": "Feb 8, 2017 7:15:02 PM",
-      "dateStarted": "Feb 8, 2017 7:16:23 PM",
-      "dateFinished": "Feb 8, 2017 7:16:23 PM",
+      "dateCreated": "Feb 8, 2017 7:15:02 AM",
+      "dateStarted": "Feb 13, 2017 10:00:12 PM",
+      "dateFinished": "Feb 13, 2017 10:00:12 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%sql SELECT occupation, count(*) FROM dataset WHERE marital_status LIKE \"%Divorced%\" OR marital_status LIKE \"%Separated%\" GROUP BY occupation",
-      "dateUpdated": "Feb 8, 2017 7:36:58 PM",
+      "dateUpdated": "Feb 8, 2017 7:36:58 AM",
       "config": {
         "colWidth": 9.0,
         "graph": {
@@ -514,15 +1051,15 @@
         "type": "TABLE",
         "msg": "occupation\tcount(1)\n Farming-fishing\t82\n Handlers-cleaners\t166\n Prof-specialty\t638\n Adm-clerical\t966\n Exec-managerial\t698\n Craft-repair\t567\n Sales\t527\n ?\t251\n Tech-support\t168\n Transport-moving\t218\n Protective-serv\t95\n Machine-op-inspct\t361\n Other-service\t691\n Priv-house-serv\t40\n"
       },
-      "dateCreated": "Feb 8, 2017 7:18:21 PM",
-      "dateStarted": "Feb 8, 2017 7:35:01 PM",
-      "dateFinished": "Feb 8, 2017 7:35:02 PM",
+      "dateCreated": "Feb 8, 2017 7:18:21 AM",
+      "dateStarted": "Feb 8, 2017 7:35:01 AM",
+      "dateFinished": "Feb 8, 2017 7:35:02 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n\n\n\nQuels-sont les métiers qui engendrent le plus de séparation ?\n\nLes employés de bureaux sont les plus concernés suivis.\nLes moins concernés sont les employés de maison et les pêcheurs à la ligne !",
-      "dateUpdated": "Feb 8, 2017 7:39:39 PM",
+      "dateUpdated": "Feb 8, 2017 7:39:39 AM",
       "config": {
         "colWidth": 3.0,
         "graph": {
@@ -549,9 +1086,9 @@
         "type": "HTML",
         "msg": "\u003cp\u003eQuels-sont les métiers qui engendrent le plus de séparation ?\u003c/p\u003e\n\u003cp\u003eLes employés de bureaux sont les plus concernés suivis.\n\u003cbr  /\u003eLes moins concernés sont les employés de maison et les pêcheurs à la ligne !\u003c/p\u003e\n"
       },
-      "dateCreated": "Feb 8, 2017 7:36:53 PM",
-      "dateStarted": "Feb 8, 2017 7:39:37 PM",
-      "dateFinished": "Feb 8, 2017 7:39:37 PM",
+      "dateCreated": "Feb 8, 2017 7:36:53 AM",
+      "dateStarted": "Feb 8, 2017 7:39:37 AM",
+      "dateFinished": "Feb 8, 2017 7:39:37 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -629,7 +1166,7 @@
     },
     {
       "text": "%md\n\nIn this dataset, we have ordinal variables like education (Preschool - Doctorate), and also nominal variables like relationship (Wife, Husband, Own-child, etc). For simplicity\u0027s sake, we will use One-Hot Encoding to convert all categorical variables into binary vectors. It might be possible here to improve prediction accuracy by converting each categorical column with an appropriate method.\n\nHere, we will use a combination of [StringIndexer](http://spark.apache.org/docs/latest/ml-features.html#stringindexer) and [OneHotEncoder](http://spark.apache.org/docs/latest/ml-features.html#onehotencoder) on each string column to convert the categorical variables. The `OneHotEncoder` will return a SparseVector (which means, for `(8,[4],[1.0])` that the vector has size 8, one only the 4th column contains a value which is 1.0).\n\nSince we will have many stages of feature transformations, we use an [ML Pipeline](http://spark.apache.org/docs/latest/ml-pipeline.html) to tie the stages together.  This simplifies our code. You should especially try to use [the Pipeline example](http://spark.apache.org/docs/latest/ml-pipeline.html#example-pipeline).\n\n```scala\n// Configure an ML pipeline, which consists of two stages on one column: a StringIndexer and a OneHotEncoder.\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer}\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\n// stages for column workclass\nval stringIndexer \u003d new StringIndexer()\n  .setInputCol(\"workclass\")\n  .setOutputCol(\"workclassIndex\")\nval oneHotEncoder \u003d new OneHotEncoder()\n  .setInputCol(stringIndexer.getOutputCol)\n  .setOutputCol(stringIndexer.getInputCol + \"ClassVec\")\n  \n// stage for label\nval label_stringIdx \u003d new StringIndexer()\n    .setInputCol(\"income\")\n    .setOutputCol(\"label\")\n  \nval stages \u003d  Seq(stringIndexer, oneHotEncoder) ++ Seq(label_stringIdx) // concatenate 2 sequences of stages\nval pipeline \u003d new Pipeline()\n  .setStages(stages.toArray)\n  \nval pipelineModel \u003d pipeline.fit(dataset)\npipelineModel.transform(dataset).show()\n```\n\nIt is also a good time to transform the income to a label of 0 and 1 for binary classification using the `StringIndexer`.\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\n1. For each categorical column, build a stage of StringIndexer and OneHotEncoder\n2. Add all those stages in a single pipeline\n3. Also add a StringIndexer of the `income` column and name the output column `label`\n3. Check the result by passing your dataset inside the pipeline. Comment \u0026 explain.\n\n_Hint: actually map your sequence of categorical columns to a sequence of stages through FP._",
-      "dateUpdated": "Feb 8, 2017 7:42:01 PM",
+      "dateUpdated": "Feb 8, 2017 7:42:01 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -664,7 +1201,7 @@
     },
     {
       "text": "// Configure an ML pipeline, which consists of two stages on one column: a StringIndexer and a OneHotEncoder.\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer, VectorAssembler}\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\ndef makeStageFunction(w: String) \u003d {\n    val stringIndexer \u003d new StringIndexer()\n      .setInputCol(w)\n      .setOutputCol(w+\"Index\")\n    val oneHotEncoder \u003d new OneHotEncoder()\n      .setInputCol(stringIndexer.getOutputCol)\n      .setOutputCol(stringIndexer.getInputCol + \"ClassVec\")\n    Seq(stringIndexer, oneHotEncoder)\n}\n\nval categoricalCols \u003d Seq(\"workclass\", \"education\", \"marital_status\", \"occupation\", \"relationship\", \"race\", \"sex\", \"native_country\")\nval stages \u003d categoricalCols.flatMap(makeStageFunction)\n\n// stage for label\nval label_stringIdx \u003d new StringIndexer().setInputCol(\"income\").setOutputCol(\"label\")\n\nval assembler \u003d new VectorAssembler().setInputCols(categoricalCols.map(w \u003d\u003e w + \"ClassVec\").toArray).setOutputCol(\"features\")\nval finalStages \u003d stages ++ Seq(label_stringIdx) ++ Seq(assembler)\n\nval pipeline \u003d new Pipeline().setStages(finalStages.toArray)\nval pipelineModel \u003d pipeline.fit(dataset)\nval datasetTransformed \u003d pipelineModel.transform(dataset)\n\ndatasetTransformed.show()",
-      "dateUpdated": "Feb 8, 2017 8:50:59 PM",
+      "dateUpdated": "Feb 8, 2017 8:50:59 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -690,16 +1227,16 @@
         "type": "TEXT",
         "msg": "\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer, VectorAssembler}\n\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\nmakeStageFunction: (w: String)Seq[org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable{def copy(extra: org.apache.spark.ml.param.ParamMap): org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable{def copy(extra: org.apache.spark.ml.param.ParamMap): org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable}}]\n\ncategoricalCols: Seq[String] \u003d List(workclass, education, marital_status, occupation, relationship, race, sex, native_country)\nstages: Seq[org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable{def copy(extra: org.apache.spark.ml.param.ParamMap): org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable{def copy(extra: org.apache.spark.ml.param.ParamMap): org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable}}] \u003d List(strIdx_53614cc03d02, oneHot_cb975ccd2b7c, strIdx_4a1d2fae4c6c, oneHot_6be14195e6d8, strIdx_6d0e958d41d8, one...\nlabel_stringIdx: org.apache.spark.ml.feature.StringIndexer \u003d strIdx_54925ded8670\n\nassembler: org.apache.spark.ml.feature.VectorAssembler \u003d vecAssembler_65b99188cfa8\nfinalStages: Seq[org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.util.DefaultParamsWritable{def copy(extra: org.apache.spark.ml.param.ParamMap): org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.util.DefaultParamsWritable{def copy(extra: org.apache.spark.ml.param.ParamMap): org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.util.DefaultParamsWritable}}] \u003d List(strIdx_53614cc03d02, oneHot_cb975ccd2b7c, strIdx_4a1d2fae4c6c, oneHot_6be14195e6d8, strIdx_6d0e958d41d8, oneHot_e53ded778711, strIdx_e397d52e987d, oneHot_8ea570034575, strIdx_82f30bd66691, oneHot_cc6a00133ff3, strIdx_a0ff07d82aeb, oneHot_2f037f9b38ae, s...\npipeline: org.apache.spark.ml.Pipeline \u003d pipeline_7713ee059af8\n\npipelineModel: org.apache.spark.ml.PipelineModel \u003d pipeline_7713ee059af8\n\ndatasetTransformed: org.apache.spark.sql.DataFrame \u003d [age: double, workclass: string ... 31 more fields]\n+----+-----------------+--------+-------------+-------------+--------------------+------------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\n| age|        workclass|  fnlwgt|    education|education_num|      marital_status|        occupation|  relationship|               race|    sex|capital_gain|capital_loss|hours_per_week|native_country|income|workclassIndex|workclassClassVec|educationIndex|educationClassVec|marital_statusIndex|marital_statusClassVec|occupationIndex|occupationClassVec|relationshipIndex|relationshipClassVec|raceIndex| raceClassVec|sexIndex|  sexClassVec|native_countryIndex|native_countryClassVec|label|            features|\n+----+-----------------+--------+-------------+-------------+--------------------+------------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\n|39.0|        State-gov| 77516.0|    Bachelors|         13.0|       Never-married|      Adm-clerical| Not-in-family|              White|   Male|      2174.0|         0.0|          40.0| United-States| \u003c\u003d50K|           4.0|    (8,[4],[1.0])|           2.0|   (15,[2],[1.0])|                1.0|         (6,[1],[1.0])|            3.0|    (14,[3],[1.0])|              1.0|       (5,[1],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[4,10,24,32,4...|\n|50.0| Self-emp-not-inc| 83311.0|    Bachelors|         13.0|  Married-civ-spouse|   Exec-managerial|       Husband|              White|   Male|         0.0|         0.0|          13.0| United-States| \u003c\u003d50K|           1.0|    (8,[1],[1.0])|           2.0|   (15,[2],[1.0])|                0.0|         (6,[0],[1.0])|            2.0|    (14,[2],[1.0])|              0.0|       (5,[0],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[1,10,23,31,4...|\n|38.0|          Private|215646.0|      HS-grad|          9.0|            Divorced| Handlers-cleaners| Not-in-family|              White|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           0.0|   (15,[0],[1.0])|                2.0|         (6,[2],[1.0])|            9.0|    (14,[9],[1.0])|              1.0|       (5,[1],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[0,8,25,38,44...|\n|53.0|          Private|234721.0|         11th|          7.0|  Married-civ-spouse| Handlers-cleaners|       Husband|              Black|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           5.0|   (15,[5],[1.0])|                0.0|         (6,[0],[1.0])|            9.0|    (14,[9],[1.0])|              0.0|       (5,[0],[1.0])|      1.0|(4,[1],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[0,13,23,38,4...|\n|28.0|          Private|338409.0|    Bachelors|         13.0|  Married-civ-spouse|    Prof-specialty|          Wife|              Black| Female|         0.0|         0.0|          40.0|          Cuba| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           2.0|   (15,[2],[1.0])|                0.0|         (6,[0],[1.0])|            0.0|    (14,[0],[1.0])|              4.0|       (5,[4],[1.0])|      1.0|(4,[1],[1.0])|     1.0|    (1,[],[])|                9.0|        (41,[9],[1.0])|  0.0|(94,[0,10,23,29,4...|\n|37.0|          Private|284582.0|      Masters|         14.0|  Married-civ-spouse|   Exec-managerial|          Wife|              White| Female|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           3.0|   (15,[3],[1.0])|                0.0|         (6,[0],[1.0])|            2.0|    (14,[2],[1.0])|              4.0|       (5,[4],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[0,11,23,31,4...|\n|49.0|          Private|160187.0|          9th|          5.0| Married-spouse-a...|     Other-service| Not-in-family|              Black| Female|         0.0|         0.0|          16.0|       Jamaica| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|          10.0|  (15,[10],[1.0])|                5.0|         (6,[5],[1.0])|            5.0|    (14,[5],[1.0])|              1.0|       (5,[1],[1.0])|      1.0|(4,[1],[1.0])|     1.0|    (1,[],[])|               11.0|       (41,[11],[1.0])|  0.0|(94,[0,18,28,34,4...|\n|52.0| Self-emp-not-inc|209642.0|      HS-grad|          9.0|  Married-civ-spouse|   Exec-managerial|       Husband|              White|   Male|         0.0|         0.0|          45.0| United-States|  \u003e50K|           1.0|    (8,[1],[1.0])|           0.0|   (15,[0],[1.0])|                0.0|         (6,[0],[1.0])|            2.0|    (14,[2],[1.0])|              0.0|       (5,[0],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  1.0|(94,[1,8,23,31,43...|\n|31.0|          Private| 45781.0|      Masters|         14.0|       Never-married|    Prof-specialty| Not-in-family|              White| Female|     14084.0|         0.0|          50.0| United-States|  \u003e50K|           0.0|    (8,[0],[1.0])|           3.0|   (15,[3],[1.0])|                1.0|         (6,[1],[1.0])|            0.0|    (14,[0],[1.0])|              1.0|       (5,[1],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  1.0|(94,[0,11,24,29,4...|\n|42.0|          Private|159449.0|    Bachelors|         13.0|  Married-civ-spouse|   Exec-managerial|       Husband|              White|   Male|      5178.0|         0.0|          40.0| United-States|  \u003e50K|           0.0|    (8,[0],[1.0])|           2.0|   (15,[2],[1.0])|                0.0|         (6,[0],[1.0])|            2.0|    (14,[2],[1.0])|              0.0|       (5,[0],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  1.0|(94,[0,10,23,31,4...|\n|37.0|          Private|280464.0| Some-college|         10.0|  Married-civ-spouse|   Exec-managerial|       Husband|              Black|   Male|         0.0|         0.0|          80.0| United-States|  \u003e50K|           0.0|    (8,[0],[1.0])|           1.0|   (15,[1],[1.0])|                0.0|         (6,[0],[1.0])|            2.0|    (14,[2],[1.0])|              0.0|       (5,[0],[1.0])|      1.0|(4,[1],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  1.0|(94,[0,9,23,31,43...|\n|30.0|        State-gov|141297.0|    Bachelors|         13.0|  Married-civ-spouse|    Prof-specialty|       Husband| Asian-Pac-Islander|   Male|         0.0|         0.0|          40.0|         India|  \u003e50K|           4.0|    (8,[4],[1.0])|           2.0|   (15,[2],[1.0])|                0.0|         (6,[0],[1.0])|            0.0|    (14,[0],[1.0])|              0.0|       (5,[0],[1.0])|      2.0|(4,[2],[1.0])|     0.0|(1,[0],[1.0])|                8.0|        (41,[8],[1.0])|  1.0|(94,[4,10,23,29,4...|\n|23.0|          Private|122272.0|    Bachelors|         13.0|       Never-married|      Adm-clerical|     Own-child|              White| Female|         0.0|         0.0|          30.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           2.0|   (15,[2],[1.0])|                1.0|         (6,[1],[1.0])|            3.0|    (14,[3],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[0,10,24,32,4...|\n|32.0|          Private|205019.0|   Assoc-acdm|         12.0|       Never-married|             Sales| Not-in-family|              Black|   Male|         0.0|         0.0|          50.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           6.0|   (15,[6],[1.0])|                1.0|         (6,[1],[1.0])|            4.0|    (14,[4],[1.0])|              1.0|       (5,[1],[1.0])|      1.0|(4,[1],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[0,14,24,33,4...|\n|40.0|          Private|121772.0|    Assoc-voc|         11.0|  Married-civ-spouse|      Craft-repair|       Husband| Asian-Pac-Islander|   Male|         0.0|         0.0|          40.0|             ?|  \u003e50K|           0.0|    (8,[0],[1.0])|           4.0|   (15,[4],[1.0])|                0.0|         (6,[0],[1.0])|            1.0|    (14,[1],[1.0])|              0.0|       (5,[0],[1.0])|      2.0|(4,[2],[1.0])|     0.0|(1,[0],[1.0])|                2.0|        (41,[2],[1.0])|  1.0|(94,[0,12,23,30,4...|\n|34.0|          Private|245487.0|      7th-8th|          4.0|  Married-civ-spouse|  Transport-moving|       Husband| Amer-Indian-Eskimo|   Male|         0.0|         0.0|          45.0|        Mexico| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           8.0|   (15,[8],[1.0])|                0.0|         (6,[0],[1.0])|            8.0|    (14,[8],[1.0])|              0.0|       (5,[0],[1.0])|      3.0|(4,[3],[1.0])|     0.0|(1,[0],[1.0])|                1.0|        (41,[1],[1.0])|  0.0|(94,[0,16,23,37,4...|\n|25.0| Self-emp-not-inc|176756.0|      HS-grad|          9.0|       Never-married|   Farming-fishing|     Own-child|              White|   Male|         0.0|         0.0|          35.0| United-States| \u003c\u003d50K|           1.0|    (8,[1],[1.0])|           0.0|   (15,[0],[1.0])|                1.0|         (6,[1],[1.0])|           10.0|   (14,[10],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[1,8,24,39,45...|\n|32.0|          Private|186824.0|      HS-grad|          9.0|       Never-married| Machine-op-inspct|     Unmarried|              White|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           0.0|   (15,[0],[1.0])|                1.0|         (6,[1],[1.0])|            6.0|    (14,[6],[1.0])|              3.0|       (5,[3],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[0,8,24,35,46...|\n|38.0|          Private| 28887.0|         11th|          7.0|  Married-civ-spouse|             Sales|       Husband|              White|   Male|         0.0|         0.0|          50.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           5.0|   (15,[5],[1.0])|                0.0|         (6,[0],[1.0])|            4.0|    (14,[4],[1.0])|              0.0|       (5,[0],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[0,13,23,33,4...|\n|43.0| Self-emp-not-inc|292175.0|      Masters|         14.0|            Divorced|   Exec-managerial|     Unmarried|              White| Female|         0.0|         0.0|          45.0| United-States|  \u003e50K|           1.0|    (8,[1],[1.0])|           3.0|   (15,[3],[1.0])|                2.0|         (6,[2],[1.0])|            2.0|    (14,[2],[1.0])|              3.0|       (5,[3],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  1.0|(94,[1,11,25,31,4...|\n+----+-----------------+--------+-------------+-------------+--------------------+------------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\nonly showing top 20 rows\n\n"
       },
-      "dateCreated": "Feb 8, 2017 7:46:54 PM",
-      "dateStarted": "Feb 8, 2017 8:50:59 PM",
-      "dateFinished": "Feb 8, 2017 8:51:03 PM",
+      "dateCreated": "Feb 8, 2017 7:46:54 AM",
+      "dateStarted": "Feb 8, 2017 8:50:59 AM",
+      "dateFinished": "Feb 8, 2017 8:51:03 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Detail columns to deal with",
       "text": "val categoricalCols \u003d Seq(\"workclass\", \"education\", \"marital_status\", \"occupation\", \"relationship\", \"race\", \"sex\", \"native_country\")\nval numericCols \u003d Seq(\"age\", \"fnlwgt\", \"education_num\", \"capital_gain\", \"capital_loss\", \"hours_per_week\")",
-      "dateUpdated": "Feb 8, 2017 8:08:21 PM",
+      "dateUpdated": "Feb 8, 2017 8:08:21 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -805,7 +1342,7 @@
     },
     {
       "text": "val splits \u003d datasetTransformed.randomSplit(Array(0.7, 0.3))\nval training \u003d splits(0).cache()\nval test \u003d splits(1)",
-      "dateUpdated": "Feb 8, 2017 8:51:09 PM",
+      "dateUpdated": "Feb 8, 2017 8:51:09 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -831,15 +1368,15 @@
         "type": "TEXT",
         "msg": "\nsplits: Array[org.apache.spark.sql.Dataset[org.apache.spark.sql.Row]] \u003d Array([age: double, workclass: string ... 31 more fields], [age: double, workclass: string ... 31 more fields])\n\ntraining: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [age: double, workclass: string ... 31 more fields]\n\ntest: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [age: double, workclass: string ... 31 more fields]\n"
       },
-      "dateCreated": "Feb 8, 2017 8:40:35 PM",
-      "dateStarted": "Feb 8, 2017 8:51:09 PM",
-      "dateFinished": "Feb 8, 2017 8:51:10 PM",
+      "dateCreated": "Feb 8, 2017 8:40:35 AM",
+      "dateStarted": "Feb 8, 2017 8:51:09 AM",
+      "dateFinished": "Feb 8, 2017 8:51:10 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md \n\n## V. Creation of models\n\nWe are now ready to try out some of the Binary Classification Algorithms available in the new ML Pipelines API.\n\nWe have the choice between:\n- [Binomial Logistic regression](http://spark.apache.org/docs/latest/ml-classification-regression.html#binomial-logistic-regression)\n- [Decision trees](http://spark.apache.org/docs/latest/ml-classification-regression.html#decision-trees)\n- [Random forest](http://spark.apache.org/docs/latest/ml-classification-regression.html#random-forests)\n\nThese are the general steps we will take to build our models:\n- Create the initial model on the training set\n- Use your model to make predictions on your testing set\n- Evaluate the quality of your predictions\n\nWe will be using the `BinaryClassificationEvaluator` to evaluate our models. The default metric used here is [areaUnderROC](https://en.wikipedia.org/wiki/Receiver_operating_characteristic#Area_under_the_curve).\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\n1. Fit your data on one of the three Machine Learning models on the training dataset. This should create an Estimator.\n2. Run the estimator on the testing dataset to create a prediction column\n3. Use `BinaryClassificationEvaluator.evaluate()` to evaluate your predictions.",
-      "dateUpdated": "Feb 8, 2017 8:35:27 PM",
+      "dateUpdated": "Feb 8, 2017 8:35:27 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -874,7 +1411,7 @@
     },
     {
       "text": "import org.apache.spark.ml.classification.LogisticRegression\n\nval lr \u003d new LogisticRegression()\n  .setMaxIter(10)\n  .setRegParam(0.3)\n  .setElasticNetParam(0.8)\n\n// Fit the model\nval lrModel \u003d lr.fit(test)\n\nlrModel.transform(test).show()\n\nlrModel.transform(test).select(\"prediction\",\"label\")\n\n// Print the coefficients and intercept for logistic regression\nprintln(s\"Coefficients: ${lrModel.coefficients} Intercept: ${lrModel.intercept}\")",
-      "dateUpdated": "Feb 8, 2017 8:53:31 PM",
+      "dateUpdated": "Feb 8, 2017 8:53:31 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -900,15 +1437,15 @@
         "type": "TEXT",
         "msg": "\nimport org.apache.spark.ml.classification.LogisticRegression\n\nlr: org.apache.spark.ml.classification.LogisticRegression \u003d logreg_b0d9c96bb39c\n\nlrModel: org.apache.spark.ml.classification.LogisticRegressionModel \u003d logreg_b0d9c96bb39c\n+----+---------+--------+---------+-------------+--------------+----------+---------------+------+-------+------------+------------+--------------+----------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+--------------------+--------------------+----------+\n| age|workclass|  fnlwgt|education|education_num|marital_status|occupation|   relationship|  race|    sex|capital_gain|capital_loss|hours_per_week|  native_country|income|workclassIndex|workclassClassVec|educationIndex|educationClassVec|marital_statusIndex|marital_statusClassVec|occupationIndex|occupationClassVec|relationshipIndex|relationshipClassVec|raceIndex| raceClassVec|sexIndex|  sexClassVec|native_countryIndex|native_countryClassVec|label|            features|       rawPrediction|         probability|prediction|\n+----+---------+--------+---------+-------------+--------------+----------+---------------+------+-------+------------+------------+--------------+----------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+--------------------+--------------------+----------+\n|17.0|        ?| 34088.0|     12th|          8.0| Never-married|         ?|      Own-child| White| Female|         0.0|         0.0|          25.0|   United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|          11.0|  (15,[11],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,19,24,36,4...|[1.11197673141055...|[0.75249745158002...|       0.0|\n|17.0|        ?| 48751.0|     11th|          7.0| Never-married|         ?|      Own-child| Black| Female|         0.0|         0.0|          40.0|   United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           5.0|   (15,[5],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      1.0|(4,[1],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,13,24,36,4...|[1.11197673141055...|[0.75249745158002...|       0.0|\n|17.0|        ?| 67808.0|     10th|          6.0| Never-married|         ?|      Own-child| White|   Male|         0.0|         0.0|          40.0|   United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           7.0|   (15,[7],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,15,24,36,4...|[1.11197673141055...|[0.75249745158002...|       0.0|\n|17.0|        ?| 80077.0|     11th|          7.0| Never-married|         ?|      Own-child| White| Female|         0.0|         0.0|          20.0|   United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           5.0|   (15,[5],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,13,24,36,4...|[1.11197673141055...|[0.75249745158002...|       0.0|\n|17.0|        ?| 89870.0|     10th|          6.0| Never-married|         ?|      Own-child| White|   Male|         0.0|         0.0|          40.0|   United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           7.0|   (15,[7],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,15,24,36,4...|[1.11197673141055...|[0.75249745158002...|       0.0|\n|17.0|        ?| 94366.0|     10th|          6.0| Never-married|         ?| Other-relative| White|   Male|         0.0|         0.0|           6.0|   United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           7.0|   (15,[7],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              5.0|           (5,[],[])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,15,24,36,4...|[1.11197673141055...|[0.75249745158002...|       0.0|\n|17.0|        ?|127003.0|      9th|          5.0| Never-married|         ?|      Own-child| Black|   Male|         0.0|         0.0|          40.0|   United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|          10.0|  (15,[10],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      1.0|(4,[1],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,18,24,36,4...|[1.11197673141055...|[0.75249745158002...|       0.0|\n|17.0|        ?|139183.0|     10th|          6.0| Never-married|         ?|      Own-child| White| Female|         0.0|         0.0|          15.0|   United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           7.0|   (15,[7],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,15,24,36,4...|[1.11197673141055...|[0.75249745158002...|       0.0|\n|17.0|        ?|145886.0|     11th|          7.0| Never-married|         ?|      Own-child| White| Female|         0.0|         0.0|          30.0|   United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           5.0|   (15,[5],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,13,24,36,4...|[1.11197673141055...|[0.75249745158002...|       0.0|\n|17.0|        ?|148769.0|  HS-grad|          9.0| Never-married|         ?|      Own-child| Black|   Male|         0.0|         0.0|          40.0|   United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           0.0|   (15,[0],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      1.0|(4,[1],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,8,24,36,45...|[1.11197673141055...|[0.75249745158002...|       0.0|\n|17.0|        ?|151141.0|     10th|          6.0| Never-married|         ?|      Own-child| White|   Male|         0.0|         0.0|          30.0|   United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           7.0|   (15,[7],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,15,24,36,4...|[1.11197673141055...|[0.75249745158002...|       0.0|\n|17.0|        ?|166759.0|     12th|          8.0| Never-married|         ?|      Own-child| White| Female|         0.0|         0.0|          40.0|   United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|          11.0|  (15,[11],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,19,24,36,4...|[1.11197673141055...|[0.75249745158002...|       0.0|\n|17.0|        ?|170320.0|     11th|          7.0| Never-married|         ?|      Own-child| White| Female|         0.0|         0.0|           8.0|   United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           5.0|   (15,[5],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,13,24,36,4...|[1.11197673141055...|[0.75249745158002...|       0.0|\n|17.0|        ?|171461.0|     10th|          6.0| Never-married|         ?|      Own-child| White| Female|         0.0|         0.0|          20.0|   United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           7.0|   (15,[7],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,15,24,36,4...|[1.11197673141055...|[0.75249745158002...|       0.0|\n|17.0|        ?|179715.0|     10th|          6.0| Never-married|         ?|      Own-child| White|   Male|         0.0|         0.0|          40.0|   United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           7.0|   (15,[7],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,15,24,36,4...|[1.11197673141055...|[0.75249745158002...|       0.0|\n|17.0|        ?|212125.0|     10th|          6.0| Never-married|         ?|      Own-child| White| Female|         0.0|         0.0|          20.0|   United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           7.0|   (15,[7],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,15,24,36,4...|[1.11197673141055...|[0.75249745158002...|       0.0|\n|17.0|        ?|258872.0|     11th|          7.0| Never-married|         ?|      Own-child| White| Female|         0.0|         0.0|           5.0|   United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           5.0|   (15,[5],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,13,24,36,4...|[1.11197673141055...|[0.75249745158002...|       0.0|\n|17.0|        ?|406920.0|     10th|          6.0| Never-married|         ?|      Own-child| White|   Male|         0.0|         0.0|          40.0|   United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           7.0|   (15,[7],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,15,24,36,4...|[1.11197673141055...|[0.75249745158002...|       0.0|\n|17.0|        ?|659273.0|     11th|          7.0| Never-married|         ?|      Own-child| Black| Female|         0.0|         0.0|          40.0| Trinadad\u0026Tobago| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           5.0|   (15,[5],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      1.0|(4,[1],[1.0])|     1.0|    (1,[],[])|               32.0|       (41,[32],[1.0])|  0.0|(94,[3,13,24,36,4...|[1.11197673141055...|[0.75249745158002...|       0.0|\n|17.0|        ?|806316.0|     11th|          7.0| Never-married|         ?|      Own-child| White| Female|         0.0|         0.0|          20.0|   United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           5.0|   (15,[5],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,13,24,36,4...|[1.11197673141055...|[0.75249745158002...|       0.0|\n+----+---------+--------+---------+-------------+--------------+----------+---------------+------+-------+------------+------------+--------------+----------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+--------------------+--------------------+----------+\nonly showing top 20 rows\n\n\nres76: org.apache.spark.sql.DataFrame \u003d [prediction: double, label: double]\nCoefficients: (94,[],[]) Intercept: -1.111976731410555\n"
       },
-      "dateCreated": "Feb 8, 2017 8:31:04 PM",
-      "dateStarted": "Feb 8, 2017 8:53:31 PM",
-      "dateFinished": "Feb 8, 2017 8:53:36 PM",
+      "dateCreated": "Feb 8, 2017 8:31:04 AM",
+      "dateStarted": "Feb 8, 2017 8:53:31 AM",
+      "dateFinished": "Feb 8, 2017 8:53:36 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md",
-      "dateUpdated": "Feb 8, 2017 8:53:10 PM",
+      "dateUpdated": "Feb 8, 2017 8:53:10 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -929,7 +1466,7 @@
       },
       "jobName": "paragraph_1486587158918_-1179673765",
       "id": "20170208-205238_904602592",
-      "dateCreated": "Feb 8, 2017 8:52:38 PM",
+      "dateCreated": "Feb 8, 2017 8:52:38 AM",
       "status": "READY",
       "progressUpdateIntervalMs": 500
     },
@@ -1041,24 +1578,24 @@
   "name": "BinaryClassification",
   "id": "2C76YWXDZ",
   "angularObjects": {
-    "2C8FS5K9D:shared_process": [],
-    "2C9RNKSKA:shared_process": [],
-    "2C8N5TFK3:shared_process": [],
-    "2C84EEWW3:shared_process": [],
-    "2CA4YB4NF:shared_process": [],
-    "2C9DDB2ZA:shared_process": [],
-    "2C9FERBSX:shared_process": [],
-    "2C7N8YUU9:shared_process": [],
-    "2C8VKD985:shared_process": [],
-    "2CAREQWFD:shared_process": [],
-    "2C9D4JMZX:shared_process": [],
-    "2C9GBZ6C5:shared_process": [],
-    "2C9JSZYJ2:shared_process": [],
-    "2CAJNJQQV:shared_process": [],
-    "2CBED475Z:shared_process": [],
-    "2C93ZDT5K:shared_process": [],
-    "2CANZ1E2E:shared_process": [],
-    "2CA11CR8B:shared_process": []
+    "2C8T9K2FM:shared_process": [],
+    "2CB1HJAQK:shared_process": [],
+    "2C9K9F9NJ:shared_process": [],
+    "2CASG16YN:shared_process": [],
+    "2C9T6DRAG:shared_process": [],
+    "2CB1SP3Y9:shared_process": [],
+    "2CBAHC4GE:shared_process": [],
+    "2CAUXD6BZ:shared_process": [],
+    "2CAVTE25G:shared_process": [],
+    "2C858F12C:shared_process": [],
+    "2CAH6NY5K:shared_process": [],
+    "2C84BJ6ER:shared_process": [],
+    "2CB943CDN:shared_process": [],
+    "2C8WNMZYC:shared_process": [],
+    "2C8SHV81N:shared_process": [],
+    "2C9ERB1WU:shared_process": [],
+    "2C9A9J54E:shared_process": [],
+    "2C85JTJ1Z:shared_process": []
   },
   "config": {
     "looknfeel": "default"
