@@ -107,10 +107,10 @@
     },
     {
       "title": "Load data (run the cell)",
-      "text": "import org.apache.spark.sql.types.{StringType, DoubleType, StructType, StructField}\n\nval schema \u003d StructType(Seq(\n    StructField(\"age\", DoubleType),\n    StructField(\"workclass\", StringType),\n    StructField(\"fnlwgt\", DoubleType),\n    StructField(\"education\", StringType),\n    StructField(\"education_num\", DoubleType),\n    StructField(\"marital_status\", StringType),\n    StructField(\"occupation\", StringType),\n    StructField(\"relationship\", StringType),\n    StructField(\"race\", StringType),\n    StructField(\"sex\", StringType),\n    StructField(\"capital_gain\", DoubleType),\n    StructField(\"capital_loss\", DoubleType),\n    StructField(\"hours_per_week\", DoubleType),\n    StructField(\"native_country\", StringType),\n    StructField(\"income\", StringType)\n    ))\n\ncase class Adult(\n    age: Double, \n    workclass: String, \n    fnlwgt: Double, \n    education: String, \n    education_num: Double, \n    marital_status: String, \n    occupation: String, \n    relationship: String, \n    race: String, \n    sex: String, \n    capital_gain: Double, \n    capital_loss: Double, \n    hours_per_week: Double, \n    native_country: String, \n    income: String\n    )\n    \nval dataset \u003d spark.read.schema(schema).csv(\"/opt/dataset/adult.data.csv\").as[Adult]\ndataset.registerTempTable(\"dataset\")  // register it so we can use it inside %sql interpreter\n\n// Le fichier CSV adult.data.csv contient les 48842 personnes à étudier.\n// Ce fichier est déjà stocké dans la VM, à l\u0027emplacement /opt/dataset/adult.data.csv\n// Dans notre dépot GIT, le fichier CSV est présent dans le répertoire data/ il a été ajouté lors du merge de master sur ma branch (et déposé sur la VM lors du vagrant up)",
-      "dateUpdated": "Feb 13, 2017 9:52:22 PM",
+      "text": "import org.apache.spark.sql.types.{StringType, DoubleType, StructType, StructField}\n\nval schema \u003d StructType(Seq(\n    StructField(\"age\", DoubleType),\n    StructField(\"workclass\", StringType),\n    StructField(\"fnlwgt\", DoubleType),\n    StructField(\"education\", StringType),\n    StructField(\"education_num\", DoubleType),\n    StructField(\"marital_status\", StringType),\n    StructField(\"occupation\", StringType),\n    StructField(\"relationship\", StringType),\n    StructField(\"race\", StringType),\n    StructField(\"sex\", StringType),\n    StructField(\"capital_gain\", DoubleType),\n    StructField(\"capital_loss\", DoubleType),\n    StructField(\"hours_per_week\", DoubleType),\n    StructField(\"native_country\", StringType),\n    StructField(\"income\", StringType)\n    ))\n\ncase class Adult(\n    age: Double, \n    workclass: String, \n    fnlwgt: Double, \n    education: String, \n    education_num: Double, \n    marital_status: String, \n    occupation: String, \n    relationship: String, \n    race: String, \n    sex: String, \n    capital_gain: Double, \n    capital_loss: Double, \n    hours_per_week: Double, \n    native_country: String, \n    income: String\n    )\n    \nval dataset \u003d spark.read.schema(schema).csv(\"/opt/dataset/adult.data.csv\").as[Adult]\ndataset.registerTempTable(\"dataset\") \n",
+      "dateUpdated": "Feb 16, 2017 5:17:37 PM",
       "config": {
-        "colWidth": 12.0,
+        "colWidth": 8.0,
         "graph": {
           "mode": "table",
           "height": 300.0,
@@ -140,6 +140,41 @@
       "dateCreated": "Feb 3, 2017 8:43:33 AM",
       "dateStarted": "Feb 13, 2017 9:01:12 PM",
       "dateFinished": "Feb 13, 2017 9:01:17 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nExplications :\nLe fichier CSV adult.data.csv contient les 48842 personnes à étudier.\nCe fichier est déjà stocké dans la VM, à l\u0027emplacement /opt/dataset/adult.data.csv\nDans notre dépot GIT, le fichier CSV est présent dans le répertoire data/ il a été ajouté lors du merge de master sur ma branch (et déposé sur la VM lors du vagrant up)\n\nLa méthode registerTempTable permet de déclarer les données comme s\u0027il s\u0027agissait d\u0027une table \"dataset\". Cette table temporaire pourra être appelée dans des blocs %sql\n\nNous réutiliserons ce mécanisme plus tard lorsque nous séparerons les personnes gagnant moins et plus de 50K dans deux datasets différents.",
+      "dateUpdated": "Feb 16, 2017 4:56:27 PM",
+      "config": {
+        "colWidth": 4.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487263861652_-1383455283",
+      "id": "20170216-165101_1076965843",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eExplications :\n\u003cbr  /\u003eLe fichier CSV adult.data.csv contient les 48842 personnes à étudier.\n\u003cbr  /\u003eCe fichier est déjà stocké dans la VM, à l\u0027emplacement /opt/dataset/adult.data.csv\n\u003cbr  /\u003eDans notre dépot GIT, le fichier CSV est présent dans le répertoire data/ il a été ajouté lors du merge de master sur ma branch (et déposé sur la VM lors du vagrant up)\u003c/p\u003e\n\u003cp\u003eLa méthode registerTempTable permet de déclarer les données comme s\u0027il s\u0027agissait d\u0027une table \u0026ldquo;dataset\u0026rdquo;. Cette table temporaire pourra être appelée dans des blocs %sql\u003c/p\u003e\n\u003cp\u003eNous réutiliserons ce mécanisme plus tard lorsque nous séparerons les personnes gagnant moins et plus de 50K dans deux datasets différents.\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 16, 2017 4:51:01 PM",
+      "dateStarted": "Feb 16, 2017 4:56:17 PM",
+      "dateFinished": "Feb 16, 2017 4:56:18 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -237,8 +272,8 @@
     },
     {
       "title": "Check settings of graph. See how we average age by income.",
-      "text": "%sql SELECT income, avg(age) FROM dataset group by income\n-- La moyenne d\u0027age est de 36.78 ans pour les personnes qui gagnent \u003c\u003d 50K\n-- La moyenne d\u0027age est de 44.25 ans pour les personnes qui gagnent \u003e\u003d 50K",
-      "dateUpdated": "Feb 13, 2017 9:58:27 PM",
+      "text": "%sql SELECT income, avg(age) FROM dataset group by income",
+      "dateUpdated": "Feb 16, 2017 4:57:20 PM",
       "config": {
         "colWidth": 5.0,
         "graph": {
@@ -291,6 +326,41 @@
       "progressUpdateIntervalMs": 500
     },
     {
+      "text": "%md\nExplications :\n\nPour connaitre l\u0027age moyen par revenus il suffit de grouper les individus par revenus et faire une moyenne sur l\u0027age.\n\nLa moyenne d\u0027age est de 36.78 ans pour les personnes qui gagnent \u003c\u003d 50K\nLa moyenne d\u0027age est de 44.25 ans pour les personnes qui gagnent \u003e\u003d 50K",
+      "dateUpdated": "Feb 16, 2017 4:58:40 PM",
+      "config": {
+        "colWidth": 7.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487264200555_1724837491",
+      "id": "20170216-165640_1266315688",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eExplications :\u003c/p\u003e\n\u003cp\u003ePour connaitre l\u0027age moyen par revenus il suffit de grouper les individus par revenus et faire une moyenne sur l\u0027age.\u003c/p\u003e\n\u003cp\u003eLa moyenne d\u0027age est de 36.78 ans pour les personnes qui gagnent \u003c\u003d 50K\n\u003cbr  /\u003eLa moyenne d\u0027age est de 44.25 ans pour les personnes qui gagnent \u003e\u003d 50K\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 16, 2017 4:56:40 PM",
+      "dateStarted": "Feb 16, 2017 4:58:39 PM",
+      "dateFinished": "Feb 16, 2017 4:58:39 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
       "text": "%md \n\n## III. Descriptive analysis\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nProvide a summary statistics graph for some columns you deem interesting. Summary statistics is comprised (but not limited) of:\n* mean, standard deviation and skewness for numeric columns.\n* counts and percentage of each value for categorical columns.\n\nIf you can, try to separate the two income groups and compare.\n\nTwo ways of doing this:\n* You should be able to it using standard SQL queries on the DataFrame and `show()` the result\n* You can use the %sql interpreter like in the previous cell and then use the settings tab of your graph to display the desired results.",
       "dateUpdated": "Feb 13, 2017 9:48:22 PM",
       "config": {
@@ -327,10 +397,11 @@
       "progressUpdateIntervalMs": 500
     },
     {
+      "title": "Age moyen",
       "text": "%sql \n\nSELECT avg(age) AS Age_Moyen FROM dataset\n\n-- Quel est l\u0027âge moyen des individus de notre jeu de données ?",
-      "dateUpdated": "Feb 13, 2017 9:14:02 PM",
+      "dateUpdated": "Feb 16, 2017 5:18:11 PM",
       "config": {
-        "colWidth": 3.0,
+        "colWidth": 2.0,
         "graph": {
           "mode": "table",
           "height": 94.0,
@@ -342,7 +413,8 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/sql",
-        "editorHide": true
+        "editorHide": true,
+        "title": true
       },
       "settings": {
         "params": {},
@@ -363,9 +435,9 @@
     },
     {
       "text": "%sql\n\n SELECT std(hours_per_week) AS Ecart_Type_Heures_travaillees FROM dataset\n\n-- Quel est l\u0027écart type des heures travaillées par semaine ?",
-      "dateUpdated": "Feb 13, 2017 9:14:10 PM",
+      "dateUpdated": "Feb 16, 2017 5:02:08 PM",
       "config": {
-        "colWidth": 3.0,
+        "colWidth": 2.0,
         "graph": {
           "mode": "table",
           "height": 102.0,
@@ -410,12 +482,12 @@
     },
     {
       "text": "%sql \n\nselect workclass, CONCAT(ROUND(100. * count(*) / sum(count(*)) over (),2), \u0027%\u0027) as pourcentage\nfrom dataset\ngroup by workclass",
-      "dateUpdated": "Feb 13, 2017 9:28:04 PM",
+      "dateUpdated": "Feb 16, 2017 5:04:00 PM",
       "config": {
         "colWidth": 3.0,
         "graph": {
           "mode": "table",
-          "height": 87.0,
+          "height": 244.0,
           "optionOpen": false,
           "keys": [
             {
@@ -463,12 +535,12 @@
     },
     {
       "text": "%sql \n\nselect sex, CONCAT(ROUND(100. * count(*) / sum(count(*)) over (),2), \u0027%\u0027) as pourcentage\nfrom dataset\ngroup by sex",
-      "dateUpdated": "Feb 13, 2017 9:32:10 PM",
+      "dateUpdated": "Feb 16, 2017 5:04:14 PM",
       "config": {
         "colWidth": 3.0,
         "graph": {
           "mode": "table",
-          "height": 89.0,
+          "height": 231.0,
           "optionOpen": false,
           "keys": [
             {
@@ -520,8 +592,66 @@
       "progressUpdateIntervalMs": 500
     },
     {
+      "text": "%sql \n\nselect education, ROUND(100. * count(*) / sum(count(*)) over (),2) as pourcentage\nfrom dataset\ngroup by education\norder by pourcentage DESC",
+      "dateUpdated": "Feb 16, 2017 5:04:18 PM",
+      "config": {
+        "colWidth": 2.0,
+        "graph": {
+          "mode": "table",
+          "height": 207.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "education",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "pourcentage",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "education",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "pourcentage",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487264533439_-77820019",
+      "id": "20170216-170213_371421860",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "education\tpourcentage\n HS-grad\t32.25\n Some-college\t22.39\n Bachelors\t16.45\n Masters\t5.29\n Assoc-voc\t4.24\n 11th\t3.61\n Assoc-acdm\t3.28\n 10th\t2.87\n 7th-8th\t1.98\n Prof-school\t1.77\n 9th\t1.58\n 12th\t1.33\n Doctorate\t1.27\n 5th-6th\t1.02\n 1st-4th\t0.52\n Preschool\t0.16\n"
+      },
+      "dateCreated": "Feb 16, 2017 5:02:13 PM",
+      "dateStarted": "Feb 16, 2017 5:03:39 PM",
+      "dateFinished": "Feb 16, 2017 5:03:40 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
       "text": "%sql \n\n\nselect education, ROUND(100. * count(*) / sum(count(*)) over (),2) as pourcentage_DIVORCES_par_education \nfrom dataset\nwhere marital_status\u003d\u0027 Divorced\u0027\ngroup by education\norder by pourcentage_DIVORCES_par_education DESC",
-      "dateUpdated": "Feb 13, 2017 9:59:32 PM",
+      "dateUpdated": "Feb 16, 2017 5:15:10 PM",
       "config": {
         "colWidth": 9.0,
         "graph": {
@@ -573,8 +703,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\n.\nPourcentage des personnes divorcées par type d\u0027éducation",
-      "dateUpdated": "Feb 13, 2017 9:59:46 PM",
+      "text": "%md\nExplications :\n\nPourcentage des personnes divorcées en fonction du parcours scolaire suivi.\n\nNous remarquons que la plus grosse part de divorcés concernent les diplômés d\u0027école supérieure. Ce chiffre n\u0027est pas étonnant car il s\u0027agit de l\u0027éducation suivie par le plus grand nombre d\u0027individus (33.25%).",
+      "dateUpdated": "Feb 16, 2017 5:05:21 PM",
       "config": {
         "colWidth": 3.0,
         "graph": {
@@ -599,11 +729,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003cp\u003e.\n\u003cbr  /\u003ePourcentage des personnes divorcées par type d\u0027éducation\u003c/p\u003e\n"
+        "msg": "\u003cp\u003eExplications :\u003c/p\u003e\n\u003cp\u003ePourcentage des personnes divorcées en fonction du parcours scolaire suivi.\u003c/p\u003e\n\u003cp\u003eNous remarquons que la plus grosse part de divorcés concernent les diplômés d\u0027école supérieure. Ce chiffre n\u0027est pas étonnant car il s\u0027agit de l\u0027éducation suivie par le plus grand nombre d\u0027individus (33.25%).\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 13, 2017 9:58:44 PM",
-      "dateStarted": "Feb 13, 2017 9:59:07 PM",
-      "dateFinished": "Feb 13, 2017 9:59:07 PM",
+      "dateStarted": "Feb 16, 2017 5:05:19 PM",
+      "dateFinished": "Feb 16, 2017 5:05:19 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -643,8 +773,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
+      "title": "Play me !",
       "text": "val datasetGreatherThan50K \u003d dataset.filter($\"income\"\u003d\u003d\u003d\" \u003e50K\")\ndatasetGreatherThan50K.registerTempTable(\"datasetGreatherThan50K\")\ndatasetGreatherThan50K.show()",
-      "dateUpdated": "Feb 13, 2017 9:54:16 PM",
+      "dateUpdated": "Feb 16, 2017 5:17:55 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -658,7 +789,8 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "editorHide": true
+        "editorHide": true,
+        "title": true
       },
       "settings": {
         "params": {},
@@ -672,39 +804,28 @@
         "msg": "\ndatasetGreatherThan50K: org.apache.spark.sql.Dataset[Adult] \u003d [age: double, workclass: string ... 13 more fields]\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n+----+-----------------+--------+-------------+-------------+-------------------+----------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+\n| age|        workclass|  fnlwgt|    education|education_num|     marital_status|      occupation|  relationship|               race|    sex|capital_gain|capital_loss|hours_per_week|native_country|income|\n+----+-----------------+--------+-------------+-------------+-------------------+----------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+\n|52.0| Self-emp-not-inc|209642.0|      HS-grad|          9.0| Married-civ-spouse| Exec-managerial|       Husband|              White|   Male|         0.0|         0.0|          45.0| United-States|  \u003e50K|\n|31.0|          Private| 45781.0|      Masters|         14.0|      Never-married|  Prof-specialty| Not-in-family|              White| Female|     14084.0|         0.0|          50.0| United-States|  \u003e50K|\n|42.0|          Private|159449.0|    Bachelors|         13.0| Married-civ-spouse| Exec-managerial|       Husband|              White|   Male|      5178.0|         0.0|          40.0| United-States|  \u003e50K|\n|37.0|          Private|280464.0| Some-college|         10.0| Married-civ-spouse| Exec-managerial|       Husband|              Black|   Male|         0.0|         0.0|          80.0| United-States|  \u003e50K|\n|30.0|        State-gov|141297.0|    Bachelors|         13.0| Married-civ-spouse|  Prof-specialty|       Husband| Asian-Pac-Islander|   Male|         0.0|         0.0|          40.0|         India|  \u003e50K|\n|40.0|          Private|121772.0|    Assoc-voc|         11.0| Married-civ-spouse|    Craft-repair|       Husband| Asian-Pac-Islander|   Male|         0.0|         0.0|          40.0|             ?|  \u003e50K|\n|43.0| Self-emp-not-inc|292175.0|      Masters|         14.0|           Divorced| Exec-managerial|     Unmarried|              White| Female|         0.0|         0.0|          45.0| United-States|  \u003e50K|\n|40.0|          Private|193524.0|    Doctorate|         16.0| Married-civ-spouse|  Prof-specialty|       Husband|              White|   Male|         0.0|         0.0|          60.0| United-States|  \u003e50K|\n|56.0|        Local-gov|216851.0|    Bachelors|         13.0| Married-civ-spouse|    Tech-support|       Husband|              White|   Male|         0.0|         0.0|          40.0| United-States|  \u003e50K|\n|54.0|                ?|180211.0| Some-college|         10.0| Married-civ-spouse|               ?|       Husband| Asian-Pac-Islander|   Male|         0.0|         0.0|          60.0|         South|  \u003e50K|\n|31.0|          Private| 84154.0| Some-college|         10.0| Married-civ-spouse|           Sales|       Husband|              White|   Male|         0.0|         0.0|          38.0|             ?|  \u003e50K|\n|57.0|      Federal-gov|337895.0|    Bachelors|         13.0| Married-civ-spouse|  Prof-specialty|       Husband|              Black|   Male|         0.0|         0.0|          40.0| United-States|  \u003e50K|\n|47.0|          Private| 51835.0|  Prof-school|         15.0| Married-civ-spouse|  Prof-specialty|          Wife|              White| Female|         0.0|      1902.0|          60.0|      Honduras|  \u003e50K|\n|50.0|      Federal-gov|251585.0|    Bachelors|         13.0|           Divorced| Exec-managerial| Not-in-family|              White|   Male|         0.0|         0.0|          55.0| United-States|  \u003e50K|\n|43.0|          Private|237993.0| Some-college|         10.0| Married-civ-spouse|    Tech-support|       Husband|              White|   Male|         0.0|         0.0|          40.0| United-States|  \u003e50K|\n|42.0|          Private|116632.0|    Doctorate|         16.0| Married-civ-spouse|  Prof-specialty|       Husband|              White|   Male|         0.0|         0.0|          45.0| United-States|  \u003e50K|\n|53.0|          Private|169846.0|      HS-grad|          9.0| Married-civ-spouse|    Adm-clerical|          Wife|              White| Female|         0.0|         0.0|          40.0| United-States|  \u003e50K|\n|49.0|     Self-emp-inc|191681.0| Some-college|         10.0| Married-civ-spouse| Exec-managerial|       Husband|              White|   Male|         0.0|         0.0|          50.0| United-States|  \u003e50K|\n|29.0| Self-emp-not-inc|162298.0|    Bachelors|         13.0| Married-civ-spouse|           Sales|       Husband|              White|   Male|         0.0|         0.0|          70.0| United-States|  \u003e50K|\n|44.0|          Private|343591.0|      HS-grad|          9.0|           Divorced|    Craft-repair| Not-in-family|              White| Female|     14344.0|         0.0|          40.0| United-States|  \u003e50K|\n+----+-----------------+--------+-------------+-------------+-------------------+----------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+\nonly showing top 20 rows\n\n"
       },
       "dateCreated": "Feb 13, 2017 9:36:53 PM",
-      "dateStarted": "Feb 13, 2017 9:53:48 PM",
-      "dateFinished": "Feb 13, 2017 9:53:49 PM",
+      "dateStarted": "Feb 16, 2017 5:17:24 PM",
+      "dateFinished": "Feb 16, 2017 5:17:25 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%sql select round(avg(age), 2) AS MOY_AGE_GT50K from datasetGreatherThan50K",
-      "dateUpdated": "Feb 13, 2017 9:55:41 PM",
+      "dateUpdated": "Feb 16, 2017 5:14:22 PM",
       "config": {
         "colWidth": 9.0,
         "graph": {
           "mode": "table",
           "height": 93.0,
           "optionOpen": false,
-          "keys": [
-            {
-              "name": "avg(age)",
-              "index": 0.0,
-              "aggr": "sum"
-            }
-          ],
+          "keys": [],
           "values": [],
           "groups": [],
-          "scatter": {
-            "xAxis": {
-              "name": "avg(age)",
-              "index": 0.0,
-              "aggr": "sum"
-            }
-          }
+          "scatter": {}
         },
         "enabled": true,
-        "editorMode": "ace/mode/sql"
+        "editorMode": "ace/mode/sql",
+        "editorHide": true
       },
       "settings": {
         "params": {},
@@ -724,8 +845,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\n.\n.\nNous obtenons bien la même valeur que lors de la question \"Check settings of graph. See how we average age by income.\" soit 44.25",
-      "dateUpdated": "Feb 13, 2017 9:56:25 PM",
+      "text": "%md\nRemarques :\n\nNous obtenons bien la même valeur que lors de la question \"Check settings of graph. See how we average age by income.\" soit 44.25",
+      "dateUpdated": "Feb 16, 2017 5:14:33 PM",
       "config": {
         "colWidth": 3.0,
         "graph": {
@@ -750,11 +871,66 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003cp\u003e.\n\u003cbr  /\u003e.\n\u003cbr  /\u003eNous obtenons bien la même valeur que lors de la question \u0026ldquo;Check settings of graph. See how we average age by income.\u0026rdquo; soit 44.25\u003c/p\u003e\n"
+        "msg": "\u003cp\u003eRemarques :\u003c/p\u003e\n\u003cp\u003eNous obtenons bien la même valeur que lors de la question \u0026ldquo;Check settings of graph. See how we average age by income.\u0026rdquo; soit 44.25\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 13, 2017 9:55:16 PM",
-      "dateStarted": "Feb 13, 2017 9:56:22 PM",
-      "dateFinished": "Feb 13, 2017 9:56:22 PM",
+      "dateStarted": "Feb 16, 2017 5:14:31 PM",
+      "dateFinished": "Feb 16, 2017 5:14:31 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Répartition par âge des individus qui gagne + de 50K",
+      "text": "%sql\nSELECT age, count(*) as nb from datasetGreatherThan50K group by age order by age",
+      "dateUpdated": "Feb 16, 2017 5:23:19 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "multiBarChart",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "age",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "nb",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "age",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sql",
+        "editorHide": true,
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487265416468_600719389",
+      "id": "20170216-171656_558661842",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "age\tnb\n19.0\t2\n21.0\t3\n22.0\t13\n23.0\t12\n24.0\t31\n25.0\t53\n26.0\t63\n27.0\t81\n28.0\t119\n29.0\t134\n30.0\t171\n31.0\t183\n32.0\t189\n33.0\t191\n34.0\t243\n35.0\t217\n36.0\t263\n37.0\t292\n38.0\t282\n39.0\t278\n40.0\t268\n41.0\t279\n42.0\t270\n43.0\t273\n44.0\t281\n45.0\t288\n46.0\t292\n47.0\t288\n48.0\t217\n49.0\t206\n50.0\t261\n51.0\t242\n52.0\t192\n53.0\t189\n54.0\t173\n55.0\t146\n56.0\t118\n57.0\t131\n58.0\t122\n59.0\t133\n60.0\t101\n61.0\t96\n62.0\t67\n63.0\t59\n64.0\t53\n65.0\t43\n66.0\t35\n67.0\t37\n68.0\t27\n69.0\t21\n70.0\t19\n71.0\t16\n72.0\t9\n73.0\t10\n74.0\t12\n75.0\t7\n76.0\t5\n77.0\t5\n78.0\t5\n79.0\t9\n80.0\t2\n81.0\t3\n83.0\t2\n84.0\t1\n90.0\t8\n"
+      },
+      "dateCreated": "Feb 16, 2017 5:16:56 PM",
+      "dateStarted": "Feb 16, 2017 5:22:04 PM",
+      "dateFinished": "Feb 16, 2017 5:22:05 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -794,8 +970,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
+      "title": "Play me !",
       "text": "val datasetLowerThan51K  \u003d dataset.filter($\"income\"\u003d\u003d\u003d\" \u003c\u003d50K\")\ndatasetLowerThan51K.registerTempTable(\"datasetLowerThan51K\")\ndatasetLowerThan51K.show()",
-      "dateUpdated": "Feb 13, 2017 9:54:28 PM",
+      "dateUpdated": "Feb 16, 2017 5:22:55 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -809,7 +986,8 @@
         },
         "enabled": true,
         "editorHide": true,
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/scala",
+        "title": true
       },
       "settings": {
         "params": {},
@@ -823,14 +1001,14 @@
         "msg": "\ndatasetLowerThan51K: org.apache.spark.sql.Dataset[Adult] \u003d [age: double, workclass: string ... 13 more fields]\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n+----+-----------------+--------+-----------+-------------+--------------------+------------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+\n| age|        workclass|  fnlwgt|  education|education_num|      marital_status|        occupation|  relationship|               race|    sex|capital_gain|capital_loss|hours_per_week|native_country|income|\n+----+-----------------+--------+-----------+-------------+--------------------+------------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+\n|39.0|        State-gov| 77516.0|  Bachelors|         13.0|       Never-married|      Adm-clerical| Not-in-family|              White|   Male|      2174.0|         0.0|          40.0| United-States| \u003c\u003d50K|\n|50.0| Self-emp-not-inc| 83311.0|  Bachelors|         13.0|  Married-civ-spouse|   Exec-managerial|       Husband|              White|   Male|         0.0|         0.0|          13.0| United-States| \u003c\u003d50K|\n|38.0|          Private|215646.0|    HS-grad|          9.0|            Divorced| Handlers-cleaners| Not-in-family|              White|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|\n|53.0|          Private|234721.0|       11th|          7.0|  Married-civ-spouse| Handlers-cleaners|       Husband|              Black|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|\n|28.0|          Private|338409.0|  Bachelors|         13.0|  Married-civ-spouse|    Prof-specialty|          Wife|              Black| Female|         0.0|         0.0|          40.0|          Cuba| \u003c\u003d50K|\n|37.0|          Private|284582.0|    Masters|         14.0|  Married-civ-spouse|   Exec-managerial|          Wife|              White| Female|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|\n|49.0|          Private|160187.0|        9th|          5.0| Married-spouse-a...|     Other-service| Not-in-family|              Black| Female|         0.0|         0.0|          16.0|       Jamaica| \u003c\u003d50K|\n|23.0|          Private|122272.0|  Bachelors|         13.0|       Never-married|      Adm-clerical|     Own-child|              White| Female|         0.0|         0.0|          30.0| United-States| \u003c\u003d50K|\n|32.0|          Private|205019.0| Assoc-acdm|         12.0|       Never-married|             Sales| Not-in-family|              Black|   Male|         0.0|         0.0|          50.0| United-States| \u003c\u003d50K|\n|34.0|          Private|245487.0|    7th-8th|          4.0|  Married-civ-spouse|  Transport-moving|       Husband| Amer-Indian-Eskimo|   Male|         0.0|         0.0|          45.0|        Mexico| \u003c\u003d50K|\n|25.0| Self-emp-not-inc|176756.0|    HS-grad|          9.0|       Never-married|   Farming-fishing|     Own-child|              White|   Male|         0.0|         0.0|          35.0| United-States| \u003c\u003d50K|\n|32.0|          Private|186824.0|    HS-grad|          9.0|       Never-married| Machine-op-inspct|     Unmarried|              White|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|\n|38.0|          Private| 28887.0|       11th|          7.0|  Married-civ-spouse|             Sales|       Husband|              White|   Male|         0.0|         0.0|          50.0| United-States| \u003c\u003d50K|\n|54.0|          Private|302146.0|    HS-grad|          9.0|           Separated|     Other-service|     Unmarried|              Black| Female|         0.0|         0.0|          20.0| United-States| \u003c\u003d50K|\n|35.0|      Federal-gov| 76845.0|        9th|          5.0|  Married-civ-spouse|   Farming-fishing|       Husband|              Black|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|\n|43.0|          Private|117037.0|       11th|          7.0|  Married-civ-spouse|  Transport-moving|       Husband|              White|   Male|         0.0|      2042.0|          40.0| United-States| \u003c\u003d50K|\n|59.0|          Private|109015.0|    HS-grad|          9.0|            Divorced|      Tech-support|     Unmarried|              White| Female|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|\n|19.0|          Private|168294.0|    HS-grad|          9.0|       Never-married|      Craft-repair|     Own-child|              White|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|\n|39.0|          Private|367260.0|    HS-grad|          9.0|            Divorced|   Exec-managerial| Not-in-family|              White|   Male|         0.0|         0.0|          80.0| United-States| \u003c\u003d50K|\n|49.0|          Private|193366.0|    HS-grad|          9.0|  Married-civ-spouse|      Craft-repair|       Husband|              White|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|\n+----+-----------------+--------+-----------+-------------+--------------------+------------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+\nonly showing top 20 rows\n\n"
       },
       "dateCreated": "Feb 13, 2017 9:46:28 PM",
-      "dateStarted": "Feb 13, 2017 9:54:26 PM",
-      "dateFinished": "Feb 13, 2017 9:54:27 PM",
+      "dateStarted": "Feb 16, 2017 5:22:43 PM",
+      "dateFinished": "Feb 16, 2017 5:22:44 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%sql select round(avg(age), 2) AS MOY_AGE_LT51K from datasetLowerThan51K",
-      "dateUpdated": "Feb 13, 2017 9:57:33 PM",
+      "dateUpdated": "Feb 16, 2017 5:14:57 PM",
       "config": {
         "colWidth": 9.0,
         "graph": {
@@ -855,7 +1033,8 @@
           }
         },
         "enabled": true,
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/scala",
+        "editorHide": true
       },
       "settings": {
         "params": {},
@@ -875,8 +1054,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\n. \n. \nNous obtenons bien la même valeur que lors de la question “Check settings of graph. See how we average age by income.” soit 36.78\n\n",
-      "dateUpdated": "Feb 13, 2017 9:57:57 PM",
+      "text": "%md\nRemarques :\n\nNous obtenons bien la même valeur que lors de la question “Check settings of graph. See how we average age by income.” soit 36.78\n\n",
+      "dateUpdated": "Feb 16, 2017 5:14:54 PM",
       "config": {
         "colWidth": 3.0,
         "graph": {
@@ -901,11 +1080,71 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003cp\u003e.\n\u003cbr  /\u003e.\n\u003cbr  /\u003eNous obtenons bien la même valeur que lors de la question “Check settings of graph. See how we average age by income.” soit 36.78\u003c/p\u003e\n"
+        "msg": "\u003cp\u003eRemarques :\u003c/p\u003e\n\u003cp\u003eNous obtenons bien la même valeur que lors de la question “Check settings of graph. See how we average age by income.” soit 36.78\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 13, 2017 9:57:40 PM",
-      "dateStarted": "Feb 13, 2017 9:57:56 PM",
-      "dateFinished": "Feb 13, 2017 9:57:56 PM",
+      "dateStarted": "Feb 16, 2017 5:14:53 PM",
+      "dateFinished": "Feb 16, 2017 5:14:53 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Répartition par âge des individus qui gagne - de 51K",
+      "text": "%sql\nSELECT age, count(*) as nb from datasetLowerThan51K group by age order by age",
+      "dateUpdated": "Feb 16, 2017 5:23:32 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "multiBarChart",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "age",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "nb",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "age",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "nb",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "editorHide": true,
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487265750609_-561534230",
+      "id": "20170216-172230_1506605945",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "age\tnb\n17.0\t395\n18.0\t550\n19.0\t710\n20.0\t753\n21.0\t717\n22.0\t752\n23.0\t865\n24.0\t767\n25.0\t788\n26.0\t722\n27.0\t754\n28.0\t748\n29.0\t679\n30.0\t690\n31.0\t705\n32.0\t639\n33.0\t684\n34.0\t643\n35.0\t659\n36.0\t635\n37.0\t566\n38.0\t545\n39.0\t538\n40.0\t526\n41.0\t529\n42.0\t510\n43.0\t497\n44.0\t443\n45.0\t446\n46.0\t445\n47.0\t420\n48.0\t326\n49.0\t371\n50.0\t341\n51.0\t353\n52.0\t286\n53.0\t275\n54.0\t242\n55.0\t273\n56.0\t248\n57.0\t227\n58.0\t244\n59.0\t222\n60.0\t211\n61.0\t204\n62.0\t191\n63.0\t171\n64.0\t155\n65.0\t135\n66.0\t115\n67.0\t114\n68.0\t93\n69.0\t87\n70.0\t70\n71.0\t56\n72.0\t58\n73.0\t54\n74.0\t39\n75.0\t38\n76.0\t41\n77.0\t24\n78.0\t18\n79.0\t13\n80.0\t20\n81.0\t17\n82.0\t12\n83.0\t4\n84.0\t9\n85.0\t3\n86.0\t1\n87.0\t1\n88.0\t3\n90.0\t35\n"
+      },
+      "dateCreated": "Feb 16, 2017 5:22:30 PM",
+      "dateStarted": "Feb 16, 2017 5:23:32 PM",
+      "dateFinished": "Feb 16, 2017 5:23:34 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -963,8 +1202,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md \n.\n.\nVoyons désormais comment l\u0027épargne est répartie en fonction du cursus scolaire suivi par les individus. Nous notons que ce sont les professeurs d\u0027école qui épargnent le plus !",
-      "dateUpdated": "Feb 13, 2017 10:00:13 PM",
+      "text": "%md \nExplications :\n\nVoyons désormais comment l\u0027épargne est répartie en fonction du cursus scolaire suivi par les individus. Nous notons que ce sont les professeurs d\u0027école qui épargnent le plus !",
+      "dateUpdated": "Feb 16, 2017 5:15:36 PM",
       "config": {
         "colWidth": 3.0,
         "graph": {
@@ -990,11 +1229,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003cp\u003e.\n\u003cbr  /\u003e.\n\u003cbr  /\u003eVoyons désormais comment l\u0027épargne est répartie en fonction du cursus scolaire suivi par les individus. Nous notons que ce sont les professeurs d\u0027école qui épargnent le plus !\u003c/p\u003e\n"
+        "msg": "\u003cp\u003eExplications :\u003c/p\u003e\n\u003cp\u003eVoyons désormais comment l\u0027épargne est répartie en fonction du cursus scolaire suivi par les individus. Nous notons que ce sont les professeurs d\u0027école qui épargnent le plus !\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 8, 2017 7:15:02 AM",
-      "dateStarted": "Feb 13, 2017 10:00:12 PM",
-      "dateFinished": "Feb 13, 2017 10:00:12 PM",
+      "dateStarted": "Feb 16, 2017 5:15:35 PM",
+      "dateFinished": "Feb 16, 2017 5:15:35 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1058,8 +1297,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\n\n\n\n\nQuels-sont les métiers qui engendrent le plus de séparation ?\n\nLes employés de bureaux sont les plus concernés suivis.\nLes moins concernés sont les employés de maison et les pêcheurs à la ligne !",
-      "dateUpdated": "Feb 8, 2017 7:39:39 AM",
+      "text": "%md\nExplications :\n\nQuels-sont les métiers qui engendrent le plus de séparation ?\n\nLes employés de bureaux sont les plus concernés suivis.\nLes moins concernés sont les employés de maison et les pêcheurs à la ligne !",
+      "dateUpdated": "Feb 16, 2017 5:27:19 PM",
       "config": {
         "colWidth": 3.0,
         "graph": {
@@ -1084,11 +1323,72 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003cp\u003eQuels-sont les métiers qui engendrent le plus de séparation ?\u003c/p\u003e\n\u003cp\u003eLes employés de bureaux sont les plus concernés suivis.\n\u003cbr  /\u003eLes moins concernés sont les employés de maison et les pêcheurs à la ligne !\u003c/p\u003e\n"
+        "msg": "\u003cp\u003eExplications :\u003c/p\u003e\n\u003cp\u003eQuels-sont les métiers qui engendrent le plus de séparation ?\u003c/p\u003e\n\u003cp\u003eLes employés de bureaux sont les plus concernés suivis.\n\u003cbr  /\u003eLes moins concernés sont les employés de maison et les pêcheurs à la ligne !\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 8, 2017 7:36:53 AM",
-      "dateStarted": "Feb 8, 2017 7:39:37 AM",
-      "dateFinished": "Feb 8, 2017 7:39:37 AM",
+      "dateStarted": "Feb 16, 2017 5:27:19 PM",
+      "dateFinished": "Feb 16, 2017 5:27:19 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Répartition des revenus par type de relation",
+      "text": "%sql\nselect income, relationship,count(*) from dataset\ngroup by income, relationship",
+      "dateUpdated": "Feb 16, 2017 5:34:50 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "multiBarChart",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "income",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "count(1)",
+              "index": 2.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [
+            {
+              "name": "relationship",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "scatter": {
+            "xAxis": {
+              "name": "income",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sql",
+        "editorHide": true,
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487265936846_617011303",
+      "id": "20170216-172536_1518063683",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "income\trelationship\tcount(1)\n \u003e50K\t Other-relative\t37\n \u003e50K\t Unmarried\t218\n \u003e50K\t Wife\t745\n \u003c\u003d50K\t Unmarried\t3228\n \u003e50K\t Husband\t5918\n \u003e50K\t Own-child\t67\n \u003c\u003d50K\t Other-relative\t944\n \u003c\u003d50K\t Wife\t823\n \u003c\u003d50K\t Husband\t7275\n \u003c\u003d50K\t Not-in-family\t7449\n \u003c\u003d50K\t Own-child\t5001\n \u003e50K\t Not-in-family\t856\n"
+      },
+      "dateCreated": "Feb 16, 2017 5:25:36 PM",
+      "dateStarted": "Feb 16, 2017 5:34:06 PM",
+      "dateFinished": "Feb 16, 2017 5:34:07 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
