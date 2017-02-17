@@ -534,7 +534,7 @@
     },
     {
       "text": "%md \n\n## IV. Data preprocessing\n\nSince we are going to try algorithms like Logistic Regression, we will have to convert the categorical variables in the dataset into numeric variables. There are 2 ways we can do this.\n\n- Category Indexing. This is basically assigning a numeric value to each category from {0, 1, 2, ...numCategories-1}. This introduces an implicit ordering among your categories, and is more suitable for ordinal variables (eg: Poor: 0, Average: 1, Good: 2)\n- [One-Hot Encoding](http://spark.apache.org/docs/latest/ml-features.html#onehotencoder). This converts categories into binary vectors with at most one positive value (eg: (Blue: 1, 0, 0), (Green: 0, 1, 0), (Red: 0, 0, 1))",
-      "dateUpdated": "Feb 7, 2017 12:55:41 PM",
+      "dateUpdated": "Feb 17, 2017 10:14:42 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -548,7 +548,7 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/markdown",
-        "editorHide": true
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -562,8 +562,8 @@
         "msg": "\u003ch2\u003eIV. Data preprocessing\u003c/h2\u003e\n\u003cp\u003eSince we are going to try algorithms like Logistic Regression, we will have to convert the categorical variables in the dataset into numeric variables. There are 2 ways we can do this.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eCategory Indexing. This is basically assigning a numeric value to each category from {0, 1, 2, \u0026hellip;numCategories-1}. This introduces an implicit ordering among your categories, and is more suitable for ordinal variables (eg: Poor: 0, Average: 1, Good: 2)\u003c/li\u003e\n\u003cli\u003e\u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-features.html#onehotencoder\"\u003eOne-Hot Encoding\u003c/a\u003e. This converts categories into binary vectors with at most one positive value (eg: (Blue: 1, 0, 0), (Green: 0, 1, 0), (Red: 0, 0, 1))\u003c/li\u003e\n\u003c/ul\u003e\n"
       },
       "dateCreated": "Feb 3, 2017 9:03:12 AM",
-      "dateStarted": "Feb 7, 2017 12:55:42 PM",
-      "dateFinished": "Feb 7, 2017 12:55:42 PM",
+      "dateStarted": "Feb 17, 2017 10:14:42 AM",
+      "dateFinished": "Feb 17, 2017 10:14:42 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
