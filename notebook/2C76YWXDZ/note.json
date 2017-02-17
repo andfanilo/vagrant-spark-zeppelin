@@ -411,8 +411,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
+      "title": "Répartition selon le status marital",
       "text": "%sql SELECT marital_status, count(*) FROM dataset GROUP BY marital_status",
-      "dateUpdated": "Feb 17, 2017 9:43:30 AM",
+      "dateUpdated": "Feb 17, 2017 9:47:11 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -448,7 +449,8 @@
           }
         },
         "enabled": true,
-        "editorMode": "ace/mode/sql"
+        "editorMode": "ace/mode/sql",
+        "title": true
       },
       "settings": {
         "params": {},
@@ -465,6 +467,33 @@
       "dateStarted": "Feb 17, 2017 9:43:23 AM",
       "dateFinished": "Feb 17, 2017 9:43:24 AM",
       "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "",
+      "dateUpdated": "Feb 17, 2017 9:44:12 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487324642094_-637308974",
+      "id": "20170217-094402_1499420219",
+      "dateCreated": "Feb 17, 2017 9:44:02 AM",
+      "status": "READY",
       "progressUpdateIntervalMs": 500
     },
     {
