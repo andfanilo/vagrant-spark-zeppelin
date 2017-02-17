@@ -7,7 +7,7 @@ It provides a Vagrantfile which installs a debian virtual machine containing:
 * Apache Spark 1.6.1
 * Apache Zeppelin 0.6.2
 * Apache Maven 3.3.3
-
+PERSONAL MESSAGE Bouchaib tabeute
 ## Prerequisites
 
 * [Git](https://git-scm.com/)
@@ -82,7 +82,18 @@ Don't worry, experiment, test things, read the documentation. If anything goes w
 
 `$ git checkout new_branch` will get you on the branch _new branch_.
 
-`$ git checkout -b new_branch` will create the branch _new branch_ and directly switch to it.
+B
+B
+B
+B
+A
+B
+
+
+
+C
+MANGER 
+
 
 _Done : You have a branch "edit\_README" on your local machine and you should be pointing on it. I should see the following output on a git branch command_
 
@@ -92,14 +103,9 @@ $ git branch
   master
 ```
 
-#####b. Commit a personal message to the README in your branch
-
-Add a message between the following lines:
-
-<hr>
+Cimessagepersonnel
 PERSONAL MESSAGE
-<hr>
-
+<
 With `$ git status` you can check the status of your Git repository.
 
 With `$ git diff README.md` you can see modifications made to README.md compared to the HEAD pointer.
@@ -108,7 +114,7 @@ When you are done with modificationd, add them (`$ git add README.md`) and then 
 
 _Done : you have a new commit in your branch. Check `git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all` for a pretty print of your Git history_
 
-#####c. Merge "edit_README" into master
+#####c. Merge "edit_README" into maste 
 
 Now that you have made modifications that you committed on branch _edit\_README_, let's merge that branch back into _master_. By doing this, your modifications should appear on _master_.
 
