@@ -203,8 +203,8 @@
     },
     {
       "title": "Shell cell",
-      "text": "%sh\necho \"Hello world\"",
-      "dateUpdated": "Feb 1, 2017 6:51:19 AM",
+      "text": "%sh\necho \"1+2\"",
+      "dateUpdated": "Feb 17, 2017 2:33:45 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -235,18 +235,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "1+2\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 1, 2017 6:51:19 AM",
-      "dateFinished": "Feb 1, 2017 6:51:20 AM",
+      "dateStarted": "Feb 17, 2017 2:33:45 PM",
+      "dateFinished": "Feb 17, 2017 2:33:46 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Python cell",
-      "text": "%python\nprint(\"Hello world\")",
-      "dateUpdated": "Jan 25, 2017 8:33:22 AM",
+      "text": "%python\nprint(\"1+2\")",
+      "dateUpdated": "Feb 17, 2017 2:33:55 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -276,18 +276,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "1+2\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:33:22 AM",
-      "dateFinished": "Jan 25, 2017 8:33:23 AM",
+      "dateStarted": "Feb 17, 2017 2:33:55 PM",
+      "dateFinished": "Feb 17, 2017 2:33:56 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Spark/Scala cell",
-      "text": "println(\"Hello world\")",
-      "dateUpdated": "Jan 25, 2017 8:33:26 AM",
+      "text": "println(\"1+2\")",
+      "dateUpdated": "Feb 17, 2017 2:34:02 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -317,11 +317,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "1+2\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:33:26 AM",
-      "dateFinished": "Jan 25, 2017 8:33:59 AM",
+      "dateStarted": "Feb 17, 2017 2:34:02 PM",
+      "dateFinished": "Feb 17, 2017 2:34:18 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -2141,24 +2141,24 @@
   "name": "Practice",
   "id": "2C75UP2R2",
   "angularObjects": {
-    "2C93MQCCX:shared_process": [],
-    "2CAFQY6K3:shared_process": [],
-    "2C71Z8V22:shared_process": [],
-    "2C74PSEZQ:shared_process": [],
-    "2C7936H5V:shared_process": [],
-    "2C6WY8JHA:shared_process": [],
-    "2C8CCCVZ2:shared_process": [],
-    "2C9JTS6JQ:shared_process": [],
-    "2C91JKV9H:shared_process": [],
-    "2C8N1PP7C:shared_process": [],
-    "2C7YTW7VT:shared_process": [],
-    "2C85G18U9:shared_process": [],
-    "2C9XYSTEH:shared_process": [],
-    "2CA474ZG3:shared_process": [],
-    "2C8JNXQ9U:shared_process": [],
-    "2C827138T:shared_process": [],
-    "2CAA7GXEJ:shared_process": [],
-    "2C8W1GCP8:shared_process": []
+    "2CBK2NUHG:shared_process": [],
+    "2CC6696QV:shared_process": [],
+    "2C95AFV94:shared_process": [],
+    "2C8FS3GKZ:shared_process": [],
+    "2C8TPU6BY:shared_process": [],
+    "2C98CVRZW:shared_process": [],
+    "2C94AF5CY:shared_process": [],
+    "2CB26K92H:shared_process": [],
+    "2CA3EUQSY:shared_process": [],
+    "2CC5YATRP:shared_process": [],
+    "2CBQEK5MU:shared_process": [],
+    "2CAR88DVW:shared_process": [],
+    "2C8U9FTWZ:shared_process": [],
+    "2C99PRUPR:shared_process": [],
+    "2CC3E85PC:shared_process": [],
+    "2CA4P1ZAA:shared_process": [],
+    "2C9E5G94C:shared_process": [],
+    "2C9Y1JTGX:shared_process": []
   },
   "config": {
     "looknfeel": "default"
