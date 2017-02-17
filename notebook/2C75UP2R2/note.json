@@ -204,7 +204,7 @@
     {
       "title": "Shell cell",
       "text": "%sh\necho \"Hello world\"",
-      "dateUpdated": "Feb 1, 2017 6:51:19 AM",
+      "dateUpdated": "Feb 8, 2017 12:07:55 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -245,8 +245,8 @@
     },
     {
       "title": "Python cell",
-      "text": "%python\nprint(\"Hello world\")",
-      "dateUpdated": "Jan 25, 2017 8:33:22 AM",
+      "text": "%python\nprint(1+23)",
+      "dateUpdated": "Feb 8, 2017 11:30:16 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -264,7 +264,7 @@
             "pinCols": []
           }
         },
-        "editorMode": "ace/mode/python",
+        "editorMode": "ace/mode/scala",
         "colWidth": 4.0
       },
       "settings": {
@@ -276,18 +276,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "24\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:33:22 AM",
-      "dateFinished": "Jan 25, 2017 8:33:23 AM",
+      "dateStarted": "Feb 8, 2017 11:30:16 AM",
+      "dateFinished": "Feb 8, 2017 11:30:16 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Spark/Scala cell",
-      "text": "println(\"Hello world\")",
-      "dateUpdated": "Jan 25, 2017 8:33:26 AM",
+      "text": "println(1+23)",
+      "dateUpdated": "Feb 8, 2017 11:30:24 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -317,11 +317,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "24\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:33:26 AM",
-      "dateFinished": "Jan 25, 2017 8:33:59 AM",
+      "dateStarted": "Feb 8, 2017 11:30:24 AM",
+      "dateFinished": "Feb 8, 2017 11:30:25 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -405,8 +405,8 @@
     },
     {
       "title": "Some arithmetic",
-      "text": "8 * 5 + 2",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "text": "8 * 10 + 2",
+      "dateUpdated": "Feb 8, 2017 11:35:10 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -431,20 +431,21 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "res2: Int \u003d 42\n"
+        "msg": "\nres4: Int \u003d 82\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 11:35:10 AM",
+      "dateFinished": "Feb 8, 2017 11:35:11 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Declaring variables",
-      "text": "val a \u003d 3 // val defines an immutable value\nvar b : Int \u003d 5 // var defines a mutable variable\nprintln(a + b)\n\nb \u003d 42\nprintln(a + b)\n\n// Note that the type of a variable or function is written after the variable or function. \n\n// Because Scala does type inference, it is also not necessary to declare type to variables when it looks obvious.",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "text": "val a \u003d 3 // val defines an immutable value\nvar b : Int \u003d 5 // var defines a mutable variable\nprintln(a + b)\n\nb \u003d 40\nprintln(a + b)\n\n// Note that the type of a variable or function is written after the variable or function. \n\n// Because Scala does type inference, it is also not necessary to declare type to variables when it looks obvious.",
+      "dateUpdated": "Feb 8, 2017 12:34:18 PM",
       "config": {
         "enabled": true,
-        "tableHide": true,
+        "tableHide": false,
         "title": true,
         "graph": {
           "mode": "table",
@@ -468,17 +469,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "a: Int \u003d 3\nb: Int \u003d 5\n8\nb: Int \u003d 42\n45\n"
+        "msg": "\na: Int \u003d 3\n\nb: Int \u003d 5\n8\n\nb: Int \u003d 40\n43\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 12:34:09 PM",
+      "dateFinished": "Feb 8, 2017 12:34:10 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Reusing a variable",
       "text": "// variables are accessible accross cells\n\na * b",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "dateUpdated": "Feb 8, 2017 12:34:28 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -492,7 +494,8 @@
           "scatter": {}
         },
         "editorMode": "ace/mode/scala",
-        "colWidth": 4.0
+        "colWidth": 4.0,
+        "tableHide": false
       },
       "settings": {
         "params": {},
@@ -503,11 +506,12 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "res13: Int \u003d 15\n"
+        "msg": "\nres28: Int \u003d 120\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 12:33:56 PM",
+      "dateFinished": "Feb 8, 2017 12:33:57 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -547,11 +551,11 @@
     },
     {
       "title": "Create immutable sequence of numbers",
-      "text": "val sequenceNumbers \u003d 1 to 100",
-      "dateUpdated": "Jan 25, 2017 8:34:35 AM",
+      "text": "val sequenceNumbers \u003d 1 to 5",
+      "dateUpdated": "Feb 8, 2017 12:37:51 PM",
       "config": {
         "enabled": true,
-        "tableHide": true,
+        "tableHide": false,
         "title": true,
         "graph": {
           "mode": "table",
@@ -575,21 +579,21 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nsequenceNumbers: scala.collection.immutable.Range.Inclusive \u003d Range(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100)\n"
+        "msg": "\nsequenceNumbers: scala.collection.immutable.Range.Inclusive \u003d Range(1, 2, 3, 4, 5)\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:34:24 AM",
-      "dateFinished": "Jan 25, 2017 8:34:25 AM",
+      "dateStarted": "Feb 8, 2017 12:37:51 PM",
+      "dateFinished": "Feb 8, 2017 12:37:51 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "New list with all elements doubled",
       "text": "sequenceNumbers.map(x \u003d\u003e x * 2)\n\nsequenceNumbers.map(_ * 2)",
-      "dateUpdated": "Jan 25, 2017 8:34:39 AM",
+      "dateUpdated": "Feb 8, 2017 12:38:05 PM",
       "config": {
         "enabled": true,
-        "tableHide": true,
+        "tableHide": false,
         "title": true,
         "graph": {
           "mode": "table",
@@ -613,20 +617,21 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "res40: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100, 102, 104, 106, 108, 110, 112, 114, 116, 118, 120, 122, 124, 126, 128, 130, 132, 134, 136, 138, 140, 142, 144, 146, 148, 150, 152, 154, 156, 158, 160, 162, 164, 166, 168, 170, 172, 174, 176, 178, 180, 182, 184, 186, 188, 190, 192, 194, 196, 198, 200)\nres41: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100, 102, 104, 106, 108, 110, 112, 114, 116, 118, 120, 122, 124, 126, 128, 130, 132, 134, 136, 138, 140, 142, 144, 146, 148, 150, 152, 154, 156, 158, 160, 162, 164, 166, 168, 170, 172, 174, 176, 178, 180, 182, 184, 186, 188, 190, 192, 194, 196, 198, 200)\n"
+        "msg": "\nres51: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(2, 4, 6, 8, 10)\n\nres52: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(2, 4, 6, 8, 10)\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 12:38:05 PM",
+      "dateFinished": "Feb 8, 2017 12:38:06 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "New list with pair numbers removed",
       "text": "sequenceNumbers.filter(x \u003d\u003e x % 2 !\u003d 0)\n\nsequenceNumbers.filter(_ % 2 !\u003d 0)",
-      "dateUpdated": "Jan 25, 2017 8:34:41 AM",
+      "dateUpdated": "Feb 8, 2017 12:38:08 PM",
       "config": {
         "enabled": true,
-        "tableHide": true,
+        "tableHide": false,
         "title": true,
         "graph": {
           "mode": "table",
@@ -650,20 +655,21 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "res52: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99)\nres53: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99)\n"
+        "msg": "\nres54: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(1, 3, 5)\n\nres55: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(1, 3, 5)\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 12:38:08 PM",
+      "dateFinished": "Feb 8, 2017 12:38:09 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Sum all elements",
       "text": "sequenceNumbers.reduce((x, y) \u003d\u003e x + y)\n\nsequenceNumbers.reduce(_ + _)",
-      "dateUpdated": "Jan 25, 2017 8:34:44 AM",
+      "dateUpdated": "Feb 8, 2017 12:37:55 PM",
       "config": {
         "enabled": true,
-        "tableHide": true,
+        "tableHide": false,
         "title": true,
         "graph": {
           "mode": "table",
@@ -687,11 +693,12 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "res55: Int \u003d 5050\nres56: Int \u003d 5050\n"
+        "msg": "\nres48: Int \u003d 15\n\nres49: Int \u003d 15\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 12:37:55 PM",
+      "dateFinished": "Feb 8, 2017 12:37:56 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -730,8 +737,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "/*\n * The following function adds 2 to a number.\n */\ndef add2(x: Int): Int \u003d x + 2",
-      "dateUpdated": "Jan 25, 2017 1:34:04 AM",
+      "text": "/*\n * The following function adds 2 to a number.\n */\ndef add2(x: Int): Int \u003d x * 2",
+      "dateUpdated": "Feb 8, 2017 12:55:59 PM",
       "config": {
         "enabled": true,
         "graph": {
@@ -744,7 +751,8 @@
           "scatter": {}
         },
         "colWidth": 4.0,
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/scala",
+        "tableHide": false
       },
       "settings": {
         "params": {},
@@ -758,14 +766,14 @@
         "msg": "\nadd2: (x: Int)Int\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 1:34:04 AM",
-      "dateFinished": "Jan 25, 2017 1:34:04 AM",
+      "dateStarted": "Feb 8, 2017 12:55:59 PM",
+      "dateFinished": "Feb 8, 2017 12:56:00 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "/* now let\u0027s pass add2 function \n * to map,\n * a function that applies a function to each element of a  * list\n */\n\nList(1,2,3).map(add2)\n",
-      "dateUpdated": "Jan 25, 2017 1:34:26 AM",
+      "dateUpdated": "Feb 8, 2017 12:40:58 PM",
       "config": {
         "enabled": true,
         "graph": {
@@ -789,17 +797,17 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nres38: List[Int] \u003d List(3, 4, 5)\n"
+        "msg": "\nres62: List[Int] \u003d List(2, 4, 6)\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 1:34:26 AM",
-      "dateFinished": "Jan 25, 2017 1:34:27 AM",
+      "dateStarted": "Feb 8, 2017 12:40:58 PM",
+      "dateFinished": "Feb 8, 2017 12:40:58 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "// in the following we pass an anonymous lambda function \n// in the filter function\nList(1,2,3,4).filter(x \u003d\u003e x \u003e 2)\nList(1,2,3,4).filter(_ \u003e 2)",
-      "dateUpdated": "Jan 25, 2017 8:50:39 AM",
+      "dateUpdated": "Feb 8, 2017 12:58:59 PM",
       "config": {
         "enabled": true,
         "graph": {
@@ -821,19 +829,46 @@
       "jobName": "paragraph_1485333124533_-29284730",
       "id": "20161215-110528_1134018400",
       "result": {
-        "code": "SUCCESS",
+        "code": "ERROR",
         "type": "TEXT",
-        "msg": "\nres9: List[Int] \u003d List(3, 4)\n\nres10: List[Int] \u003d List(3, 4)\n"
+        "msg": "\nres86: List[Int] \u003d List(3, 4)\n\n\n\n\u003cconsole\u003e:26: error: not found: value x\n       List(1,2,3,4).filter(x \u003e 2)\n                            ^\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:50:39 AM",
-      "dateFinished": "Jan 25, 2017 8:50:40 AM",
-      "status": "FINISHED",
+      "dateStarted": "Feb 8, 2017 12:58:42 PM",
+      "dateFinished": "Feb 8, 2017 12:58:43 PM",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "",
+      "dateUpdated": "Feb 8, 2017 12:59:36 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1486558766342_-1975857460",
+      "id": "20170208-125926_1667660360",
+      "dateCreated": "Feb 8, 2017 12:59:26 PM",
+      "status": "READY",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\nHere we have presented the first two higher order functions we are going to use in this course : `map` and `filter`. Those are called _element-wise_ transformations in that they take in a function and applies it to each element in the collection.\n\nWe can use them to do a number of things, from fetching the website associated with each URL in our collection to just squaring numbers. Imagine this scenario :\n\n```scala\n/*\n * Parses a file with URLs and puts them into a list of Strings, each being an URL to get\n */\ndef loadURLs(path: String): List[String] \u003d {\n    ...some code here to return list of urls...\n}\n\n/*\n * GET request on an URL and return the body\n */\ndef getBody(url: String): String \u003d {\n    ...some code here to return body...\n}\n\n/*\n * Detect if body consists of an image, we don\u0027t want those\n */\ndef filterImage(body: String): Boolean \u003d {\n    ...some code here to detect if it\u0027s an image...\n}\n\n// code to load a list of URLs and only return those who are not images\nval allURLsWithoutImages \u003d loadURLs(\"/data/list_of_urls.csv\").map(getBody).filter(filterImage)\n\n```",
-      "dateUpdated": "Jan 25, 2017 8:53:57 AM",
+      "dateUpdated": "Feb 8, 2017 12:43:08 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -847,7 +882,8 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "editorHide": true
+        "editorHide": true,
+        "tableHide": false
       },
       "settings": {
         "params": {},
@@ -861,14 +897,14 @@
         "msg": "\u003cp\u003eHere we have presented the first two higher order functions we are going to use in this course : \u003ccode\u003emap\u003c/code\u003e and \u003ccode\u003efilter\u003c/code\u003e. Those are called \u003cem\u003eelement-wise\u003c/em\u003e transformations in that they take in a function and applies it to each element in the collection.\u003c/p\u003e\n\u003cp\u003eWe can use them to do a number of things, from fetching the website associated with each URL in our collection to just squaring numbers. Imagine this scenario :\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"scala\"\u003e/*\n * Parses a file with URLs and puts them into a list of Strings, each being an URL to get\n */\ndef loadURLs(path: String): List[String] \u003d {\n    ...some code here to return list of urls...\n}\n\n/*\n * GET request on an URL and return the body\n */\ndef getBody(url: String): String \u003d {\n    ...some code here to return body...\n}\n\n/*\n * Detect if body consists of an image, we don\u0027t want those\n */\ndef filterImage(body: String): Boolean \u003d {\n    ...some code here to detect if it\u0027s an image...\n}\n\n// code to load a list of URLs and only return those who are not images\nval allURLsWithoutImages \u003d loadURLs(\"/data/list_of_urls.csv\").map(getBody).filter(filterImage)\n\u003c/code\u003e\u003c/pre\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 8:50:58 AM",
-      "dateStarted": "Jan 25, 2017 8:53:55 AM",
-      "dateFinished": "Jan 25, 2017 8:53:55 AM",
+      "dateStarted": "Feb 8, 2017 12:43:01 PM",
+      "dateFinished": "Feb 8, 2017 12:43:01 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md \nThe other essential higher order function you need to learn is `reduce`, which walks a function through all the elements in a collection to produce an aggregated result. \n\nTo do that, the function operates on two elements in the sequence, and returns a new element of the same type, which is then passed to the same function with the next element in the list.\n\nA simple example of such a function is +, which we can use to sum all of the elements in our list.",
-      "dateUpdated": "Jan 25, 2017 1:34:46 AM",
+      "dateUpdated": "Feb 8, 2017 12:43:24 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -882,7 +918,8 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "editorHide": true
+        "editorHide": true,
+        "tableHide": false
       },
       "settings": {
         "params": {},
@@ -896,14 +933,14 @@
         "msg": "\u003cp\u003eThe other essential higher order function you need to learn is \u003ccode\u003ereduce\u003c/code\u003e, which walks a function through all the elements in a collection to produce an aggregated result.\u003c/p\u003e\n\u003cp\u003eTo do that, the function operates on two elements in the sequence, and returns a new element of the same type, which is then passed to the same function with the next element in the list.\u003c/p\u003e\n\u003cp\u003eA simple example of such a function is +, which we can use to sum all of the elements in our list.\u003c/p\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 8:55:33 AM",
-      "dateStarted": "Jan 25, 2017 1:34:45 AM",
-      "dateFinished": "Jan 25, 2017 1:34:45 AM",
+      "dateStarted": "Feb 8, 2017 12:43:21 PM",
+      "dateFinished": "Feb 8, 2017 12:43:21 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "(1 to 1000).reduce((x,y) \u003d\u003e x+y)\n(1 to 1000).reduce(_+_)",
-      "dateUpdated": "Jan 25, 2017 8:55:46 AM",
+      "text": "(1 to 10).reduce((x,y) \u003d\u003e x+y)\n(1 to 5).reduce(_+_)",
+      "dateUpdated": "Feb 8, 2017 12:44:38 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -927,17 +964,17 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nres12: Int \u003d 500500\n\nres13: Int \u003d 500500\n"
+        "msg": "\nres71: Int \u003d 55\n\nres72: Int \u003d 15\n"
       },
       "dateCreated": "Jan 25, 2017 8:55:45 AM",
-      "dateStarted": "Jan 25, 2017 8:55:47 AM",
-      "dateFinished": "Jan 25, 2017 8:55:48 AM",
+      "dateStarted": "Feb 8, 2017 12:44:38 PM",
+      "dateFinished": "Feb 8, 2017 12:44:38 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\nIn the previous row, imagine that the sum function operates on 1 and 2 and returns 3, \n\nthen that result is passed to the function along with the next element which is 3, and the result 6 is passed with the next element 4, and then the result 10 is passed with 5 etc...\n\n1 --|+\n2 --| 3 --|+\n3 --------| 6 --| +\n4 --------------| 10 --| +\n5 ---------------------| 15\n.etc...\n\nSimilar to `reduce` is `fold`, which takes a \"zero value\" in addition and passed in the initial call",
-      "dateUpdated": "Jan 25, 2017 9:42:15 AM",
+      "dateUpdated": "Feb 8, 2017 12:45:08 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -965,8 +1002,8 @@
         "msg": "\u003cp\u003eIn the previous row, imagine that the sum function operates on 1 and 2 and returns 3,\u003c/p\u003e\n\u003cp\u003ethen that result is passed to the function along with the next element which is 3, and the result 6 is passed with the next element 4, and then the result 10 is passed with 5 etc\u0026hellip;\u003c/p\u003e\n\u003cp\u003e1 \u0026ndash;|+\n\u003cbr  /\u003e2 \u0026ndash;| 3 \u0026ndash;|+\n\u003cbr  /\u003e3 \u0026mdash;\u0026mdash;\u0026ndash;| 6 \u0026ndash;| +\n\u003cbr  /\u003e4 \u0026mdash;\u0026mdash;\u0026mdash;\u0026mdash;\u0026ndash;| 10 \u0026ndash;| +\n\u003cbr  /\u003e5 \u0026mdash;\u0026mdash;\u0026mdash;\u0026mdash;\u0026mdash;\u0026mdash;\u0026mdash;| 15\n\u003cbr  /\u003e.etc\u0026hellip;\u003c/p\u003e\n\u003cp\u003eSimilar to \u003ccode\u003ereduce\u003c/code\u003e is \u003ccode\u003efold\u003c/code\u003e, which takes a \u0026ldquo;zero value\u0026rdquo; in addition and passed in the initial call\u003c/p\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 8:55:58 AM",
-      "dateStarted": "Jan 25, 2017 9:42:13 AM",
-      "dateFinished": "Jan 25, 2017 9:42:13 AM",
+      "dateStarted": "Feb 8, 2017 12:45:08 PM",
+      "dateFinished": "Feb 8, 2017 12:45:08 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1007,8 +1044,8 @@
     },
     {
       "title": "Return the list of squared numbers from 1 to 5",
-      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.map(x \u003d\u003e x)\n\nval expected \u003d List(1, 4, 9, 16, 25) ",
-      "dateUpdated": "Jan 25, 2017 9:03:16 AM",
+      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.map(x \u003d\u003e x)\nval output2 \u003d input.map(x\u003d\u003e x*x)\nval expected \u003d List(1, 4, 9, 16, 25) ",
+      "dateUpdated": "Feb 8, 2017 12:51:18 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1033,18 +1070,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\nexpected: List[Int] \u003d List(1, 4, 9, 16, 25)\n"
+        "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput2: List[Int] \u003d List(1, 4, 9, 16, 25)\n\nexpected: List[Int] \u003d List(1, 4, 9, 16, 25)\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:13 AM",
-      "dateStarted": "Jan 25, 2017 9:03:16 AM",
-      "dateFinished": "Jan 25, 2017 9:03:17 AM",
+      "dateStarted": "Feb 8, 2017 12:51:18 PM",
+      "dateFinished": "Feb 8, 2017 12:51:19 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Return the sum of elements from 1 to 5",
-      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.reduce((x, y) \u003d\u003e x)\n\nval expected \u003d 15",
-      "dateUpdated": "Jan 25, 2017 9:23:28 AM",
+      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.reduce((x,y) \u003d\u003ex+y )\nval expected \u003d 15",
+      "dateUpdated": "Feb 8, 2017 1:01:47 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1067,14 +1104,14 @@
       "jobName": "paragraph_1485334640547_1179417357",
       "id": "20170125-085720_2133991651",
       "result": {
-        "code": "SUCCESS",
+        "code": "ERROR",
         "type": "TEXT",
-        "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: Int \u003d 1\n\nexpected: Int \u003d 15\n"
+        "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\n\n\n\n\n\n\u003cconsole\u003e:1: error: not a legal formal parameter.\nNote: Tuples cannot be directly destructured in method or function parameters.\n      Either create a single parameter accepting the Tuple1,\n      or consider a pattern matching anonymous function: `{ case (param1, param1) \u003d\u003e ... }\nval output \u003d input.map(x) \u003d\u003ex+x )\n                      ^\n\n\n\n\u003cconsole\u003e:1: error: \u0027;\u0027 expected but \u0027)\u0027 found.\nval output \u003d input.map(x) \u003d\u003ex+x )\n                                ^\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:20 AM",
-      "dateStarted": "Jan 25, 2017 9:23:28 AM",
-      "dateFinished": "Jan 25, 2017 9:23:29 AM",
-      "status": "FINISHED",
+      "dateStarted": "Feb 8, 2017 12:59:49 PM",
+      "dateFinished": "Feb 8, 2017 12:59:49 PM",
+      "status": "ERROR",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -2141,24 +2178,24 @@
   "name": "Practice",
   "id": "2C75UP2R2",
   "angularObjects": {
-    "2C93MQCCX:shared_process": [],
-    "2CAFQY6K3:shared_process": [],
-    "2C71Z8V22:shared_process": [],
-    "2C74PSEZQ:shared_process": [],
-    "2C7936H5V:shared_process": [],
-    "2C6WY8JHA:shared_process": [],
-    "2C8CCCVZ2:shared_process": [],
-    "2C9JTS6JQ:shared_process": [],
-    "2C91JKV9H:shared_process": [],
-    "2C8N1PP7C:shared_process": [],
-    "2C7YTW7VT:shared_process": [],
-    "2C85G18U9:shared_process": [],
-    "2C9XYSTEH:shared_process": [],
-    "2CA474ZG3:shared_process": [],
-    "2C8JNXQ9U:shared_process": [],
-    "2C827138T:shared_process": [],
-    "2CAA7GXEJ:shared_process": [],
-    "2C8W1GCP8:shared_process": []
+    "2C7WP8PN3:shared_process": [],
+    "2C7MT7V8H:shared_process": [],
+    "2C7JAZ7MT:shared_process": [],
+    "2C9GH3ZSW:shared_process": [],
+    "2CAQWAHQK:shared_process": [],
+    "2CB2F6RSJ:shared_process": [],
+    "2C7UR53B7:shared_process": [],
+    "2CAB7M3M1:shared_process": [],
+    "2CAEZN38K:shared_process": [],
+    "2CAV2AEC7:shared_process": [],
+    "2CBC6B3CA:shared_process": [],
+    "2C8C45C8S:shared_process": [],
+    "2C7TS5VA4:shared_process": [],
+    "2C8A2HEGH:shared_process": [],
+    "2CBA5NXK5:shared_process": [],
+    "2C7Q2HP1M:shared_process": [],
+    "2C8RWSGS8:shared_process": [],
+    "2C9G64J9M:shared_process": []
   },
   "config": {
     "looknfeel": "default"
