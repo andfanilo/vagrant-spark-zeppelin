@@ -72,7 +72,7 @@
     },
     {
       "text": "%md\n\n## II. Load data\n\nI have downloaded adult.data from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Adult) and put it into the `data/` folder of your project.\n\nThe following cells will do the necessary to load the data into a DataFrame.",
-      "dateUpdated": "Feb 7, 2017 12:55:38 PM",
+      "dateUpdated": "Feb 17, 2017 3:06:19 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -108,7 +108,7 @@
     {
       "title": "Load data (run the cell)",
       "text": "import org.apache.spark.sql.types.{StringType, DoubleType, StructType, StructField}\n\nval schema \u003d StructType(Seq(\n    StructField(\"age\", DoubleType),\n    StructField(\"workclass\", StringType),\n    StructField(\"fnlwgt\", DoubleType),\n    StructField(\"education\", StringType),\n    StructField(\"education_num\", DoubleType),\n    StructField(\"marital_status\", StringType),\n    StructField(\"occupation\", StringType),\n    StructField(\"relationship\", StringType),\n    StructField(\"race\", StringType),\n    StructField(\"sex\", StringType),\n    StructField(\"capital_gain\", DoubleType),\n    StructField(\"capital_loss\", DoubleType),\n    StructField(\"hours_per_week\", DoubleType),\n    StructField(\"native_country\", StringType),\n    StructField(\"income\", StringType)\n    ))\n\ncase class Adult(\n    age: Double, \n    workclass: String, \n    fnlwgt: Double, \n    education: String, \n    education_num: Double, \n    marital_status: String, \n    occupation: String, \n    relationship: String, \n    race: String, \n    sex: String, \n    capital_gain: Double, \n    capital_loss: Double, \n    hours_per_week: Double, \n    native_country: String, \n    income: String\n    )\n    \nval dataset \u003d spark.read.schema(schema).csv(\"/opt/dataset/adult.data.csv\").as[Adult]\ndataset.registerTempTable(\"dataset\")  // register it so we can use it inside %sql interpreter",
-      "dateUpdated": "Feb 7, 2017 12:55:38 PM",
+      "dateUpdated": "Feb 17, 2017 3:02:06 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -138,14 +138,14 @@
         "msg": "\nimport org.apache.spark.sql.types.{StringType, DoubleType, StructType, StructField}\n\nschema: org.apache.spark.sql.types.StructType \u003d StructType(StructField(age,DoubleType,true), StructField(workclass,StringType,true), StructField(fnlwgt,DoubleType,true), StructField(education,StringType,true), StructField(education_num,DoubleType,true), StructField(marital_status,StringType,true), StructField(occupation,StringType,true), StructField(relationship,StringType,true), StructField(race,StringType,true), StructField(sex,StringType,true), StructField(capital_gain,DoubleType,true), StructField(capital_loss,DoubleType,true), StructField(hours_per_week,DoubleType,true), StructField(native_country,StringType,true), StructField(income,StringType,true))\n\ndefined class Adult\n\ndataset: org.apache.spark.sql.Dataset[Adult] \u003d [age: double, workclass: string ... 13 more fields]\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n"
       },
       "dateCreated": "Feb 3, 2017 8:43:33 AM",
-      "dateStarted": "Feb 7, 2017 12:55:39 PM",
-      "dateFinished": "Feb 7, 2017 12:55:47 PM",
+      "dateStarted": "Feb 17, 2017 3:02:06 PM",
+      "dateFinished": "Feb 17, 2017 3:02:20 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "dataset.printSchema()",
-      "dateUpdated": "Feb 7, 2017 12:55:39 PM",
+      "dateUpdated": "Feb 17, 2017 3:02:28 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -172,14 +172,14 @@
         "msg": "root\n |-- age: double (nullable \u003d true)\n |-- workclass: string (nullable \u003d true)\n |-- fnlwgt: double (nullable \u003d true)\n |-- education: string (nullable \u003d true)\n |-- education_num: double (nullable \u003d true)\n |-- marital_status: string (nullable \u003d true)\n |-- occupation: string (nullable \u003d true)\n |-- relationship: string (nullable \u003d true)\n |-- race: string (nullable \u003d true)\n |-- sex: string (nullable \u003d true)\n |-- capital_gain: double (nullable \u003d true)\n |-- capital_loss: double (nullable \u003d true)\n |-- hours_per_week: double (nullable \u003d true)\n |-- native_country: string (nullable \u003d true)\n |-- income: string (nullable \u003d true)\n\n"
       },
       "dateCreated": "Feb 6, 2017 1:45:35 AM",
-      "dateStarted": "Feb 7, 2017 12:55:39 PM",
-      "dateFinished": "Feb 7, 2017 12:55:48 PM",
+      "dateStarted": "Feb 17, 2017 3:02:28 PM",
+      "dateFinished": "Feb 17, 2017 3:02:29 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%sql SELECT * FROM dataset LIMIT 10",
-      "dateUpdated": "Feb 7, 2017 12:55:39 PM",
+      "text": "%sql SELECT * FROM dataset LIMIT 100",
+      "dateUpdated": "Feb 17, 2017 3:03:26 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -203,76 +203,17 @@
       "result": {
         "code": "SUCCESS",
         "type": "TABLE",
-        "msg": "age\tworkclass\tfnlwgt\teducation\teducation_num\tmarital_status\toccupation\trelationship\trace\tsex\tcapital_gain\tcapital_loss\thours_per_week\tnative_country\tincome\n39.0\t State-gov\t77516.0\t Bachelors\t13.0\t Never-married\t Adm-clerical\t Not-in-family\t White\t Male\t2174.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n50.0\t Self-emp-not-inc\t83311.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t13.0\t United-States\t \u003c\u003d50K\n38.0\t Private\t215646.0\t HS-grad\t9.0\t Divorced\t Handlers-cleaners\t Not-in-family\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n53.0\t Private\t234721.0\t 11th\t7.0\t Married-civ-spouse\t Handlers-cleaners\t Husband\t Black\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n28.0\t Private\t338409.0\t Bachelors\t13.0\t Married-civ-spouse\t Prof-specialty\t Wife\t Black\t Female\t0.0\t0.0\t40.0\t Cuba\t \u003c\u003d50K\n37.0\t Private\t284582.0\t Masters\t14.0\t Married-civ-spouse\t Exec-managerial\t Wife\t White\t Female\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n49.0\t Private\t160187.0\t 9th\t5.0\t Married-spouse-absent\t Other-service\t Not-in-family\t Black\t Female\t0.0\t0.0\t16.0\t Jamaica\t \u003c\u003d50K\n52.0\t Self-emp-not-inc\t209642.0\t HS-grad\t9.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t45.0\t United-States\t \u003e50K\n31.0\t Private\t45781.0\t Masters\t14.0\t Never-married\t Prof-specialty\t Not-in-family\t White\t Female\t14084.0\t0.0\t50.0\t United-States\t \u003e50K\n42.0\t Private\t159449.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t5178.0\t0.0\t40.0\t United-States\t \u003e50K\n"
+        "msg": "age\tworkclass\tfnlwgt\teducation\teducation_num\tmarital_status\toccupation\trelationship\trace\tsex\tcapital_gain\tcapital_loss\thours_per_week\tnative_country\tincome\n39.0\t State-gov\t77516.0\t Bachelors\t13.0\t Never-married\t Adm-clerical\t Not-in-family\t White\t Male\t2174.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n50.0\t Self-emp-not-inc\t83311.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t13.0\t United-States\t \u003c\u003d50K\n38.0\t Private\t215646.0\t HS-grad\t9.0\t Divorced\t Handlers-cleaners\t Not-in-family\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n53.0\t Private\t234721.0\t 11th\t7.0\t Married-civ-spouse\t Handlers-cleaners\t Husband\t Black\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n28.0\t Private\t338409.0\t Bachelors\t13.0\t Married-civ-spouse\t Prof-specialty\t Wife\t Black\t Female\t0.0\t0.0\t40.0\t Cuba\t \u003c\u003d50K\n37.0\t Private\t284582.0\t Masters\t14.0\t Married-civ-spouse\t Exec-managerial\t Wife\t White\t Female\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n49.0\t Private\t160187.0\t 9th\t5.0\t Married-spouse-absent\t Other-service\t Not-in-family\t Black\t Female\t0.0\t0.0\t16.0\t Jamaica\t \u003c\u003d50K\n52.0\t Self-emp-not-inc\t209642.0\t HS-grad\t9.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t45.0\t United-States\t \u003e50K\n31.0\t Private\t45781.0\t Masters\t14.0\t Never-married\t Prof-specialty\t Not-in-family\t White\t Female\t14084.0\t0.0\t50.0\t United-States\t \u003e50K\n42.0\t Private\t159449.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t5178.0\t0.0\t40.0\t United-States\t \u003e50K\n37.0\t Private\t280464.0\t Some-college\t10.0\t Married-civ-spouse\t Exec-managerial\t Husband\t Black\t Male\t0.0\t0.0\t80.0\t United-States\t \u003e50K\n30.0\t State-gov\t141297.0\t Bachelors\t13.0\t Married-civ-spouse\t Prof-specialty\t Husband\t Asian-Pac-Islander\t Male\t0.0\t0.0\t40.0\t India\t \u003e50K\n23.0\t Private\t122272.0\t Bachelors\t13.0\t Never-married\t Adm-clerical\t Own-child\t White\t Female\t0.0\t0.0\t30.0\t United-States\t \u003c\u003d50K\n32.0\t Private\t205019.0\t Assoc-acdm\t12.0\t Never-married\t Sales\t Not-in-family\t Black\t Male\t0.0\t0.0\t50.0\t United-States\t \u003c\u003d50K\n40.0\t Private\t121772.0\t Assoc-voc\t11.0\t Married-civ-spouse\t Craft-repair\t Husband\t Asian-Pac-Islander\t Male\t0.0\t0.0\t40.0\t ?\t \u003e50K\n34.0\t Private\t245487.0\t 7th-8th\t4.0\t Married-civ-spouse\t Transport-moving\t Husband\t Amer-Indian-Eskimo\t Male\t0.0\t0.0\t45.0\t Mexico\t \u003c\u003d50K\n25.0\t Self-emp-not-inc\t176756.0\t HS-grad\t9.0\t Never-married\t Farming-fishing\t Own-child\t White\t Male\t0.0\t0.0\t35.0\t United-States\t \u003c\u003d50K\n32.0\t Private\t186824.0\t HS-grad\t9.0\t Never-married\t Machine-op-inspct\t Unmarried\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n38.0\t Private\t28887.0\t 11th\t7.0\t Married-civ-spouse\t Sales\t Husband\t White\t Male\t0.0\t0.0\t50.0\t United-States\t \u003c\u003d50K\n43.0\t Self-emp-not-inc\t292175.0\t Masters\t14.0\t Divorced\t Exec-managerial\t Unmarried\t White\t Female\t0.0\t0.0\t45.0\t United-States\t \u003e50K\n40.0\t Private\t193524.0\t Doctorate\t16.0\t Married-civ-spouse\t Prof-specialty\t Husband\t White\t Male\t0.0\t0.0\t60.0\t United-States\t \u003e50K\n54.0\t Private\t302146.0\t HS-grad\t9.0\t Separated\t Other-service\t Unmarried\t Black\t Female\t0.0\t0.0\t20.0\t United-States\t \u003c\u003d50K\n35.0\t Federal-gov\t76845.0\t 9th\t5.0\t Married-civ-spouse\t Farming-fishing\t Husband\t Black\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n43.0\t Private\t117037.0\t 11th\t7.0\t Married-civ-spouse\t Transport-moving\t Husband\t White\t Male\t0.0\t2042.0\t40.0\t United-States\t \u003c\u003d50K\n59.0\t Private\t109015.0\t HS-grad\t9.0\t Divorced\t Tech-support\t Unmarried\t White\t Female\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n56.0\t Local-gov\t216851.0\t Bachelors\t13.0\t Married-civ-spouse\t Tech-support\t Husband\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003e50K\n19.0\t Private\t168294.0\t HS-grad\t9.0\t Never-married\t Craft-repair\t Own-child\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n54.0\t ?\t180211.0\t Some-college\t10.0\t Married-civ-spouse\t ?\t Husband\t Asian-Pac-Islander\t Male\t0.0\t0.0\t60.0\t South\t \u003e50K\n39.0\t Private\t367260.0\t HS-grad\t9.0\t Divorced\t Exec-managerial\t Not-in-family\t White\t Male\t0.0\t0.0\t80.0\t United-States\t \u003c\u003d50K\n49.0\t Private\t193366.0\t HS-grad\t9.0\t Married-civ-spouse\t Craft-repair\t Husband\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n23.0\t Local-gov\t190709.0\t Assoc-acdm\t12.0\t Never-married\t Protective-serv\t Not-in-family\t White\t Male\t0.0\t0.0\t52.0\t United-States\t \u003c\u003d50K\n20.0\t Private\t266015.0\t Some-college\t10.0\t Never-married\t Sales\t Own-child\t Black\t Male\t0.0\t0.0\t44.0\t United-States\t \u003c\u003d50K\n45.0\t Private\t386940.0\t Bachelors\t13.0\t Divorced\t Exec-managerial\t Own-child\t White\t Male\t0.0\t1408.0\t40.0\t United-States\t \u003c\u003d50K\n30.0\t Federal-gov\t59951.0\t Some-college\t10.0\t Married-civ-spouse\t Adm-clerical\t Own-child\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n22.0\t State-gov\t311512.0\t Some-college\t10.0\t Married-civ-spouse\t Other-service\t Husband\t Black\t Male\t0.0\t0.0\t15.0\t United-States\t \u003c\u003d50K\n48.0\t Private\t242406.0\t 11th\t7.0\t Never-married\t Machine-op-inspct\t Unmarried\t White\t Male\t0.0\t0.0\t40.0\t Puerto-Rico\t \u003c\u003d50K\n21.0\t Private\t197200.0\t Some-college\t10.0\t Never-married\t Machine-op-inspct\t Own-child\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n19.0\t Private\t544091.0\t HS-grad\t9.0\t Married-AF-spouse\t Adm-clerical\t Wife\t White\t Female\t0.0\t0.0\t25.0\t United-States\t \u003c\u003d50K\n31.0\t Private\t84154.0\t Some-college\t10.0\t Married-civ-spouse\t Sales\t Husband\t White\t Male\t0.0\t0.0\t38.0\t ?\t \u003e50K\n48.0\t Self-emp-not-inc\t265477.0\t Assoc-acdm\t12.0\t Married-civ-spouse\t Prof-specialty\t Husband\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n31.0\t Private\t507875.0\t 9th\t5.0\t Married-civ-spouse\t Machine-op-inspct\t Husband\t White\t Male\t0.0\t0.0\t43.0\t United-States\t \u003c\u003d50K\n53.0\t Self-emp-not-inc\t88506.0\t Bachelors\t13.0\t Married-civ-spouse\t Prof-specialty\t Husband\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n24.0\t Private\t172987.0\t Bachelors\t13.0\t Married-civ-spouse\t Tech-support\t Husband\t White\t Male\t0.0\t0.0\t50.0\t United-States\t \u003c\u003d50K\n49.0\t Private\t94638.0\t HS-grad\t9.0\t Separated\t Adm-clerical\t Unmarried\t White\t Female\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n25.0\t Private\t289980.0\t HS-grad\t9.0\t Never-married\t Handlers-cleaners\t Not-in-family\t White\t Male\t0.0\t0.0\t35.0\t United-States\t \u003c\u003d50K\n57.0\t Federal-gov\t337895.0\t Bachelors\t13.0\t Married-civ-spouse\t Prof-specialty\t Husband\t Black\t Male\t0.0\t0.0\t40.0\t United-States\t \u003e50K\n53.0\t Private\t144361.0\t HS-grad\t9.0\t Married-civ-spouse\t Machine-op-inspct\t Husband\t White\t Male\t0.0\t0.0\t38.0\t United-States\t \u003c\u003d50K\n44.0\t Private\t128354.0\t Masters\t14.0\t Divorced\t Exec-managerial\t Unmarried\t White\t Female\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n41.0\t State-gov\t101603.0\t Assoc-voc\t11.0\t Married-civ-spouse\t Craft-repair\t Husband\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n29.0\t Private\t271466.0\t Assoc-voc\t11.0\t Never-married\t Prof-specialty\t Not-in-family\t White\t Male\t0.0\t0.0\t43.0\t United-States\t \u003c\u003d50K\n25.0\t Private\t32275.0\t Some-college\t10.0\t Married-civ-spouse\t Exec-managerial\t Wife\t Other\t Female\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n18.0\t Private\t226956.0\t HS-grad\t9.0\t Never-married\t Other-service\t Own-child\t White\t Female\t0.0\t0.0\t30.0\t ?\t \u003c\u003d50K\n47.0\t Private\t51835.0\t Prof-school\t15.0\t Married-civ-spouse\t Prof-specialty\t Wife\t White\t Female\t0.0\t1902.0\t60.0\t Honduras\t \u003e50K\n50.0\t Federal-gov\t251585.0\t Bachelors\t13.0\t Divorced\t Exec-managerial\t Not-in-family\t White\t Male\t0.0\t0.0\t55.0\t United-States\t \u003e50K\n47.0\t Self-emp-inc\t109832.0\t HS-grad\t9.0\t Divorced\t Exec-managerial\t Not-in-family\t White\t Male\t0.0\t0.0\t60.0\t United-States\t \u003c\u003d50K\n43.0\t Private\t237993.0\t Some-college\t10.0\t Married-civ-spouse\t Tech-support\t Husband\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003e50K\n46.0\t Private\t216666.0\t 5th-6th\t3.0\t Married-civ-spouse\t Machine-op-inspct\t Husband\t White\t Male\t0.0\t0.0\t40.0\t Mexico\t \u003c\u003d50K\n35.0\t Private\t56352.0\t Assoc-voc\t11.0\t Married-civ-spouse\t Other-service\t Husband\t White\t Male\t0.0\t0.0\t40.0\t Puerto-Rico\t \u003c\u003d50K\n41.0\t Private\t147372.0\t HS-grad\t9.0\t Married-civ-spouse\t Adm-clerical\t Husband\t White\t Male\t0.0\t0.0\t48.0\t United-States\t \u003c\u003d50K\n30.0\t Private\t188146.0\t HS-grad\t9.0\t Married-civ-spouse\t Machine-op-inspct\t Husband\t White\t Male\t5013.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n30.0\t Private\t59496.0\t Bachelors\t13.0\t Married-civ-spouse\t Sales\t Husband\t White\t Male\t2407.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n32.0\t ?\t293936.0\t 7th-8th\t4.0\t Married-spouse-absent\t ?\t Not-in-family\t White\t Male\t0.0\t0.0\t40.0\t ?\t \u003c\u003d50K\n48.0\t Private\t149640.0\t HS-grad\t9.0\t Married-civ-spouse\t Transport-moving\t Husband\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n42.0\t Private\t116632.0\t Doctorate\t16.0\t Married-civ-spouse\t Prof-specialty\t Husband\t White\t Male\t0.0\t0.0\t45.0\t United-States\t \u003e50K\n29.0\t Private\t105598.0\t Some-college\t10.0\t Divorced\t Tech-support\t Not-in-family\t White\t Male\t0.0\t0.0\t58.0\t United-States\t \u003c\u003d50K\n36.0\t Private\t155537.0\t HS-grad\t9.0\t Married-civ-spouse\t Craft-repair\t Husband\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n28.0\t Private\t183175.0\t Some-college\t10.0\t Divorced\t Adm-clerical\t Not-in-family\t White\t Female\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n53.0\t Private\t169846.0\t HS-grad\t9.0\t Married-civ-spouse\t Adm-clerical\t Wife\t White\t Female\t0.0\t0.0\t40.0\t United-States\t \u003e50K\n49.0\t Self-emp-inc\t191681.0\t Some-college\t10.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t50.0\t United-States\t \u003e50K\n25.0\t ?\t200681.0\t Some-college\t10.0\t Never-married\t ?\t Own-child\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n19.0\t Private\t101509.0\t Some-college\t10.0\t Never-married\t Prof-specialty\t Own-child\t White\t Male\t0.0\t0.0\t32.0\t United-States\t \u003c\u003d50K\n31.0\t Private\t309974.0\t Bachelors\t13.0\t Separated\t Sales\t Own-child\t Black\t Female\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n29.0\t Self-emp-not-inc\t162298.0\t Bachelors\t13.0\t Married-civ-spouse\t Sales\t Husband\t White\t Male\t0.0\t0.0\t70.0\t United-States\t \u003e50K\n23.0\t Private\t211678.0\t Some-college\t10.0\t Never-married\t Machine-op-inspct\t Not-in-family\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n79.0\t Private\t124744.0\t Some-college\t10.0\t Married-civ-spouse\t Prof-specialty\t Other-relative\t White\t Male\t0.0\t0.0\t20.0\t United-States\t \u003c\u003d50K\n27.0\t Private\t213921.0\t HS-grad\t9.0\t Never-married\t Other-service\t Own-child\t White\t Male\t0.0\t0.0\t40.0\t Mexico\t \u003c\u003d50K\n40.0\t Private\t32214.0\t Assoc-acdm\t12.0\t Married-civ-spouse\t Adm-clerical\t Husband\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n67.0\t ?\t212759.0\t 10th\t6.0\t Married-civ-spouse\t ?\t Husband\t White\t Male\t0.0\t0.0\t2.0\t United-States\t \u003c\u003d50K\n18.0\t Private\t309634.0\t 11th\t7.0\t Never-married\t Other-service\t Own-child\t White\t Female\t0.0\t0.0\t22.0\t United-States\t \u003c\u003d50K\n31.0\t Local-gov\t125927.0\t 7th-8th\t4.0\t Married-civ-spouse\t Farming-fishing\t Husband\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n18.0\t Private\t446839.0\t HS-grad\t9.0\t Never-married\t Sales\t Not-in-family\t White\t Male\t0.0\t0.0\t30.0\t United-States\t \u003c\u003d50K\n52.0\t Private\t276515.0\t Bachelors\t13.0\t Married-civ-spouse\t Other-service\t Husband\t White\t Male\t0.0\t0.0\t40.0\t Cuba\t \u003c\u003d50K\n46.0\t Private\t51618.0\t HS-grad\t9.0\t Married-civ-spouse\t Other-service\t Wife\t White\t Female\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n59.0\t Private\t159937.0\t HS-grad\t9.0\t Married-civ-spouse\t Sales\t Husband\t White\t Male\t0.0\t0.0\t48.0\t United-States\t \u003c\u003d50K\n44.0\t Private\t343591.0\t HS-grad\t9.0\t Divorced\t Craft-repair\t Not-in-family\t White\t Female\t14344.0\t0.0\t40.0\t United-States\t \u003e50K\n53.0\t Private\t346253.0\t HS-grad\t9.0\t Divorced\t Sales\t Own-child\t White\t Female\t0.0\t0.0\t35.0\t United-States\t \u003c\u003d50K\n49.0\t Local-gov\t268234.0\t HS-grad\t9.0\t Married-civ-spouse\t Protective-serv\t Husband\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003e50K\n33.0\t Private\t202051.0\t Masters\t14.0\t Married-civ-spouse\t Prof-specialty\t Husband\t White\t Male\t0.0\t0.0\t50.0\t United-States\t \u003c\u003d50K\n30.0\t Private\t54334.0\t 9th\t5.0\t Never-married\t Sales\t Not-in-family\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n43.0\t Federal-gov\t410867.0\t Doctorate\t16.0\t Never-married\t Prof-specialty\t Not-in-family\t White\t Female\t0.0\t0.0\t50.0\t United-States\t \u003e50K\n57.0\t Private\t249977.0\t Assoc-voc\t11.0\t Married-civ-spouse\t Prof-specialty\t Husband\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n37.0\t Private\t286730.0\t Some-college\t10.0\t Divorced\t Craft-repair\t Unmarried\t White\t Female\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n28.0\t Private\t212563.0\t Some-college\t10.0\t Divorced\t Machine-op-inspct\t Unmarried\t Black\t Female\t0.0\t0.0\t25.0\t United-States\t \u003c\u003d50K\n30.0\t Private\t117747.0\t HS-grad\t9.0\t Married-civ-spouse\t Sales\t Wife\t Asian-Pac-Islander\t Female\t0.0\t1573.0\t35.0\t ?\t \u003c\u003d50K\n34.0\t Local-gov\t226296.0\t Bachelors\t13.0\t Married-civ-spouse\t Protective-serv\t Husband\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003e50K\n29.0\t Local-gov\t115585.0\t Some-college\t10.0\t Never-married\t Handlers-cleaners\t Not-in-family\t White\t Male\t0.0\t0.0\t50.0\t United-States\t \u003c\u003d50K\n48.0\t Self-emp-not-inc\t191277.0\t Doctorate\t16.0\t Married-civ-spouse\t Prof-specialty\t Husband\t White\t Male\t0.0\t1902.0\t60.0\t United-States\t \u003e50K\n37.0\t Private\t202683.0\t Some-college\t10.0\t Married-civ-spouse\t Sales\t Husband\t White\t Male\t0.0\t0.0\t48.0\t United-States\t \u003e50K\n48.0\t Private\t171095.0\t Assoc-acdm\t12.0\t Divorced\t Exec-managerial\t Unmarried\t White\t Female\t0.0\t0.0\t40.0\t England\t \u003c\u003d50K\n32.0\t Federal-gov\t249409.0\t HS-grad\t9.0\t Never-married\t Other-service\t Own-child\t Black\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n"
       },
       "dateCreated": "Feb 3, 2017 8:41:09 AM",
-      "dateStarted": "Feb 7, 2017 12:55:48 PM",
-      "dateFinished": "Feb 7, 2017 12:55:52 PM",
+      "dateStarted": "Feb 17, 2017 3:03:26 PM",
+      "dateFinished": "Feb 17, 2017 3:03:29 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "title": "Check settings of graph. See how we average age by income.",
-      "text": "%sql SELECT * FROM dataset LIMIT 10",
-      "dateUpdated": "Feb 7, 2017 12:55:40 PM",
-      "config": {
-        "colWidth": 12.0,
-        "graph": {
-          "mode": "pieChart",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [
-            {
-              "name": "income",
-              "index": 14.0,
-              "aggr": "sum"
-            }
-          ],
-          "values": [
-            {
-              "name": "age",
-              "index": 0.0,
-              "aggr": "avg"
-            }
-          ],
-          "groups": [],
-          "scatter": {
-            "xAxis": {
-              "name": "age",
-              "index": 0.0,
-              "aggr": "sum"
-            },
-            "yAxis": {
-              "name": "workclass",
-              "index": 1.0,
-              "aggr": "sum"
-            }
-          }
-        },
-        "enabled": true,
-        "editorMode": "ace/mode/scala",
-        "title": true
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "jobName": "paragraph_1486412404414_-1397675343",
-      "id": "20170206-202004_49344056",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TABLE",
-        "msg": "age\tworkclass\tfnlwgt\teducation\teducation_num\tmarital_status\toccupation\trelationship\trace\tsex\tcapital_gain\tcapital_loss\thours_per_week\tnative_country\tincome\n39.0\t State-gov\t77516.0\t Bachelors\t13.0\t Never-married\t Adm-clerical\t Not-in-family\t White\t Male\t2174.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n50.0\t Self-emp-not-inc\t83311.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t13.0\t United-States\t \u003c\u003d50K\n38.0\t Private\t215646.0\t HS-grad\t9.0\t Divorced\t Handlers-cleaners\t Not-in-family\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n53.0\t Private\t234721.0\t 11th\t7.0\t Married-civ-spouse\t Handlers-cleaners\t Husband\t Black\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n28.0\t Private\t338409.0\t Bachelors\t13.0\t Married-civ-spouse\t Prof-specialty\t Wife\t Black\t Female\t0.0\t0.0\t40.0\t Cuba\t \u003c\u003d50K\n37.0\t Private\t284582.0\t Masters\t14.0\t Married-civ-spouse\t Exec-managerial\t Wife\t White\t Female\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n49.0\t Private\t160187.0\t 9th\t5.0\t Married-spouse-absent\t Other-service\t Not-in-family\t Black\t Female\t0.0\t0.0\t16.0\t Jamaica\t \u003c\u003d50K\n52.0\t Self-emp-not-inc\t209642.0\t HS-grad\t9.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t45.0\t United-States\t \u003e50K\n31.0\t Private\t45781.0\t Masters\t14.0\t Never-married\t Prof-specialty\t Not-in-family\t White\t Female\t14084.0\t0.0\t50.0\t United-States\t \u003e50K\n42.0\t Private\t159449.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t5178.0\t0.0\t40.0\t United-States\t \u003e50K\n"
-      },
-      "dateCreated": "Feb 6, 2017 8:20:04 AM",
-      "dateStarted": "Feb 7, 2017 12:55:48 PM",
-      "dateFinished": "Feb 7, 2017 12:55:53 PM",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "text": "%md \n\n## III. Descriptive analysis\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nProvide a summary statistics graph for some columns you deem interesting. Summary statistics is comprised (but not limited) of:\n* mean, standard deviation and skewness for numeric columns.\n* counts and percentage of each value for categorical columns.\n\nIf you can, try to separate the two income groups and compare.\n\nTwo ways of doing this:\n* You should be able to it using standard SQL queries on the DataFrame and `show()` the result\n* You can use the %sql interpreter like in the previous cell and then use the settings tab of your graph to display the desired results.",
-      "dateUpdated": "Feb 7, 2017 12:55:40 PM",
+      "text": "%md \n\n## III. Descriptive analysis\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nProvide a summary statistics graph for some columns you deem interesting. Summary statistics is comprised (but not limited) of:\n* mean, standard deviation and skewness for numeric columns.\n* counts and percentage of each value for categorical columns.\n\nIf you can, try to separate the two income groups and compare.\n\nTwo ways of doing this:\n* You should be able to it using standard SQL queries on the DataFrame and `show()` the result\n* You can use the %sql interpreter like in the previous cell and then use the settings tab of your graph to display the desired results.\n\n\n\nRemarques : Le résultat de la requete ci-dessous nous montre la relation entre l\u0027occupation et la salaire,  on peut conclure par exemple que les agents d\u0027entretien gagne forcément un salaire inferieur à 50k.\nOn peut rajouter ça comme une régle dans un arbre de décision",
+      "dateUpdated": "Feb 17, 2017 3:54:39 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -286,7 +227,7 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/markdown",
-        "editorHide": true,
+        "editorHide": false,
         "tableHide": false
       },
       "settings": {
@@ -298,12 +239,183 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003ch2\u003eIII. Descriptive analysis\u003c/h2\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eProvide a summary statistics graph for some columns you deem interesting. Summary statistics is comprised (but not limited) of:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003emean, standard deviation and skewness for numeric columns.\u003c/li\u003e\n\u003cli\u003ecounts and percentage of each value for categorical columns.\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eIf you can, try to separate the two income groups and compare.\u003c/p\u003e\n\u003cp\u003eTwo ways of doing this:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eYou should be able to it using standard SQL queries on the DataFrame and \u003ccode\u003eshow()\u003c/code\u003e the result\u003c/li\u003e\n\u003cli\u003eYou can use the %sql interpreter like in the previous cell and then use the settings tab of your graph to display the desired results.\u003c/li\u003e\n\u003c/ul\u003e\n"
+        "msg": "\u003ch2\u003eIII. Descriptive analysis\u003c/h2\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eProvide a summary statistics graph for some columns you deem interesting. Summary statistics is comprised (but not limited) of:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003emean, standard deviation and skewness for numeric columns.\u003c/li\u003e\n\u003cli\u003ecounts and percentage of each value for categorical columns.\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eIf you can, try to separate the two income groups and compare.\u003c/p\u003e\n\u003cp\u003eTwo ways of doing this:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eYou should be able to it using standard SQL queries on the DataFrame and \u003ccode\u003eshow()\u003c/code\u003e the result\u003c/li\u003e\n\u003cli\u003eYou can use the %sql interpreter like in the previous cell and then use the settings tab of your graph to display the desired results.\u003c/li\u003e\n\u003cli\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eRemarques : Le résultat de la requete ci-dessous nous montre la relation entre l\u0027occupation et la salaire,  on peut conclure par exemple que les agents d\u0027entretien gagne forcément un salaire inferieur à 50k.\n\u003cbr  /\u003eOn peut rajouter ça comme une régle dans un arbre de décision\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 3, 2017 8:59:52 AM",
-      "dateStarted": "Feb 7, 2017 12:55:41 PM",
-      "dateFinished": "Feb 7, 2017 12:55:41 PM",
+      "dateStarted": "Feb 17, 2017 3:54:11 PM",
+      "dateFinished": "Feb 17, 2017 3:54:11 PM",
       "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Check settings of graph. See how we average age by income.",
+      "text": "%sql SELECT occupation , income , count(occupation ) FROM dataset group by occupation , income",
+      "dateUpdated": "Feb 17, 2017 3:51:26 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": true,
+          "keys": [
+            {
+              "name": "occupation",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "income",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "occupation",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "income",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true,
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1486412404414_-1397675343",
+      "id": "20170206-202004_49344056",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "occupation\tincome\tcount(occupation)\n Priv-house-serv\t \u003c\u003d50K\t148\n Sales\t \u003c\u003d50K\t2667\n Farming-fishing\t \u003c\u003d50K\t879\n Machine-op-inspct\t \u003c\u003d50K\t1752\n Adm-clerical\t \u003c\u003d50K\t3263\n Machine-op-inspct\t \u003e50K\t250\n ?\t \u003e50K\t191\n Prof-specialty\t \u003c\u003d50K\t2281\n Tech-support\t \u003e50K\t283\n Protective-serv\t \u003e50K\t211\n Transport-moving\t \u003c\u003d50K\t1277\n Transport-moving\t \u003e50K\t320\n Protective-serv\t \u003c\u003d50K\t438\n Other-service\t \u003e50K\t137\n Tech-support\t \u003c\u003d50K\t645\n Exec-managerial\t \u003e50K\t1968\n Sales\t \u003e50K\t983\n Craft-repair\t \u003c\u003d50K\t3170\n Farming-fishing\t \u003e50K\t115\n Armed-Forces\t \u003c\u003d50K\t8\n Prof-specialty\t \u003e50K\t1859\n Other-service\t \u003c\u003d50K\t3158\n ?\t \u003c\u003d50K\t1652\n Exec-managerial\t \u003c\u003d50K\t2098\n Handlers-cleaners\t \u003c\u003d50K\t1284\n Handlers-cleaners\t \u003e50K\t86\n Priv-house-serv\t \u003e50K\t1\n Craft-repair\t \u003e50K\t929\n Armed-Forces\t \u003e50K\t1\n Adm-clerical\t \u003e50K\t507\n"
+      },
+      "dateCreated": "Feb 6, 2017 8:20:04 AM",
+      "dateStarted": "Feb 17, 2017 3:42:00 PM",
+      "dateFinished": "Feb 17, 2017 3:42:01 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql SELECT  income, avg(age) as Moyenne_age, avg(hours_per_week) as Moyenne_heures_de_travail , avg(education_num) from dataset group by income",
+      "dateUpdated": "Feb 17, 2017 3:31:20 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "income",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "avg(age)",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "income",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "avg(age)",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487344089634_-1889808889",
+      "id": "20170217-150809_767077616",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "income\tMoyenne_age\tMoyenne_heures_de_travail\tavg(education_num)\n \u003e50K\t44.24984058155847\t45.473026399693914\t11.611656676444332\n \u003c\u003d50K\t36.78373786407767\t38.840210355987054\t9.595064724919094\n"
+      },
+      "dateCreated": "Feb 17, 2017 3:08:09 PM",
+      "dateStarted": "Feb 17, 2017 3:31:20 PM",
+      "dateFinished": "Feb 17, 2017 3:31:22 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "",
+      "dateUpdated": "Feb 17, 2017 3:19:44 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487344773695_-246378892",
+      "id": "20170217-151933_100129288",
+      "dateCreated": "Feb 17, 2017 3:19:33 PM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "",
+      "dateUpdated": "Feb 17, 2017 3:19:44 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487344772427_-1149769309",
+      "id": "20170217-151932_1365666588",
+      "dateCreated": "Feb 17, 2017 3:19:32 PM",
+      "status": "READY",
       "progressUpdateIntervalMs": 500
     },
     {
