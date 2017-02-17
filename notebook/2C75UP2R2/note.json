@@ -1888,7 +1888,7 @@
     {
       "title": "Display number of connections per continent",
       "text": "",
-      "dateUpdated": "Feb 1, 2017 10:09:38 AM",
+      "dateUpdated": "Feb 17, 2017 3:08:47 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1902,7 +1902,8 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "title": true
+        "title": true,
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -1959,7 +1960,7 @@
     },
     {
       "text": "%md\n\n#### Primer on Zeppelin visualization\n\nIf your dataframe is registered, you can use the %sql interpreter to directly study it. \n\nNormally the %sql interpreter is used to connect to a Hive metastore, the thing is a registered dataframe is actually present in the local Hive metastore so you can access it as a fake Hive table (you can see it for yourself with `sqlContext.sql(\"SHOW TABLES\").show()`)\n\nWith the %sql interpreter, you have access to basic visualization features of Zeppelin.",
-      "dateUpdated": "Feb 1, 2017 10:23:24 AM",
+      "dateUpdated": "Feb 17, 2017 3:07:48 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1973,7 +1974,7 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/markdown",
-        "editorHide": true
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -1987,15 +1988,15 @@
         "msg": "\u003ch4\u003ePrimer on Zeppelin visualization\u003c/h4\u003e\n\u003cp\u003eIf your dataframe is registered, you can use the %sql interpreter to directly study it.\u003c/p\u003e\n\u003cp\u003eNormally the %sql interpreter is used to connect to a Hive metastore, the thing is a registered dataframe is actually present in the local Hive metastore so you can access it as a fake Hive table (you can see it for yourself with \u003ccode\u003esqlContext.sql(\"SHOW TABLES\").show()\u003c/code\u003e)\u003c/p\u003e\n\u003cp\u003eWith the %sql interpreter, you have access to basic visualization features of Zeppelin.\u003c/p\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 1:58:53 AM",
-      "dateStarted": "Feb 1, 2017 10:23:22 AM",
-      "dateFinished": "Feb 1, 2017 10:23:22 AM",
+      "dateStarted": "Feb 17, 2017 3:07:48 PM",
+      "dateFinished": "Feb 17, 2017 3:07:48 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "If your DataFrame is stored internally, you can do some viz",
       "text": "%sql\nSELECT * FROM df",
-      "dateUpdated": "Feb 1, 2017 10:23:58 AM",
+      "dateUpdated": "Feb 17, 2017 3:08:29 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -2032,7 +2033,8 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/sql",
-        "title": true
+        "title": true,
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -2054,7 +2056,7 @@
     {
       "title": "You can visualize the results of a query",
       "text": "%sql\nSELECT CONTINENT_NAME, COUNT(CONTINENT_NAME) as count FROM df GROUP BY CONTINENT_NAME",
-      "dateUpdated": "Feb 1, 2017 10:24:01 AM",
+      "dateUpdated": "Feb 17, 2017 3:06:58 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -2091,7 +2093,8 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/sql",
-        "title": true
+        "title": true,
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -2141,24 +2144,24 @@
   "name": "Practice",
   "id": "2C75UP2R2",
   "angularObjects": {
-    "2C93MQCCX:shared_process": [],
-    "2CAFQY6K3:shared_process": [],
-    "2C71Z8V22:shared_process": [],
-    "2C74PSEZQ:shared_process": [],
-    "2C7936H5V:shared_process": [],
-    "2C6WY8JHA:shared_process": [],
-    "2C8CCCVZ2:shared_process": [],
-    "2C9JTS6JQ:shared_process": [],
-    "2C91JKV9H:shared_process": [],
-    "2C8N1PP7C:shared_process": [],
-    "2C7YTW7VT:shared_process": [],
-    "2C85G18U9:shared_process": [],
-    "2C9XYSTEH:shared_process": [],
-    "2CA474ZG3:shared_process": [],
-    "2C8JNXQ9U:shared_process": [],
-    "2C827138T:shared_process": [],
-    "2CAA7GXEJ:shared_process": [],
-    "2C8W1GCP8:shared_process": []
+    "2CAZV41KM:shared_process": [],
+    "2C9ZJB2Y7:shared_process": [],
+    "2CAU36U9G:shared_process": [],
+    "2CBU7GPFX:shared_process": [],
+    "2CBYKCKQG:shared_process": [],
+    "2CC3DWP73:shared_process": [],
+    "2CB1FS4VN:shared_process": [],
+    "2C8F572JU:shared_process": [],
+    "2CBPU6QSM:shared_process": [],
+    "2CBCZXF7B:shared_process": [],
+    "2C9GD4UZJ:shared_process": [],
+    "2CBCYAXUX:shared_process": [],
+    "2CAV8ZYQK:shared_process": [],
+    "2CAUQD3JP:shared_process": [],
+    "2CAJT2VAB:shared_process": [],
+    "2CA53MWJH:shared_process": [],
+    "2CBSH8YQQ:shared_process": [],
+    "2CBC39BFM:shared_process": []
   },
   "config": {
     "looknfeel": "default"
