@@ -214,11 +214,11 @@
     {
       "title": "Check settings of graph. See how we average age by income.",
       "text": "%sql SELECT * FROM dataset LIMIT 10",
-      "dateUpdated": "Feb 17, 2017 10:54:10 AM",
+      "dateUpdated": "Feb 17, 2017 10:58:45 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
-          "mode": "multiBarChart",
+          "mode": "pieChart",
           "height": 300.0,
           "optionOpen": true,
           "keys": [
@@ -230,9 +230,9 @@
           ],
           "values": [
             {
-              "name": "hours_per_week",
-              "index": 12.0,
-              "aggr": "sum"
+              "name": "age",
+              "index": 0.0,
+              "aggr": "avg"
             }
           ],
           "groups": [],
@@ -308,11 +308,11 @@
     },
     {
       "text": "%sql SELECT * FROM dataset",
-      "dateUpdated": "Feb 17, 2017 10:53:08 AM",
+      "dateUpdated": "Feb 17, 2017 11:00:57 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
-          "mode": "pieChart",
+          "mode": "multiBarChart",
           "height": 300.0,
           "optionOpen": true,
           "keys": [
@@ -324,12 +324,18 @@
           ],
           "values": [
             {
-              "name": "race",
-              "index": 8.0,
+              "name": "income",
+              "index": 14.0,
               "aggr": "count"
             }
           ],
-          "groups": [],
+          "groups": [
+            {
+              "name": "sex",
+              "index": 9.0,
+              "aggr": "sum"
+            }
+          ],
           "scatter": {
             "xAxis": {
               "name": "age",
@@ -355,6 +361,41 @@
       "dateCreated": "Feb 17, 2017 10:18:25 AM",
       "dateStarted": "Feb 17, 2017 10:23:03 AM",
       "dateFinished": "Feb 17, 2017 10:23:04 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md \n\nNotre premier graphique nous dresse la distribution du salaire en fonction du genre. Nous pouvons voir que les hommes gagnent en moyenne plus que les femmes que ce soit pour les salaires \u003c\u003d50K ou \u003e50K. ",
+      "dateUpdated": "Feb 17, 2017 11:06:09 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487329271600_1553118468",
+      "id": "20170217-110111_779937522",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eNotre premier graphique nous dresse la distribution du salaire en fonction du genre. Nous pouvons voir que les hommes gagnent en moyenne plus que les femmes que ce soit pour les salaires \u003c\u003d50K ou \u003e50K.\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 17, 2017 11:01:11 AM",
+      "dateStarted": "Feb 17, 2017 11:05:59 AM",
+      "dateFinished": "Feb 17, 2017 11:05:59 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
