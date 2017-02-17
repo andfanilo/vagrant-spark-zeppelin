@@ -569,8 +569,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "// Configure an ML pipeline, which consists of two stages on one column: a StringIndexer and a OneHotEncoder.\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer}\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\nval categoricalCols \u003d Seq(\"workclass\", \"education\", \"marital_status\", \"occupation\", \"relationship\", \"race\", \"sex\", \"native_country\")\nval numericCols \u003d Seq(\"age\", \"fnlwgt\", \"education_num\", \"capital_gain\", \"capital_loss\", \"hours_per_week\")\n\nval a \u003d categoricalCols.flatMap{x \u003d\u003e \nval stringIndexer \u003d new StringIndexer()\n  .setInputCol(x)\n  .setOutputCol(x+\"index\")\nval oneHotEncoder \u003d new OneHotEncoder()\n  .setInputCol(stringIndexer.getOutputCol)\n  .setOutputCol(stringIndexer.getInputCol + \"ClassVec\"\n  )\n  Seq(stringIndexer,OneHotEncoder )\n}\n// stage for label\nval label_stringIdx \u003d new StringIndexer()\n    .setInputCol(\"income\")\n    .setOutputCol(\"label\")\n\nval stages \u003d  Seq(stringIndexer, oneHotEncoder) ++ Seq(label_stringIdx) // concatenate 2 sequences of stages\nval pipeline \u003d new Pipeline()\n  .setStages(stages.toArray)\n\nval pipelineModel \u003d pipeline.fit(dataset)\npipelineModel.transform(dataset).show()\n",
-      "dateUpdated": "Feb 17, 2017 4:39:44 PM",
+      "text": "// Configure an ML pipeline, which consists of two stages on one column: a StringIndexer and a OneHotEncoder.\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer}\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\nval categoricalCols \u003d Seq(\"workclass\", \"education\", \"marital_status\", \"occupation\", \"relationship\", \"race\", \"sex\", \"native_country\")\nval numericCols \u003d Seq(\"age\", \"fnlwgt\", \"education_num\", \"capital_gain\", \"capital_loss\", \"hours_per_week\")\n\nval a \u003d categoricalCols.flatMap{x \u003d\u003e \nval stringIndexer \u003d new StringIndexer()\n  .setInputCol(x)\n  .setOutputCol(x+\"index\")\nval oneHotEncoder \u003d new OneHotEncoder()\n  .setInputCol(stringIndexer.getOutputCol)\n  .setOutputCol(stringIndexer.getInputCol + \"ClassVec\"\n  )\n  Seq(stringIndexer,OneHotEncoder )\n}\n// stage for label\nval label_stringIdx \u003d new StringIndexer()\n    .setInputCol(\"income\")\n    .setOutputCol(\"label\")\n\nval stages \u003d  Seq(stringIndexer, oneHotEncoder) ++ Seq(label_stringIdx) \nval pipeline \u003d new Pipeline()\n  .setStages(stages.toArray)\n\nval pipelineModel \u003d pipeline.fit(dataset)\npipelineModel.transform(dataset).show()\n",
+      "dateUpdated": "Feb 17, 2017 4:51:05 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -604,7 +604,7 @@
     },
     {
       "text": "%md\n\nTo run machine learning on a dataset, you need a column which contains a vector of all the features, and a column with the label.\n\nWe use the [VectorAssembler](http://spark.apache.org/docs/latest/ml-features.html#vectorassembler) to assemble all of our numeric columns and one-hot encoded categorical columns into one.\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nAdd the `VectorAssembler` stage, which takes as input all numeric columns and one hot encoded categorical columns. The `features` column will then be created. You can comment on it.",
-      "dateUpdated": "Feb 7, 2017 12:55:43 PM",
+      "dateUpdated": "Feb 17, 2017 4:51:04 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -632,9 +632,43 @@
         "msg": "\u003cp\u003eTo run machine learning on a dataset, you need a column which contains a vector of all the features, and a column with the label.\u003c/p\u003e\n\u003cp\u003eWe use the \u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-features.html#vectorassembler\"\u003eVectorAssembler\u003c/a\u003e to assemble all of our numeric columns and one-hot encoded categorical columns into one.\u003c/p\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eAdd the \u003ccode\u003eVectorAssembler\u003c/code\u003e stage, which takes as input all numeric columns and one hot encoded categorical columns. The \u003ccode\u003efeatures\u003c/code\u003e column will then be created. You can comment on it.\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 3, 2017 9:15:56 AM",
-      "dateStarted": "Feb 7, 2017 12:55:43 PM",
-      "dateFinished": "Feb 7, 2017 12:55:43 PM",
+      "dateStarted": "Feb 17, 2017 4:51:04 PM",
+      "dateFinished": "Feb 17, 2017 4:51:04 PM",
       "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer, VectorAssembler}\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\nval categoricalCols \u003d Seq(\"workclass\", \"education\", \"marital_status\", \"occupation\", \"relationship\", \"race\", \"sex\", \"native_country\")\nval numericCols \u003d Seq(\"age\", \"fnlwgt\", \"education_num\", \"capital_gain\", \"capital_loss\", \"hours_per_week\")\n\nval categ \u003d categoricalCols.flatMap{x \u003d\u003e \nval stringIndexer \u003d new StringIndexer()\n  .setInputCol(x)\n  .setOutputCol(x+\"index\")\nval oneHotEncoder \u003d new OneHotEncoder()\n  .setInputCol(stringIndexer.getOutputCol)\n  .setOutputCol(stringIndexer.getInputCol + \"ClassVec\"\n  )\n  Seq(stringIndexer,OneHotEncoder )\n}\n// stage for label\nval label_stringIdx \u003d new StringIndexer()\n    .setInputCol(\"income\")\n    .setOutputCol(\"label\")\n\nval assembler \u003d new VectorAssembler()\n.setInputCols((numericCols ++ categoricalCols.map(col \u003d\u003e col +\"ClassVec\")).toArray)\n.setOutputCol(\"features\")\n\nval stages \u003d  categ ++ Seq(label_stringIdx, assembler ) \nval pipeline \u003d new Pipeline()\n  .setStages(stages.toArray)\n\nval pipelineModel \u003d pipeline.fit(dataset)\npipelineModel.transform(dataset).show()",
+      "dateUpdated": "Feb 17, 2017 4:59:50 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487350268496_899460219",
+      "id": "20170217-165108_566077885",
+      "result": {
+        "code": "ERROR",
+        "type": "TEXT",
+        "msg": "\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer, VectorAssembler}\n\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\ncategoricalCols: Seq[String] \u003d List(workclass, education, marital_status, occupation, relationship, race, sex, native_country)\n\nnumericCols: Seq[String] \u003d List(age, fnlwgt, education_num, capital_gain, capital_loss, hours_per_week)\n\ncateg: Seq[Serializable] \u003d List(strIdx_b0782ad90143, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_3f7311c75715, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_774f2176923d, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_38ac86031255, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_b26be0ba87c3, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_e764c12414f5, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_19bb33a39316, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_0654e345e793, org.apache.spark.ml.feature.OneHotEncoder$@488e2327)\n\nlabel_stringIdx: org.apache.spark.ml.feature.StringIndexer \u003d strIdx_7d1b95d2832c\n\nassembler: org.apache.spark.ml.feature.VectorAssembler \u003d vecAssembler_31856026a6c5\n\nstages: Seq[Serializable] \u003d List(strIdx_b0782ad90143, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_3f7311c75715, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_774f2176923d, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_38ac86031255, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_b26be0ba87c3, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_e764c12414f5, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_19bb33a39316, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_0654e345e793, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_7d1b95d2832c, vecAssembler_31856026a6c5)\n\n\n\n\n\n\n\n\u003cconsole\u003e:83: error: type mismatch;\n found   : Array[Serializable]\n required: Array[_ \u003c: org.apache.spark.ml.PipelineStage]\nNote: Serializable \u003e: org.apache.spark.ml.PipelineStage, but class Array is invariant in type T.\nYou may wish to investigate a wildcard type such as `_ \u003e: org.apache.spark.ml.PipelineStage`. (SLS 3.2.10)\n         .setStages(stages.toArray)\n                           ^\n"
+      },
+      "dateCreated": "Feb 17, 2017 4:51:08 PM",
+      "dateStarted": "Feb 17, 2017 4:59:50 PM",
+      "dateFinished": "Feb 17, 2017 4:59:52 PM",
+      "status": "ERROR",
       "progressUpdateIntervalMs": 500
     },
     {
