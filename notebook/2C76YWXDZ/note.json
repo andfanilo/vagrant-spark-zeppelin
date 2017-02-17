@@ -509,7 +509,7 @@
     {
       "title": "One-hot encoding example",
       "text": "val names \u003d Seq(\"color\", \"index\", \"OHE_attr1\", \"OHE_attr2\", \"OHE_attr3\")\nsqlContext.createDataFrame(sc.parallelize(Seq((\"Blue\", 0, 1, 0, 0), (\"Green\", 1, 0, 1, 0), (\"Red\", 2, 0 , 0 , 1)))).toDF(names: _*).show()",
-      "dateUpdated": "Feb 7, 2017 12:55:42 PM",
+      "dateUpdated": "Feb 17, 2017 3:49:00 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -538,14 +538,14 @@
         "msg": "\nnames: Seq[String] \u003d List(color, index, OHE_attr1, OHE_attr2, OHE_attr3)\n+-----+-----+---------+---------+---------+\n|color|index|OHE_attr1|OHE_attr2|OHE_attr3|\n+-----+-----+---------+---------+---------+\n| Blue|    0|        1|        0|        0|\n|Green|    1|        0|        1|        0|\n|  Red|    2|        0|        0|        1|\n+-----+-----+---------+---------+---------+\n\n"
       },
       "dateCreated": "Feb 3, 2017 9:06:15 AM",
-      "dateStarted": "Feb 7, 2017 12:55:53 PM",
-      "dateFinished": "Feb 7, 2017 12:55:55 PM",
+      "dateStarted": "Feb 17, 2017 3:48:54 PM",
+      "dateFinished": "Feb 17, 2017 3:48:56 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\nIn this dataset, we have ordinal variables like education (Preschool - Doctorate), and also nominal variables like relationship (Wife, Husband, Own-child, etc). For simplicity\u0027s sake, we will use One-Hot Encoding to convert all categorical variables into binary vectors. It might be possible here to improve prediction accuracy by converting each categorical column with an appropriate method.\n\nHere, we will use a combination of [StringIndexer](http://spark.apache.org/docs/latest/ml-features.html#stringindexer) and [OneHotEncoder](http://spark.apache.org/docs/latest/ml-features.html#onehotencoder) on each string column to convert the categorical variables. The `OneHotEncoder` will return a SparseVector (which means, for `(8,[4],[1.0])` that the vector has size 8, one only the 4th column contains a value which is 1.0).\n\nSince we will have many stages of feature transformations, we use an [ML Pipeline](http://spark.apache.org/docs/latest/ml-pipeline.html) to tie the stages together.  This simplifies our code. You should especially try to use [the Pipeline example](http://spark.apache.org/docs/latest/ml-pipeline.html#example-pipeline).\n\n```scala\n// Configure an ML pipeline, which consists of two stages on one column: a StringIndexer and a OneHotEncoder.\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer}\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\n// stages for column workclass\nval stringIndexer \u003d new StringIndexer()\n  .setInputCol(\"workclass\")\n  .setOutputCol(\"workclassIndex\")\nval oneHotEncoder \u003d new OneHotEncoder()\n  .setInputCol(stringIndexer.getOutputCol)\n  .setOutputCol(stringIndexer.getInputCol + \"ClassVec\")\n  \n// stage for label\nval label_stringIdx \u003d new StringIndexer()\n    .setInputCol(\"income\")\n    .setOutputCol(\"label\")\n  \nval stages \u003d  Seq(stringIndexer, oneHotEncoder) ++ Seq(label_stringIdx) // concatenate 2 sequences of stages\nval pipeline \u003d new Pipeline()\n  .setStages(stages.toArray)\n  \nval pipelineModel \u003d pipeline.fit(dataset)\npipelineModel.transform(dataset).show()\n```\n\nIt is also a good time to transform the income to a label of 0 and 1 for binary classification using the `StringIndexer`.\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\n1. For each categorical column, build a stage of StringIndexer and OneHotEncoder\n2. Add all those stages in a single pipeline\n3. Also add a StringIndexer of the `income` column and name the output column `label`\n3. Check the result by passing your dataset inside the pipeline. Comment \u0026 explain.\n\n_Hint: actually map your sequence of categorical columns to a sequence of stages through FP._",
-      "dateUpdated": "Feb 7, 2017 12:55:42 PM",
+      "dateUpdated": "Feb 17, 2017 4:19:39 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -559,7 +559,7 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/markdown",
-        "editorHide": true
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -581,7 +581,7 @@
     {
       "title": "Detail columns to deal with",
       "text": "val categoricalCols \u003d Seq(\"workclass\", \"education\", \"marital_status\", \"occupation\", \"relationship\", \"race\", \"sex\", \"native_country\")\nval numericCols \u003d Seq(\"age\", \"fnlwgt\", \"education_num\", \"capital_gain\", \"capital_loss\", \"hours_per_week\")",
-      "dateUpdated": "Feb 7, 2017 12:55:42 PM",
+      "dateUpdated": "Feb 17, 2017 3:49:11 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -609,14 +609,82 @@
         "msg": "\ncategoricalCols: Seq[String] \u003d List(workclass, education, marital_status, occupation, relationship, race, sex, native_country)\n\nnumericCols: Seq[String] \u003d List(age, fnlwgt, education_num, capital_gain, capital_loss, hours_per_week)\n"
       },
       "dateCreated": "Feb 6, 2017 2:31:24 AM",
-      "dateStarted": "Feb 7, 2017 12:55:53 PM",
-      "dateFinished": "Feb 7, 2017 12:55:56 PM",
+      "dateStarted": "Feb 17, 2017 3:49:11 PM",
+      "dateFinished": "Feb 17, 2017 3:49:12 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
+      "text": "categoricalCols.flatMap{ s \u003d\u003e\n    Seq(s, s + \"index\")\n}",
+      "dateUpdated": "Feb 17, 2017 3:55:54 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487346742426_1950573433",
+      "id": "20170217-155222_1556791809",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nres32: Seq[String] \u003d List(workclass, workclassindex, education, educationindex, marital_status, marital_statusindex, occupation, occupationindex, relationship, relationshipindex, race, raceindex, sex, sexindex, native_country, native_countryindex)\n"
+      },
+      "dateCreated": "Feb 17, 2017 3:52:22 PM",
+      "dateStarted": "Feb 17, 2017 3:55:54 PM",
+      "dateFinished": "Feb 17, 2017 3:55:55 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer,VectorAssembler}\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\n//val categ \u003d categoricalCols.flatMap{ s\u003d\u003e Seq(s,s+\"index\")}\n\nval catStages \u003d categoricalCols.flatMap{colonne \u003d\u003e \n    val stringIndexer \u003d new StringIndexer()\n        .setInputCol(colonne)\n        .setOuputCol(colonne+\"index\")\n    val oneHotEncoder \u003d new OneHotEncoder()\n      .setInputCol(stringIndexer.getOutputCol)\n      .setOutputCol(stringIndexer.getInputCol + \"ClassVec\")\n      Seq(stringIndexer,oneHotEncoder)\n}\n\nval label_stringIdx \u003d new StringIndexer()\n    .setInputCol(\"income\")\n    .setOutputCol(\"label\")\n\nval assembler \u003d new VectorAssembler\n    .setInputCol(/*ici il faut mettre les colonnes numériques + les colonnes catégorielles numérisées en classVec*/)\n    .setOutputCol(\"features\")\n    \nval stages \u003d  Seq(stringIndexer, oneHotEncoder) ++ Seq(label_stringIdx) // concatenate 2 sequences of stages\nval pipeline \u003d new Pipeline()\n  .setStages(stages.toArray)\n\nval pipelineModel \u003d pipeline.fit(dataset)\npipelineModel.transform(dataset).show()",
+      "dateUpdated": "Feb 17, 2017 4:38:59 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487348402354_-17429226",
+      "id": "20170217-162002_1988584266",
+      "result": {
+        "code": "ERROR",
+        "type": "TEXT",
+        "msg": "\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer, VectorAssembler}\n\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\n\n\n\n\u003cconsole\u003e:34: error: value setOuputCol is not a member of org.apache.spark.ml.feature.StringIndexer\npossible cause: maybe a semicolon is missing before `value setOuputCol\u0027?\n               .setOuputCol(colonne+\"index\")\n                ^\n"
+      },
+      "dateCreated": "Feb 17, 2017 4:20:02 PM",
+      "dateStarted": "Feb 17, 2017 4:38:59 PM",
+      "dateFinished": "Feb 17, 2017 4:39:00 PM",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
       "text": "%md\n\nTo run machine learning on a dataset, you need a column which contains a vector of all the features, and a column with the label.\n\nWe use the [VectorAssembler](http://spark.apache.org/docs/latest/ml-features.html#vectorassembler) to assemble all of our numeric columns and one-hot encoded categorical columns into one.\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nAdd the `VectorAssembler` stage, which takes as input all numeric columns and one hot encoded categorical columns. The `features` column will then be created. You can comment on it.",
-      "dateUpdated": "Feb 7, 2017 12:55:43 PM",
+      "dateUpdated": "Feb 17, 2017 3:53:51 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -644,14 +712,14 @@
         "msg": "\u003cp\u003eTo run machine learning on a dataset, you need a column which contains a vector of all the features, and a column with the label.\u003c/p\u003e\n\u003cp\u003eWe use the \u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-features.html#vectorassembler\"\u003eVectorAssembler\u003c/a\u003e to assemble all of our numeric columns and one-hot encoded categorical columns into one.\u003c/p\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eAdd the \u003ccode\u003eVectorAssembler\u003c/code\u003e stage, which takes as input all numeric columns and one hot encoded categorical columns. The \u003ccode\u003efeatures\u003c/code\u003e column will then be created. You can comment on it.\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 3, 2017 9:15:56 AM",
-      "dateStarted": "Feb 7, 2017 12:55:43 PM",
-      "dateFinished": "Feb 7, 2017 12:55:43 PM",
+      "dateStarted": "Feb 17, 2017 3:53:51 PM",
+      "dateFinished": "Feb 17, 2017 3:53:51 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\nAt this point, you should have a dataframe with a column _features_ which consists of a vector of all features in numerical form, and a column _label_ with the Income as a binary value. \n\nIt looks like this for example:\n\n```\n+----+-----------------+--------+----------+-------------+-------------------+------------------+--------------+------+-----+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\n| age|        workclass|  fnlwgt| education|education_num|     marital_status|        occupation|  relationship|  race|  sex|capital_gain|capital_loss|hours_per_week|native_country|income|workclassIndex|workclassClassVec|educationIndex|educationClassVec|marital_statusIndex|marital_statusClassVec|occupationIndex|occupationClassVec|relationshipIndex|relationshipClassVec|raceIndex| raceClassVec|sexIndex|  sexClassVec|native_countryIndex|native_countryClassVec|label|            features|\n+----+-----------------+--------+----------+-------------+-------------------+------------------+--------------+------+-----+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\n|39.0|        State-gov| 77516.0| Bachelors|         13.0|      Never-married|      Adm-clerical| Not-in-family| White| Male|      2174.0|         0.0|          40.0| United-States| \u003c\u003d50K|           4.0|    (8,[4],[1.0])|           2.0|   (15,[2],[1.0])|                1.0|         (6,[1],[1.0])|            3.0|    (14,[3],[1.0])|              1.0|       (5,[1],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(100,[4,10,24,32,...|\n```\n\n\u003chr\u003e\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nRandomly split your dataset into a 70% training set and 30% test set using a Dataframe\u0027s `randomSplit` function.",
-      "dateUpdated": "Feb 7, 2017 12:55:43 PM",
+      "dateUpdated": "Feb 17, 2017 4:04:42 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -679,8 +747,8 @@
         "msg": "\u003cp\u003eAt this point, you should have a dataframe with a column \u003cem\u003efeatures\u003c/em\u003e which consists of a vector of all features in numerical form, and a column \u003cem\u003elabel\u003c/em\u003e with the Income as a binary value.\u003c/p\u003e\n\u003cp\u003eIt looks like this for example:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+----+-----------------+--------+----------+-------------+-------------------+------------------+--------------+------+-----+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\n| age|        workclass|  fnlwgt| education|education_num|     marital_status|        occupation|  relationship|  race|  sex|capital_gain|capital_loss|hours_per_week|native_country|income|workclassIndex|workclassClassVec|educationIndex|educationClassVec|marital_statusIndex|marital_statusClassVec|occupationIndex|occupationClassVec|relationshipIndex|relationshipClassVec|raceIndex| raceClassVec|sexIndex|  sexClassVec|native_countryIndex|native_countryClassVec|label|            features|\n+----+-----------------+--------+----------+-------------+-------------------+------------------+--------------+------+-----+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\n|39.0|        State-gov| 77516.0| Bachelors|         13.0|      Never-married|      Adm-clerical| Not-in-family| White| Male|      2174.0|         0.0|          40.0| United-States| \u0026lt;\u003d50K|           4.0|    (8,[4],[1.0])|           2.0|   (15,[2],[1.0])|                1.0|         (6,[1],[1.0])|            3.0|    (14,[3],[1.0])|              1.0|       (5,[1],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(100,[4,10,24,32,...|\n\u003c/code\u003e\u003c/pre\u003e\n\u003chr\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eRandomly split your dataset into a 70% training set and 30% test set using a Dataframe\u0027s \u003ccode\u003erandomSplit\u003c/code\u003e function.\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 3, 2017 9:26:59 AM",
-      "dateStarted": "Feb 7, 2017 12:55:44 PM",
-      "dateFinished": "Feb 7, 2017 12:55:44 PM",
+      "dateStarted": "Feb 17, 2017 4:04:43 PM",
+      "dateFinished": "Feb 17, 2017 4:04:43 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
