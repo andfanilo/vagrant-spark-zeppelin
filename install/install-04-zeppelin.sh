@@ -4,9 +4,9 @@
 export MAVEN_VERSION=3.3.3
 export MAVEN_HOME=/usr/apache-maven-$MAVEN_VERSION
 
-export ZEPPELIN_VERSION=0.6.2
+export ZEPPELIN_VERSION=0.7.0
 export ZEPPELIN_PACKAGE=$ZEPPELIN_VERSION-bin-all
-export ZEPPELIN_HOME=/usr/zeppelin-0.6.2-bin-all
+export ZEPPELIN_HOME=/usr/zeppelin-0.7.0-bin-all
 export ZEPPELIN_CONF_DIR=${ZEPPELIN_HOME}/conf
 export ZEPPELIN_NOTEBOOK_DIR=${ZEPPELIN_HOME}/notebook
 
