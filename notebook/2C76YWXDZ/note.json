@@ -73,7 +73,11 @@
     },
     {
       "text": "%md\n\n## II. Load data\n\nI have downloaded adult.data from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Adult) and put it into the `data/` folder of your project.\n\nThe following cells will do the necessary to load the data into a DataFrame.",
+<<<<<<< HEAD
       "dateUpdated": "Feb 17, 2017 10:49:32 AM",
+=======
+      "dateUpdated": "Feb 17, 2017 9:09:23 AM",
+>>>>>>> zeppelin
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -101,15 +105,24 @@
         "msg": "\u003ch2\u003eII. Load data\u003c/h2\u003e\n\u003cp\u003eI have downloaded adult.data from the \u003ca href\u003d\"https://archive.ics.uci.edu/ml/datasets/Adult\"\u003eUCI Machine Learning Repository\u003c/a\u003e and put it into the \u003ccode\u003edata/\u003c/code\u003e folder of your project.\u003c/p\u003e\n\u003cp\u003eThe following cells will do the necessary to load the data into a DataFrame.\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 3, 2017 8:35:44 AM",
+<<<<<<< HEAD
       "dateStarted": "Feb 17, 2017 10:49:32 AM",
       "dateFinished": "Feb 17, 2017 10:49:32 AM",
+=======
+      "dateStarted": "Feb 17, 2017 9:09:23 AM",
+      "dateFinished": "Feb 17, 2017 9:09:23 AM",
+>>>>>>> zeppelin
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Load data (run the cell)",
       "text": "import org.apache.spark.sql.types.{StringType, DoubleType, StructType, StructField}\n\nval schema \u003d StructType(Seq(\n    StructField(\"age\", DoubleType),\n    StructField(\"workclass\", StringType),\n    StructField(\"fnlwgt\", DoubleType),\n    StructField(\"education\", StringType),\n    StructField(\"education_num\", DoubleType),\n    StructField(\"marital_status\", StringType),\n    StructField(\"occupation\", StringType),\n    StructField(\"relationship\", StringType),\n    StructField(\"race\", StringType),\n    StructField(\"sex\", StringType),\n    StructField(\"capital_gain\", DoubleType),\n    StructField(\"capital_loss\", DoubleType),\n    StructField(\"hours_per_week\", DoubleType),\n    StructField(\"native_country\", StringType),\n    StructField(\"income\", StringType)\n    ))\n\ncase class Adult(\n    age: Double, \n    workclass: String, \n    fnlwgt: Double, \n    education: String, \n    education_num: Double, \n    marital_status: String, \n    occupation: String, \n    relationship: String, \n    race: String, \n    sex: String, \n    capital_gain: Double, \n    capital_loss: Double, \n    hours_per_week: Double, \n    native_country: String, \n    income: String\n    )\n    \nval dataset \u003d spark.read.schema(schema).csv(\"/opt/dataset/adult.data.csv\").as[Adult]\ndataset.registerTempTable(\"dataset\")  // register it so we can use it inside %sql interpreter",
+<<<<<<< HEAD
       "dateUpdated": "Feb 17, 2017 10:50:21 AM",
+=======
+      "dateUpdated": "Feb 17, 2017 9:13:42 AM",
+>>>>>>> zeppelin
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -139,6 +152,7 @@
         "msg": "\nimport org.apache.spark.sql.types.{StringType, DoubleType, StructType, StructField}\n\nschema: org.apache.spark.sql.types.StructType \u003d StructType(StructField(age,DoubleType,true), StructField(workclass,StringType,true), StructField(fnlwgt,DoubleType,true), StructField(education,StringType,true), StructField(education_num,DoubleType,true), StructField(marital_status,StringType,true), StructField(occupation,StringType,true), StructField(relationship,StringType,true), StructField(race,StringType,true), StructField(sex,StringType,true), StructField(capital_gain,DoubleType,true), StructField(capital_loss,DoubleType,true), StructField(hours_per_week,DoubleType,true), StructField(native_country,StringType,true), StructField(income,StringType,true))\n\ndefined class Adult\n\ndataset: org.apache.spark.sql.Dataset[Adult] \u003d [age: double, workclass: string ... 13 more fields]\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n"
       },
       "dateCreated": "Feb 3, 2017 8:43:33 AM",
+<<<<<<< HEAD
       "dateStarted": "Feb 17, 2017 10:50:21 AM",
       "dateFinished": "Feb 17, 2017 10:50:23 AM",
       "status": "FINISHED",
@@ -174,7 +188,37 @@
       "dateCreated": "Feb 17, 2017 9:13:41 AM",
       "dateStarted": "Feb 17, 2017 10:49:29 AM",
       "dateFinished": "Feb 17, 2017 10:49:29 AM",
+=======
+      "dateStarted": "Feb 17, 2017 9:13:42 AM",
+      "dateFinished": "Feb 17, 2017 9:13:49 AM",
+>>>>>>> zeppelin
       "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "",
+      "dateUpdated": "Feb 17, 2017 9:13:51 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487322821045_1648126328",
+      "id": "20170217-091341_1394796101",
+      "dateCreated": "Feb 17, 2017 9:13:41 AM",
+      "status": "READY",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -733,6 +777,7 @@
       "dateCreated": "Feb 6, 2017 2:31:24 AM",
       "dateStarted": "Feb 17, 2017 10:03:18 AM",
       "dateFinished": "Feb 17, 2017 10:03:19 AM",
+<<<<<<< HEAD
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -767,6 +812,8 @@
       "dateCreated": "Feb 17, 2017 10:21:22 AM",
       "dateStarted": "Feb 17, 2017 10:51:24 AM",
       "dateFinished": "Feb 17, 2017 10:51:29 AM",
+=======
+>>>>>>> zeppelin
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
