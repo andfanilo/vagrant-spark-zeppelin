@@ -240,7 +240,7 @@
     {
       "title": "Salaire par race",
       "text": "%sql SELECT race, count(*) FROM dataset GROUP BY race",
-      "dateUpdated": "Feb 17, 2017 9:25:15 AM",
+      "dateUpdated": "Feb 17, 2017 9:41:15 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -407,6 +407,63 @@
       "dateCreated": "Feb 17, 2017 9:21:16 AM",
       "dateStarted": "Feb 17, 2017 9:24:50 AM",
       "dateFinished": "Feb 17, 2017 9:24:51 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql SELECT marital_status, count(*) FROM dataset GROUP BY marital_status",
+      "dateUpdated": "Feb 17, 2017 9:43:30 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "multiBarChart",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "marital_status",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "count(1)",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "marital_status",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "count(1)",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487324483661_490977305",
+      "id": "20170217-094123_80733724",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "marital_status\tcount(1)\n Widowed\t993\n Married-spouse-absent\t418\n Married-AF-spouse\t23\n Married-civ-spouse\t14976\n Divorced\t4443\n Never-married\t10683\n Separated\t1025\n"
+      },
+      "dateCreated": "Feb 17, 2017 9:41:23 AM",
+      "dateStarted": "Feb 17, 2017 9:43:23 AM",
+      "dateFinished": "Feb 17, 2017 9:43:24 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
