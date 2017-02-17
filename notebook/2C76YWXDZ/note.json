@@ -677,8 +677,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\n\nLe code ci-dessus récupére tout d\u0027abord, le nom des catégories",
-      "dateUpdated": "Feb 17, 2017 11:51:46 AM",
+      "text": "%md\n\nLe code ci-dessus récupére tout d\u0027abord, les catégories et l\u0027index des varaiables catégorielles.\nDans un premiers temps, nous définissons une fonction flatMap qui récupère l\u0027index. \nEnsuite, nous récupérons le label associé.\nPuis nous définissons une variable stage qui passe en revue toutes les variables catégorielles.\nEnfin, nous l\u0027appliquons à notre jeu de donnée",
+      "dateUpdated": "Feb 17, 2017 12:03:55 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -691,7 +691,8 @@
           "scatter": {}
         },
         "enabled": true,
-        "editorMode": "ace/mode/markdown"
+        "editorMode": "ace/mode/markdown",
+        "tableHide": true
       },
       "settings": {
         "params": {},
@@ -699,8 +700,15 @@
       },
       "jobName": "paragraph_1487332252888_-334829658",
       "id": "20170217-115052_603691475",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eLe code ci-dessus récupére tout d\u0027abord, les catégories et l\u0027index des varaiables catégorielles.\n\u003cbr  /\u003eDans un premiers temps, nous définissons une fonction flatMap qui récupère l\u0027index.\n\u003cbr  /\u003eEnsuite, nous récupérons le label associé.\n\u003cbr  /\u003ePuis nous définissons une variable stage qui passe en revue toutes les variables catégorielles.\n\u003cbr  /\u003eEnfin, nous l\u0027appliquons à notre jeu de donnée\u003c/p\u003e\n"
+      },
       "dateCreated": "Feb 17, 2017 11:50:52 AM",
-      "status": "READY",
+      "dateStarted": "Feb 17, 2017 12:03:53 PM",
+      "dateFinished": "Feb 17, 2017 12:03:53 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
