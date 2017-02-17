@@ -216,32 +216,35 @@
     {
       "title": "Nombre d\u0027heure moyens par semaine par sexe et occupation",
       "text": "%sql SELECT occupation,sex,hours_per_week FROM dataset limit 100",
-      "dateUpdated": "Feb 17, 2017 3:37:15 PM",
+      "dateUpdated": "Feb 17, 2017 3:43:36 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
           "mode": "multiBarChart",
           "height": 300.0,
-          "optionOpen": false,
+          "optionOpen": true,
           "keys": [
             {
               "name": "occupation",
               "index": 0.0,
-              "aggr": "sum"
+              "aggr": "sum",
+              "$$hashKey": "object:2364"
             }
           ],
           "values": [
             {
               "name": "hours_per_week",
               "index": 2.0,
-              "aggr": "avg"
+              "aggr": "avg",
+              "$$hashKey": "object:2370"
             }
           ],
           "groups": [
             {
               "name": "sex",
               "index": 1.0,
-              "aggr": "sum"
+              "aggr": "sum",
+              "$$hashKey": "object:2367"
             }
           ],
           "scatter": {
@@ -260,7 +263,7 @@
         "enabled": true,
         "editorMode": "ace/mode/sql",
         "title": true,
-        "editorHide": true
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -274,14 +277,14 @@
         "msg": "occupation\tsex\thours_per_week\n Adm-clerical\t Male\t40.0\n Exec-managerial\t Male\t13.0\n Handlers-cleaners\t Male\t40.0\n Handlers-cleaners\t Male\t40.0\n Prof-specialty\t Female\t40.0\n Exec-managerial\t Female\t40.0\n Other-service\t Female\t16.0\n Exec-managerial\t Male\t45.0\n Prof-specialty\t Female\t50.0\n Exec-managerial\t Male\t40.0\n Exec-managerial\t Male\t80.0\n Prof-specialty\t Male\t40.0\n Adm-clerical\t Female\t30.0\n Sales\t Male\t50.0\n Craft-repair\t Male\t40.0\n Transport-moving\t Male\t45.0\n Farming-fishing\t Male\t35.0\n Machine-op-inspct\t Male\t40.0\n Sales\t Male\t50.0\n Exec-managerial\t Female\t45.0\n Prof-specialty\t Male\t60.0\n Other-service\t Female\t20.0\n Farming-fishing\t Male\t40.0\n Transport-moving\t Male\t40.0\n Tech-support\t Female\t40.0\n Tech-support\t Male\t40.0\n Craft-repair\t Male\t40.0\n ?\t Male\t60.0\n Exec-managerial\t Male\t80.0\n Craft-repair\t Male\t40.0\n Protective-serv\t Male\t52.0\n Sales\t Male\t44.0\n Exec-managerial\t Male\t40.0\n Adm-clerical\t Male\t40.0\n Other-service\t Male\t15.0\n Machine-op-inspct\t Male\t40.0\n Machine-op-inspct\t Male\t40.0\n Adm-clerical\t Female\t25.0\n Sales\t Male\t38.0\n Prof-specialty\t Male\t40.0\n Machine-op-inspct\t Male\t43.0\n Prof-specialty\t Male\t40.0\n Tech-support\t Male\t50.0\n Adm-clerical\t Female\t40.0\n Handlers-cleaners\t Male\t35.0\n Prof-specialty\t Male\t40.0\n Machine-op-inspct\t Male\t38.0\n Exec-managerial\t Female\t40.0\n Craft-repair\t Male\t40.0\n Prof-specialty\t Male\t43.0\n Exec-managerial\t Female\t40.0\n Other-service\t Female\t30.0\n Prof-specialty\t Female\t60.0\n Exec-managerial\t Male\t55.0\n Exec-managerial\t Male\t60.0\n Tech-support\t Male\t40.0\n Machine-op-inspct\t Male\t40.0\n Other-service\t Male\t40.0\n Adm-clerical\t Male\t48.0\n Machine-op-inspct\t Male\t40.0\n Sales\t Male\t40.0\n ?\t Male\t40.0\n Transport-moving\t Male\t40.0\n Prof-specialty\t Male\t45.0\n Tech-support\t Male\t58.0\n Craft-repair\t Male\t40.0\n Adm-clerical\t Female\t40.0\n Adm-clerical\t Female\t40.0\n Exec-managerial\t Male\t50.0\n ?\t Male\t40.0\n Prof-specialty\t Male\t32.0\n Sales\t Female\t40.0\n Sales\t Male\t70.0\n Machine-op-inspct\t Male\t40.0\n Prof-specialty\t Male\t20.0\n Other-service\t Male\t40.0\n Adm-clerical\t Male\t40.0\n ?\t Male\t2.0\n Other-service\t Female\t22.0\n Farming-fishing\t Male\t40.0\n Sales\t Male\t30.0\n Other-service\t Male\t40.0\n Other-service\t Female\t40.0\n Sales\t Male\t48.0\n Craft-repair\t Female\t40.0\n Sales\t Female\t35.0\n Protective-serv\t Male\t40.0\n Prof-specialty\t Male\t50.0\n Sales\t Male\t40.0\n Prof-specialty\t Female\t50.0\n Prof-specialty\t Male\t40.0\n Craft-repair\t Female\t40.0\n Machine-op-inspct\t Female\t25.0\n Sales\t Female\t35.0\n Protective-serv\t Male\t40.0\n Handlers-cleaners\t Male\t50.0\n Prof-specialty\t Male\t60.0\n Sales\t Male\t48.0\n Exec-managerial\t Female\t40.0\n Other-service\t Male\t40.0\n"
       },
       "dateCreated": "Feb 6, 2017 8:20:04 AM",
-      "dateStarted": "Feb 17, 2017 3:35:13 PM",
-      "dateFinished": "Feb 17, 2017 3:35:14 PM",
+      "dateStarted": "Feb 17, 2017 3:43:36 PM",
+      "dateFinished": "Feb 17, 2017 3:43:36 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md \n\n## III. Descriptive analysis\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nProvide a summary statistics graph for some columns you deem interesting. Summary statistics is comprised (but not limited) of:\n* mean, standard deviation and skewness for numeric columns.\n* counts and percentage of each value for categorical columns.\n\nIf you can, try to separate the two income groups and compare.\n\nTwo ways of doing this:\n* You should be able to it using standard SQL queries on the DataFrame and `show()` the result\n* You can use the %sql interpreter like in the previous cell and then use the settings tab of your graph to display the desired results.\n* \n\n\u003ch2\u003eIci, j\u0027ai réalisé un graphique montrant le nombre d\u0027heures moyen par semaine par sexe et par occupation. Ceci comporte une limite 100 dans la requete SQL pour afficher dans le graphique plus de résultats.\u003c/h2\u003e",
-      "dateUpdated": "Feb 17, 2017 3:39:27 PM",
+      "dateUpdated": "Feb 17, 2017 3:42:26 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -295,7 +298,7 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/markdown",
-        "editorHide": false,
+        "editorHide": true,
         "tableHide": false
       },
       "settings": {
@@ -425,7 +428,7 @@
     {
       "title": "Detail columns to deal with",
       "text": "val categoricalCols \u003d Seq(\"workclass\", \"education\", \"marital_status\", \"occupation\", \"relationship\", \"race\", \"sex\", \"native_country\")\nval numericCols \u003d Seq(\"age\", \"fnlwgt\", \"education_num\", \"capital_gain\", \"capital_loss\", \"hours_per_week\")",
-      "dateUpdated": "Feb 17, 2017 2:40:36 AM",
+      "dateUpdated": "Feb 17, 2017 4:12:22 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -454,8 +457,42 @@
         "msg": "\ncategoricalCols: Seq[String] \u003d List(workclass, education, marital_status, occupation, relationship, race, sex, native_country)\n\nnumericCols: Seq[String] \u003d List(age, fnlwgt, education_num, capital_gain, capital_loss, hours_per_week)\n"
       },
       "dateCreated": "Feb 6, 2017 2:31:24 AM",
-      "dateStarted": "Feb 7, 2017 12:55:53 PM",
-      "dateFinished": "Feb 7, 2017 12:55:56 PM",
+      "dateStarted": "Feb 17, 2017 4:12:22 PM",
+      "dateFinished": "Feb 17, 2017 4:12:23 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer}\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\nimport org.apache.spark.ml.feature.VectorAssembler\nimport org.apache.spark.ml.linalg.Vectors\n\n\nval catStages \u003d categoricalCols.flatMap{\n    s \u003d\u003e Seq(new StringIndexer() //gere les colonnes en entrées récupère les colonnes catégorielles\n    .setInputCol(s)\n    .setOutputCol(s+\"index\"),\n  new OneHotEncoder() //gère les colonnes en sortie renvoie des colonnes \"numériques\"\n    .setInputCol(s+\"index\")\n    .setOutputCol(s + \"ClassVec\"))\n}\n  \n\n// stage for label\nval label_stringIdx \u003d new StringIndexer()\n    .setInputCol(\"income\")\n    .setOutputCol(\"label\")\n\nval assembler \u003d new VectorAssembler()//on cherche à créer features et label\n.setInputCols((numericCols++categoricalCols.map(c\u003d\u003ec+\"ClassVec\")).toArray)\n.setOutputCol(\"features\")\n\nval stages \u003d  catStages ++ Seq(label_stringIdx,assembler)// concatenate 2 sequences of stages\nval pipeline \u003d new Pipeline()\n  .setStages(stages.toArray)\n\nval pipelineModel \u003d pipeline.fit(dataset)\npipelineModel.transform(dataset).show()\n\n",
+      "dateUpdated": "Feb 17, 2017 4:56:10 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487346590022_577791002",
+      "id": "20170217-154950_1507373038",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer}\n\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\nimport org.apache.spark.ml.feature.VectorAssembler\n\nimport org.apache.spark.ml.linalg.Vectors\ncatStages: Seq[org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable{def copy(extra: org.apache.spark.ml.param.ParamMap): org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable{def copy(extra: org.apache.spark.ml.param.ParamMap): org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable}}] \u003d List(strIdx_051d44d2db0f, oneHot_bff0f2ac3095, strIdx_091c3d239b3c, oneHot_db16806351ad, strIdx_d2555b52cb63, ...\nlabel_stringIdx: org.apache.spark.ml.feature.StringIndexer \u003d strIdx_6e5bbfb3986f\n\nassembler: org.apache.spark.ml.feature.VectorAssembler \u003d vecAssembler_0959814ecd64\nstages: Seq[org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.util.DefaultParamsWritable{def copy(extra: org.apache.spark.ml.param.ParamMap): org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.util.DefaultParamsWritable{def copy(extra: org.apache.spark.ml.param.ParamMap): org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.util.DefaultParamsWritable}}] \u003d List(strIdx_051d44d2db0f, oneHot_bff0f2ac3095, strIdx_091c3d239b3c, oneHot_db16806351ad, strIdx_d2555b52cb63, oneHot_11ade72258c4, strIdx_98ea0b494e41, oneHot_970b3d975653, strIdx_84eb2b1c6a90, oneHot_86b600e2771a, strIdx_2a084a5eb3f1, oneHot_15fe48696928, strIdx...\npipeline: org.apache.spark.ml.Pipeline \u003d pipeline_2de353585e50\n\npipelineModel: org.apache.spark.ml.PipelineModel \u003d pipeline_2de353585e50\n+----+-----------------+--------+-------------+-------------+--------------------+------------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\n| age|        workclass|  fnlwgt|    education|education_num|      marital_status|        occupation|  relationship|               race|    sex|capital_gain|capital_loss|hours_per_week|native_country|income|workclassindex|workclassClassVec|educationindex|educationClassVec|marital_statusindex|marital_statusClassVec|occupationindex|occupationClassVec|relationshipindex|relationshipClassVec|raceindex| raceClassVec|sexindex|  sexClassVec|native_countryindex|native_countryClassVec|label|            features|\n+----+-----------------+--------+-------------+-------------+--------------------+------------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\n|39.0|        State-gov| 77516.0|    Bachelors|         13.0|       Never-married|      Adm-clerical| Not-in-family|              White|   Male|      2174.0|         0.0|          40.0| United-States| \u003c\u003d50K|           4.0|    (8,[4],[1.0])|           2.0|   (15,[2],[1.0])|                1.0|         (6,[1],[1.0])|            3.0|    (14,[3],[1.0])|              1.0|       (5,[1],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(100,[0,1,2,3,5,1...|\n|50.0| Self-emp-not-inc| 83311.0|    Bachelors|         13.0|  Married-civ-spouse|   Exec-managerial|       Husband|              White|   Male|         0.0|         0.0|          13.0| United-States| \u003c\u003d50K|           1.0|    (8,[1],[1.0])|           2.0|   (15,[2],[1.0])|                0.0|         (6,[0],[1.0])|            2.0|    (14,[2],[1.0])|              0.0|       (5,[0],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(100,[0,1,2,5,7,1...|\n|38.0|          Private|215646.0|      HS-grad|          9.0|            Divorced| Handlers-cleaners| Not-in-family|              White|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           0.0|   (15,[0],[1.0])|                2.0|         (6,[2],[1.0])|            9.0|    (14,[9],[1.0])|              1.0|       (5,[1],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(100,[0,1,2,5,6,1...|\n|53.0|          Private|234721.0|         11th|          7.0|  Married-civ-spouse| Handlers-cleaners|       Husband|              Black|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           5.0|   (15,[5],[1.0])|                0.0|         (6,[0],[1.0])|            9.0|    (14,[9],[1.0])|              0.0|       (5,[0],[1.0])|      1.0|(4,[1],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(100,[0,1,2,5,6,1...|\n|28.0|          Private|338409.0|    Bachelors|         13.0|  Married-civ-spouse|    Prof-specialty|          Wife|              Black| Female|         0.0|         0.0|          40.0|          Cuba| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           2.0|   (15,[2],[1.0])|                0.0|         (6,[0],[1.0])|            0.0|    (14,[0],[1.0])|              4.0|       (5,[4],[1.0])|      1.0|(4,[1],[1.0])|     1.0|    (1,[],[])|                9.0|        (41,[9],[1.0])|  0.0|(100,[0,1,2,5,6,1...|\n|37.0|          Private|284582.0|      Masters|         14.0|  Married-civ-spouse|   Exec-managerial|          Wife|              White| Female|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           3.0|   (15,[3],[1.0])|                0.0|         (6,[0],[1.0])|            2.0|    (14,[2],[1.0])|              4.0|       (5,[4],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(100,[0,1,2,5,6,1...|\n|49.0|          Private|160187.0|          9th|          5.0| Married-spouse-a...|     Other-service| Not-in-family|              Black| Female|         0.0|         0.0|          16.0|       Jamaica| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|          10.0|  (15,[10],[1.0])|                5.0|         (6,[5],[1.0])|            5.0|    (14,[5],[1.0])|              1.0|       (5,[1],[1.0])|      1.0|(4,[1],[1.0])|     1.0|    (1,[],[])|               11.0|       (41,[11],[1.0])|  0.0|(100,[0,1,2,5,6,2...|\n|52.0| Self-emp-not-inc|209642.0|      HS-grad|          9.0|  Married-civ-spouse|   Exec-managerial|       Husband|              White|   Male|         0.0|         0.0|          45.0| United-States|  \u003e50K|           1.0|    (8,[1],[1.0])|           0.0|   (15,[0],[1.0])|                0.0|         (6,[0],[1.0])|            2.0|    (14,[2],[1.0])|              0.0|       (5,[0],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  1.0|(100,[0,1,2,5,7,1...|\n|31.0|          Private| 45781.0|      Masters|         14.0|       Never-married|    Prof-specialty| Not-in-family|              White| Female|     14084.0|         0.0|          50.0| United-States|  \u003e50K|           0.0|    (8,[0],[1.0])|           3.0|   (15,[3],[1.0])|                1.0|         (6,[1],[1.0])|            0.0|    (14,[0],[1.0])|              1.0|       (5,[1],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  1.0|(100,[0,1,2,3,5,6...|\n|42.0|          Private|159449.0|    Bachelors|         13.0|  Married-civ-spouse|   Exec-managerial|       Husband|              White|   Male|      5178.0|         0.0|          40.0| United-States|  \u003e50K|           0.0|    (8,[0],[1.0])|           2.0|   (15,[2],[1.0])|                0.0|         (6,[0],[1.0])|            2.0|    (14,[2],[1.0])|              0.0|       (5,[0],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  1.0|(100,[0,1,2,3,5,6...|\n|37.0|          Private|280464.0| Some-college|         10.0|  Married-civ-spouse|   Exec-managerial|       Husband|              Black|   Male|         0.0|         0.0|          80.0| United-States|  \u003e50K|           0.0|    (8,[0],[1.0])|           1.0|   (15,[1],[1.0])|                0.0|         (6,[0],[1.0])|            2.0|    (14,[2],[1.0])|              0.0|       (5,[0],[1.0])|      1.0|(4,[1],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  1.0|(100,[0,1,2,5,6,1...|\n|30.0|        State-gov|141297.0|    Bachelors|         13.0|  Married-civ-spouse|    Prof-specialty|       Husband| Asian-Pac-Islander|   Male|         0.0|         0.0|          40.0|         India|  \u003e50K|           4.0|    (8,[4],[1.0])|           2.0|   (15,[2],[1.0])|                0.0|         (6,[0],[1.0])|            0.0|    (14,[0],[1.0])|              0.0|       (5,[0],[1.0])|      2.0|(4,[2],[1.0])|     0.0|(1,[0],[1.0])|                8.0|        (41,[8],[1.0])|  1.0|(100,[0,1,2,5,10,...|\n|23.0|          Private|122272.0|    Bachelors|         13.0|       Never-married|      Adm-clerical|     Own-child|              White| Female|         0.0|         0.0|          30.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           2.0|   (15,[2],[1.0])|                1.0|         (6,[1],[1.0])|            3.0|    (14,[3],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(100,[0,1,2,5,6,1...|\n|32.0|          Private|205019.0|   Assoc-acdm|         12.0|       Never-married|             Sales| Not-in-family|              Black|   Male|         0.0|         0.0|          50.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           6.0|   (15,[6],[1.0])|                1.0|         (6,[1],[1.0])|            4.0|    (14,[4],[1.0])|              1.0|       (5,[1],[1.0])|      1.0|(4,[1],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(100,[0,1,2,5,6,2...|\n|40.0|          Private|121772.0|    Assoc-voc|         11.0|  Married-civ-spouse|      Craft-repair|       Husband| Asian-Pac-Islander|   Male|         0.0|         0.0|          40.0|             ?|  \u003e50K|           0.0|    (8,[0],[1.0])|           4.0|   (15,[4],[1.0])|                0.0|         (6,[0],[1.0])|            1.0|    (14,[1],[1.0])|              0.0|       (5,[0],[1.0])|      2.0|(4,[2],[1.0])|     0.0|(1,[0],[1.0])|                2.0|        (41,[2],[1.0])|  1.0|(100,[0,1,2,5,6,1...|\n|34.0|          Private|245487.0|      7th-8th|          4.0|  Married-civ-spouse|  Transport-moving|       Husband| Amer-Indian-Eskimo|   Male|         0.0|         0.0|          45.0|        Mexico| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           8.0|   (15,[8],[1.0])|                0.0|         (6,[0],[1.0])|            8.0|    (14,[8],[1.0])|              0.0|       (5,[0],[1.0])|      3.0|(4,[3],[1.0])|     0.0|(1,[0],[1.0])|                1.0|        (41,[1],[1.0])|  0.0|(100,[0,1,2,5,6,2...|\n|25.0| Self-emp-not-inc|176756.0|      HS-grad|          9.0|       Never-married|   Farming-fishing|     Own-child|              White|   Male|         0.0|         0.0|          35.0| United-States| \u003c\u003d50K|           1.0|    (8,[1],[1.0])|           0.0|   (15,[0],[1.0])|                1.0|         (6,[1],[1.0])|           10.0|   (14,[10],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(100,[0,1,2,5,7,1...|\n|32.0|          Private|186824.0|      HS-grad|          9.0|       Never-married| Machine-op-inspct|     Unmarried|              White|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           0.0|   (15,[0],[1.0])|                1.0|         (6,[1],[1.0])|            6.0|    (14,[6],[1.0])|              3.0|       (5,[3],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(100,[0,1,2,5,6,1...|\n|38.0|          Private| 28887.0|         11th|          7.0|  Married-civ-spouse|             Sales|       Husband|              White|   Male|         0.0|         0.0|          50.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           5.0|   (15,[5],[1.0])|                0.0|         (6,[0],[1.0])|            4.0|    (14,[4],[1.0])|              0.0|       (5,[0],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(100,[0,1,2,5,6,1...|\n|43.0| Self-emp-not-inc|292175.0|      Masters|         14.0|            Divorced|   Exec-managerial|     Unmarried|              White| Female|         0.0|         0.0|          45.0| United-States|  \u003e50K|           1.0|    (8,[1],[1.0])|           3.0|   (15,[3],[1.0])|                2.0|         (6,[2],[1.0])|            2.0|    (14,[2],[1.0])|              3.0|       (5,[3],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  1.0|(100,[0,1,2,5,7,1...|\n+----+-----------------+--------+-------------+-------------+--------------------+------------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\nonly showing top 20 rows\n\n"
+      },
+      "dateCreated": "Feb 17, 2017 3:49:50 PM",
+      "dateStarted": "Feb 17, 2017 4:55:58 PM",
+      "dateFinished": "Feb 17, 2017 4:56:03 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
