@@ -108,7 +108,7 @@
     {
       "title": "Load data (run the cell)",
       "text": "import org.apache.spark.sql.types.{StringType, DoubleType, StructType, StructField}\n\nval schema \u003d StructType(Seq(\n    StructField(\"age\", DoubleType),\n    StructField(\"workclass\", StringType),\n    StructField(\"fnlwgt\", DoubleType),\n    StructField(\"education\", StringType),\n    StructField(\"education_num\", DoubleType),\n    StructField(\"marital_status\", StringType),\n    StructField(\"occupation\", StringType),\n    StructField(\"relationship\", StringType),\n    StructField(\"race\", StringType),\n    StructField(\"sex\", StringType),\n    StructField(\"capital_gain\", DoubleType),\n    StructField(\"capital_loss\", DoubleType),\n    StructField(\"hours_per_week\", DoubleType),\n    StructField(\"native_country\", StringType),\n    StructField(\"income\", StringType)\n    ))\n\ncase class Adult(\n    age: Double, \n    workclass: String, \n    fnlwgt: Double, \n    education: String, \n    education_num: Double, \n    marital_status: String, \n    occupation: String, \n    relationship: String, \n    race: String, \n    sex: String, \n    capital_gain: Double, \n    capital_loss: Double, \n    hours_per_week: Double, \n    native_country: String, \n    income: String\n    )\n    \nval dataset \u003d spark.read.schema(schema).csv(\"/opt/dataset/adult.data.csv\").as[Adult]\ndataset.registerTempTable(\"dataset\")  // register it so we can use it inside %sql interpreter",
-      "dateUpdated": "Feb 7, 2017 12:55:38 PM",
+      "dateUpdated": "Feb 17, 2017 9:04:26 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -138,14 +138,14 @@
         "msg": "\nimport org.apache.spark.sql.types.{StringType, DoubleType, StructType, StructField}\n\nschema: org.apache.spark.sql.types.StructType \u003d StructType(StructField(age,DoubleType,true), StructField(workclass,StringType,true), StructField(fnlwgt,DoubleType,true), StructField(education,StringType,true), StructField(education_num,DoubleType,true), StructField(marital_status,StringType,true), StructField(occupation,StringType,true), StructField(relationship,StringType,true), StructField(race,StringType,true), StructField(sex,StringType,true), StructField(capital_gain,DoubleType,true), StructField(capital_loss,DoubleType,true), StructField(hours_per_week,DoubleType,true), StructField(native_country,StringType,true), StructField(income,StringType,true))\n\ndefined class Adult\n\ndataset: org.apache.spark.sql.Dataset[Adult] \u003d [age: double, workclass: string ... 13 more fields]\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n"
       },
       "dateCreated": "Feb 3, 2017 8:43:33 AM",
-      "dateStarted": "Feb 7, 2017 12:55:39 PM",
-      "dateFinished": "Feb 7, 2017 12:55:47 PM",
+      "dateStarted": "Feb 17, 2017 9:04:26 AM",
+      "dateFinished": "Feb 17, 2017 9:04:41 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "dataset.printSchema()",
-      "dateUpdated": "Feb 7, 2017 12:55:39 PM",
+      "dateUpdated": "Feb 17, 2017 9:04:45 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -158,7 +158,8 @@
           "scatter": {}
         },
         "enabled": true,
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/scala",
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -172,14 +173,14 @@
         "msg": "root\n |-- age: double (nullable \u003d true)\n |-- workclass: string (nullable \u003d true)\n |-- fnlwgt: double (nullable \u003d true)\n |-- education: string (nullable \u003d true)\n |-- education_num: double (nullable \u003d true)\n |-- marital_status: string (nullable \u003d true)\n |-- occupation: string (nullable \u003d true)\n |-- relationship: string (nullable \u003d true)\n |-- race: string (nullable \u003d true)\n |-- sex: string (nullable \u003d true)\n |-- capital_gain: double (nullable \u003d true)\n |-- capital_loss: double (nullable \u003d true)\n |-- hours_per_week: double (nullable \u003d true)\n |-- native_country: string (nullable \u003d true)\n |-- income: string (nullable \u003d true)\n\n"
       },
       "dateCreated": "Feb 6, 2017 1:45:35 AM",
-      "dateStarted": "Feb 7, 2017 12:55:39 PM",
-      "dateFinished": "Feb 7, 2017 12:55:48 PM",
+      "dateStarted": "Feb 17, 2017 9:04:45 AM",
+      "dateFinished": "Feb 17, 2017 9:04:46 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%sql SELECT * FROM dataset LIMIT 10",
-      "dateUpdated": "Feb 7, 2017 12:55:39 PM",
+      "dateUpdated": "Feb 17, 2017 9:12:35 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -206,73 +207,14 @@
         "msg": "age\tworkclass\tfnlwgt\teducation\teducation_num\tmarital_status\toccupation\trelationship\trace\tsex\tcapital_gain\tcapital_loss\thours_per_week\tnative_country\tincome\n39.0\t State-gov\t77516.0\t Bachelors\t13.0\t Never-married\t Adm-clerical\t Not-in-family\t White\t Male\t2174.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n50.0\t Self-emp-not-inc\t83311.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t13.0\t United-States\t \u003c\u003d50K\n38.0\t Private\t215646.0\t HS-grad\t9.0\t Divorced\t Handlers-cleaners\t Not-in-family\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n53.0\t Private\t234721.0\t 11th\t7.0\t Married-civ-spouse\t Handlers-cleaners\t Husband\t Black\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n28.0\t Private\t338409.0\t Bachelors\t13.0\t Married-civ-spouse\t Prof-specialty\t Wife\t Black\t Female\t0.0\t0.0\t40.0\t Cuba\t \u003c\u003d50K\n37.0\t Private\t284582.0\t Masters\t14.0\t Married-civ-spouse\t Exec-managerial\t Wife\t White\t Female\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n49.0\t Private\t160187.0\t 9th\t5.0\t Married-spouse-absent\t Other-service\t Not-in-family\t Black\t Female\t0.0\t0.0\t16.0\t Jamaica\t \u003c\u003d50K\n52.0\t Self-emp-not-inc\t209642.0\t HS-grad\t9.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t45.0\t United-States\t \u003e50K\n31.0\t Private\t45781.0\t Masters\t14.0\t Never-married\t Prof-specialty\t Not-in-family\t White\t Female\t14084.0\t0.0\t50.0\t United-States\t \u003e50K\n42.0\t Private\t159449.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t5178.0\t0.0\t40.0\t United-States\t \u003e50K\n"
       },
       "dateCreated": "Feb 3, 2017 8:41:09 AM",
-      "dateStarted": "Feb 7, 2017 12:55:48 PM",
-      "dateFinished": "Feb 7, 2017 12:55:52 PM",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "title": "Check settings of graph. See how we average age by income.",
-      "text": "%sql SELECT * FROM dataset LIMIT 10",
-      "dateUpdated": "Feb 7, 2017 12:55:40 PM",
-      "config": {
-        "colWidth": 12.0,
-        "graph": {
-          "mode": "pieChart",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [
-            {
-              "name": "income",
-              "index": 14.0,
-              "aggr": "sum"
-            }
-          ],
-          "values": [
-            {
-              "name": "age",
-              "index": 0.0,
-              "aggr": "avg"
-            }
-          ],
-          "groups": [],
-          "scatter": {
-            "xAxis": {
-              "name": "age",
-              "index": 0.0,
-              "aggr": "sum"
-            },
-            "yAxis": {
-              "name": "workclass",
-              "index": 1.0,
-              "aggr": "sum"
-            }
-          }
-        },
-        "enabled": true,
-        "editorMode": "ace/mode/scala",
-        "title": true
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "jobName": "paragraph_1486412404414_-1397675343",
-      "id": "20170206-202004_49344056",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TABLE",
-        "msg": "age\tworkclass\tfnlwgt\teducation\teducation_num\tmarital_status\toccupation\trelationship\trace\tsex\tcapital_gain\tcapital_loss\thours_per_week\tnative_country\tincome\n39.0\t State-gov\t77516.0\t Bachelors\t13.0\t Never-married\t Adm-clerical\t Not-in-family\t White\t Male\t2174.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n50.0\t Self-emp-not-inc\t83311.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t13.0\t United-States\t \u003c\u003d50K\n38.0\t Private\t215646.0\t HS-grad\t9.0\t Divorced\t Handlers-cleaners\t Not-in-family\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n53.0\t Private\t234721.0\t 11th\t7.0\t Married-civ-spouse\t Handlers-cleaners\t Husband\t Black\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n28.0\t Private\t338409.0\t Bachelors\t13.0\t Married-civ-spouse\t Prof-specialty\t Wife\t Black\t Female\t0.0\t0.0\t40.0\t Cuba\t \u003c\u003d50K\n37.0\t Private\t284582.0\t Masters\t14.0\t Married-civ-spouse\t Exec-managerial\t Wife\t White\t Female\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n49.0\t Private\t160187.0\t 9th\t5.0\t Married-spouse-absent\t Other-service\t Not-in-family\t Black\t Female\t0.0\t0.0\t16.0\t Jamaica\t \u003c\u003d50K\n52.0\t Self-emp-not-inc\t209642.0\t HS-grad\t9.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t45.0\t United-States\t \u003e50K\n31.0\t Private\t45781.0\t Masters\t14.0\t Never-married\t Prof-specialty\t Not-in-family\t White\t Female\t14084.0\t0.0\t50.0\t United-States\t \u003e50K\n42.0\t Private\t159449.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t5178.0\t0.0\t40.0\t United-States\t \u003e50K\n"
-      },
-      "dateCreated": "Feb 6, 2017 8:20:04 AM",
-      "dateStarted": "Feb 7, 2017 12:55:48 PM",
-      "dateFinished": "Feb 7, 2017 12:55:53 PM",
+      "dateStarted": "Feb 17, 2017 9:04:58 AM",
+      "dateFinished": "Feb 17, 2017 9:05:00 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md \n\n## III. Descriptive analysis\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nProvide a summary statistics graph for some columns you deem interesting. Summary statistics is comprised (but not limited) of:\n* mean, standard deviation and skewness for numeric columns.\n* counts and percentage of each value for categorical columns.\n\nIf you can, try to separate the two income groups and compare.\n\nTwo ways of doing this:\n* You should be able to it using standard SQL queries on the DataFrame and `show()` the result\n* You can use the %sql interpreter like in the previous cell and then use the settings tab of your graph to display the desired results.",
-      "dateUpdated": "Feb 7, 2017 12:55:40 PM",
+      "dateUpdated": "Feb 17, 2017 10:02:42 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -303,6 +245,333 @@
       "dateCreated": "Feb 3, 2017 8:59:52 AM",
       "dateStarted": "Feb 7, 2017 12:55:41 PM",
       "dateFinished": "Feb 7, 2017 12:55:41 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Nombre d\u0027individus dans le dataset gagnant plus de 50K ",
+      "text": "%sql SELECT count(*) FROM dataset WHERE income like \"%\u003e50K%\"",
+      "dateUpdated": "Feb 17, 2017 9:56:01 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "count(1)",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "count(1)",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sql",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487323661636_853634053",
+      "id": "20170217-092741_1761786370",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "count(1)\n7841\n"
+      },
+      "dateCreated": "Feb 17, 2017 9:27:41 AM",
+      "dateStarted": "Feb 17, 2017 9:56:01 AM",
+      "dateFinished": "Feb 17, 2017 9:56:01 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Répartition par sex des personnes gagnant plus de 50K",
+      "text": "%sql SELECT sex, (count(*)/7841*100) as percent FROM dataset WHERE income like \"%\u003e50K%\" GROUP BY sex",
+      "dateUpdated": "Feb 17, 2017 9:57:14 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "pieChart",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "sex",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "percent",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "sex",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sql",
+        "title": true,
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1486412404414_-1397675343",
+      "id": "20170206-202004_49344056",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "sex\tpercent\n Male\t84.96365259533223\n Female\t15.036347404667772\n"
+      },
+      "dateCreated": "Feb 6, 2017 8:20:04 AM",
+      "dateStarted": "Feb 17, 2017 9:56:47 AM",
+      "dateFinished": "Feb 17, 2017 9:56:48 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n#### Les hommes sont largement majoritaire dans l\u0027échantillon des personnes à haut revenu",
+      "dateUpdated": "Feb 17, 2017 10:06:52 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487325977227_436444176",
+      "id": "20170217-100617_1587216742",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch4\u003eLes hommes sont largement majoritaire dans l\u0027échantillon des personnes à haut revenu\u003c/h4\u003e\n"
+      },
+      "dateCreated": "Feb 17, 2017 10:06:17 AM",
+      "dateStarted": "Feb 17, 2017 10:06:51 AM",
+      "dateFinished": "Feb 17, 2017 10:06:51 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Répartition par race des personnes gagnant plus de 50K",
+      "text": "%sql SELECT race, (count(*)/7841*100) as percent FROM dataset WHERE income like \"%\u003e50K%\" GROUP BY race",
+      "dateUpdated": "Feb 17, 2017 9:58:57 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "multiBarChart",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "race",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "percent",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [
+            {
+              "name": "race",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "scatter": {
+            "xAxis": {
+              "name": "race",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sql",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487323045888_-1310487089",
+      "id": "20170217-091725_92639131",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "race\tpercent\n Asian-Pac-Islander\t3.51995918887897\n Black\t4.9355949496237725\n Other\t0.3188368830506313\n White\t90.76648386685372\n Amer-Indian-Eskimo\t0.45912511159290903\n"
+      },
+      "dateCreated": "Feb 17, 2017 9:17:25 AM",
+      "dateStarted": "Feb 17, 2017 9:58:51 AM",
+      "dateFinished": "Feb 17, 2017 9:58:52 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n#### Les white sont largement majoritaire dans l\u0027échantillon des personnes à haut revenu",
+      "dateUpdated": "Feb 17, 2017 10:05:36 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487325890532_304936673",
+      "id": "20170217-100450_684942576",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch4\u003eLes white sont largement majoritaire dans l\u0027échantillon des personnes à haut revenu\u003c/h4\u003e\n"
+      },
+      "dateCreated": "Feb 17, 2017 10:04:50 AM",
+      "dateStarted": "Feb 17, 2017 10:05:33 AM",
+      "dateFinished": "Feb 17, 2017 10:05:33 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Répartition par education des personnes gagnant plus de 50K",
+      "text": "%sql SELECT education_num, education, (count(*)/32561*100) as percent FROM dataset WHERE income like \"%\u003e50K%\" GROUP BY education_num, education ORDER BY education_num",
+      "dateUpdated": "Feb 17, 2017 10:04:01 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "stackedAreaChart",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "education",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "percent",
+              "index": 2.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "education_num",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "education",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sql",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487324257277_-1251483710",
+      "id": "20170217-093737_61309867",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "education_num\teducation\tpercent\n2.0\t 1st-4th\t0.018426952489174166\n3.0\t 5th-6th\t0.0491385399711311\n4.0\t 7th-8th\t0.12284634992782778\n5.0\t 9th\t0.08292128620128375\n6.0\t 10th\t0.19041184238813305\n7.0\t 11th\t0.18426952489174164\n8.0\t 12th\t0.10134823869045792\n9.0\t HS-grad\t5.144190903227788\n10.0\t Some-college\t4.259697183747428\n11.0\t Assoc-voc\t1.1086883080986456\n12.0\t Assoc-acdm\t0.813857068271859\n13.0\t Bachelors\t6.821043579742637\n14.0\t Masters\t2.945241239519671\n15.0\t Prof-school\t1.2991001504867787\n16.0\t Doctorate\t0.9397745769478825\n"
+      },
+      "dateCreated": "Feb 17, 2017 9:37:37 AM",
+      "dateStarted": "Feb 17, 2017 9:52:50 AM",
+      "dateFinished": "Feb 17, 2017 9:52:50 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n#### On voit ici que les personnes avec un niveau d\u0027étude très élevé (master ou supérieur) ne sont pas majoritaire dans l\u0027échantillon des personnes avec haut revenu",
+      "dateUpdated": "Feb 17, 2017 10:06:05 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487325677746_1962528524",
+      "id": "20170217-100117_254727917",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch4\u003eOn voit ici que les personnes avec un niveau d\u0027étude très élevé (master ou supérieur) ne sont pas majoritaire dans l\u0027échantillon des personnes avec haut revenu\u003c/h4\u003e\n"
+      },
+      "dateCreated": "Feb 17, 2017 10:01:17 AM",
+      "dateStarted": "Feb 17, 2017 10:06:01 AM",
+      "dateFinished": "Feb 17, 2017 10:06:01 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -662,24 +931,24 @@
   "name": "BinaryClassification",
   "id": "2C76YWXDZ",
   "angularObjects": {
-    "2C93MQCCX:shared_process": [],
-    "2CAFQY6K3:shared_process": [],
-    "2C71Z8V22:shared_process": [],
-    "2C74PSEZQ:shared_process": [],
-    "2C7936H5V:shared_process": [],
-    "2C6WY8JHA:shared_process": [],
-    "2C8CCCVZ2:shared_process": [],
-    "2C9JTS6JQ:shared_process": [],
-    "2C91JKV9H:shared_process": [],
-    "2C8N1PP7C:shared_process": [],
-    "2C7YTW7VT:shared_process": [],
-    "2C85G18U9:shared_process": [],
-    "2C9XYSTEH:shared_process": [],
-    "2CA474ZG3:shared_process": [],
-    "2C8JNXQ9U:shared_process": [],
-    "2C827138T:shared_process": [],
-    "2CAA7GXEJ:shared_process": [],
-    "2C8W1GCP8:shared_process": []
+    "2C8RAHFTV:shared_process": [],
+    "2C8UW4SX8:shared_process": [],
+    "2C7P4BD8X:shared_process": [],
+    "2C7R1W78C:shared_process": [],
+    "2C7XJAV5M:shared_process": [],
+    "2C7SB2JRB:shared_process": [],
+    "2C9RJAFBQ:shared_process": [],
+    "2C832RUCY:shared_process": [],
+    "2CA3X5W2Y:shared_process": [],
+    "2C7WJWGTV:shared_process": [],
+    "2C9U3NDR4:shared_process": [],
+    "2C9T4XEH9:shared_process": [],
+    "2C7TDSJZW:shared_process": [],
+    "2C8MPJSXY:shared_process": [],
+    "2C978KUFW:shared_process": [],
+    "2C7ZY16E1:shared_process": [],
+    "2CA2FSJPY:shared_process": [],
+    "2CASGRRWT:shared_process": []
   },
   "config": {},
   "info": {}
