@@ -2,27 +2,27 @@
   "paragraphs": [
     {
       "text": "%md\n\n# Introduction to Spark \u0026 Zeppelin\n#### An overview of the two Big Data tools.\n\nBefore pursuing, make sure you have saved the previous Interpreter binding window, otherwise you will get an error like `paragraph not found` when executing cells",
-      "dateUpdated": "Feb 1, 2017 10:32:11 AM",
+      "user": "anonymous",
+      "dateUpdated": "Feb 8, 2017 3:05:38 AM",
       "config": {
         "enabled": true,
         "tableHide": false,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {},
-          "map": {
-            "baseMapType": "Streets",
-            "isOnline": true,
-            "pinCols": []
-          }
-        },
         "editorMode": "ace/mode/markdown",
         "editorHide": true,
-        "colWidth": 12.0
+        "colWidth": 12.0,
+        "results": [
+          {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false
+            }
+          }
+        ],
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        }
       },
       "settings": {
         "params": {},
@@ -33,37 +33,26 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003ch1\u003eIntroduction to Spark \u0026amp; Zeppelin\u003c/h1\u003e\n\u003ch4\u003eAn overview of the two Big Data tools.\u003c/h4\u003e\n\u003cp\u003eBefore pursuing, make sure you have saved the previous Interpreter binding window, otherwise you will get an error like \u003ccode\u003eparagraph not found\u003c/code\u003e when executing cells\u003c/p\u003e\n"
+        "msg": "\u003ch1\u003eIntroduction to Spark \u0026amp; Zeppelin\u003c/h1\u003e\n\u003ch4\u003eAn overview of the two Big Data tools.\u003c/h4\u003e\n\u003cp\u003eBefore pursuing, make sure you have saved the previous Interpreter binding window, otherwise you will get an error like \u003ccode\u003eparagraph not found\u003c/code\u003e when executing cells\u003c/p\u003e\n\u003ch2\u003eNom1\u003c/h2\u003e\n\u003cp\u003eIKHLEF KACEM\u003c/p\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 1, 2017 10:32:09 AM",
-      "dateFinished": "Feb 1, 2017 10:32:09 AM",
+      "dateStarted": "Feb 8, 2017 3:05:38 AM",
+      "dateFinished": "Feb 8, 2017 3:05:40 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n![Spark logo](http://spark.apache.org/images/spark-logo-trademark.png)\n#\n[Apache Spark](http://spark.apache.org/) is a cluster computing engine designed to be __fast__ and __general-purpose__, making it the ideal choice for processing of large datasets. It answers those two points with __efficient data sharing__ accross computations.\n\u003chr/\u003e\nThe past years have seen a major changes in computing systems, as growing data volumes required more and more applications to scale out to large clusters. To solve this problem, a wide range of new programming models have been designed to manage multiple types of computations in a distributed fashion, without having people learn too much about distributed systems. Those programming models would need to deal with _parallelism, fault-tolerance and resource sharing_ for us.\n\n[Google\u0027s MapReduce](https://en.wikipedia.org/wiki/MapReduce) presented a simple and general model for batch processing, which handles faults and parallelism easily. Unfortunately the programming model is not adapted for other types of workloads, and multiple specialized systems were born to answer a specific need in a distributed way. \n* Iterative : Giraph\n* Interactive : Impala, Piccolo, Greenplum\n* Streaming : Storm, Millwheel\n\n#\nThe initial goal of Apache Spark is to try and unify all of the workloads for generality purposes. [Matei Zaharia](https://cs.stanford.edu/~matei/) in his [PhD dissertation](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2014/EECS-2014-12.pdf) suggests that most of the data flow models that required a specialized system needed _efficient data sharing_ accross computations:\n* Iterative algorithms like PageRank or K-Means need to make multiple passes over the same dataset\n* Interactive data mining often requires running multiple ad-hoc queries on the same subset of data\n* Streaming applications need to maintain and share state over time.\n\nHe then proposes to create a new abstraction that gives its users direct control over data sharing, something that other specialized systems would have built-in for their specific needs. The abstraction is implemented inside a new engine that is today called Apache Spark. The engine makes it possible to support more types of computations than with the original MapReduce in a more efficient way, including interactive queries and stream processing. ",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "dateUpdated": "Feb 8, 2017 12:56:29 PM",
       "config": {
         "enabled": true,
         "tableHide": false,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {},
-          "map": {
-            "baseMapType": "Streets",
-            "isOnline": true,
-            "pinCols": []
-          }
-        },
         "editorMode": "ace/mode/markdown",
         "editorHide": true,
-        "colWidth": 12.0
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -87,22 +76,11 @@
       "config": {
         "enabled": true,
         "tableHide": false,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {},
-          "map": {
-            "baseMapType": "Streets",
-            "isOnline": true,
-            "pinCols": []
-          }
-        },
         "editorHide": true,
-        "colWidth": 12.0
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -126,23 +104,12 @@
       "dateUpdated": "Feb 3, 2017 9:03:48 AM",
       "config": {
         "enabled": true,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {},
-          "map": {
-            "baseMapType": "Streets",
-            "isOnline": true,
-            "pinCols": []
-          }
-        },
         "editorMode": "ace/mode/markdown",
         "editorHide": true,
-        "colWidth": 12.0
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -166,23 +133,12 @@
       "dateUpdated": "Feb 1, 2017 6:53:54 AM",
       "config": {
         "enabled": true,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {},
-          "map": {
-            "baseMapType": "Streets",
-            "isOnline": true,
-            "pinCols": []
-          }
-        },
         "editorMode": "ace/mode/markdown",
         "editorHide": true,
-        "colWidth": 12.0
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -203,28 +159,28 @@
     },
     {
       "title": "Shell cell",
-      "text": "%sh\necho \"Hello world\"",
-      "dateUpdated": "Feb 1, 2017 6:51:19 AM",
+      "text": "%sh\necho \"Salut, comment ça va ?\"",
+      "user": "anonymous",
+      "dateUpdated": "Feb 8, 2017 2:58:14 AM",
       "config": {
         "enabled": true,
         "title": true,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {},
-          "map": {
-            "baseMapType": "Streets",
-            "isOnline": true,
-            "pinCols": []
-          }
-        },
         "editorMode": "ace/mode/sh",
         "editorHide": false,
-        "colWidth": 4.0
+        "colWidth": 4.0,
+        "results": [
+          {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "keys": [],
+              "values": [],
+              "groups": [],
+              "scatter": {}
+            }
+          }
+        ]
       },
       "settings": {
         "params": {},
@@ -235,37 +191,38 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "Salut\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 1, 2017 6:51:19 AM",
-      "dateFinished": "Feb 1, 2017 6:51:20 AM",
+      "dateStarted": "Feb 8, 2017 2:58:14 AM",
+      "dateFinished": "Feb 8, 2017 2:58:14 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Python cell",
-      "text": "%python\nprint(\"Hello world\")",
-      "dateUpdated": "Jan 25, 2017 8:33:22 AM",
+      "text": "%python\n\nprint(\u0027Paul-Nam est un génie!!\u0027)\nprint(\u0027Jean-Luc is relief from his burden\u0027)\n",
+      "user": "anonymous",
+      "dateUpdated": "Feb 8, 2017 3:13:35 AM",
       "config": {
         "enabled": true,
         "title": true,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {},
-          "map": {
-            "baseMapType": "Streets",
-            "isOnline": true,
-            "pinCols": []
+        "editorMode": "ace/mode/scala",
+        "colWidth": 4.0,
+        "results": [
+          {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "keys": [],
+              "values": [],
+              "groups": [],
+              "scatter": {}
+            }
           }
-        },
-        "editorMode": "ace/mode/python",
-        "colWidth": 4.0
+        ],
+        "editorSetting": {}
       },
       "settings": {
         "params": {},
@@ -276,37 +233,39 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "Hello world\n3\nkacem\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:33:22 AM",
-      "dateFinished": "Jan 25, 2017 8:33:23 AM",
+      "dateStarted": "Feb 8, 2017 3:13:35 AM",
+      "dateFinished": "Feb 8, 2017 3:13:35 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Spark/Scala cell",
-      "text": "println(\"Hello world\")",
-      "dateUpdated": "Jan 25, 2017 8:33:26 AM",
+      "text": "println(\"Hello world\")\nprintln (3+5+6)",
+      "user": "anonymous",
+      "dateUpdated": "Feb 8, 2017 3:07:42 AM",
       "config": {
         "enabled": true,
         "title": true,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {},
-          "map": {
-            "baseMapType": "Streets",
-            "isOnline": true,
-            "pinCols": []
-          }
-        },
         "editorMode": "ace/mode/scala",
-        "colWidth": 4.0
+        "colWidth": 4.0,
+        "editorHide": false,
+        "results": [
+          {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "keys": [],
+              "values": [],
+              "groups": [],
+              "scatter": {}
+            }
+          }
+        ],
+        "editorSetting": {}
       },
       "settings": {
         "params": {},
@@ -317,19 +276,20 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "Hello world\n12\nkacem\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:33:26 AM",
-      "dateFinished": "Jan 25, 2017 8:33:59 AM",
+      "dateStarted": "Feb 8, 2017 3:07:43 AM",
+      "dateFinished": "Feb 8, 2017 3:08:01 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\n\nAs you can see, we have not chosen an interpreter in the last column. \n\nA default interpreter is set at the beginning of the notebook, on the right-hand of the menu toolbar at the top in the menu `Interpreter binding` and represented by a gear. You can also select/deselect usable interpreters for the notebook.\n\nFor more information on how each interpreter is configured, you can check the interpreter menu, in the dropdown menu with your username _(anonymous for now. Do note that Apache Zeppelin also support user authentication for multitenancy but we are not going to delve into that)_.\n\nFor now, we assume that the default interpreter is the Apache Spark/Scala interpreter, so the default cell parses Spark/Scala code. The tutorial series will be mostly using this interpreter. No Scala knowledge is needed to pursue through the series, as we will only use basic functional programming concepts.\n\n_If you are wondering why Scala, Apache Spark is implemented in Scala, and so is its main API. Apache Spark draws from the functional paradigm for representing its computations the same way as MapReduce does. A common justification is Spark and MapReduce specialize in coarse-grained transformations that apply the same operation on many data items, which is a good fit for parallel applications, and the functional programming paradigm fits the idea._",
-      "dateUpdated": "Jan 25, 2017 9:37:19 AM",
+      "text": "",
+      "user": "anonymous",
+      "dateUpdated": "Feb 17, 2017 10:08:54 AM",
       "config": {
-        "enabled": true,
+        "colWidth": 12.0,
         "graph": {
           "mode": "table",
           "height": 300.0,
@@ -337,15 +297,31 @@
           "keys": [],
           "values": [],
           "groups": [],
-          "scatter": {},
-          "map": {
-            "baseMapType": "Streets",
-            "isOnline": true,
-            "pinCols": []
-          }
+          "scatter": {}
         },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1486566415035_1423218627",
+      "id": "20170208-150655_445241365",
+      "dateCreated": "Feb 8, 2017 3:06:55 AM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\nAs you can see, we have not chosen an interpreter in the last column. \n\nA default interpreter is set at the beginning of the notebook, on the right-hand of the menu toolbar at the top in the menu `Interpreter binding` and represented by a gear. You can also select/deselect usable interpreters for the notebook.\n\nFor more information on how each interpreter is configured, you can check the interpreter menu, in the dropdown menu with your username _(anonymous for now. Do note that Apache Zeppelin also support user authentication for multitenancy but we are not going to delve into that)_.\n\nFor now, we assume that the default interpreter is the Apache Spark/Scala interpreter, so the default cell parses Spark/Scala code. The tutorial series will be mostly using this interpreter. No Scala knowledge is needed to pursue through the series, as we will only use basic functional programming concepts.\n\n_If you are wondering why Scala, Apache Spark is implemented in Scala, and so is its main API. Apache Spark draws from the functional paradigm for representing its computations the same way as MapReduce does. A common justification is Spark and MapReduce specialize in coarse-grained transformations that apply the same operation on many data items, which is a good fit for parallel applications, and the functional programming paradigm fits the idea._",
+      "dateUpdated": "Jan 25, 2017 9:37:19 AM",
+      "config": {
+        "enabled": true,
         "editorHide": true,
-        "colWidth": 12.0
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -369,23 +345,12 @@
       "dateUpdated": "Jan 25, 2017 9:56:31 AM",
       "config": {
         "enabled": true,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {},
-          "map": {
-            "baseMapType": "Streets",
-            "isOnline": true,
-            "pinCols": []
-          }
-        },
         "editorMode": "ace/mode/markdown",
         "editorHide": true,
-        "colWidth": 12.0
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -406,21 +371,22 @@
     {
       "title": "Some arithmetic",
       "text": "8 * 5 + 2",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "dateUpdated": "Feb 8, 2017 3:07:58 AM",
       "config": {
         "enabled": true,
         "title": true,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "editorMode": "ace/mode/scala",
-        "colWidth": 4.0
+        "colWidth": 4.0,
+        "results": [
+          {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false
+            }
+          }
+        ],
+        "editorSetting": {}
       },
       "settings": {
         "params": {},
@@ -440,24 +406,25 @@
     },
     {
       "title": "Declaring variables",
-      "text": "val a \u003d 3 // val defines an immutable value\nvar b : Int \u003d 5 // var defines a mutable variable\nprintln(a + b)\n\nb \u003d 42\nprintln(a + b)\n\n// Note that the type of a variable or function is written after the variable or function. \n\n// Because Scala does type inference, it is also not necessary to declare type to variables when it looks obvious.",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "text": "val a\u003d3\nvar b : int \u003d5\nprintln(a+b)",
+      "dateUpdated": "Feb 8, 2017 3:08:08 AM",
       "config": {
         "enabled": true,
         "tableHide": true,
         "title": true,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "editorMode": "ace/mode/scala",
         "editorHide": false,
-        "colWidth": 4.0
+        "colWidth": 4.0,
+        "results": [
+          {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false
+            }
+          }
+        ],
+        "editorSetting": {}
       },
       "settings": {
         "params": {},
@@ -466,33 +433,36 @@
       "jobName": "paragraph_1485333124523_-36210211",
       "id": "20161215-101655_1153115867",
       "result": {
-        "code": "SUCCESS",
+        "code": "ERROR",
         "type": "TEXT",
-        "msg": "a: Int \u003d 3\nb: Int \u003d 5\n8\nb: Int \u003d 42\n45\n"
+        "msg": "\na: Int \u003d 3\n\n\n\n\u003cconsole\u003e:25: error: not found: type int\n       var b : int \u003d5\n               ^\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 12:51:38 PM",
+      "dateFinished": "Feb 8, 2017 12:51:39 PM",
+      "status": "ERROR",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Reusing a variable",
-      "text": "// variables are accessible accross cells\n\na * b",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "text": "// variables are accessible accross cells\nval a : Int \u003d  5\na*a",
+      "user": "anonymous",
+      "dateUpdated": "Feb 8, 2017 3:33:06 AM",
       "config": {
         "enabled": true,
         "title": true,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "editorMode": "ace/mode/scala",
-        "colWidth": 4.0
+        "colWidth": 4.0,
+        "results": [
+          {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false
+            }
+          }
+        ],
+        "editorSetting": {}
       },
       "settings": {
         "params": {},
@@ -506,8 +476,9 @@
         "msg": "res13: Int \u003d 15\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 3:33:06 AM",
+      "dateFinished": "Feb 8, 2017 3:33:06 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -515,18 +486,12 @@
       "dateUpdated": "Jan 25, 2017 9:37:07 AM",
       "config": {
         "enabled": true,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "editorMode": "ace/mode/markdown",
         "editorHide": true,
-        "colWidth": 12.0
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -547,24 +512,26 @@
     },
     {
       "title": "Create immutable sequence of numbers",
-      "text": "val sequenceNumbers \u003d 1 to 100",
-      "dateUpdated": "Jan 25, 2017 8:34:35 AM",
+      "text": "val sequenceNumbers \u003d 1 to 100\nsequenceNumbers",
+      "user": "anonymous",
+      "dateUpdated": "Feb 8, 2017 3:17:05 AM",
       "config": {
         "enabled": true,
-        "tableHide": true,
+        "tableHide": false,
         "title": true,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "editorMode": "ace/mode/scala",
         "editorHide": false,
-        "colWidth": 12.0
+        "colWidth": 12.0,
+        "results": [
+          {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false
+            }
+          }
+        ],
+        "editorSetting": {}
       },
       "settings": {
         "params": {},
@@ -578,31 +545,33 @@
         "msg": "\nsequenceNumbers: scala.collection.immutable.Range.Inclusive \u003d Range(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100)\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:34:24 AM",
-      "dateFinished": "Jan 25, 2017 8:34:25 AM",
+      "dateStarted": "Feb 8, 2017 3:16:52 AM",
+      "dateFinished": "Feb 8, 2017 3:16:52 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "New list with all elements doubled",
       "text": "sequenceNumbers.map(x \u003d\u003e x * 2)\n\nsequenceNumbers.map(_ * 2)",
-      "dateUpdated": "Jan 25, 2017 8:34:39 AM",
+      "user": "anonymous",
+      "dateUpdated": "Feb 8, 2017 3:17:10 AM",
       "config": {
         "enabled": true,
-        "tableHide": true,
+        "tableHide": false,
         "title": true,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "editorMode": "ace/mode/scala",
         "editorHide": false,
-        "colWidth": 4.0
+        "colWidth": 4.0,
+        "results": [
+          {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false
+            }
+          }
+        ],
+        "editorSetting": {}
       },
       "settings": {
         "params": {},
@@ -616,30 +585,33 @@
         "msg": "res40: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100, 102, 104, 106, 108, 110, 112, 114, 116, 118, 120, 122, 124, 126, 128, 130, 132, 134, 136, 138, 140, 142, 144, 146, 148, 150, 152, 154, 156, 158, 160, 162, 164, 166, 168, 170, 172, 174, 176, 178, 180, 182, 184, 186, 188, 190, 192, 194, 196, 198, 200)\nres41: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100, 102, 104, 106, 108, 110, 112, 114, 116, 118, 120, 122, 124, 126, 128, 130, 132, 134, 136, 138, 140, 142, 144, 146, 148, 150, 152, 154, 156, 158, 160, 162, 164, 166, 168, 170, 172, 174, 176, 178, 180, 182, 184, 186, 188, 190, 192, 194, 196, 198, 200)\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 3:15:59 AM",
+      "dateFinished": "Feb 8, 2017 3:16:00 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "New list with pair numbers removed",
       "text": "sequenceNumbers.filter(x \u003d\u003e x % 2 !\u003d 0)\n\nsequenceNumbers.filter(_ % 2 !\u003d 0)",
-      "dateUpdated": "Jan 25, 2017 8:34:41 AM",
+      "user": "anonymous",
+      "dateUpdated": "Feb 8, 2017 3:21:09 AM",
       "config": {
         "enabled": true,
         "tableHide": true,
         "title": true,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "editorMode": "ace/mode/scala",
         "editorHide": false,
-        "colWidth": 4.0
+        "colWidth": 4.0,
+        "results": [
+          {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false
+            }
+          }
+        ],
+        "editorSetting": {}
       },
       "settings": {
         "params": {},
@@ -653,30 +625,33 @@
         "msg": "res52: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99)\nres53: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99)\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 3:16:14 AM",
+      "dateFinished": "Feb 8, 2017 3:16:14 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Sum all elements",
       "text": "sequenceNumbers.reduce((x, y) \u003d\u003e x + y)\n\nsequenceNumbers.reduce(_ + _)",
-      "dateUpdated": "Jan 25, 2017 8:34:44 AM",
+      "user": "anonymous",
+      "dateUpdated": "Feb 8, 2017 3:16:19 AM",
       "config": {
         "enabled": true,
         "tableHide": true,
         "title": true,
-        "graph": {
-          "mode": "table",
-          "height": 86.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "editorMode": "ace/mode/scala",
         "editorHide": false,
-        "colWidth": 4.0
+        "colWidth": 4.0,
+        "results": [
+          {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false
+            }
+          }
+        ],
+        "editorSetting": {}
       },
       "settings": {
         "params": {},
@@ -690,8 +665,9 @@
         "msg": "res55: Int \u003d 5050\nres56: Int \u003d 5050\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 3:16:19 AM",
+      "dateFinished": "Feb 8, 2017 3:16:20 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -699,18 +675,12 @@
       "dateUpdated": "Jan 25, 2017 8:37:58 AM",
       "config": {
         "enabled": true,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "editorMode": "ace/mode/scala",
         "colWidth": 12.0,
-        "editorHide": true
+        "editorHide": true,
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -734,17 +704,11 @@
       "dateUpdated": "Jan 25, 2017 1:34:04 AM",
       "config": {
         "enabled": true,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "colWidth": 4.0,
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/scala",
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -768,17 +732,11 @@
       "dateUpdated": "Jan 25, 2017 1:34:26 AM",
       "config": {
         "enabled": true,
-        "graph": {
-          "mode": "table",
-          "height": 86.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "editorMode": "ace/mode/scala",
-        "colWidth": 4.0
+        "colWidth": 4.0,
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -802,17 +760,11 @@
       "dateUpdated": "Jan 25, 2017 8:50:39 AM",
       "config": {
         "enabled": true,
-        "graph": {
-          "mode": "table",
-          "height": 86.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "editorMode": "ace/mode/scala",
-        "colWidth": 4.0
+        "colWidth": 4.0,
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -836,18 +788,12 @@
       "dateUpdated": "Jan 25, 2017 8:53:57 AM",
       "config": {
         "colWidth": 12.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "editorHide": true
+        "editorHide": true,
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -871,18 +817,12 @@
       "dateUpdated": "Jan 25, 2017 1:34:46 AM",
       "config": {
         "colWidth": 12.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "editorHide": true
+        "editorHide": true,
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -906,17 +846,11 @@
       "dateUpdated": "Jan 25, 2017 8:55:46 AM",
       "config": {
         "colWidth": 12.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "enabled": true,
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/scala",
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -940,18 +874,12 @@
       "dateUpdated": "Jan 25, 2017 9:42:15 AM",
       "config": {
         "colWidth": 12.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "editorHide": true
+        "editorHide": true,
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -972,21 +900,22 @@
     },
     {
       "text": "%md \n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\nTry to solve the following rows. By editing the `val output \u003d ...` line, use `map`, `filter` and `reduce` with anonymous functions on the variable `input` to return a variable `output` that will be compared to the `expected`variable.\n\nRemember your session is interactive, it makes it easy to test intermediary values when chaining functions, example :\n```scala\ninput.map(...)                                  // 1st execution\ninput.map(...).filter(...)                      // 2nd execution\ninput.map(...).filter(...).reduce(...)          // 3rd execution\n```",
-      "dateUpdated": "Jan 25, 2017 9:56:22 AM",
+      "dateUpdated": "Feb 8, 2017 3:18:00 AM",
       "config": {
         "colWidth": 12.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "editorHide": true
+        "editorHide": true,
+        "results": [
+          {
+            "graph": {
+              "mode": "table",
+              "height": 209.5,
+              "optionOpen": false
+            }
+          }
+        ],
+        "editorSetting": {}
       },
       "settings": {
         "params": {},
@@ -1007,22 +936,24 @@
     },
     {
       "title": "Return the list of squared numbers from 1 to 5",
-      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.map(x \u003d\u003e x)\n\nval expected \u003d List(1, 4, 9, 16, 25) ",
-      "dateUpdated": "Jan 25, 2017 9:03:16 AM",
+      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.map(x \u003d\u003e x*x)\n\nval expected \u003d List(1, 4, 9, 16, 25) ",
+      "user": "anonymous",
+      "dateUpdated": "Feb 8, 2017 3:23:44 AM",
       "config": {
         "colWidth": 6.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "title": true
+        "title": true,
+        "results": [
+          {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false
+            }
+          }
+        ],
+        "editorSetting": {}
       },
       "settings": {
         "params": {},
@@ -1036,29 +967,23 @@
         "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\nexpected: List[Int] \u003d List(1, 4, 9, 16, 25)\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:13 AM",
-      "dateStarted": "Jan 25, 2017 9:03:16 AM",
-      "dateFinished": "Jan 25, 2017 9:03:17 AM",
+      "dateStarted": "Feb 8, 2017 3:23:44 AM",
+      "dateFinished": "Feb 8, 2017 3:23:45 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Return the sum of elements from 1 to 5",
-      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.reduce((x, y) \u003d\u003e x)\n\nval expected \u003d 15",
-      "dateUpdated": "Jan 25, 2017 9:23:28 AM",
+      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.reduce((x, y) \u003d\u003e x+y)\n\nval expected \u003d 15",
+      "dateUpdated": "Feb 8, 2017 1:03:44 AM",
       "config": {
         "colWidth": 6.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "title": true
+        "title": true,
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -1069,32 +994,34 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: Int \u003d 1\n\nexpected: Int \u003d 15\n"
+        "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: Int \u003d 15\n\nexpected: Int \u003d 15\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:20 AM",
-      "dateStarted": "Jan 25, 2017 9:23:28 AM",
-      "dateFinished": "Jan 25, 2017 9:23:29 AM",
+      "dateStarted": "Feb 8, 2017 1:03:45 AM",
+      "dateFinished": "Feb 8, 2017 1:03:46 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Return the sum of squared pair numbers between 1 and 100",
-      "text": "val input \u003d 1 to 100\nval output \u003d input.reduce((x, y) \u003d\u003e x)\n\nval expected \u003d 171700",
-      "dateUpdated": "Feb 1, 2017 9:13:45 AM",
+      "text": "val input \u003d 1 to 100\nval list \u003d input.filter(x \u003d\u003e x % 2 \u003d\u003d 0).map(x \u003d\u003e x*x).reduce((x,y) \u003d\u003e x+y)\n\n\n\nval expected \u003d 171700",
+      "user": "anonymous",
+      "dateUpdated": "Feb 8, 2017 3:33:45 AM",
       "config": {
         "colWidth": 6.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "title": true
+        "title": true,
+        "results": [
+          {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false
+            }
+          }
+        ],
+        "editorSetting": {}
       },
       "settings": {
         "params": {},
@@ -1103,36 +1030,40 @@
       "jobName": "paragraph_1485334647814_1417359099",
       "id": "20170125-085727_408760662",
       "result": {
-        "code": "SUCCESS",
+        "code": "ERROR",
         "type": "TEXT",
-        "msg": "\ninput: scala.collection.immutable.Range.Inclusive \u003d Range(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100)\n\noutput: Int \u003d 1\n\nexpected: Int \u003d 171700\n"
+        "msg": "\ninput: scala.collection.immutable.Range.Inclusive \u003d Range(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100)\n\n\n\n\u003cconsole\u003e:1: error: \u0027)\u0027 expected but integer literal found.\nval liste1 \u003d input.filter(x\u003d\u003e %2 \u003d\u003d0)\n                               ^\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:27 AM",
-      "dateStarted": "Feb 1, 2017 9:13:46 AM",
-      "dateFinished": "Feb 1, 2017 9:13:48 AM",
+      "dateStarted": "Feb 8, 2017 3:33:45 AM",
+      "dateFinished": "Feb 8, 2017 3:33:46 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Get highest number in a list with a reduce",
       "text": "import util.Random.nextInt\nval input \u003d Seq.fill(10)(nextInt)\nval output \u003d input.reduce((x, y) \u003d\u003e x)\n\nval expected \u003d input.max",
-      "dateUpdated": "Jan 25, 2017 12:49:26 PM",
+      "user": "anonymous",
+      "dateUpdated": "Feb 8, 2017 3:25:37 AM",
       "config": {
         "colWidth": 6.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "enabled": true,
         "editorMode": "ace/mode/scala",
         "editorHide": false,
         "tableHide": false,
-        "title": true
+        "title": true,
+        "results": [
+          {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false
+            }
+          }
+        ],
+        "editorSetting": {
+          "language": "scala"
+        }
       },
       "settings": {
         "params": {},
@@ -1143,11 +1074,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nimport util.Random.nextInt\n\ninput: Seq[Int] \u003d List(1368154480, 932727527, -956762629, -741728139, 1912445161, 1215347429, 1054732247, -811870848, 762475751, 1567410629)\n\noutput: Int \u003d 1368154480\n\nexpected: Int \u003d 1912445161\n"
+        "msg": "\nimport util.Random.nextInt\n\ninput: Seq[Int] \u003d List(-1357589297, -549458472, 1193750792, 39567115, -676405797, -819813378, 1463778314, 1928149076, -721389042, -333978169)\n\noutput: Int \u003d -1357589297\n\nexpected: Int \u003d 1928149076\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:32 AM",
-      "dateStarted": "Jan 25, 2017 12:49:26 PM",
-      "dateFinished": "Jan 25, 2017 12:49:29 PM",
+      "dateStarted": "Feb 8, 2017 3:25:32 AM",
+      "dateFinished": "Feb 8, 2017 3:25:33 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1156,18 +1087,12 @@
       "dateUpdated": "Jan 25, 2017 9:53:13 AM",
       "config": {
         "colWidth": 12.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "editorHide": true
+        "editorHide": true,
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -1191,18 +1116,12 @@
       "dateUpdated": "Jan 25, 2017 1:42:25 AM",
       "config": {
         "colWidth": 12.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "editorHide": true
+        "editorHide": true,
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -1226,18 +1145,12 @@
       "dateUpdated": "Feb 1, 2017 10:35:06 AM",
       "config": {
         "colWidth": 12.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "editorHide": false
+        "editorHide": false,
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -1261,18 +1174,12 @@
       "dateUpdated": "Feb 1, 2017 10:35:40 AM",
       "config": {
         "colWidth": 12.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "enabled": true,
         "editorMode": "ace/mode/markdown",
-        "editorHide": true
+        "editorHide": true,
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -1297,18 +1204,12 @@
       "dateUpdated": "Feb 1, 2017 9:14:16 AM",
       "config": {
         "colWidth": 6.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "title": true
+        "title": true,
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -1361,23 +1262,12 @@
       "dateUpdated": "Jan 25, 2017 1:46:25 AM",
       "config": {
         "enabled": true,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {},
-          "map": {
-            "baseMapType": "Streets",
-            "isOnline": true,
-            "pinCols": []
-          }
-        },
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
-        "editorHide": true
+        "editorHide": true,
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -1402,19 +1292,13 @@
       "dateUpdated": "Feb 1, 2017 10:36:22 AM",
       "config": {
         "colWidth": 12.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "enabled": true,
         "editorMode": "ace/mode/scala",
         "tableHide": false,
-        "title": true
+        "title": true,
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -1439,18 +1323,12 @@
       "dateUpdated": "Feb 1, 2017 10:15:26 AM",
       "config": {
         "colWidth": 12.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "title": true
+        "title": true,
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -1474,18 +1352,12 @@
       "dateUpdated": "Feb 1, 2017 9:43:33 AM",
       "config": {
         "colWidth": 12.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "enabled": true,
         "editorMode": "ace/mode/markdown",
-        "editorHide": true
+        "editorHide": true,
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -1509,17 +1381,11 @@
       "dateUpdated": "Feb 1, 2017 6:57:16 AM",
       "config": {
         "colWidth": 12.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "enabled": true,
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/scala",
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -1543,17 +1409,11 @@
       "dateUpdated": "Feb 1, 2017 6:57:25 AM",
       "config": {
         "colWidth": 12.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "enabled": true,
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/scala",
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -1577,18 +1437,12 @@
       "dateUpdated": "Feb 1, 2017 9:16:11 AM",
       "config": {
         "colWidth": 12.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "enabled": true,
         "editorHide": true,
-        "editorMode": "ace/mode/markdown"
+        "editorMode": "ace/mode/markdown",
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -1612,17 +1466,11 @@
       "dateUpdated": "Feb 1, 2017 9:17:21 AM",
       "config": {
         "colWidth": 12.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "enabled": true,
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/scala",
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -1646,17 +1494,11 @@
       "dateUpdated": "Feb 1, 2017 10:10:32 AM",
       "config": {
         "colWidth": 12.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "enabled": true,
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/scala",
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -1680,18 +1522,12 @@
       "dateUpdated": "Feb 1, 2017 10:04:17 AM",
       "config": {
         "colWidth": 12.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "enabled": true,
         "editorMode": "ace/mode/markdown",
-        "editorHide": true
+        "editorHide": true,
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -1715,17 +1551,11 @@
       "dateUpdated": "Feb 1, 2017 9:42:54 AM",
       "config": {
         "colWidth": 6.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "enabled": true,
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/scala",
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -1749,17 +1579,11 @@
       "dateUpdated": "Feb 1, 2017 9:43:02 AM",
       "config": {
         "colWidth": 6.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "enabled": true,
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/scala",
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -1783,18 +1607,12 @@
       "dateUpdated": "Feb 1, 2017 10:04:31 AM",
       "config": {
         "colWidth": 12.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "enabled": true,
         "editorMode": "ace/mode/markdown",
-        "editorHide": true
+        "editorHide": true,
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -1819,18 +1637,10 @@
       "dateUpdated": "Feb 1, 2017 9:50:17 AM",
       "config": {
         "colWidth": 6.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "title": true
+        "title": true,
+        "results": []
       },
       "settings": {
         "params": {},
@@ -1855,18 +1665,10 @@
       "dateUpdated": "Feb 1, 2017 10:05:56 AM",
       "config": {
         "colWidth": 6.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "title": true
+        "title": true,
+        "results": []
       },
       "settings": {
         "params": {},
@@ -1891,18 +1693,10 @@
       "dateUpdated": "Feb 1, 2017 10:09:38 AM",
       "config": {
         "colWidth": 6.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "title": true
+        "title": true,
+        "results": []
       },
       "settings": {
         "params": {},
@@ -1927,18 +1721,10 @@
       "dateUpdated": "Feb 1, 2017 10:11:17 AM",
       "config": {
         "colWidth": 6.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "title": true
+        "title": true,
+        "results": []
       },
       "settings": {
         "params": {},
@@ -1962,18 +1748,12 @@
       "dateUpdated": "Feb 1, 2017 10:23:24 AM",
       "config": {
         "colWidth": 12.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
         "enabled": true,
         "editorMode": "ace/mode/markdown",
-        "editorHide": true
+        "editorHide": true,
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -1998,41 +1778,12 @@
       "dateUpdated": "Feb 1, 2017 10:23:58 AM",
       "config": {
         "colWidth": 6.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": true,
-          "keys": [
-            {
-              "name": "COUNTRY_CODE",
-              "index": 2.0,
-              "aggr": "sum"
-            }
-          ],
-          "values": [
-            {
-              "name": "CONTINENT_NAME",
-              "index": 5.0,
-              "aggr": "sum"
-            }
-          ],
-          "groups": [],
-          "scatter": {
-            "xAxis": {
-              "name": "IP_FROM",
-              "index": 0.0,
-              "aggr": "sum"
-            },
-            "yAxis": {
-              "name": "IP_TO",
-              "index": 1.0,
-              "aggr": "sum"
-            }
-          }
-        },
         "enabled": true,
         "editorMode": "ace/mode/sql",
-        "title": true
+        "title": true,
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -2057,41 +1808,12 @@
       "dateUpdated": "Feb 1, 2017 10:24:01 AM",
       "config": {
         "colWidth": 6.0,
-        "graph": {
-          "mode": "multiBarChart",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [
-            {
-              "name": "CONTINENT_NAME",
-              "index": 0.0,
-              "aggr": "sum"
-            }
-          ],
-          "values": [
-            {
-              "name": "count",
-              "index": 1.0,
-              "aggr": "sum"
-            }
-          ],
-          "groups": [],
-          "scatter": {
-            "xAxis": {
-              "name": "CONTINENT_NAME",
-              "index": 0.0,
-              "aggr": "sum"
-            },
-            "yAxis": {
-              "name": "count",
-              "index": 1.0,
-              "aggr": "sum"
-            }
-          }
-        },
         "enabled": true,
         "editorMode": "ace/mode/sql",
-        "title": true
+        "title": true,
+        "results": [
+          {}
+        ]
       },
       "settings": {
         "params": {},
@@ -2140,26 +1862,7 @@
   ],
   "name": "Practice",
   "id": "2C75UP2R2",
-  "angularObjects": {
-    "2C93MQCCX:shared_process": [],
-    "2CAFQY6K3:shared_process": [],
-    "2C71Z8V22:shared_process": [],
-    "2C74PSEZQ:shared_process": [],
-    "2C7936H5V:shared_process": [],
-    "2C6WY8JHA:shared_process": [],
-    "2C8CCCVZ2:shared_process": [],
-    "2C9JTS6JQ:shared_process": [],
-    "2C91JKV9H:shared_process": [],
-    "2C8N1PP7C:shared_process": [],
-    "2C7YTW7VT:shared_process": [],
-    "2C85G18U9:shared_process": [],
-    "2C9XYSTEH:shared_process": [],
-    "2CA474ZG3:shared_process": [],
-    "2C8JNXQ9U:shared_process": [],
-    "2C827138T:shared_process": [],
-    "2CAA7GXEJ:shared_process": [],
-    "2C8W1GCP8:shared_process": []
-  },
+  "angularObjects": {},
   "config": {
     "looknfeel": "default"
   },
