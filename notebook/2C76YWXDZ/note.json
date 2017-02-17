@@ -441,8 +441,8 @@
     },
     {
       "title": "Detail columns to deal with",
-      "text": "val categoricalCols \u003d Seq(\"workclass\", \"education\", \"marital_status\", \"occupation\", \"relationship\", \"race\", \"sex\", \"native_country\")\nval numericCols \u003d Seq(\"age\", \"fnlwgt\", \"education_num\", \"capital_gain\", \"capital_loss\", \"hours_per_week\")\nval label_stringIdx \u003d new StringIndexer()\n    .setInputCol(\"income\")\n    .setOutputCol(\"label\")\n\ncategoricalCols.flatMap(s \u003d\u003e Seq(s,s+ \"index\"))\n\n",
-      "dateUpdated": "Feb 17, 2017 4:15:01 PM",
+      "text": "val categoricalCols \u003d Seq(\"workclass\", \"education\", \"marital_status\", \"occupation\", \"relationship\", \"race\", \"sex\", \"native_country\")\nval numericCols \u003d Seq(\"age\", \"fnlwgt\", \"education_num\", \"capital_gain\", \"capital_loss\", \"hours_per_week\")\n\nval categorie \u003d categoricalCols.flatMap(s\u003d\u003e Seq (s,s+ \"index\"))\n\nval label_stringIdx \u003d new StringIndexer()\n    .setInputCol(\"categorie\")\n    .setOutputCol(\"label\")\nval assembler \u003d new VectorAssembler \n.setInputCol(\"categorie\")\n.setOutputCol(\"features\")\n\n\nval stages \u003d CatStages ++ Seq (label_stringIdx)\nval pipeline \u003d new Pipline ()\n.setStages(stages.toArray)\nval pipelineModel \u003d pipeline.fit(dataset)\npipelineModel.transform(dataset).show()",
+      "dateUpdated": "Feb 17, 2017 4:34:56 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -469,17 +469,17 @@
       "result": {
         "code": "ERROR",
         "type": "TEXT",
-        "msg": "\ncategoricalCols: Seq[String] \u003d List(workclass, education, marital_status, occupation, relationship, race, sex, native_country)\n\nnumericCols: Seq[String] \u003d List(age, fnlwgt, education_num, capital_gain, capital_loss, hours_per_week)\n\n\n\n\u003cconsole\u003e:27: error: not found: type StringIndexer\n       val label_stringIdx \u003d new StringIndexer()\n                                 ^\n"
+        "msg": "\ncategoricalCols: Seq[String] \u003d List(workclass, education, marital_status, occupation, relationship, race, sex, native_country)\n\nnumericCols: Seq[String] \u003d List(age, fnlwgt, education_num, capital_gain, capital_loss, hours_per_week)\n\ncategorie: Seq[String] \u003d List(workclass, workclassindex, education, educationindex, marital_status, marital_statusindex, occupation, occupationindex, relationship, relationshipindex, race, raceindex, sex, sexindex, native_country, native_countryindex)\n\n\n\n\u003cconsole\u003e:27: error: not found: type StringIndexer\n       val label_stringIdx \u003d new StringIndexer()\n                                 ^\n"
       },
       "dateCreated": "Feb 6, 2017 2:31:24 AM",
-      "dateStarted": "Feb 17, 2017 4:15:01 PM",
-      "dateFinished": "Feb 17, 2017 4:15:02 PM",
+      "dateStarted": "Feb 17, 2017 4:34:56 PM",
+      "dateFinished": "Feb 17, 2017 4:34:57 PM",
       "status": "ERROR",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\nTo run machine learning on a dataset, you need a column which contains a vector of all the features, and a column with the label.\n\nWe use the [VectorAssembler](http://spark.apache.org/docs/latest/ml-features.html#vectorassembler) to assemble all of our numeric columns and one-hot encoded categorical columns into one.\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nAdd the `VectorAssembler` stage, which takes as input all numeric columns and one hot encoded categorical columns. The `features` column will then be created. You can comment on it.",
-      "dateUpdated": "Feb 17, 2017 3:17:21 PM",
+      "dateUpdated": "Feb 17, 2017 4:21:56 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -507,8 +507,8 @@
         "msg": "\u003cp\u003eTo run machine learning on a dataset, you need a column which contains a vector of all the features, and a column with the label.\u003c/p\u003e\n\u003cp\u003eWe use the \u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-features.html#vectorassembler\"\u003eVectorAssembler\u003c/a\u003e to assemble all of our numeric columns and one-hot encoded categorical columns into one.\u003c/p\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eAdd the \u003ccode\u003eVectorAssembler\u003c/code\u003e stage, which takes as input all numeric columns and one hot encoded categorical columns. The \u003ccode\u003efeatures\u003c/code\u003e column will then be created. You can comment on it.\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 3, 2017 9:15:56 AM",
-      "dateStarted": "Feb 7, 2017 12:55:43 PM",
-      "dateFinished": "Feb 7, 2017 12:55:43 PM",
+      "dateStarted": "Feb 17, 2017 4:21:57 PM",
+      "dateFinished": "Feb 17, 2017 4:21:57 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
