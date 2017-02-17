@@ -441,8 +441,8 @@
     },
     {
       "title": "Detail columns to deal with",
-      "text": "val categoricalCols \u003d Seq(\"workclass\", \"education\", \"marital_status\", \"occupation\", \"relationship\", \"race\", \"sex\", \"native_country\")\nval numericCols \u003d Seq(\"age\", \"fnlwgt\", \"education_num\", \"capital_gain\", \"capital_loss\", \"hours_per_week\")\n\nval categorie \u003d categoricalCols.flatMap(s\u003d\u003e Seq (s,s+ \"index\"))\n\nval label_stringIdx \u003d new StringIndexer()\n    .setInputCol(\"categorie\")\n    .setOutputCol(\"label\")\nval assembler \u003d new VectorAssembler \n.setInputCol(\"categorie\")\n.setOutputCol(\"features\")\n\n\nval stages \u003d CatStages ++ Seq (label_stringIdx)\nval pipeline \u003d new Pipline ()\n.setStages(stages.toArray)\nval pipelineModel \u003d pipeline.fit(dataset)\npipelineModel.transform(dataset).show()",
-      "dateUpdated": "Feb 17, 2017 4:34:56 PM",
+      "text": "val categoricalCols \u003d Seq(\"workclass\", \"education\", \"marital_status\", \"occupation\", \"relationship\", \"race\", \"sex\", \"native_country\")\nval numericCols \u003d Seq(\"age\", \"fnlwgt\", \"education_num\", \"capital_gain\", \"capital_loss\", \"hours_per_week\")\n\nval categorie \u003d categoricalCols.flatMap(s\u003d\u003e Seq (s,s+ \"index\"))\n\nval label_stringIdx \u003d new StringIndexer()\n    .setInputCol(\"numericCols\")\n    .setOutputCol(\"label\")\nval assembler \u003d new VectorAssembler \n.setInputCol(\"categorie\")\n.setOutputCol(\"features\")\n\n\nval stages \u003d CatStages ++ Seq (label_stringIdx, assembler)\nval pipeline \u003d new Pipline ()\n.setStages(stages.toArray)\nval pipelineModel \u003d pipeline.fit(dataset)\npipelineModel.transform(dataset).show()",
+      "dateUpdated": "Feb 17, 2017 4:45:22 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -472,8 +472,8 @@
         "msg": "\ncategoricalCols: Seq[String] \u003d List(workclass, education, marital_status, occupation, relationship, race, sex, native_country)\n\nnumericCols: Seq[String] \u003d List(age, fnlwgt, education_num, capital_gain, capital_loss, hours_per_week)\n\ncategorie: Seq[String] \u003d List(workclass, workclassindex, education, educationindex, marital_status, marital_statusindex, occupation, occupationindex, relationship, relationshipindex, race, raceindex, sex, sexindex, native_country, native_countryindex)\n\n\n\n\u003cconsole\u003e:27: error: not found: type StringIndexer\n       val label_stringIdx \u003d new StringIndexer()\n                                 ^\n"
       },
       "dateCreated": "Feb 6, 2017 2:31:24 AM",
-      "dateStarted": "Feb 17, 2017 4:34:56 PM",
-      "dateFinished": "Feb 17, 2017 4:34:57 PM",
+      "dateStarted": "Feb 17, 2017 4:45:22 PM",
+      "dateFinished": "Feb 17, 2017 4:45:23 PM",
       "status": "ERROR",
       "progressUpdateIntervalMs": 500
     },
