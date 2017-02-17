@@ -1925,7 +1925,7 @@
     {
       "title": "Display number of connections per continent",
       "text": "",
-      "dateUpdated": "Feb 1, 2017 10:09:38 AM",
+      "dateUpdated": "Feb 17, 2017 3:08:47 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1939,7 +1939,8 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "title": true
+        "title": true,
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -1996,7 +1997,7 @@
     },
     {
       "text": "%md\n\n#### Primer on Zeppelin visualization\n\nIf your dataframe is registered, you can use the %sql interpreter to directly study it. \n\nNormally the %sql interpreter is used to connect to a Hive metastore, the thing is a registered dataframe is actually present in the local Hive metastore so you can access it as a fake Hive table (you can see it for yourself with `sqlContext.sql(\"SHOW TABLES\").show()`)\n\nWith the %sql interpreter, you have access to basic visualization features of Zeppelin.",
-      "dateUpdated": "Feb 1, 2017 10:23:24 AM",
+      "dateUpdated": "Feb 17, 2017 3:07:48 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -2010,7 +2011,7 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/markdown",
-        "editorHide": true
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -2024,15 +2025,15 @@
         "msg": "\u003ch4\u003ePrimer on Zeppelin visualization\u003c/h4\u003e\n\u003cp\u003eIf your dataframe is registered, you can use the %sql interpreter to directly study it.\u003c/p\u003e\n\u003cp\u003eNormally the %sql interpreter is used to connect to a Hive metastore, the thing is a registered dataframe is actually present in the local Hive metastore so you can access it as a fake Hive table (you can see it for yourself with \u003ccode\u003esqlContext.sql(\"SHOW TABLES\").show()\u003c/code\u003e)\u003c/p\u003e\n\u003cp\u003eWith the %sql interpreter, you have access to basic visualization features of Zeppelin.\u003c/p\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 1:58:53 AM",
-      "dateStarted": "Feb 1, 2017 10:23:22 AM",
-      "dateFinished": "Feb 1, 2017 10:23:22 AM",
+      "dateStarted": "Feb 17, 2017 3:07:48 PM",
+      "dateFinished": "Feb 17, 2017 3:07:48 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "If your DataFrame is stored internally, you can do some viz",
       "text": "%sql\nSELECT * FROM df",
-      "dateUpdated": "Feb 1, 2017 10:23:58 AM",
+      "dateUpdated": "Feb 17, 2017 3:08:29 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -2069,7 +2070,8 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/sql",
-        "title": true
+        "title": true,
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -2091,7 +2093,7 @@
     {
       "title": "You can visualize the results of a query",
       "text": "%sql\nSELECT CONTINENT_NAME, COUNT(CONTINENT_NAME) as count FROM df GROUP BY CONTINENT_NAME",
-      "dateUpdated": "Feb 1, 2017 10:24:01 AM",
+      "dateUpdated": "Feb 17, 2017 3:06:58 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -2128,7 +2130,8 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/sql",
-        "title": true
+        "title": true,
+        "editorHide": false
       },
       "settings": {
         "params": {},
