@@ -499,12 +499,12 @@
     {
       "title": "Répartition homme/femme",
       "text": "%sql SELECT * FROM dataset",
-      "dateUpdated": "Feb 17, 2017 10:05:22 AM",
+      "dateUpdated": "Feb 17, 2017 10:17:25 AM",
       "config": {
         "colWidth": 5.0,
         "graph": {
           "mode": "multiBarChart",
-          "height": 249.64999389648438,
+          "height": 268.54998779296875,
           "optionOpen": false,
           "keys": [
             {
@@ -558,12 +558,12 @@
     {
       "title": "Moyenne d\u0027age ",
       "text": "%sql SELECT avg(age) FROM dataset",
-      "dateUpdated": "Feb 17, 2017 9:58:11 AM",
+      "dateUpdated": "Feb 17, 2017 10:08:13 AM",
       "config": {
         "colWidth": 7.0,
         "graph": {
           "mode": "table",
-          "height": 282.0,
+          "height": 86.0,
           "optionOpen": true,
           "keys": [
             {
@@ -600,6 +600,55 @@
       "dateCreated": "Feb 17, 2017 9:51:33 AM",
       "dateStarted": "Feb 17, 2017 9:53:50 AM",
       "dateFinished": "Feb 17, 2017 9:53:52 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Capital gain moyen",
+      "text": "%sql SELECT avg(capital_gain) FROM dataset",
+      "dateUpdated": "Feb 17, 2017 10:09:31 AM",
+      "config": {
+        "colWidth": 7.0,
+        "graph": {
+          "mode": "table",
+          "height": 86.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "avg(capital_gain)",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "avg(capital_gain)",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sql",
+        "title": true,
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487326097036_506669334",
+      "id": "20170217-100817_254414415",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "avg(capital_gain)\n1077.6488437087312\n"
+      },
+      "dateCreated": "Feb 17, 2017 10:08:17 AM",
+      "dateStarted": "Feb 17, 2017 10:09:28 AM",
+      "dateFinished": "Feb 17, 2017 10:09:28 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -724,6 +773,63 @@
       "progressUpdateIntervalMs": 500
     },
     {
+      "text": "%sql SELECT * FROM dataset WHERE native_country \u003d \"United-States\"",
+      "dateUpdated": "Feb 17, 2017 10:28:30 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "age",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "workclass",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "age",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "workclass",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487326701816_-1783718966",
+      "id": "20170217-101821_87329690",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "age\tworkclass\tfnlwgt\teducation\teducation_num\tmarital_status\toccupation\trelationship\trace\tsex\tcapital_gain\tcapital_loss\thours_per_week\tnative_country\tincome\n"
+      },
+      "dateCreated": "Feb 17, 2017 10:18:21 AM",
+      "dateStarted": "Feb 17, 2017 10:28:22 AM",
+      "dateFinished": "Feb 17, 2017 10:28:23 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
       "text": "%md \n\n## IV. Data preprocessing\n\nSince we are going to try algorithms like Logistic Regression, we will have to convert the categorical variables in the dataset into numeric variables. There are 2 ways we can do this.\n\n- Category Indexing. This is basically assigning a numeric value to each category from {0, 1, 2, ...numCategories-1}. This introduces an implicit ordering among your categories, and is more suitable for ordinal variables (eg: Poor: 0, Average: 1, Good: 2)\n- [One-Hot Encoding](http://spark.apache.org/docs/latest/ml-features.html#onehotencoder). This converts categories into binary vectors with at most one positive value (eg: (Blue: 1, 0, 0), (Green: 0, 1, 0), (Red: 0, 0, 1))",
       "dateUpdated": "Feb 7, 2017 12:55:41 PM",
       "config": {
@@ -761,7 +867,7 @@
     {
       "title": "One-hot encoding example",
       "text": "val names \u003d Seq(\"color\", \"index\", \"OHE_attr1\", \"OHE_attr2\", \"OHE_attr3\")\nsqlContext.createDataFrame(sc.parallelize(Seq((\"Blue\", 0, 1, 0, 0), (\"Green\", 1, 0, 1, 0), (\"Red\", 2, 0 , 0 , 1)))).toDF(names: _*).show()",
-      "dateUpdated": "Feb 7, 2017 12:55:42 PM",
+      "dateUpdated": "Feb 17, 2017 10:10:13 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -790,14 +896,14 @@
         "msg": "\nnames: Seq[String] \u003d List(color, index, OHE_attr1, OHE_attr2, OHE_attr3)\n+-----+-----+---------+---------+---------+\n|color|index|OHE_attr1|OHE_attr2|OHE_attr3|\n+-----+-----+---------+---------+---------+\n| Blue|    0|        1|        0|        0|\n|Green|    1|        0|        1|        0|\n|  Red|    2|        0|        0|        1|\n+-----+-----+---------+---------+---------+\n\n"
       },
       "dateCreated": "Feb 3, 2017 9:06:15 AM",
-      "dateStarted": "Feb 7, 2017 12:55:53 PM",
-      "dateFinished": "Feb 7, 2017 12:55:55 PM",
+      "dateStarted": "Feb 17, 2017 10:10:13 AM",
+      "dateFinished": "Feb 17, 2017 10:10:14 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\nIn this dataset, we have ordinal variables like education (Preschool - Doctorate), and also nominal variables like relationship (Wife, Husband, Own-child, etc). For simplicity\u0027s sake, we will use One-Hot Encoding to convert all categorical variables into binary vectors. It might be possible here to improve prediction accuracy by converting each categorical column with an appropriate method.\n\nHere, we will use a combination of [StringIndexer](http://spark.apache.org/docs/latest/ml-features.html#stringindexer) and [OneHotEncoder](http://spark.apache.org/docs/latest/ml-features.html#onehotencoder) on each string column to convert the categorical variables. The `OneHotEncoder` will return a SparseVector (which means, for `(8,[4],[1.0])` that the vector has size 8, one only the 4th column contains a value which is 1.0).\n\nSince we will have many stages of feature transformations, we use an [ML Pipeline](http://spark.apache.org/docs/latest/ml-pipeline.html) to tie the stages together.  This simplifies our code. You should especially try to use [the Pipeline example](http://spark.apache.org/docs/latest/ml-pipeline.html#example-pipeline).\n\n```scala\n// Configure an ML pipeline, which consists of two stages on one column: a StringIndexer and a OneHotEncoder.\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer}\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\n// stages for column workclass\nval stringIndexer \u003d new StringIndexer()\n  .setInputCol(\"workclass\")\n  .setOutputCol(\"workclassIndex\")\nval oneHotEncoder \u003d new OneHotEncoder()\n  .setInputCol(stringIndexer.getOutputCol)\n  .setOutputCol(stringIndexer.getInputCol + \"ClassVec\")\n  \n// stage for label\nval label_stringIdx \u003d new StringIndexer()\n    .setInputCol(\"income\")\n    .setOutputCol(\"label\")\n  \nval stages \u003d  Seq(stringIndexer, oneHotEncoder) ++ Seq(label_stringIdx) // concatenate 2 sequences of stages\nval pipeline \u003d new Pipeline()\n  .setStages(stages.toArray)\n  \nval pipelineModel \u003d pipeline.fit(dataset)\npipelineModel.transform(dataset).show()\n```\n\nIt is also a good time to transform the income to a label of 0 and 1 for binary classification using the `StringIndexer`.\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\n1. For each categorical column, build a stage of StringIndexer and OneHotEncoder\n2. Add all those stages in a single pipeline\n3. Also add a StringIndexer of the `income` column and name the output column `label`\n3. Check the result by passing your dataset inside the pipeline. Comment \u0026 explain.\n\n_Hint: actually map your sequence of categorical columns to a sequence of stages through FP._",
-      "dateUpdated": "Feb 7, 2017 12:55:42 PM",
+      "dateUpdated": "Feb 17, 2017 10:14:24 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -825,15 +931,52 @@
         "msg": "\u003cp\u003eIn this dataset, we have ordinal variables like education (Preschool - Doctorate), and also nominal variables like relationship (Wife, Husband, Own-child, etc). For simplicity\u0027s sake, we will use One-Hot Encoding to convert all categorical variables into binary vectors. It might be possible here to improve prediction accuracy by converting each categorical column with an appropriate method.\u003c/p\u003e\n\u003cp\u003eHere, we will use a combination of \u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-features.html#stringindexer\"\u003eStringIndexer\u003c/a\u003e and \u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-features.html#onehotencoder\"\u003eOneHotEncoder\u003c/a\u003e on each string column to convert the categorical variables. The \u003ccode\u003eOneHotEncoder\u003c/code\u003e will return a SparseVector (which means, for \u003ccode\u003e(8,[4],[1.0])\u003c/code\u003e that the vector has size 8, one only the 4th column contains a value which is 1.0).\u003c/p\u003e\n\u003cp\u003eSince we will have many stages of feature transformations, we use an \u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-pipeline.html\"\u003eML Pipeline\u003c/a\u003e to tie the stages together.  This simplifies our code. You should especially try to use \u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-pipeline.html#example-pipeline\"\u003ethe Pipeline example\u003c/a\u003e.\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"scala\"\u003e// Configure an ML pipeline, which consists of two stages on one column: a StringIndexer and a OneHotEncoder.\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer}\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\n// stages for column workclass\nval stringIndexer \u003d new StringIndexer()\n  .setInputCol(\"workclass\")\n  .setOutputCol(\"workclassIndex\")\nval oneHotEncoder \u003d new OneHotEncoder()\n  .setInputCol(stringIndexer.getOutputCol)\n  .setOutputCol(stringIndexer.getInputCol + \"ClassVec\")\n\n// stage for label\nval label_stringIdx \u003d new StringIndexer()\n    .setInputCol(\"income\")\n    .setOutputCol(\"label\")\n\nval stages \u003d  Seq(stringIndexer, oneHotEncoder) ++ Seq(label_stringIdx) // concatenate 2 sequences of stages\nval pipeline \u003d new Pipeline()\n  .setStages(stages.toArray)\n\nval pipelineModel \u003d pipeline.fit(dataset)\npipelineModel.transform(dataset).show()\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eIt is also a good time to transform the income to a label of 0 and 1 for binary classification using the \u003ccode\u003eStringIndexer\u003c/code\u003e.\u003c/p\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003col\u003e\n\u003cli\u003eFor each categorical column, build a stage of StringIndexer and OneHotEncoder\u003c/li\u003e\n\u003cli\u003eAdd all those stages in a single pipeline\u003c/li\u003e\n\u003cli\u003eAlso add a StringIndexer of the \u003ccode\u003eincome\u003c/code\u003e column and name the output column \u003ccode\u003elabel\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003eCheck the result by passing your dataset inside the pipeline. Comment \u0026amp; explain.\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003e\u003cem\u003eHint: actually map your sequence of categorical columns to a sequence of stages through FP.\u003c/em\u003e\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 3, 2017 9:11:12 AM",
-      "dateStarted": "Feb 7, 2017 12:55:42 PM",
-      "dateFinished": "Feb 7, 2017 12:55:42 PM",
+      "dateStarted": "Feb 17, 2017 10:11:01 AM",
+      "dateFinished": "Feb 17, 2017 10:11:01 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Detail columns to deal with",
       "text": "val categoricalCols \u003d Seq(\"workclass\", \"education\", \"marital_status\", \"occupation\", \"relationship\", \"race\", \"sex\", \"native_country\")\nval numericCols \u003d Seq(\"age\", \"fnlwgt\", \"education_num\", \"capital_gain\", \"capital_loss\", \"hours_per_week\")",
-      "dateUpdated": "Feb 7, 2017 12:55:42 PM",
+      "dateUpdated": "Feb 17, 2017 10:14:02 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true,
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1486391484536_-1333067431",
+      "id": "20170206-143124_969747353",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\ncategoricalCols: Seq[String] \u003d List(workclass, education, marital_status, occupation, relationship, race, sex, native_country)\n\nnumericCols: Seq[String] \u003d List(age, fnlwgt, education_num, capital_gain, capital_loss, hours_per_week)\n"
+      },
+      "dateCreated": "Feb 6, 2017 2:31:24 AM",
+      "dateStarted": "Feb 17, 2017 10:11:16 AM",
+      "dateFinished": "Feb 17, 2017 10:11:17 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Exemple du prof ",
+      "text": "categoricalCols.flatMap(s \u003d\u003e Seq(s, s + \"patate\"))",
+      "dateUpdated": "Feb 17, 2017 10:24:28 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -853,16 +996,120 @@
         "params": {},
         "forms": {}
       },
-      "jobName": "paragraph_1486391484536_-1333067431",
-      "id": "20170206-143124_969747353",
+      "jobName": "paragraph_1487326923671_-78741703",
+      "id": "20170217-102203_1624150921",
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ncategoricalCols: Seq[String] \u003d List(workclass, education, marital_status, occupation, relationship, race, sex, native_country)\n\nnumericCols: Seq[String] \u003d List(age, fnlwgt, education_num, capital_gain, capital_loss, hours_per_week)\n"
+        "msg": "\nres32: Seq[String] \u003d List(workclass, workclasspatate, education, educationpatate, marital_status, marital_statuspatate, occupation, occupationpatate, relationship, relationshippatate, race, racepatate, sex, sexpatate, native_country, native_countrypatate)\n"
       },
-      "dateCreated": "Feb 6, 2017 2:31:24 AM",
-      "dateStarted": "Feb 7, 2017 12:55:53 PM",
-      "dateFinished": "Feb 7, 2017 12:55:56 PM",
+      "dateCreated": "Feb 17, 2017 10:22:03 AM",
+      "dateStarted": "Feb 17, 2017 10:24:28 AM",
+      "dateFinished": "Feb 17, 2017 10:24:29 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Questions",
+      "text": "import org.apache.spark.ml.{Pipeline, PipelineModel}\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer}\n\nval categoricalColsstages \u003d categoricalCols.flatMap{s \u003d\u003e \n    val stringIndexer \u003d new StringIndexer()\n      .setInputCol(s)\n      .setOutputCol(s + \"index\")\n    val oneHotEncoder \u003d new OneHotEncoder()\n      .setInputCol(stringIndexer.getOutputCol)\n      .setOutputCol(stringIndexer.getInputCol + \"ClassVec\")\n    Seq(stringIndexer,oneHotEncoder)\n}\n\nval label_stringIdx \u003d new StringIndexer()\n    .setInputCol(\"income\")\n    .setOutputCol(\"label\")\n\nval stages \u003d  categoricalColsstages ++ Seq(label_stringIdx) // concatenate 2 sequences of stages\nval pipeline \u003d new Pipeline()\n  .setStages(stages.toArray)\n\nval pipelineModel \u003d pipeline.fit(dataset)\npipelineModel.transform(dataset).show()\n// creation du nouveau data set\nval new_dataset \u003d pipelineModel.transform(dataset)\nnew_dataset.printSchema()",
+      "dateUpdated": "Feb 17, 2017 10:53:23 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487327338678_-1501561749",
+      "id": "20170217-102858_1945466748",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer}\ncategoricalColsstages: Seq[org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable{def copy(extra: org.apache.spark.ml.param.ParamMap): org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable{def copy(extra: org.apache.spark.ml.param.ParamMap): org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable}}] \u003d List(strIdx_fbd3ab007993, oneHot_2224ff7301fd, strIdx_d5f969d55ecd, oneHot_e6a432d85133, strIdx_ba...\nlabel_stringIdx: org.apache.spark.ml.feature.StringIndexer \u003d strIdx_4c19ecc41da4\nstages: Seq[org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable{def copy(extra: org.apache.spark.ml.param.ParamMap): org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable{def copy(extra: org.apache.spark.ml.param.ParamMap): org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable}}] \u003d List(strIdx_fbd3ab007993, oneHot_2224ff7301fd, strIdx_d5f969d55ecd, oneHot_e6a432d85133, strIdx_ba687d238a40, one...\npipeline: org.apache.spark.ml.Pipeline \u003d pipeline_9c743a1865cb\n\npipelineModel: org.apache.spark.ml.PipelineModel \u003d pipeline_9c743a1865cb\n+----+-----------------+--------+-------------+-------------+--------------------+------------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+\n| age|        workclass|  fnlwgt|    education|education_num|      marital_status|        occupation|  relationship|               race|    sex|capital_gain|capital_loss|hours_per_week|native_country|income|workclassindex|workclassClassVec|educationindex|educationClassVec|marital_statusindex|marital_statusClassVec|occupationindex|occupationClassVec|relationshipindex|relationshipClassVec|raceindex| raceClassVec|sexindex|  sexClassVec|native_countryindex|native_countryClassVec|label|\n+----+-----------------+--------+-------------+-------------+--------------------+------------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+\n|39.0|        State-gov| 77516.0|    Bachelors|         13.0|       Never-married|      Adm-clerical| Not-in-family|              White|   Male|      2174.0|         0.0|          40.0| United-States| \u003c\u003d50K|           4.0|    (8,[4],[1.0])|           2.0|   (15,[2],[1.0])|                1.0|         (6,[1],[1.0])|            3.0|    (14,[3],[1.0])|              1.0|       (5,[1],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|\n|50.0| Self-emp-not-inc| 83311.0|    Bachelors|         13.0|  Married-civ-spouse|   Exec-managerial|       Husband|              White|   Male|         0.0|         0.0|          13.0| United-States| \u003c\u003d50K|           1.0|    (8,[1],[1.0])|           2.0|   (15,[2],[1.0])|                0.0|         (6,[0],[1.0])|            2.0|    (14,[2],[1.0])|              0.0|       (5,[0],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|\n|38.0|          Private|215646.0|      HS-grad|          9.0|            Divorced| Handlers-cleaners| Not-in-family|              White|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           0.0|   (15,[0],[1.0])|                2.0|         (6,[2],[1.0])|            9.0|    (14,[9],[1.0])|              1.0|       (5,[1],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|\n|53.0|          Private|234721.0|         11th|          7.0|  Married-civ-spouse| Handlers-cleaners|       Husband|              Black|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           5.0|   (15,[5],[1.0])|                0.0|         (6,[0],[1.0])|            9.0|    (14,[9],[1.0])|              0.0|       (5,[0],[1.0])|      1.0|(4,[1],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|\n|28.0|          Private|338409.0|    Bachelors|         13.0|  Married-civ-spouse|    Prof-specialty|          Wife|              Black| Female|         0.0|         0.0|          40.0|          Cuba| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           2.0|   (15,[2],[1.0])|                0.0|         (6,[0],[1.0])|            0.0|    (14,[0],[1.0])|              4.0|       (5,[4],[1.0])|      1.0|(4,[1],[1.0])|     1.0|    (1,[],[])|                9.0|        (41,[9],[1.0])|  0.0|\n|37.0|          Private|284582.0|      Masters|         14.0|  Married-civ-spouse|   Exec-managerial|          Wife|              White| Female|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           3.0|   (15,[3],[1.0])|                0.0|         (6,[0],[1.0])|            2.0|    (14,[2],[1.0])|              4.0|       (5,[4],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|\n|49.0|          Private|160187.0|          9th|          5.0| Married-spouse-a...|     Other-service| Not-in-family|              Black| Female|         0.0|         0.0|          16.0|       Jamaica| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|          10.0|  (15,[10],[1.0])|                5.0|         (6,[5],[1.0])|            5.0|    (14,[5],[1.0])|              1.0|       (5,[1],[1.0])|      1.0|(4,[1],[1.0])|     1.0|    (1,[],[])|               11.0|       (41,[11],[1.0])|  0.0|\n|52.0| Self-emp-not-inc|209642.0|      HS-grad|          9.0|  Married-civ-spouse|   Exec-managerial|       Husband|              White|   Male|         0.0|         0.0|          45.0| United-States|  \u003e50K|           1.0|    (8,[1],[1.0])|           0.0|   (15,[0],[1.0])|                0.0|         (6,[0],[1.0])|            2.0|    (14,[2],[1.0])|              0.0|       (5,[0],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  1.0|\n|31.0|          Private| 45781.0|      Masters|         14.0|       Never-married|    Prof-specialty| Not-in-family|              White| Female|     14084.0|         0.0|          50.0| United-States|  \u003e50K|           0.0|    (8,[0],[1.0])|           3.0|   (15,[3],[1.0])|                1.0|         (6,[1],[1.0])|            0.0|    (14,[0],[1.0])|              1.0|       (5,[1],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  1.0|\n|42.0|          Private|159449.0|    Bachelors|         13.0|  Married-civ-spouse|   Exec-managerial|       Husband|              White|   Male|      5178.0|         0.0|          40.0| United-States|  \u003e50K|           0.0|    (8,[0],[1.0])|           2.0|   (15,[2],[1.0])|                0.0|         (6,[0],[1.0])|            2.0|    (14,[2],[1.0])|              0.0|       (5,[0],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  1.0|\n|37.0|          Private|280464.0| Some-college|         10.0|  Married-civ-spouse|   Exec-managerial|       Husband|              Black|   Male|         0.0|         0.0|          80.0| United-States|  \u003e50K|           0.0|    (8,[0],[1.0])|           1.0|   (15,[1],[1.0])|                0.0|         (6,[0],[1.0])|            2.0|    (14,[2],[1.0])|              0.0|       (5,[0],[1.0])|      1.0|(4,[1],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  1.0|\n|30.0|        State-gov|141297.0|    Bachelors|         13.0|  Married-civ-spouse|    Prof-specialty|       Husband| Asian-Pac-Islander|   Male|         0.0|         0.0|          40.0|         India|  \u003e50K|           4.0|    (8,[4],[1.0])|           2.0|   (15,[2],[1.0])|                0.0|         (6,[0],[1.0])|            0.0|    (14,[0],[1.0])|              0.0|       (5,[0],[1.0])|      2.0|(4,[2],[1.0])|     0.0|(1,[0],[1.0])|                8.0|        (41,[8],[1.0])|  1.0|\n|23.0|          Private|122272.0|    Bachelors|         13.0|       Never-married|      Adm-clerical|     Own-child|              White| Female|         0.0|         0.0|          30.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           2.0|   (15,[2],[1.0])|                1.0|         (6,[1],[1.0])|            3.0|    (14,[3],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|\n|32.0|          Private|205019.0|   Assoc-acdm|         12.0|       Never-married|             Sales| Not-in-family|              Black|   Male|         0.0|         0.0|          50.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           6.0|   (15,[6],[1.0])|                1.0|         (6,[1],[1.0])|            4.0|    (14,[4],[1.0])|              1.0|       (5,[1],[1.0])|      1.0|(4,[1],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|\n|40.0|          Private|121772.0|    Assoc-voc|         11.0|  Married-civ-spouse|      Craft-repair|       Husband| Asian-Pac-Islander|   Male|         0.0|         0.0|          40.0|             ?|  \u003e50K|           0.0|    (8,[0],[1.0])|           4.0|   (15,[4],[1.0])|                0.0|         (6,[0],[1.0])|            1.0|    (14,[1],[1.0])|              0.0|       (5,[0],[1.0])|      2.0|(4,[2],[1.0])|     0.0|(1,[0],[1.0])|                2.0|        (41,[2],[1.0])|  1.0|\n|34.0|          Private|245487.0|      7th-8th|          4.0|  Married-civ-spouse|  Transport-moving|       Husband| Amer-Indian-Eskimo|   Male|         0.0|         0.0|          45.0|        Mexico| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           8.0|   (15,[8],[1.0])|                0.0|         (6,[0],[1.0])|            8.0|    (14,[8],[1.0])|              0.0|       (5,[0],[1.0])|      3.0|(4,[3],[1.0])|     0.0|(1,[0],[1.0])|                1.0|        (41,[1],[1.0])|  0.0|\n|25.0| Self-emp-not-inc|176756.0|      HS-grad|          9.0|       Never-married|   Farming-fishing|     Own-child|              White|   Male|         0.0|         0.0|          35.0| United-States| \u003c\u003d50K|           1.0|    (8,[1],[1.0])|           0.0|   (15,[0],[1.0])|                1.0|         (6,[1],[1.0])|           10.0|   (14,[10],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|\n|32.0|          Private|186824.0|      HS-grad|          9.0|       Never-married| Machine-op-inspct|     Unmarried|              White|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           0.0|   (15,[0],[1.0])|                1.0|         (6,[1],[1.0])|            6.0|    (14,[6],[1.0])|              3.0|       (5,[3],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|\n|38.0|          Private| 28887.0|         11th|          7.0|  Married-civ-spouse|             Sales|       Husband|              White|   Male|         0.0|         0.0|          50.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           5.0|   (15,[5],[1.0])|                0.0|         (6,[0],[1.0])|            4.0|    (14,[4],[1.0])|              0.0|       (5,[0],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|\n|43.0| Self-emp-not-inc|292175.0|      Masters|         14.0|            Divorced|   Exec-managerial|     Unmarried|              White| Female|         0.0|         0.0|          45.0| United-States|  \u003e50K|           1.0|    (8,[1],[1.0])|           3.0|   (15,[3],[1.0])|                2.0|         (6,[2],[1.0])|            2.0|    (14,[2],[1.0])|              3.0|       (5,[3],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  1.0|\n+----+-----------------+--------+-------------+-------------+--------------------+------------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+\nonly showing top 20 rows\n\n\nnew_dataset: org.apache.spark.sql.DataFrame \u003d [age: double, workclass: string ... 30 more fields]\nroot\n |-- age: double (nullable \u003d true)\n |-- workclass: string (nullable \u003d true)\n |-- fnlwgt: double (nullable \u003d true)\n |-- education: string (nullable \u003d true)\n |-- education_num: double (nullable \u003d true)\n |-- marital_status: string (nullable \u003d true)\n |-- occupation: string (nullable \u003d true)\n |-- relationship: string (nullable \u003d true)\n |-- race: string (nullable \u003d true)\n |-- sex: string (nullable \u003d true)\n |-- capital_gain: double (nullable \u003d true)\n |-- capital_loss: double (nullable \u003d true)\n |-- hours_per_week: double (nullable \u003d true)\n |-- native_country: string (nullable \u003d true)\n |-- income: string (nullable \u003d true)\n |-- workclassindex: double (nullable \u003d true)\n |-- workclassClassVec: vector (nullable \u003d true)\n |-- educationindex: double (nullable \u003d true)\n |-- educationClassVec: vector (nullable \u003d true)\n |-- marital_statusindex: double (nullable \u003d true)\n |-- marital_statusClassVec: vector (nullable \u003d true)\n |-- occupationindex: double (nullable \u003d true)\n |-- occupationClassVec: vector (nullable \u003d true)\n |-- relationshipindex: double (nullable \u003d true)\n |-- relationshipClassVec: vector (nullable \u003d true)\n |-- raceindex: double (nullable \u003d true)\n |-- raceClassVec: vector (nullable \u003d true)\n |-- sexindex: double (nullable \u003d true)\n |-- sexClassVec: vector (nullable \u003d true)\n |-- native_countryindex: double (nullable \u003d true)\n |-- native_countryClassVec: vector (nullable \u003d true)\n |-- label: double (nullable \u003d true)\n\n"
+      },
+      "dateCreated": "Feb 17, 2017 10:28:58 AM",
+      "dateStarted": "Feb 17, 2017 10:53:24 AM",
+      "dateFinished": "Feb 17, 2017 10:53:28 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// Configure an ML pipeline, which consists of two stages on one column: a StringIndexer and a OneHotEncoder.\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer}\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\n// stages for column workclass\nval stringIndexer \u003d new StringIndexer()\n  .setInputCol(\"workclass\")\n  .setOutputCol(\"workclassIndex\")\nval oneHotEncoder \u003d new OneHotEncoder()\n  .setInputCol(stringIndexer.getOutputCol)\n  .setOutputCol(stringIndexer.getInputCol + \"ClassVec\")\n\n// stage for label\nval label_stringIdx \u003d new StringIndexer()\n    .setInputCol(\"income\")\n    .setOutputCol(\"label\")\n\nval stages \u003d  Seq(stringIndexer, oneHotEncoder) ++ Seq(label_stringIdx) // concatenate 2 sequences of stages\nval pipeline \u003d new Pipeline()\n  .setStages(stages.toArray)\n\nval pipelineModel \u003d pipeline.fit(dataset)\npipelineModel.transform(dataset).show()",
+      "dateUpdated": "Feb 17, 2017 10:43:10 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487328180310_2010224231",
+      "id": "20170217-104300_1521782107",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer}\n\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\nstringIndexer: org.apache.spark.ml.feature.StringIndexer \u003d strIdx_e6d104221283\n\noneHotEncoder: org.apache.spark.ml.feature.OneHotEncoder \u003d oneHot_e5bdc9492db0\n\nlabel_stringIdx: org.apache.spark.ml.feature.StringIndexer \u003d strIdx_271620fabf4d\n\nstages: Seq[org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable{def copy(extra: org.apache.spark.ml.param.ParamMap): org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable{def copy(extra: org.apache.spark.ml.param.ParamMap): org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable}}] \u003d List(strIdx_e6d104221283, oneHot_e5bdc9492db0, strIdx_271620fabf4d)\n\npipeline: org.apache.spark.ml.Pipeline \u003d pipeline_5ffc149da958\n\npipelineModel: org.apache.spark.ml.PipelineModel \u003d pipeline_5ffc149da958\n+----+-----------------+--------+-------------+-------------+--------------------+------------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+--------------+-----------------+-----+\n| age|        workclass|  fnlwgt|    education|education_num|      marital_status|        occupation|  relationship|               race|    sex|capital_gain|capital_loss|hours_per_week|native_country|income|workclassIndex|workclassClassVec|label|\n+----+-----------------+--------+-------------+-------------+--------------------+------------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+--------------+-----------------+-----+\n|39.0|        State-gov| 77516.0|    Bachelors|         13.0|       Never-married|      Adm-clerical| Not-in-family|              White|   Male|      2174.0|         0.0|          40.0| United-States| \u003c\u003d50K|           4.0|    (8,[4],[1.0])|  0.0|\n|50.0| Self-emp-not-inc| 83311.0|    Bachelors|         13.0|  Married-civ-spouse|   Exec-managerial|       Husband|              White|   Male|         0.0|         0.0|          13.0| United-States| \u003c\u003d50K|           1.0|    (8,[1],[1.0])|  0.0|\n|38.0|          Private|215646.0|      HS-grad|          9.0|            Divorced| Handlers-cleaners| Not-in-family|              White|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|  0.0|\n|53.0|          Private|234721.0|         11th|          7.0|  Married-civ-spouse| Handlers-cleaners|       Husband|              Black|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|  0.0|\n|28.0|          Private|338409.0|    Bachelors|         13.0|  Married-civ-spouse|    Prof-specialty|          Wife|              Black| Female|         0.0|         0.0|          40.0|          Cuba| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|  0.0|\n|37.0|          Private|284582.0|      Masters|         14.0|  Married-civ-spouse|   Exec-managerial|          Wife|              White| Female|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|  0.0|\n|49.0|          Private|160187.0|          9th|          5.0| Married-spouse-a...|     Other-service| Not-in-family|              Black| Female|         0.0|         0.0|          16.0|       Jamaica| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|  0.0|\n|52.0| Self-emp-not-inc|209642.0|      HS-grad|          9.0|  Married-civ-spouse|   Exec-managerial|       Husband|              White|   Male|         0.0|         0.0|          45.0| United-States|  \u003e50K|           1.0|    (8,[1],[1.0])|  1.0|\n|31.0|          Private| 45781.0|      Masters|         14.0|       Never-married|    Prof-specialty| Not-in-family|              White| Female|     14084.0|         0.0|          50.0| United-States|  \u003e50K|           0.0|    (8,[0],[1.0])|  1.0|\n|42.0|          Private|159449.0|    Bachelors|         13.0|  Married-civ-spouse|   Exec-managerial|       Husband|              White|   Male|      5178.0|         0.0|          40.0| United-States|  \u003e50K|           0.0|    (8,[0],[1.0])|  1.0|\n|37.0|          Private|280464.0| Some-college|         10.0|  Married-civ-spouse|   Exec-managerial|       Husband|              Black|   Male|         0.0|         0.0|          80.0| United-States|  \u003e50K|           0.0|    (8,[0],[1.0])|  1.0|\n|30.0|        State-gov|141297.0|    Bachelors|         13.0|  Married-civ-spouse|    Prof-specialty|       Husband| Asian-Pac-Islander|   Male|         0.0|         0.0|          40.0|         India|  \u003e50K|           4.0|    (8,[4],[1.0])|  1.0|\n|23.0|          Private|122272.0|    Bachelors|         13.0|       Never-married|      Adm-clerical|     Own-child|              White| Female|         0.0|         0.0|          30.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|  0.0|\n|32.0|          Private|205019.0|   Assoc-acdm|         12.0|       Never-married|             Sales| Not-in-family|              Black|   Male|         0.0|         0.0|          50.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|  0.0|\n|40.0|          Private|121772.0|    Assoc-voc|         11.0|  Married-civ-spouse|      Craft-repair|       Husband| Asian-Pac-Islander|   Male|         0.0|         0.0|          40.0|             ?|  \u003e50K|           0.0|    (8,[0],[1.0])|  1.0|\n|34.0|          Private|245487.0|      7th-8th|          4.0|  Married-civ-spouse|  Transport-moving|       Husband| Amer-Indian-Eskimo|   Male|         0.0|         0.0|          45.0|        Mexico| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|  0.0|\n|25.0| Self-emp-not-inc|176756.0|      HS-grad|          9.0|       Never-married|   Farming-fishing|     Own-child|              White|   Male|         0.0|         0.0|          35.0| United-States| \u003c\u003d50K|           1.0|    (8,[1],[1.0])|  0.0|\n|32.0|          Private|186824.0|      HS-grad|          9.0|       Never-married| Machine-op-inspct|     Unmarried|              White|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|  0.0|\n|38.0|          Private| 28887.0|         11th|          7.0|  Married-civ-spouse|             Sales|       Husband|              White|   Male|         0.0|         0.0|          50.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|  0.0|\n|43.0| Self-emp-not-inc|292175.0|      Masters|         14.0|            Divorced|   Exec-managerial|     Unmarried|              White| Female|         0.0|         0.0|          45.0| United-States|  \u003e50K|           1.0|    (8,[1],[1.0])|  1.0|\n+----+-----------------+--------+-------------+-------------+--------------------+------------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+--------------+-----------------+-----+\nonly showing top 20 rows\n\n"
+      },
+      "dateCreated": "Feb 17, 2017 10:43:00 AM",
+      "dateStarted": "Feb 17, 2017 10:43:10 AM",
+      "dateFinished": "Feb 17, 2017 10:43:15 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nCréation d\u0027un string indexor qui permet de créer l\u0027index d\u0027une varaible de type string. \nLes modalités de chaques variables qualitatives deviennent des nouvelles variables binaires afin de ne pas avoir d\u0027infulence \"d\u0027ordre\" d\u0027importance de modalité avec un recodage du type \"0,1,2,3\" selon le nombre de modalités. Il y a donc autant de variables binaires que de modalités.",
+      "dateUpdated": "Feb 17, 2017 10:42:29 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487327559986_1034996328",
+      "id": "20170217-103239_1074747514",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eCréation d\u0027un string indexor qui permet de créer l\u0027index d\u0027une varaible de type string.\n\u003cbr  /\u003eLes modalités de chaques variables qualitatives deviennent des nouvelles variables binaires afin de ne pas avoir d\u0027infulence \u0026ldquo;d\u0027ordre\u0026rdquo; d\u0027importance de modalité avec un recodage du type \u0026ldquo;0,1,2,3\u0026rdquo; selon le nombre de modalités. Il y a donc autant de variables binaires que de modalités.\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 17, 2017 10:32:39 AM",
+      "dateStarted": "Feb 17, 2017 10:42:29 AM",
+      "dateFinished": "Feb 17, 2017 10:42:29 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -903,7 +1150,7 @@
     },
     {
       "text": "%md\n\nAt this point, you should have a dataframe with a column _features_ which consists of a vector of all features in numerical form, and a column _label_ with the Income as a binary value. \n\nIt looks like this for example:\n\n```\n+----+-----------------+--------+----------+-------------+-------------------+------------------+--------------+------+-----+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\n| age|        workclass|  fnlwgt| education|education_num|     marital_status|        occupation|  relationship|  race|  sex|capital_gain|capital_loss|hours_per_week|native_country|income|workclassIndex|workclassClassVec|educationIndex|educationClassVec|marital_statusIndex|marital_statusClassVec|occupationIndex|occupationClassVec|relationshipIndex|relationshipClassVec|raceIndex| raceClassVec|sexIndex|  sexClassVec|native_countryIndex|native_countryClassVec|label|            features|\n+----+-----------------+--------+----------+-------------+-------------------+------------------+--------------+------+-----+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\n|39.0|        State-gov| 77516.0| Bachelors|         13.0|      Never-married|      Adm-clerical| Not-in-family| White| Male|      2174.0|         0.0|          40.0| United-States| \u003c\u003d50K|           4.0|    (8,[4],[1.0])|           2.0|   (15,[2],[1.0])|                1.0|         (6,[1],[1.0])|            3.0|    (14,[3],[1.0])|              1.0|       (5,[1],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(100,[4,10,24,32,...|\n```\n\n\u003chr\u003e\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nRandomly split your dataset into a 70% training set and 30% test set using a Dataframe\u0027s `randomSplit` function.",
-      "dateUpdated": "Feb 7, 2017 12:55:43 PM",
+      "dateUpdated": "Feb 17, 2017 10:36:04 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -931,8 +1178,8 @@
         "msg": "\u003cp\u003eAt this point, you should have a dataframe with a column \u003cem\u003efeatures\u003c/em\u003e which consists of a vector of all features in numerical form, and a column \u003cem\u003elabel\u003c/em\u003e with the Income as a binary value.\u003c/p\u003e\n\u003cp\u003eIt looks like this for example:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+----+-----------------+--------+----------+-------------+-------------------+------------------+--------------+------+-----+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\n| age|        workclass|  fnlwgt| education|education_num|     marital_status|        occupation|  relationship|  race|  sex|capital_gain|capital_loss|hours_per_week|native_country|income|workclassIndex|workclassClassVec|educationIndex|educationClassVec|marital_statusIndex|marital_statusClassVec|occupationIndex|occupationClassVec|relationshipIndex|relationshipClassVec|raceIndex| raceClassVec|sexIndex|  sexClassVec|native_countryIndex|native_countryClassVec|label|            features|\n+----+-----------------+--------+----------+-------------+-------------------+------------------+--------------+------+-----+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\n|39.0|        State-gov| 77516.0| Bachelors|         13.0|      Never-married|      Adm-clerical| Not-in-family| White| Male|      2174.0|         0.0|          40.0| United-States| \u0026lt;\u003d50K|           4.0|    (8,[4],[1.0])|           2.0|   (15,[2],[1.0])|                1.0|         (6,[1],[1.0])|            3.0|    (14,[3],[1.0])|              1.0|       (5,[1],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(100,[4,10,24,32,...|\n\u003c/code\u003e\u003c/pre\u003e\n\u003chr\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eRandomly split your dataset into a 70% training set and 30% test set using a Dataframe\u0027s \u003ccode\u003erandomSplit\u003c/code\u003e function.\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 3, 2017 9:26:59 AM",
-      "dateStarted": "Feb 7, 2017 12:55:44 PM",
-      "dateFinished": "Feb 7, 2017 12:55:44 PM",
+      "dateStarted": "Feb 17, 2017 10:36:04 AM",
+      "dateFinished": "Feb 17, 2017 10:36:04 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
