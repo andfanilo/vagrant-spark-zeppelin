@@ -108,7 +108,7 @@
     {
       "title": "Load data (run the cell)",
       "text": "import org.apache.spark.sql.types.{StringType, DoubleType, StructType, StructField}\n\nval schema \u003d StructType(Seq(\n    StructField(\"age\", DoubleType),\n    StructField(\"workclass\", StringType),\n    StructField(\"fnlwgt\", DoubleType),\n    StructField(\"education\", StringType),\n    StructField(\"education_num\", DoubleType),\n    StructField(\"marital_status\", StringType),\n    StructField(\"occupation\", StringType),\n    StructField(\"relationship\", StringType),\n    StructField(\"race\", StringType),\n    StructField(\"sex\", StringType),\n    StructField(\"capital_gain\", DoubleType),\n    StructField(\"capital_loss\", DoubleType),\n    StructField(\"hours_per_week\", DoubleType),\n    StructField(\"native_country\", StringType),\n    StructField(\"income\", StringType)\n    ))\n\ncase class Adult(\n    age: Double, \n    workclass: String, \n    fnlwgt: Double, \n    education: String, \n    education_num: Double, \n    marital_status: String, \n    occupation: String, \n    relationship: String, \n    race: String, \n    sex: String, \n    capital_gain: Double, \n    capital_loss: Double, \n    hours_per_week: Double, \n    native_country: String, \n    income: String\n    )\n    \nval dataset \u003d spark.read.schema(schema).csv(\"/opt/dataset/adult.data.csv\").as[Adult]\ndataset.registerTempTable(\"dataset\")  // register it so we can use it inside %sql interpreter",
-      "dateUpdated": "Feb 7, 2017 12:55:38 PM",
+      "dateUpdated": "Feb 17, 2017 9:03:28 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -138,14 +138,14 @@
         "msg": "\nimport org.apache.spark.sql.types.{StringType, DoubleType, StructType, StructField}\n\nschema: org.apache.spark.sql.types.StructType \u003d StructType(StructField(age,DoubleType,true), StructField(workclass,StringType,true), StructField(fnlwgt,DoubleType,true), StructField(education,StringType,true), StructField(education_num,DoubleType,true), StructField(marital_status,StringType,true), StructField(occupation,StringType,true), StructField(relationship,StringType,true), StructField(race,StringType,true), StructField(sex,StringType,true), StructField(capital_gain,DoubleType,true), StructField(capital_loss,DoubleType,true), StructField(hours_per_week,DoubleType,true), StructField(native_country,StringType,true), StructField(income,StringType,true))\n\ndefined class Adult\n\ndataset: org.apache.spark.sql.Dataset[Adult] \u003d [age: double, workclass: string ... 13 more fields]\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n"
       },
       "dateCreated": "Feb 3, 2017 8:43:33 AM",
-      "dateStarted": "Feb 7, 2017 12:55:39 PM",
-      "dateFinished": "Feb 7, 2017 12:55:47 PM",
+      "dateStarted": "Feb 17, 2017 9:03:28 AM",
+      "dateFinished": "Feb 17, 2017 9:04:02 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "dataset.printSchema()",
-      "dateUpdated": "Feb 7, 2017 12:55:39 PM",
+      "dateUpdated": "Feb 17, 2017 9:04:13 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -172,14 +172,14 @@
         "msg": "root\n |-- age: double (nullable \u003d true)\n |-- workclass: string (nullable \u003d true)\n |-- fnlwgt: double (nullable \u003d true)\n |-- education: string (nullable \u003d true)\n |-- education_num: double (nullable \u003d true)\n |-- marital_status: string (nullable \u003d true)\n |-- occupation: string (nullable \u003d true)\n |-- relationship: string (nullable \u003d true)\n |-- race: string (nullable \u003d true)\n |-- sex: string (nullable \u003d true)\n |-- capital_gain: double (nullable \u003d true)\n |-- capital_loss: double (nullable \u003d true)\n |-- hours_per_week: double (nullable \u003d true)\n |-- native_country: string (nullable \u003d true)\n |-- income: string (nullable \u003d true)\n\n"
       },
       "dateCreated": "Feb 6, 2017 1:45:35 AM",
-      "dateStarted": "Feb 7, 2017 12:55:39 PM",
-      "dateFinished": "Feb 7, 2017 12:55:48 PM",
+      "dateStarted": "Feb 17, 2017 9:04:13 AM",
+      "dateFinished": "Feb 17, 2017 9:04:14 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%sql SELECT * FROM dataset LIMIT 10",
-      "dateUpdated": "Feb 7, 2017 12:55:39 PM",
+      "dateUpdated": "Feb 17, 2017 9:04:58 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -206,51 +206,58 @@
         "msg": "age\tworkclass\tfnlwgt\teducation\teducation_num\tmarital_status\toccupation\trelationship\trace\tsex\tcapital_gain\tcapital_loss\thours_per_week\tnative_country\tincome\n39.0\t State-gov\t77516.0\t Bachelors\t13.0\t Never-married\t Adm-clerical\t Not-in-family\t White\t Male\t2174.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n50.0\t Self-emp-not-inc\t83311.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t13.0\t United-States\t \u003c\u003d50K\n38.0\t Private\t215646.0\t HS-grad\t9.0\t Divorced\t Handlers-cleaners\t Not-in-family\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n53.0\t Private\t234721.0\t 11th\t7.0\t Married-civ-spouse\t Handlers-cleaners\t Husband\t Black\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n28.0\t Private\t338409.0\t Bachelors\t13.0\t Married-civ-spouse\t Prof-specialty\t Wife\t Black\t Female\t0.0\t0.0\t40.0\t Cuba\t \u003c\u003d50K\n37.0\t Private\t284582.0\t Masters\t14.0\t Married-civ-spouse\t Exec-managerial\t Wife\t White\t Female\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n49.0\t Private\t160187.0\t 9th\t5.0\t Married-spouse-absent\t Other-service\t Not-in-family\t Black\t Female\t0.0\t0.0\t16.0\t Jamaica\t \u003c\u003d50K\n52.0\t Self-emp-not-inc\t209642.0\t HS-grad\t9.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t45.0\t United-States\t \u003e50K\n31.0\t Private\t45781.0\t Masters\t14.0\t Never-married\t Prof-specialty\t Not-in-family\t White\t Female\t14084.0\t0.0\t50.0\t United-States\t \u003e50K\n42.0\t Private\t159449.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t5178.0\t0.0\t40.0\t United-States\t \u003e50K\n"
       },
       "dateCreated": "Feb 3, 2017 8:41:09 AM",
-      "dateStarted": "Feb 7, 2017 12:55:48 PM",
-      "dateFinished": "Feb 7, 2017 12:55:52 PM",
+      "dateStarted": "Feb 17, 2017 9:04:58 AM",
+      "dateFinished": "Feb 17, 2017 9:05:00 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "title": "Check settings of graph. See how we average age by income.",
-      "text": "%sql SELECT * FROM dataset LIMIT 10",
-      "dateUpdated": "Feb 7, 2017 12:55:40 PM",
+      "title": "Analyse des moyennes d\u0027ages par sexe et salaire !",
+      "text": "%sql SELECT sex, income, mean(age) FROM dataset GROUP BY sex, income",
+      "dateUpdated": "Feb 17, 2017 9:39:19 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
-          "mode": "pieChart",
+          "mode": "lineChart",
           "height": 300.0,
-          "optionOpen": false,
+          "optionOpen": true,
           "keys": [
             {
-              "name": "income",
-              "index": 14.0,
+              "name": "sex",
+              "index": 0.0,
               "aggr": "sum"
             }
           ],
           "values": [
             {
-              "name": "age",
-              "index": 0.0,
-              "aggr": "avg"
+              "name": "avg(age)",
+              "index": 2.0,
+              "aggr": "sum"
             }
           ],
-          "groups": [],
+          "groups": [
+            {
+              "name": "income",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
           "scatter": {
             "xAxis": {
-              "name": "age",
+              "name": "sex",
               "index": 0.0,
               "aggr": "sum"
             },
             "yAxis": {
-              "name": "workclass",
+              "name": "income",
               "index": 1.0,
               "aggr": "sum"
             }
-          }
+          },
+          "lineWithFocus": false
         },
         "enabled": true,
-        "editorMode": "ace/mode/scala",
+        "editorMode": "ace/mode/sql",
         "title": true
       },
       "settings": {
@@ -262,11 +269,216 @@
       "result": {
         "code": "SUCCESS",
         "type": "TABLE",
-        "msg": "age\tworkclass\tfnlwgt\teducation\teducation_num\tmarital_status\toccupation\trelationship\trace\tsex\tcapital_gain\tcapital_loss\thours_per_week\tnative_country\tincome\n39.0\t State-gov\t77516.0\t Bachelors\t13.0\t Never-married\t Adm-clerical\t Not-in-family\t White\t Male\t2174.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n50.0\t Self-emp-not-inc\t83311.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t13.0\t United-States\t \u003c\u003d50K\n38.0\t Private\t215646.0\t HS-grad\t9.0\t Divorced\t Handlers-cleaners\t Not-in-family\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n53.0\t Private\t234721.0\t 11th\t7.0\t Married-civ-spouse\t Handlers-cleaners\t Husband\t Black\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n28.0\t Private\t338409.0\t Bachelors\t13.0\t Married-civ-spouse\t Prof-specialty\t Wife\t Black\t Female\t0.0\t0.0\t40.0\t Cuba\t \u003c\u003d50K\n37.0\t Private\t284582.0\t Masters\t14.0\t Married-civ-spouse\t Exec-managerial\t Wife\t White\t Female\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n49.0\t Private\t160187.0\t 9th\t5.0\t Married-spouse-absent\t Other-service\t Not-in-family\t Black\t Female\t0.0\t0.0\t16.0\t Jamaica\t \u003c\u003d50K\n52.0\t Self-emp-not-inc\t209642.0\t HS-grad\t9.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t45.0\t United-States\t \u003e50K\n31.0\t Private\t45781.0\t Masters\t14.0\t Never-married\t Prof-specialty\t Not-in-family\t White\t Female\t14084.0\t0.0\t50.0\t United-States\t \u003e50K\n42.0\t Private\t159449.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t5178.0\t0.0\t40.0\t United-States\t \u003e50K\n"
+        "msg": "sex\tincome\tavg(age)\n Male\t \u003c\u003d50K\t37.147012162876784\n Male\t \u003e50K\t44.62578805163614\n Female\t \u003e50K\t42.125530110262936\n Female\t \u003c\u003d50K\t36.210800667222685\n"
       },
       "dateCreated": "Feb 6, 2017 8:20:04 AM",
-      "dateStarted": "Feb 7, 2017 12:55:48 PM",
-      "dateFinished": "Feb 7, 2017 12:55:53 PM",
+      "dateStarted": "Feb 17, 2017 9:12:21 AM",
+      "dateFinished": "Feb 17, 2017 9:12:25 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Moyenne d\u0027age par situation familiale et par fonction !",
+      "text": "%sql SELECT marital_status, occupation, mean(age) FROM dataset GROUP BY marital_status, occupation",
+      "dateUpdated": "Feb 17, 2017 9:31:04 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "pieChart",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "marital_status",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "occupation",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "marital_status",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "occupation",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sql",
+        "title": true,
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487323008260_2054865568",
+      "id": "20170217-091648_315575510",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "marital_status\toccupation\tavg(age)\n Divorced\t Other-service\t43.249500998003995\n Married-spouse-absent\t Handlers-cleaners\t37.130434782608695\n Separated\t Other-service\t38.94210526315789\n Married-AF-spouse\t ?\t51.5\n Widowed\t Handlers-cleaners\t55.888888888888886\n Married-spouse-absent\t Transport-moving\t40.31578947368421\n Married-civ-spouse\t Craft-repair\t41.69266770670827\n Never-married\t Tech-support\t28.867069486404834\n Married-civ-spouse\t Other-service\t42.04011065006916\n Widowed\t Adm-clerical\t58.079754601226995\n Married-civ-spouse\t Sales\t43.650631389055924\n Never-married\t Transport-moving\t28.897058823529413\n Separated\t Exec-managerial\t39.4468085106383\n Never-married\t Protective-serv\t28.435897435897434\n Never-married\t Machine-op-inspct\t29.092819614711033\n Married-AF-spouse\t Other-service\t31.75\n Widowed\t Priv-house-serv\t67.04545454545455\n Married-civ-spouse\t Adm-clerical\t41.72616632860041\n Divorced\t Craft-repair\t40.894396551724135\n Divorced\t Prof-specialty\t44.71057513914657\n Divorced\t Adm-clerical\t43.224664224664224\n Married-AF-spouse\t Adm-clerical\t29.6\n Never-married\t Armed-Forces\t27.0\n Never-married\t Handlers-cleaners\t25.66522988505747\n Never-married\t Prof-specialty\t32.29092382495948\n Married-spouse-absent\t Prof-specialty\t44.59574468085106\n Married-AF-spouse\t Farming-fishing\t29.0\n Married-AF-spouse\t Sales\t22.5\n Married-civ-spouse\t Tech-support\t41.443069306930695\n Never-married\t ?\t23.989623865110246\n Widowed\t Machine-op-inspct\t53.509433962264154\n Widowed\t Prof-specialty\t56.83695652173913\n Widowed\t Exec-managerial\t56.096774193548384\n Widowed\t ?\t65.7516339869281\n Divorced\t Machine-op-inspct\t41.664259927797836\n Widowed\t Transport-moving\t54.68\n Separated\t Priv-house-serv\t43.666666666666664\n Divorced\t Handlers-cleaners\t39.171875\n Separated\t Tech-support\t37.42857142857143\n Separated\t Prof-specialty\t42.696969696969695\n Married-civ-spouse\t Protective-serv\t41.95039164490861\n Married-civ-spouse\t Priv-house-serv\t47.875\n Never-married\t Exec-managerial\t32.45181476846057\n Married-civ-spouse\t ?\t54.0\n Married-AF-spouse\t Transport-moving\t29.0\n Never-married\t Priv-house-serv\t28.47761194029851\n Widowed\t Craft-repair\t56.09756097560975\n Divorced\t ?\t46.22162162162162\n Married-spouse-absent\t Machine-op-inspct\t43.61538461538461\n Divorced\t Protective-serv\t41.79746835443038\n Married-AF-spouse\t Protective-serv\t26.0\n Divorced\t Tech-support\t41.392857142857146\n Married-spouse-absent\t Priv-house-serv\t37.75\n Married-spouse-absent\t Protective-serv\t39.8\n Married-civ-spouse\t Machine-op-inspct\t40.351160443995965\n Separated\t Farming-fishing\t36.333333333333336\n Divorced\t Priv-house-serv\t49.75\n Divorced\t Sales\t42.86175115207373\n Separated\t Handlers-cleaners\t35.44736842105263\n Never-married\t Craft-repair\t29.422018348623855\n Never-married\t Farming-fishing\t28.975778546712803\n Divorced\t Farming-fishing\t43.0\n Married-civ-spouse\t Exec-managerial\t44.50327332242226\n Married-spouse-absent\t Farming-fishing\t42.0\n Separated\t Transport-moving\t40.13513513513514\n Married-civ-spouse\t Handlers-cleaners\t38.50749464668094\n Separated\t Machine-op-inspct\t40.416666666666664\n Widowed\t Farming-fishing\t62.73913043478261\n Divorced\t Exec-managerial\t43.688741721854306\n Married-AF-spouse\t Craft-repair\t39.0\n Separated\t Protective-serv\t42.875\n Married-spouse-absent\t Exec-managerial\t45.87096774193548\n Never-married\t Sales\t25.836997725549658\n Married-civ-spouse\t Transport-moving\t43.230382293762574\n Separated\t Adm-clerical\t39.80952380952381\n Married-spouse-absent\t ?\t44.44827586206897\n Widowed\t Sales\t59.58095238095238\n Married-spouse-absent\t Tech-support\t32.0\n Married-civ-spouse\t Prof-specialty\t43.34524929444967\n Never-married\t Adm-clerical\t28.32872407291012\n Married-civ-spouse\t Farming-fishing\t46.44173913043478\n Separated\t Craft-repair\t38.41747572815534\n Married-spouse-absent\t Adm-clerical\t38.559322033898304\n Widowed\t Other-service\t58.293785310734464\n Widowed\t Protective-serv\t62.77777777777778\n Married-AF-spouse\t Prof-specialty\t31.0\n Married-AF-spouse\t Exec-managerial\t30.0\n Never-married\t Other-service\t26.157221206581355\n Separated\t ?\t37.121212121212125\n Married-spouse-absent\t Sales\t34.205882352941174\n Divorced\t Transport-moving\t42.83425414364641\n Married-spouse-absent\t Other-service\t39.45762711864407\n Married-civ-spouse\t Armed-Forces\t36.666666666666664\n Separated\t Sales\t38.774193548387096\n Married-spouse-absent\t Craft-repair\t40.09615384615385\n Widowed\t Tech-support\t53.89473684210526\n"
+      },
+      "dateCreated": "Feb 17, 2017 9:16:48 AM",
+      "dateStarted": "Feb 17, 2017 9:31:04 AM",
+      "dateFinished": "Feb 17, 2017 9:31:06 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Moyenne age par race !",
+      "text": "%sql SELECT race, mean(age) FROM dataset GROUP BY race",
+      "dateUpdated": "Feb 17, 2017 9:42:48 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "multiBarChart",
+          "height": 300.0,
+          "optionOpen": true,
+          "keys": [
+            {
+              "name": "race",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "avg(age)",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "race",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "avg(age)",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sql",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487323643117_832995530",
+      "id": "20170217-092723_2041593232",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "race\tavg(age)\n Asian-Pac-Islander\t37.74687199230029\n Black\t37.7679257362356\n Other\t33.457564575645755\n White\t38.76988064423354\n Amer-Indian-Eskimo\t37.17363344051447\n"
+      },
+      "dateCreated": "Feb 17, 2017 9:27:23 AM",
+      "dateStarted": "Feb 17, 2017 9:34:55 AM",
+      "dateFinished": "Feb 17, 2017 9:34:56 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "# Les others sont les plus jeunes !",
+      "dateUpdated": "Feb 17, 2017 9:36:50 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487324173621_1415471427",
+      "id": "20170217-093613_1583331300",
+      "dateCreated": "Feb 17, 2017 9:36:13 AM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Education par race",
+      "text": "%sql SELECT education, race, count(*) FROM dataset GROUP BY race, education",
+      "dateUpdated": "Feb 17, 2017 9:46:42 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "pieChart",
+          "height": 300.0,
+          "optionOpen": true,
+          "keys": [
+            {
+              "name": "education",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "race",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "education",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "race",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sql",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487324370824_-824664720",
+      "id": "20170217-093930_24608045",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "education\trace\tcount(1)\n Prof-school\t Black\t15\n 1st-4th\t Other\t9\n Some-college\t Amer-Indian-Eskimo\t79\n 9th\t White\t403\n Masters\t Amer-Indian-Eskimo\t5\n Bachelors\t Black\t330\n 9th\t Other\t8\n 7th-8th\t Other\t17\n 9th\t Black\t89\n Assoc-acdm\t Other\t8\n Masters\t Other\t7\n Some-college\t Black\t746\n Masters\t Asian-Pac-Islander\t88\n HS-grad\t White\t8904\n Bachelors\t Asian-Pac-Islander\t289\n Preschool\t Asian-Pac-Islander\t6\n Prof-school\t Other\t4\n 5th-6th\t Amer-Indian-Eskimo\t2\n Doctorate\t Other\t2\n Doctorate\t Asian-Pac-Islander\t28\n Assoc-voc\t Other\t6\n 1st-4th\t White\t134\n 7th-8th\t Black\t56\n HS-grad\t Amer-Indian-Eskimo\t119\n 11th\t Black\t153\n 11th\t Amer-Indian-Eskimo\t14\n Some-college\t White\t6207\n Masters\t White\t1537\n HS-grad\t Asian-Pac-Islander\t226\n 10th\t Amer-Indian-Eskimo\t16\n Prof-school\t White\t514\n 12th\t Amer-Indian-Eskimo\t5\n Prof-school\t Asian-Pac-Islander\t41\n 5th-6th\t Asian-Pac-Islander\t18\n 5th-6th\t White\t279\n 11th\t White\t977\n 11th\t Asian-Pac-Islander\t21\n Assoc-voc\t Asian-Pac-Islander\t38\n Bachelors\t Other\t33\n 10th\t Other\t9\n 5th-6th\t Other\t13\n HS-grad\t Other\t78\n 9th\t Amer-Indian-Eskimo\t5\n 7th-8th\t Amer-Indian-Eskimo\t9\n Doctorate\t White\t369\n 7th-8th\t White\t553\n 10th\t Asian-Pac-Islander\t13\n 12th\t Black\t70\n Assoc-voc\t White\t1207\n 1st-4th\t Amer-Indian-Eskimo\t4\n 12th\t Asian-Pac-Islander\t9\n 10th\t Black\t133\n 5th-6th\t Black\t21\n Assoc-voc\t Black\t112\n 1st-4th\t Black\t16\n 11th\t Other\t10\n 9th\t Asian-Pac-Islander\t9\n HS-grad\t Black\t1174\n 10th\t White\t762\n Some-college\t Asian-Pac-Islander\t208\n Assoc-acdm\t Asian-Pac-Islander\t29\n Assoc-acdm\t Black\t107\n Assoc-voc\t Amer-Indian-Eskimo\t19\n 1st-4th\t Asian-Pac-Islander\t5\n Preschool\t White\t38\n Doctorate\t Black\t11\n 12th\t Other\t14\n Assoc-acdm\t White\t915\n 12th\t White\t335\n Preschool\t Other\t2\n Prof-school\t Amer-Indian-Eskimo\t2\n Preschool\t Black\t5\n Masters\t Black\t86\n Some-college\t Other\t51\n Assoc-acdm\t Amer-Indian-Eskimo\t8\n Doctorate\t Amer-Indian-Eskimo\t3\n Bachelors\t White\t4682\n 7th-8th\t Asian-Pac-Islander\t11\n Bachelors\t Amer-Indian-Eskimo\t21\n"
+      },
+      "dateCreated": "Feb 17, 2017 9:39:30 AM",
+      "dateStarted": "Feb 17, 2017 9:43:15 AM",
+      "dateFinished": "Feb 17, 2017 9:43:16 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -662,24 +874,24 @@
   "name": "BinaryClassification",
   "id": "2C76YWXDZ",
   "angularObjects": {
-    "2C93MQCCX:shared_process": [],
-    "2CAFQY6K3:shared_process": [],
-    "2C71Z8V22:shared_process": [],
-    "2C74PSEZQ:shared_process": [],
-    "2C7936H5V:shared_process": [],
-    "2C6WY8JHA:shared_process": [],
-    "2C8CCCVZ2:shared_process": [],
-    "2C9JTS6JQ:shared_process": [],
-    "2C91JKV9H:shared_process": [],
-    "2C8N1PP7C:shared_process": [],
-    "2C7YTW7VT:shared_process": [],
-    "2C85G18U9:shared_process": [],
-    "2C9XYSTEH:shared_process": [],
-    "2CA474ZG3:shared_process": [],
-    "2C8JNXQ9U:shared_process": [],
-    "2C827138T:shared_process": [],
-    "2CAA7GXEJ:shared_process": [],
-    "2C8W1GCP8:shared_process": []
+    "2CAP25SQG:shared_process": [],
+    "2C7QDZRTD:shared_process": [],
+    "2C8PMUEZ8:shared_process": [],
+    "2C9GWK95J:shared_process": [],
+    "2C9BGWT1S:shared_process": [],
+    "2C8S6TTHG:shared_process": [],
+    "2C8H41FF1:shared_process": [],
+    "2C9HNG4D3:shared_process": [],
+    "2CAW2ZSV1:shared_process": [],
+    "2CB63BV2C:shared_process": [],
+    "2CA77Y4SS:shared_process": [],
+    "2C7V6JBR3:shared_process": [],
+    "2C9YS9PC8:shared_process": [],
+    "2C7YV4PSC:shared_process": [],
+    "2C7G86PWF:shared_process": [],
+    "2C8BN7NAB:shared_process": [],
+    "2CA94UWDH:shared_process": [],
+    "2CBEE7ETB:shared_process": []
   },
   "config": {},
   "info": {}
