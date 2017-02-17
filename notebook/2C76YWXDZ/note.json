@@ -306,8 +306,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md \n\n## III. Descriptive analysis\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nProvide a summary statistics graph for some columns you deem interesting. Summary statistics is comprised (but not limited) of:\n* mean, standard deviation and skewness for numeric columns.\n* counts and percentage of each value for categorical columns.\n\nIf you can, try to separate the two income groups and compare.\n\nTwo ways of doing this:\n* You should be able to it using standard SQL queries on the DataFrame and `show()` the result\n* You can use the %sql interpreter like in the previous cell and then use the settings tab of your graph to display the desired results.\n\n",
-      "dateUpdated": "Feb 17, 2017 3:22:18 PM",
+      "text": "%md \n\n## III. Descriptive analysis\n\n\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nProvide a summary statistics graph for some columns you deem interesting. Summary statistics is comprised (but not limited) of:\n* mean, standard deviation and skewness for numeric columns.\n* counts and percentage of each value for categorical columns.\n\nIf you can, try to separate the two income groups and compare.\n\nTwo ways of doing this:\n* You should be able to it using standard SQL queries on the DataFrame and `show()` the result\n* You can use the %sql interpreter like in the previous cell and then use the settings tab of your graph to display the desired results.\n\nCi-dessous, vous trouverez\n\n",
+      "dateUpdated": "Feb 17, 2017 3:41:07 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -343,7 +343,7 @@
     },
     {
       "text": "%sql SELECT * FROM dataset LIMIT 200",
-      "dateUpdated": "Feb 17, 2017 3:34:05 PM",
+      "dateUpdated": "Feb 17, 2017 3:51:48 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -364,7 +364,13 @@
               "aggr": "avg"
             }
           ],
-          "groups": [],
+          "groups": [
+            {
+              "name": "income",
+              "index": 14.0,
+              "aggr": "sum"
+            }
+          ],
           "scatter": {
             "xAxis": {
               "name": "age",
@@ -540,6 +546,33 @@
       "dateStarted": "Feb 7, 2017 12:55:53 PM",
       "dateFinished": "Feb 7, 2017 12:55:56 PM",
       "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "categoricalCols.flatMap{ s \u003d\u003e Seq(s, s + \"index\")}",
+      "dateUpdated": "Feb 17, 2017 3:50:06 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487346506262_-197432059",
+      "id": "20170217-154826_94114723",
+      "dateCreated": "Feb 17, 2017 3:48:26 PM",
+      "status": "READY",
       "progressUpdateIntervalMs": 500
     },
     {
