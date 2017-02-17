@@ -372,7 +372,7 @@
     },
     {
       "text": "%sql\nselect * from dataset",
-      "dateUpdated": "Feb 17, 2017 1:30:33 PM",
+      "dateUpdated": "Feb 17, 2017 1:55:15 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -386,13 +386,7 @@
               "aggr": "sum"
             }
           ],
-          "values": [
-            {
-              "name": "education",
-              "index": 3.0,
-              "aggr": "count"
-            }
-          ],
+          "values": [],
           "groups": [],
           "scatter": {
             "xAxis": {
@@ -424,6 +418,40 @@
       "dateCreated": "Feb 17, 2017 2:28:07 AM",
       "dateStarted": "Feb 17, 2017 2:37:28 AM",
       "dateFinished": "Feb 17, 2017 2:37:28 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md \n\n## III. Descriptive analysis\n\n\u003ch4\u003eComparaison des salaire pour chaque occupation\u003c/h4\u003e\n\nOn observe que pour les métiers Adm-clerical, Other-service et Craft-repair les salaire sont majoritairement en dessous de 50k",
+      "dateUpdated": "Feb 17, 2017 1:54:41 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487338976386_-493428127",
+      "id": "20170217-134256_1133049693",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003eIII. Descriptive analysis\u003c/h2\u003e\n\u003ch4\u003eComparaison des salaire pour chaque occupation\u003c/h4\u003e\n\u003cp\u003eOn observe que pour les métiers Adm-clerical, Other-service et Craft-repair les salaire sont majoritairement en dessous de 50k\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 17, 2017 1:42:56 PM",
+      "dateStarted": "Feb 17, 2017 1:54:41 PM",
+      "dateFinished": "Feb 17, 2017 1:54:41 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
