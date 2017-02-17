@@ -179,8 +179,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%sql SELECT * FROM dataset LIMIT 10",
-      "dateUpdated": "Feb 17, 2017 3:51:00 PM",
+      "text": "%sql SELECT distinct workclass  FROM dataset ",
+      "dateUpdated": "Feb 17, 2017 4:40:35 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -205,11 +205,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TABLE",
-        "msg": "age\tworkclass\tfnlwgt\teducation\teducation_num\tmarital_status\toccupation\trelationship\trace\tsex\tcapital_gain\tcapital_loss\thours_per_week\tnative_country\tincome\n39.0\t State-gov\t77516.0\t Bachelors\t13.0\t Never-married\t Adm-clerical\t Not-in-family\t White\t Male\t2174.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n50.0\t Self-emp-not-inc\t83311.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t13.0\t United-States\t \u003c\u003d50K\n38.0\t Private\t215646.0\t HS-grad\t9.0\t Divorced\t Handlers-cleaners\t Not-in-family\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n53.0\t Private\t234721.0\t 11th\t7.0\t Married-civ-spouse\t Handlers-cleaners\t Husband\t Black\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n28.0\t Private\t338409.0\t Bachelors\t13.0\t Married-civ-spouse\t Prof-specialty\t Wife\t Black\t Female\t0.0\t0.0\t40.0\t Cuba\t \u003c\u003d50K\n37.0\t Private\t284582.0\t Masters\t14.0\t Married-civ-spouse\t Exec-managerial\t Wife\t White\t Female\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n49.0\t Private\t160187.0\t 9th\t5.0\t Married-spouse-absent\t Other-service\t Not-in-family\t Black\t Female\t0.0\t0.0\t16.0\t Jamaica\t \u003c\u003d50K\n52.0\t Self-emp-not-inc\t209642.0\t HS-grad\t9.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t45.0\t United-States\t \u003e50K\n31.0\t Private\t45781.0\t Masters\t14.0\t Never-married\t Prof-specialty\t Not-in-family\t White\t Female\t14084.0\t0.0\t50.0\t United-States\t \u003e50K\n42.0\t Private\t159449.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t5178.0\t0.0\t40.0\t United-States\t \u003e50K\n"
+        "msg": "workclass\n State-gov\n Federal-gov\n Self-emp-not-inc\n Local-gov\n Private\n ?\n Self-emp-inc\n Without-pay\n Never-worked\n"
       },
       "dateCreated": "Feb 3, 2017 8:41:09 AM",
-      "dateStarted": "Feb 7, 2017 12:55:48 PM",
-      "dateFinished": "Feb 7, 2017 12:55:52 PM",
+      "dateStarted": "Feb 17, 2017 4:40:35 PM",
+      "dateFinished": "Feb 17, 2017 4:40:36 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -275,7 +275,7 @@
     },
     {
       "text": "%md \n\n## III. Descriptive analysis\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nOn a essayé de representé les revenus par par statut marital et on peut constater que:\non a calculé les pourcentages des gents qui ont un haut salaire par raport a leur statut marital\n* 86% des personnes representé dans notre jeux de données qui ont un salaire plus de 50 K sont des personnes mariés.\n* 6%  des personnes representé dans notre jeux de données qui ont un salaire plus de 50 K sont des personnes.\n* 6%  des personnes representé dans notre jeux de données qui ont un salaire plus de 50 K sont des personnes qui n\u0027ont jamais été mariés\n\nIf you can, try to separate the two income groups and compare.\n\nTwo ways of doing this:\n* You should be able to it using standard SQL queries on the DataFrame and `show()` the result\n* You can use the %sql interpreter like in the previous cell and then use the settings tab of your graph to display the desired results.",
-      "dateUpdated": "Feb 17, 2017 4:29:38 PM",
+      "dateUpdated": "Feb 17, 2017 4:48:36 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -289,7 +289,7 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/markdown",
-        "editorHide": false,
+        "editorHide": true,
         "tableHide": false
       },
       "settings": {
@@ -424,41 +424,6 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "import org.apache.spark.sql\n\nSelect race from Adult",
-      "dateUpdated": "Feb 17, 2017 3:34:16 PM",
-      "config": {
-        "colWidth": 12.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
-        "enabled": true,
-        "editorMode": "ace/mode/scala",
-        "editorHide": false
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "jobName": "paragraph_1487345488196_1875767991",
-      "id": "20170217-153128_313514144",
-      "result": {
-        "code": "ERROR",
-        "type": "TEXT",
-        "msg": "\nimport org.apache.spark.sql\n\n\n\n\u003cconsole\u003e:30: error: not found: value Select\n       Select race from Adult\n       ^\n\n\n\n\u003cconsole\u003e:30: error: not found: value from\n       Select race from Adult\n                   ^\n"
-      },
-      "dateCreated": "Feb 17, 2017 3:31:28 PM",
-      "dateStarted": "Feb 17, 2017 3:34:16 PM",
-      "dateFinished": "Feb 17, 2017 3:34:16 PM",
-      "status": "ERROR",
-      "progressUpdateIntervalMs": 500
-    },
-    {
       "text": "%md \n\n## IV. Data preprocessing\n\nSince we are going to try algorithms like Logistic Regression, we will have to convert the categorical variables in the dataset into numeric variables. There are 2 ways we can do this.\n\n- Category Indexing. This is basically assigning a numeric value to each category from {0, 1, 2, ...numCategories-1}. This introduces an implicit ordering among your categories, and is more suitable for ordinal variables (eg: Poor: 0, Average: 1, Good: 2)\n- [One-Hot Encoding](http://spark.apache.org/docs/latest/ml-features.html#onehotencoder). This converts categories into binary vectors with at most one positive value (eg: (Blue: 1, 0, 0), (Green: 0, 1, 0), (Red: 0, 0, 1))",
       "dateUpdated": "Feb 17, 2017 3:10:13 PM",
       "config": {
@@ -496,7 +461,7 @@
     {
       "title": "One-hot encoding example",
       "text": "val names \u003d Seq(\"color\", \"index\", \"OHE_attr1\", \"OHE_attr2\", \"OHE_attr3\")\nsqlContext.createDataFrame(sc.parallelize(Seq((\"Blue\", 0, 1, 0, 0), (\"Green\", 1, 0, 1, 0), (\"Red\", 2, 0 , 0 , 1)))).toDF(names: _*).show()",
-      "dateUpdated": "Feb 17, 2017 3:10:13 PM",
+      "dateUpdated": "Feb 17, 2017 4:49:52 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -511,7 +476,7 @@
         "enabled": true,
         "editorMode": "ace/mode/scala",
         "title": true,
-        "editorHide": true
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -528,6 +493,41 @@
       "dateStarted": "Feb 7, 2017 12:55:53 PM",
       "dateFinished": "Feb 7, 2017 12:55:55 PM",
       "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer}\n\nval df \u003d spark.createDataFrame(Seq(\n  (0, \"a\"),\n  (1, \"b\"),\n  (2, \"c\"),\n  (3, \"a\"),\n  (4, \"a\"),\n  (5, \"c\")\n)).toDF(\"id\", \"category\")\n\nval indexer \u003d new StringIndexer()\n  .setInputCol(\"category\")\n  .setOutputCol(\"categoryIndex\")\n  .fit(df)\nval indexed \u003d indexer.transform(df)\n\nval encoder \u003d new OneHotEncoder()\n  .setInputCol(\"categoryIndex\")\n  .setOutputCol(\"categoryVec\")\n\nval encoded \u003d encoder.transform(indexed)\nencoded.show()\n\non a executé cet example pour voir un peu comment ca marche l\u0027encodage sous SCALA avec la méthode  HOT ENCODER \n\nnormalement l\u0027encodage est basé sur le binaire 0 et 1 et la dernjiere valeure il l\u0027encode qu\u0027avec des zéros pour gagner de la place ",
+      "dateUpdated": "Feb 17, 2017 5:06:18 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 226.39999389648438,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487350691483_-1962194536",
+      "id": "20170217-165811_1415493164",
+      "result": {
+        "code": "ERROR",
+        "type": "TEXT",
+        "msg": "\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer}\n\ndf: org.apache.spark.sql.DataFrame \u003d [id: int, category: string]\n\nindexer: org.apache.spark.ml.feature.StringIndexerModel \u003d strIdx_cb6c40f16108\n\nindexed: org.apache.spark.sql.DataFrame \u003d [id: int, category: string ... 1 more field]\n\nencoder: org.apache.spark.ml.feature.OneHotEncoder \u003d oneHot_db0b0cdb42d2\n\nencoded: org.apache.spark.sql.DataFrame \u003d [id: int, category: string ... 2 more fields]\n+---+--------+-------------+-------------+\n| id|category|categoryIndex|  categoryVec|\n+---+--------+-------------+-------------+\n|  0|       a|          0.0|(2,[0],[1.0])|\n|  1|       b|          2.0|    (2,[],[])|\n|  2|       c|          1.0|(2,[1],[1.0])|\n|  3|       a|          0.0|(2,[0],[1.0])|\n|  4|       a|          0.0|(2,[0],[1.0])|\n|  5|       c|          1.0|(2,[1],[1.0])|\n+---+--------+-------------+-------------+\n\n\n\n\n\u003cconsole\u003e:1: error: \u0027;\u0027 expected but symbol literal found.\non a executé cet example pour voir un peu comment ca marche l\u0027encodage sous SCALA avec la méthode  HOT ENCODER\n                                                             ^\n"
+      },
+      "dateCreated": "Feb 17, 2017 4:58:11 PM",
+      "dateStarted": "Feb 17, 2017 5:06:18 PM",
+      "dateFinished": "Feb 17, 2017 5:06:20 PM",
+      "status": "ERROR",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -568,7 +568,7 @@
     {
       "title": "Detail columns to deal with",
       "text": "val categoricalCols \u003d Seq(\"workclass\", \"education\", \"marital_status\", \"occupation\", \"relationship\", \"race\", \"sex\", \"native_country\")\nval numericCols \u003d Seq(\"age\", \"fnlwgt\", \"education_num\", \"capital_gain\", \"capital_loss\", \"hours_per_week\")",
-      "dateUpdated": "Feb 17, 2017 3:10:13 PM",
+      "dateUpdated": "Feb 17, 2017 4:34:37 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
