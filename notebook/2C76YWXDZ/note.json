@@ -354,7 +354,7 @@
     {
       "title": "Salaire selon l\u0027âge moyen et le sex",
       "text": "%sql SELECT mean(age), sex, income, count(*) FROM dataset GROUP BY sex, income LIMIT 10",
-      "dateUpdated": "Feb 17, 2017 9:30:52 AM",
+      "dateUpdated": "Feb 17, 2017 10:25:25 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -405,15 +405,15 @@
         "msg": "avg(age)\tsex\tincome\tcount(1)\n37.147012162876784\t Male\t \u003c\u003d50K\t15128\n44.62578805163614\t Male\t \u003e50K\t6662\n42.125530110262936\t Female\t \u003e50K\t1179\n36.210800667222685\t Female\t \u003c\u003d50K\t9592\n"
       },
       "dateCreated": "Feb 17, 2017 9:21:16 AM",
-      "dateStarted": "Feb 17, 2017 9:24:50 AM",
-      "dateFinished": "Feb 17, 2017 9:24:51 AM",
+      "dateStarted": "Feb 17, 2017 10:25:25 AM",
+      "dateFinished": "Feb 17, 2017 10:25:26 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Répartition selon le status marital",
       "text": "%sql SELECT marital_status, count(*) FROM dataset GROUP BY marital_status",
-      "dateUpdated": "Feb 17, 2017 9:47:11 AM",
+      "dateUpdated": "Feb 17, 2017 10:25:40 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -464,8 +464,8 @@
         "msg": "marital_status\tcount(1)\n Widowed\t993\n Married-spouse-absent\t418\n Married-AF-spouse\t23\n Married-civ-spouse\t14976\n Divorced\t4443\n Never-married\t10683\n Separated\t1025\n"
       },
       "dateCreated": "Feb 17, 2017 9:41:23 AM",
-      "dateStarted": "Feb 17, 2017 9:43:23 AM",
-      "dateFinished": "Feb 17, 2017 9:43:24 AM",
+      "dateStarted": "Feb 17, 2017 10:25:40 AM",
+      "dateFinished": "Feb 17, 2017 10:25:41 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -534,7 +534,7 @@
     },
     {
       "text": "%md \n\n## IV. Data preprocessing\n\nSince we are going to try algorithms like Logistic Regression, we will have to convert the categorical variables in the dataset into numeric variables. There are 2 ways we can do this.\n\n- Category Indexing. This is basically assigning a numeric value to each category from {0, 1, 2, ...numCategories-1}. This introduces an implicit ordering among your categories, and is more suitable for ordinal variables (eg: Poor: 0, Average: 1, Good: 2)\n- [One-Hot Encoding](http://spark.apache.org/docs/latest/ml-features.html#onehotencoder). This converts categories into binary vectors with at most one positive value (eg: (Blue: 1, 0, 0), (Green: 0, 1, 0), (Red: 0, 0, 1))",
-      "dateUpdated": "Feb 17, 2017 10:14:42 AM",
+      "dateUpdated": "Feb 17, 2017 10:22:44 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -562,8 +562,8 @@
         "msg": "\u003ch2\u003eIV. Data preprocessing\u003c/h2\u003e\n\u003cp\u003eSince we are going to try algorithms like Logistic Regression, we will have to convert the categorical variables in the dataset into numeric variables. There are 2 ways we can do this.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eCategory Indexing. This is basically assigning a numeric value to each category from {0, 1, 2, \u0026hellip;numCategories-1}. This introduces an implicit ordering among your categories, and is more suitable for ordinal variables (eg: Poor: 0, Average: 1, Good: 2)\u003c/li\u003e\n\u003cli\u003e\u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-features.html#onehotencoder\"\u003eOne-Hot Encoding\u003c/a\u003e. This converts categories into binary vectors with at most one positive value (eg: (Blue: 1, 0, 0), (Green: 0, 1, 0), (Red: 0, 0, 1))\u003c/li\u003e\n\u003c/ul\u003e\n"
       },
       "dateCreated": "Feb 3, 2017 9:03:12 AM",
-      "dateStarted": "Feb 17, 2017 10:14:42 AM",
-      "dateFinished": "Feb 17, 2017 10:14:42 AM",
+      "dateStarted": "Feb 17, 2017 10:22:44 AM",
+      "dateFinished": "Feb 17, 2017 10:22:44 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -606,7 +606,7 @@
     },
     {
       "text": "%md\n\nIn this dataset, we have ordinal variables like education (Preschool - Doctorate), and also nominal variables like relationship (Wife, Husband, Own-child, etc). For simplicity\u0027s sake, we will use One-Hot Encoding to convert all categorical variables into binary vectors. It might be possible here to improve prediction accuracy by converting each categorical column with an appropriate method.\n\nHere, we will use a combination of [StringIndexer](http://spark.apache.org/docs/latest/ml-features.html#stringindexer) and [OneHotEncoder](http://spark.apache.org/docs/latest/ml-features.html#onehotencoder) on each string column to convert the categorical variables. The `OneHotEncoder` will return a SparseVector (which means, for `(8,[4],[1.0])` that the vector has size 8, one only the 4th column contains a value which is 1.0).\n\nSince we will have many stages of feature transformations, we use an [ML Pipeline](http://spark.apache.org/docs/latest/ml-pipeline.html) to tie the stages together.  This simplifies our code. You should especially try to use [the Pipeline example](http://spark.apache.org/docs/latest/ml-pipeline.html#example-pipeline).\n\n```scala\n// Configure an ML pipeline, which consists of two stages on one column: a StringIndexer and a OneHotEncoder.\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer}\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\n// stages for column workclass\nval stringIndexer \u003d new StringIndexer()\n  .setInputCol(\"workclass\")\n  .setOutputCol(\"workclassIndex\")\nval oneHotEncoder \u003d new OneHotEncoder()\n  .setInputCol(stringIndexer.getOutputCol)\n  .setOutputCol(stringIndexer.getInputCol + \"ClassVec\")\n  \n// stage for label\nval label_stringIdx \u003d new StringIndexer()\n    .setInputCol(\"income\")\n    .setOutputCol(\"label\")\n  \nval stages \u003d  Seq(stringIndexer, oneHotEncoder) ++ Seq(label_stringIdx) // concatenate 2 sequences of stages\nval pipeline \u003d new Pipeline()\n  .setStages(stages.toArray)\n  \nval pipelineModel \u003d pipeline.fit(dataset)\npipelineModel.transform(dataset).show()\n```\n\nIt is also a good time to transform the income to a label of 0 and 1 for binary classification using the `StringIndexer`.\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\n1. For each categorical column, build a stage of StringIndexer and OneHotEncoder\n2. Add all those stages in a single pipeline\n3. Also add a StringIndexer of the `income` column and name the output column `label`\n3. Check the result by passing your dataset inside the pipeline. Comment \u0026 explain.\n\n_Hint: actually map your sequence of categorical columns to a sequence of stages through FP._",
-      "dateUpdated": "Feb 7, 2017 12:55:42 PM",
+      "dateUpdated": "Feb 17, 2017 10:23:03 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -634,15 +634,15 @@
         "msg": "\u003cp\u003eIn this dataset, we have ordinal variables like education (Preschool - Doctorate), and also nominal variables like relationship (Wife, Husband, Own-child, etc). For simplicity\u0027s sake, we will use One-Hot Encoding to convert all categorical variables into binary vectors. It might be possible here to improve prediction accuracy by converting each categorical column with an appropriate method.\u003c/p\u003e\n\u003cp\u003eHere, we will use a combination of \u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-features.html#stringindexer\"\u003eStringIndexer\u003c/a\u003e and \u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-features.html#onehotencoder\"\u003eOneHotEncoder\u003c/a\u003e on each string column to convert the categorical variables. The \u003ccode\u003eOneHotEncoder\u003c/code\u003e will return a SparseVector (which means, for \u003ccode\u003e(8,[4],[1.0])\u003c/code\u003e that the vector has size 8, one only the 4th column contains a value which is 1.0).\u003c/p\u003e\n\u003cp\u003eSince we will have many stages of feature transformations, we use an \u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-pipeline.html\"\u003eML Pipeline\u003c/a\u003e to tie the stages together.  This simplifies our code. You should especially try to use \u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-pipeline.html#example-pipeline\"\u003ethe Pipeline example\u003c/a\u003e.\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"scala\"\u003e// Configure an ML pipeline, which consists of two stages on one column: a StringIndexer and a OneHotEncoder.\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer}\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\n// stages for column workclass\nval stringIndexer \u003d new StringIndexer()\n  .setInputCol(\"workclass\")\n  .setOutputCol(\"workclassIndex\")\nval oneHotEncoder \u003d new OneHotEncoder()\n  .setInputCol(stringIndexer.getOutputCol)\n  .setOutputCol(stringIndexer.getInputCol + \"ClassVec\")\n\n// stage for label\nval label_stringIdx \u003d new StringIndexer()\n    .setInputCol(\"income\")\n    .setOutputCol(\"label\")\n\nval stages \u003d  Seq(stringIndexer, oneHotEncoder) ++ Seq(label_stringIdx) // concatenate 2 sequences of stages\nval pipeline \u003d new Pipeline()\n  .setStages(stages.toArray)\n\nval pipelineModel \u003d pipeline.fit(dataset)\npipelineModel.transform(dataset).show()\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eIt is also a good time to transform the income to a label of 0 and 1 for binary classification using the \u003ccode\u003eStringIndexer\u003c/code\u003e.\u003c/p\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003col\u003e\n\u003cli\u003eFor each categorical column, build a stage of StringIndexer and OneHotEncoder\u003c/li\u003e\n\u003cli\u003eAdd all those stages in a single pipeline\u003c/li\u003e\n\u003cli\u003eAlso add a StringIndexer of the \u003ccode\u003eincome\u003c/code\u003e column and name the output column \u003ccode\u003elabel\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003eCheck the result by passing your dataset inside the pipeline. Comment \u0026amp; explain.\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003e\u003cem\u003eHint: actually map your sequence of categorical columns to a sequence of stages through FP.\u003c/em\u003e\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 3, 2017 9:11:12 AM",
-      "dateStarted": "Feb 7, 2017 12:55:42 PM",
-      "dateFinished": "Feb 7, 2017 12:55:42 PM",
+      "dateStarted": "Feb 17, 2017 10:23:03 AM",
+      "dateFinished": "Feb 17, 2017 10:23:03 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Detail columns to deal with",
       "text": "val categoricalCols \u003d Seq(\"workclass\", \"education\", \"marital_status\", \"occupation\", \"relationship\", \"race\", \"sex\", \"native_country\")\nval numericCols \u003d Seq(\"age\", \"fnlwgt\", \"education_num\", \"capital_gain\", \"capital_loss\", \"hours_per_week\")",
-      "dateUpdated": "Feb 7, 2017 12:55:42 PM",
+      "dateUpdated": "Feb 17, 2017 10:23:12 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -656,7 +656,8 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "title": true
+        "title": true,
+        "editorHide": true
       },
       "settings": {
         "params": {},
@@ -670,8 +671,8 @@
         "msg": "\ncategoricalCols: Seq[String] \u003d List(workclass, education, marital_status, occupation, relationship, race, sex, native_country)\n\nnumericCols: Seq[String] \u003d List(age, fnlwgt, education_num, capital_gain, capital_loss, hours_per_week)\n"
       },
       "dateCreated": "Feb 6, 2017 2:31:24 AM",
-      "dateStarted": "Feb 7, 2017 12:55:53 PM",
-      "dateFinished": "Feb 7, 2017 12:55:56 PM",
+      "dateStarted": "Feb 17, 2017 10:23:12 AM",
+      "dateFinished": "Feb 17, 2017 10:23:13 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
