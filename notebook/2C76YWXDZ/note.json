@@ -1,8 +1,8 @@
 {
   "paragraphs": [
     {
-      "text": "%md\n\n# Binary Classification Algorithms with Pipelines API\n\nName(s): _student\u0027s name_\nClass: _SISE or BIBD_\n\n\u003chr\u003e\n\nIn this notebook, we will test out the Binary Classification algorithms available in the ML Pipelines API using the Adult dataset. The Pipelines API provides higher-level API built on top of DataFrames for constructing ML pipelines. You can read more about the ML Pipelines API in the [programming guide](http://spark.apache.org/docs/2.0.1/ml-guide.html).\n\n**Binary Classification** is the task of predicting a binary 0 or 1 label.  E.g., is an email spam or not spam?  Should I show this ad to this user or not?  Will it rain tomorrow or not?  This notebook demonstrates several algorithms for making these types of predictions.\n\n\u003chr\u003e\n\nThis notebook will act as your written assignment. As such, it should contain your code and all necessary explanations, like why did you use that or why do you think this happens. When I read it at the end, I should understand all of your reasoning.\n\nDon\u0027t forget to __frequently__ commit your code and push it back to Github. A good advice would be that anytime your answer a question with code and explanation, you should commit a message referencing the question and push it to Github. By versioning frequently, you keep a good history of your work and can eventually return back. At the end of the assignment, you will notify me of your work via a pull request.\n\nYour mark will be based on:\n- your commit activity\n- completing the full analysis of the dataset, from describing it to predicting the income value and evaluating that\n\nThe questions I have put serve as a guideline, but you are totally free to change the text and put your own descriptions (which is absolutely appreciated because it shows you have fully comprehended the problem)\n\n\u003chr\u003e\n\n####Table of Contents\n\n* Dataset Review\n* Load Data\n* Descriptive analysis\n* Data Preprocessing\n* Creation of models\n* Conclusion",
-      "dateUpdated": "Feb 7, 2017 12:55:37 PM",
+      "text": "%md\n\n# Binary Classification Algorithms with Pipelines API\n\nName(s): Maite Garcia et Julie Châlons\nClass: SISE\n\n\u003chr\u003e\n\nIn this notebook, we will test out the Binary Classification algorithms available in the ML Pipelines API using the Adult dataset. The Pipelines API provides higher-level API built on top of DataFrames for constructing ML pipelines. You can read more about the ML Pipelines API in the [programming guide](http://spark.apache.org/docs/2.0.1/ml-guide.html).\n\n**Binary Classification** is the task of predicting a binary 0 or 1 label.  E.g., is an email spam or not spam?  Should I show this ad to this user or not?  Will it rain tomorrow or not?  This notebook demonstrates several algorithms for making these types of predictions.\n\n\u003chr\u003e\n\nThis notebook will act as your written assignment. As such, it should contain your code and all necessary explanations, like why did you use that or why do you think this happens. When I read it at the end, I should understand all of your reasoning.\n\nDon\u0027t forget to __frequently__ commit your code and push it back to Github. A good advice would be that anytime your answer a question with code and explanation, you should commit a message referencing the question and push it to Github. By versioning frequently, you keep a good history of your work and can eventually return back. At the end of the assignment, you will notify me of your work via a pull request.\n\nYour mark will be based on:\n- your commit activity\n- completing the full analysis of the dataset, from describing it to predicting the income value and evaluating that\n\nThe questions I have put serve as a guideline, but you are totally free to change the text and put your own descriptions (which is absolutely appreciated because it shows you have fully comprehended the problem)\n\n\u003chr\u003e\n\n####Table of Contents\n\n* Dataset Review\n* Load Data\n* Descriptive analysis\n* Data Preprocessing\n* Creation of models\n* Conclusion",
+      "dateUpdated": "Feb 17, 2017 9:09:51 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -27,11 +27,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003ch1\u003eBinary Classification Algorithms with Pipelines API\u003c/h1\u003e\n\u003cp\u003eName(s): \u003cem\u003estudent\u0027s name\u003c/em\u003e\n\u003cbr  /\u003eClass: \u003cem\u003eSISE or BIBD\u003c/em\u003e\u003c/p\u003e\n\u003chr\u003e\n\u003cp\u003eIn this notebook, we will test out the Binary Classification algorithms available in the ML Pipelines API using the Adult dataset. The Pipelines API provides higher-level API built on top of DataFrames for constructing ML pipelines. You can read more about the ML Pipelines API in the \u003ca href\u003d\"http://spark.apache.org/docs/2.0.1/ml-guide.html\"\u003eprogramming guide\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eBinary Classification\u003c/strong\u003e is the task of predicting a binary 0 or 1 label.  E.g., is an email spam or not spam?  Should I show this ad to this user or not?  Will it rain tomorrow or not?  This notebook demonstrates several algorithms for making these types of predictions.\u003c/p\u003e\n\u003chr\u003e\n\u003cp\u003eThis notebook will act as your written assignment. As such, it should contain your code and all necessary explanations, like why did you use that or why do you think this happens. When I read it at the end, I should understand all of your reasoning.\u003c/p\u003e\n\u003cp\u003eDon\u0027t forget to \u003cstrong\u003efrequently\u003c/strong\u003e commit your code and push it back to Github. A good advice would be that anytime your answer a question with code and explanation, you should commit a message referencing the question and push it to Github. By versioning frequently, you keep a good history of your work and can eventually return back. At the end of the assignment, you will notify me of your work via a pull request.\u003c/p\u003e\n\u003cp\u003eYour mark will be based on:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eyour commit activity\u003c/li\u003e\n\u003cli\u003ecompleting the full analysis of the dataset, from describing it to predicting the income value and evaluating that\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eThe questions I have put serve as a guideline, but you are totally free to change the text and put your own descriptions (which is absolutely appreciated because it shows you have fully comprehended the problem)\u003c/p\u003e\n\u003chr\u003e\n\u003ch4\u003eTable of Contents\u003c/h4\u003e\n\u003cul\u003e\n\u003cli\u003eDataset Review\u003c/li\u003e\n\u003cli\u003eLoad Data\u003c/li\u003e\n\u003cli\u003eDescriptive analysis\u003c/li\u003e\n\u003cli\u003eData Preprocessing\u003c/li\u003e\n\u003cli\u003eCreation of models\u003c/li\u003e\n\u003cli\u003eConclusion\u003c/li\u003e\n\u003c/ul\u003e\n"
+        "msg": "\u003ch1\u003eBinary Classification Algorithms with Pipelines API\u003c/h1\u003e\n\u003cp\u003eName(s): Maite Garcia et Julie Châlons\n\u003cbr  /\u003eClass: SISE\u003c/p\u003e\n\u003chr\u003e\n\u003cp\u003eIn this notebook, we will test out the Binary Classification algorithms available in the ML Pipelines API using the Adult dataset. The Pipelines API provides higher-level API built on top of DataFrames for constructing ML pipelines. You can read more about the ML Pipelines API in the \u003ca href\u003d\"http://spark.apache.org/docs/2.0.1/ml-guide.html\"\u003eprogramming guide\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eBinary Classification\u003c/strong\u003e is the task of predicting a binary 0 or 1 label.  E.g., is an email spam or not spam?  Should I show this ad to this user or not?  Will it rain tomorrow or not?  This notebook demonstrates several algorithms for making these types of predictions.\u003c/p\u003e\n\u003chr\u003e\n\u003cp\u003eThis notebook will act as your written assignment. As such, it should contain your code and all necessary explanations, like why did you use that or why do you think this happens. When I read it at the end, I should understand all of your reasoning.\u003c/p\u003e\n\u003cp\u003eDon\u0027t forget to \u003cstrong\u003efrequently\u003c/strong\u003e commit your code and push it back to Github. A good advice would be that anytime your answer a question with code and explanation, you should commit a message referencing the question and push it to Github. By versioning frequently, you keep a good history of your work and can eventually return back. At the end of the assignment, you will notify me of your work via a pull request.\u003c/p\u003e\n\u003cp\u003eYour mark will be based on:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eyour commit activity\u003c/li\u003e\n\u003cli\u003ecompleting the full analysis of the dataset, from describing it to predicting the income value and evaluating that\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eThe questions I have put serve as a guideline, but you are totally free to change the text and put your own descriptions (which is absolutely appreciated because it shows you have fully comprehended the problem)\u003c/p\u003e\n\u003chr\u003e\n\u003ch4\u003eTable of Contents\u003c/h4\u003e\n\u003cul\u003e\n\u003cli\u003eDataset Review\u003c/li\u003e\n\u003cli\u003eLoad Data\u003c/li\u003e\n\u003cli\u003eDescriptive analysis\u003c/li\u003e\n\u003cli\u003eData Preprocessing\u003c/li\u003e\n\u003cli\u003eCreation of models\u003c/li\u003e\n\u003cli\u003eConclusion\u003c/li\u003e\n\u003c/ul\u003e\n"
       },
       "dateCreated": "Feb 3, 2017 8:20:06 AM",
-      "dateStarted": "Feb 7, 2017 12:55:38 PM",
-      "dateFinished": "Feb 7, 2017 12:55:40 PM",
+      "dateStarted": "Feb 17, 2017 9:09:43 AM",
+      "dateFinished": "Feb 17, 2017 9:09:44 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -106,9 +106,44 @@
       "progressUpdateIntervalMs": 500
     },
     {
+      "text": "%md\nEnregistrement des données",
+      "dateUpdated": "Feb 17, 2017 9:22:51 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487323337872_747937019",
+      "id": "20170217-092217_1293517471",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eEnregistrement des données\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 17, 2017 9:22:17 AM",
+      "dateStarted": "Feb 17, 2017 9:22:48 AM",
+      "dateFinished": "Feb 17, 2017 9:22:48 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
       "title": "Load data (run the cell)",
       "text": "import org.apache.spark.sql.types.{StringType, DoubleType, StructType, StructField}\n\nval schema \u003d StructType(Seq(\n    StructField(\"age\", DoubleType),\n    StructField(\"workclass\", StringType),\n    StructField(\"fnlwgt\", DoubleType),\n    StructField(\"education\", StringType),\n    StructField(\"education_num\", DoubleType),\n    StructField(\"marital_status\", StringType),\n    StructField(\"occupation\", StringType),\n    StructField(\"relationship\", StringType),\n    StructField(\"race\", StringType),\n    StructField(\"sex\", StringType),\n    StructField(\"capital_gain\", DoubleType),\n    StructField(\"capital_loss\", DoubleType),\n    StructField(\"hours_per_week\", DoubleType),\n    StructField(\"native_country\", StringType),\n    StructField(\"income\", StringType)\n    ))\n\ncase class Adult(\n    age: Double, \n    workclass: String, \n    fnlwgt: Double, \n    education: String, \n    education_num: Double, \n    marital_status: String, \n    occupation: String, \n    relationship: String, \n    race: String, \n    sex: String, \n    capital_gain: Double, \n    capital_loss: Double, \n    hours_per_week: Double, \n    native_country: String, \n    income: String\n    )\n    \nval dataset \u003d spark.read.schema(schema).csv(\"/opt/dataset/adult.data.csv\").as[Adult]\ndataset.registerTempTable(\"dataset\")  // register it so we can use it inside %sql interpreter",
-      "dateUpdated": "Feb 7, 2017 12:55:38 PM",
+      "dateUpdated": "Feb 17, 2017 9:25:31 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -138,14 +173,14 @@
         "msg": "\nimport org.apache.spark.sql.types.{StringType, DoubleType, StructType, StructField}\n\nschema: org.apache.spark.sql.types.StructType \u003d StructType(StructField(age,DoubleType,true), StructField(workclass,StringType,true), StructField(fnlwgt,DoubleType,true), StructField(education,StringType,true), StructField(education_num,DoubleType,true), StructField(marital_status,StringType,true), StructField(occupation,StringType,true), StructField(relationship,StringType,true), StructField(race,StringType,true), StructField(sex,StringType,true), StructField(capital_gain,DoubleType,true), StructField(capital_loss,DoubleType,true), StructField(hours_per_week,DoubleType,true), StructField(native_country,StringType,true), StructField(income,StringType,true))\n\ndefined class Adult\n\ndataset: org.apache.spark.sql.Dataset[Adult] \u003d [age: double, workclass: string ... 13 more fields]\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n"
       },
       "dateCreated": "Feb 3, 2017 8:43:33 AM",
-      "dateStarted": "Feb 7, 2017 12:55:39 PM",
-      "dateFinished": "Feb 7, 2017 12:55:47 PM",
+      "dateStarted": "Feb 17, 2017 9:25:31 AM",
+      "dateFinished": "Feb 17, 2017 9:25:47 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "dataset.printSchema()",
-      "dateUpdated": "Feb 7, 2017 12:55:39 PM",
+      "dateUpdated": "Feb 17, 2017 9:25:54 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -172,14 +207,14 @@
         "msg": "root\n |-- age: double (nullable \u003d true)\n |-- workclass: string (nullable \u003d true)\n |-- fnlwgt: double (nullable \u003d true)\n |-- education: string (nullable \u003d true)\n |-- education_num: double (nullable \u003d true)\n |-- marital_status: string (nullable \u003d true)\n |-- occupation: string (nullable \u003d true)\n |-- relationship: string (nullable \u003d true)\n |-- race: string (nullable \u003d true)\n |-- sex: string (nullable \u003d true)\n |-- capital_gain: double (nullable \u003d true)\n |-- capital_loss: double (nullable \u003d true)\n |-- hours_per_week: double (nullable \u003d true)\n |-- native_country: string (nullable \u003d true)\n |-- income: string (nullable \u003d true)\n\n"
       },
       "dateCreated": "Feb 6, 2017 1:45:35 AM",
-      "dateStarted": "Feb 7, 2017 12:55:39 PM",
-      "dateFinished": "Feb 7, 2017 12:55:48 PM",
+      "dateStarted": "Feb 17, 2017 9:25:54 AM",
+      "dateFinished": "Feb 17, 2017 9:25:55 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%sql SELECT * FROM dataset LIMIT 10",
-      "dateUpdated": "Feb 7, 2017 12:55:39 PM",
+      "text": "%md\nil y a 14 variables (explicatives) et 1 variable à predire.",
+      "dateUpdated": "Feb 17, 2017 9:30:13 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -190,6 +225,64 @@
           "values": [],
           "groups": [],
           "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487323701356_-1740681808",
+      "id": "20170217-092821_894288614",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eil y a 14 variables (explicatives) et 1 variable à predire.\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 17, 2017 9:28:21 AM",
+      "dateStarted": "Feb 17, 2017 9:30:13 AM",
+      "dateFinished": "Feb 17, 2017 9:30:13 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql SELECT * FROM dataset LIMIT 10",
+      "dateUpdated": "Feb 17, 2017 9:30:19 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "age",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "workclass",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "age",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "workclass",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
         },
         "enabled": true,
         "editorMode": "ace/mode/sql"
@@ -206,15 +299,49 @@
         "msg": "age\tworkclass\tfnlwgt\teducation\teducation_num\tmarital_status\toccupation\trelationship\trace\tsex\tcapital_gain\tcapital_loss\thours_per_week\tnative_country\tincome\n39.0\t State-gov\t77516.0\t Bachelors\t13.0\t Never-married\t Adm-clerical\t Not-in-family\t White\t Male\t2174.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n50.0\t Self-emp-not-inc\t83311.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t13.0\t United-States\t \u003c\u003d50K\n38.0\t Private\t215646.0\t HS-grad\t9.0\t Divorced\t Handlers-cleaners\t Not-in-family\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n53.0\t Private\t234721.0\t 11th\t7.0\t Married-civ-spouse\t Handlers-cleaners\t Husband\t Black\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n28.0\t Private\t338409.0\t Bachelors\t13.0\t Married-civ-spouse\t Prof-specialty\t Wife\t Black\t Female\t0.0\t0.0\t40.0\t Cuba\t \u003c\u003d50K\n37.0\t Private\t284582.0\t Masters\t14.0\t Married-civ-spouse\t Exec-managerial\t Wife\t White\t Female\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n49.0\t Private\t160187.0\t 9th\t5.0\t Married-spouse-absent\t Other-service\t Not-in-family\t Black\t Female\t0.0\t0.0\t16.0\t Jamaica\t \u003c\u003d50K\n52.0\t Self-emp-not-inc\t209642.0\t HS-grad\t9.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t45.0\t United-States\t \u003e50K\n31.0\t Private\t45781.0\t Masters\t14.0\t Never-married\t Prof-specialty\t Not-in-family\t White\t Female\t14084.0\t0.0\t50.0\t United-States\t \u003e50K\n42.0\t Private\t159449.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t5178.0\t0.0\t40.0\t United-States\t \u003e50K\n"
       },
       "dateCreated": "Feb 3, 2017 8:41:09 AM",
-      "dateStarted": "Feb 7, 2017 12:55:48 PM",
-      "dateFinished": "Feb 7, 2017 12:55:52 PM",
+      "dateStarted": "Feb 17, 2017 9:30:19 AM",
+      "dateFinished": "Feb 17, 2017 9:30:19 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nrécupère toutes les informations en prenant que 10 lignes.",
+      "dateUpdated": "Feb 17, 2017 9:31:05 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487323826979_1164708734",
+      "id": "20170217-093026_1930921117",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003erécupère toutes les informations en prenant que 10 lignes.\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 17, 2017 9:30:26 AM",
+      "dateStarted": "Feb 17, 2017 9:31:05 AM",
+      "dateFinished": "Feb 17, 2017 9:31:05 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Check settings of graph. See how we average age by income.",
       "text": "%sql SELECT * FROM dataset LIMIT 10",
-      "dateUpdated": "Feb 7, 2017 12:55:40 PM",
+      "dateUpdated": "Feb 17, 2017 9:31:16 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -265,8 +392,42 @@
         "msg": "age\tworkclass\tfnlwgt\teducation\teducation_num\tmarital_status\toccupation\trelationship\trace\tsex\tcapital_gain\tcapital_loss\thours_per_week\tnative_country\tincome\n39.0\t State-gov\t77516.0\t Bachelors\t13.0\t Never-married\t Adm-clerical\t Not-in-family\t White\t Male\t2174.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n50.0\t Self-emp-not-inc\t83311.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t13.0\t United-States\t \u003c\u003d50K\n38.0\t Private\t215646.0\t HS-grad\t9.0\t Divorced\t Handlers-cleaners\t Not-in-family\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n53.0\t Private\t234721.0\t 11th\t7.0\t Married-civ-spouse\t Handlers-cleaners\t Husband\t Black\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n28.0\t Private\t338409.0\t Bachelors\t13.0\t Married-civ-spouse\t Prof-specialty\t Wife\t Black\t Female\t0.0\t0.0\t40.0\t Cuba\t \u003c\u003d50K\n37.0\t Private\t284582.0\t Masters\t14.0\t Married-civ-spouse\t Exec-managerial\t Wife\t White\t Female\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n49.0\t Private\t160187.0\t 9th\t5.0\t Married-spouse-absent\t Other-service\t Not-in-family\t Black\t Female\t0.0\t0.0\t16.0\t Jamaica\t \u003c\u003d50K\n52.0\t Self-emp-not-inc\t209642.0\t HS-grad\t9.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t45.0\t United-States\t \u003e50K\n31.0\t Private\t45781.0\t Masters\t14.0\t Never-married\t Prof-specialty\t Not-in-family\t White\t Female\t14084.0\t0.0\t50.0\t United-States\t \u003e50K\n42.0\t Private\t159449.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t5178.0\t0.0\t40.0\t United-States\t \u003e50K\n"
       },
       "dateCreated": "Feb 6, 2017 8:20:04 AM",
-      "dateStarted": "Feb 7, 2017 12:55:48 PM",
-      "dateFinished": "Feb 7, 2017 12:55:53 PM",
+      "dateStarted": "Feb 17, 2017 9:31:16 AM",
+      "dateFinished": "Feb 17, 2017 9:31:16 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nIl y a autant de personne qui gagne \u003e50k par an et \u003c\u003d50K par an.",
+      "dateUpdated": "Feb 17, 2017 9:34:50 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487323917385_-567492111",
+      "id": "20170217-093157_342816310",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eIl y a autant de personne qui gagne \u003e50k par an et \u0026lt;\u003d50K par an.\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 17, 2017 9:31:57 AM",
+      "dateStarted": "Feb 17, 2017 9:34:50 AM",
+      "dateFinished": "Feb 17, 2017 9:34:50 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -662,24 +823,24 @@
   "name": "BinaryClassification",
   "id": "2C76YWXDZ",
   "angularObjects": {
-    "2C93MQCCX:shared_process": [],
-    "2CAFQY6K3:shared_process": [],
-    "2C71Z8V22:shared_process": [],
-    "2C74PSEZQ:shared_process": [],
-    "2C7936H5V:shared_process": [],
-    "2C6WY8JHA:shared_process": [],
-    "2C8CCCVZ2:shared_process": [],
-    "2C9JTS6JQ:shared_process": [],
-    "2C91JKV9H:shared_process": [],
-    "2C8N1PP7C:shared_process": [],
-    "2C7YTW7VT:shared_process": [],
-    "2C85G18U9:shared_process": [],
-    "2C9XYSTEH:shared_process": [],
-    "2CA474ZG3:shared_process": [],
-    "2C8JNXQ9U:shared_process": [],
-    "2C827138T:shared_process": [],
-    "2CAA7GXEJ:shared_process": [],
-    "2C8W1GCP8:shared_process": []
+    "2C9JR3WVW:shared_process": [],
+    "2C8R2YKG9:shared_process": [],
+    "2CAXPURNW:shared_process": [],
+    "2C8DDUZYS:shared_process": [],
+    "2CAEHFARP:shared_process": [],
+    "2C9MCN8ET:shared_process": [],
+    "2CA1GZU7M:shared_process": [],
+    "2CA4Z2XPJ:shared_process": [],
+    "2C9GRZDD6:shared_process": [],
+    "2CAPQFPUW:shared_process": [],
+    "2C9B3K5XW:shared_process": [],
+    "2CACQQ9F7:shared_process": [],
+    "2C9M4KBQF:shared_process": [],
+    "2C87XB1NG:shared_process": [],
+    "2C89G6QDG:shared_process": [],
+    "2C8TU8JAE:shared_process": [],
+    "2CBB7EMD6:shared_process": [],
+    "2C9DH4AVR:shared_process": []
   },
   "config": {},
   "info": {}
