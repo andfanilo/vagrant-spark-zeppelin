@@ -287,8 +287,8 @@
     },
     {
       "title": "Spark/Scala cell",
-      "text": "println(\"Hello yazid from spark scala cell\")",
-      "dateUpdated": "Feb 8, 2017 11:12:59 AM",
+      "text": "println(\"Hell0)",
+      "dateUpdated": "Feb 17, 2017 2:38:59 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -703,7 +703,7 @@
     },
     {
       "text": "%md \n###Primer on functional programming\nBefore going further, we need to go back to functional programming (sometimes abbreviated to FP in literature).\n\nIn functional programming, we construct our programs using _pure functions_, that is a function that takes an input and produces an output without any side-effects, thus forbidding mutation.\n\nAn essential and powerful concept of FP is the ability to pass functions as arguments. For example in the row below :",
-      "dateUpdated": "Jan 25, 2017 8:37:58 AM",
+      "dateUpdated": "Feb 17, 2017 2:39:07 PM",
       "config": {
         "enabled": true,
         "graph": {
@@ -715,9 +715,9 @@
           "groups": [],
           "scatter": {}
         },
-        "editorMode": "ace/mode/scala",
+        "editorMode": "ace/mode/markdown",
         "colWidth": 12.0,
-        "editorHide": true
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -2149,26 +2149,7 @@
   ],
   "name": "Practice",
   "id": "2C75UP2R2",
-  "angularObjects": {
-    "2CB5HQARY:shared_process": [],
-    "2C8CWNWJY:shared_process": [],
-    "2C8XE15AG:shared_process": [],
-    "2CBET736N:shared_process": [],
-    "2C9AS98MR:shared_process": [],
-    "2C9G2YN6H:shared_process": [],
-    "2CBAUC6H6:shared_process": [],
-    "2C7MKWD6Z:shared_process": [],
-    "2CAPR4AQ9:shared_process": [],
-    "2C7XZH2NM:shared_process": [],
-    "2C8EAJM3P:shared_process": [],
-    "2C8Y1J3DQ:shared_process": [],
-    "2C93YACWA:shared_process": [],
-    "2CBAD1M2H:shared_process": [],
-    "2CAPW6MPD:shared_process": [],
-    "2CAX71EAT:shared_process": [],
-    "2C8JXMHTC:shared_process": [],
-    "2CAKTAPZQ:shared_process": []
-  },
+  "angularObjects": {},
   "config": {
     "looknfeel": "default"
   },
