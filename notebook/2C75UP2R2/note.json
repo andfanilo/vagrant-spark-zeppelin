@@ -1520,7 +1520,7 @@
     },
     {
       "text": "// load file into RDD and check 10 first lines\n\nval text \u003d sc.textFile(\"/opt/dataset/don-quijote.txt.gz\")\ntext.take(10)",
-      "dateUpdated": "Feb 10, 2017 6:41:47 AM",
+      "dateUpdated": "Feb 17, 2017 8:59:34 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1544,11 +1544,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ntext: org.apache.spark.rdd.RDD[String] \u003d /opt/dataset/don-quijote.txt.gz MapPartitionsRDD[47] at textFile at \u003cconsole\u003e:32\n\nres51: Array[String] \u003d Array(The Project Gutenberg EBook of Don Quijote, by Miguel de Cervantes Saavedra, \"\", This eBook is for the use of anyone anywhere at no cost and with, almost no restrictions whatsoever.  You may copy it, give it away or, re-use it under the terms of the Project Gutenberg License included, with this eBook or online at www.gutenberg.net, \"\", \"\", Title: Don Quijote, \"\")\n"
+        "msg": "\ntext: org.apache.spark.rdd.RDD[String] \u003d /opt/dataset/don-quijote.txt.gz MapPartitionsRDD[1] at textFile at \u003cconsole\u003e:29\n\nres1: Array[String] \u003d Array(The Project Gutenberg EBook of Don Quijote, by Miguel de Cervantes Saavedra, \"\", This eBook is for the use of anyone anywhere at no cost and with, almost no restrictions whatsoever.  You may copy it, give it away or, re-use it under the terms of the Project Gutenberg License included, with this eBook or online at www.gutenberg.net, \"\", \"\", Title: Don Quijote, \"\")\n"
       },
       "dateCreated": "Jan 25, 2017 1:49:31 AM",
-      "dateStarted": "Feb 10, 2017 6:41:47 AM",
-      "dateFinished": "Feb 10, 2017 6:41:48 AM",
+      "dateStarted": "Feb 17, 2017 8:59:35 AM",
+      "dateFinished": "Feb 17, 2017 9:00:30 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1623,7 +1623,7 @@
     },
     {
       "text": "// let\u0027s check the file we are going to use\nval ipligence \u003d sc.textFile(\"/opt/dataset/ipligence-lite.csv\")\nipligence.take(1)",
-      "dateUpdated": "Feb 1, 2017 9:17:21 AM",
+      "dateUpdated": "Feb 17, 2017 9:06:53 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1647,17 +1647,17 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nipligence: org.apache.spark.rdd.RDD[String] \u003d /opt/dataset/ipligence-lite.csv MapPartitionsRDD[19] at textFile at \u003cconsole\u003e:28\n\nres14: Array[String] \u003d Array(\"0000000000\",\"0016777215\",\"\",\"\",\"\",\"\")\n"
+        "msg": "\nipligence: org.apache.spark.rdd.RDD[String] \u003d /opt/dataset/ipligence-lite.csv MapPartitionsRDD[5] at textFile at \u003cconsole\u003e:28\n\nres9: Array[String] \u003d Array(\"0000000000\",\"0016777215\",\"\",\"\",\"\",\"\")\n"
       },
       "dateCreated": "Feb 1, 2017 6:59:22 AM",
-      "dateStarted": "Feb 1, 2017 9:17:21 AM",
-      "dateFinished": "Feb 1, 2017 9:17:22 AM",
+      "dateStarted": "Feb 17, 2017 9:06:54 AM",
+      "dateFinished": "Feb 17, 2017 9:06:57 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "// create your dataframe by reading the csv file\nval columnNames \u003d Seq(\"IP_FROM\", \"IP_TO\", \"COUNTRY_CODE\", \"COUNTRY_NAME\", \"CONTINENT_CODE\", \"CONTINENT_NAME\")\nval df \u003d sqlContext.read.csv(\"/opt/dataset/ipligence-lite.csv\").toDF(columnNames: _*)\ndf.printSchema()\ndf.show()\n\n// if you want to use the dataframe in SQL, you must register it\ndf.registerTempTable(\"df\")",
-      "dateUpdated": "Feb 1, 2017 10:10:32 AM",
+      "dateUpdated": "Feb 17, 2017 9:07:02 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1684,8 +1684,8 @@
         "msg": "\ncolumnNames: Seq[String] \u003d List(IP_FROM, IP_TO, COUNTRY_CODE, COUNTRY_NAME, CONTINENT_CODE, CONTINENT_NAME)\n\ndf: org.apache.spark.sql.DataFrame \u003d [IP_FROM: string, IP_TO: string ... 4 more fields]\nroot\n |-- IP_FROM: string (nullable \u003d true)\n |-- IP_TO: string (nullable \u003d true)\n |-- COUNTRY_CODE: string (nullable \u003d true)\n |-- COUNTRY_NAME: string (nullable \u003d true)\n |-- CONTINENT_CODE: string (nullable \u003d true)\n |-- CONTINENT_NAME: string (nullable \u003d true)\n\n+----------+----------+------------+------------+--------------+--------------+\n|   IP_FROM|     IP_TO|COUNTRY_CODE|COUNTRY_NAME|CONTINENT_CODE|CONTINENT_NAME|\n+----------+----------+------------+------------+--------------+--------------+\n|0000000000|0016777215|        null|        null|          null|          null|\n|0016777216|0016777471|          AU|   AUSTRALIA|            OC|       OCEANIA|\n|0016777472|0016778239|          CN|       CHINA|            AS|          ASIA|\n|0016778240|0016779263|          AU|   AUSTRALIA|            OC|       OCEANIA|\n|0016779264|0016781311|          CN|       CHINA|            AS|          ASIA|\n|0016781312|0016785407|          JP|       JAPAN|            AS|          ASIA|\n|0016785408|0016793599|          CN|       CHINA|            AS|          ASIA|\n|0016793600|0016809983|          JP|       JAPAN|            AS|          ASIA|\n|0016809984|0016842751|          TH|    THAILAND|            AS|          ASIA|\n|0016842752|0016843007|          CN|       CHINA|            AS|          ASIA|\n|0016843008|0016843263|          AU|   AUSTRALIA|            OC|       OCEANIA|\n|0016843264|0016859135|          CN|       CHINA|            AS|          ASIA|\n|0016859136|0016875519|          JP|       JAPAN|            AS|          ASIA|\n|0016875520|0016908287|          TH|    THAILAND|            AS|          ASIA|\n|0016908288|0016909055|          CN|       CHINA|            AS|          ASIA|\n|0016909056|0016909311|          AU|   AUSTRALIA|            OC|       OCEANIA|\n|0016909312|0016941055|          CN|       CHINA|            AS|          ASIA|\n|0016941056|0016973823|          TH|    THAILAND|            AS|          ASIA|\n|0016973824|0017039359|          CN|       CHINA|            AS|          ASIA|\n|0017039360|0017039615|          AU|   AUSTRALIA|            OC|       OCEANIA|\n+----------+----------+------------+------------+--------------+--------------+\nonly showing top 20 rows\n\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n"
       },
       "dateCreated": "Feb 1, 2017 7:16:17 AM",
-      "dateStarted": "Feb 1, 2017 10:10:32 AM",
-      "dateFinished": "Feb 1, 2017 10:10:34 AM",
+      "dateStarted": "Feb 17, 2017 9:07:02 AM",
+      "dateFinished": "Feb 17, 2017 9:07:14 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1726,7 +1726,7 @@
     },
     {
       "text": "sqlContext.sql(\"SELECT IP_TO FROM df\").show(5)",
-      "dateUpdated": "Feb 1, 2017 9:42:54 AM",
+      "dateUpdated": "Feb 17, 2017 9:07:20 AM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1753,14 +1753,14 @@
         "msg": "+----------+\n|     IP_TO|\n+----------+\n|0016777215|\n|0016777471|\n|0016778239|\n|0016779263|\n|0016781311|\n+----------+\nonly showing top 5 rows\n\n"
       },
       "dateCreated": "Feb 1, 2017 9:21:37 AM",
-      "dateStarted": "Feb 1, 2017 9:42:54 AM",
-      "dateFinished": "Feb 1, 2017 9:42:55 AM",
+      "dateStarted": "Feb 17, 2017 9:07:20 AM",
+      "dateFinished": "Feb 17, 2017 9:07:21 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "df.select(\"IP_TO\").show(5)",
-      "dateUpdated": "Feb 1, 2017 9:43:02 AM",
+      "text": "df.select(\"IP_TO\", \"CONTINENT_NAME\").show(5)",
+      "dateUpdated": "Feb 17, 2017 9:12:15 AM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1784,11 +1784,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "+----------+\n|     IP_TO|\n+----------+\n|0016777215|\n|0016777471|\n|0016778239|\n|0016779263|\n|0016781311|\n+----------+\nonly showing top 5 rows\n\n"
+        "msg": "+----------+--------------+\n|     IP_TO|CONTINENT_NAME|\n+----------+--------------+\n|0016777215|          null|\n|0016777471|       OCEANIA|\n|0016778239|          ASIA|\n|0016779263|       OCEANIA|\n|0016781311|          ASIA|\n+----------+--------------+\nonly showing top 5 rows\n\n"
       },
       "dateCreated": "Feb 1, 2017 9:21:42 AM",
-      "dateStarted": "Feb 1, 2017 9:43:02 AM",
-      "dateFinished": "Feb 1, 2017 9:43:03 AM",
+      "dateStarted": "Feb 17, 2017 9:12:15 AM",
+      "dateFinished": "Feb 17, 2017 9:12:16 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1829,8 +1829,8 @@
     },
     {
       "title": "Display all continent names",
-      "text": "",
-      "dateUpdated": "Feb 1, 2017 9:50:17 AM",
+      "text": "df.printSchema()\nsqlContext.sql(\"select distinct CONTINENT_NAME from df\").show()",
+      "dateUpdated": "Feb 17, 2017 10:30:15 AM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1855,18 +1855,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": ""
+        "msg": "root\n |-- IP_FROM: string (nullable \u003d true)\n |-- IP_TO: string (nullable \u003d true)\n |-- COUNTRY_CODE: string (nullable \u003d true)\n |-- COUNTRY_NAME: string (nullable \u003d true)\n |-- CONTINENT_CODE: string (nullable \u003d true)\n |-- CONTINENT_NAME: string (nullable \u003d true)\n\n+---------------+\n| CONTINENT_NAME|\n+---------------+\n|      CARIBBEAN|\n|           ASIA|\n|           null|\n|        OCEANIA|\n|  NORTH AMERICA|\n|  SOUTH AMERICA|\n|         EUROPE|\n|     ANTARCTICA|\n|         AFRICA|\n|CENTRAL AMERICA|\n|    MIDDLE EAST|\n|             AS|\n|             AF|\n+---------------+\n\n"
       },
       "dateCreated": "Feb 1, 2017 9:48:15 AM",
-      "dateStarted": "Feb 1, 2017 9:50:18 AM",
-      "dateFinished": "Feb 1, 2017 9:50:18 AM",
+      "dateStarted": "Feb 17, 2017 10:30:16 AM",
+      "dateFinished": "Feb 17, 2017 10:30:17 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Count number of rows with a null value in country code",
-      "text": "// Don\u0027t forget you have the count function on a Dataframe after you have filtered it",
-      "dateUpdated": "Feb 1, 2017 10:05:56 AM",
+      "text": "// Don\u0027t forget you have the count function on a Dataframe after you have filtered it\ndf.filter(\"COUNTRY_CODE is null\").count()",
+      "dateUpdated": "Feb 17, 2017 10:27:05 AM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1891,18 +1891,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": ""
+        "msg": "\nres125: Long \u003d 4997\n"
       },
       "dateCreated": "Feb 1, 2017 9:48:23 AM",
-      "dateStarted": "Feb 1, 2017 10:05:57 AM",
-      "dateFinished": "Feb 1, 2017 10:05:57 AM",
+      "dateStarted": "Feb 17, 2017 10:27:05 AM",
+      "dateFinished": "Feb 17, 2017 10:27:06 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Display number of connections per continent",
-      "text": "",
-      "dateUpdated": "Feb 1, 2017 10:09:38 AM",
+      "text": "df.groupBy(\"CONTINENT_NAME\").count().show()",
+      "dateUpdated": "Feb 17, 2017 10:33:32 AM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1927,18 +1927,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": ""
+        "msg": "+---------------+-------------+\n| CONTINENT_NAME|NBR_CONNEXION|\n+---------------+-------------+\n|      CARIBBEAN|         1296|\n|           ASIA|        11606|\n|           null|         4997|\n|        OCEANIA|         3928|\n|  NORTH AMERICA|        15330|\n|  SOUTH AMERICA|         2466|\n|         EUROPE|        46715|\n|     ANTARCTICA|            7|\n|         AFRICA|         2608|\n|CENTRAL AMERICA|          721|\n|    MIDDLE EAST|         2026|\n|             AS|            5|\n|             AF|            3|\n+---------------+-------------+\n\n+---------------+-----+\n| CONTINENT_NAME|count|\n+---------------+-----+\n|      CARIBBEAN| 1296|\n|           ASIA|11606|\n|           null| 4997|\n|        OCEANIA| 3928|\n|  NORTH AMERICA|15330|\n|  SOUTH AMERICA| 2466|\n|         EUROPE|46715|\n|     ANTARCTICA|    7|\n|         AFRICA| 2608|\n|CENTRAL AMERICA|  721|\n|    MIDDLE EAST| 2026|\n|             AS|    5|\n|             AF|    3|\n+---------------+-----+\n\n"
       },
       "dateCreated": "Feb 1, 2017 10:05:58 AM",
-      "dateStarted": "Feb 1, 2017 10:09:38 AM",
-      "dateFinished": "Feb 1, 2017 10:09:38 AM",
+      "dateStarted": "Feb 17, 2017 10:33:05 AM",
+      "dateFinished": "Feb 17, 2017 10:33:08 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Show IP_FROM addresses which appear more than once in the file",
-      "text": "// PS : if your query is correct, you should only find one",
-      "dateUpdated": "Feb 1, 2017 10:11:17 AM",
+      "text": "// PS : if your query is correct, you should only find one\ndf.groupBy(\"IP_FROM\").count().filter(\"count \u003e 1\").show()",
+      "dateUpdated": "Feb 17, 2017 10:34:23 AM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1963,11 +1963,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": ""
+        "msg": "+----------+-----+\n|   IP_FROM|count|\n+----------+-----+\n|3272226816|    2|\n+----------+-----+\n\n"
       },
       "dateCreated": "Feb 1, 2017 10:06:08 AM",
-      "dateStarted": "Feb 1, 2017 10:11:17 AM",
-      "dateFinished": "Feb 1, 2017 10:11:18 AM",
+      "dateStarted": "Feb 17, 2017 10:34:23 AM",
+      "dateFinished": "Feb 17, 2017 10:34:26 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
