@@ -1367,8 +1367,8 @@
     },
     {
       "title": "Create a random RDD of numbers, and find its mean.",
-      "text": "import util.Random.nextInt\nval input \u003d sc.parallelize(Seq.fill(10000)(nextInt))",
-      "dateUpdated": "Jan 25, 2017 1:41:43 AM",
+      "text": "import util.Random.nextInt\nval input \u003d sc.parallelize(Seq.fill(10000)(nextInt))\n\ninput.mean()",
+      "dateUpdated": "Feb 17, 2017 2:22:43 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1382,7 +1382,8 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "title": true
+        "title": true,
+        "tableHide": false
       },
       "settings": {
         "params": {},
@@ -1390,8 +1391,15 @@
       },
       "jobName": "paragraph_1485336877601_1857515653",
       "id": "20170125-093437_413700163",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nimport util.Random.nextInt\n\ninput: org.apache.spark.rdd.RDD[Int] \u003d ParallelCollectionRDD[16] at parallelize at \u003cconsole\u003e:46\n\nres14: Double \u003d 1.8859390325000055E7\n"
+      },
       "dateCreated": "Jan 25, 2017 9:34:37 AM",
-      "status": "READY",
+      "dateStarted": "Feb 17, 2017 2:22:43 PM",
+      "dateFinished": "Feb 17, 2017 2:22:45 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
