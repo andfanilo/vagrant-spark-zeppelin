@@ -412,8 +412,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "// Configure an ML pipeline, which consists of two stages on one column: a StringIndexer and a OneHotEncoder.\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer, VectorAssembler}\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\nval categoricalCols \u003d Seq(\"workclass\", \"education\", \"marital_status\", \"occupation\", \"relationship\", \"race\", \"sex\", \"native_country\")\n\nval catStages \u003d categoricalCols.flatMap{s\u003d\u003e \nSeq(new StringIndexer()\n    .setInputCol(s)\n    .setOutputCol(s+\"index\"),\n new OneHotEncoder()\n .setInputCol(s+\"index\")\n .setOutputCol(s + \"ClassVec\"))\n}\n \nval label_stringIdx \u003d new StringIndexer()\n    .setInputCol(\"income\")\n    .setOutputCol(\"label\")\n    \nval assembler \u003d new VectorAssembler()\n  .setInputCols((numericCols ++ categoricalCols.map(colonne \u003d\u003e colonne + \"ClassVec\")).toArray)\n  .setOutputCol(\"features\")\n    \nval stages \u003d  catStages ++ Seq(label_stringIdx, assembler)\n\nval pipeline \u003d new Pipeline()\n  .setStages(stages.toArray)\n  \nval pipelineModel \u003d pipeline.fit(dataset)\npipelineModel.transform(dataset).show()",
-      "dateUpdated": "Feb 17, 2017 4:36:31 PM",
+      "text": "// Configure an ML pipeline, which consists of two stages on one column: a StringIndexer and a OneHotEncoder.\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer, VectorAssembler}\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\nimport org.apache.spark.ml.feature.VectorAssembler\nimport org.apache.spark.ml.linalg.Vectors\nval categoricalCols \u003d Seq(\"workclass\", \"education\", \"marital_status\", \"occupation\", \"relationship\", \"race\", \"sex\", \"native_country\")\n\nval catStages \u003d categoricalCols.flatMap{s\u003d\u003e \nSeq(new StringIndexer()\n    .setInputCol(s)\n    .setOutputCol(s+\"index\"),\n new OneHotEncoder()\n .setInputCol(s+\"index\")\n .setOutputCol(s + \"ClassVec\"))\n}\n \nval label_stringIdx \u003d new StringIndexer()\n    .setInputCol(\"income\")\n    .setOutputCol(\"label\")\n    \nval assembler \u003d new VectorAssembler()\n  .setInputCols((numericCols ++ categoricalCols.map(colonne \u003d\u003e colonne + \"ClassVec\")).toArray)\n  .setOutputCol(\"features\")\n    \nval stages \u003d  catStages ++ Seq(label_stringIdx, assembler)\n\nval pipeline \u003d new Pipeline()\n  .setStages(stages.toArray)\n  \nval pipelineModel \u003d pipeline.fit(dataset)\npipelineModel.transform(dataset).show()",
+      "dateUpdated": "Feb 17, 2017 4:41:24 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -447,8 +447,8 @@
     },
     {
       "title": "Detail columns to deal with",
-      "text": "import org.apache.spark.ml.feature.VectorAssembler\nimport org.apache.spark.ml.linalg.Vectors\n\nval categoricalCols \u003d Seq(\"workclass\", \"education\", \"marital_status\", \"occupation\", \"relationship\", \"race\", \"sex\", \"native_country\")\nval numericCols \u003d Seq(\"age\", \"fnlwgt\", \"education_num\", \"capital_gain\", \"capital_loss\", \"hours_per_week\")\n\n\n  \nnumericCols.map {s\u003d\u003e \nval va \u003d  new VectorAssembler()\n.setInputCols(Array(s)++categoricalCols)\n.setOutputCol(\"premier\")\n\nSeq( va )\n    \n}",
-      "dateUpdated": "Feb 17, 2017 4:28:33 PM",
+      "text": "",
+      "dateUpdated": "Feb 17, 2017 4:41:24 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -474,12 +474,93 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nimport org.apache.spark.ml.feature.VectorAssembler\n\nimport org.apache.spark.ml.linalg.Vectors\n\ncategoricalCols: Seq[String] \u003d List(workclass, education, marital_status, occupation, relationship, race, sex, native_country)\n\nnumericCols: Seq[String] \u003d List(age, fnlwgt, education_num, capital_gain, capital_loss, hours_per_week)\n\nres41: Seq[Seq[org.apache.spark.ml.feature.VectorAssembler]] \u003d List(List(vecAssembler_00f9f9c25a03), List(vecAssembler_198d71acc15a), List(vecAssembler_f0de02b6f5fa), List(vecAssembler_33eb1d3c0a19), List(vecAssembler_48d291cfa4ce), List(vecAssembler_0d9781b549e8))\n"
+        "msg": "\nimport org.apache.spark.ml.feature.VectorAssembler\n\nimport org.apache.spark.ml.linalg.Vectors\n"
       },
       "dateCreated": "Feb 6, 2017 2:31:24 AM",
-      "dateStarted": "Feb 17, 2017 4:28:33 PM",
-      "dateFinished": "Feb 17, 2017 4:28:34 PM",
+      "dateStarted": "Feb 17, 2017 4:40:59 PM",
+      "dateFinished": "Feb 17, 2017 4:41:00 PM",
       "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "",
+      "dateUpdated": "Feb 17, 2017 4:40:31 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487349620714_-477289005",
+      "id": "20170217-164020_1073637454",
+      "dateCreated": "Feb 17, 2017 4:40:20 PM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "",
+      "dateUpdated": "Feb 17, 2017 4:40:31 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487349620657_-444585348",
+      "id": "20170217-164020_1188539559",
+      "dateCreated": "Feb 17, 2017 4:40:20 PM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "",
+      "dateUpdated": "Feb 17, 2017 4:40:31 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487349620008_-305690996",
+      "id": "20170217-164020_198878802",
+      "dateCreated": "Feb 17, 2017 4:40:20 PM",
+      "status": "READY",
       "progressUpdateIntervalMs": 500
     },
     {
