@@ -479,7 +479,7 @@
     },
     {
       "text": "%md\n\nIn this dataset, we have ordinal variables like education (Preschool - Doctorate), and also nominal variables like relationship (Wife, Husband, Own-child, etc). For simplicity\u0027s sake, we will use One-Hot Encoding to convert all categorical variables into binary vectors. It might be possible here to improve prediction accuracy by converting each categorical column with an appropriate method.\n\nHere, we will use a combination of [StringIndexer](http://spark.apache.org/docs/latest/ml-features.html#stringindexer) and [OneHotEncoder](http://spark.apache.org/docs/latest/ml-features.html#onehotencoder) on each string column to convert the categorical variables. The `OneHotEncoder` will return a SparseVector (which means, for `(8,[4],[1.0])` that the vector has size 8, one only the 4th column contains a value which is 1.0).\n\nSince we will have many stages of feature transformations, we use an [ML Pipeline](http://spark.apache.org/docs/latest/ml-pipeline.html) to tie the stages together.  This simplifies our code. You should especially try to use [the Pipeline example](http://spark.apache.org/docs/latest/ml-pipeline.html#example-pipeline).\n\n```scala\n// Configure an ML pipeline, which consists of two stages on one column: a StringIndexer and a OneHotEncoder.\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer}\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\n// stages for column workclass\nval stringIndexer \u003d new StringIndexer()\n  .setInputCol(\"workclass\")\n  .setOutputCol(\"workclassIndex\")\nval oneHotEncoder \u003d new OneHotEncoder()\n  .setInputCol(stringIndexer.getOutputCol)\n  .setOutputCol(stringIndexer.getInputCol + \"ClassVec\")\n  \n// stage for label\nval label_stringIdx \u003d new StringIndexer()\n    .setInputCol(\"income\")\n    .setOutputCol(\"label\")\n  \nval stages \u003d  Seq(stringIndexer, oneHotEncoder) ++ Seq(label_stringIdx) // concatenate 2 sequences of stages\nval pipeline \u003d new Pipeline()\n  .setStages(stages.toArray)\n  \nval pipelineModel \u003d pipeline.fit(dataset)\npipelineModel.transform(dataset).show()\n```\n\nIt is also a good time to transform the income to a label of 0 and 1 for binary classification using the `StringIndexer`.\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\n1. For each categorical column, build a stage of StringIndexer and OneHotEncoder\n2. Add all those stages in a single pipeline\n3. Also add a StringIndexer of the `income` column and name the output column `label`\n3. Check the result by passing your dataset inside the pipeline. Comment \u0026 explain.\n\n_Hint: actually map your sequence of categorical columns to a sequence of stages through FP._",
-      "dateUpdated": "Feb 7, 2017 12:55:42 PM",
+      "dateUpdated": "Feb 17, 2017 4:12:32 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -493,7 +493,8 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/markdown",
-        "editorHide": true
+        "editorHide": false,
+        "tableHide": false
       },
       "settings": {
         "params": {},
@@ -549,8 +550,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "categoricalCols.flatMap{ s \u003d\u003e\n    Seq(s, s + \"index\")\n    \n}",
-      "dateUpdated": "Feb 17, 2017 3:53:37 PM",
+      "text": "\n// Configure an ML pipeline, which consists of two stages on one column: a StringIndexer and a OneHotEncoder.\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer, VectorAssembler}\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\n\nval catStages \u003d categoricalCols.flatMap{ colonne \u003d\u003e\n    val stringIndexer \u003d new StringIndexer()\n    .setInputCol(colonne)\n    .setOutputCol(colonne+\"index\")\n    val oneHotEncoder \u003d new OneHotEncoder()\n    .setInputCol(StringIndexer.getOutpuCol)\n    .setOutputCol(StringIndexer.getInpuCol + \"ClassVec\")\n    Seq(stringIndexer, oneHotEncoder)\n}\n\n// stage for label\nval label_stringIdx \u003d new StringIndexer()\n    .setInputCol(\"income\")\n    .setOutputCol(\"label\")\n\nval assembler \u003d new VectorAssembler\n.setInputCols(numericCols ++ categoricalCols.map(col \u003d\u003e col + \"ClassVec\")).ToArray)\n.setOutputCol(\"features\")\n\nval stages \u003d  catStages ++ Seq(label_stringIdx, assembler) // concatenate 2 sequences of stages\nval pipeline \u003d new Pipeline()\n  .setStages(stages.toArray)\n\nval pipelineModel \u003d pipeline.fit(dataset)\npipelineModel.transform(dataset).show()\n    \n    \n",
+      "dateUpdated": "Feb 17, 2017 4:40:10 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -574,11 +575,11 @@
       "result": {
         "code": "ERROR",
         "type": "TEXT",
-        "msg": "\n\n\n\u003cconsole\u003e:28: error: not found: value categoricalCols\n       categoricalCols.flatMap{ s \u003d\u003e\n       ^\n"
+        "msg": "\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer, VectorAssembler}\n\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\n\n\n\u003cconsole\u003e:39: error: not found: value categoricalCols\n       val catStages \u003d categoricalCols.flatMap{ colonne \u003d\u003e\n                       ^\n\n\n\n\u003cconsole\u003e:44: error: value getOutpuCol is not a member of object org.apache.spark.ml.feature.StringIndexer\n           .setInputCol(StringIndexer.getOutpuCol)\n                                      ^\n\n\n\n\u003cconsole\u003e:45: error: value getInpuCol is not a member of object org.apache.spark.ml.feature.StringIndexer\n           .setOutputCol(StringIndexer.getInpuCol + \"ClassVec\")\n                                       ^\n"
       },
       "dateCreated": "Feb 17, 2017 3:48:26 PM",
-      "dateStarted": "Feb 17, 2017 3:53:37 PM",
-      "dateFinished": "Feb 17, 2017 3:53:37 PM",
+      "dateStarted": "Feb 17, 2017 4:40:10 PM",
+      "dateFinished": "Feb 17, 2017 4:40:10 PM",
       "status": "ERROR",
       "progressUpdateIntervalMs": 500
     },
