@@ -643,7 +643,7 @@
     },
     {
       "text": "%md\n\nTo run machine learning on a dataset, you need a column which contains a vector of all the features, and a column with the label.\n\nWe use the [VectorAssembler](http://spark.apache.org/docs/latest/ml-features.html#vectorassembler) to assemble all of our numeric columns and one-hot encoded categorical columns into one.\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nAdd the `VectorAssembler` stage, which takes as input all numeric columns and one hot encoded categorical columns. The `features` column will then be created. You can comment on it.",
-      "dateUpdated": "Feb 17, 2017 10:28:11 AM",
+      "dateUpdated": "Feb 17, 2017 11:48:06 AM",
       "config": {
         "enabled": true,
         "graph": {
@@ -671,14 +671,14 @@
         "msg": "\u003cp\u003eTo run machine learning on a dataset, you need a column which contains a vector of all the features, and a column with the label.\u003c/p\u003e\n\u003cp\u003eWe use the \u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-features.html#vectorassembler\"\u003eVectorAssembler\u003c/a\u003e to assemble all of our numeric columns and one-hot encoded categorical columns into one.\u003c/p\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eAdd the \u003ccode\u003eVectorAssembler\u003c/code\u003e stage, which takes as input all numeric columns and one hot encoded categorical columns. The \u003ccode\u003efeatures\u003c/code\u003e column will then be created. You can comment on it.\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 12, 2017 6:51:36 AM",
-      "dateStarted": "Feb 17, 2017 10:28:12 AM",
-      "dateFinished": "Feb 17, 2017 10:28:12 AM",
+      "dateStarted": "Feb 17, 2017 11:48:06 AM",
+      "dateFinished": "Feb 17, 2017 11:48:06 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\nAt this point, you should have a dataframe with a column _features_ which consists of a vector of all features in numerical form, and a column _label_ with the Income as a binary value. \n\nIt looks like this for example:\n\n```\n+----+-----------------+--------+----------+-------------+-------------------+------------------+--------------+------+-----+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\n| age|        workclass|  fnlwgt| education|education_num|     marital_status|        occupation|  relationship|  race|  sex|capital_gain|capital_loss|hours_per_week|native_country|income|workclassIndex|workclassClassVec|educationIndex|educationClassVec|marital_statusIndex|marital_statusClassVec|occupationIndex|occupationClassVec|relationshipIndex|relationshipClassVec|raceIndex| raceClassVec|sexIndex|  sexClassVec|native_countryIndex|native_countryClassVec|label|            features|\n+----+-----------------+--------+----------+-------------+-------------------+------------------+--------------+------+-----+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\n|39.0|        State-gov| 77516.0| Bachelors|         13.0|      Never-married|      Adm-clerical| Not-in-family| White| Male|      2174.0|         0.0|          40.0| United-States| \u003c\u003d50K|           4.0|    (8,[4],[1.0])|           2.0|   (15,[2],[1.0])|                1.0|         (6,[1],[1.0])|            3.0|    (14,[3],[1.0])|              1.0|       (5,[1],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(100,[4,10,24,32,...|\n```\n\n\u003chr\u003e\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nRandomly split your dataset into a 70% training set and 30% test set using a Dataframe\u0027s `randomSplit` function.",
-      "dateUpdated": "Feb 17, 2017 10:28:04 AM",
+      "dateUpdated": "Feb 17, 2017 11:48:09 AM",
       "config": {
         "enabled": true,
         "graph": {
@@ -706,8 +706,8 @@
         "msg": "\u003cp\u003eAt this point, you should have a dataframe with a column \u003cem\u003efeatures\u003c/em\u003e which consists of a vector of all features in numerical form, and a column \u003cem\u003elabel\u003c/em\u003e with the Income as a binary value.\u003c/p\u003e\n\u003cp\u003eIt looks like this for example:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+----+-----------------+--------+----------+-------------+-------------------+------------------+--------------+------+-----+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\n| age|        workclass|  fnlwgt| education|education_num|     marital_status|        occupation|  relationship|  race|  sex|capital_gain|capital_loss|hours_per_week|native_country|income|workclassIndex|workclassClassVec|educationIndex|educationClassVec|marital_statusIndex|marital_statusClassVec|occupationIndex|occupationClassVec|relationshipIndex|relationshipClassVec|raceIndex| raceClassVec|sexIndex|  sexClassVec|native_countryIndex|native_countryClassVec|label|            features|\n+----+-----------------+--------+----------+-------------+-------------------+------------------+--------------+------+-----+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\n|39.0|        State-gov| 77516.0| Bachelors|         13.0|      Never-married|      Adm-clerical| Not-in-family| White| Male|      2174.0|         0.0|          40.0| United-States| \u0026lt;\u003d50K|           4.0|    (8,[4],[1.0])|           2.0|   (15,[2],[1.0])|                1.0|         (6,[1],[1.0])|            3.0|    (14,[3],[1.0])|              1.0|       (5,[1],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(100,[4,10,24,32,...|\n\u003c/code\u003e\u003c/pre\u003e\n\u003chr\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eRandomly split your dataset into a 70% training set and 30% test set using a Dataframe\u0027s \u003ccode\u003erandomSplit\u003c/code\u003e function.\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 12, 2017 6:51:36 AM",
-      "dateStarted": "Feb 17, 2017 10:28:04 AM",
-      "dateFinished": "Feb 17, 2017 10:28:05 AM",
+      "dateStarted": "Feb 17, 2017 11:48:09 AM",
+      "dateFinished": "Feb 17, 2017 11:48:09 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
