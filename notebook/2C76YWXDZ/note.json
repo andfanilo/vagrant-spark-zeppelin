@@ -298,8 +298,63 @@
       "progressUpdateIntervalMs": 500
     },
     {
+      "title": "Répartition de capital_gain selon la race",
+      "text": "%sql SELECT race, mean(capital_gain) from dataset group by race",
+      "dateUpdated": "Feb 17, 2017 9:38:13 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "pieChart",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "race",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "avg(capital_gain)",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "race",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sql",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487323759008_1033265817",
+      "id": "20170217-092919_331984654",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "race\tavg(capital_gain)\n Asian-Pac-Islander\t1478.3580365736284\n Black\t609.9404609475032\n Other\t934.6605166051661\n White\t1121.6603753235547\n Amer-Indian-Eskimo\t625.2668810289389\n"
+      },
+      "dateCreated": "Feb 17, 2017 9:29:19 AM",
+      "dateStarted": "Feb 17, 2017 9:34:33 AM",
+      "dateFinished": "Feb 17, 2017 9:34:34 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Salaire selon l\u0027âge moyen et le sex",
       "text": "%sql SELECT mean(age), sex, income, count(*) FROM dataset GROUP BY sex, income LIMIT 10",
-      "dateUpdated": "Feb 17, 2017 9:27:46 AM",
+      "dateUpdated": "Feb 17, 2017 9:30:52 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -335,7 +390,8 @@
           }
         },
         "enabled": true,
-        "editorMode": "ace/mode/sql"
+        "editorMode": "ace/mode/sql",
+        "title": true
       },
       "settings": {
         "params": {},
