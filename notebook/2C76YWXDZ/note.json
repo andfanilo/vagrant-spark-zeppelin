@@ -342,7 +342,7 @@
     {
       "title": "One-hot encoding example",
       "text": "val names \u003d Seq(\"color\", \"index\", \"OHE_attr1\", \"OHE_attr2\", \"OHE_attr3\")\nsqlContext.createDataFrame(sc.parallelize(Seq((\"Blue\", 0, 1, 0, 0), (\"Green\", 1, 0, 1, 0), (\"Red\", 2, 0 , 0 , 1)))).toDF(names: _*).show()",
-      "dateUpdated": "Feb 7, 2017 12:55:42 PM",
+      "dateUpdated": "Feb 17, 2017 3:38:26 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -371,14 +371,14 @@
         "msg": "\nnames: Seq[String] \u003d List(color, index, OHE_attr1, OHE_attr2, OHE_attr3)\n+-----+-----+---------+---------+---------+\n|color|index|OHE_attr1|OHE_attr2|OHE_attr3|\n+-----+-----+---------+---------+---------+\n| Blue|    0|        1|        0|        0|\n|Green|    1|        0|        1|        0|\n|  Red|    2|        0|        0|        1|\n+-----+-----+---------+---------+---------+\n\n"
       },
       "dateCreated": "Feb 3, 2017 9:06:15 AM",
-      "dateStarted": "Feb 7, 2017 12:55:53 PM",
-      "dateFinished": "Feb 7, 2017 12:55:55 PM",
+      "dateStarted": "Feb 17, 2017 3:38:27 PM",
+      "dateFinished": "Feb 17, 2017 3:38:29 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\nIn this dataset, we have ordinal variables like education (Preschool - Doctorate), and also nominal variables like relationship (Wife, Husband, Own-child, etc). For simplicity\u0027s sake, we will use One-Hot Encoding to convert all categorical variables into binary vectors. It might be possible here to improve prediction accuracy by converting each categorical column with an appropriate method.\n\nHere, we will use a combination of [StringIndexer](http://spark.apache.org/docs/latest/ml-features.html#stringindexer) and [OneHotEncoder](http://spark.apache.org/docs/latest/ml-features.html#onehotencoder) on each string column to convert the categorical variables. The `OneHotEncoder` will return a SparseVector (which means, for `(8,[4],[1.0])` that the vector has size 8, one only the 4th column contains a value which is 1.0).\n\nSince we will have many stages of feature transformations, we use an [ML Pipeline](http://spark.apache.org/docs/latest/ml-pipeline.html) to tie the stages together.  This simplifies our code. You should especially try to use [the Pipeline example](http://spark.apache.org/docs/latest/ml-pipeline.html#example-pipeline).\n\n```scala\n// Configure an ML pipeline, which consists of two stages on one column: a StringIndexer and a OneHotEncoder.\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer}\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\n// stages for column workclass\nval stringIndexer \u003d new StringIndexer()\n  .setInputCol(\"workclass\")\n  .setOutputCol(\"workclassIndex\")\nval oneHotEncoder \u003d new OneHotEncoder()\n  .setInputCol(stringIndexer.getOutputCol)\n  .setOutputCol(stringIndexer.getInputCol + \"ClassVec\")\n  \n// stage for label\nval label_stringIdx \u003d new StringIndexer()\n    .setInputCol(\"income\")\n    .setOutputCol(\"label\")\n  \nval stages \u003d  Seq(stringIndexer, oneHotEncoder) ++ Seq(label_stringIdx) // concatenate 2 sequences of stages\nval pipeline \u003d new Pipeline()\n  .setStages(stages.toArray)\n  \nval pipelineModel \u003d pipeline.fit(dataset)\npipelineModel.transform(dataset).show()\n```\n\nIt is also a good time to transform the income to a label of 0 and 1 for binary classification using the `StringIndexer`.\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\n1. For each categorical column, build a stage of StringIndexer and OneHotEncoder\n2. Add all those stages in a single pipeline\n3. Also add a StringIndexer of the `income` column and name the output column `label`\n3. Check the result by passing your dataset inside the pipeline. Comment \u0026 explain.\n\n_Hint: actually map your sequence of categorical columns to a sequence of stages through FP._",
-      "dateUpdated": "Feb 7, 2017 12:55:42 PM",
+      "dateUpdated": "Feb 17, 2017 3:38:35 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -406,8 +406,42 @@
         "msg": "\u003cp\u003eIn this dataset, we have ordinal variables like education (Preschool - Doctorate), and also nominal variables like relationship (Wife, Husband, Own-child, etc). For simplicity\u0027s sake, we will use One-Hot Encoding to convert all categorical variables into binary vectors. It might be possible here to improve prediction accuracy by converting each categorical column with an appropriate method.\u003c/p\u003e\n\u003cp\u003eHere, we will use a combination of \u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-features.html#stringindexer\"\u003eStringIndexer\u003c/a\u003e and \u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-features.html#onehotencoder\"\u003eOneHotEncoder\u003c/a\u003e on each string column to convert the categorical variables. The \u003ccode\u003eOneHotEncoder\u003c/code\u003e will return a SparseVector (which means, for \u003ccode\u003e(8,[4],[1.0])\u003c/code\u003e that the vector has size 8, one only the 4th column contains a value which is 1.0).\u003c/p\u003e\n\u003cp\u003eSince we will have many stages of feature transformations, we use an \u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-pipeline.html\"\u003eML Pipeline\u003c/a\u003e to tie the stages together.  This simplifies our code. You should especially try to use \u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-pipeline.html#example-pipeline\"\u003ethe Pipeline example\u003c/a\u003e.\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"scala\"\u003e// Configure an ML pipeline, which consists of two stages on one column: a StringIndexer and a OneHotEncoder.\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer}\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\n// stages for column workclass\nval stringIndexer \u003d new StringIndexer()\n  .setInputCol(\"workclass\")\n  .setOutputCol(\"workclassIndex\")\nval oneHotEncoder \u003d new OneHotEncoder()\n  .setInputCol(stringIndexer.getOutputCol)\n  .setOutputCol(stringIndexer.getInputCol + \"ClassVec\")\n\n// stage for label\nval label_stringIdx \u003d new StringIndexer()\n    .setInputCol(\"income\")\n    .setOutputCol(\"label\")\n\nval stages \u003d  Seq(stringIndexer, oneHotEncoder) ++ Seq(label_stringIdx) // concatenate 2 sequences of stages\nval pipeline \u003d new Pipeline()\n  .setStages(stages.toArray)\n\nval pipelineModel \u003d pipeline.fit(dataset)\npipelineModel.transform(dataset).show()\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eIt is also a good time to transform the income to a label of 0 and 1 for binary classification using the \u003ccode\u003eStringIndexer\u003c/code\u003e.\u003c/p\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003col\u003e\n\u003cli\u003eFor each categorical column, build a stage of StringIndexer and OneHotEncoder\u003c/li\u003e\n\u003cli\u003eAdd all those stages in a single pipeline\u003c/li\u003e\n\u003cli\u003eAlso add a StringIndexer of the \u003ccode\u003eincome\u003c/code\u003e column and name the output column \u003ccode\u003elabel\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003eCheck the result by passing your dataset inside the pipeline. Comment \u0026amp; explain.\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003e\u003cem\u003eHint: actually map your sequence of categorical columns to a sequence of stages through FP.\u003c/em\u003e\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 3, 2017 9:11:12 AM",
-      "dateStarted": "Feb 7, 2017 12:55:42 PM",
-      "dateFinished": "Feb 7, 2017 12:55:42 PM",
+      "dateStarted": "Feb 17, 2017 3:38:35 PM",
+      "dateFinished": "Feb 17, 2017 3:38:35 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// Configure an ML pipeline, which consists of two stages on one column: a StringIndexer and a OneHotEncoder.\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer}\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\nval categoricalCols \u003d Seq(\"workclass\", \"education\", \"marital_status\", \"occupation\", \"relationship\", \"race\", \"sex\", \"native_country\")\n\ncategoricalCols.flatMap{s\u003d\u003e Seq(  new StringIndexer()\n.setInputCol(s)\n.setOutputCol(s+\"index\"),\n new OneHotEncoder().\n setInputCol(stringIndexer.getOutputCol).\n setOutputCol(stringIndexer.getInputCol + \"ClassVec\"))}\n// stages for column workclass\n",
+      "dateUpdated": "Feb 17, 2017 3:59:57 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487346038457_530667223",
+      "id": "20170217-154038_1160698045",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer}\n\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\ncategoricalCols: Seq[String] \u003d List(workclass, education, marital_status, occupation, relationship, race, sex, native_country)\nres14: Seq[org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable{def copy(extra: org.apache.spark.ml.param.ParamMap): org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable{def copy(extra: org.apache.spark.ml.param.ParamMap): org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable}}] \u003d List(strIdx_c7617c74051a, oneHot_a1934bd843f5, strIdx_c388f642dc17, oneHot_786f52dfeed8, strIdx_39c235e97648, oneH..."
+      },
+      "dateCreated": "Feb 17, 2017 3:40:38 PM",
+      "dateStarted": "Feb 17, 2017 3:59:57 PM",
+      "dateFinished": "Feb 17, 2017 3:59:59 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -449,7 +483,7 @@
     },
     {
       "text": "%md\n\nTo run machine learning on a dataset, you need a column which contains a vector of all the features, and a column with the label.\n\nWe use the [VectorAssembler](http://spark.apache.org/docs/latest/ml-features.html#vectorassembler) to assemble all of our numeric columns and one-hot encoded categorical columns into one.\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nAdd the `VectorAssembler` stage, which takes as input all numeric columns and one hot encoded categorical columns. The `features` column will then be created. You can comment on it.",
-      "dateUpdated": "Feb 7, 2017 12:55:43 PM",
+      "dateUpdated": "Feb 17, 2017 3:39:26 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -477,8 +511,8 @@
         "msg": "\u003cp\u003eTo run machine learning on a dataset, you need a column which contains a vector of all the features, and a column with the label.\u003c/p\u003e\n\u003cp\u003eWe use the \u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-features.html#vectorassembler\"\u003eVectorAssembler\u003c/a\u003e to assemble all of our numeric columns and one-hot encoded categorical columns into one.\u003c/p\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eAdd the \u003ccode\u003eVectorAssembler\u003c/code\u003e stage, which takes as input all numeric columns and one hot encoded categorical columns. The \u003ccode\u003efeatures\u003c/code\u003e column will then be created. You can comment on it.\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 3, 2017 9:15:56 AM",
-      "dateStarted": "Feb 7, 2017 12:55:43 PM",
-      "dateFinished": "Feb 7, 2017 12:55:43 PM",
+      "dateStarted": "Feb 17, 2017 3:39:26 PM",
+      "dateFinished": "Feb 17, 2017 3:39:26 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
