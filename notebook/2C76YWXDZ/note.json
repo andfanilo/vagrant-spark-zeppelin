@@ -1366,7 +1366,7 @@
     },
     {
       "text": "%md \n\n## V. Creation of models\n\nWe are now ready to try out some of the Binary Classification Algorithms available in the new ML Pipelines API.\n\nWe have the choice between:\n- [Binomial Logistic regression](http://spark.apache.org/docs/latest/ml-classification-regression.html#binomial-logistic-regression)\n- [Decision trees](http://spark.apache.org/docs/latest/ml-classification-regression.html#decision-trees)\n- [Random forest](http://spark.apache.org/docs/latest/ml-classification-regression.html#random-forests)\n\nThese are the general steps we will take to build our models:\n- Create the initial model on the training set\n- Use your model to make predictions on your testing set\n- Evaluate the quality of your predictions\n\nWe will be using the `BinaryClassificationEvaluator` to evaluate our models. The default metric used here is [areaUnderROC](https://en.wikipedia.org/wiki/Receiver_operating_characteristic#Area_under_the_curve).\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\n1. Fit your data on one of the three Machine Learning models on the training dataset. This should create an Estimator.\n2. Run the estimator on the testing dataset to create a prediction column\n3. Use `BinaryClassificationEvaluator.evaluate()` to evaluate your predictions.",
-      "dateUpdated": "Feb 7, 2017 12:55:44 PM",
+      "dateUpdated": "Feb 20, 2017 3:14:37 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1394,16 +1394,50 @@
         "msg": "\u003ch2\u003eV. Creation of models\u003c/h2\u003e\n\u003cp\u003eWe are now ready to try out some of the Binary Classification Algorithms available in the new ML Pipelines API.\u003c/p\u003e\n\u003cp\u003eWe have the choice between:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-classification-regression.html#binomial-logistic-regression\"\u003eBinomial Logistic regression\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-classification-regression.html#decision-trees\"\u003eDecision trees\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-classification-regression.html#random-forests\"\u003eRandom forest\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eThese are the general steps we will take to build our models:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eCreate the initial model on the training set\u003c/li\u003e\n\u003cli\u003eUse your model to make predictions on your testing set\u003c/li\u003e\n\u003cli\u003eEvaluate the quality of your predictions\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eWe will be using the \u003ccode\u003eBinaryClassificationEvaluator\u003c/code\u003e to evaluate our models. The default metric used here is \u003ca href\u003d\"https://en.wikipedia.org/wiki/Receiver_operating_characteristic#Area_under_the_curve\"\u003eareaUnderROC\u003c/a\u003e.\u003c/p\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003col\u003e\n\u003cli\u003eFit your data on one of the three Machine Learning models on the training dataset. This should create an Estimator.\u003c/li\u003e\n\u003cli\u003eRun the estimator on the testing dataset to create a prediction column\u003c/li\u003e\n\u003cli\u003eUse \u003ccode\u003eBinaryClassificationEvaluator.evaluate()\u003c/code\u003e to evaluate your predictions.\u003c/li\u003e\n\u003c/ol\u003e\n"
       },
       "dateCreated": "Feb 3, 2017 9:31:43 AM",
-      "dateStarted": "Feb 7, 2017 12:55:44 PM",
-      "dateFinished": "Feb 7, 2017 12:55:44 PM",
+      "dateStarted": "Feb 20, 2017 3:14:37 PM",
+      "dateFinished": "Feb 20, 2017 3:14:37 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nLogistic Regression\n-------------------\nAs other binomial regression models, logistic regression represents the effect of a vector of variables on another variable. As a predictive method it will tell us if a subject will fit into one category or another.",
+      "dateUpdated": "Feb 20, 2017 3:18:59 PM",
+      "config": {
+        "colWidth": 6.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487603667002_-1500555990",
+      "id": "20170220-151427_822875942",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003eLogistic Regression\u003c/h2\u003e\n\u003cp\u003eAs other binomial regression models, logistic regression represents the effect of a vector of variables on another variable. As a predictive method it will tell us if a subject will fit into one category or another.\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 20, 2017 3:14:27 PM",
+      "dateStarted": "Feb 20, 2017 3:18:59 PM",
+      "dateFinished": "Feb 20, 2017 3:18:59 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "import org.apache.spark.ml.classification.LogisticRegression\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\n\nval lr \u003d new LogisticRegression()\n    \n// Apply the model to our training dataset\nval lrModel \u003d lr.fit(training_data)\n\n// Compute predictions on the sample dataset\nval predictions \u003d lrModel.transform(test_data)\n\n// Select only the columns we want\nval selection \u003d predictions.select(\"label\", \"prediction\", \"probability\", \"age\", \"occupation\")\n\n// Output the result\nselection.show()\n\n// Model evaluation, the default metric used by BinaryClassificationEvaluator is areaUnderROC\n// Area under ROC is represented by a curved line which indicates the performance of a binary classifier\nval evaluator \u003d new BinaryClassificationEvaluator()\nevaluator.evaluate(predictions)\n",
-      "dateUpdated": "Feb 20, 2017 2:25:49 PM",
+      "dateUpdated": "Feb 20, 2017 3:14:44 PM",
       "config": {
-        "colWidth": 12.0,
+        "colWidth": 6.0,
         "graph": {
           "mode": "table",
           "height": 300.0,
@@ -1469,10 +1503,10 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\nExplanation\n-----------\nCross-validation is a model validation technique which in practice is used to estimate how accurate a predictive model will be\nConventional validation splits the dataset into two sets of 70% for training and 30% for testing purposes. Cross-validation shines when there isn’t enough data. In Spark’s documentation this step is also called \"tuning\" because we’re looking for the best parameters for our model.\nCross-validation will split the dataset into k pairs and will test the data on each of these.\nIt will look for the best elasticNetParam which corresponds to α and regParam which corresponds to λ.",
-      "dateUpdated": "Feb 20, 2017 1:54:31 PM",
+      "text": "%md\nCross Validation\n----------------\nCross-validation is a model validation technique which in practice is used to estimate how accurate a predictive model will be\nConventional validation splits the dataset into two sets of 70% for training and 30% for testing purposes. Cross-validation shines when there isn’t enough data. In Spark’s documentation this step is also called \"tuning\" because we’re looking for the best parameters for our model.\nCross-validation will split the dataset into k pairs and will test the data on each of these.\nIt will look for the best elasticNetParam which corresponds to α and regParam which corresponds to λ.",
+      "dateUpdated": "Feb 20, 2017 3:14:54 PM",
       "config": {
-        "colWidth": 12.0,
+        "colWidth": 6.0,
         "graph": {
           "mode": "table",
           "height": 300.0,
@@ -1494,19 +1528,19 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003ch2\u003eExplanation\u003c/h2\u003e\n\u003cp\u003eCross-validation is a model validation technique which in practice is used to estimate how accurate a predictive model will be\n\u003cbr  /\u003eConventional validation splits the dataset into two sets of 70% for training and 30% for testing purposes. Cross-validation shines when there isn’t enough data. In Spark’s documentation this step is also called \u0026ldquo;tuning\u0026rdquo; because we’re looking for the best parameters for our model.\n\u003cbr  /\u003eCross-validation will split the dataset into k pairs and will test the data on each of these.\n\u003cbr  /\u003eIt will look for the best elasticNetParam which corresponds to α and regParam which corresponds to λ.\u003c/p\u003e\n"
+        "msg": "\u003ch2\u003eCross Validation\u003c/h2\u003e\n\u003cp\u003eCross-validation is a model validation technique which in practice is used to estimate how accurate a predictive model will be\n\u003cbr  /\u003eConventional validation splits the dataset into two sets of 70% for training and 30% for testing purposes. Cross-validation shines when there isn’t enough data. In Spark’s documentation this step is also called \u0026ldquo;tuning\u0026rdquo; because we’re looking for the best parameters for our model.\n\u003cbr  /\u003eCross-validation will split the dataset into k pairs and will test the data on each of these.\n\u003cbr  /\u003eIt will look for the best elasticNetParam which corresponds to α and regParam which corresponds to λ.\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 20, 2017 1:20:15 PM",
-      "dateStarted": "Feb 20, 2017 1:54:32 PM",
-      "dateFinished": "Feb 20, 2017 1:54:32 PM",
+      "dateStarted": "Feb 20, 2017 3:14:13 PM",
+      "dateFinished": "Feb 20, 2017 3:14:13 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "import org.apache.spark.ml.tuning.{ParamGridBuilder, CrossValidator}\nimport org.apache.spark.ml.classification.LogisticRegressionModel\n\n// This will create the parameters grid. The cross validator will then have 27 parameters settings to choose from.\n// We provide 3 values for each parameter.\nval paramGrid \u003d new ParamGridBuilder()\n    .addGrid(lr.regParam, Array(0.01, 0.5, 2.0))\n    .addGrid(lr.elasticNetParam, Array(0.0, 0.5, 1.0))\n    .addGrid(lr.maxIter, Array(1, 5, 10))\n    .build()\n    \nval cross_validator \u003d new CrossValidator()\n    .setEstimator(lr) // This is the estimator that we will test\n    .setEstimatorParamMaps(paramGrid) // This is our parameters grid from which the cross validator will choose the params to test the estimator with.\n    .setEvaluator(evaluator) // Specifies the evaluator that will be used when testing\n    .setNumFolds(5) // Defines the number of random data pairs the cross validator will create in its process.\n    \n// Cross validation is used just like the estimator\n\n// Run the cross validations on our dataset\nval cross_validator_model \u003d cross_validator.fit(training_data)\nval cross_predictions \u003d cross_validator_model.transform(test_data)\n\nval bestlrmodel \u003d cross_validator_model.bestModel.asInstanceOf[LogisticRegressionModel]\n\n// Weights of our model, which are used to compensate the differences in sample and population\nbestlrmodel.coefficients\n\n// Intercept is the value at which the fitted line crosses the Y-axis\nbestlrmodel.intercept\n\n// Get the best stages\nval best_stages \u003d bestlrmodel.stages\n\n// Now print our prediction just as we did previously\nval cv_selection \u003d cross_predictions.select(\"label\", \"prediction\", \"probability\", \"age\", \"occupation\")\ncv_selection.show()\n\nevaluator.evaluate(cross_predictions)",
-      "dateUpdated": "Feb 20, 2017 2:37:56 PM",
+      "dateUpdated": "Feb 20, 2017 3:14:57 PM",
       "config": {
-        "colWidth": 12.0,
+        "colWidth": 6.0,
         "graph": {
           "mode": "table",
           "height": 300.0,
@@ -1538,7 +1572,7 @@
     },
     {
       "text": "%md\nOther models\n--------\nJust for fun let’s try the other models.\nOnce we know how to deal with one model, the process is the same for the rest.",
-      "dateUpdated": "Feb 20, 2017 2:58:39 PM",
+      "dateUpdated": "Feb 20, 2017 3:13:44 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1565,16 +1599,50 @@
         "msg": "\u003ch2\u003eOther models\u003c/h2\u003e\n\u003cp\u003eJust for fun let’s try the other models.\n\u003cbr  /\u003eOnce we know how to deal with one model, the process is the same for the rest.\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 20, 2017 2:38:34 PM",
-      "dateStarted": "Feb 20, 2017 2:58:39 PM",
-      "dateFinished": "Feb 20, 2017 2:58:39 PM",
+      "dateStarted": "Feb 20, 2017 3:13:44 PM",
+      "dateFinished": "Feb 20, 2017 3:13:44 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nDecision Tree\n-------------\nAnother very popular model, the decision tree is a tree structure where each branch will represent a test and each leaf an outcome.",
+      "dateUpdated": "Feb 20, 2017 3:23:31 PM",
+      "config": {
+        "colWidth": 6.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487603605681_-1327311716",
+      "id": "20170220-151325_631320873",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003eDecision Tree\u003c/h2\u003e\n\u003cp\u003eAnother very popular model, the decision tree is a tree structure where each branch will represent a test and each leaf an outcome.\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 20, 2017 3:13:25 PM",
+      "dateStarted": "Feb 20, 2017 3:23:31 PM",
+      "dateFinished": "Feb 20, 2017 3:23:31 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "import org.apache.spark.ml.classification.DecisionTreeClassifier\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\n\nval decision_tree \u003d new DecisionTreeClassifier()\nval decision_tree_model \u003d decision_tree.fit(training_data)\n\n// Number of nodes in our tree\ndecision_tree_model.numNodes\n\n// Depth of the tree\ndecision_tree_model.depth\n\n// Let’s try our model on our test dataset\nval tree_predictions \u003d decision_tree_model.transform(test_data)\n\n// Select the columns we want\nval tree_selection \u003d tree_predictions.select(\"label\", \"prediction\", \"probability\", \"age\", \"occupation\")\ntree_selection.show()\n\n// Let’s evaluate our model\nval evaluator \u003d new BinaryClassificationEvaluator()\nevaluator.evaluate(tree_predictions)",
-      "dateUpdated": "Feb 20, 2017 2:55:51 PM",
+      "dateUpdated": "Feb 20, 2017 3:13:52 PM",
       "config": {
-        "colWidth": 12.0,
+        "colWidth": 6.0,
         "graph": {
           "mode": "table",
           "height": 300.0,
@@ -1596,19 +1664,53 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nimport org.apache.spark.ml.classification.DecisionTreeClassifier\n\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\n\ndecision_tree: org.apache.spark.ml.classification.DecisionTreeClassifier \u003d dtc_1cd84a52a64e\n\ndecision_tree_model: org.apache.spark.ml.classification.DecisionTreeClassificationModel \u003d DecisionTreeClassificationModel (uid\u003ddtc_1cd84a52a64e) of depth 5 with 57 nodes\n\nres189: Int \u003d 57\n\nres190: Int \u003d 5\n\ntree_predictions: org.apache.spark.sql.DataFrame \u003d [age: double, workclass: string ... 34 more fields]\n\ntree_selection: org.apache.spark.sql.DataFrame \u003d [label: double, prediction: double ... 3 more fields]\n+-----+----------+--------------------+----+--------------+\n|label|prediction|         probability| age|    occupation|\n+-----+----------+--------------------+----+--------------+\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|           [1.0,0.0]|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|  Adm-clerical|\n|  0.0|       0.0|[0.99061913696060...|17.0| Other-service|\n|  0.0|       0.0|[0.99061913696060...|17.0|  Adm-clerical|\n+-----+----------+--------------------+----+--------------+\nonly showing top 20 rows\n\n\nevaluator: org.apache.spark.ml.evaluation.BinaryClassificationEvaluator \u003d binEval_c46481888f1c\n\nres192: Double \u003d 0.7619656736947901\n"
+        "msg": "\nimport org.apache.spark.ml.classification.DecisionTreeClassifier\n\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\n\ndecision_tree: org.apache.spark.ml.classification.DecisionTreeClassifier \u003d dtc_a372e20eb0f0\n\ndecision_tree_model: org.apache.spark.ml.classification.DecisionTreeClassificationModel \u003d DecisionTreeClassificationModel (uid\u003ddtc_a372e20eb0f0) of depth 5 with 57 nodes\n\nres199: Int \u003d 57\n\nres200: Int \u003d 5\n\ntree_predictions: org.apache.spark.sql.DataFrame \u003d [age: double, workclass: string ... 34 more fields]\n\ntree_selection: org.apache.spark.sql.DataFrame \u003d [label: double, prediction: double ... 3 more fields]\n+-----+----------+--------------------+----+--------------+\n|label|prediction|         probability| age|    occupation|\n+-----+----------+--------------------+----+--------------+\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|           [1.0,0.0]|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|  Adm-clerical|\n|  0.0|       0.0|[0.99061913696060...|17.0| Other-service|\n|  0.0|       0.0|[0.99061913696060...|17.0|  Adm-clerical|\n+-----+----------+--------------------+----+--------------+\nonly showing top 20 rows\n\n\nevaluator: org.apache.spark.ml.evaluation.BinaryClassificationEvaluator \u003d binEval_b0bf82e56039\n\nres202: Double \u003d 0.7619656736947901\n"
       },
       "dateCreated": "Feb 20, 2017 2:40:10 PM",
-      "dateStarted": "Feb 20, 2017 2:55:51 PM",
-      "dateFinished": "Feb 20, 2017 2:56:05 PM",
+      "dateStarted": "Feb 20, 2017 3:07:06 PM",
+      "dateFinished": "Feb 20, 2017 3:07:20 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "import org.apache.spark.ml.classification.DecisionTreeClassifier\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator",
-      "dateUpdated": "Feb 20, 2017 2:58:31 PM",
+      "text": "%md\nRandom Forest\n-----------\nRandom Forests is the same as the decision tree but as the name suggests it uses many trees to improve the accuracy of the model.",
+      "dateUpdated": "Feb 20, 2017 3:15:10 PM",
       "config": {
-        "colWidth": 12.0,
+        "colWidth": 6.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487603500009_1969647582",
+      "id": "20170220-151140_1958322258",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003eRandom Forest\u003c/h2\u003e\n\u003cp\u003eRandom Forests is the same as the decision tree but as the name suggests it uses many trees to improve the accuracy of the model.\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 20, 2017 3:11:40 PM",
+      "dateStarted": "Feb 20, 2017 3:15:10 PM",
+      "dateFinished": "Feb 20, 2017 3:15:10 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.ml.classification.RandomForestClassifier\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\n\n\nval random_forest \u003d new RandomForestClassifier()\nval random_forest_model \u003d random_forest.fit(training_data)\n\nval random_forest_predictions \u003d random_forest_model.transform(test_data)\n\nval random_forest_selection \u003d random_forest_predictions.select(\"label\", \"prediction\", \"probability\", \"age\", \"occupation\")\nrandom_forest_selection.show()\n\nval evaluator \u003d new BinaryClassificationEvaluator()\nevaluator.evaluate(random_forest_predictions)",
+      "dateUpdated": "Feb 20, 2017 3:13:14 PM",
+      "config": {
+        "colWidth": 6.0,
         "graph": {
           "mode": "table",
           "height": 300.0,
@@ -1630,11 +1732,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "root\n |-- age: double (nullable \u003d true)\n |-- workclass: string (nullable \u003d true)\n |-- fnlwgt: double (nullable \u003d true)\n |-- education: string (nullable \u003d true)\n |-- education_num: double (nullable \u003d true)\n |-- marital_status: string (nullable \u003d true)\n |-- occupation: string (nullable \u003d true)\n |-- relationship: string (nullable \u003d true)\n |-- race: string (nullable \u003d true)\n |-- sex: string (nullable \u003d true)\n |-- capital_gain: double (nullable \u003d true)\n |-- capital_loss: double (nullable \u003d true)\n |-- hours_per_week: double (nullable \u003d true)\n |-- native_country: string (nullable \u003d true)\n |-- income: string (nullable \u003d true)\n |-- workclassIndex: double (nullable \u003d true)\n |-- workclassClassVec: vector (nullable \u003d true)\n |-- educationIndex: double (nullable \u003d true)\n |-- educationClassVec: vector (nullable \u003d true)\n |-- marital_statusIndex: double (nullable \u003d true)\n |-- marital_statusClassVec: vector (nullable \u003d true)\n |-- occupationIndex: double (nullable \u003d true)\n |-- occupationClassVec: vector (nullable \u003d true)\n |-- relationshipIndex: double (nullable \u003d true)\n |-- relationshipClassVec: vector (nullable \u003d true)\n |-- raceIndex: double (nullable \u003d true)\n |-- raceClassVec: vector (nullable \u003d true)\n |-- sexIndex: double (nullable \u003d true)\n |-- sexClassVec: vector (nullable \u003d true)\n |-- native_countryIndex: double (nullable \u003d true)\n |-- native_countryClassVec: vector (nullable \u003d true)\n |-- label: double (nullable \u003d true)\n |-- features: vector (nullable \u003d true)\n |-- rawPrediction: vector (nullable \u003d true)\n |-- probability: vector (nullable \u003d true)\n |-- prediction: double (nullable \u003d true)\n\n"
+        "msg": "\nimport org.apache.spark.ml.classification.RandomForestClassifier\n\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\n\nrandom_forest: org.apache.spark.ml.classification.RandomForestClassifier \u003d rfc_6f74ea4e8c80\n\nrandom_forest_model: org.apache.spark.ml.classification.RandomForestClassificationModel \u003d RandomForestClassificationModel (uid\u003drfc_38e78505a0e7) with 20 trees\n\nrandom_forest_predictions: org.apache.spark.sql.DataFrame \u003d [age: double, workclass: string ... 34 more fields]\n\nrandom_forest_selection: org.apache.spark.sql.DataFrame \u003d [label: double, prediction: double ... 3 more fields]\n+-----+----------+--------------------+----+--------------+\n|label|prediction|         probability| age|    occupation|\n+-----+----------+--------------------+----+--------------+\n|  0.0|       0.0|[0.95096291517822...|17.0|             ?|\n|  0.0|       0.0|[0.96036200061963...|17.0|             ?|\n|  0.0|       0.0|[0.94986941245738...|17.0|             ?|\n|  0.0|       0.0|[0.90881308204173...|17.0|             ?|\n|  0.0|       0.0|[0.94442867759407...|17.0|             ?|\n|  0.0|       0.0|[0.95096291517822...|17.0|             ?|\n|  0.0|       0.0|[0.94986941245738...|17.0|             ?|\n|  0.0|       0.0|[0.94531508280055...|17.0|             ?|\n|  0.0|       0.0|[0.94961611383142...|17.0|             ?|\n|  0.0|       0.0|[0.96170880196643...|17.0|             ?|\n|  0.0|       0.0|[0.95258966784364...|17.0|             ?|\n|  0.0|       0.0|[0.94852261111058...|17.0|             ?|\n|  0.0|       0.0|[0.96086978667244...|17.0|             ?|\n|  0.0|       0.0|[0.95096291517822...|17.0|             ?|\n|  0.0|       0.0|[0.54757620139672...|17.0|             ?|\n|  0.0|       0.0|[0.96170880196643...|17.0|             ?|\n|  0.0|       0.0|[0.94986941245738...|17.0|             ?|\n|  0.0|       0.0|[0.95006472324499...|17.0|  Adm-clerical|\n|  0.0|       0.0|[0.95051481461733...|17.0| Other-service|\n|  0.0|       0.0|[0.95884943103656...|17.0|  Adm-clerical|\n+-----+----------+--------------------+----+--------------+\nonly showing top 20 rows\n\n\nevaluator: org.apache.spark.ml.evaluation.BinaryClassificationEvaluator \u003d binEval_dd8a48174338\n\nres208: Double \u003d 0.8925753320067861\n"
       },
       "dateCreated": "Feb 20, 2017 2:52:02 PM",
-      "dateStarted": "Feb 20, 2017 2:54:25 PM",
-      "dateFinished": "Feb 20, 2017 2:54:25 PM",
+      "dateStarted": "Feb 20, 2017 3:11:19 PM",
+      "dateFinished": "Feb 20, 2017 3:11:34 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
