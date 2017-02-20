@@ -1537,8 +1537,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\nOther models\n--------\nJust for fun let’s try the other models",
-      "dateUpdated": "Feb 20, 2017 2:40:04 PM",
+      "text": "%md\nOther models\n--------\nJust for fun let’s try the other models.\nOnce we know how to deal with one model, the process is the same for the rest.",
+      "dateUpdated": "Feb 20, 2017 2:58:39 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1562,17 +1562,17 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003ch2\u003eOther models\u003c/h2\u003e\n\u003cp\u003eJust for fun let’s try the other models\u003c/p\u003e\n"
+        "msg": "\u003ch2\u003eOther models\u003c/h2\u003e\n\u003cp\u003eJust for fun let’s try the other models.\n\u003cbr  /\u003eOnce we know how to deal with one model, the process is the same for the rest.\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 20, 2017 2:38:34 PM",
-      "dateStarted": "Feb 20, 2017 2:40:04 PM",
-      "dateFinished": "Feb 20, 2017 2:40:04 PM",
+      "dateStarted": "Feb 20, 2017 2:58:39 PM",
+      "dateFinished": "Feb 20, 2017 2:58:39 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "",
-      "dateUpdated": "Feb 20, 2017 2:40:20 PM",
+      "text": "import org.apache.spark.ml.classification.DecisionTreeClassifier\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\n\nval decision_tree \u003d new DecisionTreeClassifier()\nval decision_tree_model \u003d decision_tree.fit(training_data)\n\n// Number of nodes in our tree\ndecision_tree_model.numNodes\n\n// Depth of the tree\ndecision_tree_model.depth\n\n// Let’s try our model on our test dataset\nval tree_predictions \u003d decision_tree_model.transform(test_data)\n\n// Select the columns we want\nval tree_selection \u003d tree_predictions.select(\"label\", \"prediction\", \"probability\", \"age\", \"occupation\")\ntree_selection.show()\n\n// Let’s evaluate our model\nval evaluator \u003d new BinaryClassificationEvaluator()\nevaluator.evaluate(tree_predictions)",
+      "dateUpdated": "Feb 20, 2017 2:55:51 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1593,8 +1593,49 @@
       },
       "jobName": "paragraph_1487601610453_545733833",
       "id": "20170220-144010_1949433206",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nimport org.apache.spark.ml.classification.DecisionTreeClassifier\n\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\n\ndecision_tree: org.apache.spark.ml.classification.DecisionTreeClassifier \u003d dtc_1cd84a52a64e\n\ndecision_tree_model: org.apache.spark.ml.classification.DecisionTreeClassificationModel \u003d DecisionTreeClassificationModel (uid\u003ddtc_1cd84a52a64e) of depth 5 with 57 nodes\n\nres189: Int \u003d 57\n\nres190: Int \u003d 5\n\ntree_predictions: org.apache.spark.sql.DataFrame \u003d [age: double, workclass: string ... 34 more fields]\n\ntree_selection: org.apache.spark.sql.DataFrame \u003d [label: double, prediction: double ... 3 more fields]\n+-----+----------+--------------------+----+--------------+\n|label|prediction|         probability| age|    occupation|\n+-----+----------+--------------------+----+--------------+\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|           [1.0,0.0]|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|             ?|\n|  0.0|       0.0|[0.99061913696060...|17.0|  Adm-clerical|\n|  0.0|       0.0|[0.99061913696060...|17.0| Other-service|\n|  0.0|       0.0|[0.99061913696060...|17.0|  Adm-clerical|\n+-----+----------+--------------------+----+--------------+\nonly showing top 20 rows\n\n\nevaluator: org.apache.spark.ml.evaluation.BinaryClassificationEvaluator \u003d binEval_c46481888f1c\n\nres192: Double \u003d 0.7619656736947901\n"
+      },
       "dateCreated": "Feb 20, 2017 2:40:10 PM",
-      "status": "READY",
+      "dateStarted": "Feb 20, 2017 2:55:51 PM",
+      "dateFinished": "Feb 20, 2017 2:56:05 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.ml.classification.DecisionTreeClassifier\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator",
+      "dateUpdated": "Feb 20, 2017 2:58:31 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487602322842_-436067986",
+      "id": "20170220-145202_625532476",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "root\n |-- age: double (nullable \u003d true)\n |-- workclass: string (nullable \u003d true)\n |-- fnlwgt: double (nullable \u003d true)\n |-- education: string (nullable \u003d true)\n |-- education_num: double (nullable \u003d true)\n |-- marital_status: string (nullable \u003d true)\n |-- occupation: string (nullable \u003d true)\n |-- relationship: string (nullable \u003d true)\n |-- race: string (nullable \u003d true)\n |-- sex: string (nullable \u003d true)\n |-- capital_gain: double (nullable \u003d true)\n |-- capital_loss: double (nullable \u003d true)\n |-- hours_per_week: double (nullable \u003d true)\n |-- native_country: string (nullable \u003d true)\n |-- income: string (nullable \u003d true)\n |-- workclassIndex: double (nullable \u003d true)\n |-- workclassClassVec: vector (nullable \u003d true)\n |-- educationIndex: double (nullable \u003d true)\n |-- educationClassVec: vector (nullable \u003d true)\n |-- marital_statusIndex: double (nullable \u003d true)\n |-- marital_statusClassVec: vector (nullable \u003d true)\n |-- occupationIndex: double (nullable \u003d true)\n |-- occupationClassVec: vector (nullable \u003d true)\n |-- relationshipIndex: double (nullable \u003d true)\n |-- relationshipClassVec: vector (nullable \u003d true)\n |-- raceIndex: double (nullable \u003d true)\n |-- raceClassVec: vector (nullable \u003d true)\n |-- sexIndex: double (nullable \u003d true)\n |-- sexClassVec: vector (nullable \u003d true)\n |-- native_countryIndex: double (nullable \u003d true)\n |-- native_countryClassVec: vector (nullable \u003d true)\n |-- label: double (nullable \u003d true)\n |-- features: vector (nullable \u003d true)\n |-- rawPrediction: vector (nullable \u003d true)\n |-- probability: vector (nullable \u003d true)\n |-- prediction: double (nullable \u003d true)\n\n"
+      },
+      "dateCreated": "Feb 20, 2017 2:52:02 PM",
+      "dateStarted": "Feb 20, 2017 2:54:25 PM",
+      "dateFinished": "Feb 20, 2017 2:54:25 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
