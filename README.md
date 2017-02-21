@@ -100,7 +100,7 @@ $ git branch
 Add a message between the following lines:
 
 <hr>
-noureddine Boulanouar
+Boulanouar noureddine et Taleb Oussama 
 <hr>
 
 With `$ git status` you can check the status of your Git repository.
