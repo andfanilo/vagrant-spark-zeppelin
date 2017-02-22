@@ -1679,8 +1679,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\nOther models\n--------\nJust for fun let’s try the other models.\nOnce we know how to deal with one model, the process is the same for the rest.",
-      "dateUpdated": "Feb 22, 2017 10:15:57 AM",
+      "text": "%md\n\u003ch1 style\u003d\"color:green;\"\u003eOther models\u003c/h1\u003e\n------------------------------------------\nJust for fun let’s try the other models.\nOnce we know how to deal with one model, the process is exactly the same for the rest.",
+      "dateUpdated": "Feb 22, 2017 10:25:14 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1704,17 +1704,17 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003ch2\u003eOther models\u003c/h2\u003e\n\u003cp\u003eJust for fun let’s try the other models.\n\u003cbr  /\u003eOnce we know how to deal with one model, the process is the same for the rest.\u003c/p\u003e\n"
+        "msg": "\u003ch1 style\u003d\"color:green;\"\u003eOther models\u003c/h1\u003e\n\u003chr /\u003e\n\u003cp\u003eJust for fun let’s try the other models.\n\u003cbr  /\u003eOnce we know how to deal with one model, the process is exactly the same for the rest.\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 20, 2017 2:38:34 AM",
-      "dateStarted": "Feb 22, 2017 10:15:57 AM",
-      "dateFinished": "Feb 22, 2017 10:15:57 AM",
+      "dateStarted": "Feb 22, 2017 10:25:14 AM",
+      "dateFinished": "Feb 22, 2017 10:25:14 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\nDecision Tree\n-------------\nAnother very popular model, the decision tree is a tree structure where each branch will represent a test and each leaf an outcome.",
-      "dateUpdated": "Feb 22, 2017 10:15:57 AM",
+      "text": "%md\n\u003ch1 style\u003d\"color:green;\"\u003eDecision Tree\u003c/h1\u003e\n-------------\nAnother very popular model, the decision tree is a tree structure where each branch will represent a test and each leaf an outcome.\n\nBecause a picture is worth a thousand words this is what it looks like: \n\n![](https://www.tutorialspoint.com/data_mining/images/dm_decision_tree.jpg)",
+      "dateUpdated": "Feb 22, 2017 10:32:51 AM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1738,11 +1738,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003ch2\u003eDecision Tree\u003c/h2\u003e\n\u003cp\u003eAnother very popular model, the decision tree is a tree structure where each branch will represent a test and each leaf an outcome.\u003c/p\u003e\n"
+        "msg": "\u003ch1 style\u003d\"color:green;\"\u003eDecision Tree\u003c/h1\u003e\n\u003chr /\u003e\n\u003cp\u003eAnother very popular model, the decision tree is a tree structure where each branch will represent a test and each leaf an outcome.\u003c/p\u003e\n\u003cp\u003eBecause a picture is worth a thousand words this is what it looks like:\u003c/p\u003e\n\u003cp\u003e\u003cimg src\u003d\"https://www.tutorialspoint.com/data_mining/images/dm_decision_tree.jpg\" alt\u003d\"\" /\u003e\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 20, 2017 3:13:25 AM",
-      "dateStarted": "Feb 22, 2017 10:15:57 AM",
-      "dateFinished": "Feb 22, 2017 10:15:57 AM",
+      "dateStarted": "Feb 22, 2017 10:32:51 AM",
+      "dateFinished": "Feb 22, 2017 10:32:51 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1781,8 +1781,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\nRandom Forest\n-----------\nRandom Forests is the same as the decision tree but as the name suggests it uses many trees to improve the accuracy of the model.",
-      "dateUpdated": "Feb 22, 2017 10:15:58 AM",
+      "text": "%md\n\u003ch1 style\u003d\"color:green\"\u003eRandom Forest\u003c/h1\u003e\n------------------------------------------\nRandom Forests is the same principle as the decision tree but as the name suggests it uses many trees to improve the accuracy of the model.",
+      "dateUpdated": "Feb 22, 2017 10:33:50 AM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1806,17 +1806,17 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003ch2\u003eRandom Forest\u003c/h2\u003e\n\u003cp\u003eRandom Forests is the same as the decision tree but as the name suggests it uses many trees to improve the accuracy of the model.\u003c/p\u003e\n"
+        "msg": "\u003ch1 style\u003d\"color:green\"\u003eRandom Forest\u003c/h1\u003e\n\u003chr /\u003e\n\u003cp\u003eRandom Forests is the same principle as the decision tree but as the name suggests it uses many trees to improve the accuracy of the model.\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 20, 2017 3:11:40 AM",
-      "dateStarted": "Feb 22, 2017 10:15:58 AM",
-      "dateFinished": "Feb 22, 2017 10:15:58 AM",
+      "dateStarted": "Feb 22, 2017 10:33:50 AM",
+      "dateFinished": "Feb 22, 2017 10:33:50 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "import org.apache.spark.ml.classification.RandomForestClassifier\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\n\n\nval random_forest \u003d new RandomForestClassifier()\nval random_forest_model \u003d random_forest.fit(training_data)\n\nval random_forest_predictions \u003d random_forest_model.transform(test_data)\n\nval random_forest_selection \u003d random_forest_predictions.select(\"label\", \"prediction\", \"probability\", \"age\", \"occupation\")\nrandom_forest_selection.show()\n\nval evaluator \u003d new BinaryClassificationEvaluator()\nevaluator.evaluate(random_forest_predictions)",
-      "dateUpdated": "Feb 22, 2017 10:15:58 AM",
+      "text": "import org.apache.spark.ml.classification.RandomForestClassifier\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\n\n\nval random_forest \u003d new RandomForestClassifier()\n// Create the model on our data\nval random_forest_model \u003d random_forest.fit(training_data)\n\n// Test the model on our data\nval random_forest_predictions \u003d random_forest_model.transform(test_data)\n\nval random_forest_selection \u003d random_forest_predictions.select(\"label\", \"prediction\", \"probability\", \"age\", \"occupation\")\n// Show the results\nrandom_forest_selection.show()\n\n\n// Evaluate our model\nval evaluator \u003d new BinaryClassificationEvaluator()\nevaluator.evaluate(random_forest_predictions)",
+      "dateUpdated": "Feb 22, 2017 10:35:11 AM",
       "config": {
         "colWidth": 6.0,
         "graph": {
