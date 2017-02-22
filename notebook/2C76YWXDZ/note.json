@@ -71,8 +71,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\n\u003ch1 style\u003d\"color:green;\"\u003eForeword\u003c/h1\u003e\n--------------------------------------\nFor clarity purposes and to distinguish it with the rest of the notebook, my cells will have distinct colors.\n\u003cspan style\u003d\"color:red;\"\u003ePlease bear in mind that most of my work takes advantage of variables sharing across cells (especially the ones starting at **Part 4**), therefore you should consider running either :\n    \n1. The whole notebook\n2. If you decide to run this notebook cell by cell and one outputs an error, please run a few cells before the one that outputs an error.\n\nMost of the code is commented.\n\nDetailed Information on the dataset\n-----------------------------------\nThis is the information I’ve found so far about the dataset:\n\n- **age** – The age of the individual\n- **workclass** – The type of employer the individual has. Whether they are government, military, private, an d so on.\n- **fnlwgt** – The \\# of people the census takers believe that observation represents. We will be ignoring this variable\n- **education** – The highest level of education achieved for that individual\n- **education_num** – Highest level of education in numerical form\n- **marital_status** – Marital status of the individual\n- **occupation** – The occupation of the individual\n- **relationship** – A bit more difficult to explain. Contains family relationship values like husband, father, and so on, but only contains one per observation. I’m not sure what this is supposed to represent\n- **race** – descriptions of the individuals race. Black, White, Eskimo, and so on\n- **sex** – Biological Sex\n- **capital_gain** – Capital gains recorded\n- **capital_loss** – Capital Losses recorded\n- **hours-per-week** – Hours worked per week\n- **native-country** – Country of origin for person\n",
-      "dateUpdated": "Feb 22, 2017 8:22:53 AM",
+      "text": "%md\n\u003ch1 style\u003d\"color:green;\"\u003eForeword\u003c/h1\u003e\n--------------------------------------\nFor clarity purposes and to distinguish it with the rest of the notebook, my cells will have distinct colors.\n\u003cspan style\u003d\"color:red;\"\u003ePlease bear in mind that most of my work takes advantage of variables sharing across cells (especially the ones starting at **Part 4**), therefore you should consider running either :\n    \n1. The whole notebook\n2. If you decide to run this notebook cell by cell and one outputs an error, please run a few cells before the one that outputs an error.\n\nYou’ll find comments almost mext to every line of code that explains what it does. This notebook will probably be a reference for my future work thus I’ve added more information than needed to get back to it later.\nI have little but no background in the statistical field, therefore I probably explained or assumed things the wrong way because I researched the subjects that were abstract to me.\n\nDetailed Information on the dataset\n-----------------------------------\nThis is the information I’ve found so far about the dataset:\n\n- **age** – The age of the individual\n- **workclass** – The type of employer the individual has. Whether they are government, military, private, an d so on.\n- **fnlwgt** – The \\# of people the census takers believe that observation represents. We will be ignoring this variable\n- **education** – The highest level of education achieved for that individual\n- **education_num** – Highest level of education in numerical form\n- **marital_status** – Marital status of the individual\n- **occupation** – The occupation of the individual\n- **relationship** – A bit more difficult to explain. Contains family relationship values like husband, father, and so on, but only contains one per observation. I’m not sure what this is supposed to represent\n- **race** – descriptions of the individuals race. Black, White, Eskimo, and so on\n- **sex** – Biological Sex\n- **capital_gain** – Capital gains recorded\n- **capital_loss** – Capital Losses recorded\n- **hours-per-week** – Hours worked per week\n- **native-country** – Country of origin for person\n",
+      "dateUpdated": "Feb 22, 2017 9:52:20 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -99,11 +99,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003ch1 style\u003d\"color:green;\"\u003eForeword\u003c/h1\u003e\n\u003chr /\u003e\n\u003cp\u003eFor clarity purposes and to distinguish it with the rest of the notebook, my cells will have distinct colors.\n\u003cbr  /\u003e\u003cspan style\u003d\"color:red;\"\u003ePlease bear in mind that most of my work takes advantage of variables sharing across cells (especially the ones starting at \u003cstrong\u003ePart 4\u003c/strong\u003e), therefore you should consider running either :\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003eThe whole notebook\u003c/li\u003e\n\u003cli\u003eIf you decide to run this notebook cell by cell and one outputs an error, please run a few cells before the one that outputs an error.\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003eMost of the code is commented.\u003c/p\u003e\n\u003ch2\u003eDetailed Information on the dataset\u003c/h2\u003e\n\u003cp\u003eThis is the information I’ve found so far about the dataset:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eage\u003c/strong\u003e – The age of the individual\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eworkclass\u003c/strong\u003e – The type of employer the individual has. Whether they are government, military, private, an d so on.\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003efnlwgt\u003c/strong\u003e – The # of people the census takers believe that observation represents. We will be ignoring this variable\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eeducation\u003c/strong\u003e – The highest level of education achieved for that individual\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eeducation_num\u003c/strong\u003e – Highest level of education in numerical form\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003emarital_status\u003c/strong\u003e – Marital status of the individual\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eoccupation\u003c/strong\u003e – The occupation of the individual\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003erelationship\u003c/strong\u003e – A bit more difficult to explain. Contains family relationship values like husband, father, and so on, but only contains one per observation. I’m not sure what this is supposed to represent\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003erace\u003c/strong\u003e – descriptions of the individuals race. Black, White, Eskimo, and so on\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003esex\u003c/strong\u003e – Biological Sex\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003ecapital_gain\u003c/strong\u003e – Capital gains recorded\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003ecapital_loss\u003c/strong\u003e – Capital Losses recorded\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003ehours-per-week\u003c/strong\u003e – Hours worked per week\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003enative-country\u003c/strong\u003e – Country of origin for person\u003c/li\u003e\n\u003c/ul\u003e\n"
+        "msg": "\u003ch1 style\u003d\"color:green;\"\u003eForeword\u003c/h1\u003e\n\u003chr /\u003e\n\u003cp\u003eFor clarity purposes and to distinguish it with the rest of the notebook, my cells will have distinct colors.\n\u003cbr  /\u003e\u003cspan style\u003d\"color:red;\"\u003ePlease bear in mind that most of my work takes advantage of variables sharing across cells (especially the ones starting at \u003cstrong\u003ePart 4\u003c/strong\u003e), therefore you should consider running either :\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003eThe whole notebook\u003c/li\u003e\n\u003cli\u003eIf you decide to run this notebook cell by cell and one outputs an error, please run a few cells before the one that outputs an error.\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003eYou’ll find comments almost mext to every line of code that explains what it does. This notebook will probably be a reference for my future work thus I’ve added more information than needed to get back to it later.\n\u003cbr  /\u003eI have little but no background in the statistical field, therefore I probably explained or assumed things the wrong way because I researched the subjects that were abstract to me.\u003c/p\u003e\n\u003ch2\u003eDetailed Information on the dataset\u003c/h2\u003e\n\u003cp\u003eThis is the information I’ve found so far about the dataset:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eage\u003c/strong\u003e – The age of the individual\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eworkclass\u003c/strong\u003e – The type of employer the individual has. Whether they are government, military, private, an d so on.\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003efnlwgt\u003c/strong\u003e – The # of people the census takers believe that observation represents. We will be ignoring this variable\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eeducation\u003c/strong\u003e – The highest level of education achieved for that individual\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eeducation_num\u003c/strong\u003e – Highest level of education in numerical form\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003emarital_status\u003c/strong\u003e – Marital status of the individual\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eoccupation\u003c/strong\u003e – The occupation of the individual\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003erelationship\u003c/strong\u003e – A bit more difficult to explain. Contains family relationship values like husband, father, and so on, but only contains one per observation. I’m not sure what this is supposed to represent\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003erace\u003c/strong\u003e – descriptions of the individuals race. Black, White, Eskimo, and so on\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003esex\u003c/strong\u003e – Biological Sex\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003ecapital_gain\u003c/strong\u003e – Capital gains recorded\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003ecapital_loss\u003c/strong\u003e – Capital Losses recorded\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003ehours-per-week\u003c/strong\u003e – Hours worked per week\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003enative-country\u003c/strong\u003e – Country of origin for person\u003c/li\u003e\n\u003c/ul\u003e\n"
       },
       "dateCreated": "Feb 22, 2017 7:56:12 AM",
-      "dateStarted": "Feb 22, 2017 8:22:53 AM",
-      "dateFinished": "Feb 22, 2017 8:22:53 AM",
+      "dateStarted": "Feb 22, 2017 9:52:21 AM",
+      "dateFinished": "Feb 22, 2017 9:52:21 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -460,8 +460,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
+      "title": "Shell output (counting the number of lines of our dataset)",
       "text": "%sh\nls /opt/dataset # lists the directory structure\nwc -l /opt/dataset/adult.data.csv # count lines of a file",
-      "dateUpdated": "Feb 22, 2017 8:28:37 AM",
+      "dateUpdated": "Feb 22, 2017 9:36:52 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -475,7 +476,8 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/sh",
-        "editorHide": false
+        "editorHide": false,
+        "title": true
       },
       "settings": {
         "params": {},
@@ -1178,7 +1180,7 @@
     },
     {
       "text": "%md\n\u003ch1 style\u003d\"color:green;\"\u003eExplanation\u003c/h1\u003e\n-----------------------------------------\n## How does this work ?\n### Doing statistics on numeric data is rather easy, but how do you apply statistics on categories ?\nAt first we could assign an incremental value to each category, but this works best with ordinal values or rather values that we can order per importance.\n\nThis is what the **StringIndexer** does. It indexes or assign each value to a number.\n\n### But what about nominal variables ?\nThere is no significance/importance relationship between the different members of these values i.e. we can’t say that **Husband** as more importance than **Wife**. Therefore, assigning a sequence of values to nominal variables would be wrong (e.g.: Husband 1, Wife 2 etc…).\n\nInstead we use [OneHotEncoding](http://spark.apache.org/docs/latest/ml-features.html#onehotencoder)\n\n### What is One Hot Encoding ?\nSimply put [OneHotEncoding](http://spark.apache.org/docs/latest/ml-features.html#onehotencoder) counts the number of different values and turns these to binary vectors.\n\nIt turns this:\n\n![categories](https://qph.ec.quoracdn.net/main-qimg-715744b45247794c88f6b68beb744ad4-p)\n\ninto this:\n\n![ohcategories](https://qph.ec.quoracdn.net/main-qimg-bea46ccd4bdc05c5feaedc3e341ed426-p)\n\n\u003cspan style\u003d\"color:red;\"\u003eFor simplicity sake, **all the categorical columns** are one hot encoded.\u003c/span\u003e\n\nThe **Stage** as the name implies is a serie of steps that will be applied in order by the pipeline (which acts like a queue or more precisely [FIFO](https://en.wikipedia.org/wiki/FIFO_(computing_and_electronics)) queue).\n\nSo the process of the previous cell is the following one :\n\n- Data -\u003e StringIndexer -\u003e OneHotEncoder -\u003e Transform -\u003e Show",
-      "dateUpdated": "Feb 22, 2017 9:32:30 AM",
+      "dateUpdated": "Feb 22, 2017 9:33:11 AM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1191,7 +1193,8 @@
           "scatter": {}
         },
         "enabled": true,
-        "editorMode": "ace/mode/markdown"
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
       },
       "settings": {
         "params": {},
@@ -1246,10 +1249,10 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer, VectorAssembler}\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\nval categoricalCols \u003d Seq(\"workclass\", \"education\", \"marital_status\", \"occupation\", \"relationship\", \"race\", \"sex\", \"native_country\")\nval numericCols \u003d Seq(\"age\", \"fnlwgt\", \"education_num\", \"capital_gain\", \"capital_loss\", \"hours_per_week\")\n\n// stage for columns\nval string_indexers \u003d categoricalCols.map(item \u003d\u003e new StringIndexer().setInputCol(item).setOutputCol(item + \"Index\"))\nval ohencoders \u003d string_indexers.map(string_indexer \u003d\u003e new OneHotEncoder().setInputCol(string_indexer.getOutputCol).setOutputCol(string_indexer.getInputCol + \"ClassVec\"))\n\n// Zip values together\nval siohstages \u003d string_indexers zip ohencoders\n\n// Recreate sequences and flatten the result\nval flattened_siohstages \u003d siohstages.map{case (item1, item2) \u003d\u003e Seq(item1, item2)}.flatten\n\n// stage for label\nval label_stringIdx \u003d new StringIndexer()\n    .setInputCol(\"income\")\n    .setOutputCol(\"label\")\n    \n// Concatenate the vectors and cast as array to feed the VectorAssembler which will return the \"features\" column.\nval assemblerStage \u003d new VectorAssembler().setInputCols((numericCols ++ categoricalCols.map(w \u003d\u003e w + \"ClassVec\")).toArray).setOutputCol(\"features\")\n\n// Add the 3 stages together before we send it to the pipeline\nval stages \u003d flattened_siohstages ++ Seq(label_stringIdx) ++ Seq(assemblerStage)\n\nval pipeline \u003d new Pipeline().setStages(stages.toArray)\n\n// Apply the pipeline operations to our dataset\nval pipelineModel \u003d pipeline.fit(dataset)\n\n// Show the results\npipelineModel.transform(dataset).show()\n",
-      "dateUpdated": "Feb 21, 2017 1:52:42 PM",
+      "text": "\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer, VectorAssembler}\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\nval categoricalCols \u003d Seq(\"workclass\", \"education\", \"marital_status\", \"occupation\", \"relationship\", \"race\", \"sex\", \"native_country\")\nval numericCols \u003d Seq(\"age\", \"fnlwgt\", \"education_num\", \"capital_gain\", \"capital_loss\", \"hours_per_week\")\n\n// stage for columns\nval string_indexers \u003d categoricalCols.map(item \u003d\u003e new StringIndexer().setInputCol(item).setOutputCol(item + \"Index\"))\nval ohencoders \u003d string_indexers.map(string_indexer \u003d\u003e new OneHotEncoder().setInputCol(string_indexer.getOutputCol).setOutputCol(string_indexer.getInputCol + \"ClassVec\"))\n\n// Zip values together (it create pairs like this : (string_index_member, one_hot_encoded_member))\nval siohstages \u003d string_indexers zip ohencoders\n\n// Recreate sequences and flatten the result\nval flattened_siohstages \u003d siohstages.map{case (item1, item2) \u003d\u003e Seq(item1, item2)}.flatten\n\n// stage for label\nval label_stringIdx \u003d new StringIndexer()\n    .setInputCol(\"income\")\n    .setOutputCol(\"label\")\n    \n// Concatenate the vectors and cast as array to feed the VectorAssembler which will return the \"features\" column.\nval assemblerStage \u003d new VectorAssembler().setInputCols((numericCols ++ categoricalCols.map(w \u003d\u003e w + \"ClassVec\")).toArray).setOutputCol(\"features\")\n\n// Add the 3 stages together before we send it to the pipeline\nval stages \u003d flattened_siohstages ++ Seq(label_stringIdx) ++ Seq(assemblerStage)\n\nval pipeline \u003d new Pipeline().setStages(stages.toArray)\n\n// Apply the pipeline operations to our dataset\nval pipelineModel \u003d pipeline.fit(dataset)\n\n// Show the results\npipelineModel.transform(dataset).show()\n",
+      "dateUpdated": "Feb 22, 2017 9:42:22 AM",
       "config": {
-        "colWidth": 12.0,
+        "colWidth": 6.0,
         "graph": {
           "mode": "table",
           "height": 300.0,
@@ -1276,6 +1279,40 @@
       "dateCreated": "Feb 8, 2017 8:47:52 AM",
       "dateStarted": "Feb 21, 2017 1:53:32 PM",
       "dateFinished": "Feb 21, 2017 1:53:50 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\u003ch1 style\u003d\"color:green;\"\u003eExplanation\u003c/h1\u003e\n-----------------------------------------\nHere we combine our numeric columns with our one hot encoded categorical columns into a single column named **\"features\"**.\nLooking at the example cell (the next one) and our cell we got the same output.",
+      "dateUpdated": "Feb 22, 2017 9:43:12 AM",
+      "config": {
+        "colWidth": 6.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487756348658_2030660307",
+      "id": "20170222-093908_754894306",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch1 style\u003d\"color:green;\"\u003eExplanation\u003c/h1\u003e\n\u003chr /\u003e\n\u003cp\u003eHere we combine our numeric columns with our one hot encoded categorical columns into a single column named \u003cstrong\u003e\u0026ldquo;features\u0026rdquo;\u003c/strong\u003e.\n\u003cbr  /\u003eLooking at the example cell (the next one) and our cell we got the same output.\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 22, 2017 9:39:08 AM",
+      "dateStarted": "Feb 22, 2017 9:43:12 AM",
+      "dateFinished": "Feb 22, 2017 9:43:12 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1315,10 +1352,45 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "val transformedDataset \u003d pipelineModel.transform(dataset)\n// Apply weights to split the dataset (70% and 30%)\nval split \u003d transformedDataset.randomSplit(Array(0.7, 0.3))\nval training_data \u003d split(0)\nval test_data \u003d split(1)\nval total_lines \u003d transformedDataset.count()\n// Print results to make sure it worked\ntraining_data.count()\ntest_data.count()",
-      "dateUpdated": "Feb 21, 2017 1:52:43 PM",
+      "text": "%md\n\u003ch1 style\u003d\"color:green;\"\u003eWhy do we split the dataset ?\u003c/h1\u003e\n-----------------------------------------------------------\nMachine learning algorithms are validated using a simple process. The data is divided into two groups\n\n1. Training (70% of the original dataset)\n2. Test (30% of the original dataset)\n\nAnd then a prediction model is \n1. **built** on the **training subset** \n2. **tested and validated** on the **test subset**.",
+      "dateUpdated": "Feb 22, 2017 9:57:32 AM",
       "config": {
-        "colWidth": 12.0,
+        "colWidth": 6.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487756626228_-1587920067",
+      "id": "20170222-094346_127558432",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch1 style\u003d\"color:green;\"\u003eWhy do we split the dataset ?\u003c/h1\u003e\n\u003chr /\u003e\n\u003cp\u003eMachine learning algorithms are validated using a simple process. The data is divided into two groups\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003eTraining (70% of the original dataset)\u003c/li\u003e\n\u003cli\u003eTest (30% of the original dataset)\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003eAnd then a prediction model is\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\u003cstrong\u003ebuilt\u003c/strong\u003e on the \u003cstrong\u003etraining subset\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003etested and validated\u003c/strong\u003e on the \u003cstrong\u003etest subset\u003c/strong\u003e.\u003c/li\u003e\n\u003c/ol\u003e\n"
+      },
+      "dateCreated": "Feb 22, 2017 9:43:46 AM",
+      "dateStarted": "Feb 22, 2017 9:57:31 AM",
+      "dateFinished": "Feb 22, 2017 9:57:31 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// Store our transformed version of the dataset with additional index and vector columns\nval transformedDataset \u003d pipelineModel.transform(dataset) \n// Apply weights to split the dataset (70% and 30%)\nval split \u003d transformedDataset.randomSplit(Array(0.7, 0.3))\nval training_data \u003d split(0) // Get the first element i.e. 70%\nval test_data \u003d split(1) // Get the second one i.e. 30%\nval total_lines \u003d transformedDataset.count()\n// Print results to make sure it worked\ntraining_data.count()\ntest_data.count()",
+      "dateUpdated": "Feb 22, 2017 9:58:55 AM",
+      "config": {
+        "colWidth": 6.0,
         "graph": {
           "mode": "table",
           "height": 300.0,
@@ -1341,17 +1413,17 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ntransformedDataset: org.apache.spark.sql.DataFrame \u003d [age: double, workclass: string ... 31 more fields]\n\nsplit: Array[org.apache.spark.sql.Dataset[org.apache.spark.sql.Row]] \u003d Array([age: double, workclass: string ... 31 more fields], [age: double, workclass: string ... 31 more fields])\n\ntraining_data: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [age: double, workclass: string ... 31 more fields]\n\ntest_data: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [age: double, workclass: string ... 31 more fields]\n\ntotal_lines: Long \u003d 32561\n\nres13: Long \u003d 22684\n\nres14: Long \u003d 9877\n"
+        "msg": "\ntransformedDataset: org.apache.spark.sql.DataFrame \u003d [age: double, workclass: string ... 30 more fields]\n\nsplit: Array[org.apache.spark.sql.Dataset[org.apache.spark.sql.Row]] \u003d Array([age: double, workclass: string ... 30 more fields], [age: double, workclass: string ... 30 more fields])\n\ntraining_data: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [age: double, workclass: string ... 30 more fields]\n\ntest_data: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [age: double, workclass: string ... 30 more fields]\n\ntotal_lines: Long \u003d 32561\n\nres302: Long \u003d 22814\n\nres303: Long \u003d 9747\n"
       },
       "dateCreated": "Feb 8, 2017 8:48:54 AM",
-      "dateStarted": "Feb 21, 2017 1:53:42 PM",
-      "dateFinished": "Feb 21, 2017 1:53:58 PM",
+      "dateStarted": "Feb 22, 2017 9:58:55 AM",
+      "dateFinished": "Feb 22, 2017 9:59:00 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\nExplanation\n-----------\nBy executing the previous cell multiple times we can observe that the number of lines returned by randomSplit isn’t exactly the same number each time, so we can assume that this is the way the split works.",
-      "dateUpdated": "Feb 21, 2017 1:52:43 PM",
+      "text": "%md\n\u003ch1 style\u003d\"color:green;\"\u003eExplanation\u003c/h1\u003e\n-----------------------------------------\nBy executing the previous scala cell multiple times we can observe that the number of lines returned by randomSplit isn’t exactly the same number each time, so we can assume that this is the way the split function behaves.",
+      "dateUpdated": "Feb 22, 2017 9:59:06 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1376,11 +1448,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003ch2\u003eExplanation\u003c/h2\u003e\n\u003cp\u003eBy executing the previous cell multiple times we can observe that the number of lines returned by randomSplit isn’t exactly the same number each time, so we can assume that this is the way the split works.\u003c/p\u003e\n"
+        "msg": "\u003ch1 style\u003d\"color:green;\"\u003eExplanation\u003c/h1\u003e\n\u003chr /\u003e\n\u003cp\u003eBy executing the previous scala cell multiple times we can observe that the number of lines returned by randomSplit isn’t exactly the same number each time, so we can assume that this is the way the split function behaves.\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 20, 2017 10:49:49 AM",
-      "dateStarted": "Feb 21, 2017 1:52:43 PM",
-      "dateFinished": "Feb 21, 2017 1:52:43 PM",
+      "dateStarted": "Feb 22, 2017 9:55:49 AM",
+      "dateFinished": "Feb 22, 2017 9:55:49 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1420,8 +1492,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\nLogistic Regression\n-------------------\nAs other binomial regression models, logistic regression represents the effect of a vector of variables on another variable. As a predictive method it will tell us if a subject will fit into one category or another.",
-      "dateUpdated": "Feb 21, 2017 1:52:44 PM",
+      "text": "%md\n\u003ch1 style\u003d\"color:green\"\u003eLogistic Regression\u003c/h1\u003e\n------------------------------------------------\nAs other binomial regression models, logistic regression represents the effect of a vector of variables on another variable. As a predictive method it will tell us if a subject will fit into one category or another.",
+      "dateUpdated": "Feb 22, 2017 9:59:30 AM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1445,11 +1517,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003ch2\u003eLogistic Regression\u003c/h2\u003e\n\u003cp\u003eAs other binomial regression models, logistic regression represents the effect of a vector of variables on another variable. As a predictive method it will tell us if a subject will fit into one category or another.\u003c/p\u003e\n"
+        "msg": "\u003ch1 style\u003d\"color:green\"\u003eLogistic Regression\u003c/h1\u003e\n\u003chr /\u003e\n\u003cp\u003eAs other binomial regression models, logistic regression represents the effect of a vector of variables on another variable. As a predictive method it will tell us if a subject will fit into one category or another.\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 20, 2017 3:14:27 AM",
-      "dateStarted": "Feb 21, 2017 1:52:44 PM",
-      "dateFinished": "Feb 21, 2017 1:52:44 PM",
+      "dateStarted": "Feb 22, 2017 9:59:30 AM",
+      "dateFinished": "Feb 22, 2017 9:59:30 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
