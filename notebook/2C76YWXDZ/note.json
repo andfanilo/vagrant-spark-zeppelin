@@ -1884,8 +1884,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\nSome details to expose first\n-----------------------------\nI really struggled with this part, and finally found why. Since Spark 2.0 and according to the following link : http://spark.apache.org/docs/latest/ml-guide.html transformers no longer generate o.a.s.mllib.linalg.VectorUDT but o.a.s.ml.linalg.VectorUDT and are mapped locally to subclasses of o.a.s.ml.linalg.Vector. These aren’t compatible with the MLLib API which seems to be moving towards deprecation in Spark 2.0.\nThe above code is a good start but will lead to the following error when using colStats() or even collect():\n\n*Task 0 in stage 18083.0 failed 1 times, most recent failure: Lost task 0.0 in stage 18083.0 (TID 24054, localhost): java.lang.ClassCastException: org.apache.spark.ml.linalg.SparseVector cannot be cast to org.apache.spark.mllib.linalg.Vector*",
-      "dateUpdated": "Feb 22, 2017 10:15:58 AM",
+      "text": "%md\n\u003ch1 style\u003d\"color:green;\"\u003eSome details to expose first\u003c/h1\u003e\n----------------------------------------------------------\nI really struggled with this part, and finally found why. Since Spark 2.0 and according to the following link : [Changelog](http://spark.apache.org/docs/latest/ml-guide.html).\n**Transformers** no longer generates \n    org.apache.spark.mllib.linalg.VectorUDT\nbut \n    org.apache.spark.ml.linalg.VectorUDT \nand are mapped locally to subclasses of \n    org.apache.spark.ml.linalg.Vector\nThese aren’t compatible with the MLLib API which seems to be moving towards deprecation in Spark 2.0.\nThe above code is a good start but will lead to the following error when using colStats() or even collect():\n\n    *Task 0 in stage 18083.0 failed 1 times, most recent failure: Lost task 0.0 in stage 18083.0 (TID 24054, localhost): java.lang.ClassCastException: org.apache.spark.ml.linalg.SparseVector cannot be cast to org.apache.spark.mllib.linalg.Vector*",
+      "dateUpdated": "Feb 22, 2017 10:40:45 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1909,11 +1909,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003ch2\u003eSome details to expose first\u003c/h2\u003e\n\u003cp\u003eI really struggled with this part, and finally found why. Since Spark 2.0 and according to the following link : http://spark.apache.org/docs/latest/ml-guide.html transformers no longer generate o.a.s.mllib.linalg.VectorUDT but o.a.s.ml.linalg.VectorUDT and are mapped locally to subclasses of o.a.s.ml.linalg.Vector. These aren’t compatible with the MLLib API which seems to be moving towards deprecation in Spark 2.0.\n\u003cbr  /\u003eThe above code is a good start but will lead to the following error when using colStats() or even collect():\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eTask 0 in stage 18083.0 failed 1 times, most recent failure: Lost task 0.0 in stage 18083.0 (TID 24054, localhost): java.lang.ClassCastException: org.apache.spark.ml.linalg.SparseVector cannot be cast to org.apache.spark.mllib.linalg.Vector\u003c/em\u003e\u003c/p\u003e\n"
+        "msg": "\u003ch1 style\u003d\"color:green;\"\u003eSome details to expose first\u003c/h1\u003e\n\u003chr /\u003e\n\u003cp\u003eI really struggled with this part, and finally found why. Since Spark 2.0 and according to the following link : \u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-guide.html\"\u003eChangelog\u003c/a\u003e.\n\u003cbr  /\u003e\u003cstrong\u003eTransformers\u003c/strong\u003e no longer generates\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eorg.apache.spark.mllib.linalg.VectorUDT\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003ebut\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eorg.apache.spark.ml.linalg.VectorUDT \n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eand are mapped locally to subclasses of\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eorg.apache.spark.ml.linalg.Vector\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eThese aren’t compatible with the MLLib API which seems to be moving towards deprecation in Spark 2.0.\n\u003cbr  /\u003eThe above code is a good start but will lead to the following error when using colStats() or even collect():\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e*Task 0 in stage 18083.0 failed 1 times, most recent failure: Lost task 0.0 in stage 18083.0 (TID 24054, localhost): java.lang.ClassCastException: org.apache.spark.ml.linalg.SparseVector cannot be cast to org.apache.spark.mllib.linalg.Vector*\n\u003c/code\u003e\u003c/pre\u003e\n"
       },
       "dateCreated": "Feb 21, 2017 8:31:32 AM",
-      "dateStarted": "Feb 22, 2017 10:15:59 AM",
-      "dateFinished": "Feb 22, 2017 10:15:59 AM",
+      "dateStarted": "Feb 22, 2017 10:40:46 AM",
+      "dateFinished": "Feb 22, 2017 10:40:46 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
