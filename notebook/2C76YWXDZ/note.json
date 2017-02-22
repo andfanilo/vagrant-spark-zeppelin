@@ -2,7 +2,7 @@
   "paragraphs": [
     {
       "text": "%md\n\n# Binary Classification Algorithms with Pipelines API\n\nName(s): MARTINS Jean-Marc\nClass: BIBD G2\n\n\u003chr\u003e\n\nIn this notebook, we will test out the Binary Classification algorithms available in the ML Pipelines API using the Adult dataset. The Pipelines API provides higher-level API built on top of DataFrames for constructing ML pipelines. You can read more about the ML Pipelines API in the [programming guide](http://spark.apache.org/docs/2.0.1/ml-guide.html).\n\n**Binary Classification** is the task of predicting a binary 0 or 1 label.  E.g., is an email spam or not spam?  Should I show this ad to this user or not?  Will it rain tomorrow or not?  This notebook demonstrates several algorithms for making these types of predictions.\n\n\u003chr\u003e\n\nThis notebook will act as your written assignment. As such, it should contain your code and all necessary explanations, like why did you use that or why do you think this happens. When I read it at the end, I should understand all of your reasoning.\n\nDon\u0027t forget to __frequently__ commit your code and push it back to Github. A good advice would be that anytime your answer a question with code and explanation, you should commit a message referencing the question and push it to Github. By versioning frequently, you keep a good history of your work and can eventually return back. At the end of the assignment, you will notify me of your work via a pull request.\n\nYour mark will be based on:\n- your commit activity\n- completing the full analysis of the dataset, from describing it to predicting the income value and evaluating that\n\nThe questions I have put serve as a guideline, but you are totally free to change the text and put your own descriptions (which is absolutely appreciated because it shows you have fully comprehended the problem)\n\n\u003chr\u003e\n\n####Table of Contents\n\n* Dataset Review\n* Load Data\n* Descriptive analysis\n* Data Preprocessing\n* Creation of models\n* Conclusion",
-      "dateUpdated": "Feb 22, 2017 10:15:48 AM",
+      "dateUpdated": "Feb 22, 2017 10:53:45 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1918,8 +1918,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "\nimport org.apache.spark.mllib.{linalg \u003d\u003e mllib}\nimport org.apache.spark.ml.{linalg \u003d\u003e ml}\nimport org.apache.spark.mllib.stat.{MultivariateStatisticalSummary, Statistics}\n\n// Turn each row into a vector so we can apply stats to it\nval observations \u003d transformedDataset\n    .select(\"features\")\n    .rdd.map{row \u003d\u003e mllib.Vectors.fromML(row.getAs[ml.Vector](0))} // Add conversion from the rdd type to the spark one see above cell for more information on this.\nval summary: MultivariateStatisticalSummary \u003d Statistics.colStats(observations)\n\n// Basic stats\nprintln(summary.mean) // dense vector containing the mean value for each column\nprintln(summary.variance) // column-wise variance\nprintln(summary.numNonzeros) // number of nonzeros in each column\n",
-      "dateUpdated": "Feb 22, 2017 10:15:59 AM",
+      "title": "1. Basic statistics",
+      "text": "\nimport org.apache.spark.mllib.{linalg \u003d\u003e mllib}\nimport org.apache.spark.ml.{linalg \u003d\u003e ml}\nimport org.apache.spark.mllib.stat.{MultivariateStatisticalSummary, Statistics}\n\n// Turn each row into a vector so we can apply stats to it\nval observations \u003d transformedDataset\n    .select(\"features\")\n    .rdd.map{row \u003d\u003e mllib.Vectors.fromML(row.getAs[ml.Vector](0))} // Add conversion from the rdd type to the spark one see above cell for more information on this.\nval summary: MultivariateStatisticalSummary \u003d Statistics.colStats(observations) // Compute simple statistics on our observations\n\n// Basic stats\nprintln(\"MEAN\")\nprintln(summary.mean) // dense vector containing the mean value for each column\nprintln(\"VARIANCE\")\nprintln(summary.variance) // column-wise variance\nprintln(\"NON ZEROS\")\nprintln(summary.numNonzeros) // number of nonzeros in each column\n",
+      "dateUpdated": "Feb 22, 2017 10:46:13 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1932,7 +1933,8 @@
           "scatter": {}
         },
         "enabled": true,
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/scala",
+        "title": true
       },
       "settings": {
         "params": {},
@@ -1943,17 +1945,17 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nimport org.apache.spark.mllib.{linalg\u003d\u003emllib}\n\nimport org.apache.spark.ml.{linalg\u003d\u003eml}\n\nimport org.apache.spark.mllib.stat.{MultivariateStatisticalSummary, Statistics}\n\nobservations: org.apache.spark.rdd.RDD[org.apache.spark.mllib.linalg.Vector] \u003d MapPartitionsRDD[10151] at map at \u003cconsole\u003e:308\n\nsummary: org.apache.spark.mllib.stat.MultivariateStatisticalSummary \u003d org.apache.spark.mllib.stat.MultivariateOnlineSummarizer@11bd2d87\n[38.581646755321145,189778.36651208595,10.080679340315212,1077.648843708733,87.30382973495891,40.43745585209302,0.6970301894904948,0.0780381437916526,0.06427935259973588,0.05638647461687295,0.039863640551580114,0.034274131629863945,0.029483123982678664,4.2996222474739717E-4,0.32250238014802984,0.22391818433094807,0.16446055096587942,0.05291606523141181,0.042443413900064494,0.03608611529129941,0.032769263843248055,0.02865391112066583,0.019839685513344186,0.0176898743896072,0.01578575596572587,0.013298117379687356,0.012683885630048217,0.010226958631491662,0.005159546696968767,0.4599367341297872,0.328091889069746,0.1364515831823347,0.03147937716900587,0.030496606369583245,0.012837443567458001,0.12714597217530174,0.1258867970885415,0.12487331470163693,0.11578268480697768,0.11209729430914284,0.10119468075304812,0.0614845981388778,0.056601455729246644,0.04904640520868524,0.04207487485028101,0.0305273179570652,0.02850035318325604,0.019931820275790057,0.004576026534811584,0.40517797364945796,0.2550597340376524,0.1556463253585578,0.10583213046282362,0.04815576917170849,0.8542735173981143,0.0959429992936335,0.03190933939375326,0.009551303706888609,0.6692054912318418,0.895857006848684,0.019747550750898315,0.0179048555019809,0.006080894321427475,0.004207487485028101,0.00371610208531679,0.0035011209729430915,0.003255428273087436,0.0030711587481956942,0.0029176008107859096,0.002764042873376125,0.0024876385860385123,0.0024569269985565555,0.002303369061146771,0.0022419458861828567,0.002149811123736986,0.002057676361291115,0.001965541598845244,0.0019041184238813304,0.0018426952489174165,0.0018119836614354597,0.001566290961579804,0.0013513098492061054,0.0013205982617241485,0.001136328736832407,0.001044193974386536,9.520592119406652E-4,8.906360369767513E-4,8.906360369767513E-4,8.599244494947943E-4,7.370780995669666E-4,6.142317496391389E-4,5.835201621571819E-4,5.835201621571819E-4,5.52808574675225E-4,5.52808574675225E-4,4.91385399711311E-4,4.2996222474739717E-4,3.9925063726544026E-4,3.9925063726544026E-4,3.685390497834833E-4]\n[186.06140024880193,1.1140797791841898E10,6.618889907032976,5.454253917840538E7,162376.9378136493,152.45899505045404,0.21118559027407036,0.07195040161625954,0.06014936471157103,0.053208674220006795,0.03827570622125458,0.033100432097698765,0.02861474818724289,4.29790556782971E-4,0.21850130546884333,0.17378416824456563,0.13741749845140405,0.05011749445965226,0.040643218734340014,0.03478497587631214,0.031696412637569234,0.02783371931586053,0.019446669630171366,0.017377476423574515,0.015537043041573,0.013121680441480202,0.012523389288537778,0.010122678832177927,0.005133083419991071,0.2484025635648743,0.22045437190011988,0.1178361675651378,0.030489362358776688,0.02956747143350749,0.012673032819066418,0.11098328240768583,0.11004269099306106,0.10928332624149706,0.10238019896430264,0.09953454778168393,0.09095711077760155,0.05770601457389332,0.05339937091802821,0.04664228780349293,0.04030581761225783,0.02959630976506994,0.027688933422786808,0.01953514277152986,0.0045552264141988045,0.24101618530843677,0.19001010162215284,0.13142458301851442,0.09463459700322818,0.04583819883104303,0.12449409828175836,0.08674060412182706,0.030892082198092453,0.009460366847271426,0.22137630055461205,0.09330009552284667,0.019358179510662543,0.017584811708917233,0.0060441026696669954,0.004189913212977615,0.0037024063773856467,0.003488970276691784,0.0032449301168013737,0.0030618207655153692,0.002909177761762142,0.0027564875964802256,0.0024815264519204815,0.002450965781330328,0.002298134131462346,0.0022369882662871205,0.002145255320065676,0.0020535053956939036,0.001961738493171803,0.0019005511258513316,0.0018393562126862702,0.001808755926412018,0.00156388572361669,0.0013495252569605321,0.0013188947873079195,0.001135072353708145,0.0010431356696827658,9.51182007507059E-4,8.8987013375085E-4,8.8987013375085E-4,8.592113671810241E-4,7.365574362902455E-4,6.138733220211062E-4,5.831975773009525E-4,5.831975773009525E-4,5.525199461196513E-4,5.525199461196513E-4,4.911590243736062E-4,4.29790556782971E-4,3.991034932959321E-4,3.991034932959321E-4,3.684145433477456E-4]\n[32561.0,32561.0,32561.0,2712.0,1519.0,32561.0,22696.0,2541.0,2093.0,1836.0,1298.0,1116.0,960.0,14.0,10501.0,7291.0,5355.0,1723.0,1382.0,1175.0,1067.0,933.0,646.0,576.0,514.0,433.0,413.0,333.0,168.0,14976.0,10683.0,4443.0,1025.0,993.0,418.0,4140.0,4099.0,4066.0,3770.0,3650.0,3295.0,2002.0,1843.0,1597.0,1370.0,994.0,928.0,649.0,149.0,13193.0,8305.0,5068.0,3446.0,1568.0,27816.0,3124.0,1039.0,311.0,21790.0,29170.0,643.0,583.0,198.0,137.0,121.0,114.0,106.0,100.0,95.0,90.0,81.0,80.0,75.0,73.0,70.0,67.0,64.0,62.0,60.0,59.0,51.0,44.0,43.0,37.0,34.0,31.0,29.0,29.0,28.0,24.0,20.0,19.0,19.0,18.0,18.0,16.0,14.0,13.0,13.0,12.0]\n"
+        "msg": "\nimport org.apache.spark.mllib.{linalg\u003d\u003emllib}\n\nimport org.apache.spark.ml.{linalg\u003d\u003eml}\n\nimport org.apache.spark.mllib.stat.{MultivariateStatisticalSummary, Statistics}\n\nobservations: org.apache.spark.rdd.RDD[org.apache.spark.mllib.linalg.Vector] \u003d MapPartitionsRDD[14715] at map at \u003cconsole\u003e:343\n\nsummary: org.apache.spark.mllib.stat.MultivariateStatisticalSummary \u003d org.apache.spark.mllib.stat.MultivariateOnlineSummarizer@7027e9c7\nMEAN\n[38.581646755321145,189778.36651208595,10.080679340315212,1077.648843708733,87.30382973495891,40.43745585209302,0.6970301894904948,0.0780381437916526,0.06427935259973588,0.05638647461687295,0.039863640551580114,0.034274131629863945,0.029483123982678664,4.2996222474739717E-4,0.32250238014802984,0.22391818433094807,0.16446055096587942,0.05291606523141181,0.042443413900064494,0.03608611529129941,0.032769263843248055,0.02865391112066583,0.019839685513344186,0.0176898743896072,0.01578575596572587,0.013298117379687356,0.012683885630048217,0.010226958631491662,0.005159546696968767,0.4599367341297872,0.328091889069746,0.1364515831823347,0.03147937716900587,0.030496606369583245,0.012837443567458001,0.12714597217530174,0.1258867970885415,0.12487331470163693,0.11578268480697768,0.11209729430914284,0.10119468075304812,0.0614845981388778,0.056601455729246644,0.04904640520868524,0.04207487485028101,0.0305273179570652,0.02850035318325604,0.019931820275790057,0.004576026534811584,0.40517797364945796,0.2550597340376524,0.1556463253585578,0.10583213046282362,0.04815576917170849,0.8542735173981143,0.0959429992936335,0.03190933939375326,0.009551303706888609,0.6692054912318418,0.895857006848684,0.019747550750898315,0.0179048555019809,0.006080894321427475,0.004207487485028101,0.00371610208531679,0.0035011209729430915,0.003255428273087436,0.0030711587481956942,0.0029176008107859096,0.002764042873376125,0.0024876385860385123,0.0024569269985565555,0.002303369061146771,0.0022419458861828567,0.002149811123736986,0.002057676361291115,0.001965541598845244,0.0019041184238813304,0.0018426952489174165,0.0018119836614354597,0.001566290961579804,0.0013513098492061054,0.0013205982617241485,0.001136328736832407,0.001044193974386536,9.520592119406652E-4,8.906360369767513E-4,8.906360369767513E-4,8.599244494947943E-4,7.370780995669666E-4,6.142317496391389E-4,5.835201621571819E-4,5.835201621571819E-4,5.52808574675225E-4,5.52808574675225E-4,4.91385399711311E-4,4.2996222474739717E-4,3.9925063726544026E-4,3.9925063726544026E-4,3.685390497834833E-4]\nVARIANCE\n[186.06140024880193,1.1140797791841898E10,6.618889907032976,5.454253917840538E7,162376.9378136493,152.45899505045404,0.21118559027407036,0.07195040161625954,0.06014936471157103,0.053208674220006795,0.03827570622125458,0.033100432097698765,0.02861474818724289,4.29790556782971E-4,0.21850130546884333,0.17378416824456563,0.13741749845140405,0.05011749445965226,0.040643218734340014,0.03478497587631214,0.031696412637569234,0.02783371931586053,0.019446669630171366,0.017377476423574515,0.015537043041573,0.013121680441480202,0.012523389288537778,0.010122678832177927,0.005133083419991071,0.2484025635648743,0.22045437190011988,0.1178361675651378,0.030489362358776688,0.02956747143350749,0.012673032819066418,0.11098328240768583,0.11004269099306106,0.10928332624149706,0.10238019896430264,0.09953454778168393,0.09095711077760155,0.05770601457389332,0.05339937091802821,0.04664228780349293,0.04030581761225783,0.02959630976506994,0.027688933422786808,0.01953514277152986,0.0045552264141988045,0.24101618530843677,0.19001010162215284,0.13142458301851442,0.09463459700322818,0.04583819883104303,0.12449409828175836,0.08674060412182706,0.030892082198092453,0.009460366847271426,0.22137630055461205,0.09330009552284667,0.019358179510662543,0.017584811708917233,0.0060441026696669954,0.004189913212977615,0.0037024063773856467,0.003488970276691784,0.0032449301168013737,0.0030618207655153692,0.002909177761762142,0.0027564875964802256,0.0024815264519204815,0.002450965781330328,0.002298134131462346,0.0022369882662871205,0.002145255320065676,0.0020535053956939036,0.001961738493171803,0.0019005511258513316,0.0018393562126862702,0.001808755926412018,0.00156388572361669,0.0013495252569605321,0.0013188947873079195,0.001135072353708145,0.0010431356696827658,9.51182007507059E-4,8.8987013375085E-4,8.8987013375085E-4,8.592113671810241E-4,7.365574362902455E-4,6.138733220211062E-4,5.831975773009525E-4,5.831975773009525E-4,5.525199461196513E-4,5.525199461196513E-4,4.911590243736062E-4,4.29790556782971E-4,3.991034932959321E-4,3.991034932959321E-4,3.684145433477456E-4]\nNON ZEROS\n[32561.0,32561.0,32561.0,2712.0,1519.0,32561.0,22696.0,2541.0,2093.0,1836.0,1298.0,1116.0,960.0,14.0,10501.0,7291.0,5355.0,1723.0,1382.0,1175.0,1067.0,933.0,646.0,576.0,514.0,433.0,413.0,333.0,168.0,14976.0,10683.0,4443.0,1025.0,993.0,418.0,4140.0,4099.0,4066.0,3770.0,3650.0,3295.0,2002.0,1843.0,1597.0,1370.0,994.0,928.0,649.0,149.0,13193.0,8305.0,5068.0,3446.0,1568.0,27816.0,3124.0,1039.0,311.0,21790.0,29170.0,643.0,583.0,198.0,137.0,121.0,114.0,106.0,100.0,95.0,90.0,81.0,80.0,75.0,73.0,70.0,67.0,64.0,62.0,60.0,59.0,51.0,44.0,43.0,37.0,34.0,31.0,29.0,29.0,28.0,24.0,20.0,19.0,19.0,18.0,18.0,16.0,14.0,13.0,13.0,12.0]\n"
       },
       "dateCreated": "Feb 6, 2017 4:29:17 AM",
-      "dateStarted": "Feb 22, 2017 10:18:20 AM",
-      "dateFinished": "Feb 22, 2017 10:18:36 AM",
+      "dateStarted": "Feb 22, 2017 10:46:13 AM",
+      "dateFinished": "Feb 22, 2017 10:46:16 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "import org.apache.spark.mllib.{linalg \u003d\u003e mllib}\nimport org.apache.spark.ml.{linalg \u003d\u003e ml}\nimport org.apache.spark.mllib.stat.{MultivariateStatisticalSummary, Statistics}\n\n\n\nval cols_to_test \u003d (List(\"label\") ++ numericCols ++ categoricalCols.map(w \u003d\u003e w + \"Index\")).toArray\nval len_cols \u003d cols_to_test.size\nval cols_observations \u003d transformedDataset\n    .select(cols_to_test.map(col): _*)\n    .rdd\n    .map{row \u003d\u003e \n        mllib.Vectors.dense((for (i \u003c- 1 to row.size) yield row.getDouble(i - 1)).toArray) // Cast as double and turn this to a vector\n    }\nval corr_matrix: mllib.Matrix \u003d Statistics.corr(cols_observations) // Get the correlation matrix\n",
-      "dateUpdated": "Feb 22, 2017 10:15:59 AM",
+      "text": "%md\n\u003ch1 style\u003d\"color:green;\"\u003eExplanation\u003c/h1\u003e\n-----------------------------------------\nWe could compute the correlation matrix on the **\"features\"** column but this would have been pointless since it would have given us the relationship between each variable of our dataset.\nThis is not what we’re looking for, we’re searching for the correlation between our columns and their impact on the **\"income\"** variable.\n\nWe then need to rely on each individual column of our dataset… The correlation function constructor has two signatures and accept either 2 arrays of doubles or a Sequence of vectors. We can’t compare our label(\"income\") column with our one hot encoded \"ClassVec\" vectors. \n\nWe will rely on the \"Index\" columns instead for the categorical columns. This is better than nothing and this will give us the opportunity to test all our variables instead of only the numeric ones.\n\nA correlation matrix looks like this, but this is something you already know :\n![](http://img.deusm.com/allanalytics/2012/07/247352/113347_513577.jpeg)\nBy crossing lines and rows we get the correlation between our two variable \n- for instance the correlation value for Q1XQ2 would be 0.77 on this example.\n\nThus, the first line of the matrix is sufficient to extract the information we need for our dataset.",
+      "dateUpdated": "Feb 22, 2017 10:52:38 AM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1966,41 +1968,8 @@
           "scatter": {}
         },
         "enabled": true,
-        "editorMode": "ace/mode/scala"
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "jobName": "paragraph_1487666806931_-1583051248",
-      "id": "20170221-084646_505184240",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": "\nimport org.apache.spark.mllib.{linalg\u003d\u003emllib}\n\nimport org.apache.spark.ml.{linalg\u003d\u003eml}\n\nimport org.apache.spark.mllib.stat.{MultivariateStatisticalSummary, Statistics}\n\ncols_to_test: Array[String] \u003d Array(label, age, fnlwgt, education_num, capital_gain, capital_loss, hours_per_week, workclassIndex, educationIndex, marital_statusIndex, occupationIndex, relationshipIndex, raceIndex, sexIndex, native_countryIndex)\n\nlen_cols: Int \u003d 15\n\ncols_observations: org.apache.spark.rdd.RDD[org.apache.spark.mllib.linalg.Vector] \u003d MapPartitionsRDD[10157] at map at \u003cconsole\u003e:312\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncorr_matrix: org.apache.spark.mllib.linalg.Matrix \u003d\n1.0                    0.23403710264886027    ... (15 total)\n0.23403710264886027    1.0                    ...\n-0.009462557247534543  -0.07664586787512112   ...\n0.3351539526909747     0.036527189463887326   ...\n0.2233288181953826     0.07767449816599513    ...\n0.15052631177035367    0.05777453947897402    ...\n0.22968906567081068    0.06875570750946958    ...\n0.10222928987988947    0.15438979786452253    ...\n0.042448952120948354   0.07611252896784314    ...\n-0.31128776211725184   0.0305672474945623     ...\n-0.18563604587187182   -0.05943722675810968   ...\n-0.2542920971961014    -0.23569040739644959   ...\n-0.06771307197620637   -0.03999957284129802   ...\n-0.21598015058403647   -0.08883173120974179   ...\n-0.018498437602558336  1.507283087..."
-      },
-      "dateCreated": "Feb 21, 2017 8:46:46 AM",
-      "dateStarted": "Feb 22, 2017 10:18:35 AM",
-      "dateFinished": "Feb 22, 2017 10:18:38 AM",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "text": "%md\nExplanation\n-----------\nWe could compute the correlation matrix on the **\"features\"** column but this would have been pointless since it would have given us the relationship between each variable of our dataset.\nThis is not what we’re looking for, we’re searching for the correlation between our columns and their impact on the **\"income\"** variable.\n\nWe then need to rely on each individual column of our dataset… The correlation function constructor has two signatures and accept either 2 arrays of doubles or a Sequence of vectors. We can’t compare our label(\"income\") column with our one hot encoded \"ClassVec\" vectors. \n\nWe will rely on the \"Index\" columns instead for the categorical columns. This is better than nothing and this will give us the opportunity to test all our variables instead of only the numeric ones.\n\nA correlation matrix looks like this, but this is something you already know :\n![](http://img.deusm.com/allanalytics/2012/07/247352/113347_513577.jpeg)\nBy crossing lines and rows we get the correlation between our two variable for instance the correlation value for Q1XQ2 would be 0.77 on this example.\n\nThus, the first line of the matrix is sufficient to extract the information we need for our dataset.",
-      "dateUpdated": "Feb 22, 2017 10:15:59 AM",
-      "config": {
-        "colWidth": 6.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
-        "enabled": true,
-        "editorMode": "ace/mode/markdown"
+        "editorMode": "ace/mode/markdown",
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -2011,17 +1980,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003ch2\u003eExplanation\u003c/h2\u003e\n\u003cp\u003eWe could compute the correlation matrix on the \u003cstrong\u003e\u0026ldquo;features\u0026rdquo;\u003c/strong\u003e column but this would have been pointless since it would have given us the relationship between each variable of our dataset.\n\u003cbr  /\u003eThis is not what we’re looking for, we’re searching for the correlation between our columns and their impact on the \u003cstrong\u003e\u0026ldquo;income\u0026rdquo;\u003c/strong\u003e variable.\u003c/p\u003e\n\u003cp\u003eWe then need to rely on each individual column of our dataset… The correlation function constructor has two signatures and accept either 2 arrays of doubles or a Sequence of vectors. We can’t compare our label(\u0026ldquo;income\u0026rdquo;) column with our one hot encoded \u0026ldquo;ClassVec\u0026rdquo; vectors.\u003c/p\u003e\n\u003cp\u003eWe will rely on the \u0026ldquo;Index\u0026rdquo; columns instead for the categorical columns. This is better than nothing and this will give us the opportunity to test all our variables instead of only the numeric ones.\u003c/p\u003e\n\u003cp\u003eA correlation matrix looks like this, but this is something you already know :\n\u003cbr  /\u003e\u003cimg src\u003d\"http://img.deusm.com/allanalytics/2012/07/247352/113347_513577.jpeg\" alt\u003d\"\" /\u003e\n\u003cbr  /\u003eBy crossing lines and rows we get the correlation between our two variable for instance the correlation value for Q1XQ2 would be 0.77 on this example.\u003c/p\u003e\n\u003cp\u003eThus, the first line of the matrix is sufficient to extract the information we need for our dataset.\u003c/p\u003e\n"
+        "msg": "\u003ch1 style\u003d\"color:green;\"\u003eExplanation\u003c/h1\u003e\n\u003chr /\u003e\n\u003cp\u003eWe could compute the correlation matrix on the \u003cstrong\u003e\u0026ldquo;features\u0026rdquo;\u003c/strong\u003e column but this would have been pointless since it would have given us the relationship between each variable of our dataset.\n\u003cbr  /\u003eThis is not what we’re looking for, we’re searching for the correlation between our columns and their impact on the \u003cstrong\u003e\u0026ldquo;income\u0026rdquo;\u003c/strong\u003e variable.\u003c/p\u003e\n\u003cp\u003eWe then need to rely on each individual column of our dataset… The correlation function constructor has two signatures and accept either 2 arrays of doubles or a Sequence of vectors. We can’t compare our label(\u0026ldquo;income\u0026rdquo;) column with our one hot encoded \u0026ldquo;ClassVec\u0026rdquo; vectors.\u003c/p\u003e\n\u003cp\u003eWe will rely on the \u0026ldquo;Index\u0026rdquo; columns instead for the categorical columns. This is better than nothing and this will give us the opportunity to test all our variables instead of only the numeric ones.\u003c/p\u003e\n\u003cp\u003eA correlation matrix looks like this, but this is something you already know :\n\u003cbr  /\u003e\u003cimg src\u003d\"http://img.deusm.com/allanalytics/2012/07/247352/113347_513577.jpeg\" alt\u003d\"\" /\u003e\n\u003cbr  /\u003eBy crossing lines and rows we get the correlation between our two variable\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003efor instance the correlation value for Q1XQ2 would be 0.77 on this example.\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eThus, the first line of the matrix is sufficient to extract the information we need for our dataset.\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 21, 2017 2:35:00 PM",
-      "dateStarted": "Feb 22, 2017 10:15:59 AM",
-      "dateFinished": "Feb 22, 2017 10:15:59 AM",
+      "dateStarted": "Feb 22, 2017 10:48:00 AM",
+      "dateFinished": "Feb 22, 2017 10:48:00 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "val row \u003d corr_matrix.rowIter.next().toArray // We retrieve the first row of our matrix\nval threshold \u003d 0.2 // We only want correlation values above this threshold\nval values \u003d row.filter(x \u003d\u003e (threshold \u003c x) \u0026\u0026 (x \u003c 1)).map(row.indexOf(_)) // filter out the values and get their index\nval result \u003d cols_to_test.zipWithIndex.filter(pair \u003d\u003e values.contains(pair._2)).map(_._1) // Filter the columns by selecting the indexes we found, the result is the column names that have a correlation factor above 0.2 with our label column.",
-      "dateUpdated": "Feb 22, 2017 10:15:59 AM",
+      "title": "2. Correlation Matrix",
+      "text": "import org.apache.spark.mllib.{linalg \u003d\u003e mllib}\nimport org.apache.spark.ml.{linalg \u003d\u003e ml}\nimport org.apache.spark.mllib.stat.{MultivariateStatisticalSummary, Statistics}\n\n// List all the columns we will test\nval cols_to_test \u003d (List(\"label\") ++ numericCols ++ categoricalCols.map(w \u003d\u003e w + \"Index\")).toArray\n// Number of columns\nval len_cols \u003d cols_to_test.size\n// Create a single vector of size len_cols for each row in our dataset, the first value being the label\nval cols_observations \u003d transformedDataset\n    .select(cols_to_test.map(col): _*)\n    .rdd\n    .map{row \u003d\u003e \n        mllib.Vectors.dense((for (i \u003c- 1 to row.size) yield row.getDouble(i - 1)).toArray) // Cast as double and turn this to a vector\n    }\nval corr_matrix: mllib.Matrix \u003d Statistics.corr(cols_observations) // Get the correlation matrix\n",
+      "dateUpdated": "Feb 22, 2017 10:54:06 AM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -2034,7 +2004,44 @@
           "scatter": {}
         },
         "enabled": true,
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487666806931_-1583051248",
+      "id": "20170221-084646_505184240",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nimport org.apache.spark.mllib.{linalg\u003d\u003emllib}\n\nimport org.apache.spark.ml.{linalg\u003d\u003eml}\n\nimport org.apache.spark.mllib.stat.{MultivariateStatisticalSummary, Statistics}\n\ncols_to_test: Array[String] \u003d Array(label, age, fnlwgt, education_num, capital_gain, capital_loss, hours_per_week, workclassIndex, educationIndex, marital_statusIndex, occupationIndex, relationshipIndex, raceIndex, sexIndex, native_countryIndex)\n\nlen_cols: Int \u003d 15\n\ncols_observations: org.apache.spark.rdd.RDD[org.apache.spark.mllib.linalg.Vector] \u003d MapPartitionsRDD[14728] at map at \u003cconsole\u003e:350\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncorr_matrix: org.apache.spark.mllib.linalg.Matrix \u003d\n1.0                    0.23403710264886027    ... (15 total)\n0.23403710264886027    1.0                    ...\n-0.009462557247534543  -0.07664586787512112   ...\n0.3351539526909747     0.036527189463887326   ...\n0.2233288181953826     0.07767449816599513    ...\n0.15052631177035367    0.05777453947897402    ...\n0.22968906567081068    0.06875570750946958    ...\n0.10222928987988947    0.15438979786452253    ...\n0.042448952120948354   0.07611252896784314    ...\n-0.31128776211725184   0.0305672474945623     ...\n-0.18563604587187182   -0.05943722675810968   ...\n-0.2542920971961014    -0.23569040739644959   ...\n-0.06771307197620637   -0.03999957284129802   ...\n-0.21598015058403647   -0.08883173120974179   ...\n-0.018498437602558336  1.507283087..."
+      },
+      "dateCreated": "Feb 21, 2017 8:46:46 AM",
+      "dateStarted": "Feb 22, 2017 10:50:11 AM",
+      "dateFinished": "Feb 22, 2017 10:50:13 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "2. Extract significant columns",
+      "text": "val row \u003d corr_matrix.rowIter.next().toArray // We retrieve the first row of our matrix\nval threshold \u003d 0.2 // We only want correlation values above this threshold\nval values \u003d row.filter(x \u003d\u003e (threshold \u003c x) \u0026\u0026 (x \u003c 1)).map(row.indexOf(_)) // filter out the values and get their index\nval result \u003d cols_to_test.zipWithIndex.filter(pair \u003d\u003e values.contains(pair._2)).map(_._1) // Filter the columns by selecting the indexes we found, the result is the column names that have a correlation factor above 0.2 with our label column.",
+      "dateUpdated": "Feb 22, 2017 10:54:10 AM",
+      "config": {
+        "colWidth": 6.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
       },
       "settings": {
         "params": {},
@@ -2054,8 +2061,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\nExplanation\n-----------\nAccording to our results the following columns have more impact than others on the income: \n\n**age, education_num, capital_gain, hours_per_week**\n\nWith no surprise these are the numeric columns.\nWe don’t have any categorical column in the results which is logical since those values are constant values representing a category…",
-      "dateUpdated": "Feb 22, 2017 10:16:00 AM",
+      "text": "%md\n\u003ch1 style\u003d\"color:green;\"\u003e3. Explanation\u003c/h1\u003e\n--------------------------------------------\nAccording to our results the following columns have more impact than others on the income (because their correlation value is higher): \n\n    age, education_num, capital_gain, hours_per_week\n\nWith no surprise these are the numeric columns.\nWe don’t have any categorical column in the results which is logical since those values are constant values representing a category…",
+      "dateUpdated": "Feb 22, 2017 10:54:21 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -2079,11 +2086,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003ch2\u003eExplanation\u003c/h2\u003e\n\u003cp\u003eAccording to our results the following columns have more impact than others on the income:\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eage, education_num, capital_gain, hours_per_week\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eWith no surprise these are the numeric columns.\n\u003cbr  /\u003eWe don’t have any categorical column in the results which is logical since those values are constant values representing a category…\u003c/p\u003e\n"
+        "msg": "\u003ch1 style\u003d\"color:green;\"\u003e3. Explanation\u003c/h1\u003e\n\u003chr /\u003e\n\u003cp\u003eAccording to our results the following columns have more impact than others on the income (because their correlation value is higher):\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eage, education_num, capital_gain, hours_per_week\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eWith no surprise these are the numeric columns.\n\u003cbr  /\u003eWe don’t have any categorical column in the results which is logical since those values are constant values representing a category…\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 21, 2017 3:35:27 PM",
-      "dateStarted": "Feb 22, 2017 10:16:00 AM",
-      "dateFinished": "Feb 22, 2017 10:16:00 AM",
+      "dateStarted": "Feb 22, 2017 10:54:21 AM",
+      "dateFinished": "Feb 22, 2017 10:54:21 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
