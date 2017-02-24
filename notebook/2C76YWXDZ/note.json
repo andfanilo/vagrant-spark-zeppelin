@@ -2030,13 +2030,13 @@
     },
     {
       "title": "Binomial Logistic Regression",
-      "text": "import org.apache.spark.ml.classification.LogisticRegression\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\n\n// Implémentation du model de machine learning LogisticRegression\nval lr \u003d new LogisticRegression().setMaxIter(10).setRegParam(0.01)\n\n// Création d\u0027un estimateur en adaptant le modèle de régression logistique sur les données training issues du dataset\nval lrEstimator \u003d lr.fit(training)\n\n// Exécution de l\u0027estimateur sur les données test issues du dataset\nval datasetEstimated \u003d lrEstimator.transform(test);\n\n// Evaluation des prédictions grâce à BinaryClassificationEvaluator\nval bce \u003d new BinaryClassificationEvaluator()\n\n// Nous obtenons une estimation juste à 87.85%\nbce.evaluate(datasetEstimated)\n",
-      "dateUpdated": "Feb 24, 2017 9:30:54 PM",
+      "text": "import org.apache.spark.ml.classification.LogisticRegression\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\n\n// Implémentation du model de machine learning LogisticRegression\nval lr \u003d new LogisticRegression().setMaxIter(10).setRegParam(0.01)\n\n// Création d\u0027un estimateur en adaptant le modèle de régression logistique sur les données training issues du dataset\nval lrEstimator \u003d lr.fit(training)\n\n// Exécution de l\u0027estimateur sur les données test issues du dataset\nval datasetEstimated \u003d lrEstimator.transform(test);\n\n// Evaluation des prédictions grâce à BinaryClassificationEvaluator\nval bce \u003d new BinaryClassificationEvaluator()\n\n// Nous obtenons une estimation juste à 87.85%\nbce.evaluate(datasetEstimated)\n\ndatasetEstimated.show()\n\n// Pour futures requêtes SQL\ndatasetEstimated.registerTempTable(\"datasetEstimated\")\n",
+      "dateUpdated": "Feb 24, 2017 9:48:45 PM",
       "config": {
         "colWidth": 8.0,
         "graph": {
           "mode": "table",
-          "height": 300.0,
+          "height": 168.0,
           "optionOpen": false,
           "keys": [],
           "values": [],
@@ -2056,22 +2056,22 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nimport org.apache.spark.ml.classification.LogisticRegression\n\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\n\nlr: org.apache.spark.ml.classification.LogisticRegression \u003d logreg_d13cfd65ee21\n\nlrEstimator: org.apache.spark.ml.classification.LogisticRegressionModel \u003d logreg_d13cfd65ee21\n\ndatasetEstimated: org.apache.spark.sql.DataFrame \u003d [age: double, workclass: string ... 34 more fields]\n\nbce: org.apache.spark.ml.evaluation.BinaryClassificationEvaluator \u003d binEval_5045631d0f22\n\nres318: Double \u003d 0.8785487896910904\n"
+        "msg": "\nimport org.apache.spark.ml.classification.LogisticRegression\n\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\n\nlr: org.apache.spark.ml.classification.LogisticRegression \u003d logreg_2a3a8146823d\n\nlrEstimator: org.apache.spark.ml.classification.LogisticRegressionModel \u003d logreg_2a3a8146823d\n\ndatasetEstimated: org.apache.spark.sql.DataFrame \u003d [age: double, workclass: string ... 34 more fields]\n\nbce: org.apache.spark.ml.evaluation.BinaryClassificationEvaluator \u003d binEval_8997068626b2\n\nres327: Double \u003d 0.8785487896910904\n+----+----------+--------+---------+-------------+--------------+----------------+---------------+------+-------+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+--------------------+--------------------+----------+\n| age| workclass|  fnlwgt|education|education_num|marital_status|      occupation|   relationship|  race|    sex|capital_gain|capital_loss|hours_per_week|native_country|income|workclassIndex|workclassClassVec|educationIndex|educationClassVec|marital_statusIndex|marital_statusClassVec|occupationIndex|occupationClassVec|relationshipIndex|relationshipClassVec|raceIndex| raceClassVec|sexIndex|  sexClassVec|native_countryIndex|native_countryClassVec|label|            features|       rawPrediction|         probability|prediction|\n+----+----------+--------+---------+-------------+--------------+----------------+---------------+------+-------+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+--------------------+--------------------+----------+\n|17.0|         ?| 34088.0|     12th|          8.0| Never-married|               ?|      Own-child| White| Female|         0.0|         0.0|          25.0| United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|          11.0|  (15,[11],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,19,24,36,4...|[5.29605336427181...|[0.99501365539711...|       0.0|\n|17.0|         ?| 47407.0|     11th|          7.0| Never-married|               ?|      Own-child| White|   Male|         0.0|         0.0|          10.0| United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           5.0|   (15,[5],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,13,24,36,4...|[5.16413206580075...|[0.99431448634688...|       0.0|\n|17.0|         ?| 48703.0|     11th|          7.0| Never-married|               ?|      Own-child| White| Female|         0.0|         0.0|          30.0| United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           5.0|   (15,[5],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,13,24,36,4...|[5.69784883865470...|[0.99665803526266...|       0.0|\n|17.0|         ?| 94366.0|     10th|          6.0| Never-married|               ?| Other-relative| White|   Male|         0.0|         0.0|           6.0| United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           7.0|   (15,[7],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              5.0|           (5,[],[])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,15,24,36,4...|[4.07954505353555...|[0.98336620391765...|       0.0|\n|17.0|         ?|114798.0|     11th|          7.0| Never-married|               ?|      Own-child| White| Female|         0.0|         0.0|          18.0| United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           5.0|   (15,[5],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,13,24,36,4...|[5.69784883865470...|[0.99665803526266...|       0.0|\n|17.0|         ?|161259.0|     10th|          6.0| Never-married|               ?| Other-relative| White|   Male|         0.0|         0.0|          12.0| United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           7.0|   (15,[7],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              5.0|           (5,[],[])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,15,24,36,4...|[4.07954505353555...|[0.98336620391765...|       0.0|\n|17.0|         ?|172145.0|     10th|          6.0| Never-married|               ?|      Own-child| Black| Female|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           7.0|   (15,[7],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      1.0|(4,[1],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,15,24,36,4...|[5.77107523198290...|[0.99689327695291...|       0.0|\n|17.0|         ?|187539.0|     11th|          7.0| Never-married|               ?|      Own-child| White| Female|         0.0|         0.0|          10.0| United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           5.0|   (15,[5],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,13,24,36,4...|[5.69784883865470...|[0.99665803526266...|       0.0|\n|17.0|         ?|198797.0|     11th|          7.0| Never-married|               ?|      Own-child| White|   Male|         0.0|         0.0|          20.0|          Peru| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           5.0|   (15,[5],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|               26.0|       (41,[26],[1.0])|  0.0|(94,[3,13,24,36,4...|[6.07717603142827...|[0.99771060582832...|       0.0|\n|17.0|         ?|202521.0|     11th|          7.0| Never-married|               ?|      Own-child| White|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           5.0|   (15,[5],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,13,24,36,4...|[5.16413206580075...|[0.99431448634688...|       0.0|\n|17.0|         ?|256173.0|     10th|          6.0| Never-married|               ?|      Own-child| White| Female|         0.0|         0.0|          15.0| United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           7.0|   (15,[7],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,15,24,36,4...|[5.67560925595494...|[0.99658313553393...|       0.0|\n|17.0|         ?|280670.0|     10th|          6.0| Never-married|               ?|      Own-child| White| Female|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           7.0|   (15,[7],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,15,24,36,4...|[5.67560925595494...|[0.99658313553393...|       0.0|\n|17.0|         ?|297117.0|     11th|          7.0| Never-married|               ?|      Own-child| White| Female|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           5.0|   (15,[5],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,13,24,36,4...|[5.69784883865470...|[0.99665803526266...|       0.0|\n|17.0|         ?|806316.0|     11th|          7.0| Never-married|               ?|      Own-child| White| Female|         0.0|         0.0|          20.0| United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           5.0|   (15,[5],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,13,24,36,4...|[5.69784883865470...|[0.99665803526266...|       0.0|\n|17.0| Local-gov| 32124.0|      9th|          5.0| Never-married|   Other-service|      Own-child| Black|   Male|         0.0|         0.0|           9.0| United-States| \u003c\u003d50K|           2.0|    (8,[2],[1.0])|          10.0|  (15,[10],[1.0])|                1.0|         (6,[1],[1.0])|            5.0|    (14,[5],[1.0])|              2.0|       (5,[2],[1.0])|      1.0|(4,[1],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[2,18,24,34,4...|[5.88031397350569...|[0.99721387624897...|       0.0|\n|17.0| Local-gov| 39815.0|     10th|          6.0| Never-married|   Other-service|      Own-child| White| Female|         0.0|         0.0|          25.0| United-States| \u003c\u003d50K|           2.0|    (8,[2],[1.0])|           7.0|   (15,[7],[1.0])|                1.0|         (6,[1],[1.0])|            5.0|    (14,[5],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[2,15,24,34,4...|[6.18834129218222...|[0.99795097747542...|       0.0|\n|17.0| Local-gov|148194.0|     11th|          7.0| Never-married|    Adm-clerical|      Own-child| White| Female|         0.0|         0.0|          12.0| United-States| \u003c\u003d50K|           2.0|    (8,[2],[1.0])|           5.0|   (15,[5],[1.0])|                1.0|         (6,[1],[1.0])|            3.0|    (14,[3],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[2,13,24,32,4...|[5.35151978581787...|[0.99528143015039...|       0.0|\n|17.0| Local-gov|170916.0|     10th|          6.0| Never-married| Protective-serv|      Own-child| White| Female|         0.0|      1602.0|          40.0| United-States| \u003c\u003d50K|           2.0|    (8,[2],[1.0])|           7.0|   (15,[7],[1.0])|                1.0|         (6,[1],[1.0])|           12.0|   (14,[12],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[2,15,24,41,4...|[4.70656436059995...|[0.99104514602611...|       0.0|\n|17.0| Local-gov|244856.0|     11th|          7.0| Never-married|  Prof-specialty|      Own-child| White| Female|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           2.0|    (8,[2],[1.0])|           5.0|   (15,[5],[1.0])|                1.0|         (6,[1],[1.0])|            0.0|    (14,[0],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[2,13,24,29,4...|[4.84021474065413...|[0.99215664822220...|       0.0|\n|17.0|   Private| 19752.0|     11th|          7.0| Never-married|   Other-service|      Own-child| Black| Female|         0.0|         0.0|          25.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           5.0|   (15,[5],[1.0])|                1.0|         (6,[1],[1.0])|            5.0|    (14,[5],[1.0])|              2.0|       (5,[2],[1.0])|      1.0|(4,[1],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[0,13,24,34,4...|[6.15987050663938...|[0.99789192654946...|       0.0|\n+----+----------+--------+---------+-------------+--------------+----------------+---------------+------+-------+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+--------------------+--------------------+----------+\nonly showing top 20 rows\n\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n"
       },
       "dateCreated": "Feb 8, 2017 8:31:04 AM",
-      "dateStarted": "Feb 24, 2017 9:30:55 PM",
-      "dateFinished": "Feb 24, 2017 9:31:01 PM",
+      "dateStarted": "Feb 24, 2017 9:46:30 PM",
+      "dateFinished": "Feb 24, 2017 9:46:39 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\nExplications :\n\nNous implémentons ci-contre un model de régression logistique binomial avec un nombre d\u0027itération maximum fixé à 10 et un paramètre de régularisation fixé à 0.01 (pour plus de précision).\n\nNous pouvons enuite adapter le modèle à notre de jeu de données training (70% du dataset initial). Le but est de créer un estimateur sur un jeu de données assez large afin d\u0027obtenir des prédictions justes. \n\nUne fois l\u0027estimateur créé, nous pouvons le tester en l\u0027appliquant sur le jeu de données test.\n\nEnfin, BinaryClassificationEvaluator nous permet de voir si l\u0027estimateur déduit du jeu de données training est juste si on l\u0027applique sur le jeu de données test. Nous obtenons un taux d\u0027estimation juste à 87.85%. OUaou !\n\n",
-      "dateUpdated": "Feb 24, 2017 9:30:50 PM",
+      "text": "%md\nExplications :\n\nNous implémentons ci-contre un model de régression logistique binomial avec un nombre d\u0027itération maximum fixé à 10 et un paramètre de régularisation fixé à 0.01 (pour plus de précision).\n\nNous pouvons enuite adapter le modèle à notre de jeu de données training (70% du dataset initial). Le but est de créer un estimateur sur un jeu de données assez large afin d\u0027obtenir des prédictions justes. \n\nUne fois l\u0027estimateur créé, nous pouvons le tester en l\u0027appliquant sur le jeu de données test.\n\nBinaryClassificationEvaluator nous permet de voir si l\u0027estimateur déduit du jeu de données training est juste si on l\u0027applique sur le jeu de données test. Nous obtenons un taux d\u0027estimation juste à 87.85%. OUaou !\n\nRemarque :\nEn observant le dataFrame datasetEstimated, nous remarquons l\u0027apparition de 3 nouvelles colonnes :\nrawPrediction | probability | prediction\n[5.29605336427181...|[0.99501365539711...|       0.0|\n\nLa colonne qui nous intéresse le plus est \"prediction\" qui représente la tranche salariale estimée de l\u0027individu (0.0 : \u003c\u003d50K | 1.0 : \u003e50K)\nLa méthode fit du model LogisticRegression recherche deux colonnes dans le dataset passé en paramètre : \"label\" et \"features\"\nDans notre cas, label est bien la représentation binaire de la variable \"income\".\n",
+      "dateUpdated": "Feb 24, 2017 9:48:33 PM",
       "config": {
         "colWidth": 4.0,
         "graph": {
           "mode": "table",
-          "height": 300.0,
+          "height": 519.0,
           "optionOpen": false,
           "keys": [],
           "values": [],
@@ -2091,11 +2091,154 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003cp\u003eExplications :\u003c/p\u003e\n\u003cp\u003eNous implémentons ci-contre un model de régression logistique binomial avec un nombre d\u0027itération maximum fixé à 10 et un paramètre de régularisation fixé à 0.01 (pour plus de précision).\u003c/p\u003e\n\u003cp\u003eNous pouvons enuite adapter le modèle à notre de jeu de données training (70% du dataset initial). Le but est de créer un estimateur sur un jeu de données assez large afin d\u0027obtenir des prédictions justes.\u003c/p\u003e\n\u003cp\u003eUne fois l\u0027estimateur créé, nous pouvons le tester en l\u0027appliquant sur le jeu de données test.\u003c/p\u003e\n\u003cp\u003eEnfin, BinaryClassificationEvaluator nous permet de voir si l\u0027estimateur déduit du jeu de données training est juste si on l\u0027applique sur le jeu de données test. Nous obtenons un taux d\u0027estimation juste à 87.85%. OUaou !\u003c/p\u003e\n"
+        "msg": "\u003cp\u003eExplications :\u003c/p\u003e\n\u003cp\u003eNous implémentons ci-contre un model de régression logistique binomial avec un nombre d\u0027itération maximum fixé à 10 et un paramètre de régularisation fixé à 0.01 (pour plus de précision).\u003c/p\u003e\n\u003cp\u003eNous pouvons enuite adapter le modèle à notre de jeu de données training (70% du dataset initial). Le but est de créer un estimateur sur un jeu de données assez large afin d\u0027obtenir des prédictions justes.\u003c/p\u003e\n\u003cp\u003eUne fois l\u0027estimateur créé, nous pouvons le tester en l\u0027appliquant sur le jeu de données test.\u003c/p\u003e\n\u003cp\u003eBinaryClassificationEvaluator nous permet de voir si l\u0027estimateur déduit du jeu de données training est juste si on l\u0027applique sur le jeu de données test. Nous obtenons un taux d\u0027estimation juste à 87.85%. OUaou !\u003c/p\u003e\n\u003cp\u003eRemarque :\n\u003cbr  /\u003eEn observant le dataFrame datasetEstimated, nous remarquons l\u0027apparition de 3 nouvelles colonnes :\n\u003cbr  /\u003erawPrediction | probability | prediction\n\u003cbr  /\u003e[5.29605336427181\u0026hellip;|[0.99501365539711\u0026hellip;|       0.0|\u003c/p\u003e\n\u003cp\u003eLa colonne qui nous intéresse le plus est \u0026ldquo;prediction\u0026rdquo; qui représente la tranche salariale estimée de l\u0027individu (0.0 : \u003c\u003d50K | 1.0 : \u003e50K)\n\u003cbr  /\u003eLa méthode fit du model LogisticRegression recherche deux colonnes dans le dataset passé en paramètre : \u0026ldquo;label\u0026rdquo; et \u0026ldquo;features\u0026rdquo;\n\u003cbr  /\u003eDans notre cas, label est bien la représentation binaire de la variable \u0026ldquo;income\u0026rdquo;.\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 8, 2017 8:52:38 AM",
-      "dateStarted": "Feb 24, 2017 9:30:48 PM",
-      "dateFinished": "Feb 24, 2017 9:30:48 PM",
+      "dateStarted": "Feb 24, 2017 9:45:12 PM",
+      "dateFinished": "Feb 24, 2017 9:45:12 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Nb individus datasetEstimated",
+      "text": "%sql select count(*) as nb_total from datasetEstimated",
+      "dateUpdated": "Feb 24, 2017 9:52:42 PM",
+      "config": {
+        "colWidth": 4.0,
+        "graph": {
+          "mode": "table",
+          "height": 98.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "nb_total",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "nb_total",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sql",
+        "editorHide": false,
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487972803903_658113605",
+      "id": "20170224-214643_243949058",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "nb_total\n9762\n"
+      },
+      "dateCreated": "Feb 24, 2017 9:46:43 PM",
+      "dateStarted": "Feb 24, 2017 9:51:46 PM",
+      "dateFinished": "Feb 24, 2017 9:51:48 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Nb prédictions fausses datasetEstimated",
+      "text": "%sql select count(*) as nb_predictions_fausses from datasetEstimated where prediction !\u003d label",
+      "dateUpdated": "Feb 24, 2017 9:54:56 PM",
+      "config": {
+        "colWidth": 4.0,
+        "graph": {
+          "mode": "table",
+          "height": 87.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "prediction",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "label",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "prediction",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "label",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sql",
+        "editorHide": false,
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487972930406_295046917",
+      "id": "20170224-214850_1555942129",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "nb_predictions_fausses\n1609\n"
+      },
+      "dateCreated": "Feb 24, 2017 9:48:50 PM",
+      "dateStarted": "Feb 24, 2017 9:54:56 PM",
+      "dateFinished": "Feb 24, 2017 9:54:59 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// Explications \n//\n// Nous pouvons exécuter une requête SQL pour obtenir un taux d\u0027erreur dans les prédictions.\n1.0-(1609.0/9762.0)\n",
+      "dateUpdated": "Feb 24, 2017 9:56:26 PM",
+      "config": {
+        "colWidth": 4.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487973165982_-503570851",
+      "id": "20170224-215245_796494109",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nres338: Double \u003d 0.8351772177832412\n"
+      },
+      "dateCreated": "Feb 24, 2017 9:52:45 PM",
+      "dateStarted": "Feb 24, 2017 9:56:26 PM",
+      "dateFinished": "Feb 24, 2017 9:56:27 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
