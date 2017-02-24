@@ -2100,9 +2100,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "title": "Decision trees",
-      "text": "import org.apache.spark.ml.classification.DecisionTreeClassifier\r\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\r\n\r\n\r\n// Implémentation du model de machine learning DecisionTreeClassifier\r\nval dt \u003d new DecisionTreeClassifier()\r\n  .setLabelCol(\"label\")\r\n  .setFeaturesCol(\"features\")\r\n  \r\n// Création d\u0027un estimateur en adaptant le modèle arbre de décision sur les données training issues du dataset\r\nval dtEstimator \u003d dt.fit(training)\r\n\r\n// Exécution de l\u0027estimateur sur les données test issues du dataset\r\nval datasetEstimated \u003d dtEstimator.transform(test);\r\n\r\n// Evaluation des prédictions grâce à BinaryClassificationEvaluator\r\nval bce \u003d new BinaryClassificationEvaluator()\r\n\r\n// Nous obtenons une estimation juste à 52.74%\r\nbce.evaluate(datasetEstimated)\r\n\r\n// Affichage des erreurs d\u0027estimation\r\ndatasetEstimated.filter($\"label\" !\u003d\u003d $\"prediction\").select(\"workclass\", \"education\", \"sex\", \"label\",\"prediction\").show()\r\n",
-      "dateUpdated": "Feb 24, 2017 11:25:23 PM",
+      "title": "Decision Trees",
+      "text": "import org.apache.spark.ml.classification.DecisionTreeClassifier\r\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\r\n\r\n// Implémentation du model de machine learning DecisionTreeClassifier\r\nval dt \u003d new DecisionTreeClassifier()\r\n  \r\n// Création d\u0027un estimateur en adaptant le modèle arbre de décision sur les données training issues du dataset\r\nval dtEstimator \u003d dt.fit(training)\r\n\r\n// Exécution de l\u0027estimateur sur les données test issues du dataset\r\nval datasetEstimated \u003d dtEstimator.transform(test);\r\n\r\n// Evaluation des prédictions grâce à BinaryClassificationEvaluator\r\nval bce \u003d new BinaryClassificationEvaluator()\r\n\r\n// Nous obtenons une estimation juste à 52.74%\r\nbce.evaluate(datasetEstimated)\r\n\r\n// Affichage des erreurs d\u0027estimation\r\ndatasetEstimated.filter($\"label\" !\u003d\u003d $\"prediction\").select(\"workclass\", \"education\", \"sex\", \"label\",\"prediction\").show()\r\n",
+      "dateUpdated": "Feb 24, 2017 11:32:48 PM",
       "config": {
         "colWidth": 8.0,
         "graph": {
@@ -2127,11 +2127,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nimport org.apache.spark.ml.classification.DecisionTreeClassifier\n\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\n\ndt: org.apache.spark.ml.classification.DecisionTreeClassifier \u003d dtc_9435e594cb54\n\ndtEstimator: org.apache.spark.ml.classification.DecisionTreeClassificationModel \u003d DecisionTreeClassificationModel (uid\u003ddtc_9435e594cb54) of depth 5 with 55 nodes\n\ndatasetEstimated: org.apache.spark.sql.DataFrame \u003d [age: double, workclass: string ... 34 more fields]\n\nbce: org.apache.spark.ml.evaluation.BinaryClassificationEvaluator \u003d binEval_f6d1321285e5\n\nres394: Double \u003d 0.5274429279988085\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n+-----------------+-------------+-------+-----+----------+\n|        workclass|    education|    sex|label|prediction|\n+-----------------+-------------+-------+-----+----------+\n|          Private|      HS-grad| Female|  0.0|       1.0|\n|          Private|      7th-8th|   Male|  1.0|       0.0|\n|          Private|      HS-grad| Female|  0.0|       1.0|\n|        Local-gov|      5th-6th|   Male|  1.0|       0.0|\n|          Private| Some-college| Female|  0.0|       1.0|\n|          Private|    Bachelors|   Male|  1.0|       0.0|\n|          Private|    Bachelors| Female|  1.0|       0.0|\n|          Private|         11th|   Male|  1.0|       0.0|\n|          Private|    Bachelors| Female|  1.0|       0.0|\n|        State-gov|    Bachelors|   Male|  0.0|       1.0|\n|          Private|    Bachelors|   Male|  0.0|       1.0|\n|          Private| Some-college| Female|  0.0|       1.0|\n| Self-emp-not-inc|         11th|   Male|  1.0|       0.0|\n|        State-gov|    Bachelors|   Male|  1.0|       0.0|\n|                ?| Some-college|   Male|  1.0|       0.0|\n|          Private|    Bachelors|   Male|  0.0|       1.0|\n|          Private|    Bachelors|   Male|  0.0|       1.0|\n|          Private|    Bachelors| Female|  0.0|       1.0|\n|          Private|    Bachelors|   Male|  0.0|       1.0|\n|          Private|      HS-grad| Female|  1.0|       0.0|\n+-----------------+-------------+-------+-----+----------+\nonly showing top 20 rows\n\n"
+        "msg": "\nimport org.apache.spark.ml.classification.DecisionTreeClassifier\n\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\n\ndt: org.apache.spark.ml.classification.DecisionTreeClassifier \u003d dtc_fe8a2a097fd5\n\ndtEstimator: org.apache.spark.ml.classification.DecisionTreeClassificationModel \u003d DecisionTreeClassificationModel (uid\u003ddtc_fe8a2a097fd5) of depth 5 with 55 nodes\n\ndatasetEstimated: org.apache.spark.sql.DataFrame \u003d [age: double, workclass: string ... 34 more fields]\n\nbce: org.apache.spark.ml.evaluation.BinaryClassificationEvaluator \u003d binEval_173f90e5ef7c\n\nres400: Double \u003d 0.5274429279988085\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n+-----------------+-------------+-------+-----+----------+\n|        workclass|    education|    sex|label|prediction|\n+-----------------+-------------+-------+-----+----------+\n|          Private|      HS-grad| Female|  0.0|       1.0|\n|          Private|      7th-8th|   Male|  1.0|       0.0|\n|          Private|      HS-grad| Female|  0.0|       1.0|\n|        Local-gov|      5th-6th|   Male|  1.0|       0.0|\n|          Private| Some-college| Female|  0.0|       1.0|\n|          Private|    Bachelors|   Male|  1.0|       0.0|\n|          Private|    Bachelors| Female|  1.0|       0.0|\n|          Private|         11th|   Male|  1.0|       0.0|\n|          Private|    Bachelors| Female|  1.0|       0.0|\n|        State-gov|    Bachelors|   Male|  0.0|       1.0|\n|          Private|    Bachelors|   Male|  0.0|       1.0|\n|          Private| Some-college| Female|  0.0|       1.0|\n| Self-emp-not-inc|         11th|   Male|  1.0|       0.0|\n|        State-gov|    Bachelors|   Male|  1.0|       0.0|\n|                ?| Some-college|   Male|  1.0|       0.0|\n|          Private|    Bachelors|   Male|  0.0|       1.0|\n|          Private|    Bachelors|   Male|  0.0|       1.0|\n|          Private|    Bachelors| Female|  0.0|       1.0|\n|          Private|    Bachelors|   Male|  0.0|       1.0|\n|          Private|      HS-grad| Female|  1.0|       0.0|\n+-----------------+-------------+-------+-----+----------+\nonly showing top 20 rows\n\n"
       },
       "dateCreated": "Feb 24, 2017 10:00:19 PM",
-      "dateStarted": "Feb 24, 2017 11:24:56 PM",
-      "dateFinished": "Feb 24, 2017 11:25:05 PM",
+      "dateStarted": "Feb 24, 2017 11:32:48 PM",
+      "dateFinished": "Feb 24, 2017 11:32:57 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -2167,6 +2167,42 @@
       "dateCreated": "Feb 24, 2017 11:25:24 PM",
       "dateStarted": "Feb 24, 2017 11:28:02 PM",
       "dateFinished": "Feb 24, 2017 11:28:02 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Random Forest",
+      "text": "import org.apache.spark.ml.classification.RandomForestClassifier\r\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\r\n\r\n// Implémentation du model de machine learning RandomForestClassifier\r\nval dt \u003d new RandomForestClassifier()\r\n\r\n// Création d\u0027un estimateur en adaptant le modèle arbre de décision sur les données training issues du dataset\r\nval dtEstimator \u003d dt.fit(training)\r\n\r\n// Exécution de l\u0027estimateur sur les données test issues du dataset\r\nval datasetEstimated \u003d dtEstimator.transform(test);\r\n\r\n// Evaluation des prédictions grâce à BinaryClassificationEvaluator\r\nval bce \u003d new BinaryClassificationEvaluator()\r\n\r\n// Nous obtenons une estimation juste à 86.07%\r\nbce.evaluate(datasetEstimated)\r\n\r\n// Affichage des erreurs d\u0027estimation\r\ndatasetEstimated.filter($\"label\" !\u003d\u003d $\"prediction\").select(\"workclass\", \"education\", \"sex\", \"label\",\"prediction\").show()",
+      "dateUpdated": "Feb 24, 2017 11:32:56 PM",
+      "config": {
+        "colWidth": 8.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487978965473_407988997",
+      "id": "20170224-232925_1666782405",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nimport org.apache.spark.ml.classification.RandomForestClassifier\n\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\n\ndt: org.apache.spark.ml.classification.RandomForestClassifier \u003d rfc_ad4e8c9e8905\n\ndtEstimator: org.apache.spark.ml.classification.RandomForestClassificationModel \u003d RandomForestClassificationModel (uid\u003drfc_d98f6fa24044) with 20 trees\n\ndatasetEstimated: org.apache.spark.sql.DataFrame \u003d [age: double, workclass: string ... 34 more fields]\n\nbce: org.apache.spark.ml.evaluation.BinaryClassificationEvaluator \u003d binEval_c6ffe6de5578\n\nres397: Double \u003d 0.8607872186406362\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n+-----------------+-------------+-------+-----+----------+\n|        workclass|    education|    sex|label|prediction|\n+-----------------+-------------+-------+-----+----------+\n|          Private|      7th-8th|   Male|  1.0|       0.0|\n|        Local-gov|      5th-6th|   Male|  1.0|       0.0|\n|          Private|    Bachelors|   Male|  1.0|       0.0|\n|          Private|    Bachelors| Female|  1.0|       0.0|\n|          Private|         11th|   Male|  1.0|       0.0|\n|          Private|    Bachelors| Female|  1.0|       0.0|\n|        State-gov|    Bachelors|   Male|  0.0|       1.0|\n| Self-emp-not-inc|         11th|   Male|  1.0|       0.0|\n|        State-gov|    Bachelors|   Male|  1.0|       0.0|\n|                ?| Some-college|   Male|  1.0|       0.0|\n|          Private|    Bachelors|   Male|  0.0|       1.0|\n|          Private|    Bachelors|   Male|  0.0|       1.0|\n|          Private|      HS-grad| Female|  1.0|       0.0|\n|          Private| Some-college|   Male|  1.0|       0.0|\n|          Private|    Bachelors| Female|  1.0|       0.0|\n|          Private|    Bachelors|   Male|  0.0|       1.0|\n|          Private|    Bachelors|   Male|  1.0|       0.0|\n|        Local-gov|    Bachelors|   Male|  0.0|       1.0|\n|        Local-gov|    Bachelors| Female|  1.0|       0.0|\n|          Private|    Bachelors|   Male|  0.0|       1.0|\n+-----------------+-------------+-------+-----+----------+\nonly showing top 20 rows\n\n"
+      },
+      "dateCreated": "Feb 24, 2017 11:29:25 PM",
+      "dateStarted": "Feb 24, 2017 11:31:02 PM",
+      "dateFinished": "Feb 24, 2017 11:31:13 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
