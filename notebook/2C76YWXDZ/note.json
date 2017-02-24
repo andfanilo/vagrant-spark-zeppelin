@@ -535,7 +535,7 @@
     },
     {
       "text": "%sql \n\nselect sex, CONCAT(ROUND(100. * count(*) / sum(count(*)) over (),2), \u0027%\u0027) as pourcentage\nfrom dataset\ngroup by sex",
-      "dateUpdated": "Feb 16, 2017 5:04:14 PM",
+      "dateUpdated": "Feb 24, 2017 11:18:28 PM",
       "config": {
         "colWidth": 3.0,
         "graph": {
@@ -651,7 +651,7 @@
     },
     {
       "text": "%sql \n\n\nselect education, ROUND(100. * count(*) / sum(count(*)) over (),2) as pourcentage_DIVORCES_par_education \nfrom dataset\nwhere marital_status\u003d\u0027 Divorced\u0027\ngroup by education\norder by pourcentage_DIVORCES_par_education DESC",
-      "dateUpdated": "Feb 16, 2017 5:15:10 PM",
+      "dateUpdated": "Feb 24, 2017 11:18:33 PM",
       "config": {
         "colWidth": 9.0,
         "graph": {
@@ -775,7 +775,7 @@
     {
       "title": "Play me !",
       "text": "val datasetGreatherThan50K \u003d dataset.filter($\"income\"\u003d\u003d\u003d\" \u003e50K\")\ndatasetGreatherThan50K.registerTempTable(\"datasetGreatherThan50K\")\ndatasetGreatherThan50K.show()",
-      "dateUpdated": "Feb 16, 2017 5:17:55 PM",
+      "dateUpdated": "Feb 24, 2017 11:16:00 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -789,7 +789,7 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "editorHide": true,
+        "editorHide": false,
         "title": true
       },
       "settings": {
@@ -1334,7 +1334,7 @@
     {
       "title": "Répartition des revenus par type de relation",
       "text": "%sql\nselect income, relationship,count(*) from dataset\ngroup by income, relationship",
-      "dateUpdated": "Feb 16, 2017 5:34:50 PM",
+      "dateUpdated": "Feb 24, 2017 11:18:47 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1925,8 +1925,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "val splits \u003d datasetTransformed.randomSplit(Array(0.7, 0.3))\nval training \u003d splits(0).cache()\nval test \u003d splits(1)",
-      "dateUpdated": "Feb 24, 2017 8:30:10 PM",
+      "text": "val splits \u003d datasetTransformed.randomSplit(Array(0.7, 0.3))\nval (training, test) \u003d (splits(0), splits(1))",
+      "dateUpdated": "Feb 24, 2017 10:16:45 PM",
       "config": {
         "colWidth": 8.0,
         "graph": {
@@ -1950,17 +1950,17 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nsplits: Array[org.apache.spark.sql.Dataset[org.apache.spark.sql.Row]] \u003d Array([age: double, workclass: string ... 31 more fields], [age: double, workclass: string ... 31 more fields])\n\ntraining: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [age: double, workclass: string ... 31 more fields]\n\ntest: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [age: double, workclass: string ... 31 more fields]\n"
+        "msg": "\nsplits: Array[org.apache.spark.sql.Dataset[org.apache.spark.sql.Row]] \u003d Array([age: double, workclass: string ... 31 more fields], [age: double, workclass: string ... 31 more fields])\n\n\ntraining: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [age: double, workclass: string ... 31 more fields]\ntest: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [age: double, workclass: string ... 31 more fields]\n"
       },
       "dateCreated": "Feb 8, 2017 8:40:35 AM",
-      "dateStarted": "Feb 24, 2017 8:30:10 PM",
-      "dateFinished": "Feb 24, 2017 8:30:11 PM",
+      "dateStarted": "Feb 24, 2017 10:16:46 PM",
+      "dateFinished": "Feb 24, 2017 10:16:47 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\nExplications :\n\nLa fonction randomSplit permet de découper un dataset en plusieurs \"morceaux\" dans lesquels sont réparties les données de manière aléatoire. La fonction demande un tableau dont la longeur correspond au nombre de splits (ici 2) et les valeurs la taille en pourcentage de chacun d\u0027eux (ici 70% et 30%).\n\nNous récupérons le split de 30% dans une variable \"test\"",
-      "dateUpdated": "Feb 24, 2017 8:09:48 PM",
+      "text": "%md\nExplications :\n\nLa fonction randomSplit permet de découper un dataset en plusieurs \"morceaux\" dans lesquels sont réparties les données de manière aléatoire. La fonction demande un tableau dont la longeur correspond au nombre de splits (ici 2) et les valeurs la taille en pourcentage de chacun d\u0027eux (ici 70% et 30%).\n\nNous récupérons le split de 70% dans une variable \"training\". Ce dataset sera utiliser pour déterminer les prédictions.\n\nLe split de 30% est stocké dans une variable \"test\" qui permettra de tester les prédictions calculée sur le jeu de données training.",
+      "dateUpdated": "Feb 24, 2017 10:19:20 PM",
       "config": {
         "colWidth": 4.0,
         "graph": {
@@ -1985,11 +1985,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003cp\u003eExplications :\u003c/p\u003e\n\u003cp\u003eLa fonction randomSplit permet de découper un dataset en plusieurs \u0026ldquo;morceaux\u0026rdquo; dans lesquels sont réparties les données de manière aléatoire. La fonction demande un tableau dont la longeur correspond au nombre de splits (ici 2) et les valeurs la taille en pourcentage de chacun d\u0027eux (ici 70% et 30%).\u003c/p\u003e\n\u003cp\u003eNous récupérons le split de 30% dans une variable \u0026ldquo;test\u0026rdquo;\u003c/p\u003e\n"
+        "msg": "\u003cp\u003eExplications :\u003c/p\u003e\n\u003cp\u003eLa fonction randomSplit permet de découper un dataset en plusieurs \u0026ldquo;morceaux\u0026rdquo; dans lesquels sont réparties les données de manière aléatoire. La fonction demande un tableau dont la longeur correspond au nombre de splits (ici 2) et les valeurs la taille en pourcentage de chacun d\u0027eux (ici 70% et 30%).\u003c/p\u003e\n\u003cp\u003eNous récupérons le split de 70% dans une variable \u0026ldquo;training\u0026rdquo;. Ce dataset sera utiliser pour déterminer les prédictions.\u003c/p\u003e\n\u003cp\u003eLe split de 30% est stocké dans une variable \u0026ldquo;test\u0026rdquo; qui permettra de tester les prédictions calculée sur le jeu de données training.\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 24, 2017 2:04:47 PM",
-      "dateStarted": "Feb 24, 2017 2:08:20 PM",
-      "dateFinished": "Feb 24, 2017 2:08:20 PM",
+      "dateStarted": "Feb 24, 2017 10:19:18 PM",
+      "dateFinished": "Feb 24, 2017 10:19:18 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -2030,8 +2030,8 @@
     },
     {
       "title": "Binomial Logistic Regression",
-      "text": "import org.apache.spark.ml.classification.LogisticRegression\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\n\n// Implémentation du model de machine learning LogisticRegression\nval lr \u003d new LogisticRegression().setMaxIter(10).setRegParam(0.01)\n\n// Création d\u0027un estimateur en adaptant le modèle de régression logistique sur les données training issues du dataset\nval lrEstimator \u003d lr.fit(training)\n\n// Exécution de l\u0027estimateur sur les données test issues du dataset\nval datasetEstimated \u003d lrEstimator.transform(test);\n\n// Evaluation des prédictions grâce à BinaryClassificationEvaluator\nval bce \u003d new BinaryClassificationEvaluator()\n\n// Nous obtenons une estimation juste à 87.85%\nbce.evaluate(datasetEstimated)\n\ndatasetEstimated.show()\n\n// Pour futures requêtes SQL\ndatasetEstimated.registerTempTable(\"datasetEstimated\")\n",
-      "dateUpdated": "Feb 24, 2017 9:48:45 PM",
+      "text": "import org.apache.spark.ml.classification.LogisticRegression\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\n\n// Implémentation du model de machine learning LogisticRegression\nval lr \u003d new LogisticRegression().setMaxIter(10).setRegParam(0.01)\n\n// Création d\u0027un estimateur en adaptant le modèle de régression logistique sur les données training issues du dataset\nval lrEstimator \u003d lr.fit(training)\n\n// Exécution de l\u0027estimateur sur les données test issues du dataset\nval datasetEstimated \u003d lrEstimator.transform(test);\n\n// Evaluation des prédictions grâce à BinaryClassificationEvaluator\nval bce \u003d new BinaryClassificationEvaluator()\n\n// Nous obtenons une estimation juste à 87.85%\nbce.evaluate(datasetEstimated)\n\n// Affichage des erreurs d\u0027estimation\ndatasetEstimated.filter($\"label\" !\u003d\u003d $\"prediction\").select(\"workclass\", \"education\", \"sex\", \"label\",\"prediction\").show()\n",
+      "dateUpdated": "Feb 24, 2017 11:26:42 PM",
       "config": {
         "colWidth": 8.0,
         "graph": {
@@ -2056,11 +2056,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nimport org.apache.spark.ml.classification.LogisticRegression\n\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\n\nlr: org.apache.spark.ml.classification.LogisticRegression \u003d logreg_2a3a8146823d\n\nlrEstimator: org.apache.spark.ml.classification.LogisticRegressionModel \u003d logreg_2a3a8146823d\n\ndatasetEstimated: org.apache.spark.sql.DataFrame \u003d [age: double, workclass: string ... 34 more fields]\n\nbce: org.apache.spark.ml.evaluation.BinaryClassificationEvaluator \u003d binEval_8997068626b2\n\nres327: Double \u003d 0.8785487896910904\n+----+----------+--------+---------+-------------+--------------+----------------+---------------+------+-------+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+--------------------+--------------------+----------+\n| age| workclass|  fnlwgt|education|education_num|marital_status|      occupation|   relationship|  race|    sex|capital_gain|capital_loss|hours_per_week|native_country|income|workclassIndex|workclassClassVec|educationIndex|educationClassVec|marital_statusIndex|marital_statusClassVec|occupationIndex|occupationClassVec|relationshipIndex|relationshipClassVec|raceIndex| raceClassVec|sexIndex|  sexClassVec|native_countryIndex|native_countryClassVec|label|            features|       rawPrediction|         probability|prediction|\n+----+----------+--------+---------+-------------+--------------+----------------+---------------+------+-------+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+--------------------+--------------------+----------+\n|17.0|         ?| 34088.0|     12th|          8.0| Never-married|               ?|      Own-child| White| Female|         0.0|         0.0|          25.0| United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|          11.0|  (15,[11],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,19,24,36,4...|[5.29605336427181...|[0.99501365539711...|       0.0|\n|17.0|         ?| 47407.0|     11th|          7.0| Never-married|               ?|      Own-child| White|   Male|         0.0|         0.0|          10.0| United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           5.0|   (15,[5],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,13,24,36,4...|[5.16413206580075...|[0.99431448634688...|       0.0|\n|17.0|         ?| 48703.0|     11th|          7.0| Never-married|               ?|      Own-child| White| Female|         0.0|         0.0|          30.0| United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           5.0|   (15,[5],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,13,24,36,4...|[5.69784883865470...|[0.99665803526266...|       0.0|\n|17.0|         ?| 94366.0|     10th|          6.0| Never-married|               ?| Other-relative| White|   Male|         0.0|         0.0|           6.0| United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           7.0|   (15,[7],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              5.0|           (5,[],[])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,15,24,36,4...|[4.07954505353555...|[0.98336620391765...|       0.0|\n|17.0|         ?|114798.0|     11th|          7.0| Never-married|               ?|      Own-child| White| Female|         0.0|         0.0|          18.0| United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           5.0|   (15,[5],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,13,24,36,4...|[5.69784883865470...|[0.99665803526266...|       0.0|\n|17.0|         ?|161259.0|     10th|          6.0| Never-married|               ?| Other-relative| White|   Male|         0.0|         0.0|          12.0| United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           7.0|   (15,[7],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              5.0|           (5,[],[])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,15,24,36,4...|[4.07954505353555...|[0.98336620391765...|       0.0|\n|17.0|         ?|172145.0|     10th|          6.0| Never-married|               ?|      Own-child| Black| Female|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           7.0|   (15,[7],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      1.0|(4,[1],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,15,24,36,4...|[5.77107523198290...|[0.99689327695291...|       0.0|\n|17.0|         ?|187539.0|     11th|          7.0| Never-married|               ?|      Own-child| White| Female|         0.0|         0.0|          10.0| United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           5.0|   (15,[5],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,13,24,36,4...|[5.69784883865470...|[0.99665803526266...|       0.0|\n|17.0|         ?|198797.0|     11th|          7.0| Never-married|               ?|      Own-child| White|   Male|         0.0|         0.0|          20.0|          Peru| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           5.0|   (15,[5],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|               26.0|       (41,[26],[1.0])|  0.0|(94,[3,13,24,36,4...|[6.07717603142827...|[0.99771060582832...|       0.0|\n|17.0|         ?|202521.0|     11th|          7.0| Never-married|               ?|      Own-child| White|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           5.0|   (15,[5],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,13,24,36,4...|[5.16413206580075...|[0.99431448634688...|       0.0|\n|17.0|         ?|256173.0|     10th|          6.0| Never-married|               ?|      Own-child| White| Female|         0.0|         0.0|          15.0| United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           7.0|   (15,[7],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,15,24,36,4...|[5.67560925595494...|[0.99658313553393...|       0.0|\n|17.0|         ?|280670.0|     10th|          6.0| Never-married|               ?|      Own-child| White| Female|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           7.0|   (15,[7],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,15,24,36,4...|[5.67560925595494...|[0.99658313553393...|       0.0|\n|17.0|         ?|297117.0|     11th|          7.0| Never-married|               ?|      Own-child| White| Female|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           5.0|   (15,[5],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,13,24,36,4...|[5.69784883865470...|[0.99665803526266...|       0.0|\n|17.0|         ?|806316.0|     11th|          7.0| Never-married|               ?|      Own-child| White| Female|         0.0|         0.0|          20.0| United-States| \u003c\u003d50K|           3.0|    (8,[3],[1.0])|           5.0|   (15,[5],[1.0])|                1.0|         (6,[1],[1.0])|            7.0|    (14,[7],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[3,13,24,36,4...|[5.69784883865470...|[0.99665803526266...|       0.0|\n|17.0| Local-gov| 32124.0|      9th|          5.0| Never-married|   Other-service|      Own-child| Black|   Male|         0.0|         0.0|           9.0| United-States| \u003c\u003d50K|           2.0|    (8,[2],[1.0])|          10.0|  (15,[10],[1.0])|                1.0|         (6,[1],[1.0])|            5.0|    (14,[5],[1.0])|              2.0|       (5,[2],[1.0])|      1.0|(4,[1],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[2,18,24,34,4...|[5.88031397350569...|[0.99721387624897...|       0.0|\n|17.0| Local-gov| 39815.0|     10th|          6.0| Never-married|   Other-service|      Own-child| White| Female|         0.0|         0.0|          25.0| United-States| \u003c\u003d50K|           2.0|    (8,[2],[1.0])|           7.0|   (15,[7],[1.0])|                1.0|         (6,[1],[1.0])|            5.0|    (14,[5],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[2,15,24,34,4...|[6.18834129218222...|[0.99795097747542...|       0.0|\n|17.0| Local-gov|148194.0|     11th|          7.0| Never-married|    Adm-clerical|      Own-child| White| Female|         0.0|         0.0|          12.0| United-States| \u003c\u003d50K|           2.0|    (8,[2],[1.0])|           5.0|   (15,[5],[1.0])|                1.0|         (6,[1],[1.0])|            3.0|    (14,[3],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[2,13,24,32,4...|[5.35151978581787...|[0.99528143015039...|       0.0|\n|17.0| Local-gov|170916.0|     10th|          6.0| Never-married| Protective-serv|      Own-child| White| Female|         0.0|      1602.0|          40.0| United-States| \u003c\u003d50K|           2.0|    (8,[2],[1.0])|           7.0|   (15,[7],[1.0])|                1.0|         (6,[1],[1.0])|           12.0|   (14,[12],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[2,15,24,41,4...|[4.70656436059995...|[0.99104514602611...|       0.0|\n|17.0| Local-gov|244856.0|     11th|          7.0| Never-married|  Prof-specialty|      Own-child| White| Female|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           2.0|    (8,[2],[1.0])|           5.0|   (15,[5],[1.0])|                1.0|         (6,[1],[1.0])|            0.0|    (14,[0],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[2,13,24,29,4...|[4.84021474065413...|[0.99215664822220...|       0.0|\n|17.0|   Private| 19752.0|     11th|          7.0| Never-married|   Other-service|      Own-child| Black| Female|         0.0|         0.0|          25.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           5.0|   (15,[5],[1.0])|                1.0|         (6,[1],[1.0])|            5.0|    (14,[5],[1.0])|              2.0|       (5,[2],[1.0])|      1.0|(4,[1],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[0,13,24,34,4...|[6.15987050663938...|[0.99789192654946...|       0.0|\n+----+----------+--------+---------+-------------+--------------+----------------+---------------+------+-------+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+--------------------+--------------------+----------+\nonly showing top 20 rows\n\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n"
+        "msg": "\nimport org.apache.spark.ml.classification.LogisticRegression\n\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\n\nlr: org.apache.spark.ml.classification.LogisticRegression \u003d logreg_533abac9d13f\n\nlrEstimator: org.apache.spark.ml.classification.LogisticRegressionModel \u003d logreg_533abac9d13f\n\ndatasetEstimated: org.apache.spark.sql.DataFrame \u003d [age: double, workclass: string ... 34 more fields]\n\nbce: org.apache.spark.ml.evaluation.BinaryClassificationEvaluator \u003d binEval_994f9c8bf7f9\n\nres391: Double \u003d 0.8785487896910904\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n+-----------------+-------------+-------+-----+----------+\n|        workclass|    education|    sex|label|prediction|\n+-----------------+-------------+-------+-----+----------+\n|          Private|      HS-grad| Female|  0.0|       1.0|\n|          Private|      7th-8th|   Male|  1.0|       0.0|\n|      Federal-gov| Some-college|   Male|  0.0|       1.0|\n|        Local-gov|      5th-6th|   Male|  1.0|       0.0|\n|          Private| Some-college| Female|  0.0|       1.0|\n|          Private|    Bachelors|   Male|  1.0|       0.0|\n|          Private|    Bachelors| Female|  1.0|       0.0|\n|          Private|         11th|   Male|  1.0|       0.0|\n|          Private|    Bachelors| Female|  1.0|       0.0|\n|        State-gov|    Bachelors|   Male|  0.0|       1.0|\n|          Private|   Assoc-acdm| Female|  0.0|       1.0|\n|          Private| Some-college| Female|  0.0|       1.0|\n| Self-emp-not-inc|         11th|   Male|  1.0|       0.0|\n|        State-gov|    Bachelors|   Male|  1.0|       0.0|\n|                ?| Some-college|   Male|  1.0|       0.0|\n|          Private|    Bachelors|   Male|  0.0|       1.0|\n|          Private|    Bachelors| Female|  0.0|       1.0|\n|          Private|    Bachelors|   Male|  0.0|       1.0|\n|          Private| Some-college|   Male|  0.0|       1.0|\n|          Private|      HS-grad| Female|  1.0|       0.0|\n+-----------------+-------------+-------+-----+----------+\nonly showing top 20 rows\n\n"
       },
       "dateCreated": "Feb 8, 2017 8:31:04 AM",
-      "dateStarted": "Feb 24, 2017 9:46:30 PM",
-      "dateFinished": "Feb 24, 2017 9:46:39 PM",
+      "dateStarted": "Feb 24, 2017 11:24:12 PM",
+      "dateFinished": "Feb 24, 2017 11:24:22 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -2100,117 +2100,44 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "title": "Nb individus datasetEstimated",
-      "text": "%sql select count(*) as nb_total from datasetEstimated",
-      "dateUpdated": "Feb 24, 2017 9:52:42 PM",
+      "title": "Decision trees",
+      "text": "import org.apache.spark.ml.classification.DecisionTreeClassifier\r\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\r\n\r\n\r\n// Implémentation du model de machine learning DecisionTreeClassifier\r\nval dt \u003d new DecisionTreeClassifier()\r\n  .setLabelCol(\"label\")\r\n  .setFeaturesCol(\"features\")\r\n  \r\n// Création d\u0027un estimateur en adaptant le modèle arbre de décision sur les données training issues du dataset\r\nval dtEstimator \u003d dt.fit(training)\r\n\r\n// Exécution de l\u0027estimateur sur les données test issues du dataset\r\nval datasetEstimated \u003d dtEstimator.transform(test);\r\n\r\n// Evaluation des prédictions grâce à BinaryClassificationEvaluator\r\nval bce \u003d new BinaryClassificationEvaluator()\r\n\r\n// Nous obtenons une estimation juste à 52.74%\r\nbce.evaluate(datasetEstimated)\r\n\r\n// Affichage des erreurs d\u0027estimation\r\ndatasetEstimated.filter($\"label\" !\u003d\u003d $\"prediction\").select(\"workclass\", \"education\", \"sex\", \"label\",\"prediction\").show()\r\n",
+      "dateUpdated": "Feb 24, 2017 11:25:23 PM",
       "config": {
-        "colWidth": 4.0,
+        "colWidth": 8.0,
         "graph": {
           "mode": "table",
-          "height": 98.0,
+          "height": 300.0,
           "optionOpen": false,
-          "keys": [
-            {
-              "name": "nb_total",
-              "index": 0.0,
-              "aggr": "sum"
-            }
-          ],
+          "keys": [],
           "values": [],
           "groups": [],
-          "scatter": {
-            "xAxis": {
-              "name": "nb_total",
-              "index": 0.0,
-              "aggr": "sum"
-            }
-          }
+          "scatter": {}
         },
         "enabled": true,
-        "editorMode": "ace/mode/sql",
-        "editorHide": false,
+        "editorMode": "ace/mode/scala",
         "title": true
       },
       "settings": {
         "params": {},
         "forms": {}
       },
-      "jobName": "paragraph_1487972803903_658113605",
-      "id": "20170224-214643_243949058",
+      "jobName": "paragraph_1487973619306_-310162580",
+      "id": "20170224-220019_1657356938",
       "result": {
         "code": "SUCCESS",
-        "type": "TABLE",
-        "msg": "nb_total\n9762\n"
+        "type": "TEXT",
+        "msg": "\nimport org.apache.spark.ml.classification.DecisionTreeClassifier\n\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\n\ndt: org.apache.spark.ml.classification.DecisionTreeClassifier \u003d dtc_9435e594cb54\n\ndtEstimator: org.apache.spark.ml.classification.DecisionTreeClassificationModel \u003d DecisionTreeClassificationModel (uid\u003ddtc_9435e594cb54) of depth 5 with 55 nodes\n\ndatasetEstimated: org.apache.spark.sql.DataFrame \u003d [age: double, workclass: string ... 34 more fields]\n\nbce: org.apache.spark.ml.evaluation.BinaryClassificationEvaluator \u003d binEval_f6d1321285e5\n\nres394: Double \u003d 0.5274429279988085\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n+-----------------+-------------+-------+-----+----------+\n|        workclass|    education|    sex|label|prediction|\n+-----------------+-------------+-------+-----+----------+\n|          Private|      HS-grad| Female|  0.0|       1.0|\n|          Private|      7th-8th|   Male|  1.0|       0.0|\n|          Private|      HS-grad| Female|  0.0|       1.0|\n|        Local-gov|      5th-6th|   Male|  1.0|       0.0|\n|          Private| Some-college| Female|  0.0|       1.0|\n|          Private|    Bachelors|   Male|  1.0|       0.0|\n|          Private|    Bachelors| Female|  1.0|       0.0|\n|          Private|         11th|   Male|  1.0|       0.0|\n|          Private|    Bachelors| Female|  1.0|       0.0|\n|        State-gov|    Bachelors|   Male|  0.0|       1.0|\n|          Private|    Bachelors|   Male|  0.0|       1.0|\n|          Private| Some-college| Female|  0.0|       1.0|\n| Self-emp-not-inc|         11th|   Male|  1.0|       0.0|\n|        State-gov|    Bachelors|   Male|  1.0|       0.0|\n|                ?| Some-college|   Male|  1.0|       0.0|\n|          Private|    Bachelors|   Male|  0.0|       1.0|\n|          Private|    Bachelors|   Male|  0.0|       1.0|\n|          Private|    Bachelors| Female|  0.0|       1.0|\n|          Private|    Bachelors|   Male|  0.0|       1.0|\n|          Private|      HS-grad| Female|  1.0|       0.0|\n+-----------------+-------------+-------+-----+----------+\nonly showing top 20 rows\n\n"
       },
-      "dateCreated": "Feb 24, 2017 9:46:43 PM",
-      "dateStarted": "Feb 24, 2017 9:51:46 PM",
-      "dateFinished": "Feb 24, 2017 9:51:48 PM",
+      "dateCreated": "Feb 24, 2017 10:00:19 PM",
+      "dateStarted": "Feb 24, 2017 11:24:56 PM",
+      "dateFinished": "Feb 24, 2017 11:25:05 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "title": "Nb prédictions fausses datasetEstimated",
-      "text": "%sql select count(*) as nb_predictions_fausses from datasetEstimated where prediction !\u003d label",
-      "dateUpdated": "Feb 24, 2017 9:54:56 PM",
-      "config": {
-        "colWidth": 4.0,
-        "graph": {
-          "mode": "table",
-          "height": 87.0,
-          "optionOpen": false,
-          "keys": [
-            {
-              "name": "prediction",
-              "index": 0.0,
-              "aggr": "sum"
-            }
-          ],
-          "values": [
-            {
-              "name": "label",
-              "index": 1.0,
-              "aggr": "sum"
-            }
-          ],
-          "groups": [],
-          "scatter": {
-            "xAxis": {
-              "name": "prediction",
-              "index": 0.0,
-              "aggr": "sum"
-            },
-            "yAxis": {
-              "name": "label",
-              "index": 1.0,
-              "aggr": "sum"
-            }
-          }
-        },
-        "enabled": true,
-        "editorMode": "ace/mode/sql",
-        "editorHide": false,
-        "title": true
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "jobName": "paragraph_1487972930406_295046917",
-      "id": "20170224-214850_1555942129",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TABLE",
-        "msg": "nb_predictions_fausses\n1609\n"
-      },
-      "dateCreated": "Feb 24, 2017 9:48:50 PM",
-      "dateStarted": "Feb 24, 2017 9:54:56 PM",
-      "dateFinished": "Feb 24, 2017 9:54:59 PM",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "text": "// Explications \n//\n// Nous pouvons exécuter une requête SQL pour obtenir un taux d\u0027erreur dans les prédictions.\n1.0-(1609.0/9762.0)\n",
-      "dateUpdated": "Feb 24, 2017 9:56:26 PM",
+      "text": "%md\nExplications :\n\nLes étapes avec le modèle decision tree sont les mêmes qu\u0027avec le modèle binomial logistic regression.\n\nNous observons une estimation juste à 52.74%",
+      "dateUpdated": "Feb 24, 2017 11:28:04 PM",
       "config": {
         "colWidth": 4.0,
         "graph": {
@@ -2223,22 +2150,23 @@
           "scatter": {}
         },
         "enabled": true,
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
       },
       "settings": {
         "params": {},
         "forms": {}
       },
-      "jobName": "paragraph_1487973165982_-503570851",
-      "id": "20170224-215245_796494109",
+      "jobName": "paragraph_1487978724867_1349517172",
+      "id": "20170224-232524_1758309852",
       "result": {
         "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": "\nres338: Double \u003d 0.8351772177832412\n"
+        "type": "HTML",
+        "msg": "\u003cp\u003eExplications :\u003c/p\u003e\n\u003cp\u003eLes étapes avec le modèle decision tree sont les mêmes qu\u0027avec le modèle binomial logistic regression.\u003c/p\u003e\n\u003cp\u003eNous observons une estimation juste à 52.74%\u003c/p\u003e\n"
       },
-      "dateCreated": "Feb 24, 2017 9:52:45 PM",
-      "dateStarted": "Feb 24, 2017 9:56:26 PM",
-      "dateFinished": "Feb 24, 2017 9:56:27 PM",
+      "dateCreated": "Feb 24, 2017 11:25:24 PM",
+      "dateStarted": "Feb 24, 2017 11:28:02 PM",
+      "dateFinished": "Feb 24, 2017 11:28:02 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
