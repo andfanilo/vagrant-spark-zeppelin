@@ -4,9 +4,9 @@
 export MAVEN_VERSION=3.3.3
 export MAVEN_HOME=/usr/apache-maven-$MAVEN_VERSION
 
-export ZEPPELIN_VERSION=0.6.2
+export ZEPPELIN_VERSION=0.7.0
 export ZEPPELIN_PACKAGE=$ZEPPELIN_VERSION-bin-all
-export ZEPPELIN_HOME=/usr/zeppelin-0.6.2-bin-all
+export ZEPPELIN_HOME=/usr/zeppelin-0.7.0-bin-all
 export ZEPPELIN_CONF_DIR=${ZEPPELIN_HOME}/conf
 export ZEPPELIN_NOTEBOOK_DIR=${ZEPPELIN_HOME}/notebook
 
@@ -19,7 +19,7 @@ wget -c "http://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/
 tar zxvf apache-maven-$MAVEN_VERSION-bin.tar.gz -C /usr/
 ln -s ${MAVEN_HOME} /usr/maven
 
-wget -c "http://archive.apache.org/dist/zeppelin/zeppelin-0.6.2/zeppelin-0.6.2-bin-all.tgz"
+wget -c "http://apache.mirrors.ovh.net/ftp.apache.org/dist/zeppelin/zeppelin-${ZEPPELIN_VERSION}/zeppelin-${ZEPPELIN_PACKAGE}.tgz"
 tar zxvf zeppelin-${ZEPPELIN_PACKAGE}.tgz -C /usr/
 ln -s ${ZEPPELIN_HOME} /usr/zeppelin
 
