@@ -2,6 +2,8 @@
 
 This is a fork from [arjones/vagrant-spark-zeppelin](https://github.com/arjones/vagrant-spark-zeppelin), that we are going to use for educational purposes.
 
+THIS HAMMOUDI MALIN MODIFICATIONS INADINE QSSAM N TAWRIRTH MERRA
+
 It provides a Vagrantfile which installs a debian virtual machine containing:
 
 * Apache Spark 1.6.1

@@ -204,8 +204,8 @@
     },
     {
       "title": "Shell cell",
-      "text": "%sh\necho \"Hello world\"",
-      "dateUpdated": "Feb 25, 2017 9:41:20 PM",
+      "text": "%sh\necho \"Hello Hamoudi Malin\"",
+      "dateUpdated": "Feb 25, 2017 10:24:27 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -236,11 +236,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "Hello Hamoudi Malin\n"
       },
       "dateCreated": "Feb 25, 2017 9:19:15 AM",
-      "dateStarted": "Feb 25, 2017 9:41:21 PM",
-      "dateFinished": "Feb 25, 2017 9:41:24 PM",
+      "dateStarted": "Feb 25, 2017 10:24:27 PM",
+      "dateFinished": "Feb 25, 2017 10:24:28 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -288,8 +288,8 @@
     },
     {
       "title": "Spark/Scala cell",
-      "text": "println(\"Hello world\")",
-      "dateUpdated": "Feb 25, 2017 9:41:21 PM",
+      "text": "println(\"Hello Ait Melloul city\")",
+      "dateUpdated": "Feb 25, 2017 10:25:04 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -320,11 +320,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "Hello Ait Melloul city\n"
       },
       "dateCreated": "Feb 25, 2017 9:19:15 AM",
-      "dateStarted": "Feb 25, 2017 9:41:22 PM",
-      "dateFinished": "Feb 25, 2017 9:42:21 PM",
+      "dateStarted": "Feb 25, 2017 10:25:04 PM",
+      "dateFinished": "Feb 25, 2017 10:25:05 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
