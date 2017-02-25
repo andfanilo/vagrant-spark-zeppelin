@@ -595,7 +595,7 @@
     {
       "title": "New list with all elements doubled",
       "text": "sequenceNumbers.map(x \u003d\u003e x * 2)\n\nsequenceNumbers.map(_ * 2)",
-      "dateUpdated": "Feb 25, 2017 9:41:28 PM",
+      "dateUpdated": "Feb 25, 2017 10:34:43 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -622,11 +622,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nres11: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100, 102, 104, 106, 108, 110, 112, 114, 116, 118, 120, 122, 124, 126, 128, 130, 132, 134, 136, 138, 140, 142, 144, 146, 148, 150, 152, 154, 156, 158, 160, 162, 164, 166, 168, 170, 172, 174, 176, 178, 180, 182, 184, 186, 188, 190, 192, 194, 196, 198, 200)\n\nres12: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100, 102, 104, 106, 108, 110, 112, 114, 116, 118, 120, 122, 124, 126, 128, 130, 132, 134, 136, 138, 140, 142, 144, 146, 148, 150, 152, 154, 156, 158, 160, 162, 164, 166, 168, 170, 172, 174, 176, 178, 180, 182, 184, 186, 188, 190, 192, 194, 196, 198, 200)\n"
+        "msg": "\nres83: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100, 102, 104, 106, 108, 110, 112, 114, 116, 118, 120, 122, 124, 126, 128, 130, 132, 134, 136, 138, 140, 142, 144, 146, 148, 150, 152, 154, 156, 158, 160, 162, 164, 166, 168, 170, 172, 174, 176, 178, 180, 182, 184, 186, 188, 190, 192, 194, 196, 198, 200)\n\nres84: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100, 102, 104, 106, 108, 110, 112, 114, 116, 118, 120, 122, 124, 126, 128, 130, 132, 134, 136, 138, 140, 142, 144, 146, 148, 150, 152, 154, 156, 158, 160, 162, 164, 166, 168, 170, 172, 174, 176, 178, 180, 182, 184, 186, 188, 190, 192, 194, 196, 198, 200)\n"
       },
       "dateCreated": "Feb 25, 2017 9:19:15 AM",
-      "dateStarted": "Feb 25, 2017 9:42:27 PM",
-      "dateFinished": "Feb 25, 2017 9:42:35 PM",
+      "dateStarted": "Feb 25, 2017 10:34:44 PM",
+      "dateFinished": "Feb 25, 2017 10:34:45 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -742,8 +742,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "/*\n * The following function adds 2 to a number.\n */\ndef add2(x: Int): Int \u003d x + 2",
-      "dateUpdated": "Feb 25, 2017 9:41:30 PM",
+      "text": "/*\n * The following function adds 3 to a number.\n */\ndef add2(x: Int): Int \u003d x + 3",
+      "dateUpdated": "Feb 25, 2017 10:37:50 PM",
       "config": {
         "enabled": true,
         "graph": {
@@ -771,8 +771,8 @@
         "msg": "\nadd2: (x: Int)Int\n"
       },
       "dateCreated": "Feb 25, 2017 9:19:15 AM",
-      "dateStarted": "Feb 25, 2017 9:42:38 PM",
-      "dateFinished": "Feb 25, 2017 9:42:42 PM",
+      "dateStarted": "Feb 25, 2017 10:37:50 PM",
+      "dateFinished": "Feb 25, 2017 10:37:51 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -813,7 +813,7 @@
     },
     {
       "text": "// in the following we pass an anonymous lambda function \n// in the filter function\nList(1,2,3,4).filter(x \u003d\u003e x \u003e 2)\nList(1,2,3,4).filter(_ \u003e 2)",
-      "dateUpdated": "Feb 25, 2017 9:41:31 PM",
+      "dateUpdated": "Feb 25, 2017 10:37:53 PM",
       "config": {
         "enabled": true,
         "graph": {
@@ -838,11 +838,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nres26: List[Int] \u003d List(3, 4)\n\nres27: List[Int] \u003d List(3, 4)\n"
+        "msg": "\nres93: List[Int] \u003d List(3, 4)\n\nres94: List[Int] \u003d List(3, 4)\n"
       },
       "dateCreated": "Feb 25, 2017 9:19:15 AM",
-      "dateStarted": "Feb 25, 2017 9:42:42 PM",
-      "dateFinished": "Feb 25, 2017 9:42:46 PM",
+      "dateStarted": "Feb 25, 2017 10:37:53 PM",
+      "dateFinished": "Feb 25, 2017 10:37:55 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1024,7 +1024,7 @@
     {
       "title": "Return the list of squared numbers from 1 to 5",
       "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.map(x \u003d\u003e x)\n\nval expected \u003d List(1, 4, 9, 16, 25) ",
-      "dateUpdated": "Feb 25, 2017 9:41:34 PM",
+      "dateUpdated": "Feb 25, 2017 10:40:48 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -1053,8 +1053,8 @@
         "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\nexpected: List[Int] \u003d List(1, 4, 9, 16, 25)\n"
       },
       "dateCreated": "Feb 25, 2017 9:19:15 AM",
-      "dateStarted": "Feb 25, 2017 9:42:46 PM",
-      "dateFinished": "Feb 25, 2017 9:42:51 PM",
+      "dateStarted": "Feb 25, 2017 10:40:48 PM",
+      "dateFinished": "Feb 25, 2017 10:40:50 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1900,8 +1900,8 @@
     },
     {
       "title": "Count number of rows with a null value in country code",
-      "text": "// Don\u0027t forget you have the count function on a Dataframe after you have filtered it",
-      "dateUpdated": "Feb 25, 2017 9:41:44 PM",
+      "text": "// Don\u0027t forget you have the count function on a Dataframe after you have filtered it\nval ipDf \u003d sqlContext.sql(\"SELECT count(*) FROM df where COUNTRY_CODE is null\")\nipDf.filter(\"1\u003d1\").show()",
+      "dateUpdated": "Feb 25, 2017 10:48:34 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -1927,11 +1927,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": ""
+        "msg": "\nipDf: org.apache.spark.sql.DataFrame \u003d [count(1): bigint]\n+--------+\n|count(1)|\n+--------+\n|    4997|\n+--------+\n\n"
       },
       "dateCreated": "Feb 25, 2017 9:19:15 AM",
-      "dateStarted": "Feb 25, 2017 9:43:58 PM",
-      "dateFinished": "Feb 25, 2017 9:43:58 PM",
+      "dateStarted": "Feb 25, 2017 10:48:34 PM",
+      "dateFinished": "Feb 25, 2017 10:48:37 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1974,8 +1974,8 @@
     },
     {
       "title": "Show IP_FROM addresses which appear more than once in the file",
-      "text": "// PS : if your query is correct, you should only find one",
-      "dateUpdated": "Feb 25, 2017 9:41:44 PM",
+      "text": "\nval ipDf \u003d sqlContext.sql(\"select ip_from, count(*) from df group by ip_from having count(*) \u003e1\")\nipDf.filter(\"1\u003d1\").show()\n",
+      "dateUpdated": "Feb 25, 2017 10:52:26 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -2001,11 +2001,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": ""
+        "msg": "\nipDf: org.apache.spark.sql.DataFrame \u003d [ip_from: string, count(1): bigint]\n+----------+--------+\n|   ip_from|count(1)|\n+----------+--------+\n|3272226816|       2|\n+----------+--------+\n\n"
       },
       "dateCreated": "Feb 25, 2017 9:19:15 AM",
-      "dateStarted": "Feb 25, 2017 9:43:58 PM",
-      "dateFinished": "Feb 25, 2017 9:43:59 PM",
+      "dateStarted": "Feb 25, 2017 10:52:27 PM",
+      "dateFinished": "Feb 25, 2017 10:52:33 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
