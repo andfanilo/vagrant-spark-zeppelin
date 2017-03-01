@@ -1007,8 +1007,8 @@
     },
     {
       "title": "Return the list of squared numbers from 1 to 5",
-      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.map(x \u003d\u003e x)\n\nval expected \u003d List(1, 4, 9, 16, 25) ",
-      "dateUpdated": "Jan 25, 2017 9:03:16 AM",
+      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.map(x \u003d\u003e x*x)\n\nval expected \u003d List(1, 4, 9, 16, 25) ",
+      "dateUpdated": "Mar 1, 2017 6:28:27 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1033,11 +1033,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\nexpected: List[Int] \u003d List(1, 4, 9, 16, 25)\n"
+        "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: List[Int] \u003d List(1, 4, 9, 16, 25)\n\nexpected: List[Int] \u003d List(1, 4, 9, 16, 25)\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:13 AM",
-      "dateStarted": "Jan 25, 2017 9:03:16 AM",
-      "dateFinished": "Jan 25, 2017 9:03:17 AM",
+      "dateStarted": "Mar 1, 2017 6:28:29 PM",
+      "dateFinished": "Mar 1, 2017 6:29:44 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -2141,24 +2141,24 @@
   "name": "Practice",
   "id": "2C75UP2R2",
   "angularObjects": {
-    "2C93MQCCX:shared_process": [],
-    "2CAFQY6K3:shared_process": [],
-    "2C71Z8V22:shared_process": [],
-    "2C74PSEZQ:shared_process": [],
-    "2C7936H5V:shared_process": [],
-    "2C6WY8JHA:shared_process": [],
-    "2C8CCCVZ2:shared_process": [],
-    "2C9JTS6JQ:shared_process": [],
-    "2C91JKV9H:shared_process": [],
-    "2C8N1PP7C:shared_process": [],
-    "2C7YTW7VT:shared_process": [],
-    "2C85G18U9:shared_process": [],
-    "2C9XYSTEH:shared_process": [],
-    "2CA474ZG3:shared_process": [],
-    "2C8JNXQ9U:shared_process": [],
-    "2C827138T:shared_process": [],
-    "2CAA7GXEJ:shared_process": [],
-    "2C8W1GCP8:shared_process": []
+    "2CA9F9J9H:shared_process": [],
+    "2CCNM2PGB:shared_process": [],
+    "2CCMA5YTN:shared_process": [],
+    "2CD4T6YKV:shared_process": [],
+    "2CAS22G9V:shared_process": [],
+    "2CAUHRKWE:shared_process": [],
+    "2CBYTT1BT:shared_process": [],
+    "2C9AEXSJ1:shared_process": [],
+    "2CCSEWYYV:shared_process": [],
+    "2C9BCUGHW:shared_process": [],
+    "2CD5F8NW2:shared_process": [],
+    "2C9JNKP4A:shared_process": [],
+    "2CBNVVYCS:shared_process": [],
+    "2CA9XKJ7Y:shared_process": [],
+    "2CCST8NSQ:shared_process": [],
+    "2CC6U1PJM:shared_process": [],
+    "2CAM56KYF:shared_process": [],
+    "2CBTRNZF4:shared_process": []
   },
   "config": {
     "looknfeel": "default"
