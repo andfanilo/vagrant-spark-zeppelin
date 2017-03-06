@@ -406,7 +406,7 @@
     {
       "title": "Some arithmetic",
       "text": "8 * 5 + 19",
-      "dateUpdated": "Mar 3, 2017 2:37:24 PM",
+      "dateUpdated": "Mar 3, 2017 2:37:24 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -434,8 +434,8 @@
         "msg": "\nres0: Int \u003d 59\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Mar 3, 2017 2:37:26 PM",
-      "dateFinished": "Mar 3, 2017 2:38:37 PM",
+      "dateStarted": "Mar 3, 2017 2:37:26 AM",
+      "dateFinished": "Mar 3, 2017 2:38:37 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1009,7 +1009,7 @@
     {
       "title": "Return the list of squared numbers from 1 to 5  -- FAIT",
       "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.map(x \u003d\u003e x*x)\n\nval expected \u003d List(1, 4, 9, 16, 25) ",
-      "dateUpdated": "Mar 3, 2017 2:40:36 PM",
+      "dateUpdated": "Mar 3, 2017 2:40:36 AM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1045,7 +1045,7 @@
     {
       "title": "Return the sum of elements from 1 to 5 -- FAIT",
       "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.reduce((x, y) \u003d\u003e x+y)\n\nval expected \u003d 15",
-      "dateUpdated": "Mar 3, 2017 2:40:43 PM",
+      "dateUpdated": "Mar 3, 2017 2:40:43 AM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1073,15 +1073,15 @@
         "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: Int \u003d 15\n\nexpected: Int \u003d 15\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:20 AM",
-      "dateStarted": "Mar 3, 2017 2:39:27 PM",
-      "dateFinished": "Mar 3, 2017 2:39:36 PM",
+      "dateStarted": "Mar 3, 2017 2:39:27 AM",
+      "dateFinished": "Mar 3, 2017 2:39:36 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Return the sum of squared pair numbers between 1 and 100 -- FAIT",
       "text": "val input \u003d 1 to 100\nval output \u003d input.filter(x\u003d\u003e x % 2 \u003d\u003d 0 ).map(x \u003d\u003ex*x).reduce((x,y)\u003d\u003ex+y)\n\nval expected \u003d 171700\n\n",
-      "dateUpdated": "Mar 3, 2017 2:51:14 PM",
+      "dateUpdated": "Mar 3, 2017 2:51:14 AM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1109,15 +1109,15 @@
         "msg": "\ninput: scala.collection.immutable.Range.Inclusive \u003d Range(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100)\n\noutput: Int \u003d 171700\n\nexpected: Int \u003d 171700\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:27 AM",
-      "dateStarted": "Mar 3, 2017 2:51:15 PM",
-      "dateFinished": "Mar 3, 2017 2:51:21 PM",
+      "dateStarted": "Mar 3, 2017 2:51:15 AM",
+      "dateFinished": "Mar 3, 2017 2:51:21 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Get highest number in a list with a reduce  -- FAIT",
       "text": "import util.Random.nextInt\nval input \u003d Seq.fill(10)(nextInt)\nval output \u003d input.reduce((x, y) \u003d\u003e math.max(x,y)  )\n\nval expected \u003d input.max",
-      "dateUpdated": "Mar 3, 2017 2:53:52 PM",
+      "dateUpdated": "Mar 3, 2017 2:53:52 AM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1147,8 +1147,8 @@
         "msg": "\nimport util.Random.nextInt\n\ninput: Seq[Int] \u003d List(1142006890, -313661348, 1373358219, 1204486928, -1065946122, -1221257691, 393722516, 976634580, 788252409, -1058427592)\n\noutput: Int \u003d 1373358219\n\nexpected: Int \u003d 1373358219\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:32 AM",
-      "dateStarted": "Mar 3, 2017 2:53:37 PM",
-      "dateFinished": "Mar 3, 2017 2:53:43 PM",
+      "dateStarted": "Mar 3, 2017 2:53:37 AM",
+      "dateFinished": "Mar 3, 2017 2:53:43 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1295,7 +1295,7 @@
     {
       "title": "Calculate the number of unique words in the \"words\" RDD here. -- FAIT",
       "text": "val words \u003d sc.parallelize(Array(\"hello\", \"world\", \"goodbye\", \"hello\", \"again\"))\nval output \u003d words.distinct().count()   \nval expected \u003d 4",
-      "dateUpdated": "Mar 3, 2017 3:10:51 PM",
+      "dateUpdated": "Mar 3, 2017 3:10:51 AM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1323,15 +1323,15 @@
         "msg": "\nwords: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[0] at parallelize at \u003cconsole\u003e:28\n\noutput: Long \u003d 4\n\nexpected: Int \u003d 4\n"
       },
       "dateCreated": "Jan 25, 2017 9:34:16 AM",
-      "dateStarted": "Mar 3, 2017 3:10:26 PM",
-      "dateFinished": "Mar 3, 2017 3:10:37 PM",
+      "dateStarted": "Mar 3, 2017 3:10:26 AM",
+      "dateFinished": "Mar 3, 2017 3:10:37 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Create a random RDD of numbers, and find its mean. -- FAIT (je crois...)",
       "text": "import util.Random.nextInt\nval input \u003d sc.parallelize(Seq.fill(10000)(nextInt))\nval output \u003d input.mean()       ",
-      "dateUpdated": "Mar 3, 2017 3:13:34 PM",
+      "dateUpdated": "Mar 3, 2017 3:13:34 AM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1359,8 +1359,8 @@
         "msg": "\nimport util.Random.nextInt\n\ninput: org.apache.spark.rdd.RDD[Int] \u003d ParallelCollectionRDD[7] at parallelize at \u003cconsole\u003e:32\n\noutput: Double \u003d -6053300.62570004\n"
       },
       "dateCreated": "Jan 25, 2017 9:34:37 AM",
-      "dateStarted": "Mar 3, 2017 3:13:34 PM",
-      "dateFinished": "Mar 3, 2017 3:13:37 PM",
+      "dateStarted": "Mar 3, 2017 3:13:34 AM",
+      "dateFinished": "Mar 3, 2017 3:13:37 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1407,7 +1407,7 @@
     {
       "title": "Wordcount, easy mode -- FAIT",
       "text": "val input \u003d sc.parallelize(Seq(\"hi\", \"my\", \"my\", \"name\", \"is\",\"hi\"))\nval output \u003d input.map(x\u003d\u003e(x,1)).reduceByKey((x,y)\u003d\u003e x+y).collect\n\nval expected \u003d Array((\"is\",1), (\"my,2\"), (\"name\",1), (\"hi\",2))",
-      "dateUpdated": "Mar 3, 2017 3:16:08 PM",
+      "dateUpdated": "Mar 3, 2017 3:16:08 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1436,15 +1436,15 @@
         "msg": "\ninput: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[10] at parallelize at \u003cconsole\u003e:32\n\noutput: Array[(String, Int)] \u003d Array((is,1), (my,2), (name,1), (hi,2))\n\nexpected: Array[java.io.Serializable] \u003d Array((is,1), my,2, (name,1), (hi,2))\n"
       },
       "dateCreated": "Jan 25, 2017 9:58:36 AM",
-      "dateStarted": "Mar 3, 2017 3:15:56 PM",
-      "dateFinished": "Mar 3, 2017 3:15:59 PM",
+      "dateStarted": "Mar 3, 2017 3:15:56 AM",
+      "dateFinished": "Mar 3, 2017 3:15:59 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Sum ages per gender -- FAIT",
-      "text": "val rdd1 \u003d sc.parallelize(Seq((\"Patrick\", \"homme\"), (\"Sandra\", \"femme\"), (\"Faniki\", \"homme\"), (\"Noemie\", \"femme\"), (\"Francois\", \"homme\"), (\"Cassandre\", \"femme\")))\r\nval rdd2 \u003d sc.parallelize(Seq((\"Patrick\", 20), (\"Sandra\", 25), (\"Faniki\", 20), (\"Noemie\", 20), (\"Francois\", 30), (\"Cassandre\", 18)))\r\n\r\n// Deux tuple en entrée\r\n// On utilise les index des valeurs pour obtenir le résultat souhaité\r\n\r\nval output \u003d rdd1.join(rdd2).map(seq \u003d\u003e (seq._2._1, seq._2._2)).reduceByKey((a, b) \u003d\u003e a + b).collect()\r\nval expected \u003d Array((\"femme\", 63), (\"homme\", 70))\"",
-      "dateUpdated": "Mar 3, 2017 3:31:17 PM",
+      "text": "val rdd1 \u003d sc.parallelize(Seq((\"Patrick\", \"homme\"), (\"Sandra\", \"femme\"), (\"Faniki\", \"homme\"), (\"Noemie\", \"femme\"), (\"Francois\", \"homme\"), (\"Cassandre\", \"femme\")))\r\nval rdd2 \u003d sc.parallelize(Seq((\"Patrick\", 20), (\"Sandra\", 25), (\"Faniki\", 20), (\"Noemie\", 20), (\"Francois\", 30), (\"Cassandre\", 18)))\r\n\r\n// Deux tuple en entrée\r\n// On utilise les index des valeurs pour obtenir le résultat souhaité\r\n\r\nval output \u003d rdd1.join(rdd2).map(seq \u003d\u003e (seq._2._1, seq._2._2)).reduceByKey((a, b) \u003d\u003e a + b).collect()\r\nval expected \u003d Array((\"femme\", 63), (\"homme\", 70))",
+      "dateUpdated": "Mar 3, 2017 3:40:25 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1467,14 +1467,14 @@
       "jobName": "paragraph_1485349451411_-763547996",
       "id": "20170125-130411_450751393",
       "result": {
-        "code": "ERROR",
+        "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nrdd1: org.apache.spark.rdd.RDD[(String, String)] \u003d ParallelCollectionRDD[34] at parallelize at \u003cconsole\u003e:32\n\nrdd2: org.apache.spark.rdd.RDD[(String, Int)] \u003d ParallelCollectionRDD[35] at parallelize at \u003cconsole\u003e:32\n\noutput: Array[(Int, Int)] \u003d Array((30,30), (18,18), (20,60), (25,25))\n\n\n\n\u003cconsole\u003e:1: error: unclosed string literal\nval expected \u003d Array((\"femme\", 63), (\"homme\", 70))\"\n                                                  ^\n"
+        "msg": "\nrdd1: org.apache.spark.rdd.RDD[(String, String)] \u003d ParallelCollectionRDD[57] at parallelize at \u003cconsole\u003e:32\n\nrdd2: org.apache.spark.rdd.RDD[(String, Int)] \u003d ParallelCollectionRDD[58] at parallelize at \u003cconsole\u003e:32\n\noutput: Array[(String, Int)] \u003d Array((femme,63), (homme,70))\n\nexpected: Array[(String, Int)] \u003d Array((femme,63), (homme,70))\n"
       },
       "dateCreated": "Jan 25, 2017 1:04:11 AM",
-      "dateStarted": "Mar 3, 2017 3:29:54 PM",
-      "dateFinished": "Mar 3, 2017 3:29:57 PM",
-      "status": "ERROR",
+      "dateStarted": "Mar 3, 2017 3:40:25 AM",
+      "dateFinished": "Mar 3, 2017 3:40:32 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -1514,7 +1514,7 @@
     },
     {
       "text": "// load file into RDD and check 10 first lines\n\nval text \u003d sc.textFile(\"/opt/dataset/don-quijote.txt.gz\")\ntext.take(3)",
-      "dateUpdated": "Mar 3, 2017 3:33:09 PM",
+      "dateUpdated": "Mar 6, 2017 6:49:15 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1538,17 +1538,17 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ntext: org.apache.spark.rdd.RDD[String] \u003d /opt/dataset/don-quijote.txt.gz MapPartitionsRDD[42] at textFile at \u003cconsole\u003e:34\n\nres12: Array[String] \u003d Array(The Project Gutenberg EBook of Don Quijote, by Miguel de Cervantes Saavedra, \"\", This eBook is for the use of anyone anywhere at no cost and with)\n"
+        "msg": "\ntext: org.apache.spark.rdd.RDD[String] \u003d /opt/dataset/don-quijote.txt.gz MapPartitionsRDD[17] at textFile at \u003cconsole\u003e:29\n\nres13: Array[String] \u003d Array(The Project Gutenberg EBook of Don Quijote, by Miguel de Cervantes Saavedra, \"\", This eBook is for the use of anyone anywhere at no cost and with)\n"
       },
       "dateCreated": "Jan 25, 2017 1:49:31 AM",
-      "dateStarted": "Mar 3, 2017 3:33:10 PM",
-      "dateFinished": "Mar 3, 2017 3:33:12 PM",
+      "dateStarted": "Mar 6, 2017 6:49:15 PM",
+      "dateFinished": "Mar 6, 2017 6:49:18 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "// write your Spark map-reduce code here\n\ntext.doSomething",
-      "dateUpdated": "Mar 3, 2017 3:33:19 PM",
+      "text": "//FAIT\ntext.flatMap(line \u003d\u003e line.split(\" \")).map(s \u003d\u003e (s, 1)).reduceByKey((a, b) \u003d\u003e a + b).collect()",
+      "dateUpdated": "Mar 6, 2017 6:53:30 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1570,14 +1570,14 @@
       "jobName": "paragraph_1485352420257_-878908678",
       "id": "20170125-135340_1546349786",
       "result": {
-        "code": "ERROR",
+        "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\n\n\n\u003cconsole\u003e:37: error: value doSomething is not a member of org.apache.spark.rdd.RDD[String]\n       text.doSomething\n            ^\n"
+        "msg": "res16: Array[(String, Int)] \u003d Array((agradable,,1), (derecho.,1), (vecindad,1), (invierno,6), (deshonrar,3), (-...yo,1), (imperiosos,1), (Púsole,1), (redondez,5), (amigos:,1), (alcanzado;,1), (duque-;,1), (admitiere;,1), (escuchaban,1), (vistosa,3), (averiguación,,1), (amasa,,1), (implicaría,1), (averiguarse,1), (tormento,2), (soltarlos,1), (reía,,1), (enfado,2), (enarcando,1), (negro.,2), (todo?,2), (pobres:,1), (aconsejóle,1), (amén.,3), (catedrático;,1), (trocada,2), (acíbar;,1), (Regostóse,1), (busque,3), (relieves,2), (cuecen,1), (Reiteráronse,1), (descubriera,1), (olvido;,2), (podrida,,1), (librea?,1), (careciere,1), (ricos,,3), (dispusición,1), (peleado.,1), (llamáis,,1), (combatir,1), (different,1), (daré\"?,1), (hablan,,1), (estremecido,,1), (Hiciéronse,2), (través,8), (pidiere,..."
       },
       "dateCreated": "Jan 25, 2017 1:53:40 AM",
-      "dateStarted": "Mar 3, 2017 3:33:20 PM",
-      "dateFinished": "Mar 3, 2017 3:33:20 PM",
-      "status": "ERROR",
+      "dateStarted": "Mar 6, 2017 6:50:39 PM",
+      "dateFinished": "Mar 6, 2017 6:50:49 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -1651,7 +1651,7 @@
     },
     {
       "text": "// create your dataframe by reading the csv file\nval columnNames \u003d Seq(\"IP_FROM\", \"IP_TO\", \"COUNTRY_CODE\", \"COUNTRY_NAME\", \"CONTINENT_CODE\", \"CONTINENT_NAME\")\nval df \u003d sqlContext.read.csv(\"/opt/dataset/ipligence-lite.csv\").toDF(columnNames: _*)\ndf.printSchema()\ndf.show()\n\n// if you want to use the dataframe in SQL, you must register it\ndf.registerTempTable(\"df\")",
-      "dateUpdated": "Feb 1, 2017 10:10:32 AM",
+      "dateUpdated": "Mar 6, 2017 6:45:07 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1678,8 +1678,8 @@
         "msg": "\ncolumnNames: Seq[String] \u003d List(IP_FROM, IP_TO, COUNTRY_CODE, COUNTRY_NAME, CONTINENT_CODE, CONTINENT_NAME)\n\ndf: org.apache.spark.sql.DataFrame \u003d [IP_FROM: string, IP_TO: string ... 4 more fields]\nroot\n |-- IP_FROM: string (nullable \u003d true)\n |-- IP_TO: string (nullable \u003d true)\n |-- COUNTRY_CODE: string (nullable \u003d true)\n |-- COUNTRY_NAME: string (nullable \u003d true)\n |-- CONTINENT_CODE: string (nullable \u003d true)\n |-- CONTINENT_NAME: string (nullable \u003d true)\n\n+----------+----------+------------+------------+--------------+--------------+\n|   IP_FROM|     IP_TO|COUNTRY_CODE|COUNTRY_NAME|CONTINENT_CODE|CONTINENT_NAME|\n+----------+----------+------------+------------+--------------+--------------+\n|0000000000|0016777215|        null|        null|          null|          null|\n|0016777216|0016777471|          AU|   AUSTRALIA|            OC|       OCEANIA|\n|0016777472|0016778239|          CN|       CHINA|            AS|          ASIA|\n|0016778240|0016779263|          AU|   AUSTRALIA|            OC|       OCEANIA|\n|0016779264|0016781311|          CN|       CHINA|            AS|          ASIA|\n|0016781312|0016785407|          JP|       JAPAN|            AS|          ASIA|\n|0016785408|0016793599|          CN|       CHINA|            AS|          ASIA|\n|0016793600|0016809983|          JP|       JAPAN|            AS|          ASIA|\n|0016809984|0016842751|          TH|    THAILAND|            AS|          ASIA|\n|0016842752|0016843007|          CN|       CHINA|            AS|          ASIA|\n|0016843008|0016843263|          AU|   AUSTRALIA|            OC|       OCEANIA|\n|0016843264|0016859135|          CN|       CHINA|            AS|          ASIA|\n|0016859136|0016875519|          JP|       JAPAN|            AS|          ASIA|\n|0016875520|0016908287|          TH|    THAILAND|            AS|          ASIA|\n|0016908288|0016909055|          CN|       CHINA|            AS|          ASIA|\n|0016909056|0016909311|          AU|   AUSTRALIA|            OC|       OCEANIA|\n|0016909312|0016941055|          CN|       CHINA|            AS|          ASIA|\n|0016941056|0016973823|          TH|    THAILAND|            AS|          ASIA|\n|0016973824|0017039359|          CN|       CHINA|            AS|          ASIA|\n|0017039360|0017039615|          AU|   AUSTRALIA|            OC|       OCEANIA|\n+----------+----------+------------+------------+--------------+--------------+\nonly showing top 20 rows\n\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n"
       },
       "dateCreated": "Feb 1, 2017 7:16:17 AM",
-      "dateStarted": "Feb 1, 2017 10:10:32 AM",
-      "dateFinished": "Feb 1, 2017 10:10:34 AM",
+      "dateStarted": "Mar 6, 2017 6:45:07 PM",
+      "dateFinished": "Mar 6, 2017 6:45:51 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1822,9 +1822,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "title": "Display all continent names",
-      "text": "",
-      "dateUpdated": "Feb 1, 2017 9:50:17 AM",
+      "title": "Display all continent names -- FAIT",
+      "text": "sqlContext.sql(\"SELECT DISTINCT(CONTINENT_NAME) FROM df\").show(20)",
+      "dateUpdated": "Mar 6, 2017 6:53:05 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1849,18 +1849,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": ""
+        "msg": "+---------------+\n| CONTINENT_NAME|\n+---------------+\n|      CARIBBEAN|\n|           ASIA|\n|           null|\n|        OCEANIA|\n|  NORTH AMERICA|\n|  SOUTH AMERICA|\n|         EUROPE|\n|     ANTARCTICA|\n|         AFRICA|\n|CENTRAL AMERICA|\n|    MIDDLE EAST|\n|             AS|\n|             AF|\n+---------------+\n\n"
       },
       "dateCreated": "Feb 1, 2017 9:48:15 AM",
-      "dateStarted": "Feb 1, 2017 9:50:18 AM",
-      "dateFinished": "Feb 1, 2017 9:50:18 AM",
+      "dateStarted": "Mar 6, 2017 6:45:58 PM",
+      "dateFinished": "Mar 6, 2017 6:46:07 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "title": "Count number of rows with a null value in country code",
-      "text": "// Don\u0027t forget you have the count function on a Dataframe after you have filtered it",
-      "dateUpdated": "Feb 1, 2017 10:05:56 AM",
+      "title": "Count number of rows with a null value in country code -- FAIT",
+      "text": "// Don\u0027t forget you have the count function on a Dataframe after you have filtered it\nsqlContext.sql(\"SELECT COUNT(*) FROM df WHERE COUNTRY_NAME IS NULL\").show()",
+      "dateUpdated": "Mar 6, 2017 7:03:05 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1885,18 +1885,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": ""
+        "msg": "+--------+\n|count(1)|\n+--------+\n|    4997|\n+--------+\n\n"
       },
       "dateCreated": "Feb 1, 2017 9:48:23 AM",
-      "dateStarted": "Feb 1, 2017 10:05:57 AM",
-      "dateFinished": "Feb 1, 2017 10:05:57 AM",
+      "dateStarted": "Mar 6, 2017 6:57:26 PM",
+      "dateFinished": "Mar 6, 2017 6:57:27 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "title": "Display number of connections per continent",
-      "text": "",
-      "dateUpdated": "Feb 1, 2017 10:09:38 AM",
+      "title": "Display number of connections per continent -- FAIT",
+      "text": "sqlContext.sql(\"SELECT CONTINENT_CODE, COUNT(*) AS NB_CONNEXIONS FROM df GROUP BY CONTINENT_CODE\").show()",
+      "dateUpdated": "Mar 6, 2017 7:03:13 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1921,18 +1921,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": ""
+        "msg": "+--------------+-------------+\n|CONTINENT_CODE|NB_CONNEXIONS|\n+--------------+-------------+\n|          ASIA|            5|\n|            NA|        15330|\n|          null|         4997|\n|            SA|         2466|\n|            CA|          721|\n|            ME|         2026|\n|            AQ|            7|\n|        AFRICA|            3|\n|            CB|         1296|\n|            AS|        11606|\n|            OC|         3928|\n|            EU|        46715|\n|            AF|         2608|\n+--------------+-------------+\n\n"
       },
       "dateCreated": "Feb 1, 2017 10:05:58 AM",
-      "dateStarted": "Feb 1, 2017 10:09:38 AM",
-      "dateFinished": "Feb 1, 2017 10:09:38 AM",
+      "dateStarted": "Mar 6, 2017 7:00:42 PM",
+      "dateFinished": "Mar 6, 2017 7:00:46 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "title": "Show IP_FROM addresses which appear more than once in the file",
-      "text": "// PS : if your query is correct, you should only find one",
-      "dateUpdated": "Feb 1, 2017 10:11:17 AM",
+      "title": "Show IP_FROM addresses which appear more than once in the file -- FAIT",
+      "text": "// PS : if your query is correct, you should only find one\nsqlContext.sql(\"SELECT IP_FROM FROM df GROUP BY IP_FROM HAVING COUNT(IP_FROM) \u003e 1\").show()",
+      "dateUpdated": "Mar 6, 2017 7:03:24 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1957,11 +1957,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": ""
+        "msg": "+----------+\n|   IP_FROM|\n+----------+\n|3272226816|\n+----------+\n\n"
       },
       "dateCreated": "Feb 1, 2017 10:06:08 AM",
-      "dateStarted": "Feb 1, 2017 10:11:17 AM",
-      "dateFinished": "Feb 1, 2017 10:11:18 AM",
+      "dateStarted": "Mar 6, 2017 7:02:44 PM",
+      "dateFinished": "Mar 6, 2017 7:02:49 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -2120,12 +2120,12 @@
     },
     {
       "text": "",
-      "dateUpdated": "Jan 25, 2017 2:00:03 AM",
+      "dateUpdated": "Mar 6, 2017 7:04:27 PM",
       "config": {
-        "colWidth": 12.0,
+        "colWidth": 11.0,
         "graph": {
           "mode": "table",
-          "height": 300.0,
+          "height": 86.0,
           "optionOpen": false,
           "keys": [],
           "values": [],
@@ -2133,7 +2133,8 @@
           "scatter": {}
         },
         "enabled": true,
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/scala",
+        "tableHide": true
       },
       "settings": {
         "params": {},
@@ -2143,30 +2144,31 @@
       "id": "20170125-135952_1235249833",
       "dateCreated": "Jan 25, 2017 1:59:52 AM",
       "status": "READY",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     }
   ],
   "name": "Practice",
   "id": "2C75UP2R2",
   "angularObjects": {
-    "2CC9WHJ8P:shared_process": [],
-    "2CADJHW4F:shared_process": [],
-    "2CBYYSM2V:shared_process": [],
-    "2CD9E9ZPQ:shared_process": [],
-    "2CA6DREWG:shared_process": [],
-    "2C9D84VJM:shared_process": [],
-    "2C9EMWRV8:shared_process": [],
-    "2CB55XDY3:shared_process": [],
-    "2CBBKT21J:shared_process": [],
-    "2CBXSY9N8:shared_process": [],
-    "2CCMZ3YTU:shared_process": [],
-    "2CBBKBXAS:shared_process": [],
-    "2CB7Y466N:shared_process": [],
-    "2CCNDDW47:shared_process": [],
-    "2CB6T9KEH:shared_process": [],
-    "2CB7S3FKT:shared_process": [],
-    "2CAB7QZ36:shared_process": [],
-    "2C9SVTXAG:shared_process": []
+    "2CCNDU86T:shared_process": [],
+    "2CBPQHQYT:shared_process": [],
+    "2CBVBBXDF:shared_process": [],
+    "2CCN1CA9Z:shared_process": [],
+    "2CD7V21Y1:shared_process": [],
+    "2CBBKH6SH:shared_process": [],
+    "2CCD7EJKY:shared_process": [],
+    "2CDJVTBT7:shared_process": [],
+    "2CC1TAK3U:shared_process": [],
+    "2CCFJ3TKH:shared_process": [],
+    "2CDDQGE4C:shared_process": [],
+    "2CAVSTB59:shared_process": [],
+    "2CB5U9F3Z:shared_process": [],
+    "2CB66UMJM:shared_process": [],
+    "2CB1MQJT5:shared_process": [],
+    "2CCQ8W36H:shared_process": [],
+    "2CAF38CGM:shared_process": [],
+    "2CCRWS8R1:shared_process": []
   },
   "config": {
     "looknfeel": "default"
