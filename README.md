@@ -1,3 +1,5 @@
+Marouen REBANI, Mohammed Latrache
+
 # Practice : tweak a Zeppelin environment and test Spark
 
 This is a fork from [arjones/vagrant-spark-zeppelin](https://github.com/arjones/vagrant-spark-zeppelin), that we are going to use for educational purposes.
@@ -100,9 +102,15 @@ Add a message between the following lines:
 PERSONAL MESSAGE
 <hr>
 
+<<<<<<< HEAD
+test
+
+then add and commit the file to your "edit_README" branch.
+=======
 With `$ git status` you can check the status of your Git repository.
 
 With `$ git diff README.md` you can see modifications made to README.md compared to the HEAD pointer.
+>>>>>>> upstream/master
 
 When you are done with modificationd, add them (`$ git add README.md`) and then commit your changes (`$ git commit -m "edited the README"`). Because you are on the _edit\_README_ branch, this should add the commit to this branch.
 
