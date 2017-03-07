@@ -72,7 +72,7 @@
     },
     {
       "text": "%md\n\n## II. Load data\n\nI have downloaded adult.data from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Adult) and put it into the `data/` folder of your project.\n\nThe following cells will do the necessary to load the data into a DataFrame.",
-      "dateUpdated": "Mar 5, 2017 6:04:59 PM",
+      "dateUpdated": "Mar 5, 2017 6:04:59 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -100,15 +100,15 @@
         "msg": "\u003ch2\u003eII. Load data\u003c/h2\u003e\n\u003cp\u003eI have downloaded adult.data from the \u003ca href\u003d\"https://archive.ics.uci.edu/ml/datasets/Adult\"\u003eUCI Machine Learning Repository\u003c/a\u003e and put it into the \u003ccode\u003edata/\u003c/code\u003e folder of your project.\u003c/p\u003e\n\u003cp\u003eThe following cells will do the necessary to load the data into a DataFrame.\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 3, 2017 8:35:44 AM",
-      "dateStarted": "Mar 5, 2017 6:04:59 PM",
-      "dateFinished": "Mar 5, 2017 6:04:59 PM",
+      "dateStarted": "Mar 5, 2017 6:04:59 AM",
+      "dateFinished": "Mar 5, 2017 6:04:59 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Load data (run the cell)",
       "text": "import org.apache.spark.sql.types.{StringType, DoubleType, StructType, StructField}\n\nval schema \u003d StructType(Seq(\n    StructField(\"age\", DoubleType),\n    StructField(\"workclass\", StringType),\n    StructField(\"fnlwgt\", DoubleType),\n    StructField(\"education\", StringType),\n    StructField(\"education_num\", DoubleType),\n    StructField(\"marital_status\", StringType),\n    StructField(\"occupation\", StringType),\n    StructField(\"relationship\", StringType),\n    StructField(\"race\", StringType),\n    StructField(\"sex\", StringType),\n    StructField(\"capital_gain\", DoubleType),\n    StructField(\"capital_loss\", DoubleType),\n    StructField(\"hours_per_week\", DoubleType),\n    StructField(\"native_country\", StringType),\n    StructField(\"income\", StringType)\n    ))\n\ncase class Adult(\n    age: Double, \n    workclass: String, \n    fnlwgt: Double, \n    education: String, \n    education_num: Double, \n    marital_status: String, \n    occupation: String, \n    relationship: String, \n    race: String, \n    sex: String, \n    capital_gain: Double, \n    capital_loss: Double, \n    hours_per_week: Double, \n    native_country: String, \n    income: String\n    )\n    \nval dataset \u003d spark.read.schema(schema).csv(\"/opt/dataset/adult.data.csv\").as[Adult]\ndataset.registerTempTable(\"dataset\") \n",
-      "dateUpdated": "Mar 5, 2017 6:05:02 PM",
+      "dateUpdated": "Mar 7, 2017 10:13:34 PM",
       "config": {
         "colWidth": 8.0,
         "graph": {
@@ -138,14 +138,14 @@
         "msg": "\nimport org.apache.spark.sql.types.{StringType, DoubleType, StructType, StructField}\n\nschema: org.apache.spark.sql.types.StructType \u003d StructType(StructField(age,DoubleType,true), StructField(workclass,StringType,true), StructField(fnlwgt,DoubleType,true), StructField(education,StringType,true), StructField(education_num,DoubleType,true), StructField(marital_status,StringType,true), StructField(occupation,StringType,true), StructField(relationship,StringType,true), StructField(race,StringType,true), StructField(sex,StringType,true), StructField(capital_gain,DoubleType,true), StructField(capital_loss,DoubleType,true), StructField(hours_per_week,DoubleType,true), StructField(native_country,StringType,true), StructField(income,StringType,true))\n\ndefined class Adult\n\ndataset: org.apache.spark.sql.Dataset[Adult] \u003d [age: double, workclass: string ... 13 more fields]\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n"
       },
       "dateCreated": "Feb 3, 2017 8:43:33 AM",
-      "dateStarted": "Mar 5, 2017 6:05:03 PM",
-      "dateFinished": "Mar 5, 2017 6:05:13 PM",
+      "dateStarted": "Mar 7, 2017 10:13:34 PM",
+      "dateFinished": "Mar 7, 2017 10:13:58 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\nExplications :\nLe fichier CSV adult.data.csv contient les 48842 personnes à étudier.\nCe fichier est déjà stocké dans la VM, à l\u0027emplacement /opt/dataset/adult.data.csv\nDans notre dépot GIT, le fichier CSV est présent dans le répertoire data/ il a été ajouté lors du merge de master sur ma branch (et déposé sur la VM lors du vagrant up)\n\nLa méthode registerTempTable permet de déclarer les données comme s\u0027il s\u0027agissait d\u0027une table \"dataset\". Cette table temporaire pourra être appelée dans des blocs %sql\n\nNous réutiliserons ce mécanisme plus tard lorsque nous séparerons les personnes gagnant moins et plus de 50K dans deux datasets différents.",
-      "dateUpdated": "Feb 16, 2017 4:56:27 PM",
+      "dateUpdated": "Feb 16, 2017 4:56:27 AM",
       "config": {
         "colWidth": 4.0,
         "graph": {
@@ -172,9 +172,9 @@
         "type": "HTML",
         "msg": "\u003cp\u003eExplications :\n\u003cbr  /\u003eLe fichier CSV adult.data.csv contient les 48842 personnes à étudier.\n\u003cbr  /\u003eCe fichier est déjà stocké dans la VM, à l\u0027emplacement /opt/dataset/adult.data.csv\n\u003cbr  /\u003eDans notre dépot GIT, le fichier CSV est présent dans le répertoire data/ il a été ajouté lors du merge de master sur ma branch (et déposé sur la VM lors du vagrant up)\u003c/p\u003e\n\u003cp\u003eLa méthode registerTempTable permet de déclarer les données comme s\u0027il s\u0027agissait d\u0027une table \u0026ldquo;dataset\u0026rdquo;. Cette table temporaire pourra être appelée dans des blocs %sql\u003c/p\u003e\n\u003cp\u003eNous réutiliserons ce mécanisme plus tard lorsque nous séparerons les personnes gagnant moins et plus de 50K dans deux datasets différents.\u003c/p\u003e\n"
       },
-      "dateCreated": "Feb 16, 2017 4:51:01 PM",
-      "dateStarted": "Feb 16, 2017 4:56:17 PM",
-      "dateFinished": "Feb 16, 2017 4:56:18 PM",
+      "dateCreated": "Feb 16, 2017 4:51:01 AM",
+      "dateStarted": "Feb 16, 2017 4:56:17 AM",
+      "dateFinished": "Feb 16, 2017 4:56:18 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -215,7 +215,7 @@
     },
     {
       "text": "%sql SELECT * FROM dataset LIMIT 10",
-      "dateUpdated": "Mar 5, 2017 6:05:50 PM",
+      "dateUpdated": "Mar 5, 2017 6:05:50 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -266,15 +266,15 @@
         "msg": "age\tworkclass\tfnlwgt\teducation\teducation_num\tmarital_status\toccupation\trelationship\trace\tsex\tcapital_gain\tcapital_loss\thours_per_week\tnative_country\tincome\n39.0\t State-gov\t77516.0\t Bachelors\t13.0\t Never-married\t Adm-clerical\t Not-in-family\t White\t Male\t2174.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n50.0\t Self-emp-not-inc\t83311.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t13.0\t United-States\t \u003c\u003d50K\n38.0\t Private\t215646.0\t HS-grad\t9.0\t Divorced\t Handlers-cleaners\t Not-in-family\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n53.0\t Private\t234721.0\t 11th\t7.0\t Married-civ-spouse\t Handlers-cleaners\t Husband\t Black\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n28.0\t Private\t338409.0\t Bachelors\t13.0\t Married-civ-spouse\t Prof-specialty\t Wife\t Black\t Female\t0.0\t0.0\t40.0\t Cuba\t \u003c\u003d50K\n37.0\t Private\t284582.0\t Masters\t14.0\t Married-civ-spouse\t Exec-managerial\t Wife\t White\t Female\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n49.0\t Private\t160187.0\t 9th\t5.0\t Married-spouse-absent\t Other-service\t Not-in-family\t Black\t Female\t0.0\t0.0\t16.0\t Jamaica\t \u003c\u003d50K\n52.0\t Self-emp-not-inc\t209642.0\t HS-grad\t9.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t45.0\t United-States\t \u003e50K\n31.0\t Private\t45781.0\t Masters\t14.0\t Never-married\t Prof-specialty\t Not-in-family\t White\t Female\t14084.0\t0.0\t50.0\t United-States\t \u003e50K\n42.0\t Private\t159449.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t5178.0\t0.0\t40.0\t United-States\t \u003e50K\n"
       },
       "dateCreated": "Feb 3, 2017 8:41:09 AM",
-      "dateStarted": "Mar 5, 2017 6:05:45 PM",
-      "dateFinished": "Mar 5, 2017 6:05:45 PM",
+      "dateStarted": "Mar 5, 2017 6:05:45 AM",
+      "dateFinished": "Mar 5, 2017 6:05:45 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Check settings of graph. See how we average age by income.",
       "text": "%sql SELECT income, avg(age) FROM dataset group by income",
-      "dateUpdated": "Mar 5, 2017 6:05:56 PM",
+      "dateUpdated": "Mar 5, 2017 6:05:56 AM",
       "config": {
         "colWidth": 5.0,
         "graph": {
@@ -321,14 +321,14 @@
         "msg": "income\tavg(age)\n \u003e50K\t44.24984058155847\n \u003c\u003d50K\t36.78373786407767\n"
       },
       "dateCreated": "Feb 6, 2017 8:20:04 AM",
-      "dateStarted": "Mar 5, 2017 6:05:56 PM",
-      "dateFinished": "Mar 5, 2017 6:06:06 PM",
+      "dateStarted": "Mar 5, 2017 6:05:56 AM",
+      "dateFinished": "Mar 5, 2017 6:06:06 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\nExplications :\n\nPour connaitre l\u0027âge moyen par revenus il suffit de grouper les individus par revenus et faire une moyenne sur l\u0027age.\n\nLa moyenne d\u0027age est de 36.78 ans pour les personnes qui gagnent \u003c\u003d 50K\nLa moyenne d\u0027age est de 44.25 ans pour les personnes qui gagnent \u003e\u003d 50K",
-      "dateUpdated": "Mar 5, 2017 6:06:43 PM",
+      "dateUpdated": "Mar 5, 2017 6:06:43 AM",
       "config": {
         "colWidth": 7.0,
         "graph": {
@@ -355,15 +355,15 @@
         "type": "HTML",
         "msg": "\u003cp\u003eExplications :\u003c/p\u003e\n\u003cp\u003ePour connaitre l\u0027âge moyen par revenus il suffit de grouper les individus par revenus et faire une moyenne sur l\u0027age.\u003c/p\u003e\n\u003cp\u003eLa moyenne d\u0027age est de 36.78 ans pour les personnes qui gagnent \u003c\u003d 50K\n\u003cbr  /\u003eLa moyenne d\u0027age est de 44.25 ans pour les personnes qui gagnent \u003e\u003d 50K\u003c/p\u003e\n"
       },
-      "dateCreated": "Feb 16, 2017 4:56:40 PM",
-      "dateStarted": "Mar 5, 2017 6:06:42 PM",
-      "dateFinished": "Mar 5, 2017 6:06:42 PM",
+      "dateCreated": "Feb 16, 2017 4:56:40 AM",
+      "dateStarted": "Mar 5, 2017 6:06:42 AM",
+      "dateFinished": "Mar 5, 2017 6:06:42 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md \n\n## III. Descriptive analysis\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nProvide a summary statistics graph for some columns you deem interesting. Summary statistics is comprised (but not limited) of:\n* mean, standard deviation and skewness for numeric columns.\n* counts and percentage of each value for categorical columns.\n\nIf you can, try to separate the two income groups and compare.\n\nTwo ways of doing this:\n* You should be able to it using standard SQL queries on the DataFrame and `show()` the result\n* You can use the %sql interpreter like in the previous cell and then use the settings tab of your graph to display the desired results.",
-      "dateUpdated": "Feb 13, 2017 9:48:22 PM",
+      "dateUpdated": "Feb 13, 2017 9:48:22 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -400,7 +400,7 @@
     {
       "title": "Age moyen",
       "text": "%sql \n\nSELECT avg(age) AS Age_Moyen FROM dataset\n\n-- Quel est l\u0027âge moyen des individus de notre jeu de données ?",
-      "dateUpdated": "Mar 5, 2017 6:06:48 PM",
+      "dateUpdated": "Mar 5, 2017 6:06:48 AM",
       "config": {
         "colWidth": 2.0,
         "graph": {
@@ -429,14 +429,14 @@
         "msg": "Age_Moyen\n38.58164675532078\n"
       },
       "dateCreated": "Feb 8, 2017 6:52:17 AM",
-      "dateStarted": "Mar 5, 2017 6:06:48 PM",
-      "dateFinished": "Mar 5, 2017 6:06:51 PM",
+      "dateStarted": "Mar 5, 2017 6:06:48 AM",
+      "dateFinished": "Mar 5, 2017 6:06:51 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%sql\n\n SELECT std(hours_per_week) AS Ecart_Type_Heures_travaillees FROM dataset\n\n-- Quel est l\u0027écart type des heures travaillées par semaine ?",
-      "dateUpdated": "Mar 5, 2017 6:06:50 PM",
+      "dateUpdated": "Mar 5, 2017 6:06:50 AM",
       "config": {
         "colWidth": 2.0,
         "graph": {
@@ -475,15 +475,15 @@
         "type": "TABLE",
         "msg": "Ecart_Type_Heures_travaillees\n12.347428681731838\n"
       },
-      "dateCreated": "Feb 13, 2017 9:02:44 PM",
-      "dateStarted": "Mar 5, 2017 6:06:50 PM",
-      "dateFinished": "Mar 5, 2017 6:06:54 PM",
+      "dateCreated": "Feb 13, 2017 9:02:44 AM",
+      "dateStarted": "Mar 5, 2017 6:06:50 AM",
+      "dateFinished": "Mar 5, 2017 6:06:54 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%sql \n\nselect workclass, CONCAT(ROUND(100. * count(*) / sum(count(*)) over (),2), \u0027%\u0027) as pourcentage\nfrom dataset\ngroup by workclass",
-      "dateUpdated": "Mar 5, 2017 6:06:53 PM",
+      "dateUpdated": "Mar 5, 2017 6:06:53 AM",
       "config": {
         "colWidth": 3.0,
         "graph": {
@@ -528,15 +528,15 @@
         "type": "TABLE",
         "msg": "workclass\tpourcentage\n State-gov\t3.99%\n Federal-gov\t2.95%\n Self-emp-not-inc\t7.80%\n Local-gov\t6.43%\n Private\t69.70%\n ?\t5.64%\n Self-emp-inc\t3.43%\n Without-pay\t0.04%\n Never-worked\t0.02%\n"
       },
-      "dateCreated": "Feb 13, 2017 9:14:07 PM",
-      "dateStarted": "Mar 5, 2017 6:06:53 PM",
-      "dateFinished": "Mar 5, 2017 6:07:04 PM",
+      "dateCreated": "Feb 13, 2017 9:14:07 AM",
+      "dateStarted": "Mar 5, 2017 6:06:53 AM",
+      "dateFinished": "Mar 5, 2017 6:07:04 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%sql \n\nselect sex, CONCAT(ROUND(100. * count(*) / sum(count(*)) over (),2), \u0027%\u0027) as pourcentage\nfrom dataset\ngroup by sex",
-      "dateUpdated": "Mar 5, 2017 6:07:08 PM",
+      "dateUpdated": "Mar 5, 2017 6:07:08 AM",
       "config": {
         "colWidth": 3.0,
         "graph": {
@@ -586,15 +586,15 @@
         "type": "TABLE",
         "msg": "sex\tpourcentage\n Male\t66.92%\n Female\t33.08%\n"
       },
-      "dateCreated": "Feb 13, 2017 9:27:12 PM",
-      "dateStarted": "Mar 5, 2017 6:07:09 PM",
-      "dateFinished": "Mar 5, 2017 6:07:17 PM",
+      "dateCreated": "Feb 13, 2017 9:27:12 AM",
+      "dateStarted": "Mar 5, 2017 6:07:09 AM",
+      "dateFinished": "Mar 5, 2017 6:07:17 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%sql \n\nselect education, ROUND(100. * count(*) / sum(count(*)) over (),2) as pourcentage\nfrom dataset\ngroup by education\norder by pourcentage DESC",
-      "dateUpdated": "Mar 5, 2017 6:07:18 PM",
+      "dateUpdated": "Mar 5, 2017 6:07:18 AM",
       "config": {
         "colWidth": 2.0,
         "graph": {
@@ -644,16 +644,16 @@
         "type": "TABLE",
         "msg": "education\tpourcentage\n HS-grad\t32.25\n Some-college\t22.39\n Bachelors\t16.45\n Masters\t5.29\n Assoc-voc\t4.24\n 11th\t3.61\n Assoc-acdm\t3.28\n 10th\t2.87\n 7th-8th\t1.98\n Prof-school\t1.77\n 9th\t1.58\n 12th\t1.33\n Doctorate\t1.27\n 5th-6th\t1.02\n 1st-4th\t0.52\n Preschool\t0.16\n"
       },
-      "dateCreated": "Feb 16, 2017 5:02:13 PM",
-      "dateStarted": "Mar 5, 2017 6:07:19 PM",
-      "dateFinished": "Mar 5, 2017 6:07:28 PM",
+      "dateCreated": "Feb 16, 2017 5:02:13 AM",
+      "dateStarted": "Mar 5, 2017 6:07:19 AM",
+      "dateFinished": "Mar 5, 2017 6:07:28 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Pourcentage des personnes divorcées en fonction du parcours scolaire suivi.",
       "text": "%sql \n\n\nselect education, ROUND(100. * count(*) / sum(count(*)) over (),2) as pourcentage_DIVORCES_par_education \nfrom dataset\nwhere marital_status\u003d\u0027 Divorced\u0027\ngroup by education\norder by pourcentage_DIVORCES_par_education DESC",
-      "dateUpdated": "Mar 5, 2017 6:08:14 PM",
+      "dateUpdated": "Mar 5, 2017 6:08:14 AM",
       "config": {
         "colWidth": 9.0,
         "graph": {
@@ -699,15 +699,15 @@
         "type": "TABLE",
         "msg": "education\tpourcentage_DIVORCES_par_education\n HS-grad\t36.30\n Some-college\t24.06\n Bachelors\t12.29\n Assoc-voc\t5.27\n Masters\t5.24\n Assoc-acdm\t4.57\n 11th\t2.93\n 10th\t2.70\n 7th-8th\t1.64\n 9th\t1.44\n Prof-school\t1.24\n 12th\t0.88\n Doctorate\t0.74\n 5th-6th\t0.45\n 1st-4th\t0.23\n Preschool\t0.02\n"
       },
-      "dateCreated": "Feb 13, 2017 9:28:21 PM",
-      "dateStarted": "Mar 5, 2017 6:08:14 PM",
-      "dateFinished": "Mar 5, 2017 6:08:24 PM",
+      "dateCreated": "Feb 13, 2017 9:28:21 AM",
+      "dateStarted": "Mar 5, 2017 6:08:14 AM",
+      "dateFinished": "Mar 5, 2017 6:08:24 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\nExplications :\n\nNous remarquons que la plus grosse part de divorcés concerne les diplômés d\u0027école supérieure. Ce chiffre n\u0027est pas étonnant car il s\u0027agit de l\u0027éducation suivie par le plus grand nombre d\u0027individus (33.25%).",
-      "dateUpdated": "Mar 5, 2017 6:08:12 PM",
+      "dateUpdated": "Mar 5, 2017 6:08:12 AM",
       "config": {
         "colWidth": 3.0,
         "graph": {
@@ -734,15 +734,15 @@
         "type": "HTML",
         "msg": "\u003cp\u003eExplications :\u003c/p\u003e\n\u003cp\u003eNous remarquons que la plus grosse part de divorcés concernent les diplômés d\u0027école supérieure. Ce chiffre n\u0027est pas étonnant car il s\u0027agit de l\u0027éducation suivie par le plus grand nombre d\u0027individus (33.25%).\u003c/p\u003e\n"
       },
-      "dateCreated": "Feb 13, 2017 9:58:44 PM",
-      "dateStarted": "Mar 5, 2017 6:07:52 PM",
-      "dateFinished": "Mar 5, 2017 6:07:52 PM",
+      "dateCreated": "Feb 13, 2017 9:58:44 AM",
+      "dateStarted": "Mar 5, 2017 6:07:52 AM",
+      "dateFinished": "Mar 5, 2017 6:07:52 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md Dataset avec uniquement les personnes gagnant plus de 50K. Ces valeurs sont stockées dans une variable datasetGreatherThan50K comme TABLE TEMPORAIRE : ",
-      "dateUpdated": "Feb 13, 2017 9:53:28 PM",
+      "dateUpdated": "Feb 13, 2017 9:53:28 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -769,16 +769,16 @@
         "type": "HTML",
         "msg": "\u003cp\u003eDataset avec uniquement les personnes gagnant plus de 50K. Ces valeurs sont stockées dans une variable datasetGreatherThan50K comme TABLE TEMPORAIRE :\u003c/p\u003e\n"
       },
-      "dateCreated": "Feb 13, 2017 9:49:26 PM",
-      "dateStarted": "Feb 13, 2017 9:53:27 PM",
-      "dateFinished": "Feb 13, 2017 9:53:27 PM",
+      "dateCreated": "Feb 13, 2017 9:49:26 AM",
+      "dateStarted": "Feb 13, 2017 9:53:27 AM",
+      "dateFinished": "Feb 13, 2017 9:53:27 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Play me !",
       "text": "val datasetGreatherThan50K \u003d dataset.filter($\"income\"\u003d\u003d\u003d\" \u003e50K\")\ndatasetGreatherThan50K.registerTempTable(\"datasetGreatherThan50K\")\ndatasetGreatherThan50K.show()",
-      "dateUpdated": "Mar 5, 2017 6:08:25 PM",
+      "dateUpdated": "Mar 5, 2017 6:08:25 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -806,15 +806,15 @@
         "type": "TEXT",
         "msg": "\ndatasetGreatherThan50K: org.apache.spark.sql.Dataset[Adult] \u003d [age: double, workclass: string ... 13 more fields]\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n+----+-----------------+--------+-------------+-------------+-------------------+----------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+\n| age|        workclass|  fnlwgt|    education|education_num|     marital_status|      occupation|  relationship|               race|    sex|capital_gain|capital_loss|hours_per_week|native_country|income|\n+----+-----------------+--------+-------------+-------------+-------------------+----------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+\n|52.0| Self-emp-not-inc|209642.0|      HS-grad|          9.0| Married-civ-spouse| Exec-managerial|       Husband|              White|   Male|         0.0|         0.0|          45.0| United-States|  \u003e50K|\n|31.0|          Private| 45781.0|      Masters|         14.0|      Never-married|  Prof-specialty| Not-in-family|              White| Female|     14084.0|         0.0|          50.0| United-States|  \u003e50K|\n|42.0|          Private|159449.0|    Bachelors|         13.0| Married-civ-spouse| Exec-managerial|       Husband|              White|   Male|      5178.0|         0.0|          40.0| United-States|  \u003e50K|\n|37.0|          Private|280464.0| Some-college|         10.0| Married-civ-spouse| Exec-managerial|       Husband|              Black|   Male|         0.0|         0.0|          80.0| United-States|  \u003e50K|\n|30.0|        State-gov|141297.0|    Bachelors|         13.0| Married-civ-spouse|  Prof-specialty|       Husband| Asian-Pac-Islander|   Male|         0.0|         0.0|          40.0|         India|  \u003e50K|\n|40.0|          Private|121772.0|    Assoc-voc|         11.0| Married-civ-spouse|    Craft-repair|       Husband| Asian-Pac-Islander|   Male|         0.0|         0.0|          40.0|             ?|  \u003e50K|\n|43.0| Self-emp-not-inc|292175.0|      Masters|         14.0|           Divorced| Exec-managerial|     Unmarried|              White| Female|         0.0|         0.0|          45.0| United-States|  \u003e50K|\n|40.0|          Private|193524.0|    Doctorate|         16.0| Married-civ-spouse|  Prof-specialty|       Husband|              White|   Male|         0.0|         0.0|          60.0| United-States|  \u003e50K|\n|56.0|        Local-gov|216851.0|    Bachelors|         13.0| Married-civ-spouse|    Tech-support|       Husband|              White|   Male|         0.0|         0.0|          40.0| United-States|  \u003e50K|\n|54.0|                ?|180211.0| Some-college|         10.0| Married-civ-spouse|               ?|       Husband| Asian-Pac-Islander|   Male|         0.0|         0.0|          60.0|         South|  \u003e50K|\n|31.0|          Private| 84154.0| Some-college|         10.0| Married-civ-spouse|           Sales|       Husband|              White|   Male|         0.0|         0.0|          38.0|             ?|  \u003e50K|\n|57.0|      Federal-gov|337895.0|    Bachelors|         13.0| Married-civ-spouse|  Prof-specialty|       Husband|              Black|   Male|         0.0|         0.0|          40.0| United-States|  \u003e50K|\n|47.0|          Private| 51835.0|  Prof-school|         15.0| Married-civ-spouse|  Prof-specialty|          Wife|              White| Female|         0.0|      1902.0|          60.0|      Honduras|  \u003e50K|\n|50.0|      Federal-gov|251585.0|    Bachelors|         13.0|           Divorced| Exec-managerial| Not-in-family|              White|   Male|         0.0|         0.0|          55.0| United-States|  \u003e50K|\n|43.0|          Private|237993.0| Some-college|         10.0| Married-civ-spouse|    Tech-support|       Husband|              White|   Male|         0.0|         0.0|          40.0| United-States|  \u003e50K|\n|42.0|          Private|116632.0|    Doctorate|         16.0| Married-civ-spouse|  Prof-specialty|       Husband|              White|   Male|         0.0|         0.0|          45.0| United-States|  \u003e50K|\n|53.0|          Private|169846.0|      HS-grad|          9.0| Married-civ-spouse|    Adm-clerical|          Wife|              White| Female|         0.0|         0.0|          40.0| United-States|  \u003e50K|\n|49.0|     Self-emp-inc|191681.0| Some-college|         10.0| Married-civ-spouse| Exec-managerial|       Husband|              White|   Male|         0.0|         0.0|          50.0| United-States|  \u003e50K|\n|29.0| Self-emp-not-inc|162298.0|    Bachelors|         13.0| Married-civ-spouse|           Sales|       Husband|              White|   Male|         0.0|         0.0|          70.0| United-States|  \u003e50K|\n|44.0|          Private|343591.0|      HS-grad|          9.0|           Divorced|    Craft-repair| Not-in-family|              White| Female|     14344.0|         0.0|          40.0| United-States|  \u003e50K|\n+----+-----------------+--------+-------------+-------------+-------------------+----------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+\nonly showing top 20 rows\n\n"
       },
-      "dateCreated": "Feb 13, 2017 9:36:53 PM",
-      "dateStarted": "Mar 5, 2017 6:08:26 PM",
-      "dateFinished": "Mar 5, 2017 6:08:33 PM",
+      "dateCreated": "Feb 13, 2017 9:36:53 AM",
+      "dateStarted": "Mar 5, 2017 6:08:26 AM",
+      "dateFinished": "Mar 5, 2017 6:08:33 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%sql select round(avg(age), 2) AS MOY_AGE_GT50K from datasetGreatherThan50K",
-      "dateUpdated": "Mar 5, 2017 6:08:40 PM",
+      "dateUpdated": "Mar 5, 2017 6:08:40 AM",
       "config": {
         "colWidth": 9.0,
         "graph": {
@@ -841,15 +841,15 @@
         "type": "TABLE",
         "msg": "MOY_AGE_GT50K\n44.25\n"
       },
-      "dateCreated": "Feb 13, 2017 9:51:46 PM",
-      "dateStarted": "Mar 5, 2017 6:08:40 PM",
-      "dateFinished": "Mar 5, 2017 6:08:42 PM",
+      "dateCreated": "Feb 13, 2017 9:51:46 AM",
+      "dateStarted": "Mar 5, 2017 6:08:40 AM",
+      "dateFinished": "Mar 5, 2017 6:08:42 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\nRemarques :\n\nNous obtenons bien la même valeur que lors de la question \"Check settings of graph. See how we average age by income.\" soit 44.25",
-      "dateUpdated": "Feb 16, 2017 5:14:33 PM",
+      "dateUpdated": "Feb 16, 2017 5:14:33 AM",
       "config": {
         "colWidth": 3.0,
         "graph": {
@@ -876,16 +876,16 @@
         "type": "HTML",
         "msg": "\u003cp\u003eRemarques :\u003c/p\u003e\n\u003cp\u003eNous obtenons bien la même valeur que lors de la question \u0026ldquo;Check settings of graph. See how we average age by income.\u0026rdquo; soit 44.25\u003c/p\u003e\n"
       },
-      "dateCreated": "Feb 13, 2017 9:55:16 PM",
-      "dateStarted": "Feb 16, 2017 5:14:31 PM",
-      "dateFinished": "Feb 16, 2017 5:14:31 PM",
+      "dateCreated": "Feb 13, 2017 9:55:16 AM",
+      "dateStarted": "Feb 16, 2017 5:14:31 AM",
+      "dateFinished": "Feb 16, 2017 5:14:31 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Répartition par âge des individus qui gagne + de 50K",
       "text": "%sql\nSELECT age, count(*) as nb from datasetGreatherThan50K group by age order by age",
-      "dateUpdated": "Mar 5, 2017 6:08:55 PM",
+      "dateUpdated": "Mar 5, 2017 6:08:55 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -931,15 +931,15 @@
         "type": "TABLE",
         "msg": "age\tnb\n19.0\t2\n21.0\t3\n22.0\t13\n23.0\t12\n24.0\t31\n25.0\t53\n26.0\t63\n27.0\t81\n28.0\t119\n29.0\t134\n30.0\t171\n31.0\t183\n32.0\t189\n33.0\t191\n34.0\t243\n35.0\t217\n36.0\t263\n37.0\t292\n38.0\t282\n39.0\t278\n40.0\t268\n41.0\t279\n42.0\t270\n43.0\t273\n44.0\t281\n45.0\t288\n46.0\t292\n47.0\t288\n48.0\t217\n49.0\t206\n50.0\t261\n51.0\t242\n52.0\t192\n53.0\t189\n54.0\t173\n55.0\t146\n56.0\t118\n57.0\t131\n58.0\t122\n59.0\t133\n60.0\t101\n61.0\t96\n62.0\t67\n63.0\t59\n64.0\t53\n65.0\t43\n66.0\t35\n67.0\t37\n68.0\t27\n69.0\t21\n70.0\t19\n71.0\t16\n72.0\t9\n73.0\t10\n74.0\t12\n75.0\t7\n76.0\t5\n77.0\t5\n78.0\t5\n79.0\t9\n80.0\t2\n81.0\t3\n83.0\t2\n84.0\t1\n90.0\t8\n"
       },
-      "dateCreated": "Feb 16, 2017 5:16:56 PM",
-      "dateStarted": "Mar 5, 2017 6:08:55 PM",
-      "dateFinished": "Mar 5, 2017 6:09:07 PM",
+      "dateCreated": "Feb 16, 2017 5:16:56 AM",
+      "dateStarted": "Mar 5, 2017 6:08:55 AM",
+      "dateFinished": "Mar 5, 2017 6:09:07 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md Dataset avec uniquement les personnes gagnant plus de 50K. Ces valeurs sont stockées dans une variable datasetLowerThan51K  comme TABLE TEMPORAIRE ",
-      "dateUpdated": "Feb 13, 2017 9:53:43 PM",
+      "dateUpdated": "Feb 13, 2017 9:53:43 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -966,16 +966,16 @@
         "type": "HTML",
         "msg": "\u003cp\u003eDataset avec uniquement les personnes gagnant plus de 50K. Ces valeurs sont stockées dans une variable datasetLowerThan51K  comme TABLE TEMPORAIRE\u003c/p\u003e\n"
       },
-      "dateCreated": "Feb 13, 2017 9:49:49 PM",
-      "dateStarted": "Feb 13, 2017 9:53:42 PM",
-      "dateFinished": "Feb 13, 2017 9:53:42 PM",
+      "dateCreated": "Feb 13, 2017 9:49:49 AM",
+      "dateStarted": "Feb 13, 2017 9:53:42 AM",
+      "dateFinished": "Feb 13, 2017 9:53:42 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Play me !",
       "text": "val datasetLowerThan51K  \u003d dataset.filter($\"income\"\u003d\u003d\u003d\" \u003c\u003d50K\")\ndatasetLowerThan51K.registerTempTable(\"datasetLowerThan51K\")\ndatasetLowerThan51K.show()",
-      "dateUpdated": "Mar 5, 2017 6:09:14 PM",
+      "dateUpdated": "Mar 5, 2017 6:09:14 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1003,15 +1003,15 @@
         "type": "TEXT",
         "msg": "\ndatasetLowerThan51K: org.apache.spark.sql.Dataset[Adult] \u003d [age: double, workclass: string ... 13 more fields]\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n+----+-----------------+--------+-----------+-------------+--------------------+------------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+\n| age|        workclass|  fnlwgt|  education|education_num|      marital_status|        occupation|  relationship|               race|    sex|capital_gain|capital_loss|hours_per_week|native_country|income|\n+----+-----------------+--------+-----------+-------------+--------------------+------------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+\n|39.0|        State-gov| 77516.0|  Bachelors|         13.0|       Never-married|      Adm-clerical| Not-in-family|              White|   Male|      2174.0|         0.0|          40.0| United-States| \u003c\u003d50K|\n|50.0| Self-emp-not-inc| 83311.0|  Bachelors|         13.0|  Married-civ-spouse|   Exec-managerial|       Husband|              White|   Male|         0.0|         0.0|          13.0| United-States| \u003c\u003d50K|\n|38.0|          Private|215646.0|    HS-grad|          9.0|            Divorced| Handlers-cleaners| Not-in-family|              White|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|\n|53.0|          Private|234721.0|       11th|          7.0|  Married-civ-spouse| Handlers-cleaners|       Husband|              Black|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|\n|28.0|          Private|338409.0|  Bachelors|         13.0|  Married-civ-spouse|    Prof-specialty|          Wife|              Black| Female|         0.0|         0.0|          40.0|          Cuba| \u003c\u003d50K|\n|37.0|          Private|284582.0|    Masters|         14.0|  Married-civ-spouse|   Exec-managerial|          Wife|              White| Female|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|\n|49.0|          Private|160187.0|        9th|          5.0| Married-spouse-a...|     Other-service| Not-in-family|              Black| Female|         0.0|         0.0|          16.0|       Jamaica| \u003c\u003d50K|\n|23.0|          Private|122272.0|  Bachelors|         13.0|       Never-married|      Adm-clerical|     Own-child|              White| Female|         0.0|         0.0|          30.0| United-States| \u003c\u003d50K|\n|32.0|          Private|205019.0| Assoc-acdm|         12.0|       Never-married|             Sales| Not-in-family|              Black|   Male|         0.0|         0.0|          50.0| United-States| \u003c\u003d50K|\n|34.0|          Private|245487.0|    7th-8th|          4.0|  Married-civ-spouse|  Transport-moving|       Husband| Amer-Indian-Eskimo|   Male|         0.0|         0.0|          45.0|        Mexico| \u003c\u003d50K|\n|25.0| Self-emp-not-inc|176756.0|    HS-grad|          9.0|       Never-married|   Farming-fishing|     Own-child|              White|   Male|         0.0|         0.0|          35.0| United-States| \u003c\u003d50K|\n|32.0|          Private|186824.0|    HS-grad|          9.0|       Never-married| Machine-op-inspct|     Unmarried|              White|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|\n|38.0|          Private| 28887.0|       11th|          7.0|  Married-civ-spouse|             Sales|       Husband|              White|   Male|         0.0|         0.0|          50.0| United-States| \u003c\u003d50K|\n|54.0|          Private|302146.0|    HS-grad|          9.0|           Separated|     Other-service|     Unmarried|              Black| Female|         0.0|         0.0|          20.0| United-States| \u003c\u003d50K|\n|35.0|      Federal-gov| 76845.0|        9th|          5.0|  Married-civ-spouse|   Farming-fishing|       Husband|              Black|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|\n|43.0|          Private|117037.0|       11th|          7.0|  Married-civ-spouse|  Transport-moving|       Husband|              White|   Male|         0.0|      2042.0|          40.0| United-States| \u003c\u003d50K|\n|59.0|          Private|109015.0|    HS-grad|          9.0|            Divorced|      Tech-support|     Unmarried|              White| Female|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|\n|19.0|          Private|168294.0|    HS-grad|          9.0|       Never-married|      Craft-repair|     Own-child|              White|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|\n|39.0|          Private|367260.0|    HS-grad|          9.0|            Divorced|   Exec-managerial| Not-in-family|              White|   Male|         0.0|         0.0|          80.0| United-States| \u003c\u003d50K|\n|49.0|          Private|193366.0|    HS-grad|          9.0|  Married-civ-spouse|      Craft-repair|       Husband|              White|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|\n+----+-----------------+--------+-----------+-------------+--------------------+------------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+\nonly showing top 20 rows\n\n"
       },
-      "dateCreated": "Feb 13, 2017 9:46:28 PM",
-      "dateStarted": "Mar 5, 2017 6:09:14 PM",
-      "dateFinished": "Mar 5, 2017 6:09:20 PM",
+      "dateCreated": "Feb 13, 2017 9:46:28 AM",
+      "dateStarted": "Mar 5, 2017 6:09:14 AM",
+      "dateFinished": "Mar 5, 2017 6:09:20 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%sql select round(avg(age), 2) AS MOY_AGE_LT51K from datasetLowerThan51K",
-      "dateUpdated": "Feb 16, 2017 5:14:57 PM",
+      "dateUpdated": "Feb 16, 2017 5:14:57 AM",
       "config": {
         "colWidth": 9.0,
         "graph": {
@@ -1050,15 +1050,15 @@
         "type": "TABLE",
         "msg": "MOY_AGE_LT51K\n36.78\n"
       },
-      "dateCreated": "Feb 13, 2017 9:56:58 PM",
-      "dateStarted": "Feb 13, 2017 9:57:22 PM",
-      "dateFinished": "Feb 13, 2017 9:57:23 PM",
+      "dateCreated": "Feb 13, 2017 9:56:58 AM",
+      "dateStarted": "Feb 13, 2017 9:57:22 AM",
+      "dateFinished": "Feb 13, 2017 9:57:23 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\nRemarques :\n\nNous obtenons bien la même valeur que lors de la question “Check settings of graph. See how we average age by income.” soit 36.78\n\n",
-      "dateUpdated": "Feb 16, 2017 5:14:54 PM",
+      "dateUpdated": "Feb 16, 2017 5:14:54 AM",
       "config": {
         "colWidth": 3.0,
         "graph": {
@@ -1085,16 +1085,16 @@
         "type": "HTML",
         "msg": "\u003cp\u003eRemarques :\u003c/p\u003e\n\u003cp\u003eNous obtenons bien la même valeur que lors de la question “Check settings of graph. See how we average age by income.” soit 36.78\u003c/p\u003e\n"
       },
-      "dateCreated": "Feb 13, 2017 9:57:40 PM",
-      "dateStarted": "Feb 16, 2017 5:14:53 PM",
-      "dateFinished": "Feb 16, 2017 5:14:53 PM",
+      "dateCreated": "Feb 13, 2017 9:57:40 AM",
+      "dateStarted": "Feb 16, 2017 5:14:53 AM",
+      "dateFinished": "Feb 16, 2017 5:14:53 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Répartition par âge des individus qui gagne - de 51K",
       "text": "%sql\nSELECT age, count(*) as nb from datasetLowerThan51K group by age order by age",
-      "dateUpdated": "Mar 5, 2017 6:09:26 PM",
+      "dateUpdated": "Mar 5, 2017 6:09:26 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1145,16 +1145,16 @@
         "type": "TABLE",
         "msg": "age\tnb\n17.0\t395\n18.0\t550\n19.0\t710\n20.0\t753\n21.0\t717\n22.0\t752\n23.0\t865\n24.0\t767\n25.0\t788\n26.0\t722\n27.0\t754\n28.0\t748\n29.0\t679\n30.0\t690\n31.0\t705\n32.0\t639\n33.0\t684\n34.0\t643\n35.0\t659\n36.0\t635\n37.0\t566\n38.0\t545\n39.0\t538\n40.0\t526\n41.0\t529\n42.0\t510\n43.0\t497\n44.0\t443\n45.0\t446\n46.0\t445\n47.0\t420\n48.0\t326\n49.0\t371\n50.0\t341\n51.0\t353\n52.0\t286\n53.0\t275\n54.0\t242\n55.0\t273\n56.0\t248\n57.0\t227\n58.0\t244\n59.0\t222\n60.0\t211\n61.0\t204\n62.0\t191\n63.0\t171\n64.0\t155\n65.0\t135\n66.0\t115\n67.0\t114\n68.0\t93\n69.0\t87\n70.0\t70\n71.0\t56\n72.0\t58\n73.0\t54\n74.0\t39\n75.0\t38\n76.0\t41\n77.0\t24\n78.0\t18\n79.0\t13\n80.0\t20\n81.0\t17\n82.0\t12\n83.0\t4\n84.0\t9\n85.0\t3\n86.0\t1\n87.0\t1\n88.0\t3\n90.0\t35\n"
       },
-      "dateCreated": "Feb 16, 2017 5:22:30 PM",
-      "dateStarted": "Mar 5, 2017 6:09:26 PM",
-      "dateFinished": "Mar 5, 2017 6:09:37 PM",
+      "dateCreated": "Feb 16, 2017 5:22:30 AM",
+      "dateStarted": "Mar 5, 2017 6:09:26 AM",
+      "dateFinished": "Mar 5, 2017 6:09:37 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Répartition de l\u0027épargne en fonction du cursus scolaire",
       "text": "%sql SELECT education, education_num, avg(capital_gain) AS avgGain FROM dataset GROUP BY education, education_num ORDER BY education_num DESC ",
-      "dateUpdated": "Mar 5, 2017 6:09:51 PM",
+      "dateUpdated": "Mar 5, 2017 6:09:51 AM",
       "config": {
         "colWidth": 9.0,
         "graph": {
@@ -1201,14 +1201,14 @@
         "msg": "education\teducation_num\tavgGain\n Doctorate\t16.0\t4770.145278450364\n Prof-school\t15.0\t10414.416666666666\n Masters\t14.0\t2562.563551944283\n Bachelors\t13.0\t1756.299533146592\n Assoc-acdm\t12.0\t640.3992502343018\n Assoc-voc\t11.0\t715.0513748191028\n Some-college\t10.0\t598.8241667809629\n HS-grad\t9.0\t576.800114274831\n 12th\t8.0\t284.0877598152425\n 11th\t7.0\t215.09787234042554\n 10th\t6.0\t404.57449088960345\n 9th\t5.0\t342.08949416342415\n 7th-8th\t4.0\t233.93962848297213\n 5th-6th\t3.0\t176.02102102102103\n 1st-4th\t2.0\t125.875\n Preschool\t1.0\t898.3921568627451\n"
       },
       "dateCreated": "Feb 8, 2017 6:59:38 AM",
-      "dateStarted": "Feb 13, 2017 10:00:03 PM",
-      "dateFinished": "Feb 13, 2017 10:00:06 PM",
+      "dateStarted": "Feb 13, 2017 10:00:03 AM",
+      "dateFinished": "Feb 13, 2017 10:00:06 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md \nExplications :\n\nVoyons désormais comment l\u0027épargne est répartie en fonction du cursus scolaire suivi par les individus. Nous notons que ce sont les professeurs d\u0027école qui épargnent le plus !",
-      "dateUpdated": "Feb 16, 2017 5:15:36 PM",
+      "dateUpdated": "Feb 16, 2017 5:15:36 AM",
       "config": {
         "colWidth": 3.0,
         "graph": {
@@ -1237,15 +1237,15 @@
         "msg": "\u003cp\u003eExplications :\u003c/p\u003e\n\u003cp\u003eVoyons désormais comment l\u0027épargne est répartie en fonction du cursus scolaire suivi par les individus. Nous notons que ce sont les professeurs d\u0027école qui épargnent le plus !\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 8, 2017 7:15:02 AM",
-      "dateStarted": "Feb 16, 2017 5:15:35 PM",
-      "dateFinished": "Feb 16, 2017 5:15:35 PM",
+      "dateStarted": "Feb 16, 2017 5:15:35 AM",
+      "dateFinished": "Feb 16, 2017 5:15:35 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Quels-sont les métiers qui engendrent le plus de séparation ?",
       "text": "%sql SELECT occupation, count(*) FROM dataset WHERE marital_status LIKE \"%Divorced%\" OR marital_status LIKE \"%Separated%\" GROUP BY occupation",
-      "dateUpdated": "Mar 5, 2017 6:11:43 PM",
+      "dateUpdated": "Mar 5, 2017 6:11:43 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1298,15 +1298,15 @@
         "msg": "occupation\tcount(1)\n Farming-fishing\t82\n Handlers-cleaners\t166\n Prof-specialty\t638\n Adm-clerical\t966\n Exec-managerial\t698\n Craft-repair\t567\n Sales\t527\n ?\t251\n Tech-support\t168\n Transport-moving\t218\n Protective-serv\t95\n Machine-op-inspct\t361\n Other-service\t691\n Priv-house-serv\t40\n"
       },
       "dateCreated": "Feb 8, 2017 7:18:21 AM",
-      "dateStarted": "Mar 5, 2017 6:10:07 PM",
-      "dateFinished": "Mar 5, 2017 6:10:17 PM",
+      "dateStarted": "Mar 5, 2017 6:10:07 AM",
+      "dateFinished": "Mar 5, 2017 6:10:17 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Répartition des revenus par type de relation",
       "text": "%sql\nselect income, relationship,count(*) from dataset\ngroup by income, relationship",
-      "dateUpdated": "Mar 5, 2017 6:11:54 PM",
+      "dateUpdated": "Mar 5, 2017 6:11:54 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1358,9 +1358,9 @@
         "type": "TABLE",
         "msg": "income\trelationship\tcount(1)\n \u003e50K\t Other-relative\t37\n \u003e50K\t Unmarried\t218\n \u003e50K\t Wife\t745\n \u003c\u003d50K\t Unmarried\t3228\n \u003e50K\t Husband\t5918\n \u003e50K\t Own-child\t67\n \u003c\u003d50K\t Other-relative\t944\n \u003c\u003d50K\t Wife\t823\n \u003c\u003d50K\t Husband\t7275\n \u003c\u003d50K\t Not-in-family\t7449\n \u003c\u003d50K\t Own-child\t5001\n \u003e50K\t Not-in-family\t856\n"
       },
-      "dateCreated": "Feb 16, 2017 5:25:36 PM",
-      "dateStarted": "Mar 5, 2017 6:11:54 PM",
-      "dateFinished": "Mar 5, 2017 6:12:05 PM",
+      "dateCreated": "Feb 16, 2017 5:25:36 AM",
+      "dateStarted": "Mar 5, 2017 6:11:54 AM",
+      "dateFinished": "Mar 5, 2017 6:12:05 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1473,7 +1473,7 @@
     },
     {
       "text": "// Configure an ML pipeline, which consists of two stages on one column: a StringIndexer and a OneHotEncoder.\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer, VectorAssembler}\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\n// Fonction retournant une séquence de StringIndexer \u0026 OneHotEncoder pour un nom de catégorie donné\ndef makeStageFunction(w: String) \u003d {\n    \n    // Construction de notre StringIndexer\n    // Le nom de colonne en entrée (à mapper) est indiqué via setInputCol\n    // Le nom de colonne en sortie est celui en entrée suffixé par \"Index\"\n    val stringIndexer \u003d new StringIndexer()\n      .setInputCol(w)\n      .setOutputCol(w+\"Index\")\n      \n    // Construction de notre OneHotEncoder\n    // Le nom de colonne en entrée est celui en sortie du StringIndexer précédemment créé\n    // Le nom de colonne en sortie est celui en sortie du StringIndexer suffixé par ClassVec\n    val oneHotEncoder \u003d new OneHotEncoder()\n      .setInputCol(stringIndexer.getOutputCol)\n      .setOutputCol(stringIndexer.getInputCol + \"ClassVec\")\n    Seq(stringIndexer, oneHotEncoder)\n}\n\n// Séquence des variables catégorielles non-numériques pour lesquelles nouss souhaitons transformer les différents états en vecteurs binaires.\nval nonNumericalColumns \u003d Seq(\"workclass\", \"education\", \"marital_status\", \"occupation\", \"relationship\", \"race\", \"sex\", \"native_country\")\n// Création des étapes à destination de notre pipeline ML.\n// La méthode flatMap nous permet ici d\u0027appliquer une transformation sur chaque valeur de nonNumericalColumns\n// Nous transformons ici des noms de colonnes en séquence Seq(stringIndexer, oneHotEncoder)\nval stages \u003d nonNumericalColumns.flatMap(makeStageFunction)\n\n// Etape pour le label (sans la transformation one-hot)\nval label_stringIdx \u003d new StringIndexer().setInputCol(\"income\").setOutputCol(\"label\")\n// Combine une liste de colonnes (suffixées par ClassVec) en un vecteur de colonnes\nval assemblerStage \u003d new VectorAssembler().setInputCols(nonNumericalColumns.map(w \u003d\u003e w + \"ClassVec\").toArray).setOutputCol(\"features\")\nval finalStages \u003d stages ++ Seq(label_stringIdx) ++ Seq(assemblerStage)\n\n// Création du pipeline et ajout des étapes\nval pipeline \u003d new Pipeline().setStages(finalStages.toArray)\n\n// Adapte le pipeline au jeu de données d\u0027entrée dataset.\n// Nous obtenons un model que nous appliquons sur les données pour les tranformer.\nval pipelineModel \u003d pipeline.fit(dataset)\n\n// Nous stockons des données transformées pour pouvoir les réutiliser par la suite sans avoir à tout réexécuter...\nval datasetTransformed \u003d pipelineModel.transform(dataset)\n\n// Pour futures requêtes SQL\ndatasetTransformed.registerTempTable(\"datasetTransformed\")\n\ndatasetTransformed.show()\n",
-      "dateUpdated": "Mar 5, 2017 6:12:05 PM",
+      "dateUpdated": "Mar 7, 2017 10:14:11 PM",
       "config": {
         "colWidth": 8.0,
         "graph": {
@@ -1498,17 +1498,17 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer, VectorAssembler}\n\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\nmakeStageFunction: (w: String)Seq[org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable{def copy(extra: org.apache.spark.ml.param.ParamMap): org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable{def copy(extra: org.apache.spark.ml.param.ParamMap): org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable}}]\n\nnonNumericalColumns: Seq[String] \u003d List(workclass, education, marital_status, occupation, relationship, race, sex, native_country)\nstages: Seq[org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable{def copy(extra: org.apache.spark.ml.param.ParamMap): org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable{def copy(extra: org.apache.spark.ml.param.ParamMap): org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable}}] \u003d List(strIdx_da0553d6c1c1, oneHot_ae5ace5d0897, strIdx_26a8eb679db4, oneHot_3ca72b5a7bb3, strIdx_4dd7e56fb873, one...\nlabel_stringIdx: org.apache.spark.ml.feature.StringIndexer \u003d strIdx_3ac7d03ae3fc\n\nassemblerStage: org.apache.spark.ml.feature.VectorAssembler \u003d vecAssembler_5a2a372a3946\nfinalStages: Seq[org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.util.DefaultParamsWritable{def copy(extra: org.apache.spark.ml.param.ParamMap): org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.util.DefaultParamsWritable{def copy(extra: org.apache.spark.ml.param.ParamMap): org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.util.DefaultParamsWritable}}] \u003d List(strIdx_da0553d6c1c1, oneHot_ae5ace5d0897, strIdx_26a8eb679db4, oneHot_3ca72b5a7bb3, strIdx_4dd7e56fb873, oneHot_01ddd626c07f, strIdx_c10863272ec3, oneHot_3e7deb6bd9c3, strIdx_23c3d2b5aa67, oneHot_78e4f32fc57d, strIdx_9c992839cbd0, oneHot_85ad0e368c57, s...\npipeline: org.apache.spark.ml.Pipeline \u003d pipeline_dc2e8c99df76\n\npipelineModel: org.apache.spark.ml.PipelineModel \u003d pipeline_dc2e8c99df76\n\ndatasetTransformed: org.apache.spark.sql.DataFrame \u003d [age: double, workclass: string ... 31 more fields]\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n+----+-----------------+--------+-------------+-------------+--------------------+------------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\n| age|        workclass|  fnlwgt|    education|education_num|      marital_status|        occupation|  relationship|               race|    sex|capital_gain|capital_loss|hours_per_week|native_country|income|workclassIndex|workclassClassVec|educationIndex|educationClassVec|marital_statusIndex|marital_statusClassVec|occupationIndex|occupationClassVec|relationshipIndex|relationshipClassVec|raceIndex| raceClassVec|sexIndex|  sexClassVec|native_countryIndex|native_countryClassVec|label|            features|\n+----+-----------------+--------+-------------+-------------+--------------------+------------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\n|39.0|        State-gov| 77516.0|    Bachelors|         13.0|       Never-married|      Adm-clerical| Not-in-family|              White|   Male|      2174.0|         0.0|          40.0| United-States| \u003c\u003d50K|           4.0|    (8,[4],[1.0])|           2.0|   (15,[2],[1.0])|                1.0|         (6,[1],[1.0])|            3.0|    (14,[3],[1.0])|              1.0|       (5,[1],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[4,10,24,32,4...|\n|50.0| Self-emp-not-inc| 83311.0|    Bachelors|         13.0|  Married-civ-spouse|   Exec-managerial|       Husband|              White|   Male|         0.0|         0.0|          13.0| United-States| \u003c\u003d50K|           1.0|    (8,[1],[1.0])|           2.0|   (15,[2],[1.0])|                0.0|         (6,[0],[1.0])|            2.0|    (14,[2],[1.0])|              0.0|       (5,[0],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[1,10,23,31,4...|\n|38.0|          Private|215646.0|      HS-grad|          9.0|            Divorced| Handlers-cleaners| Not-in-family|              White|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           0.0|   (15,[0],[1.0])|                2.0|         (6,[2],[1.0])|            9.0|    (14,[9],[1.0])|              1.0|       (5,[1],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[0,8,25,38,44...|\n|53.0|          Private|234721.0|         11th|          7.0|  Married-civ-spouse| Handlers-cleaners|       Husband|              Black|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           5.0|   (15,[5],[1.0])|                0.0|         (6,[0],[1.0])|            9.0|    (14,[9],[1.0])|              0.0|       (5,[0],[1.0])|      1.0|(4,[1],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[0,13,23,38,4...|\n|28.0|          Private|338409.0|    Bachelors|         13.0|  Married-civ-spouse|    Prof-specialty|          Wife|              Black| Female|         0.0|         0.0|          40.0|          Cuba| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           2.0|   (15,[2],[1.0])|                0.0|         (6,[0],[1.0])|            0.0|    (14,[0],[1.0])|              4.0|       (5,[4],[1.0])|      1.0|(4,[1],[1.0])|     1.0|    (1,[],[])|                9.0|        (41,[9],[1.0])|  0.0|(94,[0,10,23,29,4...|\n|37.0|          Private|284582.0|      Masters|         14.0|  Married-civ-spouse|   Exec-managerial|          Wife|              White| Female|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           3.0|   (15,[3],[1.0])|                0.0|         (6,[0],[1.0])|            2.0|    (14,[2],[1.0])|              4.0|       (5,[4],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[0,11,23,31,4...|\n|49.0|          Private|160187.0|          9th|          5.0| Married-spouse-a...|     Other-service| Not-in-family|              Black| Female|         0.0|         0.0|          16.0|       Jamaica| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|          10.0|  (15,[10],[1.0])|                5.0|         (6,[5],[1.0])|            5.0|    (14,[5],[1.0])|              1.0|       (5,[1],[1.0])|      1.0|(4,[1],[1.0])|     1.0|    (1,[],[])|               11.0|       (41,[11],[1.0])|  0.0|(94,[0,18,28,34,4...|\n|52.0| Self-emp-not-inc|209642.0|      HS-grad|          9.0|  Married-civ-spouse|   Exec-managerial|       Husband|              White|   Male|         0.0|         0.0|          45.0| United-States|  \u003e50K|           1.0|    (8,[1],[1.0])|           0.0|   (15,[0],[1.0])|                0.0|         (6,[0],[1.0])|            2.0|    (14,[2],[1.0])|              0.0|       (5,[0],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  1.0|(94,[1,8,23,31,43...|\n|31.0|          Private| 45781.0|      Masters|         14.0|       Never-married|    Prof-specialty| Not-in-family|              White| Female|     14084.0|         0.0|          50.0| United-States|  \u003e50K|           0.0|    (8,[0],[1.0])|           3.0|   (15,[3],[1.0])|                1.0|         (6,[1],[1.0])|            0.0|    (14,[0],[1.0])|              1.0|       (5,[1],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  1.0|(94,[0,11,24,29,4...|\n|42.0|          Private|159449.0|    Bachelors|         13.0|  Married-civ-spouse|   Exec-managerial|       Husband|              White|   Male|      5178.0|         0.0|          40.0| United-States|  \u003e50K|           0.0|    (8,[0],[1.0])|           2.0|   (15,[2],[1.0])|                0.0|         (6,[0],[1.0])|            2.0|    (14,[2],[1.0])|              0.0|       (5,[0],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  1.0|(94,[0,10,23,31,4...|\n|37.0|          Private|280464.0| Some-college|         10.0|  Married-civ-spouse|   Exec-managerial|       Husband|              Black|   Male|         0.0|         0.0|          80.0| United-States|  \u003e50K|           0.0|    (8,[0],[1.0])|           1.0|   (15,[1],[1.0])|                0.0|         (6,[0],[1.0])|            2.0|    (14,[2],[1.0])|              0.0|       (5,[0],[1.0])|      1.0|(4,[1],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  1.0|(94,[0,9,23,31,43...|\n|30.0|        State-gov|141297.0|    Bachelors|         13.0|  Married-civ-spouse|    Prof-specialty|       Husband| Asian-Pac-Islander|   Male|         0.0|         0.0|          40.0|         India|  \u003e50K|           4.0|    (8,[4],[1.0])|           2.0|   (15,[2],[1.0])|                0.0|         (6,[0],[1.0])|            0.0|    (14,[0],[1.0])|              0.0|       (5,[0],[1.0])|      2.0|(4,[2],[1.0])|     0.0|(1,[0],[1.0])|                8.0|        (41,[8],[1.0])|  1.0|(94,[4,10,23,29,4...|\n|23.0|          Private|122272.0|    Bachelors|         13.0|       Never-married|      Adm-clerical|     Own-child|              White| Female|         0.0|         0.0|          30.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           2.0|   (15,[2],[1.0])|                1.0|         (6,[1],[1.0])|            3.0|    (14,[3],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[0,10,24,32,4...|\n|32.0|          Private|205019.0|   Assoc-acdm|         12.0|       Never-married|             Sales| Not-in-family|              Black|   Male|         0.0|         0.0|          50.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           6.0|   (15,[6],[1.0])|                1.0|         (6,[1],[1.0])|            4.0|    (14,[4],[1.0])|              1.0|       (5,[1],[1.0])|      1.0|(4,[1],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[0,14,24,33,4...|\n|40.0|          Private|121772.0|    Assoc-voc|         11.0|  Married-civ-spouse|      Craft-repair|       Husband| Asian-Pac-Islander|   Male|         0.0|         0.0|          40.0|             ?|  \u003e50K|           0.0|    (8,[0],[1.0])|           4.0|   (15,[4],[1.0])|                0.0|         (6,[0],[1.0])|            1.0|    (14,[1],[1.0])|              0.0|       (5,[0],[1.0])|      2.0|(4,[2],[1.0])|     0.0|(1,[0],[1.0])|                2.0|        (41,[2],[1.0])|  1.0|(94,[0,12,23,30,4...|\n|34.0|          Private|245487.0|      7th-8th|          4.0|  Married-civ-spouse|  Transport-moving|       Husband| Amer-Indian-Eskimo|   Male|         0.0|         0.0|          45.0|        Mexico| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           8.0|   (15,[8],[1.0])|                0.0|         (6,[0],[1.0])|            8.0|    (14,[8],[1.0])|              0.0|       (5,[0],[1.0])|      3.0|(4,[3],[1.0])|     0.0|(1,[0],[1.0])|                1.0|        (41,[1],[1.0])|  0.0|(94,[0,16,23,37,4...|\n|25.0| Self-emp-not-inc|176756.0|      HS-grad|          9.0|       Never-married|   Farming-fishing|     Own-child|              White|   Male|         0.0|         0.0|          35.0| United-States| \u003c\u003d50K|           1.0|    (8,[1],[1.0])|           0.0|   (15,[0],[1.0])|                1.0|         (6,[1],[1.0])|           10.0|   (14,[10],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[1,8,24,39,45...|\n|32.0|          Private|186824.0|      HS-grad|          9.0|       Never-married| Machine-op-inspct|     Unmarried|              White|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           0.0|   (15,[0],[1.0])|                1.0|         (6,[1],[1.0])|            6.0|    (14,[6],[1.0])|              3.0|       (5,[3],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[0,8,24,35,46...|\n|38.0|          Private| 28887.0|         11th|          7.0|  Married-civ-spouse|             Sales|       Husband|              White|   Male|         0.0|         0.0|          50.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           5.0|   (15,[5],[1.0])|                0.0|         (6,[0],[1.0])|            4.0|    (14,[4],[1.0])|              0.0|       (5,[0],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[0,13,23,33,4...|\n|43.0| Self-emp-not-inc|292175.0|      Masters|         14.0|            Divorced|   Exec-managerial|     Unmarried|              White| Female|         0.0|         0.0|          45.0| United-States|  \u003e50K|           1.0|    (8,[1],[1.0])|           3.0|   (15,[3],[1.0])|                2.0|         (6,[2],[1.0])|            2.0|    (14,[2],[1.0])|              3.0|       (5,[3],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  1.0|(94,[1,11,25,31,4...|\n+----+-----------------+--------+-------------+-------------+--------------------+------------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\nonly showing top 20 rows\n\n"
+        "msg": "\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer, VectorAssembler}\n\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\nmakeStageFunction: (w: String)Seq[org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable{def copy(extra: org.apache.spark.ml.param.ParamMap): org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable{def copy(extra: org.apache.spark.ml.param.ParamMap): org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable}}]\n\nnonNumericalColumns: Seq[String] \u003d List(workclass, education, marital_status, occupation, relationship, race, sex, native_country)\nstages: Seq[org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable{def copy(extra: org.apache.spark.ml.param.ParamMap): org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable{def copy(extra: org.apache.spark.ml.param.ParamMap): org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable}}] \u003d List(strIdx_6eacfb3430d4, oneHot_68db1d47b2ed, strIdx_baff765a336c, oneHot_78972c6bc515, strIdx_716f5c5852b8, one...\nlabel_stringIdx: org.apache.spark.ml.feature.StringIndexer \u003d strIdx_27cf57ba3b79\n\nassemblerStage: org.apache.spark.ml.feature.VectorAssembler \u003d vecAssembler_496f8e999931\nfinalStages: Seq[org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.util.DefaultParamsWritable{def copy(extra: org.apache.spark.ml.param.ParamMap): org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.util.DefaultParamsWritable{def copy(extra: org.apache.spark.ml.param.ParamMap): org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.util.DefaultParamsWritable}}] \u003d List(strIdx_6eacfb3430d4, oneHot_68db1d47b2ed, strIdx_baff765a336c, oneHot_78972c6bc515, strIdx_716f5c5852b8, oneHot_bf4745b897b2, strIdx_3ab4b70ff6a2, oneHot_c27517aa17d4, strIdx_0c580e94021b, oneHot_a09b8c1371f9, strIdx_ebba2a6721d9, oneHot_a49b531776f8, s...\npipeline: org.apache.spark.ml.Pipeline \u003d pipeline_5a01ee72630e\n\npipelineModel: org.apache.spark.ml.PipelineModel \u003d pipeline_5a01ee72630e\n\ndatasetTransformed: org.apache.spark.sql.DataFrame \u003d [age: double, workclass: string ... 31 more fields]\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n+----+-----------------+--------+-------------+-------------+--------------------+------------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\n| age|        workclass|  fnlwgt|    education|education_num|      marital_status|        occupation|  relationship|               race|    sex|capital_gain|capital_loss|hours_per_week|native_country|income|workclassIndex|workclassClassVec|educationIndex|educationClassVec|marital_statusIndex|marital_statusClassVec|occupationIndex|occupationClassVec|relationshipIndex|relationshipClassVec|raceIndex| raceClassVec|sexIndex|  sexClassVec|native_countryIndex|native_countryClassVec|label|            features|\n+----+-----------------+--------+-------------+-------------+--------------------+------------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\n|39.0|        State-gov| 77516.0|    Bachelors|         13.0|       Never-married|      Adm-clerical| Not-in-family|              White|   Male|      2174.0|         0.0|          40.0| United-States| \u003c\u003d50K|           4.0|    (8,[4],[1.0])|           2.0|   (15,[2],[1.0])|                1.0|         (6,[1],[1.0])|            3.0|    (14,[3],[1.0])|              1.0|       (5,[1],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[4,10,24,32,4...|\n|50.0| Self-emp-not-inc| 83311.0|    Bachelors|         13.0|  Married-civ-spouse|   Exec-managerial|       Husband|              White|   Male|         0.0|         0.0|          13.0| United-States| \u003c\u003d50K|           1.0|    (8,[1],[1.0])|           2.0|   (15,[2],[1.0])|                0.0|         (6,[0],[1.0])|            2.0|    (14,[2],[1.0])|              0.0|       (5,[0],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[1,10,23,31,4...|\n|38.0|          Private|215646.0|      HS-grad|          9.0|            Divorced| Handlers-cleaners| Not-in-family|              White|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           0.0|   (15,[0],[1.0])|                2.0|         (6,[2],[1.0])|            9.0|    (14,[9],[1.0])|              1.0|       (5,[1],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[0,8,25,38,44...|\n|53.0|          Private|234721.0|         11th|          7.0|  Married-civ-spouse| Handlers-cleaners|       Husband|              Black|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           5.0|   (15,[5],[1.0])|                0.0|         (6,[0],[1.0])|            9.0|    (14,[9],[1.0])|              0.0|       (5,[0],[1.0])|      1.0|(4,[1],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[0,13,23,38,4...|\n|28.0|          Private|338409.0|    Bachelors|         13.0|  Married-civ-spouse|    Prof-specialty|          Wife|              Black| Female|         0.0|         0.0|          40.0|          Cuba| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           2.0|   (15,[2],[1.0])|                0.0|         (6,[0],[1.0])|            0.0|    (14,[0],[1.0])|              4.0|       (5,[4],[1.0])|      1.0|(4,[1],[1.0])|     1.0|    (1,[],[])|                9.0|        (41,[9],[1.0])|  0.0|(94,[0,10,23,29,4...|\n|37.0|          Private|284582.0|      Masters|         14.0|  Married-civ-spouse|   Exec-managerial|          Wife|              White| Female|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           3.0|   (15,[3],[1.0])|                0.0|         (6,[0],[1.0])|            2.0|    (14,[2],[1.0])|              4.0|       (5,[4],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[0,11,23,31,4...|\n|49.0|          Private|160187.0|          9th|          5.0| Married-spouse-a...|     Other-service| Not-in-family|              Black| Female|         0.0|         0.0|          16.0|       Jamaica| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|          10.0|  (15,[10],[1.0])|                5.0|         (6,[5],[1.0])|            5.0|    (14,[5],[1.0])|              1.0|       (5,[1],[1.0])|      1.0|(4,[1],[1.0])|     1.0|    (1,[],[])|               11.0|       (41,[11],[1.0])|  0.0|(94,[0,18,28,34,4...|\n|52.0| Self-emp-not-inc|209642.0|      HS-grad|          9.0|  Married-civ-spouse|   Exec-managerial|       Husband|              White|   Male|         0.0|         0.0|          45.0| United-States|  \u003e50K|           1.0|    (8,[1],[1.0])|           0.0|   (15,[0],[1.0])|                0.0|         (6,[0],[1.0])|            2.0|    (14,[2],[1.0])|              0.0|       (5,[0],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  1.0|(94,[1,8,23,31,43...|\n|31.0|          Private| 45781.0|      Masters|         14.0|       Never-married|    Prof-specialty| Not-in-family|              White| Female|     14084.0|         0.0|          50.0| United-States|  \u003e50K|           0.0|    (8,[0],[1.0])|           3.0|   (15,[3],[1.0])|                1.0|         (6,[1],[1.0])|            0.0|    (14,[0],[1.0])|              1.0|       (5,[1],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  1.0|(94,[0,11,24,29,4...|\n|42.0|          Private|159449.0|    Bachelors|         13.0|  Married-civ-spouse|   Exec-managerial|       Husband|              White|   Male|      5178.0|         0.0|          40.0| United-States|  \u003e50K|           0.0|    (8,[0],[1.0])|           2.0|   (15,[2],[1.0])|                0.0|         (6,[0],[1.0])|            2.0|    (14,[2],[1.0])|              0.0|       (5,[0],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  1.0|(94,[0,10,23,31,4...|\n|37.0|          Private|280464.0| Some-college|         10.0|  Married-civ-spouse|   Exec-managerial|       Husband|              Black|   Male|         0.0|         0.0|          80.0| United-States|  \u003e50K|           0.0|    (8,[0],[1.0])|           1.0|   (15,[1],[1.0])|                0.0|         (6,[0],[1.0])|            2.0|    (14,[2],[1.0])|              0.0|       (5,[0],[1.0])|      1.0|(4,[1],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  1.0|(94,[0,9,23,31,43...|\n|30.0|        State-gov|141297.0|    Bachelors|         13.0|  Married-civ-spouse|    Prof-specialty|       Husband| Asian-Pac-Islander|   Male|         0.0|         0.0|          40.0|         India|  \u003e50K|           4.0|    (8,[4],[1.0])|           2.0|   (15,[2],[1.0])|                0.0|         (6,[0],[1.0])|            0.0|    (14,[0],[1.0])|              0.0|       (5,[0],[1.0])|      2.0|(4,[2],[1.0])|     0.0|(1,[0],[1.0])|                8.0|        (41,[8],[1.0])|  1.0|(94,[4,10,23,29,4...|\n|23.0|          Private|122272.0|    Bachelors|         13.0|       Never-married|      Adm-clerical|     Own-child|              White| Female|         0.0|         0.0|          30.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           2.0|   (15,[2],[1.0])|                1.0|         (6,[1],[1.0])|            3.0|    (14,[3],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  0.0|(94,[0,10,24,32,4...|\n|32.0|          Private|205019.0|   Assoc-acdm|         12.0|       Never-married|             Sales| Not-in-family|              Black|   Male|         0.0|         0.0|          50.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           6.0|   (15,[6],[1.0])|                1.0|         (6,[1],[1.0])|            4.0|    (14,[4],[1.0])|              1.0|       (5,[1],[1.0])|      1.0|(4,[1],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[0,14,24,33,4...|\n|40.0|          Private|121772.0|    Assoc-voc|         11.0|  Married-civ-spouse|      Craft-repair|       Husband| Asian-Pac-Islander|   Male|         0.0|         0.0|          40.0|             ?|  \u003e50K|           0.0|    (8,[0],[1.0])|           4.0|   (15,[4],[1.0])|                0.0|         (6,[0],[1.0])|            1.0|    (14,[1],[1.0])|              0.0|       (5,[0],[1.0])|      2.0|(4,[2],[1.0])|     0.0|(1,[0],[1.0])|                2.0|        (41,[2],[1.0])|  1.0|(94,[0,12,23,30,4...|\n|34.0|          Private|245487.0|      7th-8th|          4.0|  Married-civ-spouse|  Transport-moving|       Husband| Amer-Indian-Eskimo|   Male|         0.0|         0.0|          45.0|        Mexico| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           8.0|   (15,[8],[1.0])|                0.0|         (6,[0],[1.0])|            8.0|    (14,[8],[1.0])|              0.0|       (5,[0],[1.0])|      3.0|(4,[3],[1.0])|     0.0|(1,[0],[1.0])|                1.0|        (41,[1],[1.0])|  0.0|(94,[0,16,23,37,4...|\n|25.0| Self-emp-not-inc|176756.0|      HS-grad|          9.0|       Never-married|   Farming-fishing|     Own-child|              White|   Male|         0.0|         0.0|          35.0| United-States| \u003c\u003d50K|           1.0|    (8,[1],[1.0])|           0.0|   (15,[0],[1.0])|                1.0|         (6,[1],[1.0])|           10.0|   (14,[10],[1.0])|              2.0|       (5,[2],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[1,8,24,39,45...|\n|32.0|          Private|186824.0|      HS-grad|          9.0|       Never-married| Machine-op-inspct|     Unmarried|              White|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           0.0|   (15,[0],[1.0])|                1.0|         (6,[1],[1.0])|            6.0|    (14,[6],[1.0])|              3.0|       (5,[3],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[0,8,24,35,46...|\n|38.0|          Private| 28887.0|         11th|          7.0|  Married-civ-spouse|             Sales|       Husband|              White|   Male|         0.0|         0.0|          50.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|           5.0|   (15,[5],[1.0])|                0.0|         (6,[0],[1.0])|            4.0|    (14,[4],[1.0])|              0.0|       (5,[0],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(94,[0,13,23,33,4...|\n|43.0| Self-emp-not-inc|292175.0|      Masters|         14.0|            Divorced|   Exec-managerial|     Unmarried|              White| Female|         0.0|         0.0|          45.0| United-States|  \u003e50K|           1.0|    (8,[1],[1.0])|           3.0|   (15,[3],[1.0])|                2.0|         (6,[2],[1.0])|            2.0|    (14,[2],[1.0])|              3.0|       (5,[3],[1.0])|      0.0|(4,[0],[1.0])|     1.0|    (1,[],[])|                0.0|        (41,[0],[1.0])|  1.0|(94,[1,11,25,31,4...|\n+----+-----------------+--------+-------------+-------------+--------------------+------------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\nonly showing top 20 rows\n\n"
       },
       "dateCreated": "Feb 8, 2017 7:46:54 AM",
-      "dateStarted": "Mar 5, 2017 6:12:05 PM",
-      "dateFinished": "Mar 5, 2017 6:12:58 PM",
+      "dateStarted": "Mar 7, 2017 10:14:12 PM",
+      "dateFinished": "Mar 7, 2017 10:14:31 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\nQuelques explications :\n\nUn encodage one-hot appliqué sur une variable catégorielle non numérique permet de représenter ses différents états de manière binaire. Dans notre cas d\u0027étude spark il s\u0027agit de vecteurs binaires. \nImaginons une variable à trois états \"Wife\", \"Husband\", \"Own-child\". \nLa représentation one-hot des états de cette variable serait :\n001, 010, 100 ou (3,[3],[1.0]), (3,[2],[1.0]), (3,[1],[1.0]). \nCe dispositif n\u0027est pertinent que si le nombre d\u0027états n\u0027est pas trop important, dans notre cas il convient très bien pour notre jeu de données !\n\nUne fois nos variables non-numériques transformées en vecteurs binaires, nous faisons appel à Spark ML Pipeline. Cette API fournit des outils permettant de combiner plusieurs algorithmes de machine learning dans un seul pipeline ou \"workflow\". Nous n\u0027avons qu\u0027à ajouter nos vecteurs binaires dans le pipeline et lancer la transformation.\n\n-\u003e StringIndexer permet de convertir des variables catégorielles en indices catégoriels.\n\n-\u003e OneHotEncoder associe une colonne d\u0027indice catégoriel à une colonne de vecteur binaire\n\n--\u003e VectorAssembler permet de combiner une liste donnée de colonnes en un simple vecteur de colonnes (expliqué plus en détail par la suite)\n\nREMARQUE :\nNous ne représentons pas la variable income en représentation binaire car il n\u0027y a que 2 états possibles, ce qui équivaut à 0 ou 1.\n\n-\u003e datasetTransformed.show() \u003c-\nNous pouvons visualiser le résultat de la transformation via la méthode show(). Nous retrouvons les colonnes numériques de notre dataset (ex : age, fnlwgt, capital_gain, etc ...) sur lesquelles nous n\u0027avons effectué aucun traitement.\nNous retrouvons également les colonnes non-numériques du dataset (ex : workclass, education, occupation, etc ...) sur lesquelles nous avons effectué une transformation vectorielle. Le résultat de cette transformation est stocké dans une colonne du même nom + le suffix \"ClassVec\". Notons également la présence d\u0027une colonne d\u0027index suffixées par \"Index\" (résultats de la fonction makeStageFunction).\n\nPrenons par exemple la variable non-numérique \"native_country\", une fois le dataset passé dans le pipeline, nous obtenons les 3 colonnes suivantes :\nnative_country | native_countryIndex | native_countryClassVec\nCuba           | 9.0                 | (41,[9],[1.0])\n\nLa valeur brute de la variable native_country est \"Cuba\", sa représentation vectorielle \u003d (41,[9],[1.0]) est stockées dans la colonne native_countryClassVec. Nous voyons ici que le vecteur a une longueur de 41 et que l\u0027état \"Cuba\" est représenté par une valeur logique 1 à la 9ième position (les autres valeurs étant à 0). Cet index est également stocké dans la colonne native_countryIndex. \n\nCes informations seront par la suite utilisées par nos algorithmes de prédiction dont les calculs se basent sur des informations numériques.\n",
-      "dateUpdated": "Mar 5, 2017 6:14:21 PM",
+      "dateUpdated": "Mar 5, 2017 6:14:21 AM",
       "config": {
         "colWidth": 4.0,
         "graph": {
@@ -1535,16 +1535,16 @@
         "type": "HTML",
         "msg": "\u003cp\u003eQuelques explications :\u003c/p\u003e\n\u003cp\u003eUn encodage one-hot appliqué sur une variable catégorielle non numérique permet de représenter ses différents états de manière binaire. Dans notre cas d\u0027étude spark il s\u0027agit de vecteurs binaires.\n\u003cbr  /\u003eImaginons une variable à trois états \u0026ldquo;Wife\u0026rdquo;, \u0026ldquo;Husband\u0026rdquo;, \u0026ldquo;Own-child\u0026rdquo;.\n\u003cbr  /\u003eLa représentation one-hot des états de cette variable serait :\n\u003cbr  /\u003e001, 010, 100 ou (3,[3],[1.0]), (3,[2],[1.0]), (3,[1],[1.0]).\n\u003cbr  /\u003eCe dispositif n\u0027est pertinent que si le nombre d\u0027états n\u0027est pas trop important, dans notre cas il convient très bien pour notre jeu de données !\u003c/p\u003e\n\u003cp\u003eUne fois nos variables non-numériques transformées en vecteurs binaires, nous faisons appel à Spark ML Pipeline. Cette API fournit des outils permettant de combiner plusieurs algorithmes de machine learning dans un seul pipeline ou \u0026ldquo;workflow\u0026rdquo;. Nous n\u0027avons qu\u0027à ajouter nos vecteurs binaires dans le pipeline et lancer la transformation.\u003c/p\u003e\n\u003cp\u003e-\u003e StringIndexer permet de convertir des variables catégorielles en indices catégoriels.\u003c/p\u003e\n\u003cp\u003e-\u003e OneHotEncoder associe une colonne d\u0027indice catégoriel à une colonne de vecteur binaire\u003c/p\u003e\n\u003cp\u003e\u0026ndash;\u003e VectorAssembler permet de combiner une liste donnée de colonnes en un simple vecteur de colonnes (expliqué plus en détail par la suite)\u003c/p\u003e\n\u003cp\u003eREMARQUE :\n\u003cbr  /\u003eNous ne représentons pas la variable income en représentation binaire car il n\u0027y a que 2 états possibles, ce qui équivaut à 0 ou 1.\u003c/p\u003e\n\u003cp\u003e-\u003e datasetTransformed.show() \u003c-\n\u003cbr  /\u003eNous pouvons visualiser le résultat de la transformation via la méthode show(). Nous retrouvons les colonnes numériques de notre dataset (ex : age, fnlwgt, capital_gain, etc \u0026hellip;) sur lesquelles nous n\u0027avons effectué aucun traitement.\n\u003cbr  /\u003eNous retrouvons également les colonnes non-numériques du dataset (ex : workclass, education, occupation, etc \u0026hellip;) sur lesquelles nous avons effectué une transformation vectorielle. Le résultat de cette transformation est stocké dans une colonne du même nom + le suffix \u0026ldquo;ClassVec\u0026rdquo;. Notons également la présence d\u0027une colonne d\u0027index suffixées par \u0026ldquo;Index\u0026rdquo; (résultats de la fonction makeStageFunction).\u003c/p\u003e\n\u003cp\u003ePrenons par exemple la variable non-numérique \u0026ldquo;native_country\u0026rdquo;, une fois le dataset passé dans le pipeline, nous obtenons les 3 colonnes suivantes :\n\u003cbr  /\u003enative_country | native_countryIndex | native_countryClassVec\n\u003cbr  /\u003eCuba           | 9.0                 | (41,[9],[1.0])\u003c/p\u003e\n\u003cp\u003eLa valeur brute de la variable native_country est \u0026ldquo;Cuba\u0026rdquo;, sa représentation vectorielle \u003d (41,[9],[1.0]) est stockées dans la colonne native_countryClassVec. Nous voyons ici que le vecteur a une longueur de 41 et que l\u0027état \u0026ldquo;Cuba\u0026rdquo; est représenté par une valeur logique 1 à la 9ième position (les autres valeurs étant à 0). Cet index est également stocké dans la colonne native_countryIndex.\u003c/p\u003e\n\u003cp\u003eCes informations seront par la suite utilisées par nos algorithmes de prédiction dont les calculs se basent sur des informations numériques.\u003c/p\u003e\n"
       },
-      "dateCreated": "Feb 15, 2017 9:17:34 PM",
-      "dateStarted": "Mar 5, 2017 6:14:20 PM",
-      "dateFinished": "Mar 5, 2017 6:14:20 PM",
+      "dateCreated": "Feb 15, 2017 9:17:34 AM",
+      "dateStarted": "Mar 5, 2017 6:14:20 AM",
+      "dateFinished": "Mar 5, 2017 6:14:20 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Detail columns to deal with",
       "text": "val categoricalCols \u003d Seq(\"workclass\", \"education\", \"marital_status\", \"occupation\", \"relationship\", \"race\", \"sex\", \"native_country\")\nval numericCols \u003d Seq(\"age\", \"fnlwgt\", \"education_num\", \"capital_gain\", \"capital_loss\", \"hours_per_week\")",
-      "dateUpdated": "Feb 24, 2017 8:29:25 PM",
+      "dateUpdated": "Feb 24, 2017 8:29:25 AM",
       "config": {
         "colWidth": 8.0,
         "graph": {
@@ -1573,8 +1573,8 @@
         "msg": "\ncategoricalCols: Seq[String] \u003d List(workclass, education, marital_status, occupation, relationship, race, sex, native_country)\n\nnumericCols: Seq[String] \u003d List(age, fnlwgt, education_num, capital_gain, capital_loss, hours_per_week)\n"
       },
       "dateCreated": "Feb 6, 2017 2:31:24 AM",
-      "dateStarted": "Feb 24, 2017 8:29:23 PM",
-      "dateFinished": "Feb 24, 2017 8:29:24 PM",
+      "dateStarted": "Feb 24, 2017 8:29:23 AM",
+      "dateFinished": "Feb 24, 2017 8:29:24 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1650,7 +1650,7 @@
     },
     {
       "text": "%md\nColonne \"features\", explications :\n\nNous avons précédemment appliqué notre pipeline au jeu de données.\nL\u0027étape assemblerStage a permis de combiner des valeurs de colonnes d\u0027un individu (row) en un simple vecteur appelé \"features\" grâce à la ligne suivante :\nval assemblerStage \u003d new VectorAssembler().setInputCols(nonNumericalColumns.map(w \u003d\u003e w + \"ClassVec\").toArray).setOutputCol(\"features\")\n\nNous avons combiné ici toutes les colonnes vectorielles représentant les variables non-numériques en un seul vecteur de sorti appelé \"features\", et ce pour chaque individu.\nNous remarquons que la longeur de ce vecteur features est égal à la somme de la longeur des vecteurs binaires : 8, 15, 6, 14, 5, 4, 1, 41 \u003d 94",
-      "dateUpdated": "Feb 24, 2017 1:48:46 PM",
+      "dateUpdated": "Feb 24, 2017 1:48:46 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1678,15 +1678,15 @@
         "msg": "\u003cp\u003eColonne \u0026ldquo;features\u0026rdquo;, explications :\u003c/p\u003e\n\u003cp\u003eNous avons précédemment appliqué notre pipeline au jeu de données.\n\u003cbr  /\u003eL\u0027étape assemblerStage a permis de combiner des valeurs de colonnes d\u0027un individu (row) en un simple vecteur appelé \u0026ldquo;features\u0026rdquo; grâce à la ligne suivante :\n\u003cbr  /\u003eval assemblerStage \u003d new VectorAssembler().setInputCols(nonNumericalColumns.map(w \u003d\u003e w + \u0026ldquo;ClassVec\u0026rdquo;).toArray).setOutputCol(\u0026ldquo;features\u0026rdquo;)\u003c/p\u003e\n\u003cp\u003eNous avons combiné ici toutes les colonnes vectorielles représentant les variables non-numériques en un seul vecteur de sorti appelé \u0026ldquo;features\u0026rdquo;, et ce pour chaque individu.\n\u003cbr  /\u003eNous remarquons que la longeur de ce vecteur features est égal à la somme de la longeur des vecteurs binaires : 8, 15, 6, 14, 5, 4, 1, 41 \u003d 94\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 24, 2017 12:21:13 PM",
-      "dateStarted": "Feb 24, 2017 1:48:45 PM",
-      "dateFinished": "Feb 24, 2017 1:48:45 PM",
+      "dateStarted": "Feb 24, 2017 1:48:45 AM",
+      "dateFinished": "Feb 24, 2017 1:48:45 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Que donnent les colonnes label et features ?",
       "text": "%sql SELECT label, income, features FROM datasetTransformed LIMIT 10",
-      "dateUpdated": "Mar 5, 2017 6:15:25 PM",
+      "dateUpdated": "Mar 5, 2017 6:15:25 AM",
       "config": {
         "colWidth": 8.0,
         "graph": {
@@ -1731,15 +1731,15 @@
         "type": "TABLE",
         "msg": "label\tincome\tfeatures\n0.0\t \u003c\u003d50K\t(94,[4,10,24,32,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\n0.0\t \u003c\u003d50K\t(94,[1,10,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\n0.0\t \u003c\u003d50K\t(94,[0,8,25,38,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\n0.0\t \u003c\u003d50K\t(94,[0,13,23,38,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\n0.0\t \u003c\u003d50K\t(94,[0,10,23,29,47,49,62],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\n0.0\t \u003c\u003d50K\t(94,[0,11,23,31,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\n0.0\t \u003c\u003d50K\t(94,[0,18,28,34,44,49,64],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\n1.0\t \u003e50K\t(94,[1,8,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\n1.0\t \u003e50K\t(94,[0,11,24,29,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\n1.0\t \u003e50K\t(94,[0,10,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\n"
       },
-      "dateCreated": "Feb 24, 2017 1:45:15 PM",
-      "dateStarted": "Mar 5, 2017 6:15:26 PM",
-      "dateFinished": "Mar 5, 2017 6:15:28 PM",
+      "dateCreated": "Feb 24, 2017 1:45:15 AM",
+      "dateStarted": "Mar 5, 2017 6:15:26 AM",
+      "dateFinished": "Mar 5, 2017 6:15:28 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\nExplications :\n\nRequêtons notre dataset transformé.\nLa colonne label contient 0 si l\u0027individu gagne moins de 50K\nElle contient 1 si l\u0027individu gagne plus de 50K.\nLa colonne features contient la combinaison des variables non-numériques sous forme de vecteur binaire.",
-      "dateUpdated": "Feb 24, 2017 1:54:36 PM",
+      "dateUpdated": "Feb 24, 2017 1:54:36 AM",
       "config": {
         "colWidth": 4.0,
         "graph": {
@@ -1766,16 +1766,16 @@
         "type": "HTML",
         "msg": "\u003cp\u003eExplications :\u003c/p\u003e\n\u003cp\u003eRequêtons notre dataset transformé.\n\u003cbr  /\u003eLa colonne label contient 0 si l\u0027individu gagne moins de 50K\n\u003cbr  /\u003eElle contient 1 si l\u0027individu gagne plus de 50K.\n\u003cbr  /\u003eLa colonne features contient la combinaison des variables non-numériques sous forme de vecteur binaire.\u003c/p\u003e\n"
       },
-      "dateCreated": "Feb 24, 2017 1:49:15 PM",
-      "dateStarted": "Feb 24, 2017 1:54:34 PM",
-      "dateFinished": "Feb 24, 2017 1:54:34 PM",
+      "dateCreated": "Feb 24, 2017 1:49:15 AM",
+      "dateStarted": "Feb 24, 2017 1:54:34 AM",
+      "dateFinished": "Feb 24, 2017 1:54:34 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Y a-t-il des individus qui partagent les mêmes variables non-numériques ?",
       "text": "%sql select features, count(*) as nb_individus_similaires from datasetTransformed group by features order by count(*) DESC",
-      "dateUpdated": "Feb 24, 2017 8:09:28 PM",
+      "dateUpdated": "Feb 24, 2017 8:09:28 AM",
       "config": {
         "colWidth": 8.0,
         "graph": {
@@ -1820,15 +1820,15 @@
         "type": "TABLE",
         "msg": "features\tnb_individus_similaires\n(94,[0,8,23,30,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t803\n(94,[0,10,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t448\n(94,[0,8,23,35,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t368\n(94,[0,9,23,30,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t345\n(94,[0,8,23,37,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t332\n(94,[0,10,23,29,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t309\n(94,[0,10,23,33,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t274\n(94,[0,8,23,33,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t274\n(94,[0,9,23,33,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t237\n(94,[0,9,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t216\n(94,[0,8,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t196\n(94,[0,11,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t171\n(94,[3,8,23,36,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t150\n(94,[0,11,23,29,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t145\n(94,[0,8,23,38,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t143\n(94,[1,8,23,30,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t139\n(94,[1,8,23,39,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t130\n(94,[0,9,24,34,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t126\n(94,[0,9,24,32,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t123\n(94,[0,9,24,33,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t121\n(94,[0,8,24,30,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t119\n(94,[3,9,24,36,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t117\n(94,[0,9,23,37,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t116\n(94,[0,8,24,38,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t115\n(94,[3,9,24,36,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t115\n(94,[0,8,24,32,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t113\n(94,[0,12,23,30,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t113\n(94,[0,8,23,32,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t104\n(94,[0,9,24,32,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t103\n(94,[0,9,23,29,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t102\n(94,[0,10,24,29,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t101\n(94,[0,8,23,32,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t99\n(94,[0,9,23,35,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t98\n(94,[0,10,24,29,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t96\n(94,[0,8,24,30,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t96\n(94,[0,17,23,29,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t95\n(94,[0,8,25,30,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t94\n(94,[0,9,24,34,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t94\n(94,[0,8,23,34,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t92\n(94,[0,8,25,32,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t90\n(94,[0,8,24,32,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t90\n(94,[0,10,24,31,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t89\n(94,[2,11,23,29,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t87\n(94,[0,10,24,33,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t87\n(94,[0,9,25,32,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t86\n(94,[5,10,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t83\n(94,[0,9,23,32,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t83\n(94,[1,17,23,29,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t80\n(94,[0,8,24,34,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t79\n(94,[0,10,23,30,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t79\n(94,[0,10,24,31,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t77\n(94,[0,8,25,32,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t76\n(94,[0,8,24,34,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t76\n(94,[1,8,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t76\n(94,[2,10,23,29,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t74\n(94,[0,9,24,33,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t73\n(94,[0,8,24,34,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t72\n(94,[1,8,23,33,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t70\n(94,[5,8,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t69\n(94,[0,13,23,30,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t69\n(94,[0,9,24,32,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t69\n(94,[0,9,23,40,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t68\n(94,[0,20,23,29,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t66\n(94,[0,9,25,32,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t65\n(94,[5,9,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t65\n(94,[0,10,23,40,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t64\n(94,[0,8,24,35,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t64\n(94,[0,8,25,37,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t63\n(94,[3,10,23,36,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t63\n(94,[0,9,24,38,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t62\n(94,[0,8,24,38,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t62\n(94,[0,8,24,33,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t62\n(94,[0,15,23,30,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t62\n(94,[2,9,23,41,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t60\n(94,[0,8,23,39,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t60\n(94,[3,9,23,36,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t60\n(94,[1,9,23,30,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t60\n(94,[0,8,25,34,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t60\n(94,[0,8,24,35,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t59\n(94,[0,8,24,34,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t59\n(94,[0,10,23,32,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t59\n(94,[0,9,24,33,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t59\n(94,[0,9,24,34,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t58\n(94,[0,10,24,32,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t57\n(94,[5,17,23,29,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t57\n(94,[0,9,23,38,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t57\n(94,[0,8,24,33,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t56\n(94,[0,8,23,29,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t55\n(94,[0,9,23,32,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t55\n(94,[0,9,24,30,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t54\n(94,[0,9,24,34,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t54\n(94,[0,10,24,33,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t53\n(94,[5,10,23,33,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t53\n(94,[0,8,25,34,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t52\n(94,[1,9,23,39,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t52\n(94,[0,9,24,33,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t51\n(94,[1,10,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t51\n(94,[1,10,23,33,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t51\n(94,[0,8,24,33,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t50\n(94,[2,8,23,30,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t49\n(94,[5,9,23,33,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t48\n(94,[0,11,24,29,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t48\n(94,[2,8,23,41,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t47\n(94,[0,10,23,29,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t47\n(94,[1,9,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t46\n(94,[0,13,24,38,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t45\n(94,[0,10,24,32,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t45\n(94,[0,16,23,30,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t45\n(94,[0,8,24,37,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t44\n(94,[0,13,24,33,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t44\n(94,[1,8,23,37,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t43\n(94,[0,12,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t43\n(94,[0,9,23,34,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t43\n(94,[0,8,24,32,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t42\n(94,[1,10,23,29,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t42\n(94,[0,8,24,32,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t42\n(94,[0,14,23,30,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t41\n(94,[1,9,23,33,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t41\n(94,[0,10,23,31,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t40\n(94,[0,9,24,30,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t40\n(94,[0,8,24,37,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t40\n(94,[4,11,23,29,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t40\n(94,[0,9,25,30,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t39\n(94,[0,8,24,33,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t39\n(94,[2,10,23,29,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t39\n(94,[2,10,24,29,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t38\n(94,[0,12,23,33,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t38\n(94,[0,8,23,35,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t38\n(94,[0,8,23,40,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t38\n(94,[0,11,23,33,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t38\n(94,[6,8,23,32,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t38\n(94,[0,8,23,33,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t38\n(94,[0,14,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t37\n(94,[0,11,24,29,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t37\n(94,[0,9,24,32,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t37\n(94,[0,8,25,35,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t37\n(94,[0,14,23,33,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t37\n(94,[0,8,25,33,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t37\n(94,[2,11,23,29,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t36\n(94,[0,9,25,31,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t36\n(94,[5,8,23,33,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t36\n(94,[0,10,24,32,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t36\n(94,[3,8,27,36,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t36\n(94,[0,15,23,35,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t36\n(94,[0,13,24,34,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t36\n(94,[4,20,23,29,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t35\n(94,[0,8,25,31,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t35\n(94,[4,10,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t34\n(94,[0,9,24,31,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t34\n(94,[0,13,23,35,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t34\n(94,[0,12,23,29,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t34\n(94,[5,8,23,30,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t34\n(94,[0,15,23,37,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t34\n(94,[0,8,23,31,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t33\n(94,[0,8,27,32,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t33\n(94,[0,8,23,30,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t33\n(94,[0,10,24,29,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t32\n(94,[0,10,25,31,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t32\n(94,[0,12,23,40,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t32\n(94,[0,8,25,30,46,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t32\n(94,[0,15,24,34,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t31\n(94,[0,8,25,31,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t31\n(94,[0,13,23,37,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t31\n(94,[0,9,23,31,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t31\n(94,[0,10,24,29,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t31\n(94,[4,10,23,29,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t30\n(94,[0,9,24,38,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t30\n(94,[0,13,24,34,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t30\n(94,[2,8,23,37,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t30\n(94,[0,8,25,33,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t30\n(94,[0,10,24,31,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t30\n(94,[0,12,23,35,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t29\n(94,[0,18,23,30,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t29\n(94,[0,8,23,34,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t29\n(94,[0,8,23,41,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t29\n(94,[4,8,23,41,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t28\n(94,[1,10,23,39,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t28\n(94,[3,8,24,36,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t28\n(94,[2,11,24,29,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t28\n(94,[0,10,24,33,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t28\n(94,[0,10,24,31,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t28\n(94,[0,9,25,31,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t28\n(94,[0,14,23,29,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t28\n(94,[3,8,23,36,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t27\n(94,[0,8,23,35,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t27\n(94,[0,8,24,35,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t27\n(94,[2,11,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t27\n(94,[0,9,24,31,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t27\n(94,[2,10,23,41,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t27\n(94,[1,12,23,39,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t26\n(94,[0,10,24,40,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t26\n(94,[0,8,24,31,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t26\n(94,[0,8,23,37,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t26\n(94,[3,16,23,36,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t26\n(94,[6,10,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t26\n(94,[0,10,23,37,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t25\n(94,[0,14,24,32,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t25\n(94,[6,10,23,29,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t25\n(94,[0,8,24,32,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t25\n(94,[0,15,24,34,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t25\n(94,[3,9,23,36,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t25\n(94,[0,8,25,33,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t25\n(94,[0,9,25,33,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t24\n(94,[3,8,24,36,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t24\n(94,[0,12,23,32,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t24\n(94,[0,8,24,34,46,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t24\n(94,[0,13,24,30,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t24\n(94,[3,11,23,36,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t24\n(94,[0,8,25,35,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t24\n(94,[0,14,23,40,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t23\n(94,[0,13,24,33,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t23\n(94,[0,16,23,37,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t23\n(94,[0,8,24,34,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t23\n(94,[0,8,26,32,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t23\n(94,[0,8,24,31,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t23\n(94,[2,10,25,29,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t23\n(94,[1,10,23,30,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t23\n(94,[1,16,23,39,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t23\n(94,[0,9,25,34,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t23\n(94,[0,11,23,29,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t22\n(94,[6,9,23,32,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t22\n(94,[0,10,24,40,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t22\n(94,[0,9,24,37,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t22\n(94,[0,9,25,31,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t22\n(94,[3,15,24,36,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t22\n(94,[0,8,24,39,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t22\n(94,[4,10,24,29,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t22\n(94,[0,9,25,33,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t22\n(94,[0,8,27,33,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t21\n(94,[0,8,25,31,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t21\n(94,[0,8,24,39,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t21\n(94,[5,11,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t21\n(94,[0,9,23,39,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t21\n(94,[0,19,23,30,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t21\n(94,[0,10,23,35,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t21\n(94,[2,8,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t21\n(94,[0,8,24,38,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t21\n(94,[0,9,24,40,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t21\n(94,[2,9,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t21\n(94,[0,10,25,31,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t21\n(94,[0,11,24,31,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t21\n(94,[0,8,23,38,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t21\n(94,[0,19,24,34,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t21\n(94,[0,9,24,29,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t21\n(94,[2,11,25,29,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t21\n(94,[1,20,23,29,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t21\n(94,[0,10,25,31,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t20\n(94,[0,8,24,34,45,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t20\n(94,[0,9,25,32,46,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t20\n(94,[0,8,24,35,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t20\n(94,[0,10,25,33,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t20\n(94,[0,12,24,32,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t20\n(94,[0,10,24,34,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t20\n(94,[2,11,25,29,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t20\n(94,[0,16,23,35,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t20\n(94,[0,9,24,31,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t20\n(94,[0,9,24,32,45,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t20\n(94,[0,9,24,35,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t20\n(94,[0,12,23,37,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t20\n(94,[0,9,24,37,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t20\n(94,[0,9,24,40,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t20\n(94,[4,8,23,30,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t20\n(94,[2,9,23,30,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t19\n(94,[3,13,24,36,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t19\n(94,[3,9,24,36,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t19\n(94,[0,9,24,29,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t19\n(94,[5,11,23,33,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t19\n(94,[0,9,24,29,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t19\n(94,[0,9,23,33,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t19\n(94,[2,8,23,34,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t19\n(94,[0,8,27,32,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t19\n(94,[0,9,24,35,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t19\n(94,[0,8,25,34,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t19\n(94,[0,17,24,29,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t19\n(94,[0,8,23,34,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t19\n(94,[0,17,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t19\n(94,[0,10,24,33,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t19\n(94,[0,12,24,32,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t18\n(94,[2,10,24,29,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t18\n(94,[0,8,24,38,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t18\n(94,[0,10,24,32,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t18\n(94,[1,8,25,30,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t18\n(94,[0,10,23,34,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t18\n(94,[0,19,24,33,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t18\n(94,[0,10,25,29,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t18\n(94,[0,8,27,34,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t18\n(94,[0,9,24,29,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t18\n(94,[5,10,23,29,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t18\n(94,[4,9,23,41,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t18\n(94,[0,8,25,38,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t17\n(94,[1,11,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t17\n(94,[0,12,25,29,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t17\n(94,[4,11,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t17\n(94,[0,8,27,34,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t17\n(94,[3,9,24,36,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t17\n(94,[0,18,23,35,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t17\n(94,[0,10,23,32,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t17\n(94,[0,8,25,35,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t17\n(94,[2,10,24,29,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t17\n(94,[0,8,24,30,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t17\n(94,[2,10,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t17\n(94,[0,8,24,30,46,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t17\n(94,[3,10,23,36,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t17\n(94,[0,10,23,31,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t17\n(94,[0,9,23,34,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t17\n(94,[1,8,24,30,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t17\n(94,[0,11,24,31,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t17\n(94,[3,13,24,36,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t17\n(94,[0,15,24,33,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t16\n(94,[2,8,25,32,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t16\n(94,[0,10,24,30,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t16\n(94,[0,20,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t16\n(94,[0,9,25,34,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t16\n(94,[0,15,23,38,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t16\n(94,[0,19,24,34,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t16\n(94,[4,10,24,29,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t16\n(94,[5,20,23,29,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t16\n(94,[0,8,24,38,45,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t16\n(94,[3,8,24,36,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t16\n(94,[0,9,25,35,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t16\n(94,[0,9,24,31,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t16\n(94,[0,8,24,35,46,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t16\n(94,[0,12,23,34,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t16\n(94,[3,8,25,36,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t16\n(94,[2,11,24,29,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t16\n(94,[4,9,24,32,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t16\n(94,[0,10,24,34,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t16\n(94,[0,9,24,39,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t16\n(94,[0,13,23,38,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t15\n(94,[0,8,25,30,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t15\n(94,[3,13,23,36,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t15\n(94,[3,8,24,36,46,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t15\n(94,[0,9,25,34,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t15\n(94,[3,8,24,36,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t15\n(94,[0,14,23,32,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t15\n(94,[0,9,24,40,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t15\n(94,[0,9,23,30,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t15\n(94,[0,12,24,30,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t15\n(94,[0,8,24,30,45,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t15\n(94,[3,9,25,36,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t15\n(94,[0,8,26,34,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t15\n(94,[0,18,23,37,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t15\n(94,[6,9,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t15\n(94,[1,16,23,30,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t15\n(94,[0,8,24,32,46,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t15\n(94,[0,10,25,29,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t15\n(94,[0,14,25,32,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t15\n(94,[0,9,23,29,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t15\n(94,[0,13,23,33,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t15\n(94,[0,9,24,35,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t14\n(94,[0,8,24,34,44,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t14\n(94,[1,18,23,30,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t14\n(94,[6,8,23,30,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t14\n(94,[0,12,23,29,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t14\n(94,[0,20,24,29,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t14\n(94,[2,9,25,32,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t14\n(94,[0,9,23,41,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t14\n(94,[0,10,25,33,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t14\n(94,[0,12,25,32,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t14\n(94,[6,8,23,32,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t14\n(94,[0,9,24,32,46,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t14\n(94,[0,9,25,29,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t14\n(94,[1,15,23,30,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t14\n(94,[0,9,24,33,45,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t14\n(94,[0,8,24,32,48,53],[1.0,1.0,1.0,1.0,1.0,1.0])\t14\n(94,[0,13,23,34,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t14\n(94,[0,9,27,32,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t14\n(94,[1,11,23,33,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t14\n(94,[0,8,26,34,46,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t13\n(94,[0,18,23,34,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t13\n(94,[0,8,24,31,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t13\n(94,[0,9,25,30,46,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t13\n(94,[0,8,25,35,46,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t13\n(94,[0,13,24,32,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t13\n(94,[0,13,24,37,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t13\n(94,[3,15,24,36,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t13\n(94,[1,11,23,29,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t13\n(94,[0,11,25,29,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t13\n(94,[0,9,25,33,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t13\n(94,[4,11,24,29,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t13\n(94,[0,11,23,31,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t13\n(94,[0,19,24,38,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t13\n(94,[5,9,23,30,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t13\n(94,[0,18,23,38,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t13\n(94,[0,10,23,33,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t13\n(94,[0,9,27,32,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t12\n(94,[0,14,23,35,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t12\n(94,[0,12,23,38,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t12\n(94,[0,10,25,29,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t12\n(94,[0,10,25,32,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t12\n(94,[0,8,24,33,46,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t12\n(94,[0,9,26,32,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t12\n(94,[0,11,23,40,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t12\n(94,[0,8,24,29,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t12\n(94,[4,10,23,32,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t12\n(94,[0,8,24,33,45,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t12\n(94,[3,8,23,36,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t12\n(94,[0,8,25,30,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t12\n(94,[0,15,24,38,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t12\n(94,[1,8,24,39,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t12\n(94,[0,10,23,38,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t12\n(94,[4,9,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t12\n(94,[0,17,24,29,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t12\n(94,[0,10,25,32,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t12\n(94,[6,17,23,29,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t12\n(94,[2,12,23,41,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t12\n(94,[6,11,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t12\n(94,[1,8,24,39,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t12\n(94,[0,15,24,30,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t12\n(94,[0,9,23,35,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t12\n(94,[0,15,23,33,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t12\n(94,[0,9,25,29,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t12\n(94,[6,9,23,30,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t12\n(94,[0,12,24,30,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t12\n(94,[2,8,25,32,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t12\n(94,[0,9,25,37,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t12\n(94,[3,15,23,36,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t12\n(94,[0,8,24,32,45,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t12\n(94,[0,8,25,32,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t11\n(94,[0,8,24,30,44,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t11\n(94,[1,8,23,29,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t11\n(94,[0,13,24,30,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t11\n(94,[2,14,23,41,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t11\n(94,[0,14,24,30,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t11\n(94,[0,9,24,30,44,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t11\n(94,[0,8,25,32,46,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t11\n(94,[0,9,24,32,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t11\n(94,[0,16,23,38,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t11\n(94,[0,9,23,37,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t11\n(94,[3,10,24,36,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t11\n(94,[0,12,25,32,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t11\n(94,[0,8,23,34,43,48,52,54],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t11\n(94,[0,10,23,39,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t11\n(94,[3,17,23,36,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t11\n(94,[0,11,23,32,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t11\n(94,[1,12,23,30,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t11\n(94,[1,9,23,37,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t11\n(94,[0,9,25,32,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t11\n(94,[0,12,23,32,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t11\n(94,[0,10,23,31,43,48,52,55],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t11\n(94,[0,8,24,29,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t11\n(94,[5,14,23,33,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t11\n(94,[1,8,23,34,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t11\n(94,[5,8,23,39,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t11\n(94,[1,9,24,30,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t11\n(94,[1,10,24,33,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t11\n(94,[0,14,25,29,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t11\n(94,[2,8,23,32,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t11\n(94,[0,21,23,35,43,48,52,54],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t11\n(94,[2,10,23,32,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[0,11,23,29,43,50,52,61],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[2,17,23,29,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[0,8,23,34,47,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[0,9,24,34,45,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[4,8,23,32,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[0,8,24,35,46,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[0,8,25,32,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[0,12,24,40,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[0,15,24,38,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[0,12,24,34,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[0,13,25,34,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[5,9,23,39,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[0,14,24,33,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[0,9,25,38,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[0,8,24,34,45,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[0,9,23,33,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[0,16,23,39,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[3,20,23,36,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[0,8,25,39,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[3,18,23,36,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[0,8,24,37,45,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[4,17,23,29,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[0,11,25,31,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[3,12,27,36,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[0,8,24,35,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[0,9,24,33,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[4,10,23,41,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[0,21,23,34,43,48,52,54],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[2,9,23,34,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[0,8,25,34,44,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[0,9,24,33,45,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[0,9,25,29,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[6,10,24,29,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[6,8,25,32,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[0,8,26,30,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[6,10,23,32,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[3,12,23,36,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[0,8,26,33,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[2,9,23,37,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[0,12,24,29,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t10\n(94,[0,14,24,33,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,8,27,33,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,10,23,40,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,9,27,31,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[6,8,23,32,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,8,27,35,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,14,25,31,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,21,23,39,43,48,52,54],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[4,9,24,34,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,9,24,34,48,53],[1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,8,23,32,47,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[4,9,25,32,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,9,23,32,47,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[6,11,23,29,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,8,26,34,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,8,24,38,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[1,8,24,30,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,8,23,32,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,8,24,35,44,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[2,10,25,29,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,9,26,33,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,21,23,38,43,48,52,54],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,8,23,33,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,9,23,32,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,8,25,35,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,8,25,33,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[3,21,23,36,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[3,8,25,36,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[6,8,23,40,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,11,25,29,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[1,9,24,39,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,8,24,33,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,8,24,34,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,8,24,38,44,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,14,24,32,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,14,24,34,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,8,24,33,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,10,24,34,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,8,25,30,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,11,24,33,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,11,25,29,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[4,9,25,32,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[3,8,27,36,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[5,12,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,8,25,29,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,8,24,30,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[1,9,23,34,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[1,13,23,30,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,9,24,34,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,15,25,30,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[5,10,23,30,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,15,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,10,23,33,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,17,23,29,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,10,24,40,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[2,9,25,32,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,13,24,34,45,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[1,9,25,30,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[3,8,25,36,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,8,24,40,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,14,25,29,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,14,23,31,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,8,23,30,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[1,8,23,33,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,12,23,40,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,14,25,30,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,12,25,29,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,8,23,30,43,48,52,54],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,19,23,37,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,8,25,40,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[3,10,24,36,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t9\n(94,[0,11,25,31,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[3,8,24,36,45,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[6,9,23,40,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,13,23,39,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,21,23,30,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,9,25,40,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,14,24,32,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,8,24,31,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,22,23,35,43,48,52,54],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[6,10,24,29,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,9,26,30,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,10,24,30,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[3,10,25,36,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,8,24,33,46,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[4,8,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,17,25,29,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,9,25,34,46,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,8,24,32,46,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,10,23,32,43,50,52,56],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,8,23,37,43,51,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,13,24,38,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,8,23,29,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,9,25,40,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,8,25,34,46,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,10,24,39,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[2,9,24,41,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,12,23,39,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,9,24,30,46,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,13,23,34,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,8,24,34,44,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[2,8,23,37,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[1,9,23,34,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,9,24,38,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,9,24,40,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[4,8,25,32,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,9,24,35,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,8,24,38,46,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,13,24,34,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,10,24,29,44,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,8,25,38,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,9,23,40,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,10,24,34,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,8,25,34,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,8,26,31,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,12,23,31,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,8,26,33,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,14,24,29,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[1,15,23,39,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[1,9,23,29,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[1,8,25,39,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[1,8,25,33,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,14,24,40,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,9,27,33,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,11,23,29,43,48,52,55],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[4,9,24,32,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,9,24,34,46,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[0,12,24,34,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[3,9,24,36,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t8\n(94,[6,8,23,37,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,9,24,38,45,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[3,8,24,36,45,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,8,24,40,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[4,10,24,32,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,14,24,38,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[4,9,24,29,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[3,9,24,36,45,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,13,24,33,45,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,10,24,38,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[1,12,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,10,23,41,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[4,10,25,29,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,9,25,32,44,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,8,24,35,45,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,21,23,30,43,48,52,54],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[2,12,24,41,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[3,10,24,36,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,11,25,31,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,9,24,33,44,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,8,26,35,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[4,8,23,40,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,14,23,32,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[6,14,23,32,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[6,9,23,32,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[2,10,24,29,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,9,25,40,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,15,25,34,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,13,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,8,24,34,46,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[1,16,23,33,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,10,24,40,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,9,25,30,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,9,24,32,48,53],[1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,8,24,32,45,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[6,9,23,29,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,13,25,34,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,11,25,31,46,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[2,9,23,32,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[4,11,23,29,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,8,24,33,45,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[3,9,25,36,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,11,24,29,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,8,25,40,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[5,14,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,9,24,33,48,53],[1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[1,17,24,29,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[4,11,24,29,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,9,24,30,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,13,23,32,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[1,9,23,35,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[1,13,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,9,24,34,45,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,8,26,33,46,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[4,8,23,34,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,14,24,33,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,19,24,32,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,8,24,37,46,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[1,11,23,30,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,10,23,29,43,48,52,55],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,12,25,31,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[4,9,24,32,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[2,10,24,29,44,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[6,8,25,32,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[1,10,25,31,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[3,14,23,36,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[1,9,24,30,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,9,24,39,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,8,26,32,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[4,12,23,41,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,12,24,34,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,8,24,32,44,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t7\n(94,[0,9,25,30,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,15,24,39,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[1,18,23,39,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,19,23,35,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,15,23,34,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[4,10,23,31,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,8,26,35,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,9,26,31,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[4,10,24,32,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[2,10,23,30,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[4,9,23,32,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[2,11,27,29,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,8,27,31,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,12,23,30,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,11,25,33,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,9,24,34,44,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,15,24,34,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,8,23,35,47,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[1,16,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[1,10,23,29,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,8,25,30,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,8,23,35,43,48,52,54],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,8,25,38,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,21,23,37,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,15,25,34,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,8,24,34,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[3,15,24,36,45,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,8,24,35,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,9,25,35,46,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,9,25,35,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,12,25,33,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,10,25,32,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,15,24,33,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,12,25,40,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[4,8,23,37,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[1,8,23,35,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,9,26,32,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[1,11,23,39,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,9,25,34,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,12,24,35,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,15,26,34,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,20,23,29,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,16,27,34,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[3,21,23,36,43,48,52,54],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,8,25,41,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[4,9,23,30,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,15,23,37,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,9,26,33,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[4,9,24,34,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,10,24,38,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[2,9,24,32,46,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[6,10,23,41,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,12,24,40,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,12,24,29,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,21,24,38,44,48,52,54],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,8,24,40,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[1,16,23,37,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,18,24,38,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,13,24,34,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[2,8,23,38,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[3,8,27,36,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[5,9,24,31,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[3,12,23,36,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,9,24,41,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[2,12,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,8,24,39,45,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,8,25,37,46,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[1,13,23,39,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,9,25,33,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,14,25,32,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[2,8,24,34,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,14,23,37,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,9,25,35,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,10,25,31,46,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,8,26,35,46,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,12,24,31,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,12,25,30,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,9,27,34,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,9,25,32,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,8,25,29,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[2,9,24,32,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,8,23,40,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,8,25,35,44,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[1,14,23,33,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,8,23,30,43,51,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[2,11,23,29,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,10,25,33,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[2,8,23,34,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,9,23,30,43,48,52,55],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[2,9,23,29,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,12,24,33,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[2,10,23,41,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,10,24,29,44,48,54],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,16,23,33,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[4,20,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,15,24,30,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[6,8,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,20,24,29,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,8,25,29,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,13,24,42,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,8,26,37,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,8,24,35,44,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,13,24,33,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[1,10,23,31,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[1,8,25,37,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[4,9,23,34,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,9,23,31,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[5,8,25,31,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,12,24,40,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,16,23,38,43,48,52,54],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,8,24,37,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[5,8,23,34,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,9,24,30,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,9,24,32,44,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[4,9,23,29,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[3,16,27,36,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[1,12,23,29,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[4,10,24,29,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,8,27,35,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,14,24,29,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[2,20,23,31,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,8,28,34,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,13,25,37,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,13,25,30,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,22,23,30,43,48,52,54],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,9,26,34,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,22,23,39,43,48,52,54],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[2,10,25,29,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t6\n(94,[0,10,24,32,44,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,9,23,41,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[2,13,23,37,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,8,25,32,48,53],[1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,12,25,33,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[2,10,24,29,45,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[2,8,24,41,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[6,10,24,31,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,15,25,35,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,8,24,38,46,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[1,20,24,29,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,8,23,30,43,48,52,72],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[6,9,23,31,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[3,9,24,36,44,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,13,24,34,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,11,24,32,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,10,26,33,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,13,24,35,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,9,24,33,46,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,8,25,38,46,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,10,27,34,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[3,8,26,36,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,9,24,39,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[4,9,24,29,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[6,9,25,32,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[4,9,24,29,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,10,25,33,46,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,9,23,38,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[2,15,23,30,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,8,24,29,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[4,8,25,31,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[4,9,23,32,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,9,27,31,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,8,23,38,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,8,27,35,46,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,10,23,34,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[5,10,23,39,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,8,23,30,43,48,52,57],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[3,18,25,36,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[1,9,24,34,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,16,23,37,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,15,23,30,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,10,24,31,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[2,11,24,29,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[3,9,27,36,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,12,24,35,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,14,24,34,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,8,27,34,46,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,10,25,30,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[4,8,23,29,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[1,8,24,31,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[3,9,24,36,45,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,11,27,29,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,24,39,44,48,52,54],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[6,9,24,32,46,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[2,9,24,41,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,18,24,34,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[2,8,24,39,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[2,11,25,31,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,10,25,34,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,17,23,33,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,10,27,29,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[3,14,24,36,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,10,25,34,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,14,23,33,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[2,14,23,32,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,18,23,35,43,48,52,54],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[3,13,24,36,45,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[1,13,23,37,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,14,25,33,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,10,24,29,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[2,11,23,31,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,9,25,35,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[6,9,25,32,46,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[4,11,25,29,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[3,8,25,36,46,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[1,8,23,34,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[4,8,24,34,46,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[5,9,25,31,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,9,26,34,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,8,24,34,48,53],[1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[2,9,25,31,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,14,23,29,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,18,24,35,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[2,9,27,32,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,12,26,29,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,10,24,35,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,8,25,33,46,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,12,25,40,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,16,23,34,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[4,10,24,31,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,10,23,32,47,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,10,26,31,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[4,10,23,29,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,9,24,29,44,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,19,24,33,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,19,24,35,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[6,8,24,32,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[3,8,27,36,44,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,8,24,34,49,53],[1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,10,24,33,44,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,10,24,37,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,8,24,31,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,9,25,38,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[2,18,23,34,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[1,12,24,39,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,10,23,29,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,8,27,29,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[3,19,24,36,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,12,25,34,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,8,27,37,46,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[4,8,25,32,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,18,24,34,45,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,9,24,33,49,53],[1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,9,24,31,44,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,9,24,41,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[3,8,26,36,46,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,8,23,30,43,48,52,55],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,13,24,34,48,53],[1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,16,23,35,43,48,52,54],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[2,16,23,37,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,9,24,32,45,50,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,9,26,32,46,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,8,23,34,43,50,52,66],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,12,25,32,46,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,8,23,37,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,12,25,34,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[6,8,25,32,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[2,8,24,32,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[2,8,27,34,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,11,24,29,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[1,10,24,31,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,8,24,30,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,9,24,38,44,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,13,25,35,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,10,23,31,43,50,52,71],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[5,12,23,33,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[1,9,23,32,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[2,9,24,32,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[3,15,25,36,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,14,23,38,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,15,23,32,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,15,24,34,45,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[6,8,25,32,46,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t5\n(94,[0,8,25,35,44,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[0,22,23,38,43,48,52,54],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[0,14,25,31,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[4,14,23,41,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[0,8,24,29,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[4,9,24,31,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[4,20,23,29,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[0,9,24,32,45,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[0,9,24,33,45,48,52,55],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[1,8,27,34,48,53],[1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[0,16,25,35,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[1,8,24,37,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[0,12,25,31,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[0,8,24,33,44,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[0,15,23,35,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[2,11,24,29,45,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[0,16,24,35,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[1,9,23,29,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[1,10,23,32,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[1,9,24,39,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[4,8,26,32,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[0,10,24,31,48,53],[1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[2,11,24,29,45,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[6,8,24,32,46,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[1,8,23,39,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[5,8,23,32,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[5,8,23,33,47,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[6,20,23,29,43,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[0,8,24,38,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[0,8,24,38,45,51,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[0,14,25,33,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[2,9,25,32,46,49,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[2,10,23,31,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[3,19,24,36,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[1,10,24,29,44,48,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[2,10,23,29,43,49,52,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n(94,[0,14,24,33,44,48,53],[1.0,1.0,1.0,1.0,1.0,1.0,1.0])\t4\n\n\u003cfont color\u003dred\u003eResults are limited by 1000.\u003c/font\u003e"
       },
-      "dateCreated": "Feb 24, 2017 1:54:53 PM",
-      "dateStarted": "Feb 24, 2017 8:01:23 PM",
-      "dateFinished": "Feb 24, 2017 8:01:26 PM",
+      "dateCreated": "Feb 24, 2017 1:54:53 AM",
+      "dateStarted": "Feb 24, 2017 8:01:23 AM",
+      "dateFinished": "Feb 24, 2017 8:01:26 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\nExplications :\n\nNous remarquons que bon nombre d\u0027individus partagent les mêmes variables non-numériques.\n\nLa requête ci contre est équivalente d\u0027un point de vue SQL à un regroupement sur les colonnes workclass, education, marital_status, occupation, relationship, race, sex, native_country :\n\nselect count( * ) as nb_individus_similaires from datasetTransformed group by workclass, education, marital_status, occupation, relationship, race, sex, native_country order by count( * ) DESC",
-      "dateUpdated": "Feb 24, 2017 8:09:06 PM",
+      "dateUpdated": "Feb 24, 2017 8:09:06 AM",
       "config": {
         "colWidth": 4.0,
         "graph": {
@@ -1855,9 +1855,9 @@
         "type": "HTML",
         "msg": "\u003cp\u003eExplications :\u003c/p\u003e\n\u003cp\u003eNous remarquons que bon nombre d\u0027individus partagent les mêmes variables non-numériques.\u003c/p\u003e\n\u003cp\u003eLa requête ci contre est équivalente d\u0027un point de vue SQL à un regroupement sur les colonnes workclass, education, marital_status, occupation, relationship, race, sex, native_country :\u003c/p\u003e\n\u003cp\u003eselect count( * ) as nb_individus_similaires from datasetTransformed group by workclass, education, marital_status, occupation, relationship, race, sex, native_country order by count( * ) DESC\u003c/p\u003e\n"
       },
-      "dateCreated": "Feb 24, 2017 2:02:05 PM",
-      "dateStarted": "Feb 24, 2017 8:09:03 PM",
-      "dateFinished": "Feb 24, 2017 8:09:03 PM",
+      "dateCreated": "Feb 24, 2017 2:02:05 AM",
+      "dateStarted": "Feb 24, 2017 8:09:03 AM",
+      "dateFinished": "Feb 24, 2017 8:09:03 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1898,7 +1898,7 @@
     },
     {
       "text": "val splits \u003d datasetTransformed.randomSplit(Array(0.7, 0.3))\nval (training, test) \u003d (splits(0), splits(1))",
-      "dateUpdated": "Mar 5, 2017 6:17:38 PM",
+      "dateUpdated": "Mar 7, 2017 10:16:06 PM",
       "config": {
         "colWidth": 8.0,
         "graph": {
@@ -1925,8 +1925,8 @@
         "msg": "\nsplits: Array[org.apache.spark.sql.Dataset[org.apache.spark.sql.Row]] \u003d Array([age: double, workclass: string ... 31 more fields], [age: double, workclass: string ... 31 more fields])\n\n\ntraining: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [age: double, workclass: string ... 31 more fields]\ntest: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [age: double, workclass: string ... 31 more fields]\n"
       },
       "dateCreated": "Feb 8, 2017 8:40:35 AM",
-      "dateStarted": "Mar 5, 2017 6:17:39 PM",
-      "dateFinished": "Mar 5, 2017 6:17:45 PM",
+      "dateStarted": "Mar 7, 2017 10:16:06 PM",
+      "dateFinished": "Mar 7, 2017 10:16:08 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1959,7 +1959,7 @@
         "type": "HTML",
         "msg": "\u003cp\u003eExplications :\u003c/p\u003e\n\u003cp\u003eLa fonction randomSplit permet de découper un dataset en plusieurs \u0026ldquo;morceaux\u0026rdquo; dans lesquels sont réparties les données de manière aléatoire. La fonction demande un tableau dont la longeur correspond au nombre de splits (ici 2) et les valeurs la taille en pourcentage de chacun d\u0027eux (ici 70% et 30%).\u003c/p\u003e\n\u003cp\u003eNous récupérons le split de 70% dans une variable \u0026ldquo;training\u0026rdquo;. Ce dataset sera utilisé pour déterminer les prédictions \u003d\u003e APPRENTISSAGE\u003c/p\u003e\n\u003cp\u003eLe split de 30% est stocké dans une variable \u0026ldquo;test\u0026rdquo; qui permettra de tester les prédictions calculées sur le jeu de données training \u003d\u003e TEST\u003c/p\u003e\n"
       },
-      "dateCreated": "Feb 24, 2017 2:04:47 PM",
+      "dateCreated": "Feb 24, 2017 2:04:47 AM",
       "dateStarted": "Feb 25, 2017 7:18:38 AM",
       "dateFinished": "Feb 25, 2017 7:18:38 AM",
       "status": "FINISHED",
@@ -2003,7 +2003,7 @@
     {
       "title": "Binomial Logistic Regression  (estimation 87.85%)",
       "text": "import org.apache.spark.ml.classification.LogisticRegression\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\n\n// Implémentation du model de machine learning LogisticRegression\nval lr \u003d new LogisticRegression().setMaxIter(10).setRegParam(0.01)\n\n// Création d\u0027un estimateur en adaptant le modèle de régression logistique sur les données training issues du dataset\nval lrEstimator \u003d lr.fit(training)\n\n// Exécution de l\u0027estimateur sur les données test issues du dataset\nval datasetEstimated \u003d lrEstimator.transform(test);\n\n// Evaluation des prédictions grâce à BinaryClassificationEvaluator\nval bce \u003d new BinaryClassificationEvaluator()\n\n// Nous obtenons une estimation juste à 87.85%\nbce.evaluate(datasetEstimated)\n\n// Affichage des erreurs d\u0027estimation\ndatasetEstimated.filter($\"label\" !\u003d\u003d $\"prediction\").select(\"workclass\", \"education\", \"sex\", \"label\",\"prediction\").show()\n",
-      "dateUpdated": "Mar 5, 2017 6:18:09 PM",
+      "dateUpdated": "Mar 5, 2017 6:18:09 AM",
       "config": {
         "colWidth": 8.0,
         "graph": {
@@ -2031,14 +2031,14 @@
         "msg": "\nimport org.apache.spark.ml.classification.LogisticRegression\n\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\n\nlr: org.apache.spark.ml.classification.LogisticRegression \u003d logreg_fc8befbdc105\n\nlrEstimator: org.apache.spark.ml.classification.LogisticRegressionModel \u003d logreg_fc8befbdc105\n\ndatasetEstimated: org.apache.spark.sql.DataFrame \u003d [age: double, workclass: string ... 34 more fields]\n\nbce: org.apache.spark.ml.evaluation.BinaryClassificationEvaluator \u003d binEval_08f0caba56d1\n\nres600: Double \u003d 0.8748176154696711\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n+----------+-------------+-------+-----+----------+\n| workclass|    education|    sex|label|prediction|\n+----------+-------------+-------+-----+----------+\n|   Private|      HS-grad| Female|  0.0|       1.0|\n|   Private| Some-college|   Male|  0.0|       1.0|\n| Local-gov|      5th-6th|   Male|  1.0|       0.0|\n|   Private|   Assoc-acdm| Female|  0.0|       1.0|\n|   Private| Some-college| Female|  1.0|       0.0|\n|   Private|      HS-grad|   Male|  1.0|       0.0|\n|   Private| Some-college|   Male|  0.0|       1.0|\n|   Private| Some-college| Female|  0.0|       1.0|\n| State-gov|         12th|   Male|  1.0|       0.0|\n|   Private| Some-college|   Male|  0.0|       1.0|\n|   Private|    Bachelors| Female|  1.0|       0.0|\n|   Private| Some-college| Female|  0.0|       1.0|\n|   Private| Some-college|   Male|  1.0|       0.0|\n|   Private|    Bachelors| Female|  0.0|       1.0|\n| State-gov|    Bachelors|   Male|  0.0|       1.0|\n|         ?| Some-college|   Male|  1.0|       0.0|\n|   Private|    Assoc-voc|   Male|  1.0|       0.0|\n|   Private| Some-college|   Male|  1.0|       0.0|\n|   Private|    Bachelors|   Male|  0.0|       1.0|\n|   Private|      HS-grad| Female|  1.0|       0.0|\n+----------+-------------+-------+-----+----------+\nonly showing top 20 rows\n\n"
       },
       "dateCreated": "Feb 8, 2017 8:31:04 AM",
-      "dateStarted": "Mar 5, 2017 6:18:10 PM",
-      "dateFinished": "Mar 5, 2017 6:20:11 PM",
+      "dateStarted": "Mar 5, 2017 6:18:10 AM",
+      "dateFinished": "Mar 5, 2017 6:20:11 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\nExplications :\n\nNous implémentons ci-contre un model de régression logistique binomial avec un nombre d\u0027itération maximum fixé à 10 et un paramètre de régularisation fixé à 0.01.\n\nNous pouvons enuite adapter le modèle à notre jeu de données training (70% du dataset initial). Le but est de créer un estimateur sur un jeu de données assez large afin d\u0027obtenir des prédictions justes. \n\nUne fois l\u0027estimateur créé, nous pouvons le tester en l\u0027appliquant sur le jeu de données test.\n\nBinaryClassificationEvaluator nous permet de voir si l\u0027estimateur déduit du jeu de données training est juste si on l\u0027applique sur le jeu de données test. Nous obtenons un taux d\u0027estimation juste à 87.85%. OUaou !\n\nRemarque :\nEn observant le dataFrame datasetEstimated, nous remarquons l\u0027apparition de 3 nouvelles colonnes :\nrawPrediction | probability | prediction\n[5.29605336427181...|[0.99501365539711...|       0.0|\n\nLa colonne qui nous intéresse le plus est \"prediction\" qui représente la tranche salariale estimée de l\u0027individu (0.0 : \u003c\u003d50K | 1.0 : \u003e50K)\nLa méthode fit du model LogisticRegression recherche deux colonnes dans le dataset passé en paramètre : \"label\" et \"features\"\nDans notre cas, label est bien la représentation binaire de la variable \"income\".\n",
-      "dateUpdated": "Mar 5, 2017 6:19:00 PM",
+      "dateUpdated": "Mar 5, 2017 6:19:00 AM",
       "config": {
         "colWidth": 4.0,
         "graph": {
@@ -2066,15 +2066,15 @@
         "msg": "\u003cp\u003eExplications :\u003c/p\u003e\n\u003cp\u003eNous implémentons ci-contre un model de régression logistique binomial avec un nombre d\u0027itération maximum fixé à 10 et un paramètre de régularisation fixé à 0.01.\u003c/p\u003e\n\u003cp\u003eNous pouvons enuite adapter le modèle à notre jeu de données training (70% du dataset initial). Le but est de créer un estimateur sur un jeu de données assez large afin d\u0027obtenir des prédictions justes.\u003c/p\u003e\n\u003cp\u003eUne fois l\u0027estimateur créé, nous pouvons le tester en l\u0027appliquant sur le jeu de données test.\u003c/p\u003e\n\u003cp\u003eBinaryClassificationEvaluator nous permet de voir si l\u0027estimateur déduit du jeu de données training est juste si on l\u0027applique sur le jeu de données test. Nous obtenons un taux d\u0027estimation juste à 87.85%. OUaou !\u003c/p\u003e\n\u003cp\u003eRemarque :\n\u003cbr  /\u003eEn observant le dataFrame datasetEstimated, nous remarquons l\u0027apparition de 3 nouvelles colonnes :\n\u003cbr  /\u003erawPrediction | probability | prediction\n\u003cbr  /\u003e[5.29605336427181\u0026hellip;|[0.99501365539711\u0026hellip;|       0.0|\u003c/p\u003e\n\u003cp\u003eLa colonne qui nous intéresse le plus est \u0026ldquo;prediction\u0026rdquo; qui représente la tranche salariale estimée de l\u0027individu (0.0 : \u003c\u003d50K | 1.0 : \u003e50K)\n\u003cbr  /\u003eLa méthode fit du model LogisticRegression recherche deux colonnes dans le dataset passé en paramètre : \u0026ldquo;label\u0026rdquo; et \u0026ldquo;features\u0026rdquo;\n\u003cbr  /\u003eDans notre cas, label est bien la représentation binaire de la variable \u0026ldquo;income\u0026rdquo;.\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 8, 2017 8:52:38 AM",
-      "dateStarted": "Mar 5, 2017 6:19:01 PM",
-      "dateFinished": "Mar 5, 2017 6:19:01 PM",
+      "dateStarted": "Mar 5, 2017 6:19:01 AM",
+      "dateFinished": "Mar 5, 2017 6:19:01 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Decision Trees (estimation 52.75%)",
       "text": "import org.apache.spark.ml.classification.DecisionTreeClassifier\r\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\r\n\r\n// Implémentation du model de machine learning DecisionTreeClassifier\r\nval dt \u003d new DecisionTreeClassifier()\r\n  \r\n// Création d\u0027un estimateur en adaptant le modèle arbre de décision sur les données training issues du dataset\r\nval dtEstimator \u003d dt.fit(training)\r\n\r\n// Exécution de l\u0027estimateur sur les données test issues du dataset\r\nval datasetEstimated \u003d dtEstimator.transform(test);\r\n\r\n// Evaluation des prédictions grâce à BinaryClassificationEvaluator\r\nval bce \u003d new BinaryClassificationEvaluator()\r\n\r\n// Nous obtenons une estimation juste à 52.74%\r\nbce.evaluate(datasetEstimated)\r\n\r\n// Affichage des erreurs d\u0027estimation\r\ndatasetEstimated.filter($\"label\" !\u003d\u003d $\"prediction\").select(\"workclass\", \"education\", \"sex\", \"label\",\"prediction\").show()\r\n",
-      "dateUpdated": "Mar 5, 2017 6:19:53 PM",
+      "dateUpdated": "Mar 5, 2017 6:19:53 AM",
       "config": {
         "colWidth": 8.0,
         "graph": {
@@ -2101,15 +2101,15 @@
         "type": "TEXT",
         "msg": "\nimport org.apache.spark.ml.classification.DecisionTreeClassifier\n\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\n\ndt: org.apache.spark.ml.classification.DecisionTreeClassifier \u003d dtc_22bf4bd3f67c\n\ndtEstimator: org.apache.spark.ml.classification.DecisionTreeClassificationModel \u003d DecisionTreeClassificationModel (uid\u003ddtc_22bf4bd3f67c) of depth 5 with 61 nodes\n\ndatasetEstimated: org.apache.spark.sql.DataFrame \u003d [age: double, workclass: string ... 34 more fields]\n\nbce: org.apache.spark.ml.evaluation.BinaryClassificationEvaluator \u003d binEval_0bc37c3bbdb4\n\nres603: Double \u003d 0.6133830650329807\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n+----------+-------------+-------+-----+----------+\n| workclass|    education|    sex|label|prediction|\n+----------+-------------+-------+-----+----------+\n|   Private|      HS-grad| Female|  0.0|       1.0|\n|   Private| Some-college|   Male|  0.0|       1.0|\n| Local-gov|      5th-6th|   Male|  1.0|       0.0|\n|   Private|    Bachelors| Female|  0.0|       1.0|\n|   Private|   Assoc-acdm| Female|  0.0|       1.0|\n|   Private| Some-college| Female|  1.0|       0.0|\n|   Private|      HS-grad|   Male|  1.0|       0.0|\n|   Private| Some-college| Female|  0.0|       1.0|\n| State-gov|         12th|   Male|  1.0|       0.0|\n|   Private|    Bachelors| Female|  1.0|       0.0|\n|   Private| Some-college| Female|  0.0|       1.0|\n|   Private| Some-college|   Male|  1.0|       0.0|\n|   Private|    Bachelors| Female|  0.0|       1.0|\n| State-gov|    Bachelors|   Male|  0.0|       1.0|\n|         ?| Some-college|   Male|  1.0|       0.0|\n|   Private|    Assoc-voc|   Male|  1.0|       0.0|\n|   Private| Some-college|   Male|  1.0|       0.0|\n|   Private|    Bachelors|   Male|  0.0|       1.0|\n|   Private|      HS-grad| Female|  1.0|       0.0|\n|   Private| Some-college|   Male|  0.0|       1.0|\n+----------+-------------+-------+-----+----------+\nonly showing top 20 rows\n\n"
       },
-      "dateCreated": "Feb 24, 2017 10:00:19 PM",
-      "dateStarted": "Mar 5, 2017 6:19:53 PM",
-      "dateFinished": "Mar 5, 2017 6:23:14 PM",
+      "dateCreated": "Feb 24, 2017 10:00:19 AM",
+      "dateStarted": "Mar 5, 2017 6:19:53 AM",
+      "dateFinished": "Mar 5, 2017 6:23:14 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\nExplications :\n\nLes étapes avec le modèle decision tree sont les mêmes qu\u0027avec le modèle binomial logistic regression.\n\nNous observons une estimation juste à 52.74%",
-      "dateUpdated": "Feb 24, 2017 11:28:04 PM",
+      "dateUpdated": "Feb 24, 2017 11:28:04 AM",
       "config": {
         "colWidth": 4.0,
         "graph": {
@@ -2136,16 +2136,16 @@
         "type": "HTML",
         "msg": "\u003cp\u003eExplications :\u003c/p\u003e\n\u003cp\u003eLes étapes avec le modèle decision tree sont les mêmes qu\u0027avec le modèle binomial logistic regression.\u003c/p\u003e\n\u003cp\u003eNous observons une estimation juste à 52.74%\u003c/p\u003e\n"
       },
-      "dateCreated": "Feb 24, 2017 11:25:24 PM",
-      "dateStarted": "Feb 24, 2017 11:28:02 PM",
-      "dateFinished": "Feb 24, 2017 11:28:02 PM",
+      "dateCreated": "Feb 24, 2017 11:25:24 AM",
+      "dateStarted": "Feb 24, 2017 11:28:02 AM",
+      "dateFinished": "Feb 24, 2017 11:28:02 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Random Forest  (estimation 86.07%)",
       "text": "import org.apache.spark.ml.classification.RandomForestClassifier\r\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\r\n\r\n// Implémentation du model de machine learning RandomForestClassifier\r\nval dt \u003d new RandomForestClassifier()\r\n\r\n// Création d\u0027un estimateur en adaptant le modèle arbre de décision sur les données training issues du dataset\r\nval dtEstimator \u003d dt.fit(training)\r\n\r\n// Exécution de l\u0027estimateur sur les données test issues du dataset\r\nval datasetEstimated \u003d dtEstimator.transform(test);\r\n\r\n// Evaluation des prédictions grâce à BinaryClassificationEvaluator\r\nval bce \u003d new BinaryClassificationEvaluator()\r\n\r\n// Nous obtenons une estimation juste à 86.07%\r\nbce.evaluate(datasetEstimated)\r\n\r\n// Affichage des erreurs d\u0027estimation\r\ndatasetEstimated.filter($\"label\" !\u003d\u003d $\"prediction\").select(\"workclass\", \"education\", \"sex\", \"label\",\"prediction\").show()",
-      "dateUpdated": "Mar 5, 2017 6:19:56 PM",
+      "dateUpdated": "Mar 5, 2017 6:19:56 AM",
       "config": {
         "colWidth": 8.0,
         "graph": {
@@ -2172,9 +2172,9 @@
         "type": "TEXT",
         "msg": "\nimport org.apache.spark.ml.classification.RandomForestClassifier\n\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\n\ndt: org.apache.spark.ml.classification.RandomForestClassifier \u003d rfc_2bc9236b37fc\n\ndtEstimator: org.apache.spark.ml.classification.RandomForestClassificationModel \u003d RandomForestClassificationModel (uid\u003drfc_f99db2465e7e) with 20 trees\n\ndatasetEstimated: org.apache.spark.sql.DataFrame \u003d [age: double, workclass: string ... 34 more fields]\n\nbce: org.apache.spark.ml.evaluation.BinaryClassificationEvaluator \u003d binEval_ea45b405b2dd\n\nres606: Double \u003d 0.8591421131960938\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n+----------+-------------+-------+-----+----------+\n| workclass|    education|    sex|label|prediction|\n+----------+-------------+-------+-----+----------+\n| Local-gov|      5th-6th|   Male|  1.0|       0.0|\n|   Private| Some-college| Female|  1.0|       0.0|\n|   Private|      HS-grad|   Male|  1.0|       0.0|\n| State-gov|         12th|   Male|  1.0|       0.0|\n|   Private|    Bachelors| Female|  1.0|       0.0|\n|   Private| Some-college|   Male|  1.0|       0.0|\n|   Private|    Bachelors| Female|  0.0|       1.0|\n|         ?| Some-college|   Male|  1.0|       0.0|\n|   Private|    Assoc-voc|   Male|  1.0|       0.0|\n|   Private| Some-college|   Male|  1.0|       0.0|\n|   Private|    Bachelors|   Male|  0.0|       1.0|\n|   Private|      HS-grad| Female|  1.0|       0.0|\n|   Private|      HS-grad|   Male|  1.0|       0.0|\n|   Private|    Bachelors|   Male|  0.0|       1.0|\n|   Private|    Bachelors|   Male|  0.0|       1.0|\n|   Private|    Bachelors|   Male|  1.0|       0.0|\n| State-gov|      HS-grad|   Male|  1.0|       0.0|\n|   Private|      HS-grad|   Male|  1.0|       0.0|\n|   Private|         11th|   Male|  1.0|       0.0|\n|   Private|      HS-grad|   Male|  1.0|       0.0|\n+----------+-------------+-------+-----+----------+\nonly showing top 20 rows\n\n"
       },
-      "dateCreated": "Feb 24, 2017 11:29:25 PM",
-      "dateStarted": "Mar 5, 2017 6:20:11 PM",
-      "dateFinished": "Mar 5, 2017 6:27:09 PM",
+      "dateCreated": "Feb 24, 2017 11:29:25 AM",
+      "dateStarted": "Mar 5, 2017 6:20:11 AM",
+      "dateFinished": "Mar 5, 2017 6:27:09 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -2216,7 +2216,7 @@
     {
       "title": "Tuning : Cross-validator (estimation 87.91%)",
       "text": "import org.apache.spark.ml.Pipeline\r\nimport org.apache.spark.ml.tuning.{ParamGridBuilder, CrossValidator}\r\nimport org.apache.spark.ml.classification.LogisticRegression\r\nimport org.apache.spark.ml.classification.LogisticRegressionModel\r\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\r\n\r\n// Nomble de splits (plus la valeur est élevée, plus le modèle obtenu sera fiable)\r\nval nFolds: Int \u003d 2\r\n\r\n// Instanciation de l\u0027estimateur\r\nval lr \u003d new LogisticRegression()\r\n\r\n// Création de la grille de paramètres pour l\u0027algorythme de cross-validation\r\nval paramGrid \u003d new ParamGridBuilder()\r\n  .addGrid(lr.regParam, Array(0.1, 0.01))\r\n  .build()\r\n\r\n// Instanciation du modèle de prédiction\r\nval cv \u003d new CrossValidator()\r\n  .setEstimator(lr) // affectation de l\u0027estimateur\r\n  .setEvaluator(new BinaryClassificationEvaluator()) // l\u0027évaluateur utilisé\r\n  .setEstimatorParamMaps(paramGrid) // Les paramètres en entrée\r\n  .setNumFolds(nFolds)\r\n\r\nval dataset \u003d cv.fit(training)\r\n\r\nval eval \u003d new BinaryClassificationEvaluator().evaluate(bestModel.transform(test))\r\n",
-      "dateUpdated": "Mar 5, 2017 6:37:25 PM",
+      "dateUpdated": "Mar 5, 2017 6:37:25 AM",
       "config": {
         "colWidth": 8.0,
         "graph": {
@@ -2244,16 +2244,16 @@
         "type": "TEXT",
         "msg": "\nimport org.apache.spark.ml.Pipeline\n\nimport org.apache.spark.ml.tuning.{ParamGridBuilder, CrossValidator}\n\nimport org.apache.spark.ml.classification.LogisticRegression\n\nimport org.apache.spark.ml.classification.LogisticRegressionModel\n\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\n\nnFolds: Int \u003d 2\n\nlr: org.apache.spark.ml.classification.LogisticRegression \u003d logreg_97166f5cdd70\n\n\n\n\n\n\nparamGrid: Array[org.apache.spark.ml.param.ParamMap] \u003d\nArray({\n\tlogreg_97166f5cdd70-regParam: 0.1\n}, {\n\tlogreg_97166f5cdd70-regParam: 0.01\n})\n\ncv: org.apache.spark.ml.tuning.CrossValidator \u003d cv_1e3f45e59bda\n\nbestModel: org.apache.spark.ml.tuning.CrossValidatorModel \u003d cv_1e3f45e59bda\n\neval: Double \u003d 0.875724034021905\n"
       },
-      "dateCreated": "Feb 24, 2017 11:36:12 PM",
-      "dateStarted": "Mar 5, 2017 6:24:03 PM",
-      "dateFinished": "Mar 5, 2017 6:35:51 PM",
+      "dateCreated": "Feb 24, 2017 11:36:12 AM",
+      "dateStarted": "Mar 5, 2017 6:24:03 AM",
+      "dateFinished": "Mar 5, 2017 6:35:51 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Cross-validation",
       "text": "%md\nExplications :\n\nFaisons encore un peu de tuning !\nEssayons maintenant d\u0027obtenir le meilleur modèle de prédiction pour notre jeu de données via l\u0027outil CrossValidator fournit par Spark ML.\n\nPour l\u0027implémenter nous allons avoir besoin :\n- d\u0027un \"estimator\" : nous pouvons utiliser l\u0027algorithme LogisticRegression qui a fait ses preuves précédemment.\n- un jeu de paramètres à analyser : nous prendrons tous les paramètres déjà aggrégés dans la colonne features. Nous pourons constituer une \"grille de paramètres\".\n- un \"evaluator\" : pour évaluer la qualité des prédictions durant les calculs. Nous pouvons utiliser BinaryClassificationEvaluator\n\nLe fonctionnement de CrossValidator est plutôt simple, les données en entrée sont découpées et séparées en morceaux de données \"training\" et morceaux de données \"test\".\nPour chaque paire (train + test), l\u0027algorythme va itérer sur la grille de paramètres. Un modèle de prédiction va être créé pour chaque paramètre et confronté aux données test, l\u0027estimateur se chargeant d\u0027évaluer la qualité de la prédiction. A la fin du traitement, le modèle retourné correspond à la combinaison des meilleures prédictions déduites des jeux de paramètres.\n\nL\u0027utilisation de CrossValidator peut conduire à des temps de traitement très longs et des consommations CPU élevées.",
-      "dateUpdated": "Mar 5, 2017 6:30:17 PM",
+      "dateUpdated": "Mar 5, 2017 6:30:17 AM",
       "config": {
         "colWidth": 4.0,
         "graph": {
@@ -2281,9 +2281,9 @@
         "type": "HTML",
         "msg": "\u003cp\u003eExplications :\u003c/p\u003e\n\u003cp\u003eFaisons encore un peu de tuning !\n\u003cbr  /\u003eEssayons maintenant d\u0027obtenir le meilleur modèle de prédiction pour notre jeu de données via l\u0027outil CrossValidator fournit par Spark ML.\u003c/p\u003e\n\u003cp\u003ePour l\u0027implémenter nous allons avoir besoin :\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003ed\u0027un \u0026ldquo;estimator\u0026rdquo; : nous pouvons utiliser l\u0027algorithme LogisticRegression qui a fait ses preuves précédemment.\u003c/li\u003e\n\u003cli\u003eun jeu de paramètres à analyser : nous prendrons tous les paramètres déjà aggrégés dans la colonne features. Nous pourons constituer une \u0026ldquo;grille de paramètres\u0026rdquo;.\u003c/li\u003e\n\u003cli\u003eun \u0026ldquo;evaluator\u0026rdquo; : pour évaluer la qualité des prédictions durant les calculs. Nous pouvons utiliser BinaryClassificationEvaluator\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eLe fonctionnement de CrossValidator est plutôt simple, les données en entrée sont découpées et séparées en morceaux de données \u0026ldquo;training\u0026rdquo; et morceaux de données \u0026ldquo;test\u0026rdquo;.\n\u003cbr  /\u003ePour chaque paire (train + test), l\u0027algorythme va itérer sur la grille de paramètres. Un modèle de prédiction va être créé pour chaque paramètre et confronté aux données test, l\u0027estimateur se chargeant d\u0027évaluer la qualité de la prédiction. A la fin du traitement, le modèle retourné correspond à la combinaison des meilleures prédictions déduites des jeux de paramètres.\u003c/p\u003e\n\u003cp\u003eL\u0027utilisation de CrossValidator peut conduire à des temps de traitement très longs et des consommations CPU élevées.\u003c/p\u003e\n"
       },
-      "dateCreated": "Mar 5, 2017 1:42:47 PM",
-      "dateStarted": "Mar 5, 2017 6:30:16 PM",
-      "dateFinished": "Mar 5, 2017 6:30:16 PM",
+      "dateCreated": "Mar 5, 2017 1:42:47 AM",
+      "dateStarted": "Mar 5, 2017 6:30:16 AM",
+      "dateFinished": "Mar 5, 2017 6:30:16 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -2323,10 +2323,11 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "import org.apache.spark.mllib.linalg.Vectors\r\nimport org.apache.spark.mllib.stat.{MultivariateStatisticalSummary, Statistics}\r\n\r\n\r\nval features \u003d datasetTransformed.select(\"features\").rdd.map(t \u003d\u003e t.getAs[org.apache.spark.mllib.linalg.Vectors](0))\r\n",
-      "dateUpdated": "Mar 5, 2017 7:03:24 PM",
+      "title": "Basic Statistics",
+      "text": "import org.apache.spark.mllib.linalg.Vectors\r\nimport org.apache.spark.mllib.stat.{MultivariateStatisticalSummary, Statistics}\r\n\r\n// Transformation en org.apache.spark.mllib.linalg.Vector pour être compatible avec Statistics.colStats\r\nval features \u003d datasetTransformed.select(\"features\").rdd.map(row \u003d\u003e Vectors.fromML(row.getAs[org.apache.spark.ml.linalg.Vector](\"features\")))\r\n\r\n// Calculs de statistiques sur la colonne feature.\r\nval summary: MultivariateStatisticalSummary \u003d Statistics.colStats(features)\r\nprintln(summary.count) // Nombre total\r\nprintln(summary.mean)  // Vecteur contenant la valeur moyenne\r\nprintln(summary.variance)  // Variance\r\nprintln(summary.numNonzeros)  // Nombre de non zéro",
+      "dateUpdated": "Mar 7, 2017 10:50:59 PM",
       "config": {
-        "colWidth": 12.0,
+        "colWidth": 9.0,
         "graph": {
           "mode": "table",
           "height": 300.0,
@@ -2338,28 +2339,63 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "editorHide": false
+        "title": true
       },
       "settings": {
         "params": {},
         "forms": {}
       },
-      "jobName": "paragraph_1486398557317_-983551642",
-      "id": "20170206-162917_1903479723",
+      "jobName": "paragraph_1488919556626_517043058",
+      "id": "20170307-204556_379895804",
       "result": {
-        "code": "ERROR",
+        "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nimport org.apache.spark.mllib.linalg.Vectors\n\nimport org.apache.spark.mllib.stat.{MultivariateStatisticalSummary, Statistics}\n\n\n\n\u003cconsole\u003e:869: error: type Vectors is not a member of package org.apache.spark.mllib.linalg\n       val features \u003d datasetTransformed.select(\"features\").rdd.map(t \u003d\u003e t.getAs[org.apache.spark.mllib.linalg.Vectors](0))\n                                                                                                               ^\n"
+        "msg": "\nimport org.apache.spark.mllib.linalg.Vectors\n\nimport org.apache.spark.mllib.stat.{MultivariateStatisticalSummary, Statistics}\n\nfeatures: org.apache.spark.rdd.RDD[org.apache.spark.mllib.linalg.Vector] \u003d MapPartitionsRDD[176] at map at \u003cconsole\u003e:104\n\nsummary: org.apache.spark.mllib.stat.MultivariateStatisticalSummary \u003d org.apache.spark.mllib.stat.MultivariateOnlineSummarizer@77f82400\n32561\n[0.6970301894904948,0.0780381437916526,0.06427935259973588,0.05638647461687295,0.039863640551580114,0.034274131629863945,0.029483123982678664,4.2996222474739717E-4,0.32250238014802984,0.22391818433094807,0.16446055096587942,0.05291606523141181,0.042443413900064494,0.03608611529129941,0.032769263843248055,0.02865391112066583,0.019839685513344186,0.0176898743896072,0.01578575596572587,0.013298117379687356,0.012683885630048217,0.010226958631491662,0.005159546696968767,0.4599367341297872,0.328091889069746,0.1364515831823347,0.03147937716900587,0.030496606369583245,0.012837443567458001,0.12714597217530174,0.1258867970885415,0.12487331470163693,0.11578268480697768,0.11209729430914284,0.10119468075304812,0.0614845981388778,0.056601455729246644,0.04904640520868524,0.04207487485028101,0.0305273179570652,0.02850035318325604,0.019931820275790057,0.004576026534811584,0.40517797364945796,0.2550597340376524,0.1556463253585578,0.10583213046282362,0.04815576917170849,0.8542735173981143,0.0959429992936335,0.03190933939375326,0.009551303706888609,0.6692054912318418,0.895857006848684,0.019747550750898315,0.0179048555019809,0.006080894321427475,0.004207487485028101,0.00371610208531679,0.0035011209729430915,0.003255428273087436,0.0030711587481956942,0.0029176008107859096,0.002764042873376125,0.0024876385860385123,0.0024569269985565555,0.002303369061146771,0.0022419458861828567,0.002149811123736986,0.002057676361291115,0.001965541598845244,0.0019041184238813304,0.0018426952489174165,0.0018119836614354597,0.001566290961579804,0.0013513098492061054,0.0013205982617241485,0.001136328736832407,0.001044193974386536,9.520592119406652E-4,8.906360369767513E-4,8.906360369767513E-4,8.599244494947943E-4,7.370780995669666E-4,6.142317496391389E-4,5.835201621571819E-4,5.835201621571819E-4,5.52808574675225E-4,5.52808574675225E-4,4.91385399711311E-4,4.2996222474739717E-4,3.9925063726544026E-4,3.9925063726544026E-4,3.685390497834833E-4]\n[0.21118559027407036,0.07195040161625954,0.06014936471157103,0.053208674220006795,0.03827570622125458,0.033100432097698765,0.02861474818724289,4.29790556782971E-4,0.21850130546884333,0.17378416824456563,0.13741749845140405,0.05011749445965226,0.040643218734340014,0.03478497587631214,0.031696412637569234,0.02783371931586053,0.019446669630171366,0.017377476423574515,0.015537043041573,0.013121680441480202,0.012523389288537778,0.010122678832177927,0.005133083419991071,0.2484025635648743,0.22045437190011988,0.1178361675651378,0.030489362358776688,0.02956747143350749,0.012673032819066418,0.11098328240768583,0.11004269099306106,0.10928332624149706,0.10238019896430264,0.09953454778168393,0.09095711077760155,0.05770601457389332,0.05339937091802821,0.04664228780349293,0.04030581761225783,0.02959630976506994,0.027688933422786808,0.01953514277152986,0.0045552264141988045,0.24101618530843677,0.19001010162215284,0.13142458301851442,0.09463459700322818,0.04583819883104303,0.12449409828175836,0.08674060412182706,0.030892082198092453,0.009460366847271426,0.22137630055461205,0.09330009552284667,0.019358179510662543,0.017584811708917233,0.0060441026696669954,0.004189913212977615,0.0037024063773856467,0.003488970276691784,0.0032449301168013737,0.0030618207655153692,0.002909177761762142,0.0027564875964802256,0.0024815264519204815,0.002450965781330328,0.002298134131462346,0.0022369882662871205,0.002145255320065676,0.0020535053956939036,0.001961738493171803,0.0019005511258513316,0.0018393562126862702,0.001808755926412018,0.00156388572361669,0.0013495252569605321,0.0013188947873079195,0.001135072353708145,0.0010431356696827658,9.51182007507059E-4,8.8987013375085E-4,8.8987013375085E-4,8.592113671810241E-4,7.365574362902455E-4,6.138733220211062E-4,5.831975773009525E-4,5.831975773009525E-4,5.525199461196513E-4,5.525199461196513E-4,4.911590243736062E-4,4.29790556782971E-4,3.991034932959321E-4,3.991034932959321E-4,3.684145433477456E-4]\n[22696.0,2541.0,2093.0,1836.0,1298.0,1116.0,960.0,14.0,10501.0,7291.0,5355.0,1723.0,1382.0,1175.0,1067.0,933.0,646.0,576.0,514.0,433.0,413.0,333.0,168.0,14976.0,10683.0,4443.0,1025.0,993.0,418.0,4140.0,4099.0,4066.0,3770.0,3650.0,3295.0,2002.0,1843.0,1597.0,1370.0,994.0,928.0,649.0,149.0,13193.0,8305.0,5068.0,3446.0,1568.0,27816.0,3124.0,1039.0,311.0,21790.0,29170.0,643.0,583.0,198.0,137.0,121.0,114.0,106.0,100.0,95.0,90.0,81.0,80.0,75.0,73.0,70.0,67.0,64.0,62.0,60.0,59.0,51.0,44.0,43.0,37.0,34.0,31.0,29.0,29.0,28.0,24.0,20.0,19.0,19.0,18.0,18.0,16.0,14.0,13.0,13.0,12.0]\n"
       },
-      "dateCreated": "Feb 6, 2017 4:29:17 AM",
-      "dateStarted": "Mar 5, 2017 7:03:24 PM",
-      "dateFinished": "Mar 5, 2017 7:03:30 PM",
-      "status": "ERROR",
+      "dateCreated": "Mar 7, 2017 8:45:56 AM",
+      "dateStarted": "Mar 7, 2017 10:50:59 PM",
+      "dateFinished": "Mar 7, 2017 10:51:03 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "",
-      "dateUpdated": "Feb 24, 2017 11:52:21 PM",
+      "text": "%md\n\nExplications :\n\n/!\\ Depuis la version 2.0.0 de Spark ML, les transformers ne génèrent plus des objets de type\norg.apache.spark.mllib.linalg.*\nmais des \norg.apache.spark.ml.linalg.*\n\nHors, les anciennes API MLLib commes Statistics.colStats manipulent encore des objets de type org.apache.spark.mllib.linalg.*\n\nNous devons donc effectuer une transformation à l\u0027aide de Vectors.fromML().\n\nsummary contient les valeurs min, max, moyenne, variance, nombre de valeurs non 0, nombre total.",
+      "dateUpdated": "Mar 7, 2017 10:48:22 PM",
+      "config": {
+        "colWidth": 3.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1488924750611_26684659",
+      "id": "20170307-221230_404235526",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eExplications :\u003c/p\u003e\n\u003cp\u003e/!\\ Depuis la version 2.0.0 de Spark ML, les transformers ne génèrent plus des objets de type\n\u003cbr  /\u003eorg.apache.spark.mllib.linalg.\u003cem\u003e\n\u003cbr  /\u003emais des\n\u003cbr  /\u003eorg.apache.spark.ml.linalg.\u003c/em\u003e\u003c/p\u003e\n\u003cp\u003eHors, les anciennes API MLLib commes Statistics.colStats manipulent encore des objets de type org.apache.spark.mllib.linalg.*\u003c/p\u003e\n\u003cp\u003eNous devons donc effectuer une transformation à l\u0027aide de Vectors.fromML().\u003c/p\u003e\n\u003cp\u003esummary contient les valeurs min, max, moyenne, variance, nombre de valeurs non 0, nombre total.\u003c/p\u003e\n"
+      },
+      "dateCreated": "Mar 7, 2017 10:12:30 PM",
+      "dateStarted": "Mar 7, 2017 10:48:18 PM",
+      "dateFinished": "Mar 7, 2017 10:48:19 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.mllib.linalg._\r\nimport org.apache.spark.rdd.RDD\r\nimport org.apache.spark.mllib.stat.{MultivariateStatisticalSummary, Statistics}\r\n\r\nval native_countryClassVec \u003d datasetTransformed.select(\"native_countryClassVec\").rdd.map(row \u003d\u003e Vectors.fromML(row.getAs[org.apache.spark.ml.linalg.Vector](\"native_countryClassVec\")))\r\nval sexClassVec \u003d datasetTransformed.select(\"sexClassVec\").rdd.map(row \u003d\u003e Vectors.fromML(row.getAs[org.apache.spark.ml.linalg.Vector](\"sexClassVec\")))\r\n\r\nval nativCountryMatrix: Matrix \u003d Statistics.corr(native_countryClassVec, \"pearson\")\r\nval sexMatrix: Matrix \u003d Statistics.corr(sexClassVec, \"pearson\")\r\n\r\nval correlation: Double \u003d Statistics.corr(nativCountryMatrix, sexMatrix, \"pearson\")\r\nprintln(s\"Correlation is: $correlation\")\r\n\r\n\r\n//| age|        workclass|  fnlwgt|    education|education_num|      marital_status|        occupation|  relationship|               race|    sex|capital_gain|capital_loss|hours_per_week|native_country|income|workclassIndex|workclassClassVec|educationIndex|educationClassVec|marital_statusIndex|marital_statusClassVec|occupationIndex|occupationClassVec|relationshipIndex|relationshipClassVec|raceIndex| raceClassVec|sexIndex|  sexClassVec|native_countryIndex|native_countryClassVec|label|            features|\r\n",
+      "dateUpdated": "Mar 7, 2017 10:56:08 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -2371,16 +2407,48 @@
           "groups": [],
           "scatter": {}
         },
-        "enabled": true,
-        "editorMode": "ace/mode/scala"
+        "enabled": true
       },
       "settings": {
         "params": {},
         "forms": {}
       },
-      "jobName": "paragraph_1487980330161_-1419065346",
-      "id": "20170224-235210_1321373296",
-      "dateCreated": "Feb 24, 2017 11:52:10 PM",
+      "jobName": "paragraph_1488926898275_-1394127920",
+      "id": "20170307-224818_1768956173",
+      "result": {
+        "code": "ERROR",
+        "type": "TEXT",
+        "msg": "\nimport org.apache.spark.mllib.linalg._\n\nimport org.apache.spark.rdd.RDD\n\nimport org.apache.spark.mllib.stat.{MultivariateStatisticalSummary, Statistics}\n\nnative_countryClassVec: org.apache.spark.rdd.RDD[org.apache.spark.mllib.linalg.Vector] \u003d MapPartitionsRDD[204] at map at \u003cconsole\u003e:119\n\nsexClassVec: org.apache.spark.rdd.RDD[org.apache.spark.mllib.linalg.Vector] \u003d MapPartitionsRDD[209] at map at \u003cconsole\u003e:119\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nnativCountryMatrix: org.apache.spark.mllib.linalg.Matrix \u003d\n1.0                   -0.41628615858336865    ... (41 total)\n-0.41628615858336865  1.0                     ...\n-0.39601619617611905  -0.019164446451719483   ...\n-0.22941009681394495  -0.011101862899363291   ...\n-0.19064758482423003  -0.00922602526308981    ...\n-0.17912515617656935  -0.008668419364785473   ...\n-0.17384790879280113  -0.008413037070133753   ...\n-0.16761637559220885  -0.008111473938403274   ...\n-0.16278836915404726  -0.007877831800162148   ...\n-0.1586542572213819   -0.007677769359474131   ...\n-0.15441082471242754  -0.007472416558567029   ...\n-0.14646667373605834  -0.007087974564878228   ...\n-0.14555750991963667  -0.007043977320715251   ...\n-0.1409246066804308   -0.006819776828661962   ...\n-0.1390286358526574   -0.00...\nsexMatrix: org.apache.spark.mllib.linalg.Matrix \u003d 1.0\n\n\n\n\n\n\n\u003cconsole\u003e:127: error: overloaded method value corr with alternatives:\n  (x: org.apache.spark.api.java.JavaRDD[java.lang.Double],y: org.apache.spark.api.java.JavaRDD[java.lang.Double],method: String)scala.Double \u003cand\u003e\n  (x: org.apache.spark.rdd.RDD[scala.Double],y: org.apache.spark.rdd.RDD[scala.Double],method: String)scala.Double\n cannot be applied to (org.apache.spark.mllib.linalg.Matrix, org.apache.spark.mllib.linalg.Matrix, String)\n       val correlation: Double \u003d Statistics.corr(nativCountryMatrix, sexMatrix, \"pearson\")\n                                            ^\n"
+      },
+      "dateCreated": "Mar 7, 2017 10:48:18 PM",
+      "dateStarted": "Mar 7, 2017 10:56:08 PM",
+      "dateFinished": "Mar 7, 2017 10:56:12 PM",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "",
+      "dateUpdated": "Mar 7, 2017 10:53:25 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1488927194408_828595480",
+      "id": "20170307-225314_262019528",
+      "dateCreated": "Mar 7, 2017 10:53:14 PM",
       "status": "READY",
       "progressUpdateIntervalMs": 500
     }
