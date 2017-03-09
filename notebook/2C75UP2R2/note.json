@@ -83,7 +83,7 @@
     },
     {
       "text": "%md\n\n![](https://zeppelin.apache.org/assets/themes/zeppelin/img/zeppelin_classic_logo.png)\n#\n[Apache Zeppelin](https://zeppelin.apache.org/) is a web-based notebook that enables interactive data analytics. It is  famous for its very strong Apache Spark integration.\n\u003chr/\u003e\n\nApache Zeppelin\u0027s purpose is to provide engineers and scientists with an interface for all Big Data needs, which comes bundled with the means for analyzing, collaborating and sharing data on top of common Big Data frameworks.\n\nThe Apache Zeppelin interpreter concept allows the plugin of a language or data-processing backend into Zeppelin _(think of it like a kernel for Jupyter notebook)_. Currently it supports [many interpreters](https://zeppelin.apache.org/docs/0.6.2/manual/interpreterinstallation.html) like Apache Spark, Python, JDBC, Markdown and shell. Creation of a custom interpreter is also possible by extending the necessary abstract class.\n\nYou can view examples of Zeppelin notebooks [here](https://www.zeppelinhub.com/viewer).\n\nToday, Apache Zeppelin comes bundled with most Big Data distributions _(Cloudera, Hortonworks...)_ as the main tool for interactive Big Data analytics, which makes for a good reason to have you try Apache Spark interactively in a Zeppelin notebook.",
-      "dateUpdated": "Jan 25, 2017 8:54:41 AM",
+      "dateUpdated": "Mar 9, 2017 12:51:13 PM",
       "config": {
         "enabled": true,
         "tableHide": false,
@@ -102,7 +102,8 @@
           }
         },
         "editorHide": true,
-        "colWidth": 12.0
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown"
       },
       "settings": {
         "params": {},
@@ -116,14 +117,14 @@
         "msg": "\u003cp\u003e\u003cimg src\u003d\"https://zeppelin.apache.org/assets/themes/zeppelin/img/zeppelin_classic_logo.png\" alt\u003d\"\" /\u003e\u003c/p\u003e\n\u003ch1\u003e\u003c/h1\u003e\n\u003cp\u003e\u003ca href\u003d\"https://zeppelin.apache.org/\"\u003eApache Zeppelin\u003c/a\u003e is a web-based notebook that enables interactive data analytics. It is  famous for its very strong Apache Spark integration.\u003c/p\u003e\n\u003chr/\u003e\n\u003cp\u003eApache Zeppelin\u0027s purpose is to provide engineers and scientists with an interface for all Big Data needs, which comes bundled with the means for analyzing, collaborating and sharing data on top of common Big Data frameworks.\u003c/p\u003e\n\u003cp\u003eThe Apache Zeppelin interpreter concept allows the plugin of a language or data-processing backend into Zeppelin \u003cem\u003e(think of it like a kernel for Jupyter notebook)\u003c/em\u003e. Currently it supports \u003ca href\u003d\"https://zeppelin.apache.org/docs/0.6.2/manual/interpreterinstallation.html\"\u003emany interpreters\u003c/a\u003e like Apache Spark, Python, JDBC, Markdown and shell. Creation of a custom interpreter is also possible by extending the necessary abstract class.\u003c/p\u003e\n\u003cp\u003eYou can view examples of Zeppelin notebooks \u003ca href\u003d\"https://www.zeppelinhub.com/viewer\"\u003ehere\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eToday, Apache Zeppelin comes bundled with most Big Data distributions \u003cem\u003e(Cloudera, Hortonworks\u0026hellip;)\u003c/em\u003e as the main tool for interactive Big Data analytics, which makes for a good reason to have you try Apache Spark interactively in a Zeppelin notebook.\u003c/p\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:54:39 AM",
-      "dateFinished": "Jan 25, 2017 8:54:39 AM",
+      "dateStarted": "Mar 9, 2017 12:51:14 PM",
+      "dateFinished": "Mar 9, 2017 12:51:15 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n###Interpreter\n\nApache Zeppelin is primarily a notebook. A Zeppelin notebook consists of a set of cells with an interpreter _(or language backend)_ attached.\n\nFor example, this cell is linked to the Markdown interpreter, so when you run the cell it parses the code as Markdown and then displays the result.\n\nYou will find the most useful markdown components [on this cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).\n\nIn each cell, there is a toolbar with four items: \n* The `Play` button (blue triangle) lets you run the paragraph. You can also press `Shift + Enter` to run the cell when selected\n* The `Show/Hide editor` if you want to see the source code for the cell\n* The `Show/Hide output` if you want to see the output for the cell\n* The `Settings` item, for more advanced options like adding/managing cells.\n\n\u003chr/\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\nNow you can press `Show editor` to see the source code of the cell. You will see that it starts with `%md`, which specifies to the cell that it should use the Markdown interpreter. You can edit the text and then run the cell to see the editing in the output.",
-      "dateUpdated": "Feb 3, 2017 9:03:48 AM",
+      "dateUpdated": "Mar 9, 2017 12:51:19 PM",
       "config": {
         "enabled": true,
         "graph": {
@@ -156,14 +157,14 @@
         "msg": "\u003ch3\u003eInterpreter\u003c/h3\u003e\n\u003cp\u003eApache Zeppelin is primarily a notebook. A Zeppelin notebook consists of a set of cells with an interpreter \u003cem\u003e(or language backend)\u003c/em\u003e attached.\u003c/p\u003e\n\u003cp\u003eFor example, this cell is linked to the Markdown interpreter, so when you run the cell it parses the code as Markdown and then displays the result.\u003c/p\u003e\n\u003cp\u003eYou will find the most useful markdown components \u003ca href\u003d\"https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet\"\u003eon this cheatsheet\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eIn each cell, there is a toolbar with four items:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eThe \u003ccode\u003ePlay\u003c/code\u003e button (blue triangle) lets you run the paragraph. You can also press \u003ccode\u003eShift + Enter\u003c/code\u003e to run the cell when selected\u003c/li\u003e\n\u003cli\u003eThe \u003ccode\u003eShow/Hide editor\u003c/code\u003e if you want to see the source code for the cell\u003c/li\u003e\n\u003cli\u003eThe \u003ccode\u003eShow/Hide output\u003c/code\u003e if you want to see the output for the cell\u003c/li\u003e\n\u003cli\u003eThe \u003ccode\u003eSettings\u003c/code\u003e item, for more advanced options like adding/managing cells.\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr/\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eNow you can press \u003ccode\u003eShow editor\u003c/code\u003e to see the source code of the cell. You will see that it starts with \u003ccode\u003e%md\u003c/code\u003e, which specifies to the cell that it should use the Markdown interpreter. You can edit the text and then run the cell to see the editing in the output.\u003c/p\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 1, 2017 6:53:18 AM",
-      "dateFinished": "Feb 1, 2017 6:53:18 AM",
+      "dateStarted": "Mar 9, 2017 12:51:20 PM",
+      "dateFinished": "Mar 9, 2017 12:51:20 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\nApache Zeppelin follows the responsive 12-column grid system. In the following row we show 3 different interpreters in action. \n\nYou will find the width of the cell inside the settings button.\n\u003chr/\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\nYou can go on and try to modify the source code in the three following cells and re-execute the code. For example, try to type `1+2` in the Python cell.",
-      "dateUpdated": "Feb 1, 2017 6:53:54 AM",
+      "dateUpdated": "Mar 9, 2017 12:51:24 PM",
       "config": {
         "enabled": true,
         "graph": {
@@ -196,15 +197,15 @@
         "msg": "\u003cp\u003eApache Zeppelin follows the responsive 12-column grid system. In the following row we show 3 different interpreters in action.\u003c/p\u003e\n\u003cp\u003eYou will find the width of the cell inside the settings button.\u003c/p\u003e\n\u003chr/\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eYou can go on and try to modify the source code in the three following cells and re-execute the code. For example, try to type \u003ccode\u003e1+2\u003c/code\u003e in the Python cell.\u003c/p\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 1, 2017 6:53:52 AM",
-      "dateFinished": "Feb 1, 2017 6:53:52 AM",
+      "dateStarted": "Mar 9, 2017 12:51:25 PM",
+      "dateFinished": "Mar 9, 2017 12:51:25 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Shell cell",
       "text": "%sh\necho \"Hello world\"",
-      "dateUpdated": "Feb 1, 2017 6:51:19 AM",
+      "dateUpdated": "Mar 9, 2017 12:51:35 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -238,15 +239,15 @@
         "msg": "Hello world\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 1, 2017 6:51:19 AM",
-      "dateFinished": "Feb 1, 2017 6:51:20 AM",
+      "dateStarted": "Mar 9, 2017 12:51:35 PM",
+      "dateFinished": "Mar 9, 2017 12:51:36 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Python cell",
       "text": "%python\nprint(\"Hello world\")",
-      "dateUpdated": "Jan 25, 2017 8:33:22 AM",
+      "dateUpdated": "Mar 9, 2017 12:51:33 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -279,15 +280,15 @@
         "msg": "Hello world\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:33:22 AM",
-      "dateFinished": "Jan 25, 2017 8:33:23 AM",
+      "dateStarted": "Mar 9, 2017 12:51:33 PM",
+      "dateFinished": "Mar 9, 2017 12:51:34 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Spark/Scala cell",
       "text": "println(\"Hello world\")",
-      "dateUpdated": "Jan 25, 2017 8:33:26 AM",
+      "dateUpdated": "Mar 9, 2017 12:51:28 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -320,8 +321,8 @@
         "msg": "Hello world\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:33:26 AM",
-      "dateFinished": "Jan 25, 2017 8:33:59 AM",
+      "dateStarted": "Mar 9, 2017 12:51:29 PM",
+      "dateFinished": "Mar 9, 2017 12:51:46 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -366,7 +367,7 @@
     },
     {
       "text": "%md\n### The Spark/Scala interpreter\n\nLet\u0027s dive into the Spark/Scala interpreter now. First, we need to describe the Scala language a bit more.\n\nScala is a functional object-oriented language.\n\nThe following row shows some commands in Scala. Do note that you can use autocompletion with `Ctrl + .`\n\n\u003chr/\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\nBecause you get instant feedback, you should feel encouraged to experiment, so do not hesitate to edit the Scala source code and re-execute the cell.",
-      "dateUpdated": "Jan 25, 2017 9:56:31 AM",
+      "dateUpdated": "Mar 9, 2017 12:51:42 PM",
       "config": {
         "enabled": true,
         "graph": {
@@ -399,14 +400,15 @@
         "msg": "\u003ch3\u003eThe Spark/Scala interpreter\u003c/h3\u003e\n\u003cp\u003eLet\u0027s dive into the Spark/Scala interpreter now. First, we need to describe the Scala language a bit more.\u003c/p\u003e\n\u003cp\u003eScala is a functional object-oriented language.\u003c/p\u003e\n\u003cp\u003eThe following row shows some commands in Scala. Do note that you can use autocompletion with \u003ccode\u003eCtrl + .\u003c/code\u003e\u003c/p\u003e\n\u003chr/\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eBecause you get instant feedback, you should feel encouraged to experiment, so do not hesitate to edit the Scala source code and re-execute the cell.\u003c/p\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Mar 9, 2017 12:51:42 PM",
+      "dateFinished": "Mar 9, 2017 12:51:42 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Some arithmetic",
       "text": "8 * 5 + 2",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "dateUpdated": "Mar 9, 2017 12:51:44 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -431,11 +433,12 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "res2: Int \u003d 42\n"
+        "msg": "\nres2: Int \u003d 42\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Mar 9, 2017 12:51:45 PM",
+      "dateFinished": "Mar 9, 2017 12:51:47 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -478,7 +481,7 @@
     {
       "title": "Reusing a variable",
       "text": "// variables are accessible accross cells\n\na * b",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "dateUpdated": "Mar 9, 2017 12:51:48 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -501,13 +504,14 @@
       "jobName": "paragraph_1485333124524_-38133955",
       "id": "20161215-101705_1808342927",
       "result": {
-        "code": "SUCCESS",
+        "code": "ERROR",
         "type": "TEXT",
-        "msg": "res13: Int \u003d 15\n"
+        "msg": "\n\n\n\u003cconsole\u003e:28: error: not found: value a\n       a * b\n       ^\n\n\n\n\u003cconsole\u003e:28: error: not found: value b\n       a * b\n           ^\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Mar 9, 2017 12:51:48 PM",
+      "dateFinished": "Mar 9, 2017 12:51:48 PM",
+      "status": "ERROR",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -548,7 +552,7 @@
     {
       "title": "Create immutable sequence of numbers",
       "text": "val sequenceNumbers \u003d 1 to 100",
-      "dateUpdated": "Jan 25, 2017 8:34:35 AM",
+      "dateUpdated": "Mar 9, 2017 12:51:54 PM",
       "config": {
         "enabled": true,
         "tableHide": true,
@@ -578,8 +582,8 @@
         "msg": "\nsequenceNumbers: scala.collection.immutable.Range.Inclusive \u003d Range(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100)\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:34:24 AM",
-      "dateFinished": "Jan 25, 2017 8:34:25 AM",
+      "dateStarted": "Mar 9, 2017 12:51:54 PM",
+      "dateFinished": "Mar 9, 2017 12:51:55 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -660,7 +664,7 @@
     {
       "title": "Sum all elements",
       "text": "sequenceNumbers.reduce((x, y) \u003d\u003e x + y)\n\nsequenceNumbers.reduce(_ + _)",
-      "dateUpdated": "Jan 25, 2017 8:34:44 AM",
+      "dateUpdated": "Mar 9, 2017 12:51:59 PM",
       "config": {
         "enabled": true,
         "tableHide": true,
@@ -687,16 +691,17 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "res55: Int \u003d 5050\nres56: Int \u003d 5050\n"
+        "msg": "\nres7: Int \u003d 5050\n\nres8: Int \u003d 5050\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Mar 9, 2017 12:51:59 PM",
+      "dateFinished": "Mar 9, 2017 12:52:01 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md \n###Primer on functional programming\nBefore going further, we need to go back to functional programming (sometimes abbreviated to FP in literature).\n\nIn functional programming, we construct our programs using _pure functions_, that is a function that takes an input and produces an output without any side-effects, thus forbidding mutation.\n\nAn essential and powerful concept of FP is the ability to pass functions as arguments. For example in the row below :",
-      "dateUpdated": "Jan 25, 2017 8:37:58 AM",
+      "dateUpdated": "Mar 9, 2017 12:52:03 PM",
       "config": {
         "enabled": true,
         "graph": {
@@ -724,8 +729,8 @@
         "msg": "\u003ch3\u003ePrimer on functional programming\u003c/h3\u003e\n\u003cp\u003eBefore going further, we need to go back to functional programming (sometimes abbreviated to FP in literature).\u003c/p\u003e\n\u003cp\u003eIn functional programming, we construct our programs using \u003cem\u003epure functions\u003c/em\u003e, that is a function that takes an input and produces an output without any side-effects, thus forbidding mutation.\u003c/p\u003e\n\u003cp\u003eAn essential and powerful concept of FP is the ability to pass functions as arguments. For example in the row below :\u003c/p\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:37:56 AM",
-      "dateFinished": "Jan 25, 2017 8:37:57 AM",
+      "dateStarted": "Mar 9, 2017 12:52:04 PM",
+      "dateFinished": "Mar 9, 2017 12:52:04 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -2141,24 +2146,24 @@
   "name": "Practice",
   "id": "2C75UP2R2",
   "angularObjects": {
-    "2C93MQCCX:shared_process": [],
-    "2CAFQY6K3:shared_process": [],
-    "2C71Z8V22:shared_process": [],
-    "2C74PSEZQ:shared_process": [],
-    "2C7936H5V:shared_process": [],
-    "2C6WY8JHA:shared_process": [],
-    "2C8CCCVZ2:shared_process": [],
-    "2C9JTS6JQ:shared_process": [],
-    "2C91JKV9H:shared_process": [],
-    "2C8N1PP7C:shared_process": [],
-    "2C7YTW7VT:shared_process": [],
-    "2C85G18U9:shared_process": [],
-    "2C9XYSTEH:shared_process": [],
-    "2CA474ZG3:shared_process": [],
-    "2C8JNXQ9U:shared_process": [],
-    "2C827138T:shared_process": [],
-    "2CAA7GXEJ:shared_process": [],
-    "2C8W1GCP8:shared_process": []
+    "2CDRC7QUE:shared_process": [],
+    "2CC5JQ181:shared_process": [],
+    "2CBYWGW2K:shared_process": [],
+    "2CD8C7RW9:shared_process": [],
+    "2CCNZ187W:shared_process": [],
+    "2CCUTCZTA:shared_process": [],
+    "2CA2HMYUG:shared_process": [],
+    "2CDGHZH8Z:shared_process": [],
+    "2CCS9MXUN:shared_process": [],
+    "2CARGY97A:shared_process": [],
+    "2CAMQ6TPS:shared_process": [],
+    "2CAKDNXM5:shared_process": [],
+    "2CC4D3MK3:shared_process": [],
+    "2CAA15FTG:shared_process": [],
+    "2CDS4XG5K:shared_process": [],
+    "2CD223MZH:shared_process": [],
+    "2CAQZPKHN:shared_process": [],
+    "2C9TKDAD4:shared_process": []
   },
   "config": {
     "looknfeel": "default"
