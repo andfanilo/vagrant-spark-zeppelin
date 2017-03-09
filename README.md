@@ -98,6 +98,7 @@ Add a message between the following lines:
 
 <hr>
 PERSONAL MESSAGE
+My name is toto
 <hr>
 
 With `$ git status` you can check the status of your Git repository.
@@ -197,3 +198,5 @@ If you want to check the data for the applicative project:
 * Music recommendation: http://www-etud.iro.umontreal.ca/~bergstrj/audioscrobbler_data.html
 
 If you want, you can put the dataset in the data folder, it will be copied to /opt/dataset in the virtual machine when building. **Don't push the data in the Git repo**, use the .gitignore file to ignore the data file and prevent it from being versioned.
+# myproject
+# myproject
