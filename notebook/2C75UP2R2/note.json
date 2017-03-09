@@ -1522,7 +1522,7 @@
     },
     {
       "text": "// load file into RDD and check 10 first lines\n\nval text \u003d sc.textFile(\"/opt/dataset/don-quijote.txt.gz\")\ntext.take(3)",
-      "dateUpdated": "Mar 9, 2017 1:06:00 PM",
+      "dateUpdated": "Mar 9, 2017 1:24:17 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1546,11 +1546,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ntext: org.apache.spark.rdd.RDD[String] \u003d /opt/dataset/don-quijote.txt.gz MapPartitionsRDD[11] at textFile at \u003cconsole\u003e:32\n\nres51: Array[String] \u003d Array(The Project Gutenberg EBook of Don Quijote, by Miguel de Cervantes Saavedra, \"\", This eBook is for the use of anyone anywhere at no cost and with)\n"
+        "msg": "\ntext: org.apache.spark.rdd.RDD[String] \u003d /opt/dataset/don-quijote.txt.gz MapPartitionsRDD[61] at textFile at \u003cconsole\u003e:34\n\nres83: Array[String] \u003d Array(The Project Gutenberg EBook of Don Quijote, by Miguel de Cervantes Saavedra, \"\", This eBook is for the use of anyone anywhere at no cost and with)\n"
       },
       "dateCreated": "Jan 25, 2017 1:49:31 AM",
-      "dateStarted": "Mar 9, 2017 1:06:00 PM",
-      "dateFinished": "Mar 9, 2017 1:06:01 PM",
+      "dateStarted": "Mar 9, 2017 1:24:17 PM",
+      "dateFinished": "Mar 9, 2017 1:24:17 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },

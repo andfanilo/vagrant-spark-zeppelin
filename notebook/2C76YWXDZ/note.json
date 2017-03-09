@@ -214,7 +214,7 @@
     {
       "title": "Check settings of graph. See how we average age by income.",
       "text": "%sql SELECT AVG(age) FROM dataset ",
-      "dateUpdated": "Mar 9, 2017 1:17:54 PM",
+      "dateUpdated": "Mar 9, 2017 1:26:51 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -239,7 +239,7 @@
           }
         },
         "enabled": true,
-        "editorMode": "ace/mode/scala",
+        "editorMode": "ace/mode/sql",
         "title": true
       },
       "settings": {
@@ -297,7 +297,7 @@
     },
     {
       "text": "%md \n\n## IV. Data preprocessing\n\nSince we are going to try algorithms like Logistic Regression, we will have to convert the categorical variables in the dataset into numeric variables. There are 2 ways we can do this.\n\n- Category Indexing. This is basically assigning a numeric value to each category from {0, 1, 2, ...numCategories-1}. This introduces an implicit ordering among your categories, and is more suitable for ordinal variables (eg: Poor: 0, Average: 1, Good: 2)\n- [One-Hot Encoding](http://spark.apache.org/docs/latest/ml-features.html#onehotencoder). This converts categories into binary vectors with at most one positive value (eg: (Blue: 1, 0, 0), (Green: 0, 1, 0), (Red: 0, 0, 1))",
-      "dateUpdated": "Mar 9, 2017 1:18:06 PM",
+      "dateUpdated": "Mar 9, 2017 1:27:40 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -325,8 +325,8 @@
         "msg": "\u003ch2\u003eIV. Data preprocessing\u003c/h2\u003e\n\u003cp\u003eSince we are going to try algorithms like Logistic Regression, we will have to convert the categorical variables in the dataset into numeric variables. There are 2 ways we can do this.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eCategory Indexing. This is basically assigning a numeric value to each category from {0, 1, 2, \u0026hellip;numCategories-1}. This introduces an implicit ordering among your categories, and is more suitable for ordinal variables (eg: Poor: 0, Average: 1, Good: 2)\u003c/li\u003e\n\u003cli\u003e\u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-features.html#onehotencoder\"\u003eOne-Hot Encoding\u003c/a\u003e. This converts categories into binary vectors with at most one positive value (eg: (Blue: 1, 0, 0), (Green: 0, 1, 0), (Red: 0, 0, 1))\u003c/li\u003e\n\u003c/ul\u003e\n"
       },
       "dateCreated": "Feb 3, 2017 9:03:12 AM",
-      "dateStarted": "Mar 9, 2017 1:18:06 PM",
-      "dateFinished": "Mar 9, 2017 1:18:06 PM",
+      "dateStarted": "Mar 9, 2017 1:27:40 PM",
+      "dateFinished": "Mar 9, 2017 1:27:40 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -475,7 +475,7 @@
     },
     {
       "text": "%md\n\nAt this point, you should have a dataframe with a column _features_ which consists of a vector of all features in numerical form, and a column _label_ with the Income as a binary value. \n\nIt looks like this for example:\n\n```\n+----+-----------------+--------+----------+-------------+-------------------+------------------+--------------+------+-----+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\n| age|        workclass|  fnlwgt| education|education_num|     marital_status|        occupation|  relationship|  race|  sex|capital_gain|capital_loss|hours_per_week|native_country|income|workclassIndex|workclassClassVec|educationIndex|educationClassVec|marital_statusIndex|marital_statusClassVec|occupationIndex|occupationClassVec|relationshipIndex|relationshipClassVec|raceIndex| raceClassVec|sexIndex|  sexClassVec|native_countryIndex|native_countryClassVec|label|            features|\n+----+-----------------+--------+----------+-------------+-------------------+------------------+--------------+------+-----+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\n|39.0|        State-gov| 77516.0| Bachelors|         13.0|      Never-married|      Adm-clerical| Not-in-family| White| Male|      2174.0|         0.0|          40.0| United-States| \u003c\u003d50K|           4.0|    (8,[4],[1.0])|           2.0|   (15,[2],[1.0])|                1.0|         (6,[1],[1.0])|            3.0|    (14,[3],[1.0])|              1.0|       (5,[1],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(100,[4,10,24,32,...|\n```\n\n\u003chr\u003e\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nRandomly split your dataset into a 70% training set and 30% test set using a Dataframe\u0027s `randomSplit` function.",
-      "dateUpdated": "Mar 9, 2017 1:18:26 PM",
+      "dateUpdated": "Mar 9, 2017 1:28:48 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -503,8 +503,8 @@
         "msg": "\u003cp\u003eAt this point, you should have a dataframe with a column \u003cem\u003efeatures\u003c/em\u003e which consists of a vector of all features in numerical form, and a column \u003cem\u003elabel\u003c/em\u003e with the Income as a binary value.\u003c/p\u003e\n\u003cp\u003eIt looks like this for example:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+----+-----------------+--------+----------+-------------+-------------------+------------------+--------------+------+-----+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\n| age|        workclass|  fnlwgt| education|education_num|     marital_status|        occupation|  relationship|  race|  sex|capital_gain|capital_loss|hours_per_week|native_country|income|workclassIndex|workclassClassVec|educationIndex|educationClassVec|marital_statusIndex|marital_statusClassVec|occupationIndex|occupationClassVec|relationshipIndex|relationshipClassVec|raceIndex| raceClassVec|sexIndex|  sexClassVec|native_countryIndex|native_countryClassVec|label|            features|\n+----+-----------------+--------+----------+-------------+-------------------+------------------+--------------+------+-----+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\n|39.0|        State-gov| 77516.0| Bachelors|         13.0|      Never-married|      Adm-clerical| Not-in-family| White| Male|      2174.0|         0.0|          40.0| United-States| \u0026lt;\u003d50K|           4.0|    (8,[4],[1.0])|           2.0|   (15,[2],[1.0])|                1.0|         (6,[1],[1.0])|            3.0|    (14,[3],[1.0])|              1.0|       (5,[1],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(100,[4,10,24,32,...|\n\u003c/code\u003e\u003c/pre\u003e\n\u003chr\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eRandomly split your dataset into a 70% training set and 30% test set using a Dataframe\u0027s \u003ccode\u003erandomSplit\u003c/code\u003e function.\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 3, 2017 9:26:59 AM",
-      "dateStarted": "Mar 9, 2017 1:18:26 PM",
-      "dateFinished": "Mar 9, 2017 1:18:27 PM",
+      "dateStarted": "Mar 9, 2017 1:28:49 PM",
+      "dateFinished": "Mar 9, 2017 1:28:49 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
