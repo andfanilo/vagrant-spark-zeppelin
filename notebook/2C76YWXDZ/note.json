@@ -145,7 +145,7 @@
     },
     {
       "text": "%md\nExplications :\nLe fichier CSV adult.data.csv contient les 48842 personnes à étudier.\nCe fichier est déjà stocké dans la VM, à l\u0027emplacement /opt/dataset/adult.data.csv\nDans notre dépot GIT, le fichier CSV est présent dans le répertoire data/ il a été ajouté lors du merge de master sur ma branch (et déposé sur la VM lors du vagrant up)\n\nLa méthode registerTempTable permet de déclarer les données comme s\u0027il s\u0027agissait d\u0027une table \"dataset\". Cette table temporaire pourra être appelée dans des blocs %sql\n\nNous réutiliserons ce mécanisme plus tard lorsque nous séparerons les personnes gagnant moins et plus de 50K dans deux datasets différents.",
-      "dateUpdated": "Feb 16, 2017 4:56:27 AM",
+      "dateUpdated": "Mar 9, 2017 11:15:46 PM",
       "config": {
         "colWidth": 4.0,
         "graph": {
@@ -173,8 +173,8 @@
         "msg": "\u003cp\u003eExplications :\n\u003cbr  /\u003eLe fichier CSV adult.data.csv contient les 48842 personnes à étudier.\n\u003cbr  /\u003eCe fichier est déjà stocké dans la VM, à l\u0027emplacement /opt/dataset/adult.data.csv\n\u003cbr  /\u003eDans notre dépot GIT, le fichier CSV est présent dans le répertoire data/ il a été ajouté lors du merge de master sur ma branch (et déposé sur la VM lors du vagrant up)\u003c/p\u003e\n\u003cp\u003eLa méthode registerTempTable permet de déclarer les données comme s\u0027il s\u0027agissait d\u0027une table \u0026ldquo;dataset\u0026rdquo;. Cette table temporaire pourra être appelée dans des blocs %sql\u003c/p\u003e\n\u003cp\u003eNous réutiliserons ce mécanisme plus tard lorsque nous séparerons les personnes gagnant moins et plus de 50K dans deux datasets différents.\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 16, 2017 4:51:01 AM",
-      "dateStarted": "Feb 16, 2017 4:56:17 AM",
-      "dateFinished": "Feb 16, 2017 4:56:18 AM",
+      "dateStarted": "Mar 9, 2017 11:15:46 PM",
+      "dateFinished": "Mar 9, 2017 11:15:46 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -328,7 +328,7 @@
     },
     {
       "text": "%md\nExplications :\n\nPour connaitre l\u0027âge moyen par revenus il suffit de grouper les individus par revenus et faire une moyenne sur l\u0027age.\n\nLa moyenne d\u0027age est de 36.78 ans pour les personnes qui gagnent \u003c\u003d 50K\nLa moyenne d\u0027age est de 44.25 ans pour les personnes qui gagnent \u003e\u003d 50K",
-      "dateUpdated": "Mar 5, 2017 6:06:43 AM",
+      "dateUpdated": "Mar 9, 2017 11:15:51 PM",
       "config": {
         "colWidth": 7.0,
         "graph": {
@@ -356,8 +356,8 @@
         "msg": "\u003cp\u003eExplications :\u003c/p\u003e\n\u003cp\u003ePour connaitre l\u0027âge moyen par revenus il suffit de grouper les individus par revenus et faire une moyenne sur l\u0027age.\u003c/p\u003e\n\u003cp\u003eLa moyenne d\u0027age est de 36.78 ans pour les personnes qui gagnent \u003c\u003d 50K\n\u003cbr  /\u003eLa moyenne d\u0027age est de 44.25 ans pour les personnes qui gagnent \u003e\u003d 50K\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 16, 2017 4:56:40 AM",
-      "dateStarted": "Mar 5, 2017 6:06:42 AM",
-      "dateFinished": "Mar 5, 2017 6:06:42 AM",
+      "dateStarted": "Mar 9, 2017 11:15:51 PM",
+      "dateFinished": "Mar 9, 2017 11:15:51 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1615,9 +1615,9 @@
     },
     {
       "text": "%md\n\nTo run machine learning on a dataset, you need a column which contains a vector of all the features, and a column with the label.\n\nWe use the [VectorAssembler](http://spark.apache.org/docs/latest/ml-features.html#vectorassembler) to assemble all of our numeric columns and one-hot encoded categorical columns into one.\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nAdd the `VectorAssembler` stage, which takes as input all numeric columns and one hot encoded categorical columns. The `features` column will then be created. You can comment on it.",
-      "dateUpdated": "Feb 7, 2017 12:55:43 PM",
+      "dateUpdated": "Mar 9, 2017 11:16:46 PM",
       "config": {
-        "colWidth": 12.0,
+        "colWidth": 9.0,
         "graph": {
           "mode": "table",
           "height": 300.0,
@@ -1649,10 +1649,10 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\nColonne \"features\", explications :\n\nNous avons précédemment appliqué notre pipeline au jeu de données.\nL\u0027étape assemblerStage a permis de combiner des valeurs de colonnes d\u0027un individu (row) en un simple vecteur appelé \"features\" grâce à la ligne suivante :\nval assemblerStage \u003d new VectorAssembler().setInputCols(nonNumericalColumns.map(w \u003d\u003e w + \"ClassVec\").toArray).setOutputCol(\"features\")\n\nNous avons combiné ici toutes les colonnes vectorielles représentant les variables non-numériques en un seul vecteur de sorti appelé \"features\", et ce pour chaque individu.\nNous remarquons que la longeur de ce vecteur features est égal à la somme de la longeur des vecteurs binaires : 8, 15, 6, 14, 5, 4, 1, 41 \u003d 94",
-      "dateUpdated": "Feb 24, 2017 1:48:46 AM",
+      "text": "%md\nExplications :\n\nColonne \"features\" :\n\nNous avons précédemment appliqué notre pipeline au jeu de données.\nL\u0027étape assemblerStage a permis de combiner des valeurs de colonnes d\u0027un individu (row) en un simple vecteur appelé \"features\" grâce à la ligne suivante :\nval assemblerStage \u003d new VectorAssembler().setInputCols(nonNumericalColumns.map(w \u003d\u003e w + \"ClassVec\").toArray).setOutputCol(\"features\")\n\nNous avons combiné ici toutes les colonnes vectorielles représentant les variables non-numériques en un seul vecteur de sorti appelé \"features\", et ce pour chaque individu.\nNous remarquons que la longeur de ce vecteur features est égal à la somme de la longeur des vecteurs binaires : 8, 15, 6, 14, 5, 4, 1, 41 \u003d 94",
+      "dateUpdated": "Mar 9, 2017 11:17:09 PM",
       "config": {
-        "colWidth": 12.0,
+        "colWidth": 3.0,
         "graph": {
           "mode": "table",
           "height": 300.0,
@@ -1675,11 +1675,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003cp\u003eColonne \u0026ldquo;features\u0026rdquo;, explications :\u003c/p\u003e\n\u003cp\u003eNous avons précédemment appliqué notre pipeline au jeu de données.\n\u003cbr  /\u003eL\u0027étape assemblerStage a permis de combiner des valeurs de colonnes d\u0027un individu (row) en un simple vecteur appelé \u0026ldquo;features\u0026rdquo; grâce à la ligne suivante :\n\u003cbr  /\u003eval assemblerStage \u003d new VectorAssembler().setInputCols(nonNumericalColumns.map(w \u003d\u003e w + \u0026ldquo;ClassVec\u0026rdquo;).toArray).setOutputCol(\u0026ldquo;features\u0026rdquo;)\u003c/p\u003e\n\u003cp\u003eNous avons combiné ici toutes les colonnes vectorielles représentant les variables non-numériques en un seul vecteur de sorti appelé \u0026ldquo;features\u0026rdquo;, et ce pour chaque individu.\n\u003cbr  /\u003eNous remarquons que la longeur de ce vecteur features est égal à la somme de la longeur des vecteurs binaires : 8, 15, 6, 14, 5, 4, 1, 41 \u003d 94\u003c/p\u003e\n"
+        "msg": "\u003cp\u003eExplications :\u003c/p\u003e\n\u003cp\u003eColonne \u0026ldquo;features\u0026rdquo; :\u003c/p\u003e\n\u003cp\u003eNous avons précédemment appliqué notre pipeline au jeu de données.\n\u003cbr  /\u003eL\u0027étape assemblerStage a permis de combiner des valeurs de colonnes d\u0027un individu (row) en un simple vecteur appelé \u0026ldquo;features\u0026rdquo; grâce à la ligne suivante :\n\u003cbr  /\u003eval assemblerStage \u003d new VectorAssembler().setInputCols(nonNumericalColumns.map(w \u003d\u003e w + \u0026ldquo;ClassVec\u0026rdquo;).toArray).setOutputCol(\u0026ldquo;features\u0026rdquo;)\u003c/p\u003e\n\u003cp\u003eNous avons combiné ici toutes les colonnes vectorielles représentant les variables non-numériques en un seul vecteur de sorti appelé \u0026ldquo;features\u0026rdquo;, et ce pour chaque individu.\n\u003cbr  /\u003eNous remarquons que la longeur de ce vecteur features est égal à la somme de la longeur des vecteurs binaires : 8, 15, 6, 14, 5, 4, 1, 41 \u003d 94\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 24, 2017 12:21:13 PM",
-      "dateStarted": "Feb 24, 2017 1:48:45 AM",
-      "dateFinished": "Feb 24, 2017 1:48:45 AM",
+      "dateStarted": "Mar 9, 2017 11:17:08 PM",
+      "dateFinished": "Mar 9, 2017 11:17:08 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -2038,7 +2038,7 @@
     },
     {
       "text": "%md\nExplications :\n\nNous implémentons ci-contre un model de régression logistique binomial avec un nombre d\u0027itération maximum fixé à 10 et un paramètre de régularisation fixé à 0.01.\n\nNous pouvons enuite adapter le modèle à notre jeu de données training (70% du dataset initial). Le but est de créer un estimateur sur un jeu de données assez large afin d\u0027obtenir des prédictions justes. \n\nUne fois l\u0027estimateur créé, nous pouvons le tester en l\u0027appliquant sur le jeu de données test.\n\nBinaryClassificationEvaluator nous permet de voir si l\u0027estimateur déduit du jeu de données training est juste si on l\u0027applique sur le jeu de données test. Nous obtenons un taux d\u0027estimation juste à 87.85%. OUaou !\n\nRemarque :\nEn observant le dataFrame datasetEstimated, nous remarquons l\u0027apparition de 3 nouvelles colonnes :\nrawPrediction | probability | prediction\n[5.29605336427181...|[0.99501365539711...|       0.0|\n\nLa colonne qui nous intéresse le plus est \"prediction\" qui représente la tranche salariale estimée de l\u0027individu (0.0 : \u003c\u003d50K | 1.0 : \u003e50K)\nLa méthode fit du model LogisticRegression recherche deux colonnes dans le dataset passé en paramètre : \"label\" et \"features\"\nDans notre cas, label est bien la représentation binaire de la variable \"income\".\n",
-      "dateUpdated": "Mar 5, 2017 6:19:00 AM",
+      "dateUpdated": "Mar 9, 2017 11:15:35 PM",
       "config": {
         "colWidth": 4.0,
         "graph": {
@@ -2052,7 +2052,7 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/markdown",
-        "editorHide": false
+        "editorHide": true
       },
       "settings": {
         "params": {},
@@ -2066,8 +2066,8 @@
         "msg": "\u003cp\u003eExplications :\u003c/p\u003e\n\u003cp\u003eNous implémentons ci-contre un model de régression logistique binomial avec un nombre d\u0027itération maximum fixé à 10 et un paramètre de régularisation fixé à 0.01.\u003c/p\u003e\n\u003cp\u003eNous pouvons enuite adapter le modèle à notre jeu de données training (70% du dataset initial). Le but est de créer un estimateur sur un jeu de données assez large afin d\u0027obtenir des prédictions justes.\u003c/p\u003e\n\u003cp\u003eUne fois l\u0027estimateur créé, nous pouvons le tester en l\u0027appliquant sur le jeu de données test.\u003c/p\u003e\n\u003cp\u003eBinaryClassificationEvaluator nous permet de voir si l\u0027estimateur déduit du jeu de données training est juste si on l\u0027applique sur le jeu de données test. Nous obtenons un taux d\u0027estimation juste à 87.85%. OUaou !\u003c/p\u003e\n\u003cp\u003eRemarque :\n\u003cbr  /\u003eEn observant le dataFrame datasetEstimated, nous remarquons l\u0027apparition de 3 nouvelles colonnes :\n\u003cbr  /\u003erawPrediction | probability | prediction\n\u003cbr  /\u003e[5.29605336427181\u0026hellip;|[0.99501365539711\u0026hellip;|       0.0|\u003c/p\u003e\n\u003cp\u003eLa colonne qui nous intéresse le plus est \u0026ldquo;prediction\u0026rdquo; qui représente la tranche salariale estimée de l\u0027individu (0.0 : \u003c\u003d50K | 1.0 : \u003e50K)\n\u003cbr  /\u003eLa méthode fit du model LogisticRegression recherche deux colonnes dans le dataset passé en paramètre : \u0026ldquo;label\u0026rdquo; et \u0026ldquo;features\u0026rdquo;\n\u003cbr  /\u003eDans notre cas, label est bien la représentation binaire de la variable \u0026ldquo;income\u0026rdquo;.\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 8, 2017 8:52:38 AM",
-      "dateStarted": "Mar 5, 2017 6:19:01 AM",
-      "dateFinished": "Mar 5, 2017 6:19:01 AM",
+      "dateStarted": "Mar 9, 2017 11:15:34 PM",
+      "dateFinished": "Mar 9, 2017 11:15:34 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -2432,8 +2432,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\n\nExplications :\n\nNous allons tenter de déterminer les colonnes qui ont la meilleure corrélation avec le label (colonne \"income\") grâce à la méthode Statistics.corr() fournie par Spark ML. Celle-ci permet d\u0027obtenir une matrice de corrélation qui permettra d\u0027évaluer les dépendences entre toutes nos variables.\n\nCes calculs sont possibles uniquement sur des données de type numérique (Double), c\u0027est pourquoi nous allons utiliser les colonnes générées précédemment via \"stringIndexer\". Pour rappel, ces colonnes indiquent la position (Double) du bit à \"1\" du vecteur binaire représentant la variable catégorielle. Cette valeur décrit de manière fiable et précise chacun des états de la variable.\n\nLa méthode Vectors.dense() permet de constituer un vecteur numérique (Double) à partir des valeurs d\u0027index de nos variables non-numériques. Nous obtenons une matrice dont le nombre de colonnes correspond au nombre de variables et le nombre de lignes au nombre d\u0027individus du Dataset. \n\nLes valeurs obtenues dans la matrice de correlation sont comprises entre -1 et 1. Les meilleures dépendences sont les valeurs absolues les plus proches de 1. Notons d\u0027ailleurs qu\u0027une valeur correlée avec elle même donne 1.\n\nVoici les valeurs obtenues :\nworkclassIndex -\u003e 0.10222928987988947\neducationIndex -\u003e 0.042448952120948354\nmarital_statusIndex -\u003e -0.3112877621172519\noccupationIndex -\u003e -0.18563604587187174\nrelationshipIndex -\u003e -0.2542920971961014\nraceIndex -\u003e -0.06771307197620637\nsexIndex -\u003e -0.21598015058403647\nnative_countryIndex-\u003e -0.018498437602558336\nlabel-\u003e 1.0\n\nLes variables catégorielles qui ont la meilleure correlation avec la variable \"label\" sont :\n- marital_statusIndex\n- relationshipIndex\n- sexIndex\n\n",
-      "dateUpdated": "Mar 9, 2017 11:10:22 PM",
+      "text": "%md\n\nExplications :\n\nNous allons tenter de déterminer les colonnes qui ont la meilleure corrélation avec le label (colonne \"income\") grâce à la méthode Statistics.corr() fournie par Spark ML. Celle-ci permet d\u0027obtenir une matrice de corrélation qui permettra d\u0027évaluer les dépendences entre toutes nos variables.\n\nCes calculs sont possibles uniquement sur des données de type numérique (Double), c\u0027est pourquoi nous allons utiliser les colonnes générées précédemment via \"stringIndexer\". Pour rappel, ces colonnes indiquent la position (Double) du bit à \"1\" du vecteur binaire représentant la variable catégorielle. Cette valeur décrit de manière fiable et précise chacun des états de la variable.\n\nLa méthode Vectors.dense() permet de constituer un vecteur numérique (Double) à partir des valeurs d\u0027index de nos variables non-numériques. Nous obtenons une matrice dont le nombre de colonnes correspond au nombre de variables et le nombre de lignes au nombre d\u0027individus du Dataset. \n\nLes valeurs obtenues dans la matrice de correlation (d\u0027une taille de nb_variables * nb_variables) sont comprises entre -1 et 1. Les meilleures dépendences sont les valeurs absolues les plus proches de 1. Notons d\u0027ailleurs qu\u0027une valeur correlée avec elle même donne 1.\n\nVoici les valeurs obtenues :\nworkclassIndex -\u003e 0.10222928987988947\neducationIndex -\u003e 0.042448952120948354\nmarital_statusIndex -\u003e -0.3112877621172519\noccupationIndex -\u003e -0.18563604587187174\nrelationshipIndex -\u003e -0.2542920971961014\nraceIndex -\u003e -0.06771307197620637\nsexIndex -\u003e -0.21598015058403647\nnative_countryIndex-\u003e -0.018498437602558336\nlabel-\u003e 1.0\n\nLes variables catégorielles qui ont la meilleure correlation avec la variable \"label\" sont :\n- marital_statusIndex\n- relationshipIndex\n- sexIndex\n\n",
+      "dateUpdated": "Mar 9, 2017 11:14:04 PM",
       "config": {
         "colWidth": 3.0,
         "graph": {
@@ -2458,11 +2458,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003cp\u003eExplications :\u003c/p\u003e\n\u003cp\u003eNous allons tenter de déterminer les colonnes qui ont la meilleure corrélation avec le label (colonne \u0026ldquo;income\u0026rdquo;) grâce à la méthode Statistics.corr() fournie par Spark ML. Celle-ci permet d\u0027obtenir une matrice de corrélation qui permettra d\u0027évaluer les dépendences entre toutes nos variables.\u003c/p\u003e\n\u003cp\u003eCes calculs sont possibles uniquement sur des données de type numérique (Double), c\u0027est pourquoi nous allons utiliser les colonnes générées précédemment via \u0026ldquo;stringIndexer\u0026rdquo;. Pour rappel, ces colonnes indiquent la position (Double) du bit à \u0026ldquo;1\u0026rdquo; du vecteur binaire représentant la variable catégorielle. Cette valeur décrit de manière fiable et précise chacun des états de la variable.\u003c/p\u003e\n\u003cp\u003eLa méthode Vectors.dense() permet de constituer un vecteur numérique (Double) à partir des valeurs d\u0027index de nos variables non-numériques. Nous obtenons une matrice dont le nombre de colonnes correspond au nombre de variables et le nombre de lignes au nombre d\u0027individus du Dataset.\u003c/p\u003e\n\u003cp\u003eLes valeurs obtenues dans la matrice de correlation sont comprises entre -1 et 1. Les meilleures dépendences sont les valeurs absolues les plus proches de 1. Notons d\u0027ailleurs qu\u0027une valeur correlée avec elle même donne 1.\u003c/p\u003e\n\u003cp\u003eVoici les valeurs obtenues :\n\u003cbr  /\u003eworkclassIndex -\u003e 0.10222928987988947\n\u003cbr  /\u003eeducationIndex -\u003e 0.042448952120948354\n\u003cbr  /\u003emarital_statusIndex -\u003e -0.3112877621172519\n\u003cbr  /\u003eoccupationIndex -\u003e -0.18563604587187174\n\u003cbr  /\u003erelationshipIndex -\u003e -0.2542920971961014\n\u003cbr  /\u003eraceIndex -\u003e -0.06771307197620637\n\u003cbr  /\u003esexIndex -\u003e -0.21598015058403647\n\u003cbr  /\u003enative_countryIndex-\u003e -0.018498437602558336\n\u003cbr  /\u003elabel-\u003e 1.0\u003c/p\u003e\n\u003cp\u003eLes variables catégorielles qui ont la meilleure correlation avec la variable \u0026ldquo;label\u0026rdquo; sont :\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003emarital_statusIndex\u003c/li\u003e\n\u003cli\u003erelationshipIndex\u003c/li\u003e\n\u003cli\u003esexIndex\u003c/li\u003e\n\u003c/ul\u003e\n"
+        "msg": "\u003cp\u003eExplications :\u003c/p\u003e\n\u003cp\u003eNous allons tenter de déterminer les colonnes qui ont la meilleure corrélation avec le label (colonne \u0026ldquo;income\u0026rdquo;) grâce à la méthode Statistics.corr() fournie par Spark ML. Celle-ci permet d\u0027obtenir une matrice de corrélation qui permettra d\u0027évaluer les dépendences entre toutes nos variables.\u003c/p\u003e\n\u003cp\u003eCes calculs sont possibles uniquement sur des données de type numérique (Double), c\u0027est pourquoi nous allons utiliser les colonnes générées précédemment via \u0026ldquo;stringIndexer\u0026rdquo;. Pour rappel, ces colonnes indiquent la position (Double) du bit à \u0026ldquo;1\u0026rdquo; du vecteur binaire représentant la variable catégorielle. Cette valeur décrit de manière fiable et précise chacun des états de la variable.\u003c/p\u003e\n\u003cp\u003eLa méthode Vectors.dense() permet de constituer un vecteur numérique (Double) à partir des valeurs d\u0027index de nos variables non-numériques. Nous obtenons une matrice dont le nombre de colonnes correspond au nombre de variables et le nombre de lignes au nombre d\u0027individus du Dataset.\u003c/p\u003e\n\u003cp\u003eLes valeurs obtenues dans la matrice de correlation (d\u0027une taille de nb_variables * nb_variables) sont comprises entre -1 et 1. Les meilleures dépendences sont les valeurs absolues les plus proches de 1. Notons d\u0027ailleurs qu\u0027une valeur correlée avec elle même donne 1.\u003c/p\u003e\n\u003cp\u003eVoici les valeurs obtenues :\n\u003cbr  /\u003eworkclassIndex -\u003e 0.10222928987988947\n\u003cbr  /\u003eeducationIndex -\u003e 0.042448952120948354\n\u003cbr  /\u003emarital_statusIndex -\u003e -0.3112877621172519\n\u003cbr  /\u003eoccupationIndex -\u003e -0.18563604587187174\n\u003cbr  /\u003erelationshipIndex -\u003e -0.2542920971961014\n\u003cbr  /\u003eraceIndex -\u003e -0.06771307197620637\n\u003cbr  /\u003esexIndex -\u003e -0.21598015058403647\n\u003cbr  /\u003enative_countryIndex-\u003e -0.018498437602558336\n\u003cbr  /\u003elabel-\u003e 1.0\u003c/p\u003e\n\u003cp\u003eLes variables catégorielles qui ont la meilleure correlation avec la variable \u0026ldquo;label\u0026rdquo; sont :\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003emarital_statusIndex\u003c/li\u003e\n\u003cli\u003erelationshipIndex\u003c/li\u003e\n\u003cli\u003esexIndex\u003c/li\u003e\n\u003c/ul\u003e\n"
       },
       "dateCreated": "Mar 9, 2017 10:17:17 PM",
-      "dateStarted": "Mar 9, 2017 11:10:19 PM",
-      "dateFinished": "Mar 9, 2017 11:10:19 PM",
+      "dateStarted": "Mar 9, 2017 11:14:03 PM",
+      "dateFinished": "Mar 9, 2017 11:14:03 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -2502,8 +2502,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\n\nPour finir :\n\nPar curiosité, voyons ce que donne la matrice de correlation sur les données numériques de notre dataset :\n\nage -\u003e 0.23403710264886027\nfnlwgt -\u003e -0.009462557247534543\neducation_num -\u003e 0.3351539526909747\ncapital_gain -\u003e 0.2233288181953826\ncapital_loss -\u003e 0.1505263117703537\nhours_per_week -\u003e 0.22968906567081035\nlabel -\u003e 1.0\n\nLes valeurs de corrélation sont globalement meilleures que celles obtenues précédemment.\n\nSurtout la variable \"education_num\" qui est bizarrement bien plus élevée que \"educationIndex\".\n",
-      "dateUpdated": "Mar 9, 2017 11:11:44 PM",
+      "text": "%md\n\nPour finir :\n\nPar curiosité, voyons ce que donne la matrice de correlation sur les données numériques de notre dataset :\n\nage -\u003e 0.23403710264886027\nfnlwgt -\u003e -0.009462557247534543\neducation_num -\u003e 0.3351539526909747\ncapital_gain -\u003e 0.2233288181953826\ncapital_loss -\u003e 0.1505263117703537\nhours_per_week -\u003e 0.22968906567081035\nlabel -\u003e 1.0\n\nLes valeurs de corrélation sont globalement meilleures que celles obtenues précédemment.\n",
+      "dateUpdated": "Mar 9, 2017 11:15:00 PM",
       "config": {
         "colWidth": 3.0,
         "graph": {
@@ -2528,11 +2528,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003cp\u003ePour finir :\u003c/p\u003e\n\u003cp\u003ePar curiosité, voyons ce que donne la matrice de correlation sur les données numériques de notre dataset :\u003c/p\u003e\n\u003cp\u003eage -\u003e 0.23403710264886027\n\u003cbr  /\u003efnlwgt -\u003e -0.009462557247534543\n\u003cbr  /\u003eeducation_num -\u003e 0.3351539526909747\n\u003cbr  /\u003ecapital_gain -\u003e 0.2233288181953826\n\u003cbr  /\u003ecapital_loss -\u003e 0.1505263117703537\n\u003cbr  /\u003ehours_per_week -\u003e 0.22968906567081035\n\u003cbr  /\u003elabel -\u003e 1.0\u003c/p\u003e\n\u003cp\u003eLes valeurs de corrélation sont globalement meilleures que celles obtenues précédemment.\u003c/p\u003e\n\u003cp\u003eSurtout la variable \u0026ldquo;education_num\u0026rdquo; qui est bizarrement bien plus élevée que \u0026ldquo;educationIndex\u0026rdquo;.\u003c/p\u003e\n"
+        "msg": "\u003cp\u003ePour finir :\u003c/p\u003e\n\u003cp\u003ePar curiosité, voyons ce que donne la matrice de correlation sur les données numériques de notre dataset :\u003c/p\u003e\n\u003cp\u003eage -\u003e 0.23403710264886027\n\u003cbr  /\u003efnlwgt -\u003e -0.009462557247534543\n\u003cbr  /\u003eeducation_num -\u003e 0.3351539526909747\n\u003cbr  /\u003ecapital_gain -\u003e 0.2233288181953826\n\u003cbr  /\u003ecapital_loss -\u003e 0.1505263117703537\n\u003cbr  /\u003ehours_per_week -\u003e 0.22968906567081035\n\u003cbr  /\u003elabel -\u003e 1.0\u003c/p\u003e\n\u003cp\u003eLes valeurs de corrélation sont globalement meilleures que celles obtenues précédemment.\u003c/p\u003e\n"
       },
       "dateCreated": "Mar 9, 2017 11:00:27 PM",
-      "dateStarted": "Mar 9, 2017 11:11:43 PM",
-      "dateFinished": "Mar 9, 2017 11:11:43 PM",
+      "dateStarted": "Mar 9, 2017 11:14:52 PM",
+      "dateFinished": "Mar 9, 2017 11:14:52 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
