@@ -666,7 +666,7 @@
     {
       "title": "Sum all elements",
       "text": "sequenceNumbers.reduce((x, y) \u003d\u003e x + y)\n\nsequenceNumbers.reduce(_ + _)",
-      "dateUpdated": "Mar 9, 2017 2:45:33 PM",
+      "dateUpdated": "Mar 9, 2017 2:46:31 PM",
       "config": {
         "enabled": true,
         "tableHide": false,
@@ -693,11 +693,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nres27: Int \u003d 5050\n\nres28: Int \u003d 5050\n"
+        "msg": "\nres30: Int \u003d 5050\n\nres31: Int \u003d 5050\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Mar 9, 2017 2:45:34 PM",
-      "dateFinished": "Mar 9, 2017 2:45:34 PM",
+      "dateStarted": "Mar 9, 2017 2:46:31 PM",
+      "dateFinished": "Mar 9, 2017 2:46:32 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
