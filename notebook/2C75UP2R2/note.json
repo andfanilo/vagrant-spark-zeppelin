@@ -1016,7 +1016,7 @@
     {
       "title": "Return the list of squared numbers from 1 to 5",
       "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.map(x \u003d\u003e x*x)\n\nval expected \u003d List(1, 4, 9, 16, 25) ",
-      "dateUpdated": "Feb 8, 2017 12:43:57 PM",
+      "dateUpdated": "Mar 9, 2017 2:51:13 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1045,15 +1045,15 @@
         "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: List[Int] \u003d List(1, 4, 9, 16, 25)\n\nexpected: List[Int] \u003d List(1, 4, 9, 16, 25)\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:13 AM",
-      "dateStarted": "Feb 8, 2017 12:43:57 PM",
-      "dateFinished": "Feb 8, 2017 12:43:58 PM",
+      "dateStarted": "Mar 9, 2017 2:51:13 PM",
+      "dateFinished": "Mar 9, 2017 2:51:14 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Return the sum of elements from 1 to 5",
       "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.reduce((x, y) \u003d\u003e x+y)\n\nval expected \u003d 15",
-      "dateUpdated": "Feb 8, 2017 12:28:04 PM",
+      "dateUpdated": "Mar 9, 2017 2:51:17 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1081,15 +1081,15 @@
         "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: Int \u003d 15\n\nexpected: Int \u003d 15\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:20 AM",
-      "dateStarted": "Feb 8, 2017 12:28:04 PM",
-      "dateFinished": "Feb 8, 2017 12:28:05 PM",
+      "dateStarted": "Mar 9, 2017 2:51:17 PM",
+      "dateFinished": "Mar 9, 2017 2:51:18 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Return the sum of squared pair numbers between 1 and 100",
       "text": "val input \u003d 1 to 100\nval output \u003d input.filter(x \u003d\u003e x % 2 \u003d\u003d 0).map(x \u003d\u003e x*x).reduce((x, y) \u003d\u003e x+y)\n\nval expected \u003d 171700",
-      "dateUpdated": "Feb 8, 2017 12:32:06 PM",
+      "dateUpdated": "Mar 9, 2017 2:54:34 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1117,15 +1117,15 @@
         "msg": "\ninput: scala.collection.immutable.Range.Inclusive \u003d Range(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100)\n\noutput: Int \u003d 171700\n\nexpected: Int \u003d 171700\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:27 AM",
-      "dateStarted": "Feb 8, 2017 12:32:06 PM",
-      "dateFinished": "Feb 8, 2017 12:32:06 PM",
+      "dateStarted": "Mar 9, 2017 2:52:17 PM",
+      "dateFinished": "Mar 9, 2017 2:52:18 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Get highest number in a list with a reduce",
       "text": "import util.Random.nextInt\nval input \u003d Seq.fill(10)(nextInt)\nval output \u003d input.reduce((x, y) \u003d\u003e if(x\u003ey) x else y)\n\nval expected \u003d input.max",
-      "dateUpdated": "Feb 8, 2017 12:45:09 PM",
+      "dateUpdated": "Mar 9, 2017 2:52:19 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1152,11 +1152,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nimport util.Random.nextInt\n\ninput: Seq[Int] \u003d List(-786300192, -1261172649, -1888074486, 174245771, -1673678681, 1262835051, 1646497278, -826179203, 902204262, 1240998406)\n\noutput: Int \u003d 1646497278\n\nexpected: Int \u003d 1646497278\n"
+        "msg": "\nimport util.Random.nextInt\n\ninput: Seq[Int] \u003d List(1493534545, 480828114, 782052026, 1308359913, 1479093727, 601951417, 1076402547, -1522036497, 16560376, -723618221)\n\noutput: Int \u003d 1493534545\n\nexpected: Int \u003d 1493534545\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:32 AM",
-      "dateStarted": "Feb 8, 2017 12:45:09 PM",
-      "dateFinished": "Feb 8, 2017 12:45:10 PM",
+      "dateStarted": "Mar 9, 2017 2:52:19 PM",
+      "dateFinished": "Mar 9, 2017 2:52:21 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
