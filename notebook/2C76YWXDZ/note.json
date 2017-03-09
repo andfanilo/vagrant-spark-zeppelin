@@ -109,7 +109,7 @@
     {
       "title": "Load data (run the cell)",
       "text": "import org.apache.spark.sql.types.{StringType, DoubleType, StructType, StructField}\n\nval schema \u003d StructType(Seq(\n    StructField(\"age\", DoubleType),\n    StructField(\"workclass\", StringType),\n    StructField(\"fnlwgt\", DoubleType),\n    StructField(\"education\", StringType),\n    StructField(\"education_num\", DoubleType),\n    StructField(\"marital_status\", StringType),\n    StructField(\"occupation\", StringType),\n    StructField(\"relationship\", StringType),\n    StructField(\"race\", StringType),\n    StructField(\"sex\", StringType),\n    StructField(\"capital_gain\", DoubleType),\n    StructField(\"capital_loss\", DoubleType),\n    StructField(\"hours_per_week\", DoubleType),\n    StructField(\"native_country\", StringType),\n    StructField(\"income\", StringType)\n    ))\n\ncase class Adult(\n    age: Double, \n    workclass: String, \n    fnlwgt: Double, \n    education: String, \n    education_num: Double, \n    marital_status: String, \n    occupation: String, \n    relationship: String, \n    race: String, \n    sex: String, \n    capital_gain: Double, \n    capital_loss: Double, \n    hours_per_week: Double, \n    native_country: String, \n    income: String\n    )\n    \nval dataset \u003d spark.read.schema(schema).csv(\"/opt/dataset/adult.data.csv\").as[Adult]\ndataset.registerTempTable(\"dataset\")  // register it so we can use it inside %sql interpreter",
-      "dateUpdated": "Feb 17, 2017 2:57:53 AM",
+      "dateUpdated": "Mar 9, 2017 3:22:58 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -139,14 +139,14 @@
         "msg": "\nimport org.apache.spark.sql.types.{StringType, DoubleType, StructType, StructField}\n\nschema: org.apache.spark.sql.types.StructType \u003d StructType(StructField(age,DoubleType,true), StructField(workclass,StringType,true), StructField(fnlwgt,DoubleType,true), StructField(education,StringType,true), StructField(education_num,DoubleType,true), StructField(marital_status,StringType,true), StructField(occupation,StringType,true), StructField(relationship,StringType,true), StructField(race,StringType,true), StructField(sex,StringType,true), StructField(capital_gain,DoubleType,true), StructField(capital_loss,DoubleType,true), StructField(hours_per_week,DoubleType,true), StructField(native_country,StringType,true), StructField(income,StringType,true))\n\ndefined class Adult\n\ndataset: org.apache.spark.sql.Dataset[Adult] \u003d [age: double, workclass: string ... 13 more fields]\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n"
       },
       "dateCreated": "Feb 3, 2017 8:43:33 AM",
-      "dateStarted": "Feb 17, 2017 2:57:53 AM",
-      "dateFinished": "Feb 17, 2017 2:57:55 AM",
+      "dateStarted": "Mar 9, 2017 3:22:58 PM",
+      "dateFinished": "Mar 9, 2017 3:23:01 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "dataset.printSchema()",
-      "dateUpdated": "Feb 17, 2017 2:57:59 AM",
+      "dateUpdated": "Mar 9, 2017 3:23:03 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -174,14 +174,14 @@
         "msg": "root\n |-- age: double (nullable \u003d true)\n |-- workclass: string (nullable \u003d true)\n |-- fnlwgt: double (nullable \u003d true)\n |-- education: string (nullable \u003d true)\n |-- education_num: double (nullable \u003d true)\n |-- marital_status: string (nullable \u003d true)\n |-- occupation: string (nullable \u003d true)\n |-- relationship: string (nullable \u003d true)\n |-- race: string (nullable \u003d true)\n |-- sex: string (nullable \u003d true)\n |-- capital_gain: double (nullable \u003d true)\n |-- capital_loss: double (nullable \u003d true)\n |-- hours_per_week: double (nullable \u003d true)\n |-- native_country: string (nullable \u003d true)\n |-- income: string (nullable \u003d true)\n\n"
       },
       "dateCreated": "Feb 6, 2017 1:45:35 AM",
-      "dateStarted": "Feb 17, 2017 2:57:59 AM",
-      "dateFinished": "Feb 17, 2017 2:57:59 AM",
+      "dateStarted": "Mar 9, 2017 3:23:03 PM",
+      "dateFinished": "Mar 9, 2017 3:23:03 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%sql SELECT * FROM dataset LIMIT 10",
-      "dateUpdated": "Feb 17, 2017 3:14:08 AM",
+      "dateUpdated": "Mar 9, 2017 3:23:22 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -216,11 +216,11 @@
     {
       "title": "Check settings of graph. See how we average age by income.",
       "text": "%sql SELECT * FROM dataset limit 100",
-      "dateUpdated": "Feb 17, 2017 3:27:13 AM",
+      "dateUpdated": "Mar 9, 2017 3:35:52 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
-          "mode": "pieChart",
+          "mode": "multiBarChart",
           "height": 300.0,
           "optionOpen": true,
           "keys": [
@@ -275,7 +275,7 @@
     },
     {
       "text": "%md \n\n## III. Descriptive analysis\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nProvide a summary statistics graph for some columns you deem interesting. Summary statistics is comprised (but not limited) of:\n* mean, standard deviation and skewness for numeric columns.\n* counts and percentage of each value for categorical columns.\n\nIf you can, try to separate the two income groups and compare.\n\nTwo ways of doing this:\n* You should be able to it using standard SQL queries on the DataFrame and `show()` the result\n* You can use the %sql interpreter like in the previous cell and then use the settings tab of your graph to display the desired results.",
-      "dateUpdated": "Feb 7, 2017 12:55:40 PM",
+      "dateUpdated": "Mar 9, 2017 3:36:08 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -304,19 +304,19 @@
         "msg": "\u003ch2\u003eIII. Descriptive analysis\u003c/h2\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eProvide a summary statistics graph for some columns you deem interesting. Summary statistics is comprised (but not limited) of:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003emean, standard deviation and skewness for numeric columns.\u003c/li\u003e\n\u003cli\u003ecounts and percentage of each value for categorical columns.\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eIf you can, try to separate the two income groups and compare.\u003c/p\u003e\n\u003cp\u003eTwo ways of doing this:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eYou should be able to it using standard SQL queries on the DataFrame and \u003ccode\u003eshow()\u003c/code\u003e the result\u003c/li\u003e\n\u003cli\u003eYou can use the %sql interpreter like in the previous cell and then use the settings tab of your graph to display the desired results.\u003c/li\u003e\n\u003c/ul\u003e\n"
       },
       "dateCreated": "Feb 3, 2017 8:59:52 AM",
-      "dateStarted": "Feb 7, 2017 12:55:41 PM",
-      "dateFinished": "Feb 7, 2017 12:55:41 PM",
+      "dateStarted": "Mar 9, 2017 3:36:08 PM",
+      "dateFinished": "Mar 9, 2017 3:36:08 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "title": "Répartition des salaires moyens par race",
+      "title": "Distribution des salaires moyens / race",
       "text": "%sql SELECT count(*)/(select count(*) from dataset)*100 as pourcentage, race FROM dataset group by race limit 100",
-      "dateUpdated": "Feb 17, 2017 3:29:24 AM",
+      "dateUpdated": "Mar 9, 2017 3:38:00 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
-          "mode": "pieChart",
+          "mode": "multiBarChart",
           "height": 300.0,
           "optionOpen": true,
           "keys": [
@@ -358,8 +358,8 @@
         "msg": "pourcentage\trace\n3.190933939375326\t Asian-Pac-Islander\n9.59429992936335\t Black\n0.8322840207610331\t Other\n85.42735173981143\t White\n0.9551303706888609\t Amer-Indian-Eskimo\n"
       },
       "dateCreated": "Feb 17, 2017 3:12:12 AM",
-      "dateStarted": "Feb 17, 2017 3:24:08 AM",
-      "dateFinished": "Feb 17, 2017 3:24:09 AM",
+      "dateStarted": "Mar 9, 2017 3:37:53 PM",
+      "dateFinished": "Mar 9, 2017 3:37:55 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
