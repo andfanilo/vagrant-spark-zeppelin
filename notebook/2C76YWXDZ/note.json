@@ -272,7 +272,7 @@
     },
     {
       "text": "%md \n\n## III. Descriptive analysis\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nProvide a summary statistics graph for some columns you deem interesting. Summary statistics is comprised (but not limited) of:\n* mean, standard deviation and skewness for numeric columns.\n* counts and percentage of each value for categorical columns.\n\nIf you can, try to separate the two income groups and compare.\n\nTwo ways of doing this:\n* You should be able to it using standard SQL queries on the DataFrame and `show()` the result\n* You can use the %sql interpreter like in the previous cell and then use the settings tab of your graph to display the desired results.",
-      "dateUpdated": "Feb 7, 2017 12:55:40 PM",
+      "dateUpdated": "Mar 9, 2017 1:14:37 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -301,14 +301,14 @@
         "msg": "\u003ch2\u003eIII. Descriptive analysis\u003c/h2\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eProvide a summary statistics graph for some columns you deem interesting. Summary statistics is comprised (but not limited) of:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003emean, standard deviation and skewness for numeric columns.\u003c/li\u003e\n\u003cli\u003ecounts and percentage of each value for categorical columns.\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eIf you can, try to separate the two income groups and compare.\u003c/p\u003e\n\u003cp\u003eTwo ways of doing this:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eYou should be able to it using standard SQL queries on the DataFrame and \u003ccode\u003eshow()\u003c/code\u003e the result\u003c/li\u003e\n\u003cli\u003eYou can use the %sql interpreter like in the previous cell and then use the settings tab of your graph to display the desired results.\u003c/li\u003e\n\u003c/ul\u003e\n"
       },
       "dateCreated": "Feb 3, 2017 8:59:52 AM",
-      "dateStarted": "Feb 7, 2017 12:55:41 PM",
-      "dateFinished": "Feb 7, 2017 12:55:41 PM",
+      "dateStarted": "Mar 9, 2017 1:14:37 PM",
+      "dateFinished": "Mar 9, 2017 1:14:37 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md \n\n## IV. Data preprocessing\n\nSince we are going to try algorithms like Logistic Regression, we will have to convert the categorical variables in the dataset into numeric variables. There are 2 ways we can do this.\n\n- Category Indexing. This is basically assigning a numeric value to each category from {0, 1, 2, ...numCategories-1}. This introduces an implicit ordering among your categories, and is more suitable for ordinal variables (eg: Poor: 0, Average: 1, Good: 2)\n- [One-Hot Encoding](http://spark.apache.org/docs/latest/ml-features.html#onehotencoder). This converts categories into binary vectors with at most one positive value (eg: (Blue: 1, 0, 0), (Green: 0, 1, 0), (Red: 0, 0, 1))",
-      "dateUpdated": "Feb 7, 2017 12:55:41 PM",
+      "dateUpdated": "Mar 9, 2017 1:14:40 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -336,15 +336,15 @@
         "msg": "\u003ch2\u003eIV. Data preprocessing\u003c/h2\u003e\n\u003cp\u003eSince we are going to try algorithms like Logistic Regression, we will have to convert the categorical variables in the dataset into numeric variables. There are 2 ways we can do this.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eCategory Indexing. This is basically assigning a numeric value to each category from {0, 1, 2, \u0026hellip;numCategories-1}. This introduces an implicit ordering among your categories, and is more suitable for ordinal variables (eg: Poor: 0, Average: 1, Good: 2)\u003c/li\u003e\n\u003cli\u003e\u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-features.html#onehotencoder\"\u003eOne-Hot Encoding\u003c/a\u003e. This converts categories into binary vectors with at most one positive value (eg: (Blue: 1, 0, 0), (Green: 0, 1, 0), (Red: 0, 0, 1))\u003c/li\u003e\n\u003c/ul\u003e\n"
       },
       "dateCreated": "Feb 3, 2017 9:03:12 AM",
-      "dateStarted": "Feb 7, 2017 12:55:42 PM",
-      "dateFinished": "Feb 7, 2017 12:55:42 PM",
+      "dateStarted": "Mar 9, 2017 1:14:40 PM",
+      "dateFinished": "Mar 9, 2017 1:14:40 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "One-hot encoding example",
       "text": "val names \u003d Seq(\"color\", \"index\", \"OHE_attr1\", \"OHE_attr2\", \"OHE_attr3\")\nsqlContext.createDataFrame(sc.parallelize(Seq((\"Blue\", 0, 1, 0, 0), (\"Green\", 1, 0, 1, 0), (\"Red\", 2, 0 , 0 , 1)))).toDF(names: _*).show()",
-      "dateUpdated": "Feb 7, 2017 12:55:42 PM",
+      "dateUpdated": "Mar 9, 2017 1:14:43 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -373,14 +373,14 @@
         "msg": "\nnames: Seq[String] \u003d List(color, index, OHE_attr1, OHE_attr2, OHE_attr3)\n+-----+-----+---------+---------+---------+\n|color|index|OHE_attr1|OHE_attr2|OHE_attr3|\n+-----+-----+---------+---------+---------+\n| Blue|    0|        1|        0|        0|\n|Green|    1|        0|        1|        0|\n|  Red|    2|        0|        0|        1|\n+-----+-----+---------+---------+---------+\n\n"
       },
       "dateCreated": "Feb 3, 2017 9:06:15 AM",
-      "dateStarted": "Feb 7, 2017 12:55:53 PM",
-      "dateFinished": "Feb 7, 2017 12:55:55 PM",
+      "dateStarted": "Mar 9, 2017 1:14:43 PM",
+      "dateFinished": "Mar 9, 2017 1:14:45 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\nIn this dataset, we have ordinal variables like education (Preschool - Doctorate), and also nominal variables like relationship (Wife, Husband, Own-child, etc). For simplicity\u0027s sake, we will use One-Hot Encoding to convert all categorical variables into binary vectors. It might be possible here to improve prediction accuracy by converting each categorical column with an appropriate method.\n\nHere, we will use a combination of [StringIndexer](http://spark.apache.org/docs/latest/ml-features.html#stringindexer) and [OneHotEncoder](http://spark.apache.org/docs/latest/ml-features.html#onehotencoder) on each string column to convert the categorical variables. The `OneHotEncoder` will return a SparseVector (which means, for `(8,[4],[1.0])` that the vector has size 8, one only the 4th column contains a value which is 1.0).\n\nSince we will have many stages of feature transformations, we use an [ML Pipeline](http://spark.apache.org/docs/latest/ml-pipeline.html) to tie the stages together.  This simplifies our code. You should especially try to use [the Pipeline example](http://spark.apache.org/docs/latest/ml-pipeline.html#example-pipeline).\n\n```scala\n// Configure an ML pipeline, which consists of two stages on one column: a StringIndexer and a OneHotEncoder.\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer}\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\n// stages for column workclass\nval stringIndexer \u003d new StringIndexer()\n  .setInputCol(\"workclass\")\n  .setOutputCol(\"workclassIndex\")\nval oneHotEncoder \u003d new OneHotEncoder()\n  .setInputCol(stringIndexer.getOutputCol)\n  .setOutputCol(stringIndexer.getInputCol + \"ClassVec\")\n  \n// stage for label\nval label_stringIdx \u003d new StringIndexer()\n    .setInputCol(\"income\")\n    .setOutputCol(\"label\")\n  \nval stages \u003d  Seq(stringIndexer, oneHotEncoder) ++ Seq(label_stringIdx) // concatenate 2 sequences of stages\nval pipeline \u003d new Pipeline()\n  .setStages(stages.toArray)\n  \nval pipelineModel \u003d pipeline.fit(dataset)\npipelineModel.transform(dataset).show()\n```\n\nIt is also a good time to transform the income to a label of 0 and 1 for binary classification using the `StringIndexer`.\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\n1. For each categorical column, build a stage of StringIndexer and OneHotEncoder\n2. Add all those stages in a single pipeline\n3. Also add a StringIndexer of the `income` column and name the output column `label`\n3. Check the result by passing your dataset inside the pipeline. Comment \u0026 explain.\n\n_Hint: actually map your sequence of categorical columns to a sequence of stages through FP._",
-      "dateUpdated": "Feb 7, 2017 12:55:42 PM",
+      "dateUpdated": "Mar 9, 2017 1:14:48 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -408,15 +408,15 @@
         "msg": "\u003cp\u003eIn this dataset, we have ordinal variables like education (Preschool - Doctorate), and also nominal variables like relationship (Wife, Husband, Own-child, etc). For simplicity\u0027s sake, we will use One-Hot Encoding to convert all categorical variables into binary vectors. It might be possible here to improve prediction accuracy by converting each categorical column with an appropriate method.\u003c/p\u003e\n\u003cp\u003eHere, we will use a combination of \u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-features.html#stringindexer\"\u003eStringIndexer\u003c/a\u003e and \u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-features.html#onehotencoder\"\u003eOneHotEncoder\u003c/a\u003e on each string column to convert the categorical variables. The \u003ccode\u003eOneHotEncoder\u003c/code\u003e will return a SparseVector (which means, for \u003ccode\u003e(8,[4],[1.0])\u003c/code\u003e that the vector has size 8, one only the 4th column contains a value which is 1.0).\u003c/p\u003e\n\u003cp\u003eSince we will have many stages of feature transformations, we use an \u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-pipeline.html\"\u003eML Pipeline\u003c/a\u003e to tie the stages together.  This simplifies our code. You should especially try to use \u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-pipeline.html#example-pipeline\"\u003ethe Pipeline example\u003c/a\u003e.\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"scala\"\u003e// Configure an ML pipeline, which consists of two stages on one column: a StringIndexer and a OneHotEncoder.\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer}\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\n// stages for column workclass\nval stringIndexer \u003d new StringIndexer()\n  .setInputCol(\"workclass\")\n  .setOutputCol(\"workclassIndex\")\nval oneHotEncoder \u003d new OneHotEncoder()\n  .setInputCol(stringIndexer.getOutputCol)\n  .setOutputCol(stringIndexer.getInputCol + \"ClassVec\")\n\n// stage for label\nval label_stringIdx \u003d new StringIndexer()\n    .setInputCol(\"income\")\n    .setOutputCol(\"label\")\n\nval stages \u003d  Seq(stringIndexer, oneHotEncoder) ++ Seq(label_stringIdx) // concatenate 2 sequences of stages\nval pipeline \u003d new Pipeline()\n  .setStages(stages.toArray)\n\nval pipelineModel \u003d pipeline.fit(dataset)\npipelineModel.transform(dataset).show()\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eIt is also a good time to transform the income to a label of 0 and 1 for binary classification using the \u003ccode\u003eStringIndexer\u003c/code\u003e.\u003c/p\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003col\u003e\n\u003cli\u003eFor each categorical column, build a stage of StringIndexer and OneHotEncoder\u003c/li\u003e\n\u003cli\u003eAdd all those stages in a single pipeline\u003c/li\u003e\n\u003cli\u003eAlso add a StringIndexer of the \u003ccode\u003eincome\u003c/code\u003e column and name the output column \u003ccode\u003elabel\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003eCheck the result by passing your dataset inside the pipeline. Comment \u0026amp; explain.\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003e\u003cem\u003eHint: actually map your sequence of categorical columns to a sequence of stages through FP.\u003c/em\u003e\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 3, 2017 9:11:12 AM",
-      "dateStarted": "Feb 7, 2017 12:55:42 PM",
-      "dateFinished": "Feb 7, 2017 12:55:42 PM",
+      "dateStarted": "Mar 9, 2017 1:14:48 PM",
+      "dateFinished": "Mar 9, 2017 1:14:48 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Detail columns to deal with",
       "text": "val categoricalCols \u003d Seq(\"workclass\", \"education\", \"marital_status\", \"occupation\", \"relationship\", \"race\", \"sex\", \"native_country\")\nval numericCols \u003d Seq(\"age\", \"fnlwgt\", \"education_num\", \"capital_gain\", \"capital_loss\", \"hours_per_week\")",
-      "dateUpdated": "Feb 7, 2017 12:55:42 PM",
+      "dateUpdated": "Mar 9, 2017 1:14:52 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -444,14 +444,14 @@
         "msg": "\ncategoricalCols: Seq[String] \u003d List(workclass, education, marital_status, occupation, relationship, race, sex, native_country)\n\nnumericCols: Seq[String] \u003d List(age, fnlwgt, education_num, capital_gain, capital_loss, hours_per_week)\n"
       },
       "dateCreated": "Feb 6, 2017 2:31:24 AM",
-      "dateStarted": "Feb 7, 2017 12:55:53 PM",
-      "dateFinished": "Feb 7, 2017 12:55:56 PM",
+      "dateStarted": "Mar 9, 2017 1:14:52 PM",
+      "dateFinished": "Mar 9, 2017 1:14:53 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\nTo run machine learning on a dataset, you need a column which contains a vector of all the features, and a column with the label.\n\nWe use the [VectorAssembler](http://spark.apache.org/docs/latest/ml-features.html#vectorassembler) to assemble all of our numeric columns and one-hot encoded categorical columns into one.\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nAdd the `VectorAssembler` stage, which takes as input all numeric columns and one hot encoded categorical columns. The `features` column will then be created. You can comment on it.",
-      "dateUpdated": "Feb 7, 2017 12:55:43 PM",
+      "dateUpdated": "Mar 9, 2017 1:14:55 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -479,14 +479,14 @@
         "msg": "\u003cp\u003eTo run machine learning on a dataset, you need a column which contains a vector of all the features, and a column with the label.\u003c/p\u003e\n\u003cp\u003eWe use the \u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-features.html#vectorassembler\"\u003eVectorAssembler\u003c/a\u003e to assemble all of our numeric columns and one-hot encoded categorical columns into one.\u003c/p\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eAdd the \u003ccode\u003eVectorAssembler\u003c/code\u003e stage, which takes as input all numeric columns and one hot encoded categorical columns. The \u003ccode\u003efeatures\u003c/code\u003e column will then be created. You can comment on it.\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 3, 2017 9:15:56 AM",
-      "dateStarted": "Feb 7, 2017 12:55:43 PM",
-      "dateFinished": "Feb 7, 2017 12:55:43 PM",
+      "dateStarted": "Mar 9, 2017 1:14:55 PM",
+      "dateFinished": "Mar 9, 2017 1:14:55 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\nAt this point, you should have a dataframe with a column _features_ which consists of a vector of all features in numerical form, and a column _label_ with the Income as a binary value. \n\nIt looks like this for example:\n\n```\n+----+-----------------+--------+----------+-------------+-------------------+------------------+--------------+------+-----+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\n| age|        workclass|  fnlwgt| education|education_num|     marital_status|        occupation|  relationship|  race|  sex|capital_gain|capital_loss|hours_per_week|native_country|income|workclassIndex|workclassClassVec|educationIndex|educationClassVec|marital_statusIndex|marital_statusClassVec|occupationIndex|occupationClassVec|relationshipIndex|relationshipClassVec|raceIndex| raceClassVec|sexIndex|  sexClassVec|native_countryIndex|native_countryClassVec|label|            features|\n+----+-----------------+--------+----------+-------------+-------------------+------------------+--------------+------+-----+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\n|39.0|        State-gov| 77516.0| Bachelors|         13.0|      Never-married|      Adm-clerical| Not-in-family| White| Male|      2174.0|         0.0|          40.0| United-States| \u003c\u003d50K|           4.0|    (8,[4],[1.0])|           2.0|   (15,[2],[1.0])|                1.0|         (6,[1],[1.0])|            3.0|    (14,[3],[1.0])|              1.0|       (5,[1],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(100,[4,10,24,32,...|\n```\n\n\u003chr\u003e\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nRandomly split your dataset into a 70% training set and 30% test set using a Dataframe\u0027s `randomSplit` function.",
-      "dateUpdated": "Feb 7, 2017 12:55:43 PM",
+      "dateUpdated": "Mar 9, 2017 1:15:02 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -514,14 +514,14 @@
         "msg": "\u003cp\u003eAt this point, you should have a dataframe with a column \u003cem\u003efeatures\u003c/em\u003e which consists of a vector of all features in numerical form, and a column \u003cem\u003elabel\u003c/em\u003e with the Income as a binary value.\u003c/p\u003e\n\u003cp\u003eIt looks like this for example:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e+----+-----------------+--------+----------+-------------+-------------------+------------------+--------------+------+-----+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\n| age|        workclass|  fnlwgt| education|education_num|     marital_status|        occupation|  relationship|  race|  sex|capital_gain|capital_loss|hours_per_week|native_country|income|workclassIndex|workclassClassVec|educationIndex|educationClassVec|marital_statusIndex|marital_statusClassVec|occupationIndex|occupationClassVec|relationshipIndex|relationshipClassVec|raceIndex| raceClassVec|sexIndex|  sexClassVec|native_countryIndex|native_countryClassVec|label|            features|\n+----+-----------------+--------+----------+-------------+-------------------+------------------+--------------+------+-----+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\n|39.0|        State-gov| 77516.0| Bachelors|         13.0|      Never-married|      Adm-clerical| Not-in-family| White| Male|      2174.0|         0.0|          40.0| United-States| \u0026lt;\u003d50K|           4.0|    (8,[4],[1.0])|           2.0|   (15,[2],[1.0])|                1.0|         (6,[1],[1.0])|            3.0|    (14,[3],[1.0])|              1.0|       (5,[1],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(100,[4,10,24,32,...|\n\u003c/code\u003e\u003c/pre\u003e\n\u003chr\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eRandomly split your dataset into a 70% training set and 30% test set using a Dataframe\u0027s \u003ccode\u003erandomSplit\u003c/code\u003e function.\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 3, 2017 9:26:59 AM",
-      "dateStarted": "Feb 7, 2017 12:55:44 PM",
-      "dateFinished": "Feb 7, 2017 12:55:44 PM",
+      "dateStarted": "Mar 9, 2017 1:15:02 PM",
+      "dateFinished": "Mar 9, 2017 1:15:02 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md \n\n## V. Creation of models\n\nWe are now ready to try out some of the Binary Classification Algorithms available in the new ML Pipelines API.\n\nWe have the choice between:\n- [Binomial Logistic regression](http://spark.apache.org/docs/latest/ml-classification-regression.html#binomial-logistic-regression)\n- [Decision trees](http://spark.apache.org/docs/latest/ml-classification-regression.html#decision-trees)\n- [Random forest](http://spark.apache.org/docs/latest/ml-classification-regression.html#random-forests)\n\nThese are the general steps we will take to build our models:\n- Create the initial model on the training set\n- Use your model to make predictions on your testing set\n- Evaluate the quality of your predictions\n\nWe will be using the `BinaryClassificationEvaluator` to evaluate our models. The default metric used here is [areaUnderROC](https://en.wikipedia.org/wiki/Receiver_operating_characteristic#Area_under_the_curve).\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\n1. Fit your data on one of the three Machine Learning models on the training dataset. This should create an Estimator.\n2. Run the estimator on the testing dataset to create a prediction column\n3. Use `BinaryClassificationEvaluator.evaluate()` to evaluate your predictions.",
-      "dateUpdated": "Feb 7, 2017 12:55:44 PM",
+      "dateUpdated": "Mar 9, 2017 1:15:06 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -549,14 +549,14 @@
         "msg": "\u003ch2\u003eV. Creation of models\u003c/h2\u003e\n\u003cp\u003eWe are now ready to try out some of the Binary Classification Algorithms available in the new ML Pipelines API.\u003c/p\u003e\n\u003cp\u003eWe have the choice between:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-classification-regression.html#binomial-logistic-regression\"\u003eBinomial Logistic regression\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-classification-regression.html#decision-trees\"\u003eDecision trees\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-classification-regression.html#random-forests\"\u003eRandom forest\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eThese are the general steps we will take to build our models:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eCreate the initial model on the training set\u003c/li\u003e\n\u003cli\u003eUse your model to make predictions on your testing set\u003c/li\u003e\n\u003cli\u003eEvaluate the quality of your predictions\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eWe will be using the \u003ccode\u003eBinaryClassificationEvaluator\u003c/code\u003e to evaluate our models. The default metric used here is \u003ca href\u003d\"https://en.wikipedia.org/wiki/Receiver_operating_characteristic#Area_under_the_curve\"\u003eareaUnderROC\u003c/a\u003e.\u003c/p\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003col\u003e\n\u003cli\u003eFit your data on one of the three Machine Learning models on the training dataset. This should create an Estimator.\u003c/li\u003e\n\u003cli\u003eRun the estimator on the testing dataset to create a prediction column\u003c/li\u003e\n\u003cli\u003eUse \u003ccode\u003eBinaryClassificationEvaluator.evaluate()\u003c/code\u003e to evaluate your predictions.\u003c/li\u003e\n\u003c/ol\u003e\n"
       },
       "dateCreated": "Feb 3, 2017 9:31:43 AM",
-      "dateStarted": "Feb 7, 2017 12:55:44 PM",
-      "dateFinished": "Feb 7, 2017 12:55:44 PM",
+      "dateStarted": "Mar 9, 2017 1:15:06 PM",
+      "dateFinished": "Mar 9, 2017 1:15:06 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n\u003ch4 style\u003d\"color:red;\"\u003eOptional question\u003c/h4\u003e\n\nUse [cross-validation](http://spark.apache.org/docs/latest/ml-tuning.html#cross-validation) to select the best hyperparameters for your model",
-      "dateUpdated": "Feb 7, 2017 12:55:44 PM",
+      "dateUpdated": "Mar 9, 2017 1:15:18 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -584,14 +584,14 @@
         "msg": "\u003ch4 style\u003d\"color:red;\"\u003eOptional question\u003c/h4\u003e\n\u003cp\u003eUse \u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-tuning.html#cross-validation\"\u003ecross-validation\u003c/a\u003e to select the best hyperparameters for your model\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 6, 2017 8:16:10 AM",
-      "dateStarted": "Feb 7, 2017 12:55:45 PM",
-      "dateFinished": "Feb 7, 2017 12:55:45 PM",
+      "dateStarted": "Mar 9, 2017 1:15:18 PM",
+      "dateFinished": "Mar 9, 2017 1:15:18 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n\u003ch4 style\u003d\"color:red;\"\u003eOptional question\u003c/h4\u003e\n\nThe column `features` is a Vector, and Spark MLlib has specific functions to analyse it. You can `collect()` the column into an array then `map` each `Row` into a `Vector`.\n\n```\nimport org.apache.spark.mllib.linalg.Vector\n\ndf.select(\"features\").rdd.map(t \u003d\u003e t.getAs[Vector](0))\n```\n\n1. Run [basic statistics](http://spark.apache.org/docs/latest/mllib-statistics.html) on the column which contains your features vector.\n2. Check for the columns that are the most [correlated](http://spark.apache.org/docs/latest/mllib-statistics.html#correlations) to your label column.\n3. Conclude on the interesting columns to use if you had to do manual feature selection. Don\u0027t forget the nature of the data you are dealing with.",
-      "dateUpdated": "Feb 7, 2017 12:55:45 PM",
+      "dateUpdated": "Mar 9, 2017 1:15:22 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -619,8 +619,8 @@
         "msg": "\u003ch4 style\u003d\"color:red;\"\u003eOptional question\u003c/h4\u003e\n\u003cp\u003eThe column \u003ccode\u003efeatures\u003c/code\u003e is a Vector, and Spark MLlib has specific functions to analyse it. You can \u003ccode\u003ecollect()\u003c/code\u003e the column into an array then \u003ccode\u003emap\u003c/code\u003e each \u003ccode\u003eRow\u003c/code\u003e into a \u003ccode\u003eVector\u003c/code\u003e.\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eimport org.apache.spark.mllib.linalg.Vector\n\ndf.select(\"features\").rdd.map(t \u003d\u0026gt; t.getAs[Vector](0))\n\u003c/code\u003e\u003c/pre\u003e\n\u003col\u003e\n\u003cli\u003eRun \u003ca href\u003d\"http://spark.apache.org/docs/latest/mllib-statistics.html\"\u003ebasic statistics\u003c/a\u003e on the column which contains your features vector.\u003c/li\u003e\n\u003cli\u003eCheck for the columns that are the most \u003ca href\u003d\"http://spark.apache.org/docs/latest/mllib-statistics.html#correlations\"\u003ecorrelated\u003c/a\u003e to your label column.\u003c/li\u003e\n\u003cli\u003eConclude on the interesting columns to use if you had to do manual feature selection. Don\u0027t forget the nature of the data you are dealing with.\u003c/li\u003e\n\u003c/ol\u003e\n"
       },
       "dateCreated": "Feb 3, 2017 9:32:12 AM",
-      "dateStarted": "Feb 7, 2017 12:55:45 PM",
-      "dateFinished": "Feb 7, 2017 12:55:45 PM",
+      "dateStarted": "Mar 9, 2017 1:15:22 PM",
+      "dateFinished": "Mar 9, 2017 1:15:22 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
