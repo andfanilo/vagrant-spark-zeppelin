@@ -72,7 +72,7 @@
     },
     {
       "text": "%md\n\n## II. Load data\n\nI have downloaded adult.data from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Adult) and put it into the `data/` folder of your project.\n\nThe following cells will do the necessary to load the data into a DataFrame.",
-      "dateUpdated": "Mar 10, 2017 9:27:07 PM",
+      "dateUpdated": "Mar 11, 2017 5:53:01 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -100,15 +100,15 @@
         "msg": "\u003ch2\u003eII. Load data\u003c/h2\u003e\n\u003cp\u003eI have downloaded adult.data from the \u003ca href\u003d\"https://archive.ics.uci.edu/ml/datasets/Adult\"\u003eUCI Machine Learning Repository\u003c/a\u003e and put it into the \u003ccode\u003edata/\u003c/code\u003e folder of your project.\u003c/p\u003e\n\u003cp\u003eThe following cells will do the necessary to load the data into a DataFrame.\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 3, 2017 8:35:44 AM",
-      "dateStarted": "Mar 10, 2017 9:27:07 PM",
-      "dateFinished": "Mar 10, 2017 9:27:07 PM",
+      "dateStarted": "Mar 11, 2017 5:53:01 PM",
+      "dateFinished": "Mar 11, 2017 5:53:01 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Load data (run the cell)",
       "text": "import org.apache.spark.sql.types.{StringType, DoubleType, StructType, StructField}\n\nval schema \u003d StructType(Seq(\n    StructField(\"age\", DoubleType),\n    StructField(\"workclass\", StringType),\n    StructField(\"fnlwgt\", DoubleType),\n    StructField(\"education\", StringType),\n    StructField(\"education_num\", DoubleType),\n    StructField(\"marital_status\", StringType),\n    StructField(\"occupation\", StringType),\n    StructField(\"relationship\", StringType),\n    StructField(\"race\", StringType),\n    StructField(\"sex\", StringType),\n    StructField(\"capital_gain\", DoubleType),\n    StructField(\"capital_loss\", DoubleType),\n    StructField(\"hours_per_week\", DoubleType),\n    StructField(\"native_country\", StringType),\n    StructField(\"income\", StringType)\n    ))\n\ncase class Adult(\n    age: Double, \n    workclass: String, \n    fnlwgt: Double, \n    education: String, \n    education_num: Double, \n    marital_status: String, \n    occupation: String, \n    relationship: String, \n    race: String, \n    sex: String, \n    capital_gain: Double, \n    capital_loss: Double, \n    hours_per_week: Double, \n    native_country: String, \n    income: String\n    )\n    \nval dataset \u003d spark.read.schema(schema).csv(\"/opt/dataset/adult.data.csv\").as[Adult]\ndataset.registerTempTable(\"dataset\") \n",
-      "dateUpdated": "Mar 10, 2017 9:27:11 PM",
+      "dateUpdated": "Mar 11, 2017 5:53:03 PM",
       "config": {
         "colWidth": 8.0,
         "graph": {
@@ -138,8 +138,8 @@
         "msg": "\nimport org.apache.spark.sql.types.{StringType, DoubleType, StructType, StructField}\n\nschema: org.apache.spark.sql.types.StructType \u003d StructType(StructField(age,DoubleType,true), StructField(workclass,StringType,true), StructField(fnlwgt,DoubleType,true), StructField(education,StringType,true), StructField(education_num,DoubleType,true), StructField(marital_status,StringType,true), StructField(occupation,StringType,true), StructField(relationship,StringType,true), StructField(race,StringType,true), StructField(sex,StringType,true), StructField(capital_gain,DoubleType,true), StructField(capital_loss,DoubleType,true), StructField(hours_per_week,DoubleType,true), StructField(native_country,StringType,true), StructField(income,StringType,true))\n\ndefined class Adult\n\ndataset: org.apache.spark.sql.Dataset[Adult] \u003d [age: double, workclass: string ... 13 more fields]\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n"
       },
       "dateCreated": "Feb 3, 2017 8:43:33 AM",
-      "dateStarted": "Mar 10, 2017 9:27:12 PM",
-      "dateFinished": "Mar 10, 2017 9:27:36 PM",
+      "dateStarted": "Mar 11, 2017 5:53:03 PM",
+      "dateFinished": "Mar 11, 2017 5:53:06 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -400,7 +400,7 @@
     {
       "title": "Age moyen",
       "text": "%sql \n\nSELECT avg(age) AS Age_Moyen FROM dataset\n\n-- Quel est l\u0027âge moyen des individus de notre jeu de données ?",
-      "dateUpdated": "Mar 10, 2017 11:35:19 AM",
+      "dateUpdated": "Mar 11, 2017 6:15:58 PM",
       "config": {
         "colWidth": 2.0,
         "graph": {
@@ -426,7 +426,7 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/sql",
-        "editorHide": true,
+        "editorHide": false,
         "title": true
       },
       "settings": {
@@ -448,7 +448,7 @@
     },
     {
       "text": "%sql\n\n SELECT std(hours_per_week) AS Ecart_Type_Heures_travaillees FROM dataset\n\n-- Quel est l\u0027écart type des heures travaillées par semaine ?",
-      "dateUpdated": "Mar 5, 2017 6:06:50 AM",
+      "dateUpdated": "Mar 11, 2017 6:16:00 PM",
       "config": {
         "colWidth": 2.0,
         "graph": {
@@ -474,7 +474,7 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/sql",
-        "editorHide": true
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -495,7 +495,7 @@
     },
     {
       "text": "%sql \n\nselect workclass, CONCAT(ROUND(100. * count(*) / sum(count(*)) over (),2), \u0027%\u0027) as pourcentage\nfrom dataset\ngroup by workclass",
-      "dateUpdated": "Mar 5, 2017 6:06:53 AM",
+      "dateUpdated": "Mar 11, 2017 6:16:04 PM",
       "config": {
         "colWidth": 3.0,
         "graph": {
@@ -527,7 +527,7 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/sql",
-        "editorHide": true
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -548,7 +548,7 @@
     },
     {
       "text": "%sql \n\nselect sex, CONCAT(ROUND(100. * count(*) / sum(count(*)) over (),2), \u0027%\u0027) as pourcentage\nfrom dataset\ngroup by sex",
-      "dateUpdated": "Mar 5, 2017 6:07:08 AM",
+      "dateUpdated": "Mar 11, 2017 6:16:06 PM",
       "config": {
         "colWidth": 3.0,
         "graph": {
@@ -585,7 +585,7 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "editorHide": true
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -606,7 +606,7 @@
     },
     {
       "text": "%sql \n\nselect education, ROUND(100. * count(*) / sum(count(*)) over (),2) as pourcentage\nfrom dataset\ngroup by education\norder by pourcentage DESC",
-      "dateUpdated": "Mar 5, 2017 6:07:18 AM",
+      "dateUpdated": "Mar 11, 2017 6:16:08 PM",
       "config": {
         "colWidth": 2.0,
         "graph": {
@@ -643,7 +643,7 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "editorHide": true
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -663,92 +663,64 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "title": "Pourcentage des personnes divorcées en fonction du parcours scolaire suivi.",
-      "text": "%sql \nselect education, ROUND(100. * count(*) / sum(count(*)) over (),2) as pourcentage_DIVORCES_par_education \nfrom dataset\nwhere marital_status\u003d\u0027 Divorced\u0027\ngroup by education\norder by pourcentage_DIVORCES_par_education DESC",
-      "dateUpdated": "Mar 10, 2017 11:36:31 AM",
+      "title": "Quels-sont les métiers qui engendrent le plus de divorces ?",
+      "text": "%sql SELECT occupation, marital_status FROM dataset WHERE marital_status LIKE \"%Divorced%\"",
+      "dateUpdated": "Mar 11, 2017 6:09:24 PM",
       "config": {
-        "colWidth": 9.0,
+        "colWidth": 12.0,
         "graph": {
-          "mode": "stackedAreaChart",
-          "height": 362.0,
+          "mode": "multiBarChart",
+          "height": 300.0,
           "optionOpen": false,
           "keys": [
             {
-              "name": "education",
-              "index": 0.0,
+              "name": "marital_status",
+              "index": 1.0,
               "aggr": "sum"
             }
           ],
           "values": [
             {
-              "name": "pourcentage_DIVORCES_par_education",
+              "name": "marital_status",
               "index": 1.0,
               "aggr": "sum"
             }
           ],
-          "groups": [],
-          "scatter": {
-            "xAxis": {
-              "name": "education",
+          "groups": [
+            {
+              "name": "occupation",
               "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "scatter": {
+            "yAxis": {
+              "name": "marital_status",
+              "index": 1.0,
               "aggr": "sum"
             }
           }
         },
         "enabled": true,
         "editorMode": "ace/mode/sql",
-        "editorHide": false,
+        "editorHide": true,
+        "tableHide": false,
         "title": true
       },
       "settings": {
         "params": {},
         "forms": {}
       },
-      "jobName": "paragraph_1487021301115_-414870711",
-      "id": "20170213-212821_1200738567",
+      "jobName": "paragraph_1486581501567_2020763941",
+      "id": "20170208-191821_1247910689",
       "result": {
         "code": "SUCCESS",
         "type": "TABLE",
-        "msg": "education\tpourcentage_DIVORCES_par_education\n HS-grad\t36.30\n Some-college\t24.06\n Bachelors\t12.29\n Assoc-voc\t5.27\n Masters\t5.24\n Assoc-acdm\t4.57\n 11th\t2.93\n 10th\t2.70\n 7th-8th\t1.64\n 9th\t1.44\n Prof-school\t1.24\n 12th\t0.88\n Doctorate\t0.74\n 5th-6th\t0.45\n 1st-4th\t0.23\n Preschool\t0.02\n"
+        "msg": "occupation\tmarital_status\n Handlers-cleaners\t Divorced\n Exec-managerial\t Divorced\n Tech-support\t Divorced\n Exec-managerial\t Divorced\n Exec-managerial\t Divorced\n Exec-managerial\t Divorced\n Exec-managerial\t Divorced\n Exec-managerial\t Divorced\n Tech-support\t Divorced\n Adm-clerical\t Divorced\n Craft-repair\t Divorced\n Sales\t Divorced\n Craft-repair\t Divorced\n Machine-op-inspct\t Divorced\n Exec-managerial\t Divorced\n Craft-repair\t Divorced\n Tech-support\t Divorced\n ?\t Divorced\n Adm-clerical\t Divorced\n ?\t Divorced\n Craft-repair\t Divorced\n ?\t Divorced\n Exec-managerial\t Divorced\n Other-service\t Divorced\n Adm-clerical\t Divorced\n Exec-managerial\t Divorced\n ?\t Divorced\n Machine-op-inspct\t Divorced\n Craft-repair\t Divorced\n Adm-clerical\t Divorced\n Craft-repair\t Divorced\n Sales\t Divorced\n ?\t Divorced\n ?\t Divorced\n Adm-clerical\t Divorced\n Sales\t Divorced\n Craft-repair\t Divorced\n Craft-repair\t Divorced\n Craft-repair\t Divorced\n Prof-specialty\t Divorced\n Prof-specialty\t Divorced\n Sales\t Divorced\n Prof-specialty\t Divorced\n Other-service\t Divorced\n Prof-specialty\t Divorced\n Sales\t Divorced\n Sales\t Divorced\n Adm-clerical\t Divorced\n Prof-specialty\t Divorced\n Transport-moving\t Divorced\n ?\t Divorced\n Exec-managerial\t Divorced\n Exec-managerial\t Divorced\n Sales\t Divorced\n Exec-managerial\t Divorced\n Transport-moving\t Divorced\n Craft-repair\t Divorced\n Sales\t Divorced\n Handlers-cleaners\t Divorced\n Tech-support\t Divorced\n Other-service\t Divorced\n Exec-managerial\t Divorced\n Craft-repair\t Divorced\n Transport-moving\t Divorced\n Farming-fishing\t Divorced\n Adm-clerical\t Divorced\n Transport-moving\t Divorced\n Other-service\t Divorced\n Prof-specialty\t Divorced\n Adm-clerical\t Divorced\n Prof-specialty\t Divorced\n Adm-clerical\t Divorced\n Other-service\t Divorced\n Other-service\t Divorced\n Craft-repair\t Divorced\n Handlers-cleaners\t Divorced\n Machine-op-inspct\t Divorced\n Adm-clerical\t Divorced\n Machine-op-inspct\t Divorced\n Exec-managerial\t Divorced\n Craft-repair\t Divorced\n Exec-managerial\t Divorced\n Sales\t Divorced\n Prof-specialty\t Divorced\n Other-service\t Divorced\n Prof-specialty\t Divorced\n Craft-repair\t Divorced\n Adm-clerical\t Divorced\n Prof-specialty\t Divorced\n Exec-managerial\t Divorced\n Exec-managerial\t Divorced\n Prof-specialty\t Divorced\n Exec-managerial\t Divorced\n Adm-clerical\t Divorced\n Adm-clerical\t Divorced\n Adm-clerical\t Divorced\n Protective-serv\t Divorced\n Sales\t Divorced\n Craft-repair\t Divorced\n Tech-support\t Divorced\n Adm-clerical\t Divorced\n Adm-clerical\t Divorced\n Craft-repair\t Divorced\n Adm-clerical\t Divorced\n Exec-managerial\t Divorced\n Adm-clerical\t Divorced\n Prof-specialty\t Divorced\n Prof-specialty\t Divorced\n Other-service\t Divorced\n Adm-clerical\t Divorced\n Prof-specialty\t Divorced\n Other-service\t Divorced\n Adm-clerical\t Divorced\n Machine-op-inspct\t Divorced\n Tech-support\t Divorced\n ?\t Divorced\n Sales\t Divorced\n Machine-op-inspct\t Divorced\n Machine-op-inspct\t Divorced\n Handlers-cleaners\t Divorced\n Craft-repair\t Divorced\n Machine-op-inspct\t Divorced\n Other-service\t Divorced\n Exec-managerial\t Divorced\n Adm-clerical\t Divorced\n Craft-repair\t Divorced\n Farming-fishing\t Divorced\n Transport-moving\t Divorced\n Machine-op-inspct\t Divorced\n Exec-managerial\t Divorced\n Handlers-cleaners\t Divorced\n Other-service\t Divorced\n Adm-clerical\t Divorced\n Craft-repair\t Divorced\n Prof-specialty\t Divorced\n Exec-managerial\t Divorced\n Machine-op-inspct\t Divorced\n Craft-repair\t Divorced\n Priv-house-serv\t Divorced\n Adm-clerical\t Divorced\n Prof-specialty\t Divorced\n Craft-repair\t Divorced\n Craft-repair\t Divorced\n Tech-support\t Divorced\n Exec-managerial\t Divorced\n Craft-repair\t Divorced\n Craft-repair\t Divorced\n Prof-specialty\t Divorced\n Adm-clerical\t Divorced\n Handlers-cleaners\t Divorced\n Tech-support\t Divorced\n Other-service\t Divorced\n Other-service\t Divorced\n ?\t Divorced\n ?\t Divorced\n Adm-clerical\t Divorced\n Adm-clerical\t Divorced\n Transport-moving\t Divorced\n Adm-clerical\t Divorced\n Other-service\t Divorced\n Exec-managerial\t Divorced\n Other-service\t Divorced\n Prof-specialty\t Divorced\n Craft-repair\t Divorced\n Craft-repair\t Divorced\n ?\t Divorced\n Exec-managerial\t Divorced\n Adm-clerical\t Divorced\n Adm-clerical\t Divorced\n Adm-clerical\t Divorced\n Adm-clerical\t Divorced\n Protective-serv\t Divorced\n Prof-specialty\t Divorced\n Adm-clerical\t Divorced\n Tech-support\t Divorced\n Adm-clerical\t Divorced\n Machine-op-inspct\t Divorced\n Sales\t Divorced\n Exec-managerial\t Divorced\n Sales\t Divorced\n Exec-managerial\t Divorced\n Exec-managerial\t Divorced\n Sales\t Divorced\n Adm-clerical\t Divorced\n ?\t Divorced\n Sales\t Divorced\n Transport-moving\t Divorced\n Other-service\t Divorced\n Machine-op-inspct\t Divorced\n Exec-managerial\t Divorced\n Sales\t Divorced\n Prof-specialty\t Divorced\n Craft-repair\t Divorced\n Craft-repair\t Divorced\n Craft-repair\t Divorced\n Craft-repair\t Divorced\n Exec-managerial\t Divorced\n Other-service\t Divorced\n Adm-clerical\t Divorced\n Exec-managerial\t Divorced\n Exec-managerial\t Divorced\n Sales\t Divorced\n Sales\t Divorced\n Machine-op-inspct\t Divorced\n Other-service\t Divorced\n Other-service\t Divorced\n Exec-managerial\t Divorced\n Other-service\t Divorced\n Exec-managerial\t Divorced\n Exec-managerial\t Divorced\n Other-service\t Divorced\n Adm-clerical\t Divorced\n ?\t Divorced\n Machine-op-inspct\t Divorced\n Transport-moving\t Divorced\n Adm-clerical\t Divorced\n Exec-managerial\t Divorced\n Craft-repair\t Divorced\n Exec-managerial\t Divorced\n Other-service\t Divorced\n Sales\t Divorced\n Other-service\t Divorced\n Other-service\t Divorced\n Other-service\t Divorced\n Adm-clerical\t Divorced\n ?\t Divorced\n Exec-managerial\t Divorced\n Other-service\t Divorced\n Other-service\t Divorced\n Craft-repair\t Divorced\n Adm-clerical\t Divorced\n Craft-repair\t Divorced\n ?\t Divorced\n Adm-clerical\t Divorced\n Adm-clerical\t Divorced\n Adm-clerical\t Divorced\n Sales\t Divorced\n Craft-repair\t Divorced\n Sales\t Divorced\n Other-service\t Divorced\n Craft-repair\t Divorced\n Transport-moving\t Divorced\n Adm-clerical\t Divorced\n Machine-op-inspct\t Divorced\n Exec-managerial\t Divorced\n Adm-clerical\t Divorced\n Exec-managerial\t Divorced\n Adm-clerical\t Divorced\n Craft-repair\t Divorced\n Sales\t Divorced\n Other-service\t Divorced\n Exec-managerial\t Divorced\n Craft-repair\t Divorced\n Exec-managerial\t Divorced\n Adm-clerical\t Divorced\n Transport-moving\t Divorced\n Prof-specialty\t Divorced\n Adm-clerical\t Divorced\n Craft-repair\t Divorced\n Sales\t Divorced\n Adm-clerical\t Divorced\n Other-service\t Divorced\n Adm-clerical\t Divorced\n Other-service\t Divorced\n Prof-specialty\t Divorced\n Craft-repair\t Divorced\n Adm-clerical\t Divorced\n Protective-serv\t Divorced\n Prof-specialty\t Divorced\n Other-service\t Divorced\n Handlers-cleaners\t Divorced\n Prof-specialty\t Divorced\n Exec-managerial\t Divorced\n Machine-op-inspct\t Divorced\n Craft-repair\t Divorced\n Other-service\t Divorced\n Other-service\t Divorced\n Exec-managerial\t Divorced\n Other-service\t Divorced\n Adm-clerical\t Divorced\n Exec-managerial\t Divorced\n Other-service\t Divorced\n Machine-op-inspct\t Divorced\n Sales\t Divorced\n Adm-clerical\t Divorced\n Exec-managerial\t Divorced\n Craft-repair\t Divorced\n Craft-repair\t Divorced\n Prof-specialty\t Divorced\n Prof-specialty\t Divorced\n Adm-clerical\t Divorced\n Prof-specialty\t Divorced\n Prof-specialty\t Divorced\n Sales\t Divorced\n Adm-clerical\t Divorced\n Sales\t Divorced\n Craft-repair\t Divorced\n Prof-specialty\t Divorced\n ?\t Divorced\n Sales\t Divorced\n Prof-specialty\t Divorced\n Exec-managerial\t Divorced\n Sales\t Divorced\n Adm-clerical\t Divorced\n Exec-managerial\t Divorced\n Adm-clerical\t Divorced\n Craft-repair\t Divorced\n Craft-repair\t Divorced\n Craft-repair\t Divorced\n Craft-repair\t Divorced\n Adm-clerical\t Divorced\n Exec-managerial\t Divorced\n Tech-support\t Divorced\n Sales\t Divorced\n Prof-specialty\t Divorced\n ?\t Divorced\n Exec-managerial\t Divorced\n Sales\t Divorced\n Exec-managerial\t Divorced\n Machine-op-inspct\t Divorced\n Adm-clerical\t Divorced\n Exec-managerial\t Divorced\n Adm-clerical\t Divorced\n Other-service\t Divorced\n Sales\t Divorced\n Adm-clerical\t Divorced\n Machine-op-inspct\t Divorced\n Craft-repair\t Divorced\n Protective-serv\t Divorced\n Machine-op-inspct\t Divorced\n Sales\t Divorced\n Sales\t Divorced\n Adm-clerical\t Divorced\n Sales\t Divorced\n Craft-repair\t Divorced\n Exec-managerial\t Divorced\n Machine-op-inspct\t Divorced\n Craft-repair\t Divorced\n Protective-serv\t Divorced\n Machine-op-inspct\t Divorced\n Prof-specialty\t Divorced\n Adm-clerical\t Divorced\n Sales\t Divorced\n Adm-clerical\t Divorced\n Exec-managerial\t Divorced\n Machine-op-inspct\t Divorced\n Adm-clerical\t Divorced\n Craft-repair\t Divorced\n Adm-clerical\t Divorced\n Adm-clerical\t Divorced\n Handlers-cleaners\t Divorced\n Prof-specialty\t Divorced\n Tech-support\t Divorced\n Exec-managerial\t Divorced\n Craft-repair\t Divorced\n Prof-specialty\t Divorced\n Prof-specialty\t Divorced\n Exec-managerial\t Divorced\n Prof-specialty\t Divorced\n Other-service\t Divorced\n Farming-fishing\t Divorced\n Prof-specialty\t Divorced\n Sales\t Divorced\n Tech-support\t Divorced\n Sales\t Divorced\n Exec-managerial\t Divorced\n Sales\t Divorced\n Exec-managerial\t Divorced\n Prof-specialty\t Divorced\n Exec-managerial\t Divorced\n Sales\t Divorced\n Other-service\t Divorced\n Exec-managerial\t Divorced\n Sales\t Divorced\n ?\t Divorced\n ?\t Divorced\n Adm-clerical\t Divorced\n Sales\t Divorced\n Adm-clerical\t Divorced\n Exec-managerial\t Divorced\n Transport-moving\t Divorced\n Other-service\t Divorced\n Protective-serv\t Divorced\n Machine-op-inspct\t Divorced\n Adm-clerical\t Divorced\n Craft-repair\t Divorced\n Machine-op-inspct\t Divorced\n Other-service\t Divorced\n Craft-repair\t Divorced\n Craft-repair\t Divorced\n Sales\t Divorced\n Prof-specialty\t Divorced\n ?\t Divorced\n Machine-op-inspct\t Divorced\n Other-service\t Divorced\n Prof-specialty\t Divorced\n Exec-managerial\t Divorced\n Prof-specialty\t Divorced\n Tech-support\t Divorced\n Other-service\t Divorced\n Adm-clerical\t Divorced\n Sales\t Divorced\n Craft-repair\t Divorced\n Machine-op-inspct\t Divorced\n Exec-managerial\t Divorced\n Handlers-cleaners\t Divorced\n Craft-repair\t Divorced\n Machine-op-inspct\t Divorced\n Adm-clerical\t Divorced\n Adm-clerical\t Divorced\n Sales\t Divorced\n Machine-op-inspct\t Divorced\n Sales\t Divorced\n Tech-support\t Divorced\n Tech-support\t Divorced\n ?\t Divorced\n Adm-clerical\t Divorced\n Transport-moving\t Divorced\n Adm-clerical\t Divorced\n Sales\t Divorced\n Prof-specialty\t Divorced\n Handlers-cleaners\t Divorced\n Exec-managerial\t Divorced\n Other-service\t Divorced\n Machine-op-inspct\t Divorced\n Machine-op-inspct\t Divorced\n Adm-clerical\t Divorced\n Prof-specialty\t Divorced\n Machine-op-inspct\t Divorced\n Adm-clerical\t Divorced\n Adm-clerical\t Divorced\n Other-service\t Divorced\n Adm-clerical\t Divorced\n ?\t Divorced\n Prof-specialty\t Divorced\n Prof-specialty\t Divorced\n Machine-op-inspct\t Divorced\n Other-service\t Divorced\n Adm-clerical\t Divorced\n Exec-managerial\t Divorced\n Adm-clerical\t Divorced\n Machine-op-inspct\t Divorced\n Machine-op-inspct\t Divorced\n ?\t Divorced\n Craft-repair\t Divorced\n Prof-specialty\t Divorced\n Adm-clerical\t Divorced\n Exec-managerial\t Divorced\n Exec-managerial\t Divorced\n Exec-managerial\t Divorced\n Adm-clerical\t Divorced\n Craft-repair\t Divorced\n Adm-clerical\t Divorced\n Exec-managerial\t Divorced\n Adm-clerical\t Divorced\n Adm-clerical\t Divorced\n Farming-fishing\t Divorced\n Adm-clerical\t Divorced\n Adm-clerical\t Divorced\n Machine-op-inspct\t Divorced\n Adm-clerical\t Divorced\n Tech-support\t Divorced\n Other-service\t Divorced\n Prof-specialty\t Divorced\n Other-service\t Divorced\n ?\t Divorced\n Prof-specialty\t Divorced\n Sales\t Divorced\n Prof-specialty\t Divorced\n Transport-moving\t Divorced\n Prof-specialty\t Divorced\n Sales\t Divorced\n Exec-managerial\t Divorced\n Adm-clerical\t Divorced\n Craft-repair\t Divorced\n Exec-managerial\t Divorced\n Prof-specialty\t Divorced\n Other-service\t Divorced\n Machine-op-inspct\t Divorced\n ?\t Divorced\n Adm-clerical\t Divorced\n Sales\t Divorced\n Exec-managerial\t Divorced\n Exec-managerial\t Divorced\n Other-service\t Divorced\n Craft-repair\t Divorced\n Other-service\t Divorced\n Sales\t Divorced\n Adm-clerical\t Divorced\n Other-service\t Divorced\n Tech-support\t Divorced\n Farming-fishing\t Divorced\n Prof-specialty\t Divorced\n Craft-repair\t Divorced\n Adm-clerical\t Divorced\n Craft-repair\t Divorced\n Exec-managerial\t Divorced\n ?\t Divorced\n Prof-specialty\t Divorced\n Adm-clerical\t Divorced\n Handlers-cleaners\t Divorced\n Sales\t Divorced\n Machine-op-inspct\t Divorced\n Prof-specialty\t Divorced\n Protective-serv\t Divorced\n Transport-moving\t Divorced\n Prof-specialty\t Divorced\n ?\t Divorced\n Exec-managerial\t Divorced\n Adm-clerical\t Divorced\n Sales\t Divorced\n Priv-house-serv\t Divorced\n Adm-clerical\t Divorced\n Transport-moving\t Divorced\n Adm-clerical\t Divorced\n Sales\t Divorced\n Tech-support\t Divorced\n Prof-specialty\t Divorced\n ?\t Divorced\n Exec-managerial\t Divorced\n Adm-clerical\t Divorced\n Adm-clerical\t Divorced\n Sales\t Divorced\n Exec-managerial\t Divorced\n Transport-moving\t Divorced\n Exec-managerial\t Divorced\n Sales\t Divorced\n Adm-clerical\t Divorced\n Prof-specialty\t Divorced\n Prof-specialty\t Divorced\n Sales\t Divorced\n Craft-repair\t Divorced\n Prof-specialty\t Divorced\n Prof-specialty\t Divorced\n Adm-clerical\t Divorced\n Craft-repair\t Divorced\n ?\t Divorced\n ?\t Divorced\n Prof-specialty\t Divorced\n Prof-specialty\t Divorced\n Prof-specialty\t Divorced\n ?\t Divorced\n Handlers-cleaners\t Divorced\n Sales\t Divorced\n Prof-specialty\t Divorced\n Other-service\t Divorced\n Craft-repair\t Divorced\n Priv-house-serv\t Divorced\n Prof-specialty\t Divorced\n Machine-op-inspct\t Divorced\n Adm-clerical\t Divorced\n Sales\t Divorced\n Other-service\t Divorced\n Other-service\t Divorced\n Craft-repair\t Divorced\n Adm-clerical\t Divorced\n Other-service\t Divorced\n Craft-repair\t Divorced\n Transport-moving\t Divorced\n Sales\t Divorced\n Adm-clerical\t Divorced\n Sales\t Divorced\n Handlers-cleaners\t Divorced\n Adm-clerical\t Divorced\n Prof-specialty\t Divorced\n Other-service\t Divorced\n Craft-repair\t Divorced\n Other-service\t Divorced\n Craft-repair\t Divorced\n Handlers-cleaners\t Divorced\n Transport-moving\t Divorced\n Protective-serv\t Divorced\n Adm-clerical\t Divorced\n Other-service\t Divorced\n Adm-clerical\t Divorced\n Machine-op-inspct\t Divorced\n Craft-repair\t Divorced\n Adm-clerical\t Divorced\n Prof-specialty\t Divorced\n Handlers-cleaners\t Divorced\n Priv-house-serv\t Divorced\n Other-service\t Divorced\n Machine-op-inspct\t Divorced\n Exec-managerial\t Divorced\n Sales\t Divorced\n Craft-repair\t Divorced\n Sales\t Divorced\n Craft-repair\t Divorced\n Other-service\t Divorced\n Adm-clerical\t Divorced\n Exec-managerial\t Divorced\n Craft-repair\t Divorced\n Tech-support\t Divorced\n Adm-clerical\t Divorced\n Sales\t Divorced\n Adm-clerical\t Divorced\n Prof-specialty\t Divorced\n ?\t Divorced\n Prof-specialty\t Divorced\n Exec-managerial\t Divorced\n Exec-managerial\t Divorced\n Exec-managerial\t Divorced\n Handlers-cleaners\t Divorced\n Transport-moving\t Divorced\n Exec-managerial\t Divorced\n Machine-op-inspct\t Divorced\n Adm-clerical\t Divorced\n Other-service\t Divorced\n Other-service\t Divorced\n Craft-repair\t Divorced\n Craft-repair\t Divorced\n Sales\t Divorced\n Exec-managerial\t Divorced\n ?\t Divorced\n Adm-clerical\t Divorced\n Craft-repair\t Divorced\n Protective-serv\t Divorced\n Farming-fishing\t Divorced\n ?\t Divorced\n Exec-managerial\t Divorced\n Sales\t Divorced\n Other-service\t Divorced\n Prof-specialty\t Divorced\n Other-service\t Divorced\n Exec-managerial\t Divorced\n Other-service\t Divorced\n Exec-managerial\t Divorced\n Handlers-cleaners\t Divorced\n Adm-clerical\t Divorced\n ?\t Divorced\n Adm-clerical\t Divorced\n Adm-clerical\t Divorced\n Other-service\t Divorced\n Prof-specialty\t Divorced\n Transport-moving\t Divorced\n Sales\t Divorced\n Exec-managerial\t Divorced\n Adm-clerical\t Divorced\n Protective-serv\t Divorced\n Other-service\t Divorced\n Prof-specialty\t Divorced\n Other-service\t Divorced\n Tech-support\t Divorced\n Handlers-cleaners\t Divorced\n Machine-op-inspct\t Divorced\n Craft-repair\t Divorced\n Craft-repair\t Divorced\n Exec-managerial\t Divorced\n Other-service\t Divorced\n Craft-repair\t Divorced\n Exec-managerial\t Divorced\n Prof-specialty\t Divorced\n Exec-managerial\t Divorced\n Sales\t Divorced\n Protective-serv\t Divorced\n Prof-specialty\t Divorced\n Other-service\t Divorced\n ?\t Divorced\n Adm-clerical\t Divorced\n Transport-moving\t Divorced\n Sales\t Divorced\n Sales\t Divorced\n ?\t Divorced\n Adm-clerical\t Divorced\n Sales\t Divorced\n Other-service\t Divorced\n Other-service\t Divorced\n Other-service\t Divorced\n Adm-clerical\t Divorced\n Prof-specialty\t Divorced\n Adm-clerical\t Divorced\n Other-service\t Divorced\n Adm-clerical\t Divorced\n Prof-specialty\t Divorced\n Exec-managerial\t Divorced\n Prof-specialty\t Divorced\n Transport-moving\t Divorced\n Craft-repair\t Divorced\n Prof-specialty\t Divorced\n Sales\t Divorced\n Sales\t Divorced\n Sales\t Divorced\n Prof-specialty\t Divorced\n Transport-moving\t Divorced\n Prof-specialty\t Divorced\n Adm-clerical\t Divorced\n Adm-clerical\t Divorced\n Prof-specialty\t Divorced\n Adm-clerical\t Divorced\n Other-service\t Divorced\n Protective-serv\t Divorced\n Exec-managerial\t Divorced\n Craft-repair\t Divorced\n Machine-op-inspct\t Divorced\n Other-service\t Divorced\n Craft-repair\t Divorced\n Adm-clerical\t Divorced\n Sales\t Divorced\n Adm-clerical\t Divorced\n Farming-fishing\t Divorced\n Adm-clerical\t Divorced\n Transport-moving\t Divorced\n Prof-specialty\t Divorced\n Prof-specialty\t Divorced\n Adm-clerical\t Divorced\n Adm-clerical\t Divorced\n ?\t Divorced\n Adm-clerical\t Divorced\n Exec-managerial\t Divorced\n Other-service\t Divorced\n Exec-managerial\t Divorced\n Adm-clerical\t Divorced\n ?\t Divorced\n Tech-support\t Divorced\n Transport-moving\t Divorced\n Sales\t Divorced\n Prof-specialty\t Divorced\n ?\t Divorced\n Handlers-cleaners\t Divorced\n Adm-clerical\t Divorced\n Exec-managerial\t Divorced\n Machine-op-inspct\t Divorced\n Handlers-cleaners\t Divorced\n Exec-managerial\t Divorced\n Prof-specialty\t Divorced\n Adm-clerical\t Divorced\n Adm-clerical\t Divorced\n Exec-managerial\t Divorced\n Handlers-cleaners\t Divorced\n Tech-support\t Divorced\n Other-service\t Divorced\n Craft-repair\t Divorced\n Other-service\t Divorced\n Prof-specialty\t Divorced\n Sales\t Divorced\n Adm-clerical\t Divorced\n Other-service\t Divorced\n Sales\t Divorced\n Prof-specialty\t Divorced\n Adm-clerical\t Divorced\n Adm-clerical\t Divorced\n Machine-op-inspct\t Divorced\n Craft-repair\t Divorced\n Exec-managerial\t Divorced\n Exec-managerial\t Divorced\n Other-service\t Divorced\n Craft-repair\t Divorced\n Machine-op-inspct\t Divorced\n Exec-managerial\t Divorced\n ?\t Divorced\n Machine-op-inspct\t Divorced\n Other-service\t Divorced\n Craft-repair\t Divorced\n Prof-specialty\t Divorced\n Sales\t Divorced\n Prof-specialty\t Divorced\n Prof-specialty\t Divorced\n Sales\t Divorced\n Protective-serv\t Divorced\n Craft-repair\t Divorced\n Adm-clerical\t Divorced\n Sales\t Divorced\n Adm-clerical\t Divorced\n Transport-moving\t Divorced\n Sales\t Divorced\n Farming-fishing\t Divorced\n Other-service\t Divorced\n Adm-clerical\t Divorced\n Prof-specialty\t Divorced\n Sales\t Divorced\n Other-service\t Divorced\n Transport-moving\t Divorced\n Protective-serv\t Divorced\n Craft-repair\t Divorced\n Other-service\t Divorced\n Adm-clerical\t Divorced\n Prof-specialty\t Divorced\n Tech-support\t Divorced\n Exec-managerial\t Divorced\n Sales\t Divorced\n Other-service\t Divorced\n Machine-op-inspct\t Divorced\n Craft-repair\t Divorced\n Transport-moving\t Divorced\n Exec-managerial\t Divorced\n Exec-managerial\t Divorced\n Tech-support\t Divorced\n Other-service\t Divorced\n Tech-support\t Divorced\n Sales\t Divorced\n Adm-clerical\t Divorced\n ?\t Divorced\n Other-service\t Divorced\n Other-service\t Divorced\n Prof-specialty\t Divorced\n ?\t Divorced\n Sales\t Divorced\n Transport-moving\t Divorced\n Farming-fishing\t Divorced\n Exec-managerial\t Divorced\n Exec-managerial\t Divorced\n Craft-repair\t Divorced\n Transport-moving\t Divorced\n Craft-repair\t Divorced\n Sales\t Divorced\n Craft-repair\t Divorced\n Machine-op-inspct\t Divorced\n Prof-specialty\t Divorced\n Adm-clerical\t Divorced\n Craft-repair\t Divorced\n Sales\t Divorced\n Craft-repair\t Divorced\n Other-service\t Divorced\n Transport-moving\t Divorced\n Craft-repair\t Divorced\n Machine-op-inspct\t Divorced\n Other-service\t Divorced\n Other-service\t Divorced\n Craft-repair\t Divorced\n Adm-clerical\t Divorced\n Exec-managerial\t Divorced\n Sales\t Divorced\n Exec-managerial\t Divorced\n ?\t Divorced\n Other-service\t Divorced\n Machine-op-inspct\t Divorced\n Exec-managerial\t Divorced\n Sales\t Divorced\n Craft-repair\t Divorced\n ?\t Divorced\n Adm-clerical\t Divorced\n Adm-clerical\t Divorced\n Craft-repair\t Divorced\n Other-service\t Divorced\n Other-service\t Divorced\n Other-service\t Divorced\n Adm-clerical\t Divorced\n Other-service\t Divorced\n Adm-clerical\t Divorced\n Prof-specialty\t Divorced\n Tech-support\t Divorced\n Adm-clerical\t Divorced\n Exec-managerial\t Divorced\n Craft-repair\t Divorced\n Protective-serv\t Divorced\n Other-service\t Divorced\n Other-service\t Divorced\n Exec-managerial\t Divorced\n Protective-serv\t Divorced\n Sales\t Divorced\n Exec-managerial\t Divorced\n Adm-clerical\t Divorced\n Craft-repair\t Divorced\n Sales\t Divorced\n Protective-serv\t Divorced\n Craft-repair\t Divorced\n Adm-clerical\t Divorced\n Other-service\t Divorced\n Sales\t Divorced\n Exec-managerial\t Divorced\n Adm-clerical\t Divorced\n Other-service\t Divorced\n Adm-clerical\t Divorced\n Prof-specialty\t Divorced\n Prof-specialty\t Divorced\n Exec-managerial\t Divorced\n Craft-repair\t Divorced\n Adm-clerical\t Divorced\n Craft-repair\t Divorced\n Exec-managerial\t Divorced\n Adm-clerical\t Divorced\n Exec-managerial\t Divorced\n Adm-clerical\t Divorced\n Other-service\t Divorced\n ?\t Divorced\n Farming-fishing\t Divorced\n Craft-repair\t Divorced\n Adm-clerical\t Divorced\n Adm-clerical\t Divorced\n Sales\t Divorced\n Adm-clerical\t Divorced\n Adm-clerical\t Divorced\n Prof-specialty\t Divorced\n Exec-managerial\t Divorced\n Craft-repair\t Divorced\n Sales\t Divorced\n Adm-clerical\t Divorced\n Exec-managerial\t Divorced\n Adm-clerical\t Divorced\n Prof-specialty\t Divorced\n Machine-op-inspct\t Divorced\n Sales\t Divorced\n Adm-clerical\t Divorced\n Tech-support\t Divorced\n Prof-specialty\t Divorced\n Adm-clerical\t Divorced\n Priv-house-serv\t Divorced\n Machine-op-inspct\t Divorced\n Sales\t Divorced\n Exec-managerial\t Divorced\n Craft-repair\t Divorced\n Prof-specialty\t Divorced\n Prof-specialty\t Divorced\n Transport-moving\t Divorced\n Machine-op-inspct\t Divorced\n Other-service\t Divorced\n Tech-support\t Divorced\n Adm-clerical\t Divorced\n Sales\t Divorced\n Sales\t Divorced\n Exec-managerial\t Divorced\n Adm-clerical\t Divorced\n Exec-managerial\t Divorced\n Sales\t Divorced\n Exec-managerial\t Divorced\n Prof-specialty\t Divorced\n Craft-repair\t Divorced\n Transport-moving\t Divorced\n Other-service\t Divorced\n ?\t Divorced\n Prof-specialty\t Divorced\n Craft-repair\t Divorced\n Adm-clerical\t Divorced\n Adm-clerical\t Divorced\n Priv-house-serv\t Divorced\n Exec-managerial\t Divorced\n Machine-op-inspct\t Divorced\n Adm-clerical\t Divorced\n Exec-managerial\t Divorced\n Exec-managerial\t Divorced\n Exec-managerial\t Divorced\n Prof-specialty\t Divorced\n Handlers-cleaners\t Divorced\n Exec-managerial\t Divorced\n Transport-moving\t Divorced\n Adm-clerical\t Divorced\n Prof-specialty\t Divorced\n Prof-specialty\t Divorced\n Transport-moving\t Divorced\n Sales\t Divorced\n Sales\t Divorced\n Handlers-cleaners\t Divorced\n Transport-moving\t Divorced\n Adm-clerical\t Divorced\n Adm-clerical\t Divorced\n Prof-specialty\t Divorced\n ?\t Divorced\n Handlers-cleaners\t Divorced\n Adm-clerical\t Divorced\n Exec-managerial\t Divorced\n ?\t Divorced\n Exec-managerial\t Divorced\n Adm-clerical\t Divorced\n Transport-moving\t Divorced\n Adm-clerical\t Divorced\n Adm-clerical\t Divorced\n Adm-clerical\t Divorced\n Other-service\t Divorced\n Adm-clerical\t Divorced\n Machine-op-inspct\t Divorced\n Sales\t Divorced\n Prof-specialty\t Divorced\n Adm-clerical\t Divorced\n Tech-support\t Divorced\n Machine-op-inspct\t Divorced\n Sales\t Divorced\n Sales\t Divorced\n Tech-support\t Divorced\n Sales\t Divorced\n Adm-clerical\t Divorced\n Other-service\t Divorced\n Transport-moving\t Divorced\n Prof-specialty\t Divorced\n Exec-managerial\t Divorced\n Other-service\t Divorced\n Machine-op-inspct\t Divorced\n Machine-op-inspct\t Divorced\n Prof-specialty\t Divorced\n ?\t Divorced\n Farming-fishing\t Divorced\n Sales\t Divorced\n Transport-moving\t Divorced\n Prof-specialty\t Divorced\n Machine-op-inspct\t Divorced\n Exec-managerial\t Divorced\n Handlers-cleaners\t Divorced\n Craft-repair\t Divorced\n Prof-specialty\t Divorced\n Sales\t Divorced\n Prof-specialty\t Divorced\n Adm-clerical\t Divorced\n Prof-specialty\t Divorced\n Prof-specialty\t Divorced\n Adm-clerical\t Divorced\n Tech-support\t Divorced\n Protective-serv\t Divorced\n Craft-repair\t Divorced\n Sales\t Divorced\n Tech-support\t Divorced\n Protective-serv\t Divorced\n\n\u003cfont color\u003dred\u003eResults are limited by 1000.\u003c/font\u003e"
       },
-      "dateCreated": "Feb 13, 2017 9:28:21 AM",
-      "dateStarted": "Mar 5, 2017 6:08:14 AM",
-      "dateFinished": "Mar 5, 2017 6:08:24 AM",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "text": "%md\nExplications :\n\nNous remarquons que la plus grosse part de divorcés concerne les diplômés d\u0027école supérieure. Ce chiffre n\u0027est pas étonnant car il s\u0027agit de l\u0027éducation suivie par le plus grand nombre d\u0027individus (33.25%).",
-      "dateUpdated": "Mar 5, 2017 6:08:12 AM",
-      "config": {
-        "colWidth": 3.0,
-        "graph": {
-          "mode": "table",
-          "height": 59.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
-        "enabled": true,
-        "editorMode": "ace/mode/markdown",
-        "editorHide": true
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "jobName": "paragraph_1487023124288_-1246680864",
-      "id": "20170213-215844_1050398938",
-      "result": {
-        "code": "SUCCESS",
-        "type": "HTML",
-        "msg": "\u003cp\u003eExplications :\u003c/p\u003e\n\u003cp\u003eNous remarquons que la plus grosse part de divorcés concernent les diplômés d\u0027école supérieure. Ce chiffre n\u0027est pas étonnant car il s\u0027agit de l\u0027éducation suivie par le plus grand nombre d\u0027individus (33.25%).\u003c/p\u003e\n"
-      },
-      "dateCreated": "Feb 13, 2017 9:58:44 AM",
-      "dateStarted": "Mar 5, 2017 6:07:52 AM",
-      "dateFinished": "Mar 5, 2017 6:07:52 AM",
+      "dateCreated": "Feb 8, 2017 7:18:21 AM",
+      "dateStarted": "Mar 11, 2017 6:09:09 PM",
+      "dateFinished": "Mar 11, 2017 6:09:09 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1166,7 +1138,7 @@
     {
       "title": "Répartition de l\u0027épargne en fonction du cursus scolaire",
       "text": "%sql SELECT education, education_num, avg(capital_gain) AS avgGain FROM dataset GROUP BY education, education_num ORDER BY education_num DESC ",
-      "dateUpdated": "Mar 5, 2017 6:09:51 AM",
+      "dateUpdated": "Mar 11, 2017 6:14:19 PM",
       "config": {
         "colWidth": 9.0,
         "graph": {
@@ -1198,7 +1170,7 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/sql",
-        "editorHide": true,
+        "editorHide": false,
         "title": true
       },
       "settings": {
@@ -1219,8 +1191,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md \nExplications :\n\nVoyons désormais comment l\u0027épargne est répartie en fonction du cursus scolaire suivi par les individus. Nous notons que ce sont les professeurs d\u0027école qui épargnent le plus !",
-      "dateUpdated": "Feb 16, 2017 5:15:36 AM",
+      "text": "%md\nExplications :\n\nGraphique intéressant.\nLes enseigants sont les individus qui capitalisent le plus.",
+      "dateUpdated": "Mar 11, 2017 6:15:27 PM",
       "config": {
         "colWidth": 3.0,
         "graph": {
@@ -1234,91 +1206,29 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/markdown",
-        "editorHide": true,
-        "tableHide": false
+        "editorHide": true
       },
       "settings": {
         "params": {},
         "forms": {}
       },
-      "jobName": "paragraph_1486581302073_-1023829082",
-      "id": "20170208-191502_1148500300",
+      "jobName": "paragraph_1489255900148_941652202",
+      "id": "20170311-181140_732751614",
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003cp\u003eExplications :\u003c/p\u003e\n\u003cp\u003eVoyons désormais comment l\u0027épargne est répartie en fonction du cursus scolaire suivi par les individus. Nous notons que ce sont les professeurs d\u0027école qui épargnent le plus !\u003c/p\u003e\n"
+        "msg": "\u003cp\u003eExplications :\u003c/p\u003e\n\u003cp\u003eGraphique intéressant.\n\u003cbr  /\u003eLes enseigants sont les individus qui capitalisent le plus.\u003c/p\u003e\n"
       },
-      "dateCreated": "Feb 8, 2017 7:15:02 AM",
-      "dateStarted": "Feb 16, 2017 5:15:35 AM",
-      "dateFinished": "Feb 16, 2017 5:15:35 AM",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "title": "Quels-sont les métiers qui engendrent le plus de séparation ?",
-      "text": "%sql SELECT occupation, count(*) FROM dataset WHERE marital_status LIKE \"%Divorced%\" OR marital_status LIKE \"%Separated%\" GROUP BY occupation",
-      "dateUpdated": "Mar 10, 2017 11:41:57 AM",
-      "config": {
-        "colWidth": 12.0,
-        "graph": {
-          "mode": "multiBarChart",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [
-            {
-              "name": "occupation",
-              "index": 0.0,
-              "aggr": "sum"
-            }
-          ],
-          "values": [
-            {
-              "name": "count(1)",
-              "index": 1.0,
-              "aggr": "sum"
-            }
-          ],
-          "groups": [],
-          "scatter": {
-            "xAxis": {
-              "name": "occupation",
-              "index": 0.0,
-              "aggr": "sum"
-            },
-            "yAxis": {
-              "name": "count(1)",
-              "index": 1.0,
-              "aggr": "sum"
-            }
-          }
-        },
-        "enabled": true,
-        "editorMode": "ace/mode/sql",
-        "editorHide": true,
-        "tableHide": false,
-        "title": true
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "jobName": "paragraph_1486581501567_2020763941",
-      "id": "20170208-191821_1247910689",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TABLE",
-        "msg": "occupation\tcount(1)\n Farming-fishing\t82\n Handlers-cleaners\t166\n Prof-specialty\t638\n Adm-clerical\t966\n Exec-managerial\t698\n Craft-repair\t567\n Sales\t527\n ?\t251\n Tech-support\t168\n Transport-moving\t218\n Protective-serv\t95\n Machine-op-inspct\t361\n Other-service\t691\n Priv-house-serv\t40\n"
-      },
-      "dateCreated": "Feb 8, 2017 7:18:21 AM",
-      "dateStarted": "Mar 10, 2017 11:41:53 AM",
-      "dateFinished": "Mar 10, 2017 11:41:56 AM",
+      "dateCreated": "Mar 11, 2017 6:11:40 PM",
+      "dateStarted": "Mar 11, 2017 6:15:26 PM",
+      "dateFinished": "Mar 11, 2017 6:15:26 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Répartition des revenus par type de relation",
-      "text": "%sql\nselect income, relationship,count(*) from dataset\ngroup by income, relationship",
-      "dateUpdated": "Mar 5, 2017 6:11:54 AM",
+      "text": "%sql\nselect income, relationship, count(*) from dataset\ngroup by income, relationship\norder by income",
+      "dateUpdated": "Mar 11, 2017 5:59:40 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1368,11 +1278,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TABLE",
-        "msg": "income\trelationship\tcount(1)\n \u003e50K\t Other-relative\t37\n \u003e50K\t Unmarried\t218\n \u003e50K\t Wife\t745\n \u003c\u003d50K\t Unmarried\t3228\n \u003e50K\t Husband\t5918\n \u003e50K\t Own-child\t67\n \u003c\u003d50K\t Other-relative\t944\n \u003c\u003d50K\t Wife\t823\n \u003c\u003d50K\t Husband\t7275\n \u003c\u003d50K\t Not-in-family\t7449\n \u003c\u003d50K\t Own-child\t5001\n \u003e50K\t Not-in-family\t856\n"
+        "msg": "income\trelationship\tcount(1)\n \u003c\u003d50K\t Unmarried\t3228\n \u003c\u003d50K\t Wife\t823\n \u003c\u003d50K\t Husband\t7275\n \u003c\u003d50K\t Not-in-family\t7449\n \u003c\u003d50K\t Own-child\t5001\n \u003c\u003d50K\t Other-relative\t944\n \u003e50K\t Other-relative\t37\n \u003e50K\t Wife\t745\n \u003e50K\t Unmarried\t218\n \u003e50K\t Husband\t5918\n \u003e50K\t Not-in-family\t856\n \u003e50K\t Own-child\t67\n"
       },
       "dateCreated": "Feb 16, 2017 5:25:36 AM",
-      "dateStarted": "Mar 5, 2017 6:11:54 AM",
-      "dateFinished": "Mar 5, 2017 6:12:05 AM",
+      "dateStarted": "Mar 11, 2017 5:59:35 PM",
+      "dateFinished": "Mar 11, 2017 5:59:37 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
