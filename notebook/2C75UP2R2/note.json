@@ -203,8 +203,8 @@
     },
     {
       "title": "Shell cell",
-      "text": "%sh\necho \"Hello world\"",
-      "dateUpdated": "Feb 1, 2017 6:51:19 AM",
+      "text": "%sh\necho \"Hello world !!\"",
+      "dateUpdated": "Feb 1, 2017 6:57:05 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -235,59 +235,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "Hello world !!\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 1, 2017 6:51:19 AM",
-      "dateFinished": "Feb 1, 2017 6:51:20 AM",
+      "dateStarted": "Feb 1, 2017 6:57:06 AM",
+      "dateFinished": "Feb 1, 2017 6:57:06 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Python cell",
-      "text": "%python\nprint(\"Hello world\")",
-      "dateUpdated": "Jan 25, 2017 8:33:22 AM",
-      "config": {
-        "enabled": true,
-        "title": true,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {},
-          "map": {
-            "baseMapType": "Streets",
-            "isOnline": true,
-            "pinCols": []
-          }
-        },
-        "editorMode": "ace/mode/python",
-        "colWidth": 4.0
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "jobName": "paragraph_1485333124516_-35055964",
-      "id": "20161205-140620_27821049",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": "Hello world\n"
-      },
-      "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:33:22 AM",
-      "dateFinished": "Jan 25, 2017 8:33:23 AM",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "title": "Spark/Scala cell",
-      "text": "println(\"Hello world\")",
-      "dateUpdated": "Jan 25, 2017 8:33:26 AM",
+      "text": "%python\nprint(\"Hello world !!\")",
+      "dateUpdated": "Feb 1, 2017 6:57:11 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -313,15 +272,57 @@
         "forms": {}
       },
       "jobName": "paragraph_1485333124516_-35055964",
+      "id": "20161205-140620_27821049",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "Hello world !!\n"
+      },
+      "dateCreated": "Jan 25, 2017 8:32:04 AM",
+      "dateStarted": "Feb 1, 2017 6:57:11 AM",
+      "dateFinished": "Feb 1, 2017 6:57:11 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Spark/Scala cell",
+      "text": "println(\"Hello world !!\")",
+      "dateUpdated": "Feb 8, 2017 7:47:33 AM",
+      "config": {
+        "enabled": true,
+        "title": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {},
+          "map": {
+            "baseMapType": "Streets",
+            "isOnline": true,
+            "pinCols": []
+          }
+        },
+        "editorMode": "ace/mode/scala",
+        "colWidth": 4.0,
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1485333124516_-35055964",
       "id": "20161205-140627_1063236175",
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "Hello world !!\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:33:26 AM",
-      "dateFinished": "Jan 25, 2017 8:33:59 AM",
+      "dateStarted": "Feb 1, 2017 6:57:16 AM",
+      "dateFinished": "Feb 1, 2017 6:57:31 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -405,8 +406,8 @@
     },
     {
       "title": "Some arithmetic",
-      "text": "8 * 5 + 2",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "text": "8 * 5 + 2 * 5",
+      "dateUpdated": "Feb 1, 2017 6:58:11 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -431,17 +432,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "res2: Int \u003d 42\n"
+        "msg": "\nres2: Int \u003d 50\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 1, 2017 6:58:11 AM",
+      "dateFinished": "Feb 1, 2017 6:58:12 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Declaring variables",
-      "text": "val a \u003d 3 // val defines an immutable value\nvar b : Int \u003d 5 // var defines a mutable variable\nprintln(a + b)\n\nb \u003d 42\nprintln(a + b)\n\n// Note that the type of a variable or function is written after the variable or function. \n\n// Because Scala does type inference, it is also not necessary to declare type to variables when it looks obvious.",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "text": "val a \u003d 3 // val defines an immutable value\nvar b : Int \u003d 10 // var defines a mutable variable\nprintln(a + b)\n\nb \u003d 42\nprintln(a + b)\n\n// Note that the type of a variable or function is written after the variable or function. \n\n// Because Scala does type inference, it is also not necessary to declare type to variables when it looks obvious.",
+      "dateUpdated": "Feb 1, 2017 6:59:25 AM",
       "config": {
         "enabled": true,
         "tableHide": true,
@@ -468,17 +470,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "a: Int \u003d 3\nb: Int \u003d 5\n8\nb: Int \u003d 42\n45\n"
+        "msg": "\na: Int \u003d 3\n\nb: Int \u003d 10\n13\n\nb: Int \u003d 42\n45\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 1, 2017 6:59:25 AM",
+      "dateFinished": "Feb 1, 2017 6:59:27 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Reusing a variable",
       "text": "// variables are accessible accross cells\n\na * b",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "dateUpdated": "Feb 1, 2017 6:59:11 AM",
       "config": {
         "enabled": true,
         "title": true,
@@ -503,11 +506,12 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "res13: Int \u003d 15\n"
+        "msg": "\nres17: Int \u003d 126\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 1, 2017 6:59:12 AM",
+      "dateFinished": "Feb 1, 2017 6:59:12 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -586,7 +590,7 @@
     {
       "title": "New list with all elements doubled",
       "text": "sequenceNumbers.map(x \u003d\u003e x * 2)\n\nsequenceNumbers.map(_ * 2)",
-      "dateUpdated": "Jan 25, 2017 8:34:39 AM",
+      "dateUpdated": "Feb 1, 2017 6:59:49 AM",
       "config": {
         "enabled": true,
         "tableHide": true,
@@ -611,13 +615,14 @@
       "jobName": "paragraph_1485333124525_-38518704",
       "id": "20161215-104825_1497989654",
       "result": {
-        "code": "SUCCESS",
+        "code": "ERROR",
         "type": "TEXT",
-        "msg": "res40: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100, 102, 104, 106, 108, 110, 112, 114, 116, 118, 120, 122, 124, 126, 128, 130, 132, 134, 136, 138, 140, 142, 144, 146, 148, 150, 152, 154, 156, 158, 160, 162, 164, 166, 168, 170, 172, 174, 176, 178, 180, 182, 184, 186, 188, 190, 192, 194, 196, 198, 200)\nres41: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100, 102, 104, 106, 108, 110, 112, 114, 116, 118, 120, 122, 124, 126, 128, 130, 132, 134, 136, 138, 140, 142, 144, 146, 148, 150, 152, 154, 156, 158, 160, 162, 164, 166, 168, 170, 172, 174, 176, 178, 180, 182, 184, 186, 188, 190, 192, 194, 196, 198, 200)\n"
+        "msg": "\n\n\n\u003cconsole\u003e:26: error: not found: value sequenceNumbers\n       sequenceNumbers.map(x \u003d\u003e x * 2)\n       ^\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 1, 2017 6:59:49 AM",
+      "dateFinished": "Feb 1, 2017 6:59:49 AM",
+      "status": "ERROR",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -1007,8 +1012,8 @@
     },
     {
       "title": "Return the list of squared numbers from 1 to 5",
-      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.map(x \u003d\u003e x)\n\nval expected \u003d List(1, 4, 9, 16, 25) ",
-      "dateUpdated": "Jan 25, 2017 9:03:16 AM",
+      "text": "val input \u003d List(1, 2, 3, 4, 5)\n\ndef pow2(x: Int): Int \u003d x*x\n\nval output \u003d input.map(pow2)\n\nval expected \u003d List(1, 4, 9, 16, 25) ",
+      "dateUpdated": "Mar 10, 2017 9:48:20 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1033,18 +1038,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\nexpected: List[Int] \u003d List(1, 4, 9, 16, 25)\n"
+        "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\npow2: (x: Int)Int\n\noutput: List[Int] \u003d List(1, 4, 9, 16, 25)\n\nexpected: List[Int] \u003d List(1, 4, 9, 16, 25)\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:13 AM",
-      "dateStarted": "Jan 25, 2017 9:03:16 AM",
-      "dateFinished": "Jan 25, 2017 9:03:17 AM",
+      "dateStarted": "Mar 10, 2017 9:48:20 PM",
+      "dateFinished": "Mar 10, 2017 9:48:22 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Return the sum of elements from 1 to 5",
-      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.reduce((x, y) \u003d\u003e x)\n\nval expected \u003d 15",
-      "dateUpdated": "Jan 25, 2017 9:23:28 AM",
+      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.reduce((x, y) \u003d\u003e x+y)\n\nval expected \u003d 15",
+      "dateUpdated": "Feb 1, 2017 7:11:58 AM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1069,18 +1074,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: Int \u003d 1\n\nexpected: Int \u003d 15\n"
+        "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: Int \u003d 15\n\nexpected: Int \u003d 15\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:20 AM",
-      "dateStarted": "Jan 25, 2017 9:23:28 AM",
-      "dateFinished": "Jan 25, 2017 9:23:29 AM",
+      "dateStarted": "Feb 1, 2017 7:11:58 AM",
+      "dateFinished": "Feb 1, 2017 7:11:59 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Return the sum of squared pair numbers between 1 and 100",
-      "text": "val input \u003d 1 to 100\nval output \u003d input.reduce((x, y) \u003d\u003e x)\n\nval expected \u003d 171700",
-      "dateUpdated": "Feb 1, 2017 9:13:45 AM",
+      "text": "val input \u003d 1 to 100\n// Ici on filtre les valeurs impaires (celles dont le modulo 2 n\u0027est pas 0)\nval filteredinput \u003d input.filter(_ % 2 \u003d\u003d 0)\n\n// La méthode propre\nval output \u003d filteredinput.map(x \u003d\u003e x * x).reduce((x, y) \u003d\u003e x + y)\n\n//-------------------------------------------\n// Du code qui m\u0027a permis de comprendre comment ça marche :-P\n// Ce n\u0027est pas propre mais j\u0027ai laissé...\ndef func(x: Int, y: Int): Int \u003d {\n  // le premier doit être mis au carré, pas les autres\n  if (filteredinput.indexOf(x) \u003d\u003d 0 )\n     return (x*x) + (y*y)  \n  return x + (y*y)  \n}\nval outputV1 \u003d filteredinput.reduce((x, y) \u003d\u003e func(x,y))\n\n// Une autre façon avec la fonction fold\ndef funcV2(z: Int, i: Int): Int \u003d {\n  if (z \u003d\u003d 0) \n    return i * i\n  return z + i*i\n} \nval outputV2 \u003d filteredinput.fold(0) ((z, i) \u003d\u003e funcV2(z, i))\n//-------------------------------------------\n\nval expected \u003d 171700",
+      "dateUpdated": "Mar 10, 2017 9:48:34 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1105,18 +1110,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ninput: scala.collection.immutable.Range.Inclusive \u003d Range(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100)\n\noutput: Int \u003d 1\n\nexpected: Int \u003d 171700\n"
+        "msg": "\ninput: scala.collection.immutable.Range.Inclusive \u003d Range(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100)\n\nfilteredinput: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100)\n\noutput: Int \u003d 171700\n\nfunc: (x: Int, y: Int)Int\n\noutputV1: Int \u003d 171700\n\nfuncV2: (z: Int, i: Int)Int\n\noutputV2: Int \u003d 171700\n\nexpected: Int \u003d 171700\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:27 AM",
-      "dateStarted": "Feb 1, 2017 9:13:46 AM",
-      "dateFinished": "Feb 1, 2017 9:13:48 AM",
+      "dateStarted": "Mar 10, 2017 9:48:34 PM",
+      "dateFinished": "Mar 10, 2017 9:48:38 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Get highest number in a list with a reduce",
-      "text": "import util.Random.nextInt\nval input \u003d Seq.fill(10)(nextInt)\nval output \u003d input.reduce((x, y) \u003d\u003e x)\n\nval expected \u003d input.max",
-      "dateUpdated": "Jan 25, 2017 12:49:26 PM",
+      "text": "import util.Random.nextInt\nval input \u003d Seq.fill(10)(nextInt)\n\n// A chaque appel, on regarde si le nombre précédent (x) est plus grand que celui d\u0027après (y). \ndef func(x: Int, y: Int): Int \u003d {\n  if( x \u003e y) \n     return x\n  return y\n} \n\nval output \u003d input.reduce((x, y) \u003d\u003e func(x, y))\n\nval expected \u003d input.max",
+      "dateUpdated": "Mar 10, 2017 9:48:59 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1143,11 +1148,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nimport util.Random.nextInt\n\ninput: Seq[Int] \u003d List(1368154480, 932727527, -956762629, -741728139, 1912445161, 1215347429, 1054732247, -811870848, 762475751, 1567410629)\n\noutput: Int \u003d 1368154480\n\nexpected: Int \u003d 1912445161\n"
+        "msg": "\nimport util.Random.nextInt\n\ninput: Seq[Int] \u003d List(-430128789, 906428946, 1295688940, -1584364885, -964119528, -946919789, -1024996558, 1404435974, -1835260204, 1372617270)\n\nfunc: (x: Int, y: Int)Int\n\noutput: Int \u003d 1404435974\n\nexpected: Int \u003d 1404435974\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:32 AM",
-      "dateStarted": "Jan 25, 2017 12:49:26 PM",
-      "dateFinished": "Jan 25, 2017 12:49:29 PM",
+      "dateStarted": "Mar 10, 2017 9:48:59 PM",
+      "dateFinished": "Mar 10, 2017 9:49:02 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1223,7 +1228,7 @@
     },
     {
       "text": "// A SparkContext is already created for you by Zeppelin.\r\n// Do not create another or unspecified behavior may occur.\r\nsc.version\r\n\r\n// create an RDD from a local collection with parallelize and then sum all numbers in rdd.\r\nsc.parallelize(1 to 100000000).map(x \u003d\u003e x^2).reduce((x,y) \u003d\u003e x + y)",
-      "dateUpdated": "Feb 1, 2017 10:35:06 AM",
+      "dateUpdated": "Mar 10, 2017 9:49:08 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1248,11 +1253,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nres119: String \u003d 2.0.2\n\nres120: Int \u003d 987459712\n"
+        "msg": "\nres43: String \u003d 2.0.2\n\nres44: Int \u003d 987459712\n"
       },
       "dateCreated": "Jan 25, 2017 9:32:07 AM",
-      "dateStarted": "Feb 1, 2017 10:35:07 AM",
-      "dateFinished": "Feb 1, 2017 10:35:17 AM",
+      "dateStarted": "Mar 10, 2017 9:49:08 PM",
+      "dateFinished": "Mar 10, 2017 9:49:15 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1293,8 +1298,8 @@
     },
     {
       "title": "Calculate the number of unique words in the \"words\" RDD here.",
-      "text": "val words \u003d sc.parallelize(Array(\"hello\", \"world\", \"goodbye\", \"hello\", \"again\"))\n\nval expected \u003d 4",
-      "dateUpdated": "Feb 1, 2017 9:14:16 AM",
+      "text": "val words \u003d sc.parallelize(Array(\"hello\", \"world\", \"goodbye\", \"hello\", \"again\"))\n\n// On associe chaque mot avec la valeur \"1\"\n// On réduit par clé (ce qui supprime les mots en doublons) et on compte.\nval output \u003d words.map(w \u003d\u003e (w, 1)).reduceByKey(_ + _).collect().length\n\nval expected \u003d 4",
+      "dateUpdated": "Mar 10, 2017 9:49:20 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1319,18 +1324,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nwords: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[8] at parallelize at \u003cconsole\u003e:27\n\nexpected: Int \u003d 4\n"
+        "msg": "\nwords: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[1232] at parallelize at \u003cconsole\u003e:71\n\noutput: Int \u003d 4\n\nexpected: Int \u003d 4\n"
       },
       "dateCreated": "Jan 25, 2017 9:34:16 AM",
-      "dateStarted": "Feb 1, 2017 9:14:16 AM",
-      "dateFinished": "Feb 1, 2017 9:14:17 AM",
+      "dateStarted": "Mar 10, 2017 9:49:20 PM",
+      "dateFinished": "Mar 10, 2017 9:49:22 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Create a random RDD of numbers, and find its mean.",
-      "text": "import util.Random.nextInt\nval input \u003d sc.parallelize(Seq.fill(10000)(nextInt))",
-      "dateUpdated": "Jan 25, 2017 1:41:43 AM",
+      "text": "import util.Random.nextInt\nval input \u003d sc.parallelize(Seq.fill(10000)(nextInt))\n\n// Tout simplement\nval output \u003d input.mean()\n",
+      "dateUpdated": "Mar 10, 2017 9:49:25 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1344,7 +1349,8 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "title": true
+        "title": true,
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -1352,13 +1358,20 @@
       },
       "jobName": "paragraph_1485336877601_1857515653",
       "id": "20170125-093437_413700163",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nimport util.Random.nextInt\n\ninput: org.apache.spark.rdd.RDD[Int] \u003d ParallelCollectionRDD[1235] at parallelize at \u003cconsole\u003e:73\n\noutput: Double \u003d 1.5535356756999966E7\n"
+      },
       "dateCreated": "Jan 25, 2017 9:34:37 AM",
-      "status": "READY",
+      "dateStarted": "Mar 10, 2017 9:49:25 PM",
+      "dateFinished": "Mar 10, 2017 9:49:28 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n#### Key value pairs\n\nWhen doing Hadoop MapReduce, you are used to working with key-value pairs. \n\nIn Scala, we use tuples to manage multiple data altogether.\n\n```scala\nval t \u003d (1, \"hello\", Console)\n```\n\nIt is possible to access elements in a tuple :\n\n```scala\nval t \u003d (4,3,2,1)\nval sum \u003d t._1 + t._2 + t._3 + t._4\n```\n\nNow remember the reduce example, which takes 2 elements organized as tuples :\n\n```scala\n(1 to 1000).reduce((x,y) \u003d\u003e x+y)\n```\n\nYou can deconstruct the tuple inside the anonymous function, it makes it easier to reason around them. This can make for some convoluted one liners.\n\n```scala\n(1 to 1000)\n    .map(x \u003d\u003e (x, 2*x, 3*x))\n    .reduce{case ((x1, doubleX1, tripleX1), (x2, doubleX2, tripleX2)) \u003d\u003e (x1 + x2, doubleX1 * doubleX2, tripleX1 - tripleX2)}\n```\n\n\u003chr/\u003e\n\nIn Spark, a RDD of tuples of 2 elements is considered a key-value RDD. This gives us access to [a new class of functions](https://spark.apache.org/docs/latest/programming-guide.html#working-with-key-value-pairs).\n\nFor example, the following code uses the reduceByKey operation on key-value pairs to count how many times each line of text occurs in a file. It acts like executing reduce on the array of values under the same key.\n\n```scala\nval lines \u003d sc.textFile(\"data.txt\")\nval pairs \u003d lines.map(s \u003d\u003e (s, 1))\nval counts \u003d pairs.reduceByKey((a, b) \u003d\u003e a + b)\n```\n\n\u003chr/\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nTry to solve the following cells.",
-      "dateUpdated": "Jan 25, 2017 1:46:25 AM",
+      "dateUpdated": "Feb 12, 2017 10:16:40 AM",
       "config": {
         "enabled": true,
         "graph": {
@@ -1398,10 +1411,10 @@
     },
     {
       "title": "Wordcount, easy mode",
-      "text": "val input \u003d sc.parallelize(Seq(\"hi\", \"my\", \"my\", \"name\", \"is\",\"hi\"))\nval output \u003d input\n\nval expected \u003d Array((\"is\",1), (\"my,2\"), (\"name\",1), (\"hi\",2))",
-      "dateUpdated": "Feb 1, 2017 10:36:22 AM",
+      "text": "val input \u003d sc.parallelize(Seq(\"hi\", \"my\", \"my\", \"name\", \"is\",\"hi\"))\nval output \u003d input.map(s \u003d\u003e (s, 1)).reduceByKey((a, b) \u003d\u003e a + b).collect()\n\nval expected \u003d Array((\"is\",1), (\"my,2\"), (\"name\",1), (\"hi\",2))",
+      "dateUpdated": "Mar 10, 2017 9:49:32 PM",
       "config": {
-        "colWidth": 12.0,
+        "colWidth": 9.0,
         "graph": {
           "mode": "table",
           "height": 300.0,
@@ -1425,18 +1438,53 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ninput: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[152] at parallelize at \u003cconsole\u003e:41\n\noutput: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[152] at parallelize at \u003cconsole\u003e:41\n\nexpected: Array[java.io.Serializable] \u003d Array((is,1), my,2, (name,1), (hi,2))\n"
+        "msg": "\ninput: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[1238] at parallelize at \u003cconsole\u003e:73\n\noutput: Array[(String, Int)] \u003d Array((is,1), (my,2), (name,1), (hi,2))\n\nexpected: Array[java.io.Serializable] \u003d Array((is,1), my,2, (name,1), (hi,2))\n"
       },
       "dateCreated": "Jan 25, 2017 9:58:36 AM",
-      "dateStarted": "Feb 1, 2017 10:36:20 AM",
-      "dateFinished": "Feb 1, 2017 10:36:21 AM",
+      "dateStarted": "Mar 10, 2017 9:49:32 PM",
+      "dateFinished": "Mar 10, 2017 9:49:34 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\nEXPLICATIONS :\n\nNous utilisons ici les fonctions map et reduceByKey qui agit sur les paires clé/valeur.\nLa partie map associe la valeur 1 à chaque mot (clé \u003d mot, valeur \u003d 1).\nLa fonction reduceByKey regroupe les paires par clés, donc par mot, et additionne les valeurs (les \"1\"). Il y a autant d\u0027addition de valeur \"1\" que de clés identiques, les mots sont ainsi comptés.",
+      "dateUpdated": "Mar 10, 2017 9:49:47 PM",
+      "config": {
+        "colWidth": 3.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1486937779764_-136586780",
+      "id": "20170212-221619_329745072",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eEXPLICATIONS :\u003c/p\u003e\n\u003cp\u003eNous utilisons ici les fonctions map et reduceByKey qui agit sur les paires clé/valeur.\n\u003cbr  /\u003eLa partie map associe la valeur 1 à chaque mot (clé \u003d mot, valeur \u003d 1).\n\u003cbr  /\u003eLa fonction reduceByKey regroupe les paires par clés, donc par mot, et additionne les valeurs (les \u0026ldquo;1\u0026rdquo;). Il y a autant d\u0027addition de valeur \u0026ldquo;1\u0026rdquo; que de clés identiques, les mots sont ainsi comptés.\u003c/p\u003e\n"
+      },
+      "dateCreated": "Feb 12, 2017 10:16:19 AM",
+      "dateStarted": "Feb 12, 2017 10:21:10 AM",
+      "dateFinished": "Feb 12, 2017 10:21:10 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Sum ages per gender",
-      "text": "val rdd1 \u003d sc.parallelize(Seq((\"Patrick\", \"homme\"), (\"Sandra\", \"femme\"), (\"Faniki\", \"homme\"), (\"Noemie\", \"femme\"), (\"Francois\", \"homme\"), (\"Cassandre\", \"femme\")))\nval rdd2 \u003d sc.parallelize(Seq((\"Patrick\", 20), (\"Sandra\", 25), (\"Faniki\", 20), (\"Noemie\", 20), (\"Francois\", 30), (\"Cassandre\", 18)))\n\n// rdd1 and rdd2 are key-value rdds so you can join them and then continue the computation\nval output \u003d rdd1.join(rdd2)\n\nval expected \u003d Array((\"femme\", 63), (\"homme\", 70))",
-      "dateUpdated": "Feb 1, 2017 10:15:26 AM",
+      "text": "val rdd1 \u003d sc.parallelize(Seq((\"Patrick\", \"homme\"), (\"Sandra\", \"femme\"), (\"Faniki\", \"homme\"), (\"Noemie\", \"femme\"), (\"Francois\", \"homme\"), (\"Cassandre\", \"femme\")))\nval rdd2 \u003d sc.parallelize(Seq((\"Patrick\", 20), (\"Sandra\", 25), (\"Faniki\", 20), (\"Noemie\", 20), (\"Francois\", 30), (\"Cassandre\", 18)))\n\n// Notre imput ici est un tuple de tuple.\n// Il est possible d\u0027accéder à une valeur via son index.\n// La jointure de rdd1 \u0026 rdd2 nous donne (\"Patrick\", (\"homme\", 20)), (\"Sandra\", (\"femme\", 25)), etc ...\nval output \u003d rdd1.join(rdd2).map(seq \u003d\u003e (seq._2._1, seq._2._2)).reduceByKey((a, b) \u003d\u003e a + b).collect()\n\nval expected \u003d Array((\"femme\", 63), (\"homme\", 70))",
+      "dateUpdated": "Mar 10, 2017 9:50:02 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1461,11 +1509,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nrdd1: org.apache.spark.rdd.RDD[(String, String)] \u003d ParallelCollectionRDD[131] at parallelize at \u003cconsole\u003e:41\n\nrdd2: org.apache.spark.rdd.RDD[(String, Int)] \u003d ParallelCollectionRDD[132] at parallelize at \u003cconsole\u003e:41\n\noutput: org.apache.spark.rdd.RDD[(String, (String, Int))] \u003d MapPartitionsRDD[135] at join at \u003cconsole\u003e:45\n\nexpected: Array[(String, Int)] \u003d Array((femme,63), (homme,70))\n"
+        "msg": "\nrdd1: org.apache.spark.rdd.RDD[(String, String)] \u003d ParallelCollectionRDD[1241] at parallelize at \u003cconsole\u003e:73\n\nrdd2: org.apache.spark.rdd.RDD[(String, Int)] \u003d ParallelCollectionRDD[1242] at parallelize at \u003cconsole\u003e:73\n\noutput: Array[(String, Int)] \u003d Array((femme,63), (homme,70))\n\nexpected: Array[(String, Int)] \u003d Array((femme,63), (homme,70))\n"
       },
       "dateCreated": "Jan 25, 2017 1:04:11 AM",
-      "dateStarted": "Feb 1, 2017 10:15:26 AM",
-      "dateFinished": "Feb 1, 2017 10:15:29 AM",
+      "dateStarted": "Mar 10, 2017 9:50:02 PM",
+      "dateFinished": "Mar 10, 2017 9:50:05 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1506,7 +1554,7 @@
     },
     {
       "text": "// load file into RDD and check 10 first lines\n\nval text \u003d sc.textFile(\"/opt/dataset/don-quijote.txt.gz\")\ntext.take(3)",
-      "dateUpdated": "Feb 1, 2017 6:57:16 AM",
+      "dateUpdated": "Mar 10, 2017 9:50:11 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1530,17 +1578,17 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ntext: org.apache.spark.rdd.RDD[String] \u003d /opt/dataset/don-quijote.txt.gz MapPartitionsRDD[1] at textFile at \u003cconsole\u003e:31\n\nres4: Array[String] \u003d Array(The Project Gutenberg EBook of Don Quijote, by Miguel de Cervantes Saavedra, \"\", This eBook is for the use of anyone anywhere at no cost and with)\n"
+        "msg": "\ntext: org.apache.spark.rdd.RDD[String] \u003d /opt/dataset/don-quijote.txt.gz MapPartitionsRDD[1249] at textFile at \u003cconsole\u003e:75\n\nres51: Array[String] \u003d Array(The Project Gutenberg EBook of Don Quijote, by Miguel de Cervantes Saavedra, \"\", This eBook is for the use of anyone anywhere at no cost and with)\n"
       },
       "dateCreated": "Jan 25, 2017 1:49:31 AM",
-      "dateStarted": "Feb 1, 2017 6:57:16 AM",
-      "dateFinished": "Feb 1, 2017 6:57:18 AM",
+      "dateStarted": "Mar 10, 2017 9:50:12 PM",
+      "dateFinished": "Mar 10, 2017 9:50:13 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "// write your Spark map-reduce code here\n\ntext.doSomething",
-      "dateUpdated": "Feb 1, 2017 6:57:25 AM",
+      "text": "// write your Spark map-reduce code here\n\n// Nous utilisons flatMap pour obtenir la liste de tous les mots et les compter facilement\ntext.flatMap(line \u003d\u003e line.split(\" \")).map(s \u003d\u003e (s, 1)).reduceByKey((a, b) \u003d\u003e a + b).collect()",
+      "dateUpdated": "Mar 10, 2017 9:50:21 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1562,14 +1610,14 @@
       "jobName": "paragraph_1485352420257_-878908678",
       "id": "20170125-135340_1546349786",
       "result": {
-        "code": "ERROR",
+        "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\n\n\n\u003cconsole\u003e:33: error: value doSomething is not a member of org.apache.spark.rdd.RDD[String]\n              text.doSomething\n                   ^\n"
+        "msg": "res54: Array[(String, Int)] \u003d Array((agradable,,1), (derecho.,1), (vecindad,1), (invierno,6), (deshonrar,3), (-...yo,1), (imperiosos,1), (Púsole,1), (redondez,5), (amigos:,1), (alcanzado;,1), (duque-;,1), (admitiere;,1), (escuchaban,1), (vistosa,3), (averiguación,,1), (amasa,,1), (implicaría,1), (averiguarse,1), (tormento,2), (soltarlos,1), (reía,,1), (enfado,2), (enarcando,1), (negro.,2), (todo?,2), (pobres:,1), (aconsejóle,1), (amén.,3), (catedrático;,1), (trocada,2), (acíbar;,1), (Regostóse,1), (busque,3), (relieves,2), (cuecen,1), (Reiteráronse,1), (descubriera,1), (olvido;,2), (podrida,,1), (librea?,1), (careciere,1), (ricos,,3), (dispusición,1), (peleado.,1), (llamáis,,1), (combatir,1), (different,1), (daré\"?,1), (hablan,,1), (estremecido,,1), (Hiciéronse,2), (través,8), (pidiere,..."
       },
       "dateCreated": "Jan 25, 2017 1:53:40 AM",
-      "dateStarted": "Jan 25, 2017 1:54:09 AM",
-      "dateFinished": "Jan 25, 2017 1:54:09 AM",
-      "status": "ERROR",
+      "dateStarted": "Mar 10, 2017 9:50:21 PM",
+      "dateFinished": "Mar 10, 2017 9:50:24 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -1609,7 +1657,7 @@
     },
     {
       "text": "// let\u0027s check the file we are going to use\nval ipligence \u003d sc.textFile(\"/opt/dataset/ipligence-lite.csv\")\nipligence.take(1)",
-      "dateUpdated": "Feb 1, 2017 9:17:21 AM",
+      "dateUpdated": "Feb 12, 2017 10:47:46 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1633,17 +1681,17 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nipligence: org.apache.spark.rdd.RDD[String] \u003d /opt/dataset/ipligence-lite.csv MapPartitionsRDD[19] at textFile at \u003cconsole\u003e:28\n\nres14: Array[String] \u003d Array(\"0000000000\",\"0016777215\",\"\",\"\",\"\",\"\")\n"
+        "msg": "\nipligence: org.apache.spark.rdd.RDD[String] \u003d /opt/dataset/ipligence-lite.csv MapPartitionsRDD[71] at textFile at \u003cconsole\u003e:37\n\nres49: Array[String] \u003d Array(\"0000000000\",\"0016777215\",\"\",\"\",\"\",\"\")\n"
       },
       "dateCreated": "Feb 1, 2017 6:59:22 AM",
-      "dateStarted": "Feb 1, 2017 9:17:21 AM",
-      "dateFinished": "Feb 1, 2017 9:17:22 AM",
+      "dateStarted": "Feb 12, 2017 10:47:46 AM",
+      "dateFinished": "Feb 12, 2017 10:47:47 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "// create your dataframe by reading the csv file\nval columnNames \u003d Seq(\"IP_FROM\", \"IP_TO\", \"COUNTRY_CODE\", \"COUNTRY_NAME\", \"CONTINENT_CODE\", \"CONTINENT_NAME\")\nval df \u003d sqlContext.read.csv(\"/opt/dataset/ipligence-lite.csv\").toDF(columnNames: _*)\ndf.printSchema()\ndf.show()\n\n// if you want to use the dataframe in SQL, you must register it\ndf.registerTempTable(\"df\")",
-      "dateUpdated": "Feb 1, 2017 10:10:32 AM",
+      "dateUpdated": "Feb 12, 2017 10:57:00 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1670,8 +1718,8 @@
         "msg": "\ncolumnNames: Seq[String] \u003d List(IP_FROM, IP_TO, COUNTRY_CODE, COUNTRY_NAME, CONTINENT_CODE, CONTINENT_NAME)\n\ndf: org.apache.spark.sql.DataFrame \u003d [IP_FROM: string, IP_TO: string ... 4 more fields]\nroot\n |-- IP_FROM: string (nullable \u003d true)\n |-- IP_TO: string (nullable \u003d true)\n |-- COUNTRY_CODE: string (nullable \u003d true)\n |-- COUNTRY_NAME: string (nullable \u003d true)\n |-- CONTINENT_CODE: string (nullable \u003d true)\n |-- CONTINENT_NAME: string (nullable \u003d true)\n\n+----------+----------+------------+------------+--------------+--------------+\n|   IP_FROM|     IP_TO|COUNTRY_CODE|COUNTRY_NAME|CONTINENT_CODE|CONTINENT_NAME|\n+----------+----------+------------+------------+--------------+--------------+\n|0000000000|0016777215|        null|        null|          null|          null|\n|0016777216|0016777471|          AU|   AUSTRALIA|            OC|       OCEANIA|\n|0016777472|0016778239|          CN|       CHINA|            AS|          ASIA|\n|0016778240|0016779263|          AU|   AUSTRALIA|            OC|       OCEANIA|\n|0016779264|0016781311|          CN|       CHINA|            AS|          ASIA|\n|0016781312|0016785407|          JP|       JAPAN|            AS|          ASIA|\n|0016785408|0016793599|          CN|       CHINA|            AS|          ASIA|\n|0016793600|0016809983|          JP|       JAPAN|            AS|          ASIA|\n|0016809984|0016842751|          TH|    THAILAND|            AS|          ASIA|\n|0016842752|0016843007|          CN|       CHINA|            AS|          ASIA|\n|0016843008|0016843263|          AU|   AUSTRALIA|            OC|       OCEANIA|\n|0016843264|0016859135|          CN|       CHINA|            AS|          ASIA|\n|0016859136|0016875519|          JP|       JAPAN|            AS|          ASIA|\n|0016875520|0016908287|          TH|    THAILAND|            AS|          ASIA|\n|0016908288|0016909055|          CN|       CHINA|            AS|          ASIA|\n|0016909056|0016909311|          AU|   AUSTRALIA|            OC|       OCEANIA|\n|0016909312|0016941055|          CN|       CHINA|            AS|          ASIA|\n|0016941056|0016973823|          TH|    THAILAND|            AS|          ASIA|\n|0016973824|0017039359|          CN|       CHINA|            AS|          ASIA|\n|0017039360|0017039615|          AU|   AUSTRALIA|            OC|       OCEANIA|\n+----------+----------+------------+------------+--------------+--------------+\nonly showing top 20 rows\n\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n"
       },
       "dateCreated": "Feb 1, 2017 7:16:17 AM",
-      "dateStarted": "Feb 1, 2017 10:10:32 AM",
-      "dateFinished": "Feb 1, 2017 10:10:34 AM",
+      "dateStarted": "Feb 12, 2017 10:57:00 AM",
+      "dateFinished": "Feb 12, 2017 10:57:02 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1712,7 +1760,7 @@
     },
     {
       "text": "sqlContext.sql(\"SELECT IP_TO FROM df\").show(5)",
-      "dateUpdated": "Feb 1, 2017 9:42:54 AM",
+      "dateUpdated": "Feb 12, 2017 10:47:53 AM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1739,14 +1787,14 @@
         "msg": "+----------+\n|     IP_TO|\n+----------+\n|0016777215|\n|0016777471|\n|0016778239|\n|0016779263|\n|0016781311|\n+----------+\nonly showing top 5 rows\n\n"
       },
       "dateCreated": "Feb 1, 2017 9:21:37 AM",
-      "dateStarted": "Feb 1, 2017 9:42:54 AM",
-      "dateFinished": "Feb 1, 2017 9:42:55 AM",
+      "dateStarted": "Feb 12, 2017 10:47:53 AM",
+      "dateFinished": "Feb 12, 2017 10:47:54 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "df.select(\"IP_TO\").show(5)",
-      "dateUpdated": "Feb 1, 2017 9:43:02 AM",
+      "dateUpdated": "Feb 12, 2017 10:47:56 AM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1773,8 +1821,8 @@
         "msg": "+----------+\n|     IP_TO|\n+----------+\n|0016777215|\n|0016777471|\n|0016778239|\n|0016779263|\n|0016781311|\n+----------+\nonly showing top 5 rows\n\n"
       },
       "dateCreated": "Feb 1, 2017 9:21:42 AM",
-      "dateStarted": "Feb 1, 2017 9:43:02 AM",
-      "dateFinished": "Feb 1, 2017 9:43:03 AM",
+      "dateStarted": "Feb 12, 2017 10:47:56 AM",
+      "dateFinished": "Feb 12, 2017 10:47:57 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1815,8 +1863,8 @@
     },
     {
       "title": "Display all continent names",
-      "text": "",
-      "dateUpdated": "Feb 1, 2017 9:50:17 AM",
+      "text": "// A l\u0027instinct, j\u0027ai tenté la méthode distinct, Bingo\n// Les doublons sont éliminés ici.\ndf.select(\"COUNTRY_NAME\").distinct().show()\n\n// ou\n\nsqlContext.sql(\"SELECT DISTINCT COUNTRY_NAME FROM df\").show()",
+      "dateUpdated": "Feb 12, 2017 10:55:53 AM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1841,18 +1889,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": ""
+        "msg": "+--------------------+\n|        COUNTRY_NAME|\n+--------------------+\n|             ARMENIA|\n|             BAHAMAS|\n|        SOUTH AFRICA|\n|UNITED STATES MIN...|\n|            CAMBODIA|\n|               JAPAN|\n|          BANGLADESH|\n|              UGANDA|\n|SOUTH GEORGIA AND...|\n|          CAPE VERDE|\n|NORTHERN MARIANA ...|\n|          MAURITANIA|\n|        SAINT MARTIN|\n|            MALDIVES|\n|SAO TOME AND PRIN...|\n|              JORDAN|\n|             MAYOTTE|\n|  RUSSIAN FEDERATION|\n|             LESOTHO|\n|IRAN, ISLAMIC REP...|\n+--------------------+\nonly showing top 20 rows\n\n+--------------------+\n|        COUNTRY_NAME|\n+--------------------+\n|             ARMENIA|\n|             BAHAMAS|\n|        SOUTH AFRICA|\n|UNITED STATES MIN...|\n|            CAMBODIA|\n|               JAPAN|\n|          BANGLADESH|\n|              UGANDA|\n|SOUTH GEORGIA AND...|\n|          CAPE VERDE|\n|NORTHERN MARIANA ...|\n|          MAURITANIA|\n|        SAINT MARTIN|\n|            MALDIVES|\n|SAO TOME AND PRIN...|\n|              JORDAN|\n|             MAYOTTE|\n|  RUSSIAN FEDERATION|\n|             LESOTHO|\n|IRAN, ISLAMIC REP...|\n+--------------------+\nonly showing top 20 rows\n\n"
       },
       "dateCreated": "Feb 1, 2017 9:48:15 AM",
-      "dateStarted": "Feb 1, 2017 9:50:18 AM",
-      "dateFinished": "Feb 1, 2017 9:50:18 AM",
+      "dateStarted": "Feb 12, 2017 10:55:53 AM",
+      "dateFinished": "Feb 12, 2017 10:55:56 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Count number of rows with a null value in country code",
-      "text": "// Don\u0027t forget you have the count function on a Dataframe after you have filtered it",
-      "dateUpdated": "Feb 1, 2017 10:05:56 AM",
+      "text": "// Don\u0027t forget you have the count function on a Dataframe after you have filtered it\n\ndf.filter(\"COUNTRY_NAME is null\").count()\n\n// ou\n\nsqlContext.sql(\"SELECT COUNT(*) FROM df WHERE COUNTRY_NAME IS NULL\").show()",
+      "dateUpdated": "Feb 12, 2017 10:55:13 AM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1877,18 +1925,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": ""
+        "msg": "\nres81: Long \u003d 4997\n+--------+\n|count(1)|\n+--------+\n|    4997|\n+--------+\n\n"
       },
       "dateCreated": "Feb 1, 2017 9:48:23 AM",
-      "dateStarted": "Feb 1, 2017 10:05:57 AM",
-      "dateFinished": "Feb 1, 2017 10:05:57 AM",
+      "dateStarted": "Feb 12, 2017 10:55:14 AM",
+      "dateFinished": "Feb 12, 2017 10:55:16 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Display number of connections per continent",
-      "text": "",
-      "dateUpdated": "Feb 1, 2017 10:09:38 AM",
+      "text": "sqlContext.sql(\"SELECT CONTINENT_CODE, COUNT(*) AS NB_CONNEXIONS FROM df WHERE IP_FROM IS NOT NULL AND IP_TO IS NOT NULL AND CONTINENT_CODE IS NOT NULL GROUP BY CONTINENT_CODE\").show()",
+      "dateUpdated": "Feb 12, 2017 10:59:10 AM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1913,18 +1961,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": ""
+        "msg": "+--------------+-------------+\n|CONTINENT_CODE|NB_CONNEXIONS|\n+--------------+-------------+\n|          ASIA|            5|\n|            NA|        15330|\n|            SA|         2466|\n|            CA|          721|\n|            ME|         2026|\n|            AQ|            7|\n|        AFRICA|            3|\n|            CB|         1296|\n|            AS|        11606|\n|            OC|         3928|\n|            EU|        46715|\n|            AF|         2608|\n+--------------+-------------+\n\n"
       },
       "dateCreated": "Feb 1, 2017 10:05:58 AM",
-      "dateStarted": "Feb 1, 2017 10:09:38 AM",
-      "dateFinished": "Feb 1, 2017 10:09:38 AM",
+      "dateStarted": "Feb 12, 2017 10:59:10 AM",
+      "dateFinished": "Feb 12, 2017 10:59:13 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Show IP_FROM addresses which appear more than once in the file",
-      "text": "// PS : if your query is correct, you should only find one",
-      "dateUpdated": "Feb 1, 2017 10:11:17 AM",
+      "text": "// PS : if your query is correct, you should only find one\n\nsqlContext.sql(\"SELECT IP_FROM FROM df GROUP BY IP_FROM HAVING COUNT(IP_FROM) \u003e 1\").show()",
+      "dateUpdated": "Feb 12, 2017 11:02:36 AM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1949,11 +1997,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": ""
+        "msg": "+----------+\n|   IP_FROM|\n+----------+\n|3272226816|\n+----------+\n\n"
       },
       "dateCreated": "Feb 1, 2017 10:06:08 AM",
-      "dateStarted": "Feb 1, 2017 10:11:17 AM",
-      "dateFinished": "Feb 1, 2017 10:11:18 AM",
+      "dateStarted": "Feb 12, 2017 11:02:36 AM",
+      "dateFinished": "Feb 12, 2017 11:02:39 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -2141,24 +2189,24 @@
   "name": "Practice",
   "id": "2C75UP2R2",
   "angularObjects": {
-    "2C93MQCCX:shared_process": [],
-    "2CAFQY6K3:shared_process": [],
-    "2C71Z8V22:shared_process": [],
-    "2C74PSEZQ:shared_process": [],
-    "2C7936H5V:shared_process": [],
-    "2C6WY8JHA:shared_process": [],
-    "2C8CCCVZ2:shared_process": [],
-    "2C9JTS6JQ:shared_process": [],
-    "2C91JKV9H:shared_process": [],
-    "2C8N1PP7C:shared_process": [],
-    "2C7YTW7VT:shared_process": [],
-    "2C85G18U9:shared_process": [],
-    "2C9XYSTEH:shared_process": [],
-    "2CA474ZG3:shared_process": [],
-    "2C8JNXQ9U:shared_process": [],
-    "2C827138T:shared_process": [],
-    "2CAA7GXEJ:shared_process": [],
-    "2C8W1GCP8:shared_process": []
+    "2CAC6Y4FB:shared_process": [],
+    "2CASNQJ8V:shared_process": [],
+    "2CAXG2EGZ:shared_process": [],
+    "2CCVZ3W9D:shared_process": [],
+    "2CABRFYUY:shared_process": [],
+    "2CC7PM2CU:shared_process": [],
+    "2CCWW4ZHA:shared_process": [],
+    "2CC55X12H:shared_process": [],
+    "2CAY5KJWU:shared_process": [],
+    "2CAU1H4XM:shared_process": [],
+    "2CDKENY9A:shared_process": [],
+    "2C9TP93ZB:shared_process": [],
+    "2CCFZUF9Q:shared_process": [],
+    "2C9VSN4NR:shared_process": [],
+    "2CDK2ZAGA:shared_process": [],
+    "2CCWPSBAH:shared_process": [],
+    "2CCZ6WZS8:shared_process": [],
+    "2CBNDF4TP:shared_process": []
   },
   "config": {
     "looknfeel": "default"
