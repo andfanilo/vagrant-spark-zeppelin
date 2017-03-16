@@ -2,7 +2,7 @@
   "paragraphs": [
     {
       "text": "%md\n\n# Introduction to Spark \u0026 Zeppelin\n#### An overview of the two Big Data tools.\n\nBefore pursuing, make sure you have saved the previous Interpreter binding window, otherwise you will get an error like `paragraph not found` when executing cells",
-      "dateUpdated": "Feb 1, 2017 10:32:11 AM",
+      "dateUpdated": "Feb 8, 2017 2:35:47 PM",
       "config": {
         "enabled": true,
         "tableHide": false,
@@ -36,14 +36,14 @@
         "msg": "\u003ch1\u003eIntroduction to Spark \u0026amp; Zeppelin\u003c/h1\u003e\n\u003ch4\u003eAn overview of the two Big Data tools.\u003c/h4\u003e\n\u003cp\u003eBefore pursuing, make sure you have saved the previous Interpreter binding window, otherwise you will get an error like \u003ccode\u003eparagraph not found\u003c/code\u003e when executing cells\u003c/p\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 1, 2017 10:32:09 AM",
-      "dateFinished": "Feb 1, 2017 10:32:09 AM",
+      "dateStarted": "Feb 8, 2017 2:35:48 PM",
+      "dateFinished": "Feb 8, 2017 2:35:50 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n![Spark logo](http://spark.apache.org/images/spark-logo-trademark.png)\n#\n[Apache Spark](http://spark.apache.org/) is a cluster computing engine designed to be __fast__ and __general-purpose__, making it the ideal choice for processing of large datasets. It answers those two points with __efficient data sharing__ accross computations.\n\u003chr/\u003e\nThe past years have seen a major changes in computing systems, as growing data volumes required more and more applications to scale out to large clusters. To solve this problem, a wide range of new programming models have been designed to manage multiple types of computations in a distributed fashion, without having people learn too much about distributed systems. Those programming models would need to deal with _parallelism, fault-tolerance and resource sharing_ for us.\n\n[Google\u0027s MapReduce](https://en.wikipedia.org/wiki/MapReduce) presented a simple and general model for batch processing, which handles faults and parallelism easily. Unfortunately the programming model is not adapted for other types of workloads, and multiple specialized systems were born to answer a specific need in a distributed way. \n* Iterative : Giraph\n* Interactive : Impala, Piccolo, Greenplum\n* Streaming : Storm, Millwheel\n\n#\nThe initial goal of Apache Spark is to try and unify all of the workloads for generality purposes. [Matei Zaharia](https://cs.stanford.edu/~matei/) in his [PhD dissertation](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2014/EECS-2014-12.pdf) suggests that most of the data flow models that required a specialized system needed _efficient data sharing_ accross computations:\n* Iterative algorithms like PageRank or K-Means need to make multiple passes over the same dataset\n* Interactive data mining often requires running multiple ad-hoc queries on the same subset of data\n* Streaming applications need to maintain and share state over time.\n\nHe then proposes to create a new abstraction that gives its users direct control over data sharing, something that other specialized systems would have built-in for their specific needs. The abstraction is implemented inside a new engine that is today called Apache Spark. The engine makes it possible to support more types of computations than with the original MapReduce in a more efficient way, including interactive queries and stream processing. ",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "dateUpdated": "Feb 8, 2017 2:48:02 PM",
       "config": {
         "enabled": true,
         "tableHide": false,
@@ -77,13 +77,14 @@
         "msg": "\u003cp\u003e\u003cimg src\u003d\"http://spark.apache.org/images/spark-logo-trademark.png\" alt\u003d\"Spark logo\" /\u003e\u003c/p\u003e\n\u003ch1\u003e\u003c/h1\u003e\n\u003cp\u003e\u003ca href\u003d\"http://spark.apache.org/\"\u003eApache Spark\u003c/a\u003e is a cluster computing engine designed to be \u003cstrong\u003efast\u003c/strong\u003e and \u003cstrong\u003egeneral-purpose\u003c/strong\u003e, making it the ideal choice for processing of large datasets. It answers those two points with \u003cstrong\u003eefficient data sharing\u003c/strong\u003e accross computations.\u003c/p\u003e\n\u003chr/\u003e\n\u003cp\u003eThe past years have seen a major changes in computing systems, as growing data volumes required more and more applications to scale out to large clusters. To solve this problem, a wide range of new programming models have been designed to manage multiple types of computations in a distributed fashion, without having people learn too much about distributed systems. Those programming models would need to deal with \u003cem\u003eparallelism, fault-tolerance and resource sharing\u003c/em\u003e for us.\u003c/p\u003e\n\u003cp\u003e\u003ca href\u003d\"https://en.wikipedia.org/wiki/MapReduce\"\u003eGoogle\u0027s MapReduce\u003c/a\u003e presented a simple and general model for batch processing, which handles faults and parallelism easily. Unfortunately the programming model is not adapted for other types of workloads, and multiple specialized systems were born to answer a specific need in a distributed way.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eIterative : Giraph\u003c/li\u003e\n\u003cli\u003eInteractive : Impala, Piccolo, Greenplum\u003c/li\u003e\n\u003cli\u003eStreaming : Storm, Millwheel\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003e\u003c/h1\u003e\n\u003cp\u003eThe initial goal of Apache Spark is to try and unify all of the workloads for generality purposes. \u003ca href\u003d\"https://cs.stanford.edu/~matei/\"\u003eMatei Zaharia\u003c/a\u003e in his \u003ca href\u003d\"https://www2.eecs.berkeley.edu/Pubs/TechRpts/2014/EECS-2014-12.pdf\"\u003ePhD dissertation\u003c/a\u003e suggests that most of the data flow models that required a specialized system needed \u003cem\u003eefficient data sharing\u003c/em\u003e accross computations:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eIterative algorithms like PageRank or K-Means need to make multiple passes over the same dataset\u003c/li\u003e\n\u003cli\u003eInteractive data mining often requires running multiple ad-hoc queries on the same subset of data\u003c/li\u003e\n\u003cli\u003eStreaming applications need to maintain and share state over time.\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eHe then proposes to create a new abstraction that gives its users direct control over data sharing, something that other specialized systems would have built-in for their specific needs. The abstraction is implemented inside a new engine that is today called Apache Spark. The engine makes it possible to support more types of computations than with the original MapReduce in a more efficient way, including interactive queries and stream processing.\u003c/p\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 2:48:03 PM",
+      "dateFinished": "Feb 8, 2017 2:48:03 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n![](https://zeppelin.apache.org/assets/themes/zeppelin/img/zeppelin_classic_logo.png)\n#\n[Apache Zeppelin](https://zeppelin.apache.org/) is a web-based notebook that enables interactive data analytics. It is  famous for its very strong Apache Spark integration.\n\u003chr/\u003e\n\nApache Zeppelin\u0027s purpose is to provide engineers and scientists with an interface for all Big Data needs, which comes bundled with the means for analyzing, collaborating and sharing data on top of common Big Data frameworks.\n\nThe Apache Zeppelin interpreter concept allows the plugin of a language or data-processing backend into Zeppelin _(think of it like a kernel for Jupyter notebook)_. Currently it supports [many interpreters](https://zeppelin.apache.org/docs/0.6.2/manual/interpreterinstallation.html) like Apache Spark, Python, JDBC, Markdown and shell. Creation of a custom interpreter is also possible by extending the necessary abstract class.\n\nYou can view examples of Zeppelin notebooks [here](https://www.zeppelinhub.com/viewer).\n\nToday, Apache Zeppelin comes bundled with most Big Data distributions _(Cloudera, Hortonworks...)_ as the main tool for interactive Big Data analytics, which makes for a good reason to have you try Apache Spark interactively in a Zeppelin notebook.",
-      "dateUpdated": "Jan 25, 2017 8:54:41 AM",
+      "dateUpdated": "Feb 8, 2017 2:48:11 PM",
       "config": {
         "enabled": true,
         "tableHide": false,
@@ -116,14 +117,16 @@
         "msg": "\u003cp\u003e\u003cimg src\u003d\"https://zeppelin.apache.org/assets/themes/zeppelin/img/zeppelin_classic_logo.png\" alt\u003d\"\" /\u003e\u003c/p\u003e\n\u003ch1\u003e\u003c/h1\u003e\n\u003cp\u003e\u003ca href\u003d\"https://zeppelin.apache.org/\"\u003eApache Zeppelin\u003c/a\u003e is a web-based notebook that enables interactive data analytics. It is  famous for its very strong Apache Spark integration.\u003c/p\u003e\n\u003chr/\u003e\n\u003cp\u003eApache Zeppelin\u0027s purpose is to provide engineers and scientists with an interface for all Big Data needs, which comes bundled with the means for analyzing, collaborating and sharing data on top of common Big Data frameworks.\u003c/p\u003e\n\u003cp\u003eThe Apache Zeppelin interpreter concept allows the plugin of a language or data-processing backend into Zeppelin \u003cem\u003e(think of it like a kernel for Jupyter notebook)\u003c/em\u003e. Currently it supports \u003ca href\u003d\"https://zeppelin.apache.org/docs/0.6.2/manual/interpreterinstallation.html\"\u003emany interpreters\u003c/a\u003e like Apache Spark, Python, JDBC, Markdown and shell. Creation of a custom interpreter is also possible by extending the necessary abstract class.\u003c/p\u003e\n\u003cp\u003eYou can view examples of Zeppelin notebooks \u003ca href\u003d\"https://www.zeppelinhub.com/viewer\"\u003ehere\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eToday, Apache Zeppelin comes bundled with most Big Data distributions \u003cem\u003e(Cloudera, Hortonworks\u0026hellip;)\u003c/em\u003e as the main tool for interactive Big Data analytics, which makes for a good reason to have you try Apache Spark interactively in a Zeppelin notebook.\u003c/p\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:54:39 AM",
-      "dateFinished": "Jan 25, 2017 8:54:39 AM",
+      "dateStarted": "Feb 8, 2017 2:48:11 PM",
+      "dateFinished": "Feb 8, 2017 2:48:11 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n###Interpreter\n\nApache Zeppelin is primarily a notebook. A Zeppelin notebook consists of a set of cells with an interpreter _(or language backend)_ attached.\n\nFor example, this cell is linked to the Markdown interpreter, so when you run the cell it parses the code as Markdown and then displays the result.\n\nYou will find the most useful markdown components [on this cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).\n\nIn each cell, there is a toolbar with four items: \n* The `Play` button (blue triangle) lets you run the paragraph. You can also press `Shift + Enter` to run the cell when selected\n* The `Show/Hide editor` if you want to see the source code for the cell\n* The `Show/Hide output` if you want to see the output for the cell\n* The `Settings` item, for more advanced options like adding/managing cells.\n\n\u003chr/\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\nNow you can press `Show editor` to see the source code of the cell. You will see that it starts with `%md`, which specifies to the cell that it should use the Markdown interpreter. You can edit the text and then run the cell to see the editing in the output.",
-      "dateUpdated": "Feb 3, 2017 9:03:48 AM",
+
+      "dateUpdated": "Feb 8, 2017 2:50:44 PM",
+
       "config": {
         "enabled": true,
         "graph": {
@@ -142,7 +145,8 @@
         },
         "editorMode": "ace/mode/markdown",
         "editorHide": true,
-        "colWidth": 12.0
+        "colWidth": 12.0,
+        "tableHide": false
       },
       "settings": {
         "params": {},
@@ -156,14 +160,14 @@
         "msg": "\u003ch3\u003eInterpreter\u003c/h3\u003e\n\u003cp\u003eApache Zeppelin is primarily a notebook. A Zeppelin notebook consists of a set of cells with an interpreter \u003cem\u003e(or language backend)\u003c/em\u003e attached.\u003c/p\u003e\n\u003cp\u003eFor example, this cell is linked to the Markdown interpreter, so when you run the cell it parses the code as Markdown and then displays the result.\u003c/p\u003e\n\u003cp\u003eYou will find the most useful markdown components \u003ca href\u003d\"https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet\"\u003eon this cheatsheet\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eIn each cell, there is a toolbar with four items:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eThe \u003ccode\u003ePlay\u003c/code\u003e button (blue triangle) lets you run the paragraph. You can also press \u003ccode\u003eShift + Enter\u003c/code\u003e to run the cell when selected\u003c/li\u003e\n\u003cli\u003eThe \u003ccode\u003eShow/Hide editor\u003c/code\u003e if you want to see the source code for the cell\u003c/li\u003e\n\u003cli\u003eThe \u003ccode\u003eShow/Hide output\u003c/code\u003e if you want to see the output for the cell\u003c/li\u003e\n\u003cli\u003eThe \u003ccode\u003eSettings\u003c/code\u003e item, for more advanced options like adding/managing cells.\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr/\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eNow you can press \u003ccode\u003eShow editor\u003c/code\u003e to see the source code of the cell. You will see that it starts with \u003ccode\u003e%md\u003c/code\u003e, which specifies to the cell that it should use the Markdown interpreter. You can edit the text and then run the cell to see the editing in the output.\u003c/p\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 1, 2017 6:53:18 AM",
-      "dateFinished": "Feb 1, 2017 6:53:18 AM",
+      "dateStarted": "Feb 8, 2017 2:50:14 PM",
+      "dateFinished": "Feb 8, 2017 2:50:14 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\nApache Zeppelin follows the responsive 12-column grid system. In the following row we show 3 different interpreters in action. \n\nYou will find the width of the cell inside the settings button.\n\u003chr/\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\nYou can go on and try to modify the source code in the three following cells and re-execute the code. For example, try to type `1+2` in the Python cell.",
-      "dateUpdated": "Feb 1, 2017 6:53:54 AM",
+      "dateUpdated": "Feb 8, 2017 3:06:00 PM",
       "config": {
         "enabled": true,
         "graph": {
@@ -196,15 +200,15 @@
         "msg": "\u003cp\u003eApache Zeppelin follows the responsive 12-column grid system. In the following row we show 3 different interpreters in action.\u003c/p\u003e\n\u003cp\u003eYou will find the width of the cell inside the settings button.\u003c/p\u003e\n\u003chr/\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eYou can go on and try to modify the source code in the three following cells and re-execute the code. For example, try to type \u003ccode\u003e1+2\u003c/code\u003e in the Python cell.\u003c/p\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 1, 2017 6:53:52 AM",
-      "dateFinished": "Feb 1, 2017 6:53:52 AM",
+      "dateStarted": "Feb 8, 2017 3:06:01 PM",
+      "dateFinished": "Feb 8, 2017 3:06:01 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Shell cell",
-      "text": "%sh\necho \"Hello world\"",
-      "dateUpdated": "Feb 1, 2017 6:51:19 AM",
+      "text": "%sh\necho \"Hello world !\"",
+      "dateUpdated": "Feb 8, 2017 3:06:32 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -235,18 +239,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "Hello world !\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 1, 2017 6:51:19 AM",
-      "dateFinished": "Feb 1, 2017 6:51:20 AM",
+      "dateStarted": "Feb 8, 2017 3:06:32 PM",
+      "dateFinished": "Feb 8, 2017 3:06:32 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Python cell",
-      "text": "%python\nprint(\"Hello world\")",
-      "dateUpdated": "Jan 25, 2017 8:33:22 AM",
+      "text": "%python\nprint(\"Hello world\")\n1+2",
+      "dateUpdated": "Feb 8, 2017 3:06:49 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -276,18 +280,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "Hello world\n3\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:33:22 AM",
-      "dateFinished": "Jan 25, 2017 8:33:23 AM",
+      "dateStarted": "Feb 8, 2017 3:06:49 PM",
+      "dateFinished": "Feb 8, 2017 3:06:50 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Spark/Scala cell",
-      "text": "println(\"Hello world\")",
-      "dateUpdated": "Jan 25, 2017 8:33:26 AM",
+      "text": "println(\"Hello world !\")",
+      "dateUpdated": "Feb 8, 2017 3:07:01 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -317,11 +321,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Hello world\n"
+        "msg": "Hello world !\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:33:26 AM",
-      "dateFinished": "Jan 25, 2017 8:33:59 AM",
+      "dateStarted": "Feb 8, 2017 3:07:01 PM",
+      "dateFinished": "Feb 8, 2017 3:07:32 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -405,8 +409,8 @@
     },
     {
       "title": "Some arithmetic",
-      "text": "8 * 5 + 2",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "text": "8 * 5 + 2\n8 + 2 * 5",
+      "dateUpdated": "Feb 8, 2017 3:09:43 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -431,20 +435,21 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "res2: Int \u003d 42\n"
+        "msg": "\nres4: Int \u003d 42\n\nres5: Int \u003d 18\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 3:09:43 PM",
+      "dateFinished": "Feb 8, 2017 3:09:44 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Declaring variables",
-      "text": "val a \u003d 3 // val defines an immutable value\nvar b : Int \u003d 5 // var defines a mutable variable\nprintln(a + b)\n\nb \u003d 42\nprintln(a + b)\n\n// Note that the type of a variable or function is written after the variable or function. \n\n// Because Scala does type inference, it is also not necessary to declare type to variables when it looks obvious.",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "text": "val a \u003d 3 // val defines an immutable value\nvar b : Int \u003d 5 // var defines a mutable variable\nprintln(a + b)\n\nb \u003d 40\nprintln(a + b)\n\n// Note that the type of a variable or function is written after the variable or function. \n\n// Because Scala does type inference, it is also not necessary to declare type to variables when it looks obvious.",
+      "dateUpdated": "Feb 8, 2017 3:15:21 PM",
       "config": {
         "enabled": true,
-        "tableHide": true,
+        "tableHide": false,
         "title": true,
         "graph": {
           "mode": "table",
@@ -468,17 +473,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "a: Int \u003d 3\nb: Int \u003d 5\n8\nb: Int \u003d 42\n45\n"
+        "msg": "\na: Int \u003d 3\n\nb: Int \u003d 5\n8\n\nb: Int \u003d 40\n43\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 3:15:21 PM",
+      "dateFinished": "Feb 8, 2017 3:15:22 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Reusing a variable",
-      "text": "// variables are accessible accross cells\n\na * b",
-      "dateUpdated": "Jan 25, 2017 8:32:04 AM",
+      "text": "// variables are accessible accross cells\n\na * b - a",
+      "dateUpdated": "Feb 8, 2017 3:15:51 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -503,16 +509,17 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "res13: Int \u003d 15\n"
+        "msg": "\nres24: Int \u003d 117\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 3:15:51 PM",
+      "dateFinished": "Feb 8, 2017 3:15:51 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\nIn Scala, you are encouraged to use a `val` whenever you can so to avoid mutable code. Scala prefers immutability by design and helps us reason through code only. \n\nIt also provides is with the necessary tooling to reason with immutability in mind. In the following row we study some basic collection methods which makes useless the need for mutable lists and for loops",
-      "dateUpdated": "Jan 25, 2017 9:37:07 AM",
+      "dateUpdated": "Feb 8, 2017 3:20:25 PM",
       "config": {
         "enabled": true,
         "graph": {
@@ -540,18 +547,18 @@
         "msg": "\u003cp\u003eIn Scala, you are encouraged to use a \u003ccode\u003eval\u003c/code\u003e whenever you can so to avoid mutable code. Scala prefers immutability by design and helps us reason through code only.\u003c/p\u003e\n\u003cp\u003eIt also provides is with the necessary tooling to reason with immutability in mind. In the following row we study some basic collection methods which makes useless the need for mutable lists and for loops\u003c/p\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 9:37:06 AM",
-      "dateFinished": "Jan 25, 2017 9:37:06 AM",
+      "dateStarted": "Feb 8, 2017 3:20:25 PM",
+      "dateFinished": "Feb 8, 2017 3:20:25 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Create immutable sequence of numbers",
-      "text": "val sequenceNumbers \u003d 1 to 100",
-      "dateUpdated": "Jan 25, 2017 8:34:35 AM",
+      "text": "val sequenceNumbers \u003d 1 to 10\n",
+      "dateUpdated": "Feb 8, 2017 3:22:31 PM",
       "config": {
         "enabled": true,
-        "tableHide": true,
+        "tableHide": false,
         "title": true,
         "graph": {
           "mode": "table",
@@ -575,21 +582,21 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nsequenceNumbers: scala.collection.immutable.Range.Inclusive \u003d Range(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100)\n"
+        "msg": "\nsequenceNumbers: scala.collection.immutable.Range.Inclusive \u003d Range(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:34:24 AM",
-      "dateFinished": "Jan 25, 2017 8:34:25 AM",
+      "dateStarted": "Feb 8, 2017 3:22:31 PM",
+      "dateFinished": "Feb 8, 2017 3:22:32 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "New list with all elements doubled",
-      "text": "sequenceNumbers.map(x \u003d\u003e x * 2)\n\nsequenceNumbers.map(_ * 2)",
-      "dateUpdated": "Jan 25, 2017 8:34:39 AM",
+      "text": "sequenceNumbers.map(x \u003d\u003e x + 5)\n\nsequenceNumbers.map(_ * 2)",
+      "dateUpdated": "Feb 8, 2017 3:24:08 PM",
       "config": {
         "enabled": true,
-        "tableHide": true,
+        "tableHide": false,
         "title": true,
         "graph": {
           "mode": "table",
@@ -613,20 +620,21 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "res40: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100, 102, 104, 106, 108, 110, 112, 114, 116, 118, 120, 122, 124, 126, 128, 130, 132, 134, 136, 138, 140, 142, 144, 146, 148, 150, 152, 154, 156, 158, 160, 162, 164, 166, 168, 170, 172, 174, 176, 178, 180, 182, 184, 186, 188, 190, 192, 194, 196, 198, 200)\nres41: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100, 102, 104, 106, 108, 110, 112, 114, 116, 118, 120, 122, 124, 126, 128, 130, 132, 134, 136, 138, 140, 142, 144, 146, 148, 150, 152, 154, 156, 158, 160, 162, 164, 166, 168, 170, 172, 174, 176, 178, 180, 182, 184, 186, 188, 190, 192, 194, 196, 198, 200)\n"
+        "msg": "\nres34: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(6, 7, 8, 9, 10, 11, 12, 13, 14, 15)\n\nres35: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(2, 4, 6, 8, 10, 12, 14, 16, 18, 20)\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 3:24:08 PM",
+      "dateFinished": "Feb 8, 2017 3:24:10 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "New list with pair numbers removed",
       "text": "sequenceNumbers.filter(x \u003d\u003e x % 2 !\u003d 0)\n\nsequenceNumbers.filter(_ % 2 !\u003d 0)",
-      "dateUpdated": "Jan 25, 2017 8:34:41 AM",
+      "dateUpdated": "Feb 8, 2017 3:25:15 PM",
       "config": {
         "enabled": true,
-        "tableHide": true,
+        "tableHide": false,
         "title": true,
         "graph": {
           "mode": "table",
@@ -650,20 +658,21 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "res52: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99)\nres53: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99)\n"
+        "msg": "\nres37: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(1, 3, 5, 7, 9)\n\nres38: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(1, 3, 5, 7, 9)\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 3:25:16 PM",
+      "dateFinished": "Feb 8, 2017 3:25:17 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Sum all elements",
       "text": "sequenceNumbers.reduce((x, y) \u003d\u003e x + y)\n\nsequenceNumbers.reduce(_ + _)",
-      "dateUpdated": "Jan 25, 2017 8:34:44 AM",
+      "dateUpdated": "Feb 8, 2017 3:25:34 PM",
       "config": {
         "enabled": true,
-        "tableHide": true,
+        "tableHide": false,
         "title": true,
         "graph": {
           "mode": "table",
@@ -687,11 +696,12 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "res55: Int \u003d 5050\nres56: Int \u003d 5050\n"
+        "msg": "\nres40: Int \u003d 55\n\nres41: Int \u003d 55\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Feb 8, 2017 3:25:31 PM",
+      "dateFinished": "Feb 8, 2017 3:25:33 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -731,7 +741,7 @@
     },
     {
       "text": "/*\n * The following function adds 2 to a number.\n */\ndef add2(x: Int): Int \u003d x + 2",
-      "dateUpdated": "Jan 25, 2017 1:34:04 AM",
+      "dateUpdated": "Feb 8, 2017 3:29:21 PM",
       "config": {
         "enabled": true,
         "graph": {
@@ -758,14 +768,14 @@
         "msg": "\nadd2: (x: Int)Int\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 1:34:04 AM",
-      "dateFinished": "Jan 25, 2017 1:34:04 AM",
+      "dateStarted": "Feb 8, 2017 3:29:21 PM",
+      "dateFinished": "Feb 8, 2017 3:29:22 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "/* now let\u0027s pass add2 function \n * to map,\n * a function that applies a function to each element of a  * list\n */\n\nList(1,2,3).map(add2)\n",
-      "dateUpdated": "Jan 25, 2017 1:34:26 AM",
+      "dateUpdated": "Feb 8, 2017 3:29:28 PM",
       "config": {
         "enabled": true,
         "graph": {
@@ -789,17 +799,17 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nres38: List[Int] \u003d List(3, 4, 5)\n"
+        "msg": "\nres46: List[Int] \u003d List(3, 4, 5)\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 1:34:26 AM",
-      "dateFinished": "Jan 25, 2017 1:34:27 AM",
+      "dateStarted": "Feb 8, 2017 3:29:28 PM",
+      "dateFinished": "Feb 8, 2017 3:29:29 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "// in the following we pass an anonymous lambda function \n// in the filter function\nList(1,2,3,4).filter(x \u003d\u003e x \u003e 2)\nList(1,2,3,4).filter(_ \u003e 2)",
-      "dateUpdated": "Jan 25, 2017 8:50:39 AM",
+      "dateUpdated": "Feb 8, 2017 3:31:13 PM",
       "config": {
         "enabled": true,
         "graph": {
@@ -823,11 +833,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nres9: List[Int] \u003d List(3, 4)\n\nres10: List[Int] \u003d List(3, 4)\n"
+        "msg": "\nres49: List[Int] \u003d List(3, 4)\n\nres50: List[Int] \u003d List(3, 4)\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Jan 25, 2017 8:50:39 AM",
-      "dateFinished": "Jan 25, 2017 8:50:40 AM",
+      "dateStarted": "Feb 8, 2017 3:31:13 PM",
+      "dateFinished": "Feb 8, 2017 3:31:15 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -868,7 +878,7 @@
     },
     {
       "text": "%md \nThe other essential higher order function you need to learn is `reduce`, which walks a function through all the elements in a collection to produce an aggregated result. \n\nTo do that, the function operates on two elements in the sequence, and returns a new element of the same type, which is then passed to the same function with the next element in the list.\n\nA simple example of such a function is +, which we can use to sum all of the elements in our list.",
-      "dateUpdated": "Jan 25, 2017 1:34:46 AM",
+      "dateUpdated": "Feb 8, 2017 3:33:16 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -896,14 +906,14 @@
         "msg": "\u003cp\u003eThe other essential higher order function you need to learn is \u003ccode\u003ereduce\u003c/code\u003e, which walks a function through all the elements in a collection to produce an aggregated result.\u003c/p\u003e\n\u003cp\u003eTo do that, the function operates on two elements in the sequence, and returns a new element of the same type, which is then passed to the same function with the next element in the list.\u003c/p\u003e\n\u003cp\u003eA simple example of such a function is +, which we can use to sum all of the elements in our list.\u003c/p\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 8:55:33 AM",
-      "dateStarted": "Jan 25, 2017 1:34:45 AM",
-      "dateFinished": "Jan 25, 2017 1:34:45 AM",
+      "dateStarted": "Feb 8, 2017 3:33:16 PM",
+      "dateFinished": "Feb 8, 2017 3:33:16 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "(1 to 1000).reduce((x,y) \u003d\u003e x+y)\n(1 to 1000).reduce(_+_)",
-      "dateUpdated": "Jan 25, 2017 8:55:46 AM",
+      "dateUpdated": "Feb 8, 2017 3:54:08 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -927,17 +937,17 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nres12: Int \u003d 500500\n\nres13: Int \u003d 500500\n"
+        "msg": "\nres52: Int \u003d 500500\n\nres53: Int \u003d 500500\n"
       },
       "dateCreated": "Jan 25, 2017 8:55:45 AM",
-      "dateStarted": "Jan 25, 2017 8:55:47 AM",
-      "dateFinished": "Jan 25, 2017 8:55:48 AM",
+      "dateStarted": "Feb 8, 2017 3:54:09 PM",
+      "dateFinished": "Feb 8, 2017 3:54:10 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\nIn the previous row, imagine that the sum function operates on 1 and 2 and returns 3, \n\nthen that result is passed to the function along with the next element which is 3, and the result 6 is passed with the next element 4, and then the result 10 is passed with 5 etc...\n\n1 --|+\n2 --| 3 --|+\n3 --------| 6 --| +\n4 --------------| 10 --| +\n5 ---------------------| 15\n.etc...\n\nSimilar to `reduce` is `fold`, which takes a \"zero value\" in addition and passed in the initial call",
-      "dateUpdated": "Jan 25, 2017 9:42:15 AM",
+      "dateUpdated": "Feb 8, 2017 3:54:41 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -965,14 +975,14 @@
         "msg": "\u003cp\u003eIn the previous row, imagine that the sum function operates on 1 and 2 and returns 3,\u003c/p\u003e\n\u003cp\u003ethen that result is passed to the function along with the next element which is 3, and the result 6 is passed with the next element 4, and then the result 10 is passed with 5 etc\u0026hellip;\u003c/p\u003e\n\u003cp\u003e1 \u0026ndash;|+\n\u003cbr  /\u003e2 \u0026ndash;| 3 \u0026ndash;|+\n\u003cbr  /\u003e3 \u0026mdash;\u0026mdash;\u0026ndash;| 6 \u0026ndash;| +\n\u003cbr  /\u003e4 \u0026mdash;\u0026mdash;\u0026mdash;\u0026mdash;\u0026ndash;| 10 \u0026ndash;| +\n\u003cbr  /\u003e5 \u0026mdash;\u0026mdash;\u0026mdash;\u0026mdash;\u0026mdash;\u0026mdash;\u0026mdash;| 15\n\u003cbr  /\u003e.etc\u0026hellip;\u003c/p\u003e\n\u003cp\u003eSimilar to \u003ccode\u003ereduce\u003c/code\u003e is \u003ccode\u003efold\u003c/code\u003e, which takes a \u0026ldquo;zero value\u0026rdquo; in addition and passed in the initial call\u003c/p\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 8:55:58 AM",
-      "dateStarted": "Jan 25, 2017 9:42:13 AM",
-      "dateFinished": "Jan 25, 2017 9:42:13 AM",
+      "dateStarted": "Feb 8, 2017 3:54:41 PM",
+      "dateFinished": "Feb 8, 2017 3:54:41 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md \n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\nTry to solve the following rows. By editing the `val output \u003d ...` line, use `map`, `filter` and `reduce` with anonymous functions on the variable `input` to return a variable `output` that will be compared to the `expected`variable.\n\nRemember your session is interactive, it makes it easy to test intermediary values when chaining functions, example :\n```scala\ninput.map(...)                                  // 1st execution\ninput.map(...).filter(...)                      // 2nd execution\ninput.map(...).filter(...).reduce(...)          // 3rd execution\n```",
-      "dateUpdated": "Jan 25, 2017 9:56:22 AM",
+      "dateUpdated": "Feb 8, 2017 3:58:21 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1000,15 +1010,15 @@
         "msg": "\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eTry to solve the following rows. By editing the \u003ccode\u003eval output \u003d ...\u003c/code\u003e line, use \u003ccode\u003emap\u003c/code\u003e, \u003ccode\u003efilter\u003c/code\u003e and \u003ccode\u003ereduce\u003c/code\u003e with anonymous functions on the variable \u003ccode\u003einput\u003c/code\u003e to return a variable \u003ccode\u003eoutput\u003c/code\u003e that will be compared to the \u003ccode\u003eexpected\u003c/code\u003evariable.\u003c/p\u003e\n\u003cp\u003eRemember your session is interactive, it makes it easy to test intermediary values when chaining functions, example :\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"scala\"\u003einput.map(...)                                  // 1st execution\ninput.map(...).filter(...)                      // 2nd execution\ninput.map(...).filter(...).reduce(...)          // 3rd execution\n\u003c/code\u003e\u003c/pre\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 8:56:05 AM",
-      "dateStarted": "Jan 25, 2017 9:26:55 AM",
-      "dateFinished": "Jan 25, 2017 9:26:55 AM",
+      "dateStarted": "Feb 8, 2017 3:58:22 PM",
+      "dateFinished": "Feb 8, 2017 3:58:22 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Return the list of squared numbers from 1 to 5",
-      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.map(x \u003d\u003e x)\n\nval expected \u003d List(1, 4, 9, 16, 25) ",
-      "dateUpdated": "Jan 25, 2017 9:03:16 AM",
+      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.map(x \u003d\u003e x * x)\n\nval expected \u003d List(1, 4, 9, 16, 25) ",
+      "dateUpdated": "Feb 8, 2017 3:58:39 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1033,18 +1043,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\nexpected: List[Int] \u003d List(1, 4, 9, 16, 25)\n"
+        "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: List[Int] \u003d List(1, 4, 9, 16, 25)\n\nexpected: List[Int] \u003d List(1, 4, 9, 16, 25)\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:13 AM",
-      "dateStarted": "Jan 25, 2017 9:03:16 AM",
-      "dateFinished": "Jan 25, 2017 9:03:17 AM",
+      "dateStarted": "Feb 8, 2017 3:58:39 PM",
+      "dateFinished": "Feb 8, 2017 3:58:42 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Return the sum of elements from 1 to 5",
-      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.reduce((x, y) \u003d\u003e x)\n\nval expected \u003d 15",
-      "dateUpdated": "Jan 25, 2017 9:23:28 AM",
+      "text": "val input \u003d List(1, 2, 3, 4, 5)\nval output \u003d input.reduce((x, y) \u003d\u003e x + y)\n\nval expected \u003d 15",
+      "dateUpdated": "Feb 8, 2017 3:59:52 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1069,18 +1079,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: Int \u003d 1\n\nexpected: Int \u003d 15\n"
+        "msg": "\ninput: List[Int] \u003d List(1, 2, 3, 4, 5)\n\noutput: Int \u003d 15\n\nexpected: Int \u003d 15\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:20 AM",
-      "dateStarted": "Jan 25, 2017 9:23:28 AM",
-      "dateFinished": "Jan 25, 2017 9:23:29 AM",
+      "dateStarted": "Feb 8, 2017 3:59:53 PM",
+      "dateFinished": "Feb 8, 2017 3:59:54 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Return the sum of squared pair numbers between 1 and 100",
-      "text": "val input \u003d 1 to 100\nval output \u003d input.reduce((x, y) \u003d\u003e x)\n\nval expected \u003d 171700",
-      "dateUpdated": "Feb 1, 2017 9:13:45 AM",
+      "text": "val input \u003d 1 to 100\nval output \u003d input.map(x \u003d\u003e x * x).filter(x \u003d\u003e x % 2 \u003d\u003d 0).reduce((x, y) \u003d\u003e x + y)\n\nval expected \u003d 171700",
+      "dateUpdated": "Feb 8, 2017 4:04:40 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1105,18 +1115,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\ninput: scala.collection.immutable.Range.Inclusive \u003d Range(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100)\n\noutput: Int \u003d 1\n\nexpected: Int \u003d 171700\n"
+        "msg": "\ninput: scala.collection.immutable.Range.Inclusive \u003d Range(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100)\n\noutput: Int \u003d 171700\n\nexpected: Int \u003d 171700\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:27 AM",
-      "dateStarted": "Feb 1, 2017 9:13:46 AM",
-      "dateFinished": "Feb 1, 2017 9:13:48 AM",
+      "dateStarted": "Feb 8, 2017 4:04:41 PM",
+      "dateFinished": "Feb 8, 2017 4:04:42 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Get highest number in a list with a reduce",
-      "text": "import util.Random.nextInt\nval input \u003d Seq.fill(10)(nextInt)\nval output \u003d input.reduce((x, y) \u003d\u003e x)\n\nval expected \u003d input.max",
-      "dateUpdated": "Jan 25, 2017 12:49:26 PM",
+      "text": "import util.Random.nextInt\nval input \u003d Seq.fill(10)(nextInt)\n//val output \u003d input.reduce((x, y) \u003d\u003e x)\n\ndef max2(x: Int, y: Int): Int \u003d if (x \u003e y) x else y\nval output \u003d input.reduce(max2)\n\nval expected \u003d input.max",
+      "dateUpdated": "Feb 8, 2017 4:25:51 PM",
       "config": {
         "colWidth": 6.0,
         "graph": {
@@ -1143,11 +1153,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\nimport util.Random.nextInt\n\ninput: Seq[Int] \u003d List(1368154480, 932727527, -956762629, -741728139, 1912445161, 1215347429, 1054732247, -811870848, 762475751, 1567410629)\n\noutput: Int \u003d 1368154480\n\nexpected: Int \u003d 1912445161\n"
+        "msg": "\nimport util.Random.nextInt\n\ninput: Seq[Int] \u003d List(-1316923305, 1375273298, 1061397141, -1388698218, 1686362669, 760056544, 166269769, 10550818, 91729469, 2034614308)\n\nmax2: (x: Int, y: Int)Int\n\noutput: Int \u003d 2034614308\n\nexpected: Int \u003d 2034614308\n"
       },
       "dateCreated": "Jan 25, 2017 8:57:32 AM",
-      "dateStarted": "Jan 25, 2017 12:49:26 PM",
-      "dateFinished": "Jan 25, 2017 12:49:29 PM",
+      "dateStarted": "Feb 8, 2017 4:25:51 PM",
+      "dateFinished": "Feb 8, 2017 4:25:55 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -2141,24 +2151,24 @@
   "name": "Practice",
   "id": "2C75UP2R2",
   "angularObjects": {
-    "2C93MQCCX:shared_process": [],
-    "2CAFQY6K3:shared_process": [],
-    "2C71Z8V22:shared_process": [],
-    "2C74PSEZQ:shared_process": [],
-    "2C7936H5V:shared_process": [],
-    "2C6WY8JHA:shared_process": [],
-    "2C8CCCVZ2:shared_process": [],
-    "2C9JTS6JQ:shared_process": [],
-    "2C91JKV9H:shared_process": [],
-    "2C8N1PP7C:shared_process": [],
-    "2C7YTW7VT:shared_process": [],
-    "2C85G18U9:shared_process": [],
-    "2C9XYSTEH:shared_process": [],
-    "2CA474ZG3:shared_process": [],
-    "2C8JNXQ9U:shared_process": [],
-    "2C827138T:shared_process": [],
-    "2CAA7GXEJ:shared_process": [],
-    "2C8W1GCP8:shared_process": []
+    "2C8KETW16:shared_process": [],
+    "2C8UMWA1C:shared_process": [],
+    "2C9VC93V7:shared_process": [],
+    "2CARR6D5A:shared_process": [],
+    "2CAV61GU9:shared_process": [],
+    "2C9DZYXZD:shared_process": [],
+    "2C8CQ1ZJ1:shared_process": [],
+    "2CAWJTPKW:shared_process": [],
+    "2C99DRD7Z:shared_process": [],
+    "2CBBM3RP9:shared_process": [],
+    "2C7Y5UJGS:shared_process": [],
+    "2C926NVDW:shared_process": [],
+    "2CA6AJM8K:shared_process": [],
+    "2C8KMG5FJ:shared_process": [],
+    "2C8JX1W1X:shared_process": [],
+    "2C7YDPDK5:shared_process": [],
+    "2C8JP68QX:shared_process": [],
+    "2C8ND2T6M:shared_process": []
   },
   "config": {
     "looknfeel": "default"
