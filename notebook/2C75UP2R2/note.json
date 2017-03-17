@@ -1048,6 +1048,40 @@
       "progressUpdateIntervalMs": 500
     },
     {
+      "text": "%python\n\ndef augmente_moi(a):\n    return augmente_moi + 2\n\naugmente_moi(1)\n",
+      "dateUpdated": "Mar 17, 2017 5:24:25 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1489771321206_1401159675",
+      "id": "20170317-172201_1579095823",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "  Traceback (most recent call last):\n  File \"\u003cstdin\u003e\", line 1, in \u003cmodule\u003e\n  File \"\u003cstdin\u003e\", line 2, in augmente_moi\nTypeError: unsupported operand type(s) for +: \u0027function\u0027 and \u0027int\u0027\n"
+      },
+      "dateCreated": "Mar 17, 2017 5:22:01 PM",
+      "dateStarted": "Mar 17, 2017 5:24:25 PM",
+      "dateFinished": "Mar 17, 2017 5:24:25 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
       "text": "%md\nHere we have presented the first two higher order functions we are going to use in this course : `map` and `filter`. Those are called _element-wise_ transformations in that they take in a function and applies it to each element in the collection.\n\nWe can use them to do a number of things, from fetching the website associated with each URL in our collection to just squaring numbers. Imagine this scenario :\n\n```scala\n/*\n * Parses a file with URLs and puts them into a list of Strings, each being an URL to get\n */\ndef loadURLs(path: String): List[String] \u003d {\n    ...some code here to return list of urls...\n}\n\n/*\n * GET request on an URL and return the body\n */\ndef getBody(url: String): String \u003d {\n    ...some code here to return body...\n}\n\n/*\n * Detect if body consists of an image, we don\u0027t want those\n */\ndef filterImage(body: String): Boolean \u003d {\n    ...some code here to detect if it\u0027s an image...\n}\n\n// code to load a list of URLs and only return those who are not images\nval allURLsWithoutImages \u003d loadURLs(\"/data/list_of_urls.csv\").map(getBody).filter(filterImage)\n\n```",
       "dateUpdated": "Mar 17, 2017 4:10:17 PM",
       "config": {
