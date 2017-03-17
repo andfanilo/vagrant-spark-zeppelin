@@ -1,3 +1,6 @@
+Mathieu VAN DER VORST
+Elise PLANTAZ-NICOUD
+
 # Practice : tweak a Zeppelin environment and test Spark
 
 This is a fork from [arjones/vagrant-spark-zeppelin](https://github.com/arjones/vagrant-spark-zeppelin), that we are going to use for educational purposes.
@@ -97,7 +100,7 @@ $ git branch
 Add a message between the following lines:
 
 <hr>
-PERSONAL MESSAGE
+Je m'appelle Diallo, et j'aime l'Afrique
 <hr>
 
 With `$ git status` you can check the status of your Git repository.
