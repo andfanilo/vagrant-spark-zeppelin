@@ -2,7 +2,7 @@
   "paragraphs": [
     {
       "text": "%md\n\n# Introduction to Spark \u0026 Zeppelin\n#### An overview of the two Big Data tools.\n\nBefore pursuing, make sure you have saved the previous Interpreter binding window, otherwise you will get an error like `paragraph not found` when executing cells",
-      "dateUpdated": "Mar 17, 2017 4:10:14 PM",
+      "dateUpdated": "Mar 17, 2017 4:41:42 PM",
       "config": {
         "enabled": true,
         "tableHide": false,
@@ -21,7 +21,7 @@
           }
         },
         "editorMode": "ace/mode/markdown",
-        "editorHide": true,
+        "editorHide": false,
         "colWidth": 12.0
       },
       "settings": {
@@ -43,7 +43,7 @@
     },
     {
       "text": "%md\n![Spark logo](http://spark.apache.org/images/spark-logo-trademark.png)\n#\n[Apache Spark](http://spark.apache.org/) is a cluster computing engine designed to be __fast__ and __general-purpose__, making it the ideal choice for processing of large datasets. It answers those two points with __efficient data sharing__ accross computations.\n\u003chr/\u003e\nThe past years have seen a major changes in computing systems, as growing data volumes required more and more applications to scale out to large clusters. To solve this problem, a wide range of new programming models have been designed to manage multiple types of computations in a distributed fashion, without having people learn too much about distributed systems. Those programming models would need to deal with _parallelism, fault-tolerance and resource sharing_ for us.\n\n[Google\u0027s MapReduce](https://en.wikipedia.org/wiki/MapReduce) presented a simple and general model for batch processing, which handles faults and parallelism easily. Unfortunately the programming model is not adapted for other types of workloads, and multiple specialized systems were born to answer a specific need in a distributed way. \n* Iterative : Giraph\n* Interactive : Impala, Piccolo, Greenplum\n* Streaming : Storm, Millwheel\n\n#\nThe initial goal of Apache Spark is to try and unify all of the workloads for generality purposes. [Matei Zaharia](https://cs.stanford.edu/~matei/) in his [PhD dissertation](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2014/EECS-2014-12.pdf) suggests that most of the data flow models that required a specialized system needed _efficient data sharing_ accross computations:\n* Iterative algorithms like PageRank or K-Means need to make multiple passes over the same dataset\n* Interactive data mining often requires running multiple ad-hoc queries on the same subset of data\n* Streaming applications need to maintain and share state over time.\n\nHe then proposes to create a new abstraction that gives its users direct control over data sharing, something that other specialized systems would have built-in for their specific needs. The abstraction is implemented inside a new engine that is today called Apache Spark. The engine makes it possible to support more types of computations than with the original MapReduce in a more efficient way, including interactive queries and stream processing. ",
-      "dateUpdated": "Mar 17, 2017 4:10:15 PM",
+      "dateUpdated": "Mar 17, 2017 4:41:49 PM",
       "config": {
         "enabled": true,
         "tableHide": false,
@@ -62,7 +62,7 @@
           }
         },
         "editorMode": "ace/mode/markdown",
-        "editorHide": true,
+        "editorHide": false,
         "colWidth": 12.0
       },
       "settings": {
@@ -163,7 +163,7 @@
     },
     {
       "text": "%md\n\nApache Zeppelin follows the responsive 12-column grid system. In the following row we show 3 different interpreters in action. \n\nYou will find the width of the cell inside the settings button.\n\u003chr/\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\nYou can go on and try to modify the source code in the three following cells and re-execute the code. For example, try to type `1+2` in the Python cell.",
-      "dateUpdated": "Mar 17, 2017 4:10:15 PM",
+      "dateUpdated": "Mar 17, 2017 4:42:20 PM",
       "config": {
         "enabled": true,
         "graph": {
@@ -196,8 +196,8 @@
         "msg": "\u003cp\u003eApache Zeppelin follows the responsive 12-column grid system. In the following row we show 3 different interpreters in action.\u003c/p\u003e\n\u003cp\u003eYou will find the width of the cell inside the settings button.\u003c/p\u003e\n\u003chr/\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eYou can go on and try to modify the source code in the three following cells and re-execute the code. For example, try to type \u003ccode\u003e1+2\u003c/code\u003e in the Python cell.\u003c/p\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "dateStarted": "Feb 1, 2017 6:53:52 AM",
-      "dateFinished": "Feb 1, 2017 6:53:52 AM",
+      "dateStarted": "Mar 17, 2017 4:42:20 PM",
+      "dateFinished": "Mar 17, 2017 4:42:21 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -289,7 +289,7 @@
     {
       "title": "Spark/Scala cell",
       "text": "println(\"Hello world\")",
-      "dateUpdated": "Mar 17, 2017 4:10:16 PM",
+      "dateUpdated": "Mar 17, 2017 4:45:31 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -309,7 +309,7 @@
         },
         "editorMode": "ace/mode/scala",
         "colWidth": 4.0,
-        "editorHide": true
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -329,8 +329,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%python\nage \u003d \"J\u0027ai 30 ans\"\nage",
-      "dateUpdated": "Mar 17, 2017 4:14:51 PM",
+      "text": "Spark/Scala cell\nprintln(\"Quoi de neuf\")",
+      "dateUpdated": "Mar 17, 2017 4:52:27 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -344,6 +344,75 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1489769124098_-1460191059",
+      "id": "20170317-164524_975563122",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eSpark/Scala cell\n\u003cbr  /\u003eprintln(\u0026ldquo;Quoi de neuf\u0026rdquo;)\u003c/p\u003e\n"
+      },
+      "dateCreated": "Mar 17, 2017 4:45:24 PM",
+      "dateStarted": "Mar 17, 2017 4:52:27 PM",
+      "dateFinished": "Mar 17, 2017 4:52:27 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%python\nmsg \u003d \"Quoi de neuf ?\"\nmsg",
+      "dateUpdated": "Mar 17, 2017 4:44:44 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1489768620683_-1110542965",
+      "id": "20170317-163700_1654415129",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\u0027Quoi de neuf ?\u0027\n"
+      },
+      "dateCreated": "Mar 17, 2017 4:37:00 PM",
+      "dateStarted": "Mar 17, 2017 4:44:44 PM",
+      "dateFinished": "Mar 17, 2017 4:44:44 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%python\nage \u003d \"J\u0027ai 30 ans\"\nage",
+      "dateUpdated": "Mar 17, 2017 4:42:58 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -364,7 +433,7 @@
     },
     {
       "text": "%md\n\nAs you can see, we have not chosen an interpreter in the last column. \n\nA default interpreter is set at the beginning of the notebook, on the right-hand of the menu toolbar at the top in the menu `Interpreter binding` and represented by a gear. You can also select/deselect usable interpreters for the notebook.\n\nFor more information on how each interpreter is configured, you can check the interpreter menu, in the dropdown menu with your username _(anonymous for now. Do note that Apache Zeppelin also support user authentication for multitenancy but we are not going to delve into that)_.\n\nFor now, we assume that the default interpreter is the Apache Spark/Scala interpreter, so the default cell parses Spark/Scala code. The tutorial series will be mostly using this interpreter. No Scala knowledge is needed to pursue through the series, as we will only use basic functional programming concepts.\n\n_If you are wondering why Scala, Apache Spark is implemented in Scala, and so is its main API. Apache Spark draws from the functional paradigm for representing its computations the same way as MapReduce does. A common justification is Spark and MapReduce specialize in coarse-grained transformations that apply the same operation on many data items, which is a good fit for parallel applications, and the functional programming paradigm fits the idea._",
-      "dateUpdated": "Mar 17, 2017 4:10:16 PM",
+      "dateUpdated": "Mar 17, 2017 4:41:10 PM",
       "config": {
         "enabled": true,
         "graph": {
@@ -381,7 +450,7 @@
             "pinCols": []
           }
         },
-        "editorHide": true,
+        "editorHide": false,
         "colWidth": 12.0
       },
       "settings": {
@@ -399,41 +468,6 @@
       "dateStarted": "Jan 25, 2017 9:37:18 AM",
       "dateFinished": "Jan 25, 2017 9:37:18 AM",
       "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "text": "%python\n msg \u003d \"Quoi de neuf ?\" \n ",
-      "dateUpdated": "Mar 17, 2017 4:10:21 PM",
-      "config": {
-        "colWidth": 12.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
-        "enabled": true,
-        "editorMode": "ace/mode/scala",
-        "editorHide": true
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "jobName": "paragraph_1489766462851_347944358",
-      "id": "20170317-160102_267875062",
-      "result": {
-        "code": "ERROR",
-        "type": "TEXT",
-        "msg": "Prefix not found."
-      },
-      "dateCreated": "Mar 17, 2017 4:01:02 PM",
-      "dateStarted": "Mar 17, 2017 4:06:53 PM",
-      "dateFinished": "Mar 17, 2017 4:06:53 PM",
-      "status": "ERROR",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -478,7 +512,7 @@
     {
       "title": "Some arithmetic",
       "text": "8 * 5 + 2",
-      "dateUpdated": "Mar 17, 2017 4:10:16 PM",
+      "dateUpdated": "Mar 17, 2017 4:52:45 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -493,7 +527,7 @@
         },
         "editorMode": "ace/mode/scala",
         "colWidth": 4.0,
-        "editorHide": true
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -503,18 +537,19 @@
       "id": "20161215-101647_1780031444",
       "result": {
         "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": "res2: Int \u003d 42\n"
+        "type": "HTML",
+        "msg": "\u003cp\u003e8 * 5 + 2\u003c/p\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Mar 17, 2017 4:52:46 PM",
+      "dateFinished": "Mar 17, 2017 4:52:46 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Declaring variables",
       "text": "val a \u003d 3 // val defines an immutable value\nvar b : Int \u003d 5 // var defines a mutable variable\nprintln(a + b)\n\nb \u003d 42\nprintln(a + b)\n\n// Note that the type of a variable or function is written after the variable or function. \n\n// Because Scala does type inference, it is also not necessary to declare type to variables when it looks obvious.",
-      "dateUpdated": "Mar 17, 2017 4:10:16 PM",
+      "dateUpdated": "Mar 17, 2017 4:52:54 PM",
       "config": {
         "enabled": true,
         "tableHide": true,
@@ -529,7 +564,7 @@
           "scatter": {}
         },
         "editorMode": "ace/mode/scala",
-        "editorHide": true,
+        "editorHide": false,
         "colWidth": 4.0
       },
       "settings": {
@@ -540,18 +575,19 @@
       "id": "20161215-101655_1153115867",
       "result": {
         "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": "a: Int \u003d 3\nb: Int \u003d 5\n8\nb: Int \u003d 42\n45\n"
+        "type": "HTML",
+        "msg": "\u003cp\u003eval a \u003d 3 // val defines an immutable value\n\u003cbr  /\u003evar b : Int \u003d 5 // var defines a mutable variable\n\u003cbr  /\u003eprintln(a + b)\u003c/p\u003e\n\u003cp\u003eb \u003d 42\n\u003cbr  /\u003eprintln(a + b)\u003c/p\u003e\n\u003cp\u003e// Note that the type of a variable or function is written after the variable or function.\u003c/p\u003e\n\u003cp\u003e// Because Scala does type inference, it is also not necessary to declare type to variables when it looks obvious.\u003c/p\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Mar 17, 2017 4:52:55 PM",
+      "dateFinished": "Mar 17, 2017 4:52:55 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Reusing a variable",
       "text": "// variables are accessible accross cells\n\na * b",
-      "dateUpdated": "Mar 17, 2017 4:10:16 PM",
+      "dateUpdated": "Mar 17, 2017 4:53:00 PM",
       "config": {
         "enabled": true,
         "title": true,
@@ -566,7 +602,7 @@
         },
         "editorMode": "ace/mode/scala",
         "colWidth": 4.0,
-        "editorHide": true
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -576,12 +612,115 @@
       "id": "20161215-101705_1808342927",
       "result": {
         "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": "res13: Int \u003d 15\n"
+        "type": "HTML",
+        "msg": "\u003cp\u003e// variables are accessible accross cells\u003c/p\u003e\n\u003cp\u003ea * b\u003c/p\u003e\n"
       },
       "dateCreated": "Jan 25, 2017 8:32:04 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Mar 17, 2017 4:52:57 PM",
+      "dateFinished": "Mar 17, 2017 4:52:57 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%python\n\n10 % 3 \t\t\t\n10 % 5",
+      "dateUpdated": "Mar 17, 2017 5:16:05 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1489770941393_-2049437027",
+      "id": "20170317-171541_1364168940",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "1\n0\n"
+      },
+      "dateCreated": "Mar 17, 2017 5:15:41 PM",
+      "dateStarted": "Mar 17, 2017 5:16:05 PM",
+      "dateFinished": "Mar 17, 2017 5:16:05 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%python\nliste \u003d [\"a\",\"a\",\"a\",\"b\",\"c\",\"c\"]\nliste.count(\"a\")\nliste.count(\"c\")\n\n// occurence d\u0027un mot\n",
+      "dateUpdated": "Mar 17, 2017 5:14:05 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1489769754714_2037894511",
+      "id": "20170317-165554_934193490",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "3\n2\n  File \"\u003cstdin\u003e\", line 1\n    // occurence d\u0027un mot\n     ^\nSyntaxError: invalid syntax\n"
+      },
+      "dateCreated": "Mar 17, 2017 4:55:54 PM",
+      "dateStarted": "Mar 17, 2017 5:14:05 PM",
+      "dateFinished": "Mar 17, 2017 5:14:05 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%python\nlargeur \u003d 20\nhauteur \u003d 5 * 9.3\nlargeur * hauteur",
+      "dateUpdated": "Mar 17, 2017 4:54:38 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1489768764913_371725981",
+      "id": "20170317-163924_31258212",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "930.0\n"
+      },
+      "dateCreated": "Mar 17, 2017 4:39:24 PM",
+      "dateStarted": "Mar 17, 2017 4:54:38 PM",
+      "dateFinished": "Mar 17, 2017 4:54:38 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -660,7 +799,7 @@
     {
       "title": "New list with all elements doubled",
       "text": "sequenceNumbers.map(x \u003d\u003e x * 2)\n\nsequenceNumbers.map(_ * 2)",
-      "dateUpdated": "Mar 17, 2017 4:10:17 PM",
+      "dateUpdated": "Mar 17, 2017 4:53:16 PM",
       "config": {
         "enabled": true,
         "tableHide": true,
@@ -675,7 +814,7 @@
           "scatter": {}
         },
         "editorMode": "ace/mode/scala",
-        "editorHide": true,
+        "editorHide": false,
         "colWidth": 4.0
       },
       "settings": {
@@ -697,7 +836,7 @@
     {
       "title": "New list with pair numbers removed",
       "text": "sequenceNumbers.filter(x \u003d\u003e x % 2 !\u003d 0)\n\nsequenceNumbers.filter(_ % 2 !\u003d 0)",
-      "dateUpdated": "Mar 17, 2017 4:10:17 PM",
+      "dateUpdated": "Mar 17, 2017 4:53:14 PM",
       "config": {
         "enabled": true,
         "tableHide": true,
@@ -712,7 +851,7 @@
           "scatter": {}
         },
         "editorMode": "ace/mode/scala",
-        "editorHide": true,
+        "editorHide": false,
         "colWidth": 4.0
       },
       "settings": {
