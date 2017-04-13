@@ -4,8 +4,8 @@ This is a fork from [arjones/vagrant-spark-zeppelin](https://github.com/arjones/
 
 It provides a Vagrantfile which installs a debian virtual machine containing:
 
-* Apache Spark 1.6.1
-* Apache Zeppelin 0.6.2
+* Apache Spark 2.1.0
+* Apache Zeppelin 0.7.0
 * Apache Maven 3.3.3
 
 ## Prerequisites
