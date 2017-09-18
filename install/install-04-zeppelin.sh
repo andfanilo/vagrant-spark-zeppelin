@@ -1,12 +1,9 @@
 #!/usr/bin/env bash
 
 # APACHE ZEPPELIN
-export MAVEN_VERSION=3.3.3
-export MAVEN_HOME=/usr/apache-maven-$MAVEN_VERSION
-
-export ZEPPELIN_VERSION=0.6.2
+export ZEPPELIN_VERSION=0.7.0
 export ZEPPELIN_PACKAGE=$ZEPPELIN_VERSION-bin-all
-export ZEPPELIN_HOME=/usr/zeppelin-0.6.2-bin-all
+export ZEPPELIN_HOME=/usr/zeppelin-${ZEPPELIN_VERSION}-bin-all
 export ZEPPELIN_CONF_DIR=${ZEPPELIN_HOME}/conf
 export ZEPPELIN_NOTEBOOK_DIR=${ZEPPELIN_HOME}/notebook
 
@@ -14,10 +11,6 @@ apt-get install -y git wget net-tools unzip python npm
 
 # # Fixing Debian/Jessie 8.2 has changed "node" to "nodejs"
 ln -fs /usr/bin/nodejs /usr/bin/node
-
-wget -c "http://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz"
-tar zxvf apache-maven-$MAVEN_VERSION-bin.tar.gz -C /usr/
-ln -s ${MAVEN_HOME} /usr/maven
 
 wget -c "http://archive.apache.org/dist/zeppelin/zeppelin-${ZEPPELIN_VERSION}/zeppelin-${ZEPPELIN_PACKAGE}.tgz"
 
