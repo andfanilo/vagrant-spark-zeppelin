@@ -1,3 +1,13 @@
+
+
+
+
+# Noureddine BOULANOUAR & Oussama Taleb BI&BD groupe 1
+
+
+
+
+
 # Practice : tweak a Zeppelin environment and test Spark
 
 This is a fork from [arjones/vagrant-spark-zeppelin](https://github.com/arjones/vagrant-spark-zeppelin), that we are going to use for educational purposes.
@@ -118,7 +128,7 @@ $ git branch
 Add a message between the following lines:
 
 <hr>
-PERSONAL MESSAGE
+Boulanouar noureddine et Taleb Oussama ont fais une modification :D 
 <hr>
 
 You can check the status of your Git repository with `$ git status`
