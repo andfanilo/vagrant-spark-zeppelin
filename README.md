@@ -1,3 +1,13 @@
+
+
+
+
+# Noureddine BOULANOUAR & Oussama Taleb BI&BD groupe 1
+
+
+
+
+
 # Practice : tweak a Zeppelin environment and test Spark
 
 This is a fork from [arjones/vagrant-spark-zeppelin](https://github.com/arjones/vagrant-spark-zeppelin), that we are going to use for educational purposes.
@@ -70,10 +80,7 @@ _Done : `$ vagrant box list` should display debian/jessie64_
 
 #### 2. First steps with Git
 
-You are going to create your first branch, commit a 
-
-
-l message on this README, merge it back to your master branch and push your work back into your Github repo.
+You are going to create your first branch, commit a personal message on this README, merge it back to your master branch and push your work back into your Github repo.
 
 Don't forget to work in the project you just cloned: `$ cd vagrant-spark-zeppelin`.
 
@@ -100,7 +107,7 @@ $ git branch
 Add a message between the following lines:
 
 <hr>
-Boulanouar noureddine et Taleb Oussama 
+Boulanouar noureddine et Taleb Oussama ont fais une modification :D 
 <hr>
 
 With `$ git status` you can check the status of your Git repository.

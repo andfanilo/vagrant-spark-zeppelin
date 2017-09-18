@@ -1,8 +1,13 @@
 {
   "paragraphs": [
     {
-      "text": "%md\n\n# Binary Classification Algorithms with Pipelines API\n\nName(s): Boulanouar Noureddine et Taleb Oussama\nClass: BIBD\n\n\u003chr\u003e\n\nIn this notebook, we will test out the Binary Classification algorithms available in the ML Pipelines API using the Adult dataset. The Pipelines API provides higher-level API built on top of DataFrames for constructing ML pipelines. You can read more about the ML Pipelines API in the [programming guide](http://spark.apache.org/docs/2.0.1/ml-guide.html).\n\n**Binary Classification** is the task of predicting a binary 0 or 1 label.  E.g., is an email spam or not spam?  Should I show this ad to this user or not?  Will it rain tomorrow or not?  This notebook demonstrates several algorithms for making these types of predictions.\n\n\u003chr\u003e\n\nThis notebook will act as your written assignment. As such, it should contain your code and all necessary explanations, like why did you use that or why do you think this happens. When I read it at the end, I should understand all of your reasoning.\n\nDon\u0027t forget to __frequently__ commit your code and push it back to Github. A good advice would be that anytime your answer a question with code and explanation, you should commit a message referencing the question and push it to Github. By versioning frequently, you keep a good history of your work and can eventually return back. At the end of the assignment, you will notify me of your work via a pull request.\n\nYour mark will be based on:\n- your commit activity\n- completing the full analysis of the dataset, from describing it to predicting the income value and evaluating that\n\nThe questions I have put serve as a guideline, but you are totally free to change the text and put your own descriptions (which is absolutely appreciated because it shows you have fully comprehended the problem)\n\n\u003chr\u003e\n\n####Table of Contents\n\n* Dataset Review\n* Load Data\n* Descriptive analysis\n* Data Preprocessing\n* Creation of models\n* Conclusion",
-      "dateUpdated": "Feb 17, 2017 3:12:09 PM",
+<<<<<<< HEAD
+      "text": "%md\n\n# Binary Classification Algorithms with Pipelines API\n\nName(s):   Noureddine BOULANOUAR et Oussama TALEB\nClass: BI et BD_\n\n\u003chr\u003e\n\nIn this notebook, we will test out the Binary Classification algorithms available in the ML Pipelines API using the Adult dataset. The Pipelines API provides higher-level API built on top of DataFrames for constructing ML pipelines. You can read more about the ML Pipelines API in the [programming guide](http://spark.apache.org/docs/2.0.1/ml-guide.html).\n\n**Binary Classification** is the task of predicting a binary 0 or 1 label.  E.g., is an email spam or not spam?  Should I show this ad to this user or not?  Will it rain tomorrow or not?  This notebook demonstrates several algorithms for making these types of predictions.\n\n\u003chr\u003e\n\nThis notebook will act as your written assignment. As such, it should contain your code and all necessary explanations, like why did you use that or why do you think this happens. When I read it at the end, I should understand all of your reasoning.\n\nDon\u0027t forget to __frequently__ commit your code and push it back to Github. A good advice would be that anytime your answer a question with code and explanation, you should commit a message referencing the question and push it to Github. By versioning frequently, you keep a good history of your work and can eventually return back. At the end of the assignment, you will notify me of your work via a pull request.\n\nYour mark will be based on:\n- your commit activity\n- completing the full analysis of the dataset, from describing it to predicting the income value and evaluating that\n\nThe questions I have put serve as a guideline, but you are totally free to change the text and put your own descriptions (which is absolutely appreciated because it shows you have fully comprehended the problem)\n\n\u003chr\u003e\n\n####Table of Contents\n\n* Dataset Review\n* Load Data\n* Descriptive analysis\n* Data Preprocessing\n* Creation of models\n* Conclusion",
+      "dateUpdated": "Feb 7, 2017 12:55:37 PM",
+=======
+      "text": "%md\n\n# Binary Classification Algorithms with Pipelines API\nName(s): _Noureddine BOULANOUAR et Oussama TALEB_\nClass: _BIBD_\n\n\u003chr\u003e\n\nIn this notebook, we will test out the Binary Classification algorithms available in the ML Pipelines API using the Adult dataset. The Pipelines API provides higher-level API built on top of DataFrames for constructing ML pipelines. You can read more about the ML Pipelines API in the [programming guide](http://spark.apache.org/docs/2.0.1/ml-guide.html).\n\n**Binary Classification** is the task of predicting a binary 0 or 1 label.  E.g., is an email spam or not spam?  Should I show this ad to this user or not?  Will it rain tomorrow or not?  This notebook demonstrates several algorithms for making these types of predictions.\n\n\u003chr\u003e\n\nThis notebook will act as your written assignment. As such, it should contain your code and all necessary explanations, like why did you use that or why do you think this happens. When I read it at the end, I should understand all of your reasoning.\n\nDon\u0027t forget to __frequently__ commit your code and push it back to Github. A good advice would be that anytime your answer a question with code and explanation, you should commit a message referencing the question and push it to Github. By versioning frequently, you keep a good history of your work and can eventually return back. At the end of the assignment, you will notify me of your work via a pull request.\n\nYour mark will be based on:\n- your commit activity\n- completing the full analysis of the dataset, from describing it to predicting the income value and evaluating that\n\nThe questions I have put serve as a guideline, but you are totally free to change the text and put your own descriptions (which is absolutely appreciated because it shows you have fully comprehended the problem)\n\n\u003chr\u003e\n\n####Table of Contents\n\n* Dataset Review\n* Load Data\n* Descriptive analysis\n* Data Preprocessing\n* Creation of models\n* Conclusion",
+      "dateUpdated": "Feb 17, 2017 2:59:08 PM",
+>>>>>>> feature
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -27,17 +32,17 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003ch1\u003eBinary Classification Algorithms with Pipelines API\u003c/h1\u003e\n\u003cp\u003eName(s): Boulanouar Noureddine et Taleb Oussama\n\u003cbr  /\u003eClass: BIBD\u003c/p\u003e\n\u003chr\u003e\n\u003cp\u003eIn this notebook, we will test out the Binary Classification algorithms available in the ML Pipelines API using the Adult dataset. The Pipelines API provides higher-level API built on top of DataFrames for constructing ML pipelines. You can read more about the ML Pipelines API in the \u003ca href\u003d\"http://spark.apache.org/docs/2.0.1/ml-guide.html\"\u003eprogramming guide\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eBinary Classification\u003c/strong\u003e is the task of predicting a binary 0 or 1 label.  E.g., is an email spam or not spam?  Should I show this ad to this user or not?  Will it rain tomorrow or not?  This notebook demonstrates several algorithms for making these types of predictions.\u003c/p\u003e\n\u003chr\u003e\n\u003cp\u003eThis notebook will act as your written assignment. As such, it should contain your code and all necessary explanations, like why did you use that or why do you think this happens. When I read it at the end, I should understand all of your reasoning.\u003c/p\u003e\n\u003cp\u003eDon\u0027t forget to \u003cstrong\u003efrequently\u003c/strong\u003e commit your code and push it back to Github. A good advice would be that anytime your answer a question with code and explanation, you should commit a message referencing the question and push it to Github. By versioning frequently, you keep a good history of your work and can eventually return back. At the end of the assignment, you will notify me of your work via a pull request.\u003c/p\u003e\n\u003cp\u003eYour mark will be based on:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eyour commit activity\u003c/li\u003e\n\u003cli\u003ecompleting the full analysis of the dataset, from describing it to predicting the income value and evaluating that\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eThe questions I have put serve as a guideline, but you are totally free to change the text and put your own descriptions (which is absolutely appreciated because it shows you have fully comprehended the problem)\u003c/p\u003e\n\u003chr\u003e\n\u003ch4\u003eTable of Contents\u003c/h4\u003e\n\u003cul\u003e\n\u003cli\u003eDataset Review\u003c/li\u003e\n\u003cli\u003eLoad Data\u003c/li\u003e\n\u003cli\u003eDescriptive analysis\u003c/li\u003e\n\u003cli\u003eData Preprocessing\u003c/li\u003e\n\u003cli\u003eCreation of models\u003c/li\u003e\n\u003cli\u003eConclusion\u003c/li\u003e\n\u003c/ul\u003e\n"
+        "msg": "\u003ch1\u003eBinary Classification Algorithms with Pipelines API\u003c/h1\u003e\n\u003cp\u003eName(s): \u003cem\u003eNoureddine BOULANOUAR et Oussama TALEB\u003c/em\u003e\n\u003cbr  /\u003eClass: \u003cem\u003eBIBD\u003c/em\u003e\u003c/p\u003e\n\u003chr\u003e\n\u003cp\u003eIn this notebook, we will test out the Binary Classification algorithms available in the ML Pipelines API using the Adult dataset. The Pipelines API provides higher-level API built on top of DataFrames for constructing ML pipelines. You can read more about the ML Pipelines API in the \u003ca href\u003d\"http://spark.apache.org/docs/2.0.1/ml-guide.html\"\u003eprogramming guide\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eBinary Classification\u003c/strong\u003e is the task of predicting a binary 0 or 1 label.  E.g., is an email spam or not spam?  Should I show this ad to this user or not?  Will it rain tomorrow or not?  This notebook demonstrates several algorithms for making these types of predictions.\u003c/p\u003e\n\u003chr\u003e\n\u003cp\u003eThis notebook will act as your written assignment. As such, it should contain your code and all necessary explanations, like why did you use that or why do you think this happens. When I read it at the end, I should understand all of your reasoning.\u003c/p\u003e\n\u003cp\u003eDon\u0027t forget to \u003cstrong\u003efrequently\u003c/strong\u003e commit your code and push it back to Github. A good advice would be that anytime your answer a question with code and explanation, you should commit a message referencing the question and push it to Github. By versioning frequently, you keep a good history of your work and can eventually return back. At the end of the assignment, you will notify me of your work via a pull request.\u003c/p\u003e\n\u003cp\u003eYour mark will be based on:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eyour commit activity\u003c/li\u003e\n\u003cli\u003ecompleting the full analysis of the dataset, from describing it to predicting the income value and evaluating that\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eThe questions I have put serve as a guideline, but you are totally free to change the text and put your own descriptions (which is absolutely appreciated because it shows you have fully comprehended the problem)\u003c/p\u003e\n\u003chr\u003e\n\u003ch4\u003eTable of Contents\u003c/h4\u003e\n\u003cul\u003e\n\u003cli\u003eDataset Review\u003c/li\u003e\n\u003cli\u003eLoad Data\u003c/li\u003e\n\u003cli\u003eDescriptive analysis\u003c/li\u003e\n\u003cli\u003eData Preprocessing\u003c/li\u003e\n\u003cli\u003eCreation of models\u003c/li\u003e\n\u003cli\u003eConclusion\u003c/li\u003e\n\u003c/ul\u003e\n"
       },
       "dateCreated": "Feb 3, 2017 8:20:06 AM",
-      "dateStarted": "Feb 17, 2017 3:12:08 PM",
-      "dateFinished": "Feb 17, 2017 3:12:08 PM",
+      "dateStarted": "Feb 17, 2017 2:59:05 PM",
+      "dateFinished": "Feb 17, 2017 2:59:05 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n## I. Dataset review\n\nThe Adult dataset is publicly available at the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Adult). This data was obtained from the Census, and consists of information about 48842 individuals and their annual income. We will use this information to predict if an individual earns \u003e50k a year or \u003c\u003d50K a year. The dataset is rather clean, and consists of both numeric and categorical variables.\n\nAttribute Information:\n- age: continuous\n- workclass: Private, Self-emp-not-inc, Self-emp-inc, Federal-gov, Local-gov, State-gov, Without-pay, Never-worked\n- fnlwgt: continuous\n- education: Bachelors, Some-college, 11th, HS-grad, Prof-school, Assoc-acdm, Assoc-voc...\n- education-num: continuous\n- marital-status: Married-civ-spouse, Divorced, Never-married, Separated, Widowed, Married-spouse-absent...\n- occupation: Tech-support, Craft-repair, Other-service, Sales, Exec-managerial, Prof-specialty, Handlers-cleaners...\n- relationship: Wife, Own-child, Husband, Not-in-family, Other-relative, Unmarried\n- race: White, Asian-Pac-Islander, Amer-Indian-Eskimo, Other, Black\n- sex: Female, Male. \n- capital-gain: continuous\n- capital-loss: continuous\n- hours-per-week: continuous\n- native-country: United-States, Cambodia, England, Puerto-Rico, Canada, Germany...\n\n\nTarget/Label:\n- \u003c\u003d50K, \u003e50K",
-      "dateUpdated": "Feb 17, 2017 3:10:11 PM",
+      "dateUpdated": "Feb 7, 2017 12:55:38 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -71,8 +76,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\n\n## II. Load data\n\n\nOn a verifié le chemin de repertoir data et on a trouvé que le fichier adult.data.csv a été deja téléchargé.\n\nLes cellules suivantes feront le nécessaire pour charger les données dans un DataFrame.",
-      "dateUpdated": "Feb 17, 2017 3:17:49 PM",
+      "text": "%md\n\n## II. Load data\n\nI have downloaded adult.data from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Adult) and put it into the `data/` folder of your project.\n\nThe following cells will do the necessary to load the data into a DataFrame.",
+      "dateUpdated": "Feb 17, 2017 3:06:19 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -86,7 +91,7 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/markdown",
-        "editorHide": false
+        "editorHide": true
       },
       "settings": {
         "params": {},
@@ -97,18 +102,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003ch2\u003eII. Load data\u003c/h2\u003e\n\u003cp\u003eOn a verifié le chemin de repertoir data et on a trouvé que le fichier adult.data.csv a été deja téléchargé.\u003c/p\u003e\n\u003cp\u003eLes cellules suivantes feront le nécessaire pour charger les données dans un DataFrame.\u003c/p\u003e\n"
+        "msg": "\u003ch2\u003eII. Load data\u003c/h2\u003e\n\u003cp\u003eI have downloaded adult.data from the \u003ca href\u003d\"https://archive.ics.uci.edu/ml/datasets/Adult\"\u003eUCI Machine Learning Repository\u003c/a\u003e and put it into the \u003ccode\u003edata/\u003c/code\u003e folder of your project.\u003c/p\u003e\n\u003cp\u003eThe following cells will do the necessary to load the data into a DataFrame.\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 3, 2017 8:35:44 AM",
-      "dateStarted": "Feb 17, 2017 3:17:49 PM",
-      "dateFinished": "Feb 17, 2017 3:17:49 PM",
+      "dateStarted": "Feb 7, 2017 12:55:40 PM",
+      "dateFinished": "Feb 7, 2017 12:55:40 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "Load data (run the cell)",
-      "text": "import org.apache.spark.sql.types.{StringType, DoubleType, StructType, StructField}\n\nval schema \u003d StructType(Seq(\n    StructField(\"age\", DoubleType),\n    StructField(\"workclass\", StringType),\n    StructField(\"fnlwgt\", DoubleType),\n    StructField(\"education\", StringType),\n    StructField(\"education_num\", DoubleType),\n    StructField(\"marital_status\", StringType),\n    StructField(\"occupation\", StringType),\n    StructField(\"relationship\", StringType),\n    StructField(\"race\", StringType),\n    StructField(\"sex\", StringType),\n    StructField(\"capital_gain\", DoubleType),\n    StructField(\"capital_loss\", DoubleType),\n    StructField(\"hours_per_week\", DoubleType),\n    StructField(\"native_country\", StringType),\n    StructField(\"income\", StringType)\n    ))\n\ncase class Adult(\n    age: Double, \n    workclass: String, \n    fnlwgt: Double, \n    education: String, \n    education_num: Double, \n    marital_status: String, \n    occupation: String, \n    relationship: String, \n    race: String, \n    sex: String, \n    capital_gain: Double, \n    capital_loss: Double, \n    hours_per_week: Double, \n    native_country: String, \n    income: String\n    )\n    \nval dataset \u003d spark.read.schema(schema).csv(\"/opt/dataset/adult.data.csv\").as[Adult]\ndataset.registerTempTable(\"dataset\")  // register it so we can use it inside %sql interpreter\n\n",
-      "dateUpdated": "Feb 17, 2017 3:36:08 PM",
+      "text": "import org.apache.spark.sql.types.{StringType, DoubleType, StructType, StructField}\n\nval schema \u003d StructType(Seq(\n    StructField(\"age\", DoubleType),\n    StructField(\"workclass\", StringType),\n    StructField(\"fnlwgt\", DoubleType),\n    StructField(\"education\", StringType),\n    StructField(\"education_num\", DoubleType),\n    StructField(\"marital_status\", StringType),\n    StructField(\"occupation\", StringType),\n    StructField(\"relationship\", StringType),\n    StructField(\"race\", StringType),\n    StructField(\"sex\", StringType),\n    StructField(\"capital_gain\", DoubleType),\n    StructField(\"capital_loss\", DoubleType),\n    StructField(\"hours_per_week\", DoubleType),\n    StructField(\"native_country\", StringType),\n    StructField(\"income\", StringType)\n    ))\n\ncase class Adult(\n    age: Double, \n    workclass: String, \n    fnlwgt: Double, \n    education: String, \n    education_num: Double, \n    marital_status: String, \n    occupation: String, \n    relationship: String, \n    race: String, \n    sex: String, \n    capital_gain: Double, \n    capital_loss: Double, \n    hours_per_week: Double, \n    native_country: String, \n    income: String\n    )\n    \nval dataset \u003d spark.read.schema(schema).csv(\"/opt/dataset/adult.data.csv\").as[Adult]\ndataset.registerTempTable(\"dataset\")  // register it so we can use it inside %sql interpreter",
+      "dateUpdated": "Feb 17, 2017 3:02:06 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -123,7 +128,7 @@
         "enabled": true,
         "editorMode": "ace/mode/scala",
         "title": true,
-        "editorHide": false,
+        "editorHide": true,
         "tableHide": true
       },
       "settings": {
@@ -138,14 +143,14 @@
         "msg": "\nimport org.apache.spark.sql.types.{StringType, DoubleType, StructType, StructField}\n\nschema: org.apache.spark.sql.types.StructType \u003d StructType(StructField(age,DoubleType,true), StructField(workclass,StringType,true), StructField(fnlwgt,DoubleType,true), StructField(education,StringType,true), StructField(education_num,DoubleType,true), StructField(marital_status,StringType,true), StructField(occupation,StringType,true), StructField(relationship,StringType,true), StructField(race,StringType,true), StructField(sex,StringType,true), StructField(capital_gain,DoubleType,true), StructField(capital_loss,DoubleType,true), StructField(hours_per_week,DoubleType,true), StructField(native_country,StringType,true), StructField(income,StringType,true))\n\ndefined class Adult\n\ndataset: org.apache.spark.sql.Dataset[Adult] \u003d [age: double, workclass: string ... 13 more fields]\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n"
       },
       "dateCreated": "Feb 3, 2017 8:43:33 AM",
-      "dateStarted": "Feb 17, 2017 3:36:08 PM",
-      "dateFinished": "Feb 17, 2017 3:36:10 PM",
+      "dateStarted": "Feb 17, 2017 3:02:06 PM",
+      "dateFinished": "Feb 17, 2017 3:02:20 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "dataset.printSchema()",
-      "dateUpdated": "Feb 17, 2017 3:41:12 PM",
+      "dateUpdated": "Feb 17, 2017 3:02:28 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -158,8 +163,7 @@
           "scatter": {}
         },
         "enabled": true,
-        "editorMode": "ace/mode/scala",
-        "editorHide": false
+        "editorMode": "ace/mode/scala"
       },
       "settings": {
         "params": {},
@@ -173,14 +177,14 @@
         "msg": "root\n |-- age: double (nullable \u003d true)\n |-- workclass: string (nullable \u003d true)\n |-- fnlwgt: double (nullable \u003d true)\n |-- education: string (nullable \u003d true)\n |-- education_num: double (nullable \u003d true)\n |-- marital_status: string (nullable \u003d true)\n |-- occupation: string (nullable \u003d true)\n |-- relationship: string (nullable \u003d true)\n |-- race: string (nullable \u003d true)\n |-- sex: string (nullable \u003d true)\n |-- capital_gain: double (nullable \u003d true)\n |-- capital_loss: double (nullable \u003d true)\n |-- hours_per_week: double (nullable \u003d true)\n |-- native_country: string (nullable \u003d true)\n |-- income: string (nullable \u003d true)\n\n"
       },
       "dateCreated": "Feb 6, 2017 1:45:35 AM",
-      "dateStarted": "Feb 17, 2017 3:36:38 PM",
-      "dateFinished": "Feb 17, 2017 3:36:39 PM",
+      "dateStarted": "Feb 17, 2017 3:02:28 PM",
+      "dateFinished": "Feb 17, 2017 3:02:29 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%sql SELECT distinct workclass  FROM dataset ",
-      "dateUpdated": "Feb 17, 2017 4:40:35 PM",
+      "text": "%sql SELECT * FROM dataset LIMIT 100",
+      "dateUpdated": "Feb 17, 2017 3:03:26 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -193,8 +197,7 @@
           "scatter": {}
         },
         "enabled": true,
-        "editorMode": "ace/mode/sql",
-        "editorHide": false
+        "editorMode": "ace/mode/sql"
       },
       "settings": {
         "params": {},
@@ -205,77 +208,17 @@
       "result": {
         "code": "SUCCESS",
         "type": "TABLE",
-        "msg": "workclass\n State-gov\n Federal-gov\n Self-emp-not-inc\n Local-gov\n Private\n ?\n Self-emp-inc\n Without-pay\n Never-worked\n"
+        "msg": "age\tworkclass\tfnlwgt\teducation\teducation_num\tmarital_status\toccupation\trelationship\trace\tsex\tcapital_gain\tcapital_loss\thours_per_week\tnative_country\tincome\n39.0\t State-gov\t77516.0\t Bachelors\t13.0\t Never-married\t Adm-clerical\t Not-in-family\t White\t Male\t2174.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n50.0\t Self-emp-not-inc\t83311.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t13.0\t United-States\t \u003c\u003d50K\n38.0\t Private\t215646.0\t HS-grad\t9.0\t Divorced\t Handlers-cleaners\t Not-in-family\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n53.0\t Private\t234721.0\t 11th\t7.0\t Married-civ-spouse\t Handlers-cleaners\t Husband\t Black\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n28.0\t Private\t338409.0\t Bachelors\t13.0\t Married-civ-spouse\t Prof-specialty\t Wife\t Black\t Female\t0.0\t0.0\t40.0\t Cuba\t \u003c\u003d50K\n37.0\t Private\t284582.0\t Masters\t14.0\t Married-civ-spouse\t Exec-managerial\t Wife\t White\t Female\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n49.0\t Private\t160187.0\t 9th\t5.0\t Married-spouse-absent\t Other-service\t Not-in-family\t Black\t Female\t0.0\t0.0\t16.0\t Jamaica\t \u003c\u003d50K\n52.0\t Self-emp-not-inc\t209642.0\t HS-grad\t9.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t45.0\t United-States\t \u003e50K\n31.0\t Private\t45781.0\t Masters\t14.0\t Never-married\t Prof-specialty\t Not-in-family\t White\t Female\t14084.0\t0.0\t50.0\t United-States\t \u003e50K\n42.0\t Private\t159449.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t5178.0\t0.0\t40.0\t United-States\t \u003e50K\n37.0\t Private\t280464.0\t Some-college\t10.0\t Married-civ-spouse\t Exec-managerial\t Husband\t Black\t Male\t0.0\t0.0\t80.0\t United-States\t \u003e50K\n30.0\t State-gov\t141297.0\t Bachelors\t13.0\t Married-civ-spouse\t Prof-specialty\t Husband\t Asian-Pac-Islander\t Male\t0.0\t0.0\t40.0\t India\t \u003e50K\n23.0\t Private\t122272.0\t Bachelors\t13.0\t Never-married\t Adm-clerical\t Own-child\t White\t Female\t0.0\t0.0\t30.0\t United-States\t \u003c\u003d50K\n32.0\t Private\t205019.0\t Assoc-acdm\t12.0\t Never-married\t Sales\t Not-in-family\t Black\t Male\t0.0\t0.0\t50.0\t United-States\t \u003c\u003d50K\n40.0\t Private\t121772.0\t Assoc-voc\t11.0\t Married-civ-spouse\t Craft-repair\t Husband\t Asian-Pac-Islander\t Male\t0.0\t0.0\t40.0\t ?\t \u003e50K\n34.0\t Private\t245487.0\t 7th-8th\t4.0\t Married-civ-spouse\t Transport-moving\t Husband\t Amer-Indian-Eskimo\t Male\t0.0\t0.0\t45.0\t Mexico\t \u003c\u003d50K\n25.0\t Self-emp-not-inc\t176756.0\t HS-grad\t9.0\t Never-married\t Farming-fishing\t Own-child\t White\t Male\t0.0\t0.0\t35.0\t United-States\t \u003c\u003d50K\n32.0\t Private\t186824.0\t HS-grad\t9.0\t Never-married\t Machine-op-inspct\t Unmarried\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n38.0\t Private\t28887.0\t 11th\t7.0\t Married-civ-spouse\t Sales\t Husband\t White\t Male\t0.0\t0.0\t50.0\t United-States\t \u003c\u003d50K\n43.0\t Self-emp-not-inc\t292175.0\t Masters\t14.0\t Divorced\t Exec-managerial\t Unmarried\t White\t Female\t0.0\t0.0\t45.0\t United-States\t \u003e50K\n40.0\t Private\t193524.0\t Doctorate\t16.0\t Married-civ-spouse\t Prof-specialty\t Husband\t White\t Male\t0.0\t0.0\t60.0\t United-States\t \u003e50K\n54.0\t Private\t302146.0\t HS-grad\t9.0\t Separated\t Other-service\t Unmarried\t Black\t Female\t0.0\t0.0\t20.0\t United-States\t \u003c\u003d50K\n35.0\t Federal-gov\t76845.0\t 9th\t5.0\t Married-civ-spouse\t Farming-fishing\t Husband\t Black\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n43.0\t Private\t117037.0\t 11th\t7.0\t Married-civ-spouse\t Transport-moving\t Husband\t White\t Male\t0.0\t2042.0\t40.0\t United-States\t \u003c\u003d50K\n59.0\t Private\t109015.0\t HS-grad\t9.0\t Divorced\t Tech-support\t Unmarried\t White\t Female\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n56.0\t Local-gov\t216851.0\t Bachelors\t13.0\t Married-civ-spouse\t Tech-support\t Husband\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003e50K\n19.0\t Private\t168294.0\t HS-grad\t9.0\t Never-married\t Craft-repair\t Own-child\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n54.0\t ?\t180211.0\t Some-college\t10.0\t Married-civ-spouse\t ?\t Husband\t Asian-Pac-Islander\t Male\t0.0\t0.0\t60.0\t South\t \u003e50K\n39.0\t Private\t367260.0\t HS-grad\t9.0\t Divorced\t Exec-managerial\t Not-in-family\t White\t Male\t0.0\t0.0\t80.0\t United-States\t \u003c\u003d50K\n49.0\t Private\t193366.0\t HS-grad\t9.0\t Married-civ-spouse\t Craft-repair\t Husband\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n23.0\t Local-gov\t190709.0\t Assoc-acdm\t12.0\t Never-married\t Protective-serv\t Not-in-family\t White\t Male\t0.0\t0.0\t52.0\t United-States\t \u003c\u003d50K\n20.0\t Private\t266015.0\t Some-college\t10.0\t Never-married\t Sales\t Own-child\t Black\t Male\t0.0\t0.0\t44.0\t United-States\t \u003c\u003d50K\n45.0\t Private\t386940.0\t Bachelors\t13.0\t Divorced\t Exec-managerial\t Own-child\t White\t Male\t0.0\t1408.0\t40.0\t United-States\t \u003c\u003d50K\n30.0\t Federal-gov\t59951.0\t Some-college\t10.0\t Married-civ-spouse\t Adm-clerical\t Own-child\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n22.0\t State-gov\t311512.0\t Some-college\t10.0\t Married-civ-spouse\t Other-service\t Husband\t Black\t Male\t0.0\t0.0\t15.0\t United-States\t \u003c\u003d50K\n48.0\t Private\t242406.0\t 11th\t7.0\t Never-married\t Machine-op-inspct\t Unmarried\t White\t Male\t0.0\t0.0\t40.0\t Puerto-Rico\t \u003c\u003d50K\n21.0\t Private\t197200.0\t Some-college\t10.0\t Never-married\t Machine-op-inspct\t Own-child\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n19.0\t Private\t544091.0\t HS-grad\t9.0\t Married-AF-spouse\t Adm-clerical\t Wife\t White\t Female\t0.0\t0.0\t25.0\t United-States\t \u003c\u003d50K\n31.0\t Private\t84154.0\t Some-college\t10.0\t Married-civ-spouse\t Sales\t Husband\t White\t Male\t0.0\t0.0\t38.0\t ?\t \u003e50K\n48.0\t Self-emp-not-inc\t265477.0\t Assoc-acdm\t12.0\t Married-civ-spouse\t Prof-specialty\t Husband\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n31.0\t Private\t507875.0\t 9th\t5.0\t Married-civ-spouse\t Machine-op-inspct\t Husband\t White\t Male\t0.0\t0.0\t43.0\t United-States\t \u003c\u003d50K\n53.0\t Self-emp-not-inc\t88506.0\t Bachelors\t13.0\t Married-civ-spouse\t Prof-specialty\t Husband\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n24.0\t Private\t172987.0\t Bachelors\t13.0\t Married-civ-spouse\t Tech-support\t Husband\t White\t Male\t0.0\t0.0\t50.0\t United-States\t \u003c\u003d50K\n49.0\t Private\t94638.0\t HS-grad\t9.0\t Separated\t Adm-clerical\t Unmarried\t White\t Female\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n25.0\t Private\t289980.0\t HS-grad\t9.0\t Never-married\t Handlers-cleaners\t Not-in-family\t White\t Male\t0.0\t0.0\t35.0\t United-States\t \u003c\u003d50K\n57.0\t Federal-gov\t337895.0\t Bachelors\t13.0\t Married-civ-spouse\t Prof-specialty\t Husband\t Black\t Male\t0.0\t0.0\t40.0\t United-States\t \u003e50K\n53.0\t Private\t144361.0\t HS-grad\t9.0\t Married-civ-spouse\t Machine-op-inspct\t Husband\t White\t Male\t0.0\t0.0\t38.0\t United-States\t \u003c\u003d50K\n44.0\t Private\t128354.0\t Masters\t14.0\t Divorced\t Exec-managerial\t Unmarried\t White\t Female\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n41.0\t State-gov\t101603.0\t Assoc-voc\t11.0\t Married-civ-spouse\t Craft-repair\t Husband\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n29.0\t Private\t271466.0\t Assoc-voc\t11.0\t Never-married\t Prof-specialty\t Not-in-family\t White\t Male\t0.0\t0.0\t43.0\t United-States\t \u003c\u003d50K\n25.0\t Private\t32275.0\t Some-college\t10.0\t Married-civ-spouse\t Exec-managerial\t Wife\t Other\t Female\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n18.0\t Private\t226956.0\t HS-grad\t9.0\t Never-married\t Other-service\t Own-child\t White\t Female\t0.0\t0.0\t30.0\t ?\t \u003c\u003d50K\n47.0\t Private\t51835.0\t Prof-school\t15.0\t Married-civ-spouse\t Prof-specialty\t Wife\t White\t Female\t0.0\t1902.0\t60.0\t Honduras\t \u003e50K\n50.0\t Federal-gov\t251585.0\t Bachelors\t13.0\t Divorced\t Exec-managerial\t Not-in-family\t White\t Male\t0.0\t0.0\t55.0\t United-States\t \u003e50K\n47.0\t Self-emp-inc\t109832.0\t HS-grad\t9.0\t Divorced\t Exec-managerial\t Not-in-family\t White\t Male\t0.0\t0.0\t60.0\t United-States\t \u003c\u003d50K\n43.0\t Private\t237993.0\t Some-college\t10.0\t Married-civ-spouse\t Tech-support\t Husband\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003e50K\n46.0\t Private\t216666.0\t 5th-6th\t3.0\t Married-civ-spouse\t Machine-op-inspct\t Husband\t White\t Male\t0.0\t0.0\t40.0\t Mexico\t \u003c\u003d50K\n35.0\t Private\t56352.0\t Assoc-voc\t11.0\t Married-civ-spouse\t Other-service\t Husband\t White\t Male\t0.0\t0.0\t40.0\t Puerto-Rico\t \u003c\u003d50K\n41.0\t Private\t147372.0\t HS-grad\t9.0\t Married-civ-spouse\t Adm-clerical\t Husband\t White\t Male\t0.0\t0.0\t48.0\t United-States\t \u003c\u003d50K\n30.0\t Private\t188146.0\t HS-grad\t9.0\t Married-civ-spouse\t Machine-op-inspct\t Husband\t White\t Male\t5013.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n30.0\t Private\t59496.0\t Bachelors\t13.0\t Married-civ-spouse\t Sales\t Husband\t White\t Male\t2407.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n32.0\t ?\t293936.0\t 7th-8th\t4.0\t Married-spouse-absent\t ?\t Not-in-family\t White\t Male\t0.0\t0.0\t40.0\t ?\t \u003c\u003d50K\n48.0\t Private\t149640.0\t HS-grad\t9.0\t Married-civ-spouse\t Transport-moving\t Husband\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n42.0\t Private\t116632.0\t Doctorate\t16.0\t Married-civ-spouse\t Prof-specialty\t Husband\t White\t Male\t0.0\t0.0\t45.0\t United-States\t \u003e50K\n29.0\t Private\t105598.0\t Some-college\t10.0\t Divorced\t Tech-support\t Not-in-family\t White\t Male\t0.0\t0.0\t58.0\t United-States\t \u003c\u003d50K\n36.0\t Private\t155537.0\t HS-grad\t9.0\t Married-civ-spouse\t Craft-repair\t Husband\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n28.0\t Private\t183175.0\t Some-college\t10.0\t Divorced\t Adm-clerical\t Not-in-family\t White\t Female\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n53.0\t Private\t169846.0\t HS-grad\t9.0\t Married-civ-spouse\t Adm-clerical\t Wife\t White\t Female\t0.0\t0.0\t40.0\t United-States\t \u003e50K\n49.0\t Self-emp-inc\t191681.0\t Some-college\t10.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t50.0\t United-States\t \u003e50K\n25.0\t ?\t200681.0\t Some-college\t10.0\t Never-married\t ?\t Own-child\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n19.0\t Private\t101509.0\t Some-college\t10.0\t Never-married\t Prof-specialty\t Own-child\t White\t Male\t0.0\t0.0\t32.0\t United-States\t \u003c\u003d50K\n31.0\t Private\t309974.0\t Bachelors\t13.0\t Separated\t Sales\t Own-child\t Black\t Female\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n29.0\t Self-emp-not-inc\t162298.0\t Bachelors\t13.0\t Married-civ-spouse\t Sales\t Husband\t White\t Male\t0.0\t0.0\t70.0\t United-States\t \u003e50K\n23.0\t Private\t211678.0\t Some-college\t10.0\t Never-married\t Machine-op-inspct\t Not-in-family\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n79.0\t Private\t124744.0\t Some-college\t10.0\t Married-civ-spouse\t Prof-specialty\t Other-relative\t White\t Male\t0.0\t0.0\t20.0\t United-States\t \u003c\u003d50K\n27.0\t Private\t213921.0\t HS-grad\t9.0\t Never-married\t Other-service\t Own-child\t White\t Male\t0.0\t0.0\t40.0\t Mexico\t \u003c\u003d50K\n40.0\t Private\t32214.0\t Assoc-acdm\t12.0\t Married-civ-spouse\t Adm-clerical\t Husband\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n67.0\t ?\t212759.0\t 10th\t6.0\t Married-civ-spouse\t ?\t Husband\t White\t Male\t0.0\t0.0\t2.0\t United-States\t \u003c\u003d50K\n18.0\t Private\t309634.0\t 11th\t7.0\t Never-married\t Other-service\t Own-child\t White\t Female\t0.0\t0.0\t22.0\t United-States\t \u003c\u003d50K\n31.0\t Local-gov\t125927.0\t 7th-8th\t4.0\t Married-civ-spouse\t Farming-fishing\t Husband\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n18.0\t Private\t446839.0\t HS-grad\t9.0\t Never-married\t Sales\t Not-in-family\t White\t Male\t0.0\t0.0\t30.0\t United-States\t \u003c\u003d50K\n52.0\t Private\t276515.0\t Bachelors\t13.0\t Married-civ-spouse\t Other-service\t Husband\t White\t Male\t0.0\t0.0\t40.0\t Cuba\t \u003c\u003d50K\n46.0\t Private\t51618.0\t HS-grad\t9.0\t Married-civ-spouse\t Other-service\t Wife\t White\t Female\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n59.0\t Private\t159937.0\t HS-grad\t9.0\t Married-civ-spouse\t Sales\t Husband\t White\t Male\t0.0\t0.0\t48.0\t United-States\t \u003c\u003d50K\n44.0\t Private\t343591.0\t HS-grad\t9.0\t Divorced\t Craft-repair\t Not-in-family\t White\t Female\t14344.0\t0.0\t40.0\t United-States\t \u003e50K\n53.0\t Private\t346253.0\t HS-grad\t9.0\t Divorced\t Sales\t Own-child\t White\t Female\t0.0\t0.0\t35.0\t United-States\t \u003c\u003d50K\n49.0\t Local-gov\t268234.0\t HS-grad\t9.0\t Married-civ-spouse\t Protective-serv\t Husband\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003e50K\n33.0\t Private\t202051.0\t Masters\t14.0\t Married-civ-spouse\t Prof-specialty\t Husband\t White\t Male\t0.0\t0.0\t50.0\t United-States\t \u003c\u003d50K\n30.0\t Private\t54334.0\t 9th\t5.0\t Never-married\t Sales\t Not-in-family\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n43.0\t Federal-gov\t410867.0\t Doctorate\t16.0\t Never-married\t Prof-specialty\t Not-in-family\t White\t Female\t0.0\t0.0\t50.0\t United-States\t \u003e50K\n57.0\t Private\t249977.0\t Assoc-voc\t11.0\t Married-civ-spouse\t Prof-specialty\t Husband\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n37.0\t Private\t286730.0\t Some-college\t10.0\t Divorced\t Craft-repair\t Unmarried\t White\t Female\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n28.0\t Private\t212563.0\t Some-college\t10.0\t Divorced\t Machine-op-inspct\t Unmarried\t Black\t Female\t0.0\t0.0\t25.0\t United-States\t \u003c\u003d50K\n30.0\t Private\t117747.0\t HS-grad\t9.0\t Married-civ-spouse\t Sales\t Wife\t Asian-Pac-Islander\t Female\t0.0\t1573.0\t35.0\t ?\t \u003c\u003d50K\n34.0\t Local-gov\t226296.0\t Bachelors\t13.0\t Married-civ-spouse\t Protective-serv\t Husband\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003e50K\n29.0\t Local-gov\t115585.0\t Some-college\t10.0\t Never-married\t Handlers-cleaners\t Not-in-family\t White\t Male\t0.0\t0.0\t50.0\t United-States\t \u003c\u003d50K\n48.0\t Self-emp-not-inc\t191277.0\t Doctorate\t16.0\t Married-civ-spouse\t Prof-specialty\t Husband\t White\t Male\t0.0\t1902.0\t60.0\t United-States\t \u003e50K\n37.0\t Private\t202683.0\t Some-college\t10.0\t Married-civ-spouse\t Sales\t Husband\t White\t Male\t0.0\t0.0\t48.0\t United-States\t \u003e50K\n48.0\t Private\t171095.0\t Assoc-acdm\t12.0\t Divorced\t Exec-managerial\t Unmarried\t White\t Female\t0.0\t0.0\t40.0\t England\t \u003c\u003d50K\n32.0\t Federal-gov\t249409.0\t HS-grad\t9.0\t Never-married\t Other-service\t Own-child\t Black\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n"
       },
       "dateCreated": "Feb 3, 2017 8:41:09 AM",
-      "dateStarted": "Feb 17, 2017 4:40:35 PM",
-      "dateFinished": "Feb 17, 2017 4:40:36 PM",
+      "dateStarted": "Feb 17, 2017 3:03:26 PM",
+      "dateFinished": "Feb 17, 2017 3:03:29 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "title": "Check settings of graph. See how we average age by income.",
-      "text": "%sql SELECT * FROM dataset LIMIT 10",
-      "dateUpdated": "Feb 17, 2017 4:21:59 PM",
-      "config": {
-        "colWidth": 12.0,
-        "graph": {
-          "mode": "pieChart",
-          "height": 88.0,
-          "optionOpen": true,
-          "keys": [
-            {
-              "name": "age",
-              "index": 0.0,
-              "aggr": "sum"
-            }
-          ],
-          "values": [
-            {
-              "name": "workclass",
-              "index": 1.0,
-              "aggr": "sum"
-            }
-          ],
-          "groups": [],
-          "scatter": {
-            "xAxis": {
-              "name": "age",
-              "index": 0.0,
-              "aggr": "sum"
-            },
-            "yAxis": {
-              "name": "workclass",
-              "index": 1.0,
-              "aggr": "sum"
-            }
-          }
-        },
-        "enabled": true,
-        "editorMode": "ace/mode/sql",
-        "title": true,
-        "editorHide": false
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "jobName": "paragraph_1486412404414_-1397675343",
-      "id": "20170206-202004_49344056",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TABLE",
-        "msg": "age\tworkclass\tfnlwgt\teducation\teducation_num\tmarital_status\toccupation\trelationship\trace\tsex\tcapital_gain\tcapital_loss\thours_per_week\tnative_country\tincome\n39.0\t State-gov\t77516.0\t Bachelors\t13.0\t Never-married\t Adm-clerical\t Not-in-family\t White\t Male\t2174.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n50.0\t Self-emp-not-inc\t83311.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t13.0\t United-States\t \u003c\u003d50K\n38.0\t Private\t215646.0\t HS-grad\t9.0\t Divorced\t Handlers-cleaners\t Not-in-family\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n53.0\t Private\t234721.0\t 11th\t7.0\t Married-civ-spouse\t Handlers-cleaners\t Husband\t Black\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n28.0\t Private\t338409.0\t Bachelors\t13.0\t Married-civ-spouse\t Prof-specialty\t Wife\t Black\t Female\t0.0\t0.0\t40.0\t Cuba\t \u003c\u003d50K\n37.0\t Private\t284582.0\t Masters\t14.0\t Married-civ-spouse\t Exec-managerial\t Wife\t White\t Female\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n49.0\t Private\t160187.0\t 9th\t5.0\t Married-spouse-absent\t Other-service\t Not-in-family\t Black\t Female\t0.0\t0.0\t16.0\t Jamaica\t \u003c\u003d50K\n52.0\t Self-emp-not-inc\t209642.0\t HS-grad\t9.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t45.0\t United-States\t \u003e50K\n31.0\t Private\t45781.0\t Masters\t14.0\t Never-married\t Prof-specialty\t Not-in-family\t White\t Female\t14084.0\t0.0\t50.0\t United-States\t \u003e50K\n42.0\t Private\t159449.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t5178.0\t0.0\t40.0\t United-States\t \u003e50K\n"
-      },
-      "dateCreated": "Feb 6, 2017 8:20:04 AM",
-      "dateStarted": "Feb 17, 2017 4:19:51 PM",
-      "dateFinished": "Feb 17, 2017 4:19:51 PM",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "text": "%md \n\n## III. Descriptive analysis\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nOn a essayé de representé les revenus par par statut marital et on peut constater que:\non a calculé les pourcentages des gents qui ont un haut salaire par raport a leur statut marital\n* 86% des personnes representé dans notre jeux de données qui ont un salaire plus de 50 K sont des personnes mariés.\n* 6%  des personnes representé dans notre jeux de données qui ont un salaire plus de 50 K sont des personnes.\n* 6%  des personnes representé dans notre jeux de données qui ont un salaire plus de 50 K sont des personnes qui n\u0027ont jamais été mariés\n\nIf you can, try to separate the two income groups and compare.\n\nTwo ways of doing this:\n* You should be able to it using standard SQL queries on the DataFrame and `show()` the result\n* You can use the %sql interpreter like in the previous cell and then use the settings tab of your graph to display the desired results.",
-      "dateUpdated": "Feb 17, 2017 4:48:36 PM",
+      "text": "%md \n\n## III. Descriptive analysis\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nProvide a summary statistics graph for some columns you deem interesting. Summary statistics is comprised (but not limited) of:\n* mean, standard deviation and skewness for numeric columns.\n* counts and percentage of each value for categorical columns.\n\nIf you can, try to separate the two income groups and compare.\n\nTwo ways of doing this:\n* You should be able to it using standard SQL queries on the DataFrame and `show()` the result\n* You can use the %sql interpreter like in the previous cell and then use the settings tab of your graph to display the desired results.\n\n\n\nRemarques : Le résultat de la requete ci-dessous nous montre la relation entre l\u0027occupation et la salaire,  on peut conclure par exemple que les agents d\u0027entretien gagne forcément un salaire inferieur à 50k.\nOn peut rajouter ça comme une régle dans un arbre de décision",
+      "dateUpdated": "Feb 17, 2017 3:54:39 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -289,7 +232,7 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/markdown",
-        "editorHide": true,
+        "editorHide": false,
         "tableHide": false
       },
       "settings": {
@@ -301,33 +244,34 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003ch2\u003eIII. Descriptive analysis\u003c/h2\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eOn a essayé de representé les revenus par par statut marital et on peut constater que:\n\u003cbr  /\u003eon a calculé les pourcentages des gents qui ont un haut salaire par raport a leur statut marital\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e86% des personnes representé dans notre jeux de données qui ont un salaire plus de 50 K sont des personnes mariés.\u003c/li\u003e\n\u003cli\u003e6%  des personnes representé dans notre jeux de données qui ont un salaire plus de 50 K sont des personnes.\u003c/li\u003e\n\u003cli\u003e6%  des personnes representé dans notre jeux de données qui ont un salaire plus de 50 K sont des personnes qui n\u0027ont jamais été mariés\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eIf you can, try to separate the two income groups and compare.\u003c/p\u003e\n\u003cp\u003eTwo ways of doing this:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eYou should be able to it using standard SQL queries on the DataFrame and \u003ccode\u003eshow()\u003c/code\u003e the result\u003c/li\u003e\n\u003cli\u003eYou can use the %sql interpreter like in the previous cell and then use the settings tab of your graph to display the desired results.\u003c/li\u003e\n\u003c/ul\u003e\n"
+        "msg": "\u003ch2\u003eIII. Descriptive analysis\u003c/h2\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eProvide a summary statistics graph for some columns you deem interesting. Summary statistics is comprised (but not limited) of:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003emean, standard deviation and skewness for numeric columns.\u003c/li\u003e\n\u003cli\u003ecounts and percentage of each value for categorical columns.\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eIf you can, try to separate the two income groups and compare.\u003c/p\u003e\n\u003cp\u003eTwo ways of doing this:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eYou should be able to it using standard SQL queries on the DataFrame and \u003ccode\u003eshow()\u003c/code\u003e the result\u003c/li\u003e\n\u003cli\u003eYou can use the %sql interpreter like in the previous cell and then use the settings tab of your graph to display the desired results.\u003c/li\u003e\n\u003cli\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eRemarques : Le résultat de la requete ci-dessous nous montre la relation entre l\u0027occupation et la salaire,  on peut conclure par exemple que les agents d\u0027entretien gagne forcément un salaire inferieur à 50k.\n\u003cbr  /\u003eOn peut rajouter ça comme une régle dans un arbre de décision\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 3, 2017 8:59:52 AM",
-      "dateStarted": "Feb 17, 2017 4:29:38 PM",
-      "dateFinished": "Feb 17, 2017 4:29:38 PM",
+      "dateStarted": "Feb 17, 2017 3:54:11 PM",
+      "dateFinished": "Feb 17, 2017 3:54:11 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%sql SELECT  marital_status, count(*) * 100.0 / sum(count(*)) over() from dataset where income\u003d \" \u003e50K\" group by marital_status ",
-      "dateUpdated": "Feb 17, 2017 4:18:43 PM",
+      "title": "Check settings of graph. See how we average age by income.",
+      "text": "%sql SELECT occupation , income , count(occupation ) FROM dataset group by occupation , income",
+      "dateUpdated": "Feb 17, 2017 3:51:26 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
-          "mode": "pieChart",
+          "mode": "table",
           "height": 300.0,
-          "optionOpen": false,
+          "optionOpen": true,
           "keys": [
             {
-              "name": "marital_status",
+              "name": "occupation",
               "index": 0.0,
               "aggr": "sum"
             }
           ],
           "values": [
             {
-              "name": "((CAST(CAST(count(1) AS DECIMAL(20,0)) AS DECIMAL(21,1)) * CAST(100.0 AS DECIMAL(21,1))) / CAST(sum(count(1)) OVER (ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS DECIMAL(25,1)))",
+              "name": "income",
               "index": 1.0,
               "aggr": "sum"
             }
@@ -335,56 +279,58 @@
           "groups": [],
           "scatter": {
             "xAxis": {
-              "name": "marital_status",
+              "name": "occupation",
               "index": 0.0,
               "aggr": "sum"
             },
             "yAxis": {
-              "name": "((CAST(CAST(count(1) AS DECIMAL(20,0)) AS DECIMAL(21,1)) * CAST(100.0 AS DECIMAL(21,1))) / CAST(sum(count(1)) OVER (ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS DECIMAL(25,1)))",
+              "name": "income",
               "index": 1.0,
               "aggr": "sum"
             }
           }
         },
         "enabled": true,
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/scala",
+        "title": true,
+        "editorHide": false
       },
       "settings": {
         "params": {},
         "forms": {}
       },
-      "jobName": "paragraph_1487348312077_1354261900",
-      "id": "20170217-161832_1069311165",
+      "jobName": "paragraph_1486412404414_-1397675343",
+      "id": "20170206-202004_49344056",
       "result": {
         "code": "SUCCESS",
         "type": "TABLE",
-        "msg": "marital_status\t((CAST(CAST(count(1) AS DECIMAL(20,0)) AS DECIMAL(21,1)) * CAST(100.0 AS DECIMAL(21,1))) / CAST(sum(count(1)) OVER (ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS DECIMAL(25,1)))\n Widowed\t1.0840454023721464099\n Married-spouse-absent\t0.4336181609488585640\n Married-AF-spouse\t0.1275347532202525188\n Married-civ-spouse\t85.3462568549929855886\n Divorced\t5.9048590740976916210\n Never-married\t6.2619563831143986736\n Separated\t0.8417293712536666242\n"
+        "msg": "occupation\tincome\tcount(occupation)\n Priv-house-serv\t \u003c\u003d50K\t148\n Sales\t \u003c\u003d50K\t2667\n Farming-fishing\t \u003c\u003d50K\t879\n Machine-op-inspct\t \u003c\u003d50K\t1752\n Adm-clerical\t \u003c\u003d50K\t3263\n Machine-op-inspct\t \u003e50K\t250\n ?\t \u003e50K\t191\n Prof-specialty\t \u003c\u003d50K\t2281\n Tech-support\t \u003e50K\t283\n Protective-serv\t \u003e50K\t211\n Transport-moving\t \u003c\u003d50K\t1277\n Transport-moving\t \u003e50K\t320\n Protective-serv\t \u003c\u003d50K\t438\n Other-service\t \u003e50K\t137\n Tech-support\t \u003c\u003d50K\t645\n Exec-managerial\t \u003e50K\t1968\n Sales\t \u003e50K\t983\n Craft-repair\t \u003c\u003d50K\t3170\n Farming-fishing\t \u003e50K\t115\n Armed-Forces\t \u003c\u003d50K\t8\n Prof-specialty\t \u003e50K\t1859\n Other-service\t \u003c\u003d50K\t3158\n ?\t \u003c\u003d50K\t1652\n Exec-managerial\t \u003c\u003d50K\t2098\n Handlers-cleaners\t \u003c\u003d50K\t1284\n Handlers-cleaners\t \u003e50K\t86\n Priv-house-serv\t \u003e50K\t1\n Craft-repair\t \u003e50K\t929\n Armed-Forces\t \u003e50K\t1\n Adm-clerical\t \u003e50K\t507\n"
       },
-      "dateCreated": "Feb 17, 2017 4:18:32 PM",
-      "dateStarted": "Feb 17, 2017 4:18:38 PM",
-      "dateFinished": "Feb 17, 2017 4:18:40 PM",
+      "dateCreated": "Feb 6, 2017 8:20:04 AM",
+      "dateStarted": "Feb 17, 2017 3:42:00 PM",
+      "dateFinished": "Feb 17, 2017 3:42:01 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%sql Select ",
-      "dateUpdated": "Feb 17, 2017 4:20:59 PM",
+      "text": "%sql SELECT  income, avg(age) as Moyenne_age, avg(hours_per_week) as Moyenne_heures_de_travail , avg(education_num) from dataset group by income",
+      "dateUpdated": "Feb 17, 2017 3:31:20 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
-          "mode": "stackedAreaChart",
+          "mode": "table",
           "height": 300.0,
           "optionOpen": false,
           "keys": [
             {
-              "name": "age",
+              "name": "income",
               "index": 0.0,
               "aggr": "sum"
             }
           ],
           "values": [
             {
-              "name": "workclass",
+              "name": "avg(age)",
               "index": 1.0,
               "aggr": "sum"
             }
@@ -392,12 +338,12 @@
           "groups": [],
           "scatter": {
             "xAxis": {
-              "name": "age",
+              "name": "income",
               "index": 0.0,
               "aggr": "sum"
             },
             "yAxis": {
-              "name": "workclass",
+              "name": "avg(age)",
               "index": 1.0,
               "aggr": "sum"
             }
@@ -410,22 +356,49 @@
         "params": {},
         "forms": {}
       },
-      "jobName": "paragraph_1487346027884_-1186097694",
-      "id": "20170217-154027_1255849645",
+      "jobName": "paragraph_1487344089634_-1889808889",
+      "id": "20170217-150809_767077616",
       "result": {
         "code": "SUCCESS",
         "type": "TABLE",
-        "msg": "age\tworkclass\tfnlwgt\teducation\teducation_num\tmarital_status\toccupation\trelationship\trace\tsex\tcapital_gain\tcapital_loss\thours_per_week\tnative_country\tincome\n39.0\t State-gov\t77516.0\t Bachelors\t13.0\t Never-married\t Adm-clerical\t Not-in-family\t White\t Male\t2174.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n50.0\t Self-emp-not-inc\t83311.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t13.0\t United-States\t \u003c\u003d50K\n38.0\t Private\t215646.0\t HS-grad\t9.0\t Divorced\t Handlers-cleaners\t Not-in-family\t White\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n53.0\t Private\t234721.0\t 11th\t7.0\t Married-civ-spouse\t Handlers-cleaners\t Husband\t Black\t Male\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n28.0\t Private\t338409.0\t Bachelors\t13.0\t Married-civ-spouse\t Prof-specialty\t Wife\t Black\t Female\t0.0\t0.0\t40.0\t Cuba\t \u003c\u003d50K\n37.0\t Private\t284582.0\t Masters\t14.0\t Married-civ-spouse\t Exec-managerial\t Wife\t White\t Female\t0.0\t0.0\t40.0\t United-States\t \u003c\u003d50K\n49.0\t Private\t160187.0\t 9th\t5.0\t Married-spouse-absent\t Other-service\t Not-in-family\t Black\t Female\t0.0\t0.0\t16.0\t Jamaica\t \u003c\u003d50K\n52.0\t Self-emp-not-inc\t209642.0\t HS-grad\t9.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t0.0\t0.0\t45.0\t United-States\t \u003e50K\n31.0\t Private\t45781.0\t Masters\t14.0\t Never-married\t Prof-specialty\t Not-in-family\t White\t Female\t14084.0\t0.0\t50.0\t United-States\t \u003e50K\n42.0\t Private\t159449.0\t Bachelors\t13.0\t Married-civ-spouse\t Exec-managerial\t Husband\t White\t Male\t5178.0\t0.0\t40.0\t United-States\t \u003e50K\n"
+        "msg": "income\tMoyenne_age\tMoyenne_heures_de_travail\tavg(education_num)\n \u003e50K\t44.24984058155847\t45.473026399693914\t11.611656676444332\n \u003c\u003d50K\t36.78373786407767\t38.840210355987054\t9.595064724919094\n"
       },
-      "dateCreated": "Feb 17, 2017 3:40:27 PM",
-      "dateStarted": "Feb 17, 2017 3:44:55 PM",
-      "dateFinished": "Feb 17, 2017 3:44:57 PM",
+      "dateCreated": "Feb 17, 2017 3:08:09 PM",
+      "dateStarted": "Feb 17, 2017 3:31:20 PM",
+      "dateFinished": "Feb 17, 2017 3:31:22 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
+      "text": "",
+      "dateUpdated": "Feb 17, 2017 3:19:44 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487344772427_-1149769309",
+      "id": "20170217-151932_1365666588",
+      "dateCreated": "Feb 17, 2017 3:19:32 PM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    },
+    {
       "text": "%md \n\n## IV. Data preprocessing\n\nSince we are going to try algorithms like Logistic Regression, we will have to convert the categorical variables in the dataset into numeric variables. There are 2 ways we can do this.\n\n- Category Indexing. This is basically assigning a numeric value to each category from {0, 1, 2, ...numCategories-1}. This introduces an implicit ordering among your categories, and is more suitable for ordinal variables (eg: Poor: 0, Average: 1, Good: 2)\n- [One-Hot Encoding](http://spark.apache.org/docs/latest/ml-features.html#onehotencoder). This converts categories into binary vectors with at most one positive value (eg: (Blue: 1, 0, 0), (Green: 0, 1, 0), (Red: 0, 0, 1))",
-      "dateUpdated": "Feb 17, 2017 3:10:13 PM",
+      "dateUpdated": "Feb 7, 2017 12:55:41 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -461,7 +434,7 @@
     {
       "title": "One-hot encoding example",
       "text": "val names \u003d Seq(\"color\", \"index\", \"OHE_attr1\", \"OHE_attr2\", \"OHE_attr3\")\nsqlContext.createDataFrame(sc.parallelize(Seq((\"Blue\", 0, 1, 0, 0), (\"Green\", 1, 0, 1, 0), (\"Red\", 2, 0 , 0 , 1)))).toDF(names: _*).show()",
-      "dateUpdated": "Feb 17, 2017 4:49:52 PM",
+      "dateUpdated": "Feb 7, 2017 12:55:42 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -474,9 +447,9 @@
           "scatter": {}
         },
         "enabled": true,
-        "editorMode": "ace/mode/scala",
+        "editorMode": "ace/mode/markdown",
         "title": true,
-        "editorHide": false
+        "editorHide": true
       },
       "settings": {
         "params": {},
@@ -496,43 +469,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "import org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer}\n\nval df \u003d spark.createDataFrame(Seq(\n  (0, \"a\"),\n  (1, \"b\"),\n  (2, \"c\"),\n  (3, \"a\"),\n  (4, \"a\"),\n  (5, \"c\")\n)).toDF(\"id\", \"category\")\n\nval indexer \u003d new StringIndexer()\n  .setInputCol(\"category\")\n  .setOutputCol(\"categoryIndex\")\n  .fit(df)\nval indexed \u003d indexer.transform(df)\n\nval encoder \u003d new OneHotEncoder()\n  .setInputCol(\"categoryIndex\")\n  .setOutputCol(\"categoryVec\")\n\nval encoded \u003d encoder.transform(indexed)\nencoded.show()\n\non a executé cet example pour voir un peu comment ca marche l\u0027encodage sous SCALA avec la méthode  HOT ENCODER \n\nnormalement l\u0027encodage est basé sur le binaire 0 et 1 et la dernjiere valeure il l\u0027encode qu\u0027avec des zéros pour gagner de la place ",
-      "dateUpdated": "Feb 17, 2017 5:06:18 PM",
-      "config": {
-        "colWidth": 12.0,
-        "graph": {
-          "mode": "table",
-          "height": 226.39999389648438,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
-        "enabled": true,
-        "editorMode": "ace/mode/scala",
-        "editorHide": false
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "jobName": "paragraph_1487350691483_-1962194536",
-      "id": "20170217-165811_1415493164",
-      "result": {
-        "code": "ERROR",
-        "type": "TEXT",
-        "msg": "\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer}\n\ndf: org.apache.spark.sql.DataFrame \u003d [id: int, category: string]\n\nindexer: org.apache.spark.ml.feature.StringIndexerModel \u003d strIdx_cb6c40f16108\n\nindexed: org.apache.spark.sql.DataFrame \u003d [id: int, category: string ... 1 more field]\n\nencoder: org.apache.spark.ml.feature.OneHotEncoder \u003d oneHot_db0b0cdb42d2\n\nencoded: org.apache.spark.sql.DataFrame \u003d [id: int, category: string ... 2 more fields]\n+---+--------+-------------+-------------+\n| id|category|categoryIndex|  categoryVec|\n+---+--------+-------------+-------------+\n|  0|       a|          0.0|(2,[0],[1.0])|\n|  1|       b|          2.0|    (2,[],[])|\n|  2|       c|          1.0|(2,[1],[1.0])|\n|  3|       a|          0.0|(2,[0],[1.0])|\n|  4|       a|          0.0|(2,[0],[1.0])|\n|  5|       c|          1.0|(2,[1],[1.0])|\n+---+--------+-------------+-------------+\n\n\n\n\n\u003cconsole\u003e:1: error: \u0027;\u0027 expected but symbol literal found.\non a executé cet example pour voir un peu comment ca marche l\u0027encodage sous SCALA avec la méthode  HOT ENCODER\n                                                             ^\n"
-      },
-      "dateCreated": "Feb 17, 2017 4:58:11 PM",
-      "dateStarted": "Feb 17, 2017 5:06:18 PM",
-      "dateFinished": "Feb 17, 2017 5:06:20 PM",
-      "status": "ERROR",
-      "progressUpdateIntervalMs": 500
-    },
-    {
       "text": "%md\n\nIn this dataset, we have ordinal variables like education (Preschool - Doctorate), and also nominal variables like relationship (Wife, Husband, Own-child, etc). For simplicity\u0027s sake, we will use One-Hot Encoding to convert all categorical variables into binary vectors. It might be possible here to improve prediction accuracy by converting each categorical column with an appropriate method.\n\nHere, we will use a combination of [StringIndexer](http://spark.apache.org/docs/latest/ml-features.html#stringindexer) and [OneHotEncoder](http://spark.apache.org/docs/latest/ml-features.html#onehotencoder) on each string column to convert the categorical variables. The `OneHotEncoder` will return a SparseVector (which means, for `(8,[4],[1.0])` that the vector has size 8, one only the 4th column contains a value which is 1.0).\n\nSince we will have many stages of feature transformations, we use an [ML Pipeline](http://spark.apache.org/docs/latest/ml-pipeline.html) to tie the stages together.  This simplifies our code. You should especially try to use [the Pipeline example](http://spark.apache.org/docs/latest/ml-pipeline.html#example-pipeline).\n\n```scala\n// Configure an ML pipeline, which consists of two stages on one column: a StringIndexer and a OneHotEncoder.\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer}\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\n// stages for column workclass\nval stringIndexer \u003d new StringIndexer()\n  .setInputCol(\"workclass\")\n  .setOutputCol(\"workclassIndex\")\nval oneHotEncoder \u003d new OneHotEncoder()\n  .setInputCol(stringIndexer.getOutputCol)\n  .setOutputCol(stringIndexer.getInputCol + \"ClassVec\")\n  \n// stage for label\nval label_stringIdx \u003d new StringIndexer()\n    .setInputCol(\"income\")\n    .setOutputCol(\"label\")\n  \nval stages \u003d  Seq(stringIndexer, oneHotEncoder) ++ Seq(label_stringIdx) // concatenate 2 sequences of stages\nval pipeline \u003d new Pipeline()\n  .setStages(stages.toArray)\n  \nval pipelineModel \u003d pipeline.fit(dataset)\npipelineModel.transform(dataset).show()\n```\n\nIt is also a good time to transform the income to a label of 0 and 1 for binary classification using the `StringIndexer`.\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\n1. For each categorical column, build a stage of StringIndexer and OneHotEncoder\n2. Add all those stages in a single pipeline\n3. Also add a StringIndexer of the `income` column and name the output column `label`\n3. Check the result by passing your dataset inside the pipeline. Comment \u0026 explain.\n\n_Hint: actually map your sequence of categorical columns to a sequence of stages through FP._",
-      "dateUpdated": "Feb 17, 2017 3:10:13 PM",
+      "dateUpdated": "Feb 7, 2017 12:55:42 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -568,7 +506,7 @@
     {
       "title": "Detail columns to deal with",
       "text": "val categoricalCols \u003d Seq(\"workclass\", \"education\", \"marital_status\", \"occupation\", \"relationship\", \"race\", \"sex\", \"native_country\")\nval numericCols \u003d Seq(\"age\", \"fnlwgt\", \"education_num\", \"capital_gain\", \"capital_loss\", \"hours_per_week\")",
-      "dateUpdated": "Feb 17, 2017 4:34:37 PM",
+      "dateUpdated": "Feb 17, 2017 4:20:09 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -582,8 +520,7 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "title": true,
-        "editorHide": true
+        "title": true
       },
       "settings": {
         "params": {},
@@ -597,14 +534,82 @@
         "msg": "\ncategoricalCols: Seq[String] \u003d List(workclass, education, marital_status, occupation, relationship, race, sex, native_country)\n\nnumericCols: Seq[String] \u003d List(age, fnlwgt, education_num, capital_gain, capital_loss, hours_per_week)\n"
       },
       "dateCreated": "Feb 6, 2017 2:31:24 AM",
-      "dateStarted": "Feb 7, 2017 12:55:53 PM",
-      "dateFinished": "Feb 7, 2017 12:55:56 PM",
+      "dateStarted": "Feb 17, 2017 4:20:09 PM",
+      "dateFinished": "Feb 17, 2017 4:20:10 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "Explication : on effectue un flatmap sur le vecteur des variables catégorielles \"categoricalCols\" pour chaque élement on associe un stringIndexer et un oneHotEncoder\nOn retourne une séquence qui contient les deux (stringIndexer, oneHotEncoder)\nla deuxième étape du pipeline est la création de la variable label \nLa derniére étape c\u0027est la concatenation des deux",
+      "dateUpdated": "Feb 17, 2017 4:49:05 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": false,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487349610130_-1350885191",
+      "id": "20170217-164010_918693622",
+      "result": {
+        "code": "ERROR",
+        "type": "TEXT",
+        "msg": "\n\n\n\u003cconsole\u003e:1: error: identifier expected but string literal found.\nExplication : on effectue un flatmap sur le vecteur des variables catégorielles \"categoricalCols\" pour chaque élement on associe un stringIndexer et un oneHotEncoder\n                                                                                ^\n"
+      },
+      "dateCreated": "Feb 17, 2017 4:40:10 PM",
+      "dateStarted": "Feb 17, 2017 4:48:49 PM",
+      "dateFinished": "Feb 17, 2017 4:48:49 PM",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// Configure an ML pipeline, which consists of two stages on one column: a StringIndexer and a OneHotEncoder.\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer}\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\nval categoricalCols \u003d Seq(\"workclass\", \"education\", \"marital_status\", \"occupation\", \"relationship\", \"race\", \"sex\", \"native_country\")\nval numericCols \u003d Seq(\"age\", \"fnlwgt\", \"education_num\", \"capital_gain\", \"capital_loss\", \"hours_per_week\")\n\nval a \u003d categoricalCols.flatMap{x \u003d\u003e \nval stringIndexer \u003d new StringIndexer()\n  .setInputCol(x)\n  .setOutputCol(x+\"index\")\nval oneHotEncoder \u003d new OneHotEncoder()\n  .setInputCol(stringIndexer.getOutputCol)\n  .setOutputCol(stringIndexer.getInputCol + \"ClassVec\"\n  )\n  Seq(stringIndexer,OneHotEncoder )\n}\n// stage for label\nval label_stringIdx \u003d new StringIndexer()\n    .setInputCol(\"income\")\n    .setOutputCol(\"label\")\n\nval stages \u003d  Seq(stringIndexer, oneHotEncoder) ++ Seq(label_stringIdx) \nval pipeline \u003d new Pipeline()\n  .setStages(stages.toArray)\n\nval pipelineModel \u003d pipeline.fit(dataset)\npipelineModel.transform(dataset).show()\n",
+      "dateUpdated": "Feb 17, 2017 4:51:05 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487347200064_-1328998832",
+      "id": "20170217-160000_1874585277",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer}\n\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\ncategoricalCols: Seq[String] \u003d List(workclass, education, marital_status, occupation, relationship, race, sex, native_country)\n\nnumericCols: Seq[String] \u003d List(age, fnlwgt, education_num, capital_gain, capital_loss, hours_per_week)\n\na: Seq[Serializable] \u003d List(strIdx_57850515b054, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_8e777cc82a1a, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_92842a36c23b, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_5de04996d219, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_1a80e48e97f7, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_f187f16419d6, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_fcb35a3fc9d9, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_0f46571e0330, org.apache.spark.ml.feature.OneHotEncoder$@488e2327)\n\nlabel_stringIdx: org.apache.spark.ml.feature.StringIndexer \u003d strIdx_538b2416fd7a\n\nstages: Seq[org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable{def copy(extra: org.apache.spark.ml.param.ParamMap): org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable{def copy(extra: org.apache.spark.ml.param.ParamMap): org.apache.spark.ml.PipelineStage with org.apache.spark.ml.param.shared.HasOutputCol with org.apache.spark.ml.param.shared.HasInputCol with org.apache.spark.ml.util.DefaultParamsWritable}}] \u003d List(strIdx_b3b51de79572, oneHot_f196aec412e6, strIdx_538b2416fd7a)\n\npipeline: org.apache.spark.ml.Pipeline \u003d pipeline_672067e3fa1f\n\npipelineModel: org.apache.spark.ml.PipelineModel \u003d pipeline_672067e3fa1f\n+----+-----------------+--------+-------------+-------------+--------------------+------------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+--------------+-----------------+-----+\n| age|        workclass|  fnlwgt|    education|education_num|      marital_status|        occupation|  relationship|               race|    sex|capital_gain|capital_loss|hours_per_week|native_country|income|workclassIndex|workclassClassVec|label|\n+----+-----------------+--------+-------------+-------------+--------------------+------------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+--------------+-----------------+-----+\n|39.0|        State-gov| 77516.0|    Bachelors|         13.0|       Never-married|      Adm-clerical| Not-in-family|              White|   Male|      2174.0|         0.0|          40.0| United-States| \u003c\u003d50K|           4.0|    (8,[4],[1.0])|  0.0|\n|50.0| Self-emp-not-inc| 83311.0|    Bachelors|         13.0|  Married-civ-spouse|   Exec-managerial|       Husband|              White|   Male|         0.0|         0.0|          13.0| United-States| \u003c\u003d50K|           1.0|    (8,[1],[1.0])|  0.0|\n|38.0|          Private|215646.0|      HS-grad|          9.0|            Divorced| Handlers-cleaners| Not-in-family|              White|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|  0.0|\n|53.0|          Private|234721.0|         11th|          7.0|  Married-civ-spouse| Handlers-cleaners|       Husband|              Black|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|  0.0|\n|28.0|          Private|338409.0|    Bachelors|         13.0|  Married-civ-spouse|    Prof-specialty|          Wife|              Black| Female|         0.0|         0.0|          40.0|          Cuba| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|  0.0|\n|37.0|          Private|284582.0|      Masters|         14.0|  Married-civ-spouse|   Exec-managerial|          Wife|              White| Female|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|  0.0|\n|49.0|          Private|160187.0|          9th|          5.0| Married-spouse-a...|     Other-service| Not-in-family|              Black| Female|         0.0|         0.0|          16.0|       Jamaica| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|  0.0|\n|52.0| Self-emp-not-inc|209642.0|      HS-grad|          9.0|  Married-civ-spouse|   Exec-managerial|       Husband|              White|   Male|         0.0|         0.0|          45.0| United-States|  \u003e50K|           1.0|    (8,[1],[1.0])|  1.0|\n|31.0|          Private| 45781.0|      Masters|         14.0|       Never-married|    Prof-specialty| Not-in-family|              White| Female|     14084.0|         0.0|          50.0| United-States|  \u003e50K|           0.0|    (8,[0],[1.0])|  1.0|\n|42.0|          Private|159449.0|    Bachelors|         13.0|  Married-civ-spouse|   Exec-managerial|       Husband|              White|   Male|      5178.0|         0.0|          40.0| United-States|  \u003e50K|           0.0|    (8,[0],[1.0])|  1.0|\n|37.0|          Private|280464.0| Some-college|         10.0|  Married-civ-spouse|   Exec-managerial|       Husband|              Black|   Male|         0.0|         0.0|          80.0| United-States|  \u003e50K|           0.0|    (8,[0],[1.0])|  1.0|\n|30.0|        State-gov|141297.0|    Bachelors|         13.0|  Married-civ-spouse|    Prof-specialty|       Husband| Asian-Pac-Islander|   Male|         0.0|         0.0|          40.0|         India|  \u003e50K|           4.0|    (8,[4],[1.0])|  1.0|\n|23.0|          Private|122272.0|    Bachelors|         13.0|       Never-married|      Adm-clerical|     Own-child|              White| Female|         0.0|         0.0|          30.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|  0.0|\n|32.0|          Private|205019.0|   Assoc-acdm|         12.0|       Never-married|             Sales| Not-in-family|              Black|   Male|         0.0|         0.0|          50.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|  0.0|\n|40.0|          Private|121772.0|    Assoc-voc|         11.0|  Married-civ-spouse|      Craft-repair|       Husband| Asian-Pac-Islander|   Male|         0.0|         0.0|          40.0|             ?|  \u003e50K|           0.0|    (8,[0],[1.0])|  1.0|\n|34.0|          Private|245487.0|      7th-8th|          4.0|  Married-civ-spouse|  Transport-moving|       Husband| Amer-Indian-Eskimo|   Male|         0.0|         0.0|          45.0|        Mexico| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|  0.0|\n|25.0| Self-emp-not-inc|176756.0|      HS-grad|          9.0|       Never-married|   Farming-fishing|     Own-child|              White|   Male|         0.0|         0.0|          35.0| United-States| \u003c\u003d50K|           1.0|    (8,[1],[1.0])|  0.0|\n|32.0|          Private|186824.0|      HS-grad|          9.0|       Never-married| Machine-op-inspct|     Unmarried|              White|   Male|         0.0|         0.0|          40.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|  0.0|\n|38.0|          Private| 28887.0|         11th|          7.0|  Married-civ-spouse|             Sales|       Husband|              White|   Male|         0.0|         0.0|          50.0| United-States| \u003c\u003d50K|           0.0|    (8,[0],[1.0])|  0.0|\n|43.0| Self-emp-not-inc|292175.0|      Masters|         14.0|            Divorced|   Exec-managerial|     Unmarried|              White| Female|         0.0|         0.0|          45.0| United-States|  \u003e50K|           1.0|    (8,[1],[1.0])|  1.0|\n+----+-----------------+--------+-------------+-------------+--------------------+------------------+--------------+-------------------+-------+------------+------------+--------------+--------------+------+--------------+-----------------+-----+\nonly showing top 20 rows\n\n"
+      },
+      "dateCreated": "Feb 17, 2017 4:00:00 PM",
+      "dateStarted": "Feb 17, 2017 4:39:44 PM",
+      "dateFinished": "Feb 17, 2017 4:39:47 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\nTo run machine learning on a dataset, you need a column which contains a vector of all the features, and a column with the label.\n\nWe use the [VectorAssembler](http://spark.apache.org/docs/latest/ml-features.html#vectorassembler) to assemble all of our numeric columns and one-hot encoded categorical columns into one.\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nAdd the `VectorAssembler` stage, which takes as input all numeric columns and one hot encoded categorical columns. The `features` column will then be created. You can comment on it.",
-      "dateUpdated": "Feb 17, 2017 3:10:13 PM",
+      "dateUpdated": "Feb 17, 2017 4:51:04 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -632,14 +637,48 @@
         "msg": "\u003cp\u003eTo run machine learning on a dataset, you need a column which contains a vector of all the features, and a column with the label.\u003c/p\u003e\n\u003cp\u003eWe use the \u003ca href\u003d\"http://spark.apache.org/docs/latest/ml-features.html#vectorassembler\"\u003eVectorAssembler\u003c/a\u003e to assemble all of our numeric columns and one-hot encoded categorical columns into one.\u003c/p\u003e\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\u003cp\u003eAdd the \u003ccode\u003eVectorAssembler\u003c/code\u003e stage, which takes as input all numeric columns and one hot encoded categorical columns. The \u003ccode\u003efeatures\u003c/code\u003e column will then be created. You can comment on it.\u003c/p\u003e\n"
       },
       "dateCreated": "Feb 3, 2017 9:15:56 AM",
-      "dateStarted": "Feb 7, 2017 12:55:43 PM",
-      "dateFinished": "Feb 7, 2017 12:55:43 PM",
+      "dateStarted": "Feb 17, 2017 4:51:04 PM",
+      "dateFinished": "Feb 17, 2017 4:51:04 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
+      "text": "import org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer, VectorAssembler}\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\nval categoricalCols \u003d Seq(\"workclass\", \"education\", \"marital_status\", \"occupation\", \"relationship\", \"race\", \"sex\", \"native_country\")\nval numericCols \u003d Seq(\"age\", \"fnlwgt\", \"education_num\", \"capital_gain\", \"capital_loss\", \"hours_per_week\")\n\nval categ \u003d categoricalCols.flatMap{x \u003d\u003e \nval stringIndexer \u003d new StringIndexer()\n  .setInputCol(x)\n  .setOutputCol(x+\"index\")\nval oneHotEncoder \u003d new OneHotEncoder()\n  .setInputCol(stringIndexer.getOutputCol)\n  .setOutputCol(stringIndexer.getInputCol + \"ClassVec\"\n  )\n  Seq(stringIndexer,OneHotEncoder )\n}\n// stage for label\nval label_stringIdx \u003d new StringIndexer()\n    .setInputCol(\"income\")\n    .setOutputCol(\"label\")\n\nval assembler \u003d new VectorAssembler()\n.setInputCols((numericCols ++ categoricalCols.map(col \u003d\u003e col +\"ClassVec\")).toArray)\n.setOutputCol(\"features\")\n\nval stages \u003d  categ ++ Seq(label_stringIdx, assembler ) \nval pipeline \u003d new Pipeline()\n  .setStages(stages.toArray)\n\nval pipelineModel \u003d pipeline.fit(dataset)\npipelineModel.transform(dataset).show()",
+      "dateUpdated": "Feb 17, 2017 4:59:50 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1487350268496_899460219",
+      "id": "20170217-165108_566077885",
+      "result": {
+        "code": "ERROR",
+        "type": "TEXT",
+        "msg": "\nimport org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer, VectorAssembler}\n\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\n\ncategoricalCols: Seq[String] \u003d List(workclass, education, marital_status, occupation, relationship, race, sex, native_country)\n\nnumericCols: Seq[String] \u003d List(age, fnlwgt, education_num, capital_gain, capital_loss, hours_per_week)\n\ncateg: Seq[Serializable] \u003d List(strIdx_b0782ad90143, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_3f7311c75715, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_774f2176923d, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_38ac86031255, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_b26be0ba87c3, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_e764c12414f5, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_19bb33a39316, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_0654e345e793, org.apache.spark.ml.feature.OneHotEncoder$@488e2327)\n\nlabel_stringIdx: org.apache.spark.ml.feature.StringIndexer \u003d strIdx_7d1b95d2832c\n\nassembler: org.apache.spark.ml.feature.VectorAssembler \u003d vecAssembler_31856026a6c5\n\nstages: Seq[Serializable] \u003d List(strIdx_b0782ad90143, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_3f7311c75715, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_774f2176923d, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_38ac86031255, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_b26be0ba87c3, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_e764c12414f5, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_19bb33a39316, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_0654e345e793, org.apache.spark.ml.feature.OneHotEncoder$@488e2327, strIdx_7d1b95d2832c, vecAssembler_31856026a6c5)\n\n\n\n\n\n\n\n\u003cconsole\u003e:83: error: type mismatch;\n found   : Array[Serializable]\n required: Array[_ \u003c: org.apache.spark.ml.PipelineStage]\nNote: Serializable \u003e: org.apache.spark.ml.PipelineStage, but class Array is invariant in type T.\nYou may wish to investigate a wildcard type such as `_ \u003e: org.apache.spark.ml.PipelineStage`. (SLS 3.2.10)\n         .setStages(stages.toArray)\n                           ^\n"
+      },
+      "dateCreated": "Feb 17, 2017 4:51:08 PM",
+      "dateStarted": "Feb 17, 2017 4:59:50 PM",
+      "dateFinished": "Feb 17, 2017 4:59:52 PM",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
       "text": "%md\n\nAt this point, you should have a dataframe with a column _features_ which consists of a vector of all features in numerical form, and a column _label_ with the Income as a binary value. \n\nIt looks like this for example:\n\n```\n+----+-----------------+--------+----------+-------------+-------------------+------------------+--------------+------+-----+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\n| age|        workclass|  fnlwgt| education|education_num|     marital_status|        occupation|  relationship|  race|  sex|capital_gain|capital_loss|hours_per_week|native_country|income|workclassIndex|workclassClassVec|educationIndex|educationClassVec|marital_statusIndex|marital_statusClassVec|occupationIndex|occupationClassVec|relationshipIndex|relationshipClassVec|raceIndex| raceClassVec|sexIndex|  sexClassVec|native_countryIndex|native_countryClassVec|label|            features|\n+----+-----------------+--------+----------+-------------+-------------------+------------------+--------------+------+-----+------------+------------+--------------+--------------+------+--------------+-----------------+--------------+-----------------+-------------------+----------------------+---------------+------------------+-----------------+--------------------+---------+-------------+--------+-------------+-------------------+----------------------+-----+--------------------+\n|39.0|        State-gov| 77516.0| Bachelors|         13.0|      Never-married|      Adm-clerical| Not-in-family| White| Male|      2174.0|         0.0|          40.0| United-States| \u003c\u003d50K|           4.0|    (8,[4],[1.0])|           2.0|   (15,[2],[1.0])|                1.0|         (6,[1],[1.0])|            3.0|    (14,[3],[1.0])|              1.0|       (5,[1],[1.0])|      0.0|(4,[0],[1.0])|     0.0|(1,[0],[1.0])|                0.0|        (41,[0],[1.0])|  0.0|(100,[4,10,24,32,...|\n```\n\n\u003chr\u003e\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\nRandomly split your dataset into a 70% training set and 30% test set using a Dataframe\u0027s `randomSplit` function.",
-      "dateUpdated": "Feb 17, 2017 3:10:13 PM",
+      "dateUpdated": "Feb 7, 2017 12:55:43 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -674,7 +713,7 @@
     },
     {
       "text": "%md \n\n## V. Creation of models\n\nWe are now ready to try out some of the Binary Classification Algorithms available in the new ML Pipelines API.\n\nWe have the choice between:\n- [Binomial Logistic regression](http://spark.apache.org/docs/latest/ml-classification-regression.html#binomial-logistic-regression)\n- [Decision trees](http://spark.apache.org/docs/latest/ml-classification-regression.html#decision-trees)\n- [Random forest](http://spark.apache.org/docs/latest/ml-classification-regression.html#random-forests)\n\nThese are the general steps we will take to build our models:\n- Create the initial model on the training set\n- Use your model to make predictions on your testing set\n- Evaluate the quality of your predictions\n\nWe will be using the `BinaryClassificationEvaluator` to evaluate our models. The default metric used here is [areaUnderROC](https://en.wikipedia.org/wiki/Receiver_operating_characteristic#Area_under_the_curve).\n\n\u003ch4 style\u003d\"color:red;\"\u003eExercise\u003c/h4\u003e\n\n1. Fit your data on one of the three Machine Learning models on the training dataset. This should create an Estimator.\n2. Run the estimator on the testing dataset to create a prediction column\n3. Use `BinaryClassificationEvaluator.evaluate()` to evaluate your predictions.",
-      "dateUpdated": "Feb 17, 2017 3:10:13 PM",
+      "dateUpdated": "Feb 7, 2017 12:55:44 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -709,7 +748,7 @@
     },
     {
       "text": "%md\n\n\u003ch4 style\u003d\"color:red;\"\u003eOptional question\u003c/h4\u003e\n\nUse [cross-validation](http://spark.apache.org/docs/latest/ml-tuning.html#cross-validation) to select the best hyperparameters for your model",
-      "dateUpdated": "Feb 17, 2017 3:10:14 PM",
+      "dateUpdated": "Feb 7, 2017 12:55:44 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -722,7 +761,7 @@
           "scatter": {}
         },
         "enabled": true,
-        "editorMode": "ace/mode/markdown",
+        "editorMode": "ace/mode/scala",
         "editorHide": true
       },
       "settings": {
@@ -744,7 +783,7 @@
     },
     {
       "text": "%md\n\n\u003ch4 style\u003d\"color:red;\"\u003eOptional question\u003c/h4\u003e\n\nThe column `features` is a Vector, and Spark MLlib has specific functions to analyse it. You can `collect()` the column into an array then `map` each `Row` into a `Vector`.\n\n```\nimport org.apache.spark.mllib.linalg.Vector\n\ndf.select(\"features\").rdd.map(t \u003d\u003e t.getAs[Vector](0))\n```\n\n1. Run [basic statistics](http://spark.apache.org/docs/latest/mllib-statistics.html) on the column which contains your features vector.\n2. Check for the columns that are the most [correlated](http://spark.apache.org/docs/latest/mllib-statistics.html#correlations) to your label column.\n3. Conclude on the interesting columns to use if you had to do manual feature selection. Don\u0027t forget the nature of the data you are dealing with.",
-      "dateUpdated": "Feb 17, 2017 3:10:14 PM",
+      "dateUpdated": "Feb 7, 2017 12:55:45 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -779,7 +818,7 @@
     },
     {
       "text": "",
-      "dateUpdated": "Feb 17, 2017 3:10:14 PM",
+      "dateUpdated": "Feb 7, 2017 12:55:46 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -792,8 +831,7 @@
           "scatter": {}
         },
         "enabled": true,
-        "editorMode": "ace/mode/scala",
-        "editorHide": true
+        "editorMode": "ace/mode/scala"
       },
       "settings": {
         "params": {},
@@ -816,24 +854,24 @@
   "name": "BinaryClassification",
   "id": "2C76YWXDZ",
   "angularObjects": {
-    "2CBT1W2GF:shared_process": [],
-    "2CBK9XXC8:shared_process": [],
-    "2CAVV7MC1:shared_process": [],
-    "2C9B5R6UH:shared_process": [],
-    "2CA6NZWW7:shared_process": [],
-    "2CAQYPQ4Z:shared_process": [],
-    "2C9YS8M8Y:shared_process": [],
-    "2C9TQ5N1V:shared_process": [],
-    "2CC26C9AZ:shared_process": [],
-    "2CB2FKQU5:shared_process": [],
-    "2C91C9GM9:shared_process": [],
-    "2C91X8RKU:shared_process": [],
-    "2CBPBMHTY:shared_process": [],
-    "2CAAM4D2W:shared_process": [],
-    "2CB2JU4AQ:shared_process": [],
-    "2C8NFMFXM:shared_process": [],
-    "2CBEU9RKZ:shared_process": [],
-    "2CBBKGWNV:shared_process": []
+    "2C8C8G9MX:shared_process": [],
+    "2CBJ4WG1S:shared_process": [],
+    "2C99B9EY3:shared_process": [],
+    "2CAYNHD56:shared_process": [],
+    "2C87HUWSQ:shared_process": [],
+    "2CBGRX86E:shared_process": [],
+    "2CAKVB185:shared_process": [],
+    "2C9EDZSPG:shared_process": [],
+    "2CBCMCXH1:shared_process": [],
+    "2CC1V2AAK:shared_process": [],
+    "2CBEHYACA:shared_process": [],
+    "2CAG471C4:shared_process": [],
+    "2C8K8EQZD:shared_process": [],
+    "2CC5VZGSS:shared_process": [],
+    "2CBK1RUMC:shared_process": [],
+    "2CAVCEX4U:shared_process": [],
+    "2C8SRN5YQ:shared_process": [],
+    "2CC698KMH:shared_process": []
   },
   "config": {},
   "info": {}
